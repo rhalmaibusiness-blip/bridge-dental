@@ -1,0 +1,1366 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bridge Dental – Fogtechnikai labor Budapest | Full cirkon implant specialisták</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --coral: #E05A2B;
+      --coral-light: #F07A4A;
+      --coral-pale: #FBF0EB;
+      --cream: #F8F5F0;
+      --charcoal: #1C1916;
+      --charcoal-soft: #2E2A26;
+      --warm-gray: #7A736B;
+      --warm-gray-light: #C4BDB4;
+      --warm-gray-pale: #EAE5DF;
+      --white: #FDFCFB;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      background: var(--cream);
+
+      color: var(--charcoal);
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 48px;
+      height: 72px;
+      background: rgba(248, 245, 240, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--warm-gray-pale);
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .nav-logo-mark {
+      width: 36px;
+      height: 36px;
+    }
+
+    .nav-logo-text {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--charcoal);
+      letter-spacing: -0.3px;
+    }
+
+    .nav-logo-text span {
+      color: var(--coral);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 36px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--warm-gray);
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 0.2px;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--charcoal); }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .lang-switcher {
+      display: flex;
+      gap: 4px;
+    }
+
+    .lang-btn {
+      padding: 4px 8px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--warm-gray);
+      cursor: pointer;
+      border: none;
+      background: none;
+      font-family: 'Open Sans', sans-serif;
+      letter-spacing: 0.5px;
+      transition: color 0.2s;
+    }
+
+    .lang-btn.active {
+      color: var(--coral);
+    }
+
+    .nav-cta {
+      padding: 10px 22px;
+      background: var(--coral);
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: 'Open Sans', sans-serif;
+      letter-spacing: 0.2px;
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    .nav-cta:hover {
+      background: var(--coral-light);
+      transform: translateY(-1px);
+    }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      padding: 72px 0 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      position: relative;
+      overflow: visible;
+    }
+
+    .hero-left {
+      padding: 72px 48px 72px 80px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+      z-index: 3;
+      background: var(--cream);
+      overflow: visible;
+    }
+
+    .hero-tags {
+      display: flex;
+      gap: 10px;
+      margin-top: 35px;
+      position: relative;
+      z-index: 4;
+      margin-right: -200px;
+    }
+
+    .hero-tag {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      gap: 8px;
+      padding: 18px 16px;
+      background: rgba(255,255,255,0.45);
+      border: 1px solid rgba(255,255,255,0.65);
+      border-radius: 14px;
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.07), inset 0 1px 0 rgba(255,255,255,0.8);
+      flex: 1;
+      min-width: 0;
+    }
+
+    .hero-tag-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      background: var(--coral-pale);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .hero-tag-icon svg {
+      width: 16px;
+      height: 16px;
+      color: var(--coral);
+    }
+
+    .hero-tag-title {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--charcoal);
+      line-height: 1.3;
+    }
+
+    .hero-tag-sub {
+      font-size: 11px;
+      font-weight: 400;
+      color: var(--warm-gray);
+      line-height: 1.3;
+    }
+
+    .hero-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(32px, 3.2vw, 52px);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -1.5px;
+      color: var(--charcoal);
+      margin-bottom: 20px;
+      white-space: nowrap;
+    }
+
+    .hero-title .accent {
+      color: var(--coral);
+      font-family: 'Montserrat', sans-serif;
+      font-style: normal;
+      font-weight: 800;
+      letter-spacing: -2px;
+    }
+
+    .hero-subtitle {
+      font-size: 16px;
+      line-height: 1.75;
+      color: var(--warm-gray);
+      max-width: 460px;
+      margin-bottom: 36px;
+      font-weight: 400;
+    }
+
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .btn-primary {
+      padding: 16px 32px;
+      background: var(--coral);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: 'Open Sans', sans-serif;
+      letter-spacing: 0.2px;
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .btn-primary:hover {
+      background: var(--coral-light);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(224, 90, 43, 0.3);
+    }
+
+    .btn-secondary {
+      padding: 16px 28px;
+      background: transparent;
+      color: var(--charcoal);
+      border: 1.5px solid var(--warm-gray-pale);
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: 500;
+      cursor: pointer;
+      font-family: 'Open Sans', sans-serif;
+      transition: all 0.2s;
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--charcoal);
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 40px;
+    }
+
+    .stat-item {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .stat-number {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 30px;
+      font-weight: 800;
+      color: var(--charcoal);
+      letter-spacing: -1px;
+      line-height: 1;
+    }
+
+    .stat-number span {
+      color: var(--coral);
+    }
+
+    .stat-label {
+      font-size: 12px;
+      color: var(--warm-gray);
+      font-weight: 400;
+      letter-spacing: 0.3px;
+    }
+
+    .stat-divider {
+      width: 1px;
+      background: var(--warm-gray-pale);
+    }
+
+    .hero-right {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-right-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('hero.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .hero-right-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(to right, var(--cream) 0%, transparent 18%),
+        linear-gradient(to top, rgba(28,25,22,0.3) 0%, transparent 50%);
+    }
+
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .award-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      background: rgba(224, 90, 43, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 18px;
+    }
+
+    .award-text {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .award-title {
+      font-size: 13px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.9);
+    }
+
+    .award-sub {
+      font-size: 11px;
+      color: rgba(255,255,255,0.45);
+    }
+
+    .hero-photo-label {
+      position: absolute;
+      top: 40px;
+      right: 40px;
+      font-size: 11px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.3);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      writing-mode: vertical-rl;
+    }
+
+    /* ── USP BAR ── */
+    .usp-bar {
+      background: var(--charcoal);
+      border-top: none;
+      border-bottom: none;
+      padding: 0 80px;
+      display: flex;
+      align-items: center;
+      gap: 0;
+      overflow: hidden;
+    }
+
+    .usp-item {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 28px 0;
+      position: relative;
+    }
+
+    .usp-item:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 20%;
+      height: 60%;
+      width: 1px;
+      background: var(--warm-gray-pale);
+    }
+
+    .usp-item + .usp-item {
+      padding-left: 48px;
+    }
+
+    .usp-item:not(:last-child)::after {
+      background: rgba(255,255,255,0.1);
+    }
+
+    .usp-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background: var(--coral-pale);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .usp-icon svg {
+      width: 20px;
+      height: 20px;
+      color: var(--coral);
+    }
+
+    .usp-text h4 {
+      font-size: 14px;
+      font-weight: 700;
+      color: rgba(255,255,255,0.9);
+      margin-bottom: 2px;
+    }
+
+    .usp-text p {
+      font-size: 12px;
+      color: rgba(255,255,255,0.5);
+      font-weight: 400;
+    }
+
+    /* ── SERVICES ── */
+    .section {
+      padding: 96px 80px;
+    }
+
+    .section-label {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--coral);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section-label::before {
+      content: '';
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--coral);
+    }
+
+    .section-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(32px, 3vw, 46px);
+      font-weight: 800;
+      letter-spacing: -1.5px;
+      line-height: 1.1;
+      color: var(--charcoal);
+      margin-bottom: 16px;
+    }
+
+    .section-title .serif {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      font-style: normal;
+      color: var(--coral);
+    }
+
+    .section-desc {
+      font-size: 16px;
+      color: var(--warm-gray);
+      line-height: 1.7;
+      max-width: 520px;
+      margin-bottom: 56px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .service-card {
+      background: var(--white);
+      border: 1px solid var(--warm-gray-pale);
+      border-radius: 14px;
+      padding: 36px 32px;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .service-card:hover {
+      border-color: var(--coral);
+      transform: translateY(-4px);
+      box-shadow: 0 16px 48px rgba(224, 90, 43, 0.12);
+    }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--coral);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s ease;
+    }
+
+    .service-card:hover::before { transform: scaleX(1); }
+
+    .service-number {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--warm-gray-light);
+      letter-spacing: 1px;
+      margin-bottom: 20px;
+    }
+
+    .service-icon-wrap {
+      width: 52px;
+      height: 52px;
+      border-radius: 12px;
+      background: var(--coral-pale);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      font-size: 22px;
+    }
+
+    .service-card h3 {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--charcoal);
+      letter-spacing: -0.3px;
+      margin-bottom: 10px;
+      line-height: 1.3;
+    }
+
+    .service-card p {
+      font-size: 14px;
+      color: var(--warm-gray);
+      line-height: 1.65;
+      margin-bottom: 24px;
+    }
+
+    .service-link {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--coral);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: gap 0.2s;
+    }
+
+    .service-link:hover { gap: 10px; }
+
+    .service-card.featured {
+      background: var(--charcoal);
+      border-color: var(--charcoal);
+    }
+
+    .service-card.featured h3,
+    .service-card.featured .service-number { color: rgba(255,255,255,0.9); }
+
+    .service-card.featured p { color: rgba(255,255,255,0.5); }
+
+    .service-card.featured .service-icon-wrap {
+      background: rgba(224,90,43,0.2);
+    }
+
+    .service-card.featured::before { background: var(--coral-light); }
+
+    .service-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 3px 10px;
+      background: var(--coral);
+      border-radius: 100px;
+      font-size: 10px;
+      font-weight: 700;
+      color: white;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    /* ── PROCESS ── */
+    .section-alt {
+      padding: 96px 80px;
+      background: var(--white);
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .process-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .step {
+      display: flex;
+      gap: 24px;
+      padding: 28px 0;
+      border-bottom: 1px solid var(--warm-gray-pale);
+      position: relative;
+    }
+
+    .step:last-child { border-bottom: none; }
+
+    .step-number {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      background: var(--coral-pale);
+      color: var(--coral);
+      font-size: 13px;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .step-content h4 {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--charcoal);
+      margin-bottom: 6px;
+    }
+
+    .step-content p {
+      font-size: 13px;
+      color: var(--warm-gray);
+      line-height: 1.6;
+    }
+
+    .process-visual {
+      background: var(--charcoal-soft);
+      border-radius: 20px;
+      padding: 48px;
+      position: relative;
+      overflow: hidden;
+      min-height: 480px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+
+    .process-visual-bg {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 60% 30%, rgba(224,90,43,0.2) 0%, transparent 65%);
+    }
+
+    .process-quote {
+      position: relative;
+      z-index: 2;
+    }
+
+    .process-quote-mark {
+      font-size: 64px;
+      line-height: 0.8;
+      color: var(--coral);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    .process-quote blockquote {
+      font-size: 17px;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.85);
+      font-style: normal;
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 300;
+      margin-bottom: 24px;
+    }
+
+    .process-quote-author {
+      font-size: 12px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.4);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    /* ── PILOT CTA ── */
+    .pilot-section {
+      padding: 96px 80px;
+      background: var(--cream);
+    }
+
+    .pilot-inner {
+      background: var(--charcoal);
+      border-radius: 24px;
+      padding: 72px 80px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 60px;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pilot-inner::before {
+      content: 'PILOT';
+      position: absolute;
+      right: -20px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 180px;
+      font-weight: 800;
+      color: rgba(255,255,255,0.03);
+      letter-spacing: -5px;
+      pointer-events: none;
+    }
+
+    .pilot-bg-circle {
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(224,90,43,0.15) 0%, transparent 70%);
+      left: -100px;
+      top: -100px;
+    }
+
+    .pilot-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .pilot-content .section-label {
+      color: var(--coral-light);
+    }
+
+    .pilot-content .section-label::before {
+      background: var(--coral-light);
+    }
+
+    .pilot-content h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(28px, 3vw, 42px);
+      font-weight: 800;
+      letter-spacing: -1.2px;
+      color: white;
+      line-height: 1.1;
+      margin-bottom: 16px;
+    }
+
+    .pilot-content p {
+      font-size: 16px;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.7;
+      max-width: 480px;
+    }
+
+    .pilot-features {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 32px;
+    }
+
+    .pilot-feature {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+      color: rgba(255,255,255,0.7);
+    }
+
+    .pilot-feature-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--coral);
+      flex-shrink: 0;
+    }
+
+    .pilot-action {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .btn-coral-big {
+      padding: 20px 40px;
+      background: var(--coral);
+      color: white;
+      border: none;
+      border-radius: 12px;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      font-family: 'Open Sans', sans-serif;
+      letter-spacing: 0.2px;
+      white-space: nowrap;
+      transition: all 0.2s;
+    }
+
+    .btn-coral-big:hover {
+      background: var(--coral-light);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 32px rgba(224,90,43,0.4);
+    }
+
+    .pilot-note {
+      font-size: 12px;
+      color: rgba(255,255,255,0.3);
+      text-align: center;
+    }
+
+    /* ── TRUST LOGOS ── */
+    .trust-section {
+      padding: 56px 80px;
+      border-top: 1px solid var(--warm-gray-pale);
+      border-bottom: 1px solid var(--warm-gray-pale);
+      background: var(--white);
+    }
+
+    .trust-label {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--warm-gray-light);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    .trust-logos {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 56px;
+    }
+
+    .trust-logo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .trust-logo-box {
+      padding: 10px 20px;
+      border: 1.5px solid var(--warm-gray-pale);
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--warm-gray);
+      letter-spacing: 0.5px;
+    }
+
+    .trust-logo-sub {
+      font-size: 10px;
+      color: var(--warm-gray-light);
+      letter-spacing: 0.5px;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      padding: 48px 80px;
+      background: var(--charcoal);
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr auto;
+      gap: 40px;
+      align-items: start;
+    }
+
+    .footer-brand .nav-logo-text {
+      color: rgba(255,255,255,0.9);
+      font-size: 20px;
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .footer-brand p {
+      font-size: 13px;
+      color: rgba(255,255,255,0.4);
+      line-height: 1.6;
+      max-width: 240px;
+    }
+
+    .footer-col h5 {
+      font-size: 12px;
+      font-weight: 700;
+      color: rgba(255,255,255,0.5);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .footer-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .footer-col ul a {
+      text-decoration: none;
+      font-size: 14px;
+      color: rgba(255,255,255,0.5);
+      transition: color 0.2s;
+    }
+
+    .footer-col ul a:hover { color: rgba(255,255,255,0.9); }
+
+    .footer-contact p {
+      font-size: 14px;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.8;
+    }
+
+    .footer-contact a {
+      color: var(--coral-light);
+      text-decoration: none;
+    }
+
+    /* ── SCROLL ANIMATIONS ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="/" class="nav-logo">
+    <img src="logo.png" alt="Bridge Dental" style="height: 36px; width: auto;">
+  </a>
+
+  <ul class="nav-links">
+    <li><a href="#rolunk">Rólunk</a></li>
+    <li><a href="#szolgaltatasok">Szolgáltatások</a></li>
+    <li><a href="#referenciak">Referenciák</a></li>
+    <li><a href="#blog">Blog</a></li>
+    <li><a href="#kapcsolat">Kapcsolat</a></li>
+  </ul>
+
+  <div class="nav-right">
+    <div class="lang-switcher">
+      <button class="lang-btn active">HU</button>
+      <button class="lang-btn">DE</button>
+      <button class="lang-btn">EN</button>
+    </div>
+    <button class="nav-cta">Pilot projekt →</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <h1 class="hero-title">
+      Fogtechnikai labor<br>
+      <span class="accent">Budapesten</span>
+    </h1>
+
+    <p class="hero-subtitle">
+      Komplex implantátumos és esztétikai fogpótlások, amelyekre fogorvosként biztosan számíthat — kiszámítható minőséggel, minden esetben.
+    </p>
+
+    <div class="hero-actions">
+      <button class="btn-primary">
+        Indítsunk pilot projektet
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+          <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+      <button class="btn-secondary">Szolgáltatások</button>
+    </div>
+
+    <div class="hero-tags">
+      <div class="hero-tag">
+        <div class="hero-tag-icon">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M8 2C5.5 2 3 4 3 6.5c0 1.5.8 3 2 4.5l1.2 2.5c.4.8 1 1 1.8 1s1.4-.7.8-2C8.2 11 8.5 9 10.5 8.5S13 7 13 5.5C13 3.5 10.5 2 8 2z"/>
+          </svg>
+        </div>
+        <div class="hero-tag-title">Full cirkon implant megoldások</div>
+        <div class="hero-tag-sub">All-on-X specializáció</div>
+      </div>
+      <div class="hero-tag">
+        <div class="hero-tag-icon">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="8" cy="8" r="6"/>
+            <path d="M8 5v3l2 1.5"/>
+          </svg>
+        </div>
+        <div class="hero-tag-title">20+ év tapasztalat</div>
+        <div class="hero-tag-sub">Német és osztrák piac</div>
+      </div>
+      <div class="hero-tag">
+        <div class="hero-tag-icon">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 8l3 3 7-6"/>
+          </svg>
+        </div>
+        <div class="hero-tag-title">ICDE partner</div>
+        <div class="hero-tag-sub">Digitális protetikai workflow</div>
+      </div>
+      <div class="hero-tag">
+        <div class="hero-tag-icon">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M8 2l1.5 3 3.5.5-2.5 2.5.6 3.5L8 10 4.9 11.5l.6-3.5L3 5.5 6.5 5z"/>
+          </svg>
+        </div>
+        <div class="hero-tag-title">Díjnyertes fogtechnikai labor</div>
+        <div class="hero-tag-sub">HDA „Legjobb labor"</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="hero-right-bg"></div>
+  </div>
+</section>
+
+<!-- USP BAR -->
+<div class="usp-bar">
+  <div class="usp-item">
+    <div class="usp-icon">
+      <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M9 12l2 2 4-4M5 10a5 5 0 1010 0A5 5 0 005 10z"/>
+      </svg>
+    </div>
+    <div class="usp-text">
+      <h4>Többlépcsős minőségellenőrzés</h4>
+      <p>Saját, dokumentált ellenőrzési rendszer</p>
+    </div>
+  </div>
+  <div class="usp-item">
+    <div class="usp-icon">
+      <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M3 10l4 4 10-8"/>
+      </svg>
+    </div>
+    <div class="usp-text">
+      <h4>Házon belüli gyártás</h4>
+      <p>CAD-CAM + Stratasys 3D nyomtatás</p>
+    </div>
+  </div>
+  <div class="usp-item">
+    <div class="usp-icon">
+      <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="10" cy="10" r="7"/>
+        <path d="M10 6v4l3 2"/>
+      </svg>
+    </div>
+    <div class="usp-text">
+      <h4>Kiszámítható átfutási idő</h4>
+      <p>Kevesebb chairside korrekció</p>
+    </div>
+  </div>
+  <div class="usp-item">
+    <div class="usp-icon">
+      <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M4 6h12M4 10h8M4 14h6"/>
+      </svg>
+    </div>
+    <div class="usp-text">
+      <h4>Letölthető megrendelőlap</h4>
+      <p>Technikai specifikációk + dokumentáció</p>
+    </div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="section" id="szolgaltatasok">
+  <div class="section-label">Szolgáltatások</div>
+  <h2 class="section-title">Digitális fogtechnika,<br><span class="serif">minden szinten</span></h2>
+  <p class="section-desc">CAD-CAM technológiával és 3D nyomtatással készülő pótlások — a komplex All-on-X rehabilitációktól az esztétikai kerámiáig.</p>
+
+  <div class="services-grid">
+    <div class="service-card featured reveal">
+      <div class="service-tag">⭐ Fő specialitás</div>
+      <div class="service-number">01</div>
+      <div class="service-icon-wrap">🦷</div>
+      <h3>Full cirkon implant megoldások</h3>
+      <p>All-on-X rehabilitációk, implantátumra készülő cirkon koronák és hidak, teljes íves restaurációk — ahol a pontosság kritikus.</p>
+      <a class="service-link" href="#">Részletek →</a>
+    </div>
+
+    <div class="service-card reveal reveal-delay-1">
+      <div class="service-number">02</div>
+      <div class="service-icon-wrap">✨</div>
+      <h3>Esztétikai kerámia pótlások</h3>
+      <p>Ivoclar e.max préskerámia és full cirkon természetes fogakra — ott ahol az esztétika az elsődleges szempont.</p>
+      <a class="service-link" href="#">Részletek →</a>
+    </div>
+
+    <div class="service-card reveal reveal-delay-2">
+      <div class="service-tag">Újdonság</div>
+      <div class="service-number">03</div>
+      <div class="service-icon-wrap">🖨️</div>
+      <h3>Digitális fogsorok — TrueDent</h3>
+      <p>Stratasys TrueDent biokompatibilis 3D nyomtatott fogsorok — az első valóban esztétikus digitális fogsor megoldás.</p>
+      <a class="service-link" href="#">Részletek →</a>
+    </div>
+
+    <div class="service-card reveal">
+      <div class="service-number">04</div>
+      <div class="service-icon-wrap">🔬</div>
+      <h3>Digitális tervezés</h3>
+      <p>CAD alapú virtuális 3D tervezés — emergence profile, okklúzió és esztétikai arányok előre meghatározva a gyártás előtt.</p>
+      <a class="service-link" href="#">Részletek →</a>
+    </div>
+
+    <div class="service-card reveal reveal-delay-1">
+      <div class="service-number">05</div>
+      <div class="service-icon-wrap">⚙️</div>
+      <h3>Digitális fogtechnika</h3>
+      <p>Teljes digitális munkafolyamat — szkenneléstől a CAM gyártásig. Minden munka ellenőrzött, dokumentált és visszakövethető.</p>
+      <a class="service-link" href="#">Részletek →</a>
+    </div>
+
+    <div class="service-card reveal reveal-delay-2" style="display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; border-style: dashed;">
+      <div style="font-size:32px; margin-bottom:16px;">📋</div>
+      <h3 style="font-size:16px;">Kérdése van?</h3>
+      <p style="font-size:13px; margin-bottom:20px;">Indítsunk 3–5 eset pilot projektet kockázatmentesen.</p>
+      <button class="btn-primary" style="font-size:13px; padding:12px 24px;">Kapcsolatfelvétel →</button>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="section-alt" id="rolunk">
+  <div class="process-grid">
+    <div>
+      <div class="section-label">Munkafolyamat</div>
+      <h2 class="section-title">Hogyan<br><span class="serif">dolgozunk</span></h2>
+      <p class="section-desc" style="margin-bottom:40px;">A digitális workflow nem csupán technológiai fejlesztés — egy komplex rendszer, amely a teljes folyamatot lefedi.</p>
+
+      <div class="process-steps">
+        <div class="step reveal">
+          <div class="step-number">01</div>
+          <div class="step-content">
+            <h4>Digitális adatfelvétel</h4>
+            <p>Intraorális szkennelés vagy hagyományos lenyomat digitalizálása — pontos, torzításmentes 3D alapadatok.</p>
+          </div>
+        </div>
+        <div class="step reveal reveal-delay-1">
+          <div class="step-number">02</div>
+          <div class="step-content">
+            <h4>Virtuális 3D tervezés (CAD)</h4>
+            <p>Emergence profile, okklúziós viszonyok és esztétikai forma — a kritikus döntések a tervezési fázisban születnek.</p>
+          </div>
+        </div>
+        <div class="step reveal reveal-delay-2">
+          <div class="step-number">03</div>
+          <div class="step-content">
+            <h4>Tervezési kontroll és egyeztetés</h4>
+            <p>Komplex eseteknél előzetes ellenőrzés és egyeztetés lehetséges — a hibák még gyártás előtt korrigálhatók.</p>
+          </div>
+        </div>
+        <div class="step reveal">
+          <div class="step-number">04</div>
+          <div class="step-content">
+            <h4>CAM gyártás és minőségellenőrzés</h4>
+            <p>Nagy pontosságú marógép vagy 3D nyomtatás, majd többlépcsős dokumentált ellenőrzés.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="process-visual reveal">
+      <div class="process-visual-bg"></div>
+      <div class="process-quote">
+        <span class="process-quote-mark">"</span>
+        <blockquote>
+          Azért dolgozunk, hogy az esztétikai fogpótlások és a legösszetettebb implantátumos esetek kiszámítható, stabil és esztétikus eredménnyel záruljanak — mind a fogorvos, mind a beteg számára.
+        </blockquote>
+        <div class="process-quote-author">Bridge Dental — Küldetés</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST -->
+<div class="trust-section">
+  <div class="trust-label">Elismerések és partnerségek</div>
+  <div class="trust-logos">
+    <div class="trust-logo">
+      <div class="trust-logo-box">HDA</div>
+      <div class="trust-logo-sub">Legjobb labor díj</div>
+    </div>
+    <div class="trust-logo">
+      <div class="trust-logo-box">ICDE</div>
+      <div class="trust-logo-sub">Hivatalos partner</div>
+    </div>
+    <div class="trust-logo">
+      <div class="trust-logo-box">KZW 2019</div>
+      <div class="trust-logo-sub">6. helyezés</div>
+    </div>
+    <div class="trust-logo">
+      <div class="trust-logo-box">Stratasys</div>
+      <div class="trust-logo-sub">TrueDent technológia</div>
+    </div>
+    <div class="trust-logo">
+      <div class="trust-logo-box">Ivoclar</div>
+      <div class="trust-logo-sub">e.max anyagok</div>
+    </div>
+  </div>
+</div>
+
+<!-- PILOT CTA -->
+<section class="pilot-section" id="pilot">
+  <div class="pilot-inner reveal">
+    <div class="pilot-bg-circle"></div>
+    <div class="pilot-content">
+      <div class="section-label">Kockázatmentes együttműködés</div>
+      <h2>Próbálja ki 3–5 esettel,<br>mielőtt dönt</h2>
+      <p>A pilot program lehetővé teszi, hogy saját esetein tapasztalja meg a digitális munkafolyamatunkat és a minőségünket — kötelezettség nélkül.</p>
+      <div class="pilot-features">
+        <div class="pilot-feature"><span class="pilot-feature-dot"></span>3–5 eset kockázatmentesen</div>
+        <div class="pilot-feature"><span class="pilot-feature-dot"></span>Személyes konzultáció és egyeztetés</div>
+        <div class="pilot-feature"><span class="pilot-feature-dot"></span>Letölthető megrendelőlap és technikai spec</div>
+      </div>
+    </div>
+    <div class="pilot-action">
+      <button class="btn-coral-big">Indítsunk pilot projektet</button>
+      <div class="pilot-note">Ingyenes, kötelezettség nélkül</div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="kapcsolat">
+  <div class="footer-brand">
+    <img src="logo.png" alt="Bridge Dental" style="height: 32px; width: auto; filter: brightness(0) invert(1); opacity: 0.85; margin-bottom: 12px; display: block;">
+    <p>B2B fogtechnikai labor Budapest — full cirkon implant specialisták fogorvosok és rendelők számára.</p>
+  </div>
+
+  <div class="footer-col">
+    <h5>Szolgáltatások</h5>
+    <ul>
+      <li><a href="#">Full cirkon implant</a></li>
+      <li><a href="#">Esztétikai kerámia</a></li>
+      <li><a href="#">Digitális fogsorok</a></li>
+      <li><a href="#">Digitális tervezés</a></li>
+    </ul>
+  </div>
+
+  <div class="footer-col">
+    <h5>Cég</h5>
+    <ul>
+      <li><a href="#">Rólunk</a></li>
+      <li><a href="#">Referenciák</a></li>
+      <li><a href="#">Blog</a></li>
+      <li><a href="#">Pilot program</a></li>
+    </ul>
+  </div>
+
+  <div class="footer-contact">
+    <h5 style="font-size:12px;font-weight:700;color:rgba(255,255,255,0.5);letter-spacing:1px;text-transform:uppercase;margin-bottom:16px;">Kapcsolat</h5>
+    <p>
+      <a href="mailto:denescsaszar@gmail.com">denescsaszar@gmail.com</a><br>
+      <a href="tel:+36703966655">+36 70 396 6655</a><br><br>
+      Budapest, Magyarország<br>
+      <span style="margin-top:12px;display:block;font-size:12px;opacity:0.4;">bridgedental.hu</span>
+    </p>
+  </div>
+</footer>
+
+<script>
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  reveals.forEach(el => observer.observe(el));
+
+  // Lang switcher
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    });
+  });
+
+  // Nav scroll effect
+  const nav = document.querySelector('nav');
+  window.addEventListener('scroll', () => {
+    nav.style.boxShadow = window.scrollY > 20
+      ? '0 2px 20px rgba(0,0,0,0.08)'
+      : 'none';
+  });
+</script>
+
+</body>
+</html>
