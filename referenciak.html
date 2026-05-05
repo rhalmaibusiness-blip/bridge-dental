@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Referenciák – Bridge Dental | Fogtechnikai labor Budapest</title>
+  <meta name="description" content="Bridge Dental referenciák és esettanulmányok — hamarosan.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --coral: #E05A2B;
+      --coral-light: #F07A4A;
+      --coral-pale: #FBF0EB;
+      --cream: #F8F5F0;
+      --charcoal: #1C1916;
+      --charcoal-soft: #2E2A26;
+      --warm-gray: #7A736B;
+      --warm-gray-light: #C4BDB4;
+      --warm-gray-pale: #EAE5DF;
+      --white: #FDFCFB;
+    }
+
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Open Sans', sans-serif; background: var(--cream); color: var(--charcoal); overflow-x: hidden; }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 48px; height: 72px;
+      background: rgba(248,245,240,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--warm-gray-pale);
+    }
+    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-logo-text { font-family: 'Montserrat', sans-serif; font-size: 18px; font-weight: 700; color: var(--charcoal); letter-spacing: -0.3px; }
+    .nav-logo-text span { color: var(--coral); }
+    .nav-links { display: flex; align-items: center; gap: 36px; list-style: none; }
+    .nav-links a { text-decoration: none; color: var(--charcoal); font-size: 14px; font-weight: 500; letter-spacing: 0.2px; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--coral); }
+    .nav-links a.active { color: var(--coral); }
+    .nav-dropdown { position: relative; }
+    .nav-dropdown > a { display: flex; align-items: center; gap: 5px; }
+    .nav-dropdown > a svg { width: 12px; height: 12px; transition: transform 0.2s; }
+    .nav-dropdown:hover > a svg { transform: rotate(180deg); }
+    .dropdown-menu { position: absolute; top: 100%; left: 50%; padding-top: 12px; transform: translateX(-50%); list-style: none; min-width: 240px; opacity: 0; visibility: hidden; transition: opacity 0.2s, visibility 0.2s; z-index: 200; }
+    .dropdown-menu-inner { background: white; border: 1px solid var(--warm-gray-pale); border-radius: 14px; padding: 8px; box-shadow: 0 12px 40px rgba(0,0,0,0.1); }
+    .nav-dropdown:hover .dropdown-menu { opacity: 1; visibility: visible; }
+    .dropdown-menu li a { display: block; padding: 10px 14px; border-radius: 8px; font-size: 13px; color: var(--charcoal); transition: background 0.15s, color 0.15s; white-space: nowrap; }
+    .dropdown-menu li a:hover { background: var(--coral-pale); color: var(--coral); }
+    .dropdown-menu li a.active { color: var(--coral); font-weight: 600; }
+    .nav-right { display: flex; align-items: center; gap: 24px; }
+    .lang-switcher { display: flex; gap: 4px; }
+    .lang-btn { padding: 4px 8px; font-size: 12px; font-weight: 600; color: var(--warm-gray); cursor: pointer; border: none; background: none; font-family: 'Open Sans', sans-serif; letter-spacing: 0.5px; transition: color 0.2s; }
+    .lang-btn.active { color: var(--coral); }
+    .nav-cta { padding: 10px 22px; background: var(--coral); color: white; border: none; border-radius: 6px; font-size: 13px; font-weight: 600; cursor: pointer; font-family: 'Open Sans', sans-serif; letter-spacing: 0.2px; transition: background 0.2s, transform 0.15s; text-decoration: none; display: inline-block; }
+    .nav-cta:hover { background: var(--coral-light); transform: translateY(-1px); }
+
+    /* ── HAMAROSAN ── */
+    .coming-soon {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 72px 48px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .coming-soon-bg {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+    }
+    .coming-soon-bg-circle-1 {
+      position: absolute;
+      top: -100px; right: -100px;
+      width: 600px; height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(224,90,43,0.07) 0%, transparent 70%);
+    }
+    .coming-soon-bg-circle-2 {
+      position: absolute;
+      bottom: -150px; left: -100px;
+      width: 500px; height: 500px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(224,90,43,0.05) 0%, transparent 70%);
+    }
+    .coming-soon-bg-text {
+      position: absolute;
+      bottom: -20px; right: -10px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(120px, 18vw, 260px);
+      font-weight: 800;
+      color: rgba(0,0,0,0.03);
+      letter-spacing: -8px;
+      line-height: 1;
+      user-select: none;
+      white-space: nowrap;
+    }
+
+    .coming-soon-inner {
+      position: relative;
+      z-index: 2;
+      max-width: 680px;
+      text-align: center;
+    }
+
+    .coming-soon-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--coral-pale);
+      border: 1px solid rgba(224,90,43,0.2);
+      border-radius: 100px;
+      padding: 8px 18px;
+      margin-bottom: 36px;
+    }
+    .coming-soon-badge-dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: var(--coral);
+      animation: pulse 2s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(0.8); }
+    }
+    .coming-soon-badge span {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--coral);
+    }
+
+    .coming-soon-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(48px, 7vw, 96px);
+      font-weight: 800;
+      letter-spacing: -3px;
+      line-height: 1.0;
+      color: var(--charcoal);
+      margin-bottom: 28px;
+    }
+    .coming-soon-title .accent {
+      color: var(--coral);
+    }
+
+    .coming-soon-desc {
+      font-size: 17px;
+      line-height: 1.75;
+      color: var(--warm-gray);
+      max-width: 480px;
+      margin: 0 auto 48px;
+    }
+
+    .coming-soon-divider {
+      width: 48px;
+      height: 2px;
+      background: var(--warm-gray-pale);
+      margin: 0 auto 48px;
+      border-radius: 2px;
+    }
+
+    .coming-soon-actions {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      padding: 16px 32px;
+      background: var(--coral);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      letter-spacing: 0.2px;
+      transition: all 0.2s;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .btn-primary:hover { background: var(--coral-light); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(224,90,43,0.3); }
+
+    .btn-secondary {
+      padding: 16px 28px;
+      background: transparent;
+      color: var(--charcoal);
+      border: 1.5px solid var(--warm-gray-pale);
+      border-radius: 8px;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 15px;
+      font-weight: 500;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .btn-secondary:hover { border-color: var(--coral); color: var(--coral); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--charcoal);
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+      gap: 48px;
+      padding: 64px 80px;
+    }
+    .footer-brand p { font-size: 13px; color: rgba(255,255,255,0.4); line-height: 1.6; max-width: 240px; margin-top: 12px; }
+    .footer-col h5 { font-size: 12px; font-weight: 700; color: rgba(255,255,255,0.5); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 16px; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .footer-col ul a { text-decoration: none; font-size: 14px; color: rgba(255,255,255,0.5); transition: color 0.2s; }
+    .footer-col ul a:hover { color: rgba(255,255,255,0.9); }
+    .footer-bottom { background: var(--charcoal); border-top: 1px solid rgba(255,255,255,0.06); padding: 20px 80px; display: flex; justify-content: space-between; align-items: center; }
+    .footer-bottom p { font-size: 12px; color: rgba(255,255,255,0.25); }
+
+    @media (max-width: 768px) {
+      nav { padding: 0 20px; }
+      .nav-links, .lang-switcher { display: none; }
+      .coming-soon { padding: 100px 24px 48px; }
+      .coming-soon-title { letter-spacing: -2px; }
+      .coming-soon-actions { flex-direction: column; align-items: stretch; }
+      footer { grid-template-columns: 1fr; padding: 40px 20px; gap: 32px; }
+      .footer-bottom { padding: 20px; flex-direction: column; gap: 8px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">
+    <img src="logo.png" alt="Bridge Dental" style="height: 32px; width: auto;">
+    <span class="nav-logo-text">Bridge<span>Dental</span></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="rolunk.html">Rólunk</a></li>
+    <li class="nav-dropdown">
+      <a href="index.html#szolgaltatasok">Szolgáltatások <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></a>
+      <ul class="dropdown-menu">
+        <div class="dropdown-menu-inner">
+          <li><a href="#">Full cirkon implant megoldások</a></li>
+          <li><a href="#">Esztétikai kerámia pótlások</a></li>
+          <li><a href="#">Digitális fogsorok — TrueDent</a></li>
+          <li><a href="digitalis-tervezes.html">Digitális tervezés</a></li>
+          <li><a href="#">Digitális fogtechnika</a></li>
+        </div>
+      </ul>
+    </li>
+    <li><a href="referenciak.html" class="active">Referenciák</a></li>
+    <li><a href="index.html#blog">Blog</a></li>
+    <li><a href="#kapcsolat">Kapcsolat</a></li>
+  </ul>
+  <div class="nav-right">
+    <div class="lang-switcher">
+      <button class="lang-btn active">HU</button>
+      <button class="lang-btn">DE</button>
+      <button class="lang-btn">EN</button>
+    </div>
+    <a href="index.html#kapcsolat" class="nav-cta">Kapcsolatfelvétel</a>
+  </div>
+</nav>
+
+<!-- HAMAROSAN -->
+<section class="coming-soon">
+  <div class="coming-soon-bg">
+    <div class="coming-soon-bg-circle-1"></div>
+    <div class="coming-soon-bg-circle-2"></div>
+    <div class="coming-soon-bg-text">Ref.</div>
+  </div>
+
+  <div class="coming-soon-inner">
+    <div class="coming-soon-badge">
+      <span class="coming-soon-badge-dot"></span>
+      <span>Készül</span>
+    </div>
+
+    <h1 class="coming-soon-title">Hama<span class="accent">rosan.</span></h1>
+
+    <div class="coming-soon-divider"></div>
+
+    <p class="coming-soon-desc">Esettanulmányainkat és referenciamunkáinkat jelenleg dokumentáljuk. Rövidesen részletes betekintést nyújtunk komplex implantátumos és esztétikai eseteinke.</p>
+
+    <div class="coming-soon-actions">
+      <a href="index.html#kapcsolat" class="btn-primary">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.07 12 19.79 19.79 0 0 1 1 3.18C1 2.09 1.9 1 3 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16z"/></svg>
+        Vegye fel velünk a kapcsolatot
+      </a>
+      <a href="index.html#szolgaltatasok" class="btn-secondary">Szolgáltatásaink</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="kapcsolat">
+  <div class="footer-brand">
+    <img src="logo.png" alt="Bridge Dental" style="height: 32px; width: auto; filter: brightness(0) invert(1); opacity: 0.85; display: block;">
+    <p>Budapesti B2B fogtechnikai labor — implantológiára és cirkon munkákra specializálva, rendelők, klinikák és magánfogorvosok számára.</p>
+  </div>
+  <div class="footer-col">
+    <h5>Szolgáltatásaink</h5>
+    <ul>
+      <li><a href="#">Full cirkon implant megoldások</a></li>
+      <li><a href="#">Esztétikai kerámia pótlások</a></li>
+      <li><a href="#">Digitális fogsorok — TrueDent</a></li>
+      <li><a href="digitalis-tervezes.html">Digitális tervezés</a></li>
+      <li><a href="#">Digitális fogtechnika</a></li>
+    </ul>
+  </div>
+  <div class="footer-col">
+    <h5>Navigáció</h5>
+    <ul>
+      <li><a href="rolunk.html">Rólunk</a></li>
+      <li><a href="index.html#szolgaltatasok">Szolgáltatások</a></li>
+      <li><a href="referenciak.html">Referenciák</a></li>
+      <li><a href="index.html#blog">Blog</a></li>
+      <li><a href="#kapcsolat">Kapcsolat</a></li>
+    </ul>
+  </div>
+  <div class="footer-col">
+    <h5>Kapcsolat</h5>
+    <ul>
+      <li><a href="tel:+36703966656">+36 / (70) 396 6656</a></li>
+      <li><a href="mailto:info@bridgedental.hu">info@bridgedental.hu</a></li>
+      <li><a href="#">1106 Bp. Fehér út 10.</a></li>
+      <li style="margin-top: 16px;"><a href="#">Adatkezelési tájékoztató</a></li>
+      <li><a href="#">Cookie nyilatkozat</a></li>
+    </ul>
+  </div>
+</footer>
+<div class="footer-bottom">
+  <p>© 2026 Bridge Dental — Minden jog fenntartva.</p>
+  <p>CAD/CAM fogtechnikai labor Budapest</p>
+</div>
+
+</body>
+</html>
