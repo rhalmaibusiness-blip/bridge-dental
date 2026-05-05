@@ -612,6 +612,40 @@
       color: rgba(255,255,255,0.25);
     }
 
+    /* ── MIÉRT VÁLASSZON ── */
+    .alapelv-bar {
+      background: var(--charcoal);
+      display: grid; grid-template-columns: repeat(3, 1fr);
+    }
+    .alapelv-header {
+      background: var(--charcoal);
+      padding: 56px 80px 0;
+    }
+    .alapelv-header p {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(22px, 2.5vw, 32px);
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: white;
+    }
+    .alapelv-item {
+      padding: 36px 48px;
+      display: flex; gap: 20px; align-items: flex-start;
+      position: relative;
+    }
+    .alapelv-item:not(:last-child)::after {
+      content: ''; position: absolute; right: 0; top: 20%; height: 60%;
+      width: 1px; background: rgba(255,255,255,0.07);
+    }
+    .alapelv-icon {
+      width: 46px; height: 46px; border-radius: 11px;
+      background: rgba(224,90,43,0.14);
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .alapelv-icon svg { width: 22px; height: 22px; color: var(--coral); }
+    .alapelv-text h4 { font-size: 15px; font-weight: 700; color: white; margin-bottom: 6px; }
+    .alapelv-text p { font-size: 13px; color: rgba(255,255,255,0.65); line-height: 1.6; }
+
     /* ── CSAPAT NÉVJEGYEK ── */
     .contact-grid {
       display: grid;
@@ -767,6 +801,10 @@
       .intro-grid, .system-grid, .form-inner { grid-template-columns: 1fr; gap: 48px; }
       .intro-visual { position: static; }
       .benefits-grid { grid-template-columns: repeat(2, 1fr); }
+      .alapelv-bar { grid-template-columns: 1fr; }
+      .alapelv-header { padding: 40px 20px 0; }
+      .alapelv-item { padding: 28px 20px; }
+      .alapelv-item:not(:last-child)::after { display: none; }
       .contact-grid { grid-template-columns: repeat(2, 1fr); }
       footer { grid-template-columns: 1fr 1fr; gap: 32px; }
     }
@@ -931,6 +969,40 @@
     </div>
   </div>
 </section>
+
+<!-- MIÉRT VÁLASSZON -->
+<div class="alapelv-header reveal">
+  <p>Miért válasszon minket?</p>
+</div>
+<div class="alapelv-bar reveal">
+  <div class="alapelv-item">
+    <div class="alapelv-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+    </div>
+    <div class="alapelv-text">
+      <h4>Pontosság</h4>
+      <p>Az egyeztetett határidőket minden esetben tartjuk — így Ön előre tervezhet.</p>
+    </div>
+  </div>
+  <div class="alapelv-item">
+    <div class="alapelv-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+    </div>
+    <div class="alapelv-text">
+      <h4>Magas minőség</h4>
+      <p>Minden munkát úgy adunk ki, hogy az megfeleljen az Ön és a saját szakmai elvárásainknak is.</p>
+    </div>
+  </div>
+  <div class="alapelv-item">
+    <div class="alapelv-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+    </div>
+    <div class="alapelv-text">
+      <h4>Megbízhatóság</h4>
+      <p>Pontosan azt készítjük el, amiben megállapodtunk — kiszámítható eredménnyel, kompromisszumok nélkül.</p>
+    </div>
+  </div>
+</div>
 
 <!-- ELŐNYÖK -->
 <section class="section section-alt">
