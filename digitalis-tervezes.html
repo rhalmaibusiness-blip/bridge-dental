@@ -612,39 +612,111 @@
       color: rgba(255,255,255,0.25);
     }
 
-    /* ── MIÉRT VÁLASSZON ── */
-    .alapelv-bar {
+    /* ── PARTNERI ELŐNYÖK ── */
+    .alapelv-section {
       background: var(--charcoal);
-      display: grid; grid-template-columns: repeat(3, 1fr);
+      padding: 72px 80px 80px;
+      position: relative;
+      overflow: hidden;
+    }
+    .alapelv-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 12% 0%, rgba(224,90,43,0.18), transparent 34%),
+        linear-gradient(135deg, rgba(255,255,255,0.055), transparent 38%);
+      pointer-events: none;
     }
     .alapelv-header {
-      background: var(--charcoal);
-      padding: 56px 80px 0;
+      max-width: 900px;
+      margin-bottom: 42px;
+      position: relative;
+      z-index: 1;
+    }
+    .alapelv-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--coral-light);
+      margin-bottom: 20px;
+    }
+    .alapelv-kicker::before {
+      content: '';
+      width: 40px;
+      height: 2px;
+      background: var(--coral-light);
+      border-radius: 2px;
+    }
+    .alapelv-header h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(30px, 4vw, 56px);
+      font-weight: 800;
+      line-height: 1.08;
+      letter-spacing: -1.4px;
+      color: white;
+      max-width: 760px;
+      margin-bottom: 20px;
     }
     .alapelv-header p {
-      font-family: 'Montserrat', sans-serif;
-      font-size: clamp(22px, 2.5vw, 32px);
-      font-weight: 800;
-      letter-spacing: -0.5px;
-      color: white;
+      font-size: clamp(15px, 1.4vw, 19px);
+      line-height: 1.75;
+      color: rgba(255,255,255,0.68);
+      max-width: 850px;
+    }
+    .alapelv-bar {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 14px;
+      position: relative;
+      z-index: 1;
     }
     .alapelv-item {
-      padding: 36px 48px;
-      display: flex; gap: 20px; align-items: flex-start;
+      min-height: 100%;
+      padding: 24px 22px 26px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      align-items: flex-start;
       position: relative;
-    }
-    .alapelv-item:not(:last-child)::after {
-      content: ''; position: absolute; right: 0; top: 20%; height: 60%;
-      width: 1px; background: rgba(255,255,255,0.07);
+      background: rgba(255,255,255,0.055);
+      border: 1px solid rgba(255,255,255,0.09);
+      border-radius: 18px;
+      box-shadow: 0 18px 45px rgba(0,0,0,0.18);
     }
     .alapelv-icon {
-      width: 46px; height: 46px; border-radius: 11px;
-      background: rgba(224,90,43,0.14);
-      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      background: rgba(224,90,43,0.18);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
     }
-    .alapelv-icon svg { width: 22px; height: 22px; color: var(--coral); }
-    .alapelv-text h4 { font-size: 15px; font-weight: 700; color: white; margin-bottom: 6px; }
-    .alapelv-text p { font-size: 13px; color: rgba(255,255,255,0.65); line-height: 1.6; }
+    .alapelv-icon svg {
+      width: 22px;
+      height: 22px;
+      color: var(--coral-light);
+    }
+    .alapelv-text h4 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 17px;
+      line-height: 1.25;
+      font-weight: 800;
+      letter-spacing: -0.2px;
+      color: white;
+      margin-bottom: 10px;
+    }
+    .alapelv-text p {
+      font-size: 13px;
+      color: rgba(255,255,255,0.64);
+      line-height: 1.65;
+    }
 
     /* ── CSAPAT NÉVJEGYEK ── */
     .contact-grid {
@@ -801,10 +873,8 @@
       .intro-grid, .system-grid, .form-inner { grid-template-columns: 1fr; gap: 48px; }
       .intro-visual { position: static; }
       .benefits-grid { grid-template-columns: repeat(2, 1fr); }
-      .alapelv-bar { grid-template-columns: 1fr; }
-      .alapelv-header { padding: 40px 20px 0; }
-      .alapelv-item { padding: 28px 20px; }
-      .alapelv-item:not(:last-child)::after { display: none; }
+      .alapelv-section { padding: 60px 40px 68px; }
+      .alapelv-bar { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .contact-grid { grid-template-columns: repeat(2, 1fr); }
       footer { grid-template-columns: 1fr 1fr; gap: 32px; }
     }
@@ -813,6 +883,11 @@
       .nav-links, .lang-switcher { display: none; }
       .page-hero-left { padding: 110px 20px 48px; }
       .section, .pilot-section { padding: 48px 20px; }
+      .alapelv-section { padding: 52px 20px 60px; }
+      .alapelv-bar { grid-template-columns: 1fr; }
+      .alapelv-header { margin-bottom: 28px; }
+      .alapelv-header h2 { letter-spacing: -0.8px; }
+      .alapelv-item { padding: 22px 20px; }
       .btn-primary { align-self: flex-start; }
       .benefits-grid { grid-template-columns: 1fr; }
       .pilot-inner { grid-template-columns: 1fr; padding: 40px 28px; gap: 32px; }
@@ -970,39 +1045,61 @@
   </div>
 </section>
 
-<!-- MIÉRT VÁLASSZON -->
-<div class="alapelv-header reveal">
-  <p>Miért válasszon minket?</p>
-</div>
-<div class="alapelv-bar reveal">
-  <div class="alapelv-item">
-    <div class="alapelv-icon">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+<!-- PARTNERI ELŐNYÖK -->
+<section class="alapelv-section">
+  <div class="alapelv-header reveal">
+    <div class="alapelv-kicker">Miért válasszon minket?</div>
+    <h2>Klinikai partnerként dolgozunk, nem egyszerű beszállítóként.</h2>
+    <p>Prémium implantológiai és digitális fogtechnikai munkák svájci és német partnereiknek, dokumentált minőséggel és dedikált szakmai támogatással.</p>
+  </div>
+  <div class="alapelv-bar reveal">
+    <div class="alapelv-item">
+      <div class="alapelv-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-5"/></svg>
+      </div>
+      <div class="alapelv-text">
+        <h4>Kockázatcsökkentett kezdés</h4>
+        <p>Az első komplex implantációs esetnél díjmentes digitális tervezés, wax-up/mock-up és sebészi sablon. Nem kedvezményt adunk, hanem biztonságos belépést.</p>
+      </div>
     </div>
-    <div class="alapelv-text">
-      <h4>Pontosság</h4>
-      <p>Az egyeztetett határidőket minden esetben tartjuk — így Ön előre tervezhet.</p>
+    <div class="alapelv-item">
+      <div class="alapelv-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16"/><path d="M4 12h16"/><path d="M4 17h10"/><path d="M17 15l3 3-3 3"/></svg>
+      </div>
+      <div class="alapelv-text">
+        <h4>Saját digitális gyártás</h4>
+        <p>Exocad tervezés, intraorális scan fájlok fogadása, házon belüli CNC fréz- és 3D nyomtatási kapacitás, alvállalkozók nélkül.</p>
+      </div>
+    </div>
+    <div class="alapelv-item">
+      <div class="alapelv-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 7V3h8v4"/><path d="M6 21h12a2 2 0 0 0 2-2V7H4v12a2 2 0 0 0 2 2z"/><path d="M9 13h6"/><path d="M9 17h4"/></svg>
+      </div>
+      <div class="alapelv-text">
+        <h4>Dokumentált prémium minőség</h4>
+        <p>Implant munkákra 5 év anyag- és konstrukciós garancia, teljesen nyomon követhető gyártási folyamat.</p>
+      </div>
+    </div>
+    <div class="alapelv-item">
+      <div class="alapelv-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/><path d="M8 9h8"/><path d="M8 13h5"/></svg>
+      </div>
+      <div class="alapelv-text">
+        <h4>Német nyelvű szakmai támogatás</h4>
+        <p>Dedikált németül kommunikáló fogtechnikus, online Exocad review, Zoom konzultáció és scan-minőségi visszajelzés.</p>
+      </div>
+    </div>
+    <div class="alapelv-item">
+      <div class="alapelv-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h11v10H3z"/><path d="M14 10h4l3 3v4h-7z"/><circle cx="7" cy="19" r="2"/><circle cx="18" cy="19" r="2"/></svg>
+      </div>
+      <div class="alapelv-text">
+        <h4>Európai partnerlogisztika</h4>
+        <p>Teljes oda-vissza szállítás, német nyelvű ügyintézés és régiónként limitált partnerkör a stabil együttműködésért.</p>
+      </div>
     </div>
   </div>
-  <div class="alapelv-item">
-    <div class="alapelv-icon">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-    </div>
-    <div class="alapelv-text">
-      <h4>Magas minőség</h4>
-      <p>Minden munkát úgy adunk ki, hogy az megfeleljen az Ön és a saját szakmai elvárásainknak is.</p>
-    </div>
-  </div>
-  <div class="alapelv-item">
-    <div class="alapelv-icon">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-    </div>
-    <div class="alapelv-text">
-      <h4>Megbízhatóság</h4>
-      <p>Pontosan azt készítjük el, amiben megállapodtunk — kiszámítható eredménnyel, kompromisszumok nélkül.</p>
-    </div>
-  </div>
-</div>
+</section>
 
 <!-- ELŐNYÖK -->
 <section class="section section-alt">
