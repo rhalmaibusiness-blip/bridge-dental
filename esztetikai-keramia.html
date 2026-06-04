@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Stratasys TrueDent® – Biokompatibilis, esztétikus digitális fogsorok | Bridge Dental</title>
-  <meta name="description" content="Újdonság! Stratasys TrueDent® – biokompatibilis, esztétikus digitális fogsorok. A fogsorkészítés új generációja teljesen digitális munkafolyamatban.">
+  <title>Esztétikai kerámia pótlások – Bridge Dental | e.max és multilayer full cirkon</title>
+  <meta name="description" content="Esztétikai kerámia pótlások természetes fogakra: Ivoclar e.max préskerámia, multilayer full cirkon és digitális esztétikai tervezés.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -175,143 +175,54 @@
       position: sticky;
       top: 100px;
     }
-    .workflow-section {
-      padding-top: 0;
-      background:
-        linear-gradient(180deg, var(--white) 0%, var(--white) 72%, var(--cream) 100%);
-      scroll-margin-top: 96px;
-    }
     .process-card {
-      max-width: 1200px;
       background: var(--white);
       border: 1px solid var(--warm-gray-pale);
-      border-radius: 28px;
-      padding: clamp(28px, 4vw, 56px);
-      box-shadow: 0 24px 70px rgba(28,25,22,0.08);
-      position: relative;
-      overflow: hidden;
-    }
-    .process-card::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(circle at 12% 0%, rgba(224,90,43,0.09), transparent 32%),
-        linear-gradient(90deg, rgba(224,90,43,0.05), transparent 42%);
-      pointer-events: none;
+      border-radius: 20px;
+      padding: 36px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.04);
     }
     .process-card-label {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      font-size: 12px;
-      font-weight: 800;
-      letter-spacing: 4px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
       text-transform: uppercase;
       color: var(--coral);
-      margin-bottom: 34px;
-      position: relative;
-      z-index: 1;
-    }
-    .process-card-label::before {
-      content: '';
-      width: 38px;
-      height: 2px;
-      background: var(--coral);
-      border-radius: 2px;
-    }
-    .process-timeline {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 18px;
-      position: relative;
-      z-index: 1;
+      margin-bottom: 20px;
     }
     .process-step {
-      display: grid;
-      grid-template-columns: 54px minmax(0, 1fr);
-      gap: 18px;
-      padding: 24px;
-      border: 1px solid rgba(196,189,180,0.72);
-      border-radius: 18px;
-      background: rgba(253,252,251,0.84);
-      box-shadow: 0 10px 28px rgba(28,25,22,0.045);
-      position: relative;
-      min-height: 100%;
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--warm-gray-pale);
     }
-    .process-step::after {
-      content: '';
-      position: absolute;
-      left: 50px;
-      top: 78px;
-      bottom: 18px;
-      width: 1px;
-      background: linear-gradient(180deg, rgba(224,90,43,0.28), transparent);
-    }
+    .process-step:last-child { border-bottom: none; padding-bottom: 0; }
+    .process-step:first-of-type { padding-top: 0; }
     .process-num {
-      width: 54px;
-      height: 54px;
-      border-radius: 16px;
-      background: var(--charcoal);
-      color: white;
-      font-size: 17px;
-      font-weight: 800;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--coral-pale);
+      color: var(--coral);
+      font-size: 13px;
+      font-weight: 700;
       display: flex;
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
       font-family: 'Montserrat', sans-serif;
-      box-shadow: 0 12px 24px rgba(28,25,22,0.14);
-      position: relative;
-      z-index: 1;
-    }
-    .process-step:nth-child(odd) .process-num {
-      background: var(--coral);
-      box-shadow: 0 12px 24px rgba(224,90,43,0.22);
     }
     .process-step-text {
-      font-size: 15px;
-      line-height: 1.75;
-      color: #655E56;
-      padding-top: 1px;
+      font-size: 14px;
+      line-height: 1.6;
+      color: var(--charcoal);
+      padding-top: 6px;
     }
     .process-step-text strong {
       display: block;
-      font-family: 'Montserrat', sans-serif;
-      font-size: clamp(18px, 1.8vw, 24px);
-      line-height: 1.2;
-      letter-spacing: -0.4px;
-      color: var(--charcoal);
-      font-weight: 800;
-      margin-bottom: 10px;
-    }
-    .process-step-text ul {
-      margin: 12px 0 12px 0;
-      padding-left: 0;
-      list-style: none;
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 8px 12px;
-    }
-    .process-step-text li {
-      display: flex;
-      align-items: flex-start;
-      gap: 8px;
-      font-size: 14px;
-      line-height: 1.45;
-      color: var(--charcoal-soft);
-      background: var(--coral-pale);
-      border-radius: 10px;
-      padding: 8px 10px;
-    }
-    .process-step-text li::before {
-      content: '';
-      width: 5px;
-      height: 5px;
-      margin-top: 8px;
-      border-radius: 50%;
-      background: var(--coral);
-      flex-shrink: 0;
+      font-weight: 600;
+      margin-bottom: 2px;
     }
 
     /* ── RENDSZER SZEKCIÓ ── */
@@ -451,6 +362,9 @@
       grid-template-columns: repeat(3, 1fr);
       gap: 20px;
       max-width: 1200px;
+    }
+    .ceramic-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
     }
     .benefit-card {
       background: var(--white);
@@ -984,8 +898,8 @@
       .page-hero-right .img-placeholder { border-radius: 0; min-height: 300px; }
       .intro-grid, .system-grid, .form-inner { grid-template-columns: 1fr; gap: 48px; }
       .intro-visual { position: static; }
-      .process-timeline { grid-template-columns: 1fr; }
       .benefits-grid { grid-template-columns: repeat(2, 1fr); }
+      .ceramic-grid { grid-template-columns: 1fr; }
       .alapelv-section { padding: 60px 40px 68px; }
       .alapelv-bar { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .contact-grid { grid-template-columns: repeat(2, 1fr); }
@@ -1001,17 +915,9 @@
       .alapelv-header { margin-bottom: 28px; }
       .alapelv-header h2 { letter-spacing: -0.8px; }
       .alapelv-item { padding: 22px 20px; }
-      .workflow-section { padding-top: 0; }
-      .process-card { border-radius: 20px; padding: 24px 18px; }
-      .process-card-label { letter-spacing: 2.6px; margin-bottom: 24px; }
-      .process-step { grid-template-columns: 42px minmax(0, 1fr); gap: 14px; padding: 18px 14px; border-radius: 14px; }
-      .process-step::after { left: 34px; top: 64px; }
-      .process-num { width: 42px; height: 42px; border-radius: 12px; font-size: 14px; }
-      .process-step-text { font-size: 14px; line-height: 1.65; }
-      .process-step-text strong { font-size: 18px; letter-spacing: 0; }
-      .process-step-text ul { grid-template-columns: 1fr; }
       .btn-primary { align-self: flex-start; }
       .benefits-grid { grid-template-columns: 1fr; }
+      .ceramic-grid { grid-template-columns: 1fr; }
       .pilot-inner { grid-template-columns: 1fr; padding: 40px 28px; gap: 32px; }
       .pilot-action { align-items: stretch; }
       .form-row { grid-template-columns: 1fr; }
@@ -1034,8 +940,8 @@
       <ul class="dropdown-menu">
         <div class="dropdown-menu-inner">
           <li><a href="#">Full cirkon implant megoldások</a></li>
-          <li><a href="esztetikai-keramia.html">Esztétikai kerámia pótlások</a></li>
-          <li><a href="digitalis-fogsorok.html" class="active">Digitális fogsorok — TrueDent</a></li>
+          <li><a href="esztetikai-keramia.html" class="active">Esztétikai kerámia pótlások</a></li>
+          <li><a href="digitalis-fogsorok.html">Digitális fogsorok — TrueDent</a></li>
           <li><a href="digitalis-tervezes.html">Digitális tervezés</a></li>
           <li><a href="digitalis-fogtechnika.html">Digitális fogtechnika</a></li>
         </div>
@@ -1063,15 +969,15 @@
       <span class="breadcrumb-sep">/</span>
       <a href="index.html#szolgaltatasok">Szolgáltatások</a>
       <span class="breadcrumb-sep">/</span>
-      <span class="breadcrumb-current">Digitális fogsorok — TrueDent</span>
+      <span class="breadcrumb-current">Esztétikai kerámia pótlások</span>
     </div>
     <div class="section-label">Szolgáltatás</div>
-    <h1 class="page-hero-title">Újdonság! Stratasys TrueDent® – Biokompatibilis, esztétikus digitális fogsorok</h1>
-    <p class="page-hero-subtitle">A fogsorkészítés új generációja</p>
+    <h1 class="page-hero-title">Esztétikai kerámia pótlások</h1>
+    <p class="page-hero-subtitle">Természetes esztétika digitális precizitással</p>
     <a href="#kapcsolat" class="btn-primary" style="margin-top: 32px; display: inline-flex;">Dolgozzunk együtt!</a>
   </div>
   <div class="page-hero-right">
-    <img src="szolgaltatasok_truedent.webp" alt="Digitális fogsorok — Stratasys TrueDent 3D nyomtatott fogsor" style="width:100%; height:100%; min-height:520px; object-fit:cover; display:block;">
+    <img src="szolgaltatasok_esztetikai_keramia.webp" alt="Esztétikai kerámia pótlások — Bridge Dental labor" style="width:100%; height:100%; min-height:520px; object-fit:cover; display:block;">
   </div>
 </section>
 
@@ -1079,71 +985,28 @@
 <section class="section section-alt">
   <div class="intro-grid reveal">
     <div class="intro-text">
-      <p>A Stratasys TrueDent® technológiával a teljes fogsorok és ideiglenes pótlások teljesen digitális munkafolyamatban készülnek. A protézisben a fogak és az íny az innovatív, többanyagú digitális gyártásnak köszönhetően egyetlen 3D nyomtatási folyamat során jönnek létre, így rendkívül természetes megjelenés, pontos illeszkedés és kiszámítható minőség érhető el.</p>
-      <p>A TrueDent® anyag FDA által engedélyezett, biokompatibilis fotopolimer, amelyet kifejezetten fogászati alkalmazásokhoz fejlesztettek.</p>
+      <p>A modern fogászati protetika célja ma már nem csupán a funkció helyreállítása, hanem a természetes fogak esztétikájának tökéletes reprodukálása. Digitális munkafolyamatainknak és prémium kerámia alapanyagainknak köszönhetően olyan restaurációkat készítünk, amelyek harmonikusan illeszkednek a páciens mosolyába és egyedi karakteréhez.</p>
+      <p>Laboratóriumunkban az esztétikai rehabilitációkhoz elsősorban Ivoclar e.max préskerámiát, valamint modern multilayer full cirkon rendszereket alkalmazunk természetes fogakra készülő koronák, héjak, inlay-ek és onlay-ek esetén.</p>
+      <div class="intro-highlight">
+        <p>Az esztétikai kerámia restaurációk esetében nem csupán fogpótlást készítünk, hanem olyan természetes hatású megoldásokat, amelyek funkcionálisan és esztétikailag egyaránt megfelelnek a legmagasabb szakmai elvárásoknak.</p>
+      </div>
     </div>
     <div class="intro-visual">
-      <div class="img-placeholder ratio-4-3" style="margin-bottom: 20px;">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg>
-        <span>Munkafolyamat</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- MUNKAFOLYAMAT -->
-<section class="section workflow-section">
-  <div class="process-card reveal">
-    <div class="process-card-label">Munkafolyamat</div>
-    <div class="process-timeline">
-      <div class="process-step">
-        <div class="process-num">1.</div>
-        <div class="process-step-text">
-          <strong>Digitális adatgyűjtés</strong>
-          A folyamat intraorális szkenneléssel vagy hagyományos lenyomat digitalizálásával kezdődik. A rendelkezésre álló klinikai adatok, harapási regisztrátumok és esztétikai információk alapján elkészítjük a digitális tervet.
+      <div class="process-card">
+        <div class="process-card-label">Munkafolyamat</div>
+        <div class="process-step">
+          <div class="process-num">1</div>
+          <div class="process-step-text">
+            <strong>Digitális tervezés</strong>
+            A digitális lenyomatok, fotódokumentációk és videók elemzését követően CAD/CAM környezetben tervezzük meg a restaurációt. A digitális tervezés lehetővé teszi az anatómia, a forma és az esztétikai részletek pontos kontrollját már a gyártás előtt.
+          </div>
         </div>
-      </div>
-      <div class="process-step">
-        <div class="process-num">2.</div>
-        <div class="process-step-text">
-          <strong>BPS® regisztráció és funkcionális tervezés</strong>
-          A BPS® rendszer segítségével a hagyományos fogsorkészítésnél jóval részletesebben elemezzük és rögzítjük a páciens egyéni funkcionális jellemzőit, így a digitálisan tervezett fogsor nemcsak pontosabban illeszkedik, hanem természetesebb beszédet, hatékonyabb rágást, nagyobb stabilitást és magasabb viselési komfortot biztosít a mindennapok során.
-        </div>
-      </div>
-      <div class="process-step">
-        <div class="process-num">3.</div>
-        <div class="process-step-text">
-          <strong>Virtuális fogsortervezés</strong>
-          Exocad rendszerben egyedileg megtervezzük a teljes fogsort, meghatározva:
-          <ul>
-            <li>a fogak formáját</li>
-            <li>méretét</li>
-            <li>színét</li>
-            <li>az íny karakterizációját</li>
-            <li>az okklúziós kapcsolatokat</li>
-          </ul>
-          A digitális terv a fogorvossal online is egyeztethető.
-        </div>
-      </div>
-      <div class="process-step">
-        <div class="process-num">4.</div>
-        <div class="process-step-text">
-          <strong>Próba és jóváhagyás</strong>
-          Orvosaikkal megosztjuk a digitális előnézetet, majd nyomtatott próbasor készül, amely lehetővé teszi az esztétikai és funkcionális ellenőrzést még a végleges fogsor elkészítése előtt.
-        </div>
-      </div>
-      <div class="process-step">
-        <div class="process-num">5.</div>
-        <div class="process-step-text">
-          <strong>TrueDent® 3D nyomtatás</strong>
-          A végleges fogsor Stratasys J5 DentaJet rendszerrel készül. A technológia egyszerre nyomtatja a fogakat és az ínyt, különböző árnyalatokkal és áttetszőségekkel, így rendkívül természetes hatás érhető el.
-        </div>
-      </div>
-      <div class="process-step">
-        <div class="process-num">5.</div>
-        <div class="process-step-text">
-          <strong>Minőségellenőrzés és véglegesítés</strong>
-          Minden esetben vizsgáljuk az illeszkedést, az esztétikát és a funkcionális paramétereket.
+        <div class="process-step">
+          <div class="process-num">2</div>
+          <div class="process-step-text">
+            <strong>Elkészítés és karakterizálás</strong>
+            A restaurációk elkészítése során modern marási technológiákat, prémium kerámiaanyagokat és egyedi karakterizálási technikákat alkalmazunk, hogy a végeredmény természetes megjelenésű, hosszú távon stabil és funkcionálisan megbízható legyen.
+          </div>
         </div>
       </div>
     </div>
@@ -1206,45 +1069,44 @@
   </div>
 </section>
 
-<!-- ELŐNYÖK -->
+<!-- KERÁMIA RENDSZEREK -->
 <section class="section section-alt">
   <div class="benefits-header reveal">
-    <h2>Miért különleges a TrueDent® technológia?</h2>
+    <div class="section-label">Anyagok és indikációk</div>
+    <h2>e.max és multilayer full cirkon.</h2>
   </div>
-  <div class="benefits-grid reveal">
+  <div class="benefits-grid ceramic-grid reveal">
 
     <div class="benefit-card">
       <div class="benefit-card-num">01</div>
-      <h3>Természetesebb megjelenés</h3>
-      <p style="font-size:14px;line-height:1.7;color:var(--warm-gray);margin-top:12px;">A fogak és az íny több árnyalatban készülnek, így a végeredmény jóval élethűbb a hagyományos egy színű fogsoroknál.</p>
+      <h3>e.max – a természetes esztétika etalonja</h3>
+      <p style="font-size:15px;line-height:1.75;color:var(--warm-gray);margin-top:16px;">Az Ivoclar e.max préskerámia kiváló fényáteresztő képességének és természetes optikai tulajdonságainak köszönhetően ideális választás:</p>
+      <ul style="margin:18px 0 18px 20px;color:var(--warm-gray);font-size:15px;line-height:1.8;">
+        <li>héjak (veneerek)</li>
+        <li>esztétikai koronák</li>
+        <li>inlay-ek és onlay-ek</li>
+        <li>minimálisan invazív restaurációk</li>
+      </ul>
+      <p style="font-size:15px;line-height:1.75;color:var(--warm-gray);">Az e.max különösen az anterior régióban nyújt kiemelkedő eredményeket, ahol a természetes megjelenés és az egyedi karakterizálhatóság elsődleges szempont.</p>
     </div>
 
-    <div class="benefit-card featured">
+    <div class="benefit-card">
       <div class="benefit-card-num">02</div>
-      <h3>Nagyobb pontosság</h3>
-      <p style="font-size:14px;line-height:1.7;color:rgba(255,255,255,0.75);margin-top:12px;">A teljesen digitális folyamat csökkenti a manuális hibalehetőségeket és reprodukálható minőséget biztosít.</p>
-    </div>
-
-    <div class="benefit-card">
-      <div class="benefit-card-num">03</div>
-      <h3>Gyorsabb reprodukálhatóság</h3>
-      <p style="font-size:14px;line-height:1.7;color:var(--warm-gray);margin-top:12px;">A digitális terv archiválható, ezért sérülés vagy elvesztés esetén a fogsor újragyártása jelentősen egyszerűbb és gyorsabb.</p>
-    </div>
-
-    <div class="benefit-card">
-      <div class="benefit-card-num">04</div>
-      <h3>Kényelmesebb páciensélmény</h3>
-      <p style="font-size:14px;line-height:1.7;color:var(--warm-gray);margin-top:12px;">Kevesebb korrekcióra és rövidebb átadási folyamatra lehet szükség a BPS® rendszer&nbsp; és a pontos digitális gyártásnak köszönhetően.</p>
+      <h3>Multilayer full cirkon – esztétika kompromisszumok nélkül</h3>
+      <p style="font-size:15px;line-height:1.75;color:var(--warm-gray);margin-top:16px;">A legújabb generációs multilayer cirkon anyagok megjelenése jelentős fejlődést hozott az esztétikai fogpótlások területén. Az anyag fokozatos szín- és transzlucencia-átmenete lehetővé teszi a természetes fogak optikai tulajdonságainak reprodukálását, miközben megőrzi a cirkonra jellemző magas szilárdságot.</p>
+      <p style="font-size:15px;line-height:1.75;color:var(--warm-gray);margin-top:16px;">A multilayer full cirkon restaurációk kiváló megoldást jelentenek:</p>
+      <ul style="margin:18px 0 0 20px;color:var(--warm-gray);font-size:15px;line-height:1.8;">
+        <li>egyedi koronákhoz</li>
+        <li>kisebb hidakhoz</li>
+        <li>teljes mosolyrehabilitációkhoz</li>
+        <li>fokozott terhelésnek kitett esetekhez</li>
+      </ul>
     </div>
 
   </div>
-  <div class="intro-highlight reveal" style="max-width: 980px; margin-top: 44px;">
-    <p>A modern TrueDent® technológiát a BPS® rendszer funkcionalitásával és az MDR által megkövetelt minőségbiztosítási szemlélettel ötvözzük, hogy partnereink számára biztonságos, esztétikus és kiszámítható megoldásokat nyújtsunk.</p>
-    <p style="margin-top: 16px;">Minden munkánk nyomon követhető, dokumentált gyártási folyamatban készül, kizárólag minősített anyagok felhasználásával.</p>
-  </div>
-  <div style="margin-top: 48px; display: flex; flex-direction: column; align-items: center; gap: 20px;">
-    <p style="font-family: 'Montserrat', sans-serif; font-size: 22px; font-weight: 700; color: var(--charcoal); letter-spacing: -0.5px;">Dolgozzunk együtt!</p>
-    <a href="#kapcsolat" class="btn-primary" style="align-self: center;">Vegye fel velünk a kapcsolatot.</a>
+  <div class="intro-highlight reveal" style="max-width:1200px;margin-top:32px;">
+    <p><strong>Digitális esztétikai tervezés</strong></p>
+    <p style="margin-top:12px;">A modern esztétikai fogászat egyre inkább a digitális tervezésre épül. A fotók, videók, intraorális szkenek és arcszkenek integrálásával lehetőség nyílik a restaurációk előzetes vizualizálására, a kezelési terv pontos kommunikációjára és a kiszámíthatóbb végeredmény elérésére.</p>
   </div>
 </section>
 
@@ -1319,7 +1181,7 @@
     <div class="form-intro">
       <div class="section-label">Kapcsolatfelvétel</div>
       <h2>Vegye fel velünk a kapcsolatot.</h2>
-      <p>Írjon nekünk a TrueDent digitális fogsor igényéről — munkatársunk hamarosan felveszi Önnel a kapcsolatot.</p>
+      <p>Írjon nekünk az esztétikai kerámia pótlási igényéről — munkatársunk hamarosan felveszi Önnel a kapcsolatot.</p>
       <div class="form-contact-items">
         <div class="form-contact-item">
           <div class="form-contact-icon">
@@ -1367,9 +1229,8 @@
         <div class="form-group">
           <label for="targy">Miben segíthetünk?</label>
           <select id="targy" name="targy">
-            <option value="" disabled>Válasszon témát</option>
-            <option value="digitalis-fogsorok" selected>Digitális fogsorok — TrueDent</option>
-            <option value="digitalis-fogtechnika">Digitális fogtechnika</option>
+            <option value="" disabled selected>Válasszon témát</option>
+            <option value="esztetikai-keramia">Esztétikai kerámia pótlások</option>
             <option value="pilot">Pilot együttműködés indítása</option>
             <option value="konzultacio">Szakmai konzultáció</option>
             <option value="egyeb">Egyéb</option>
