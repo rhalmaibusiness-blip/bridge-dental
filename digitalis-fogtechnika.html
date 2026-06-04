@@ -556,7 +556,17 @@
       font-size: 12px;
       line-height: 1.6;
       color: var(--warm-gray);
-      text-align: center;
+      text-align: left;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    .form-gdpr input {
+      width: 16px;
+      height: 16px;
+      margin-top: 2px;
+      accent-color: var(--coral);
+      flex-shrink: 0;
     }
     .form-gdpr a {
       color: var(--warm-gray);
@@ -1277,8 +1287,11 @@
           <textarea id="uzenet" name="uzenet" placeholder="Írja le röviden az eset jellegét vagy kérdését..."></textarea>
         </div>
         <div class="form-submit">
+          <label class="form-gdpr">
+            <input type="checkbox" name="gdpr-consent" required>
+            <span>Elolvastam és elfogadom az <a href="#">adatkezelési tájékoztatót</a>, és hozzájárulok ahhoz, hogy a Bridge Dental az űrlapon megadott adataimat a megkeresésem megválaszolása céljából kezelje.</span>
+          </label>
           <button type="submit" class="btn-form-submit">Üzenet küldése</button>
-          <p class="form-gdpr">Az üzenet elküldésével elfogadja az <a href="#">adatkezelési tájékoztatót</a>.</p>
         </div>
       </form>
     </div>
