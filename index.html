@@ -1068,6 +1068,82 @@
       text-decoration: none;
     }
 
+    /* ── FAQ ── */
+    .faq-section {
+      padding: 88px 80px;
+      background: var(--cream);
+    }
+
+    .faq-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.35fr;
+      gap: 64px;
+      align-items: start;
+    }
+
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .faq-item {
+      background: var(--white);
+      border: 1px solid var(--warm-gray-pale);
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 8px 28px rgba(0,0,0,0.04);
+    }
+
+    .faq-item summary {
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 22px 24px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--charcoal);
+      line-height: 1.35;
+    }
+
+    .faq-item summary::-webkit-details-marker { display: none; }
+
+    .faq-item summary::after {
+      content: '+';
+      flex-shrink: 0;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--coral-pale);
+      color: var(--coral);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      line-height: 1;
+      transition: transform 0.2s;
+    }
+
+    .faq-item[open] summary::after {
+      transform: rotate(45deg);
+    }
+
+    .faq-answer {
+      padding: 0 24px 24px;
+      color: var(--warm-gray);
+      font-size: 14px;
+      line-height: 1.75;
+    }
+
+    .faq-answer p { margin: 0 0 12px; }
+    .faq-answer p:last-child { margin-bottom: 0; }
+    .faq-answer ul { margin: 8px 0 0; padding-left: 20px; }
+    .faq-answer li { margin-bottom: 6px; }
+
     /* ── SCROLL ANIMATIONS ── */
     .reveal {
       opacity: 0;
@@ -1224,6 +1300,12 @@
       }
       .pilot-action { align-items: stretch; }
       .btn-coral-big { text-align: center; }
+
+      /* GYIK */
+      .faq-section { padding: 56px 20px; }
+      .faq-grid { grid-template-columns: 1fr; gap: 32px; }
+      .faq-item summary { padding: 20px; font-size: 14px; }
+      .faq-answer { padding: 0 20px 22px; font-size: 13px; }
 
       /* Csapat */
       #csapat > div:last-child { padding: 56px 20px !important; }
@@ -1878,6 +1960,71 @@
     </div>
     <div class="pilot-action">
       <a href="#kapcsolat" class="btn-coral-big">Érdekel a pilot együttműködés</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- GYIK -->
+<section class="faq-section" id="gyik">
+  <div class="faq-grid">
+    <div>
+      <div class="section-label">Gyakori kérdések</div>
+      <h2 class="section-title">Amit érdemes<br><span class="serif">előre tisztázni</span></h2>
+      <p class="section-desc">A partneri együttműködés legfontosabb feltételei: pilot, digitális munkafolyamat, garancia, logisztika és német nyelvű szakmai támogatás.</p>
+    </div>
+
+    <div class="faq-list">
+      <details class="faq-item reveal" open>
+        <summary>Hogyan tudjuk kockázat nélkül kipróbálni az együttműködést?</summary>
+        <div class="faq-answer">
+          <p>Komplexebb implantátumos munkákra 3-5 esetből álló, 8 hetes pilot együttműködést ajánlunk. Így nem egyetlen munka alapján kell dönteni, hanem valós közös folyamatban láthatóvá válik a kommunikáció, a tervezés, a gyártási minőség és a problémakezelés.</p>
+        </div>
+      </details>
+
+      <details class="faq-item reveal reveal-delay-1">
+        <summary>Miben más a Bridge Dental, mint egy hagyományos fogtechnikai labor?</summary>
+        <div class="faq-answer">
+          <p>Nem csak fogpótlásokat készítünk: klinikai partnerként gondolkodunk. Digitális tervezési konzultációval, scan- és illeszkedési visszajelzéssel, valamint dokumentált gyártási folyamattal támogatjuk a rendelő munkáját.</p>
+        </div>
+      </details>
+
+      <details class="faq-item reveal reveal-delay-2">
+        <summary>Milyen digitális rendszerekkel tudunk együtt dolgozni?</summary>
+        <div class="faq-answer">
+          <p>Exocad alapú digitális tervezéssel dolgozunk, és több intraorális szkennerből érkező fájlt tudunk fogadni, például iTero, TRIOS, Medit és Shining rendszerekből.</p>
+        </div>
+      </details>
+
+      <details class="faq-item reveal">
+        <summary>Milyen garanciát vállalnak implant munkákra?</summary>
+        <div class="faq-answer">
+          <p>Implant munkákra 5 év anyag- és konstrukciós garanciát vállalunk megfelelő klinikai használat mellett. A gyártási folyamat dokumentált, az anyagtételtől a felelős fogtechnikusig visszakövethető.</p>
+          <p>Ha bizonyítottan labor hibájából adódó illeszkedési hiba miatt a pácienst vissza kell hívnia az orvosnak a rendelőbe, nemcsak javítjuk a munkát, hanem a következő munka technikai díjából jóváírunk egy fix 150€ széki idő kompenzációt.</p>
+          <p><strong>Nem tartozik a garanciába:</strong></p>
+          <ul>
+            <li>rossz preparáció, ha előre jeleztük, de az orvos kérésére elkészült</li>
+            <li>kevés hely, ha előre jeleztük, de az orvos kérésére elkészült</li>
+            <li>rossz lenyomat vagy scan, ha előre jeleztük, de az orvos kérésére elkészült</li>
+            <li>hibás beragasztás</li>
+            <li>előre nem jelzett parafunkció, például bruxizmus</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="faq-item reveal reveal-delay-1">
+        <summary>Hogyan működik a svájci és német rendelők logisztikai kiszolgálása?</summary>
+        <div class="faq-answer">
+          <p>A szállítást mi szervezzük. Ha 14:00-ig jelzik, hogy van elhoznivaló munka, intézzük a felvételt; a rendelőnek csak csomagolnia kell és kinyomtatnia az e-mailben küldött szállítólevelet.</p>
+        </div>
+      </details>
+
+      <details class="faq-item reveal reveal-delay-2">
+        <summary>Kapunk német nyelvű szakmai támogatást?</summary>
+        <div class="faq-answer">
+          <p>Igen. Dedikált, németül kommunikáló fogtechnikussal lehet egyeztetni, nem csak általánosan a laborral. Komplex eseteknél online digitális tervezési konzultációt is biztosítunk.</p>
+        </div>
+      </details>
     </div>
   </div>
 </section>
