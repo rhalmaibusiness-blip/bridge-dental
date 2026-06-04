@@ -388,6 +388,13 @@
       grid-template-columns: 1fr 1.4fr;
       gap: 80px;
       align-items: start;
+      width: 100%;
+      min-width: 0;
+    }
+    .form-intro,
+    .contact-form {
+      min-width: 0;
+      max-width: 100%;
     }
     .form-intro h2 {
       font-family: 'Montserrat', sans-serif;
@@ -414,6 +421,12 @@
       gap: 12px;
       font-size: 14px;
       color: var(--charcoal);
+      min-width: 0;
+    }
+    .form-contact-item span,
+    .form-contact-item a {
+      min-width: 0;
+      overflow-wrap: anywhere;
     }
     .form-contact-item a {
       color: var(--charcoal);
@@ -1217,7 +1230,7 @@
     <div class="form-intro">
       <div class="section-label">Kapcsolatfelvétel</div>
       <h2>Vegye fel velünk a kapcsolatot.</h2>
-      <p>Írjon nekünk a digitális tervezési igényéről — munkatársunk hamarosan felveszi Önnel a kapcsolatot.</p>
+      <p>Írjon nekünk a digitális tervezés szolgáltatásról — munkatársunk hamarosan felveszi Önnel a kapcsolatot.</p>
       <div class="form-contact-items">
         <div class="form-contact-item">
           <div class="form-contact-icon">
@@ -1235,7 +1248,7 @@
           <div class="form-contact-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
           </div>
-          <span>1106 Bp. Fehér út 10. 26.ép. 2. em.</span>
+          <span>Magyarország, 1106 Budapest, Fehér út 10. 26. ép. 2. em.</span>
         </div>
       </div>
     </div>
@@ -1265,10 +1278,8 @@
         <div class="form-group">
           <label for="targy">Miben segíthetünk?</label>
           <select id="targy" name="targy">
-            <option value="" disabled selected>Válasszon témát</option>
-            <option value="digitalis-tervezes">Digitális tervezés</option>
-            <option value="pilot">Pilot együttműködés indítása</option>
-            <option value="konzultacio">Szakmai konzultáció</option>
+            <option value="digitalis-tervezes-erdeklodes" selected>Érdeklődés a digitális tervezés szolgáltatásról</option>
+            <option value="digitalis-tervezes-pilot">Digitális tervezés pilot együttműködés</option>
             <option value="egyeb">Egyéb</option>
           </select>
         </div>
@@ -1317,7 +1328,7 @@
     <ul>
       <li><a href="tel:+36703966656">+36 / (70) 396 6656</a></li>
       <li><a href="mailto:info@bridgedental.hu">info@bridgedental.hu</a></li>
-      <li><a href="#">1106 Bp. Fehér út 10.</a></li>
+      <li><a href="#">Magyarország, 1106 Budapest, Fehér út 10.</a></li>
       <li style="margin-top: 16px;"><a href="#">Adatkezelési tájékoztató</a></li>
       <li><a href="#">Cookie nyilatkozat</a></li>
     </ul>
