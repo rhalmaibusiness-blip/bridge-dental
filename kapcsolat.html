@@ -342,35 +342,6 @@
       box-shadow: 0 14px 34px rgba(224,90,43,0.28);
     }
 
-    .service-strip {
-      padding: 0 80px 80px;
-    }
-    .service-strip-inner {
-      max-width: 1280px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 14px;
-    }
-    .service-chip {
-      min-height: 86px;
-      padding: 18px;
-      border-radius: 14px;
-      border: 1px solid var(--warm-gray-pale);
-      background: var(--white);
-      color: var(--charcoal);
-      font-size: 13px;
-      font-weight: 700;
-      line-height: 1.35;
-      display: flex;
-      align-items: center;
-    }
-    .service-chip.accent {
-      background: var(--charcoal);
-      color: var(--white);
-      border-color: var(--charcoal);
-    }
-
     footer {
       display: grid;
       grid-template-columns: 1.2fr 1fr 1fr 1fr;
@@ -419,7 +390,6 @@
     @media (max-width: 1180px) {
       .page-hero { grid-template-columns: 1fr; gap: 44px; }
       .contact-copy { max-width: 760px; }
-      .service-strip-inner { grid-template-columns: repeat(2, 1fr); }
       footer { grid-template-columns: 1fr 1fr; }
     }
     @media (max-width: 768px) {
@@ -437,9 +407,6 @@
       .panel-top { flex-direction: column; gap: 14px; }
       .panel-top h2 { font-size: 23px; }
       .form-row { grid-template-columns: 1fr; gap: 0; }
-      .service-strip { padding: 0 20px 52px; }
-      .service-strip-inner { grid-template-columns: 1fr; }
-      .service-chip { min-height: auto; }
       footer { grid-template-columns: 1fr; padding: 44px 20px; gap: 30px; }
       .footer-bottom { flex-direction: column; padding: 18px 20px; }
     }
@@ -575,18 +542,6 @@
     </div>
   </section>
 
-  <section class="service-strip" aria-label="Választható szolgáltatások">
-    <div class="service-strip-inner reveal">
-      <div class="service-chip">Full-Arch Implantátumos Rehabilitációk (All-on-X)</div>
-      <div class="service-chip">Esztétikai kerámia pótlások</div>
-      <div class="service-chip">Digitális fogsorok — TrueDent</div>
-      <div class="service-chip">Digitális tervezés</div>
-      <div class="service-chip">Digitális fogtechnika</div>
-      <div class="service-chip accent">Pilot együttműködés</div>
-      <div class="service-chip">Egyéb megkeresés</div>
-      <div class="service-chip">Svájci és német rendelők kiszolgálása</div>
-    </div>
-  </section>
 </main>
 
 <footer>
