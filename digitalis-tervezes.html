@@ -283,6 +283,16 @@
       font-weight: 600;
       margin-bottom: 2px;
     }
+    .system-image {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 20px;
+      display: block;
+      margin-bottom: 20px;
+      box-shadow: 0 24px 70px rgba(28,25,22,0.10);
+    }
     .implant-note {
       background: var(--charcoal);
       border-radius: 16px;
@@ -1078,10 +1088,7 @@
       </div>
     </div>
     <div>
-      <div class="img-placeholder ratio-4-3" style="margin-bottom: 20px;">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg>
-        <span>Szkennelési folyamat / lézeres szkenner</span>
-      </div>
+      <img class="system-image" src="digitalis-tervezes-labor-szkenneles.webp" alt="Digitális tervezéshez előkészített fogtechnikai modell és labor szkennelési folyamat">
       <div class="implant-note">
         <div class="implant-note-label">Komplex esetek</div>
         <p>Ez a megközelítés különösen fontos komplex implantátumos eseteknél, ahol a minimális eltérések is jelentős klinikai következményekkel járhatnak.</p>
