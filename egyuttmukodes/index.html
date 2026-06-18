@@ -1919,6 +1919,9 @@
 
     const faqItems = document.querySelectorAll("#gyik details");
     faqItems.forEach((item) => {
+      item.open = false;
+    });
+    faqItems.forEach((item) => {
       item.addEventListener("toggle", () => {
         if (!item.open) return;
         faqItems.forEach((other) => {
