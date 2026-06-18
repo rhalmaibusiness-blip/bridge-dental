@@ -1,0 +1,1936 @@
+<!doctype html>
+<html lang="hu">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bridge Dental | Partnerakvizíciós landing svájci és német rendelőknek</title>
+  <meta name="description" content="Bridge Dental partnerakvizíciós landing svájci és német fogorvosi rendelőknek: pilot együttműködés, német nyelvű szakmai támogatás, digitális fogtechnika és európai logisztika.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --coral: #E05A2B;
+      --coral-soft: #F07A4B;
+      --cream: #F8F5F0;
+      --cream-2: #EFE8DF;
+      --charcoal: #1C1916;
+      --charcoal-2: #2A2520;
+      --warm-gray: #716A63;
+      --line: rgba(28, 25, 22, 0.12);
+      --white: #fffaf4;
+      --radius: 8px;
+      --shadow: 0 28px 80px rgba(28, 25, 22, 0.16);
+      --container: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Open Sans", sans-serif;
+      background: var(--cream);
+      color: var(--charcoal);
+      letter-spacing: 0;
+      overflow-x: hidden;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .shell {
+      width: min(var(--container), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: fixed;
+      z-index: 30;
+      top: 18px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: min(1180px, calc(100% - 32px));
+      height: 66px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 12px 0 20px;
+      background: rgba(248, 245, 240, 0.88);
+      border: 1px solid rgba(255, 255, 255, 0.48);
+      box-shadow: 0 14px 45px rgba(28, 25, 22, 0.12);
+      backdrop-filter: blur(16px);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      min-width: 0;
+    }
+
+    .brand img {
+      height: 32px;
+      width: auto;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 0 22px;
+      border-radius: 6px;
+      border: 1px solid transparent;
+      font-size: 13px;
+      font-weight: 800;
+      line-height: 1;
+      cursor: pointer;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease, color 0.18s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      background: var(--coral);
+      color: #fff;
+      box-shadow: 0 14px 34px rgba(224, 90, 43, 0.28);
+    }
+
+    .btn-primary:hover {
+      background: var(--coral-soft);
+      box-shadow: 0 18px 44px rgba(224, 90, 43, 0.34);
+    }
+
+    .btn-ghost {
+      color: #fff;
+      border-color: rgba(255, 255, 255, 0.42);
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .btn-cream {
+      background: var(--cream);
+      color: var(--charcoal);
+      border-color: rgba(28, 25, 22, 0.12);
+    }
+
+    .hero {
+      min-height: 720px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      padding: 132px 0 72px;
+      color: #fff;
+      isolation: isolate;
+      overflow: hidden;
+      background: var(--charcoal);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      background-image:
+        linear-gradient(90deg, rgba(28, 25, 22, 0.88) 0%, rgba(28, 25, 22, 0.62) 48%, rgba(28, 25, 22, 0.28) 100%),
+        linear-gradient(0deg, rgba(28, 25, 22, 0.74) 0%, rgba(28, 25, 22, 0) 46%),
+        url("../assets/hero.jpg");
+      background-size: cover;
+      background-position: center 42%;
+      transform: scale(1.02);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      opacity: 0.12;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.12) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.12) 1px, transparent 1px);
+      background-size: 42px 42px;
+      mask-image: linear-gradient(90deg, #000, transparent 72%);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 0.95fr) 340px;
+      gap: 64px;
+      align-items: center;
+      min-width: 0;
+    }
+
+    .hero-grid > * {
+      min-width: 0;
+    }
+
+    .hero-copy {
+      width: 100%;
+      max-width: 760px;
+      box-sizing: border-box;
+      padding: 30px 34px 32px;
+      border-left: 3px solid var(--coral);
+      background: linear-gradient(90deg, rgba(28, 25, 22, 0.48), rgba(28, 25, 22, 0.18));
+      backdrop-filter: blur(8px);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
+      font-size: 11px;
+      font-weight: 900;
+      color: rgba(255, 255, 255, 0.76);
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 34px;
+      height: 2px;
+      background: var(--coral);
+    }
+
+    h1, h2, h3 {
+      font-family: "Montserrat", sans-serif;
+      margin: 0;
+      letter-spacing: 0;
+    }
+
+    h1 {
+      max-width: 860px;
+      font-size: clamp(32px, 3.1vw, 40px);
+      line-height: 1.12;
+      font-weight: 900;
+    }
+
+    h1 span {
+      color: #F4C4B3;
+    }
+
+    h1 .h1-line {
+      display: block;
+      color: inherit;
+    }
+
+    .mbr {
+      display: none;
+    }
+
+    .hero-lead {
+      max-width: 660px;
+      margin: 28px 0 0;
+      font-size: clamp(16px, 1.45vw, 19px);
+      line-height: 1.65;
+      color: rgba(255, 255, 255, 0.78);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 34px;
+    }
+
+    .trust-strip {
+      display: grid;
+      gap: 0;
+      padding: 20px 22px;
+      background:
+        linear-gradient(145deg, rgba(248, 245, 240, 0.18), rgba(28, 25, 22, 0.24)),
+        rgba(248, 245, 240, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: var(--radius);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 24px 70px rgba(28, 25, 22, 0.20);
+    }
+
+    .trust-item {
+      display: grid;
+      grid-template-columns: 34px 1fr;
+      gap: 13px;
+      align-items: start;
+      padding: 15px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .trust-item:first-child {
+      padding-top: 0;
+    }
+
+    .trust-item:last-child {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+
+    .trust-icon {
+      display: grid;
+      place-items: center;
+      width: 34px;
+      height: 34px;
+      border-radius: 999px;
+      background: rgba(224, 90, 43, 0.18);
+      color: #FFE5DC;
+      font-family: "Montserrat", sans-serif;
+      font-size: 13px;
+      font-weight: 900;
+      border: 1px solid rgba(244, 196, 179, 0.28);
+    }
+
+    .trust-icon svg {
+      width: 18px;
+      height: 18px;
+      stroke: currentColor;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      fill: none;
+    }
+
+    .trust-item strong {
+      font-family: "Montserrat", sans-serif;
+      display: block;
+      margin-bottom: 4px;
+      font-size: 17px;
+      line-height: 1.15;
+      font-weight: 900;
+      color: #fff;
+    }
+
+    .trust-item span {
+      font-size: 12px;
+      line-height: 1.55;
+      color: rgba(255, 255, 255, 0.62);
+      overflow-wrap: break-word;
+    }
+
+    .section {
+      padding: 104px 0;
+    }
+
+    .section-tight {
+      padding: 78px 0;
+    }
+
+    .section-dark {
+      background: var(--charcoal);
+      color: #fff;
+    }
+
+    .section-line {
+      border-top: 1px solid var(--line);
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: 0.72fr 1fr;
+      gap: 58px;
+      align-items: end;
+      margin-bottom: 52px;
+    }
+
+    .label {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 14px;
+      font-size: 11px;
+      font-weight: 900;
+      color: var(--coral);
+      text-transform: uppercase;
+    }
+
+    .label::before {
+      content: "";
+      width: 28px;
+      height: 2px;
+      background: currentColor;
+    }
+
+    h2 {
+      max-width: 760px;
+      font-size: clamp(28px, 2.7vw, 40px);
+      line-height: 1.14;
+      font-weight: 900;
+      color: inherit;
+    }
+
+    h2 .h2-line {
+      display: block;
+    }
+
+    .section-copy {
+      margin: 0;
+      font-size: 17px;
+      line-height: 1.78;
+      color: var(--warm-gray);
+    }
+
+    .section-dark .section-copy {
+      color: rgba(255, 255, 255, 0.96);
+    }
+
+    .solution-band .section-copy {
+      color: rgba(255, 255, 255, 0.96);
+    }
+
+    .problem-grid {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 42px;
+      align-items: stretch;
+    }
+
+    .photo-panel {
+      position: relative;
+      min-height: 480px;
+      overflow: hidden;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      background: var(--charcoal);
+    }
+
+    .photo-panel img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: saturate(0.92) contrast(1.05);
+    }
+
+    .photo-caption {
+      position: absolute;
+      left: 22px;
+      right: 22px;
+      bottom: 22px;
+      padding: 18px;
+      background: rgba(28, 25, 22, 0.74);
+      color: rgba(255, 255, 255, 0.78);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: var(--radius);
+      backdrop-filter: blur(10px);
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .tension-list {
+      display: grid;
+      gap: 14px;
+      align-content: center;
+    }
+
+    .tension-item {
+      display: grid;
+      grid-template-columns: 42px 1fr;
+      gap: 18px;
+      align-items: start;
+      padding: 22px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .tension-item span {
+      display: inline-flex;
+      width: 42px;
+      height: 42px;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: rgba(224, 90, 43, 0.10);
+      color: var(--coral);
+      font-weight: 900;
+      font-family: "Montserrat", sans-serif;
+    }
+
+    .tension-item h3,
+    .service-card h3,
+    .proof-card h3 {
+      font-size: 19px;
+      line-height: 1.25;
+      font-weight: 900;
+      margin-bottom: 8px;
+    }
+
+    .tension-item p,
+    .service-card p,
+    .proof-card p {
+      margin: 0;
+      color: var(--warm-gray);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .solution-band {
+      background: var(--charcoal);
+      color: #fff;
+      padding: 56px 0;
+    }
+
+    .solution-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .solution-item {
+      min-height: 250px;
+      padding: 28px;
+      background: rgba(255, 255, 255, 0.055);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: var(--radius);
+    }
+
+    .solution-item b {
+      display: block;
+      margin-bottom: 22px;
+      color: var(--coral-soft);
+      font-family: "Montserrat", sans-serif;
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .solution-item h3 {
+      margin-bottom: 12px;
+      color: #fff;
+      font-size: 21px;
+      line-height: 1.22;
+      font-weight: 900;
+    }
+
+    .solution-item p {
+      margin: 0;
+      color: rgba(255, 255, 255, 0.70);
+      line-height: 1.65;
+      font-size: 14px;
+    }
+
+    .pilot {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at top right, rgba(224, 90, 43, 0.14), transparent 34%),
+        linear-gradient(180deg, #f6f0e8 0%, #f1e9df 100%);
+    }
+
+    .pilot-panel {
+      position: relative;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(280px, 0.95fr);
+      gap: 32px;
+      align-items: stretch;
+      padding: 46px;
+      background:
+        linear-gradient(135deg, rgba(28, 25, 22, 0.97), rgba(28, 25, 22, 0.93)),
+        #1c1916;
+      color: #fff;
+      border-radius: 28px;
+      box-shadow: 0 32px 90px rgba(28, 25, 22, 0.22);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .pilot-panel::before {
+      content: "PILOT";
+      position: absolute;
+      right: -18px;
+      bottom: 18px;
+      font-family: "Montserrat", sans-serif;
+      font-size: clamp(74px, 10vw, 132px);
+      font-weight: 900;
+      letter-spacing: -0.08em;
+      color: rgba(255, 255, 255, 0.04);
+      pointer-events: none;
+      line-height: 0.9;
+    }
+
+    .pilot-panel::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
+      background-size: 44px 44px;
+      mask-image: linear-gradient(90deg, #000, transparent 78%);
+      pointer-events: none;
+    }
+
+    .pilot-copy,
+    .pilot-side {
+      position: relative;
+      z-index: 1;
+    }
+
+    .pilot-number {
+      display: inline-flex;
+      align-items: baseline;
+      gap: 10px;
+      margin: 0 0 22px;
+      font-family: "Montserrat", sans-serif;
+      color: var(--coral-soft);
+    }
+
+    .pilot-number strong {
+      font-size: clamp(34px, 3vw, 42px);
+      line-height: 0.9;
+      font-weight: 900;
+    }
+
+    .pilot-number span {
+      font-size: 16px;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+    }
+
+    .pilot h2 {
+      max-width: 620px;
+      color: #fff;
+    }
+
+    .pilot .section-copy {
+      max-width: 640px;
+      color: rgba(255, 255, 255, 0.96);
+    }
+
+    .pilot-bullets {
+      list-style: none;
+      margin: 26px 0 0;
+      padding: 0;
+      display: grid;
+      gap: 12px;
+      max-width: 680px;
+    }
+
+    .pilot-bullets li {
+      position: relative;
+      padding: 0 0 0 24px;
+      color: rgba(255, 255, 255, 0.84);
+      font-size: 14px;
+      line-height: 1.65;
+    }
+
+    .pilot-bullets li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.72em;
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--coral);
+      box-shadow: 0 0 0 4px rgba(224, 90, 43, 0.14);
+      transform: translateY(-50%);
+    }
+
+    .pilot-side {
+      display: grid;
+      grid-template-rows: 1fr auto;
+      justify-items: center;
+      gap: 14px;
+      min-height: 100%;
+      padding: 28px 26px 26px;
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(10px);
+    }
+
+    .pilot-cta {
+      width: min(100%, 320px);
+      min-height: 64px;
+      padding: 0 28px;
+      font-size: 15px;
+      letter-spacing: 0.01em;
+      box-shadow: 0 18px 44px rgba(224, 90, 43, 0.26);
+      align-self: end;
+    }
+
+    .pilot-meta {
+      width: min(100%, 320px);
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      align-content: start;
+      align-self: center;
+    }
+
+    .pilot-chip {
+      padding: 14px 14px 13px;
+      border-radius: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.05);
+      color: rgba(255, 255, 255, 0.86);
+      font-size: 12px;
+      line-height: 1.45;
+      text-align: center;
+    }
+
+    .pilot-chip strong {
+      display: block;
+      margin-bottom: 4px;
+      color: #fff;
+      font-family: "Montserrat", sans-serif;
+      font-size: 15px;
+      font-weight: 900;
+    }
+
+    .pilot-copy .cta-row {
+      margin-top: 26px;
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 14px;
+      margin-top: 30px;
+    }
+
+    .microcopy {
+      max-width: 420px;
+      margin: 0;
+      color: var(--warm-gray);
+      font-size: 12px;
+      line-height: 1.6;
+    }
+
+    .solution-note {
+      margin: 28px 0 0;
+      max-width: 620px;
+      padding-left: 18px;
+      border-left: 3px solid var(--coral);
+      color: var(--charcoal-2);
+      font-weight: 700;
+      line-height: 1.7;
+    }
+
+    .solution-cta {
+      margin-top: 30px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      text-align: center;
+    }
+
+    .solution-cta span {
+      max-width: 460px;
+      color: rgba(255, 255, 255, 0.58);
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .fit-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 14px;
+    }
+
+    .fit-card {
+      min-height: 184px;
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255, 250, 244, 0.72);
+    }
+
+    .fit-card svg {
+      width: 26px;
+      height: 26px;
+      color: var(--coral);
+      margin-bottom: 22px;
+    }
+
+    .fit-card p {
+      margin: 0;
+      color: var(--charcoal-2);
+      line-height: 1.58;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .service-card {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      overflow: hidden;
+      background: #fffaf5;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+    }
+
+    .service-card img {
+      width: 100%;
+      aspect-ratio: 1.22;
+      object-fit: cover;
+    }
+
+    .service-card div {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      padding: 22px;
+    }
+
+    .service-card small {
+      display: block;
+      margin-bottom: 12px;
+      color: var(--coral);
+      font-size: 11px;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .service-card-cta {
+      display: inline-flex;
+      align-self: flex-start;
+      margin-top: auto;
+      padding-top: 18px;
+      color: var(--coral);
+      font-size: 13px;
+      font-weight: 900;
+      text-decoration: none;
+    }
+
+    .service-card-cta::after {
+      content: "→";
+      margin-left: 8px;
+      transition: transform 0.2s ease;
+    }
+
+    .service-card-cta:hover::after {
+      transform: translateX(3px);
+    }
+
+    .process {
+      counter-reset: step;
+    }
+
+    .process-line {
+      display: grid;
+      gap: 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.16);
+    }
+
+    .process-step {
+      counter-increment: step;
+      display: grid;
+      grid-template-columns: 120px 0.6fr 1fr;
+      gap: 28px;
+      align-items: center;
+      padding: 26px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+    }
+
+    .process-step::before {
+      content: "0" counter(step);
+      font-family: "Montserrat", sans-serif;
+      font-size: 34px;
+      font-weight: 900;
+      color: var(--coral-soft);
+    }
+
+    .process-step h3 {
+      font-size: 20px;
+      font-weight: 900;
+    }
+
+    .process-step p {
+      margin: 0;
+      color: rgba(255, 255, 255, 0.64);
+      line-height: 1.7;
+      font-size: 14px;
+    }
+
+    .proof-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 32px;
+      align-items: stretch;
+    }
+
+    .proof-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .proof-card {
+      padding: 24px 22px 22px;
+      background: linear-gradient(180deg, rgba(255, 250, 244, 0.96), rgba(255, 247, 239, 0.98));
+      border: 1px solid rgba(28, 25, 22, 0.10);
+      border-radius: 18px;
+      box-shadow: 0 12px 34px rgba(28, 25, 22, 0.05);
+    }
+
+    .proof-card strong {
+      display: block;
+      margin-bottom: 10px;
+      color: var(--coral);
+      font-family: "Montserrat", sans-serif;
+      font-size: 30px;
+      font-weight: 900;
+    }
+
+    .proof-image {
+      position: relative;
+      min-height: 100%;
+      border-radius: 28px;
+      overflow: hidden;
+      background: var(--charcoal);
+      box-shadow: 0 28px 80px rgba(28, 25, 22, 0.18);
+    }
+
+    .proof-image img {
+      width: 100%;
+      height: 100%;
+      min-height: 100%;
+      object-fit: cover;
+    }
+
+    .proof-image-badge {
+      position: absolute;
+      left: 22px;
+      right: 22px;
+      bottom: 22px;
+      padding: 16px 18px 17px;
+      border-radius: 18px;
+      background: rgba(28, 25, 22, 0.72);
+      color: rgba(255, 255, 255, 0.82);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(10px);
+      line-height: 1.55;
+      font-size: 13px;
+    }
+
+    .proof-image-badge strong {
+      display: block;
+      margin-bottom: 4px;
+      font-family: "Montserrat", sans-serif;
+      font-size: 14px;
+      font-weight: 900;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .proof-footer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 26px;
+      padding: 0;
+      background: transparent;
+      border: 0;
+      box-shadow: none;
+    }
+
+    .proof-footer p {
+      display: none;
+    }
+
+    .form-section {
+      background: var(--cream-2);
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 0.72fr 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    .form-side {
+      position: sticky;
+      top: 106px;
+    }
+
+    .form-side h2 {
+      margin-bottom: 22px;
+    }
+
+    .form-side .section-copy {
+      margin-bottom: 28px;
+    }
+
+    .contact-mini {
+      display: grid;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .contact-mini a,
+    .contact-mini span {
+      color: var(--warm-gray);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    form {
+      padding: 34px;
+      background: #fffaf5;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .field {
+      margin-bottom: 18px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--charcoal);
+      font-size: 12px;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      border: 1px solid rgba(28, 25, 22, 0.14);
+      border-radius: 6px;
+      background: var(--cream);
+      min-height: 48px;
+      padding: 0 14px;
+      color: var(--charcoal);
+      font-family: "Open Sans", sans-serif;
+      font-size: 14px;
+      outline: none;
+      transition: border-color 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+    }
+
+    textarea {
+      min-height: 132px;
+      padding-top: 13px;
+      resize: vertical;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: var(--coral);
+      box-shadow: 0 0 0 3px rgba(224, 90, 43, 0.12);
+      background: #fff;
+    }
+
+    .gdpr {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      margin: 4px 0 20px;
+      color: var(--warm-gray);
+      font-size: 12px;
+      line-height: 1.55;
+      text-transform: none;
+      font-weight: 600;
+    }
+
+    .gdpr input {
+      width: 18px;
+      height: 18px;
+      min-height: 0;
+      margin-top: 1px;
+      accent-color: var(--coral);
+    }
+
+    .faq-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    details {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255, 250, 244, 0.72);
+      padding: 20px 22px;
+    }
+
+    summary {
+      cursor: pointer;
+      font-family: "Montserrat", sans-serif;
+      font-weight: 900;
+      list-style: none;
+      line-height: 1.35;
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    details p {
+      margin: 14px 0 0;
+      color: var(--warm-gray);
+      line-height: 1.72;
+      font-size: 14px;
+    }
+
+    details ul {
+      margin: 12px 0 0;
+      padding-left: 18px;
+      color: var(--warm-gray);
+      line-height: 1.72;
+      font-size: 14px;
+    }
+
+    details ul li + li {
+      margin-top: 6px;
+    }
+
+    .faq-center {
+      display: block;
+      text-align: center;
+      margin-bottom: 42px;
+    }
+
+    .faq-center .label {
+      justify-content: center;
+    }
+
+    .faq-center h2 {
+      max-width: 760px;
+      margin: 0 auto;
+      font-size: clamp(24px, 2.1vw, 34px);
+    }
+
+    .faq-center .section-copy {
+      max-width: 740px;
+      margin: 18px auto 0;
+    }
+
+    .faq-grid-center {
+      max-width: 1040px;
+      margin: 0 auto;
+    }
+
+    .final-cta {
+      padding: 74px 0;
+      background: var(--charcoal);
+      color: #fff;
+      text-align: center;
+    }
+
+    .final-cta h2 {
+      margin: 0 auto 18px;
+    }
+
+    .final-cta p {
+      max-width: 690px;
+      margin: 0 auto 28px;
+      color: rgba(255, 255, 255, 0.68);
+      line-height: 1.72;
+    }
+
+    footer {
+      padding: 34px 0;
+      background: #120f0d;
+      color: rgba(255, 255, 255, 0.54);
+      font-size: 12px;
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .footer-inner img {
+      height: 28px;
+      filter: brightness(0) invert(1);
+      opacity: 0.82;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .mobile-cta {
+      display: none;
+      position: fixed;
+      z-index: 40;
+      left: 14px;
+      right: 14px;
+      bottom: 14px;
+    }
+
+    .mobile-cta .btn {
+      width: 100%;
+      box-shadow: 0 18px 44px rgba(28, 25, 22, 0.32);
+    }
+
+    @media (max-width: 1040px) {
+      .hero-grid,
+      .problem-grid,
+      .pilot-panel,
+      .proof-grid,
+      .form-grid,
+      .section-head,
+      .guarantee {
+        grid-template-columns: 1fr;
+      }
+      .trust-strip { max-width: 620px; }
+      .solution-grid,
+      .fit-grid,
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .pilot-panel {
+        gap: 24px;
+        padding: 34px;
+      }
+      .pilot-side {
+        justify-items: stretch;
+      }
+      .pilot-meta {
+        width: 100%;
+      }
+      .process-step {
+        grid-template-columns: 80px 1fr;
+      }
+      .process-step p {
+        grid-column: 2;
+      }
+      .form-side {
+        position: static;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .shell {
+        width: calc(100vw - 28px);
+        max-width: var(--container);
+      }
+      .topbar {
+        top: 10px;
+        left: 10px;
+        right: 10px;
+        transform: none;
+        height: 58px;
+        width: auto;
+        max-width: calc(100vw - 20px);
+        box-sizing: border-box;
+        justify-content: flex-start;
+        padding: 0 10px 0 14px;
+      }
+      .brand img {
+        height: 29px;
+      }
+      .topbar .btn {
+        display: none;
+      }
+      .hero {
+        min-height: auto;
+        padding: 104px 0 54px;
+        align-items: start;
+      }
+      .hero-copy {
+        max-width: 100%;
+        padding: 22px 18px 24px;
+        border-left-width: 2px;
+        background: rgba(28, 25, 22, 0.38);
+      }
+      h1 {
+        max-width: 100%;
+        font-size: 26px;
+        line-height: 1.12;
+        overflow-wrap: break-word;
+        word-break: normal;
+      }
+      h2 {
+        max-width: 100%;
+        font-size: 26px;
+        line-height: 1.12;
+        overflow-wrap: break-word;
+      }
+      .mbr {
+        display: block;
+      }
+      .hero-lead {
+        max-width: 330px;
+        font-size: 16px;
+        overflow-wrap: break-word;
+      }
+      .hero-actions {
+        flex-direction: column;
+      }
+      .hero-actions .btn {
+        width: 100%;
+      }
+      .trust-strip {
+        width: 100%;
+      }
+      .section {
+        padding: 72px 0;
+      }
+      .section-tight {
+        padding: 56px 0;
+      }
+      .photo-panel {
+        min-height: 360px;
+      }
+      .solution-grid,
+      .fit-grid,
+      .services-grid,
+      .pilot-list,
+      .proof-cards,
+      .proof-footer,
+      .faq-grid,
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+      .pilot-panel,
+      form {
+        padding: 26px;
+      }
+      .pilot-panel {
+        border-radius: 22px;
+      }
+      .pilot-side {
+        padding: 18px;
+      }
+      .pilot-meta {
+        grid-template-columns: 1fr 1fr;
+      }
+      .proof-grid {
+        grid-template-columns: 1fr;
+      }
+      .proof-image {
+        min-height: 360px;
+      }
+      .proof-image-badge {
+        left: 16px;
+        right: 16px;
+        bottom: 16px;
+      }
+      .proof-footer {
+        padding: 18px 18px 20px;
+      }
+      .proof-footer .btn {
+        width: 100%;
+      }
+      .process-step {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+      .process-step p {
+        grid-column: auto;
+      }
+      .proof-image img {
+        min-height: 360px;
+      }
+      .footer-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+      .mobile-cta {
+        display: none;
+      }
+      body {
+        padding-bottom: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="Bridge Dental landing kezdete">
+      <img src="../assets/logo.png" alt="Bridge Dental">
+    </a>
+    <a class="btn btn-primary" href="#urlap">Konzultációt kérek</a>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="shell hero-grid">
+        <div class="hero-copy reveal">
+          <div class="eyebrow">Svájci és német fogorvosi rendelőknek</div>
+          <h1>
+            <span class="h1-line">Digitális fogtechnikai</span>
+            <span class="h1-line">partner svájci és német</span>
+            <span class="h1-line">rendelők komplex</span>
+            <span class="h1-line">eseteihez</span>
+          </h1>
+          <p class="hero-lead">All-on-X, implantátumos cirkon munkák, e.max pótlások és digitális fogsorok házon belüli gyártással, német nyelvű szakmai támogatással és teljes európai logisztikával.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#urlap">Partneri egyeztetést kérek</a>
+            <a class="btn btn-ghost" href="#szolgaltatasok">Megnézem a szolgáltatásokat</a>
+          </div>
+        </div>
+        <aside class="trust-strip reveal" aria-label="Fő bizalmi elemek">
+          <div class="trust-item">
+            <div class="trust-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/><path d="M8 9h8"/><path d="M8 13h5"/></svg>
+            </div>
+            <div>
+              <strong>Német nyelvű egyeztetés</strong>
+              <span>szakmai kommunikáció komplex eseteknél</span>
+            </div>
+          </div>
+          <div class="trust-item">
+            <div class="trust-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M3 21h18"/><path d="M5 21V9l5 3V9l5 3V7h4v14"/><path d="M9 17h1"/><path d="M14 17h1"/></svg>
+            </div>
+            <div>
+              <strong>Saját gyártás</strong>
+              <span>dokumentált digitális workflow, alvállalkozói lánc nélkül</span>
+            </div>
+          </div>
+          <div class="trust-item">
+            <div class="trust-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M3 7h11v10H3z"/><path d="M14 10h4l3 3v4h-7z"/><circle cx="7" cy="19" r="2"/><circle cx="17" cy="19" r="2"/></svg>
+            </div>
+            <div>
+              <strong>EU logisztika</strong>
+              <span>szervezett oda-vissza szállítás CH/DE rendelőknek</span>
+            </div>
+          </div>
+          <div class="trust-item">
+            <div class="trust-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 3 20 7v5c0 5-3.4 8.2-8 9-4.6-.8-8-4-8-9V7z"/><path d="m8.5 12.5 2.2 2.2 4.8-5"/></svg>
+            </div>
+            <div>
+              <strong>5 év garancia</strong>
+              <span>implant munkákra anyag- és konstrukciós garancia</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section section-line">
+      <div class="shell">
+        <div class="section-head reveal">
+          <div>
+            <div class="label">Külföldi laborokkal való együttműködés kockázata</div>
+            <h2>
+              <span class="h2-line">Komplex eseteknél</span>
+              <span class="h2-line">nem csak a fogpótlás</span>
+              <span class="h2-line">minősége dönt.</span>
+            </h2>
+          </div>
+          <p class="section-copy">Egy svájci vagy német rendelő számára a laborpartner-választás nem egyszerű beszerzési döntés. Komplex implantátumos és digitális eseteknél a kommunikáció, a határidő, a scan-minőség, a logisztika és a felelősségvállalás ugyanúgy meghatározza az együttműködés sikerét, mint maga az elkészült fogpótlás.</p>
+        </div>
+
+        <div class="problem-grid">
+          <div class="photo-panel reveal">
+            <img src="../assets/digitalis-fogtechnika-labor-munkafolyamat.webp" alt="Bridge Dental digitális fogtechnikai munkafolyamat">
+          </div>
+          <div class="tension-list">
+            <div class="tension-item reveal">
+              <span>01</span>
+              <div>
+                <h3>Elcsúszó szakmai kommunikáció</h3>
+                <p>Komplex eseteknél egy félreértett scan, hiányos információ vagy későn érkező visszajelzés az egész munkafolyamatot megakaszthatja.</p>
+              </div>
+            </div>
+            <div class="tension-item reveal">
+              <span>02</span>
+              <div>
+                <h3>Bizonytalan határon túli logisztika</h3>
+                <p>Ha nem egyértelmű, mikor kerül be a munka a laborba, mikor indul vissza, és ki kezeli a szállítást, a rendelő nehezen tud tervezni a pácienssel.</p>
+              </div>
+            </div>
+            <div class="tension-item reveal">
+              <span>03</span>
+              <div>
+                <h3>Széttöredezett felelősség</h3>
+                <p>Implantátumos és teljes íves eseteknél kockázatot jelent, ha a gyártás, a dokumentáció, a javítás és a garancia több szereplő között oszlik meg.</p>
+              </div>
+            </div>
+            <div class="cta-row reveal">
+              <p class="solution-note">A Bridge Dental válasza: saját gyártás, német nyelvű szakmai egyeztetés és szervezett európai logisztika egy folyamatban.</p>
+            </div>
+            <div class="cta-row reveal">
+              <a class="btn btn-primary" href="#folyamat">Megnézem, hogyan működik</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="solution-band">
+      <div class="shell">
+        <div class="section-head reveal" style="margin-bottom: 34px;">
+          <div>
+            <div class="label">A Bridge Dental megoldása</div>
+            <h2>Így tesszük kontrollálhatóvá a távoli laborpartneri együttműködést.</h2>
+          </div>
+          <p class="section-copy">A Bridge Dental nem csak gyártási kapacitást ad, hanem olyan partnerfolyamatot, amelyben a szakmai egyeztetés, a digitális tervezés, a gyártás, a dokumentáció és a logisztika egy kézben van.</p>
+        </div>
+        <div class="solution-grid reveal">
+          <div class="solution-item">
+            <b>01</b>
+            <h3>Szakmai kommunikáció német nyelven</h3>
+            <p>Dedikált fogtechnikussal történő egyeztetés, scan-visszajelzés és digitális esetkonzultáció komplex munkáknál.</p>
+          </div>
+          <div class="solution-item">
+            <b>02</b>
+            <h3>Saját, dokumentált digitális gyártás</h3>
+            <p>Exocad alapú tervezés, CNC fréz- és 3D nyomtatási kapacitás, visszakövethető gyártási folyamat alvállalkozói lánc nélkül.</p>
+          </div>
+          <div class="solution-item">
+            <b>03</b>
+            <h3>Szervezett nemzetközi logisztika</h3>
+            <p>Oda-vissza szállítás svájci és német rendelőknek, kiszámítható munkafolyamattal és egyértelmű kapcsolattartással.</p>
+          </div>
+        </div>
+        <div class="solution-cta reveal">
+          <a class="btn btn-primary" href="#urlap">Partneri egyeztetést kérek</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-line" id="bizalom">
+      <div class="shell">
+        <div class="section-head reveal">
+          <div>
+            <div class="label">DOKUMENTÁLT MŰKÖDÉS</div>
+            <h2>A Bridge Dental mögött mérhető szakmai háttér áll.</h2>
+          </div>
+        </div>
+        <div class="proof-grid">
+          <div class="proof-cards">
+            <div class="proof-card reveal">
+              <strong>ICDE</strong>
+              <h3>Nemzetközi szakmai kapcsolat</h3>
+              <p>Partnerlabor szemlélet, amely nemzetközi digitális protetikai standardokra támaszkodik.</p>
+            </div>
+            <div class="proof-card reveal">
+              <strong>HDA</strong>
+              <h3>Díjazott labor munka</h3>
+              <p>Hungarian Dental Awards elismerés a labor minőségi teljesítményéért.</p>
+            </div>
+            <div class="proof-card reveal">
+              <strong>25+ fős</strong>
+              <h3>Saját csapat</h3>
+              <p>Saját, belső kontrollal dolgozó laborcsapat.</p>
+            </div>
+            <div class="proof-card reveal">
+              <strong>5 év</strong>
+              <h3>5 év garancia</h3>
+              <p>Implant munkákra anyag- és konstrukciós garancia.</p>
+            </div>
+          </div>
+          <div class="proof-image reveal">
+            <img src="../assets/labor_foto.jpg" alt="Bridge Dental labor környezet">
+          </div>
+        </div>
+        <div class="proof-footer reveal">
+          <a class="btn btn-primary" href="#pilot">Megnézem a pilot együttműködést</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section pilot" id="pilot">
+      <div class="shell">
+        <div class="pilot-panel reveal">
+          <div class="pilot-copy">
+            <div class="label">Pilot együttműködés</div>
+            <h2>Próbálja ki velünk az együttműködést egy pilot időszakban.</h2>
+            <p class="section-copy" style="margin-top: 22px;">A pilot egy 8 hetes, kockázatcsökkentett próba. Így valós munkafolyamatban látja meg, hogyan kommunikálunk, hogyan tervezzük az eseteket, milyen minőségben gyártunk, és hogyan kezeljük a felmerülő kérdéseket.</p>
+            <ul class="pilot-bullets">
+              <li>Német nyelvű szakmai egyeztetés dedikált fogtechnikussal</li>
+              <li>Digitális esetkonzultáció és scan review komplex munkáknál</li>
+              <li>Gyors korrekció vagy újrakészítés, ha szükséges</li>
+              <li>Szervezett oda-vissza logisztika svájci és német rendelőknek</li>
+            </ul>
+          </div>
+          <div class="pilot-side">
+            <div class="pilot-meta" aria-label="Pilot összefoglaló">
+              <div class="pilot-chip">
+                <strong>8 hét</strong>
+                próbaidőszak
+              </div>
+              <div class="pilot-chip">
+                <strong>3-5</strong>
+                valós eset
+              </div>
+              <div class="pilot-chip">
+                <strong>DE</strong>
+                nyelvű egyeztetés
+              </div>
+              <div class="pilot-chip">
+                <strong>CH / DE</strong>
+                logisztika
+              </div>
+            </div>
+            <a class="btn btn-primary pilot-cta" href="#urlap">Pilot egyeztetést kérek</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="szolgaltatasok">
+      <div class="shell">
+        <div class="section-head reveal">
+          <div>
+            <div class="label">Szolgáltatásaink</div>
+            <h2>A legfontosabb szolgáltatásokra koncentrálunk.</h2>
+          </div>
+          <p class="section-copy">Ez a válogatás azokról a munkákról szól, ahol a folyamat legalább olyan fontos, mint a végeredmény.</p>
+        </div>
+        <div class="services-grid">
+          <article class="service-card reveal">
+            <img src="../assets/full-arch-implantatumos-rehabilitacio-all-on-x.webp" alt="Full-Arch implantátumos rehabilitáció">
+            <div>
+              <small>Fő specialitásunk</small>
+              <h3>Full-Arch implantátumos rehabilitációk</h3>
+              <p>All-on-X rehabilitációk, implantátumra készülő cirkon koronák és hidak, teljes íves restaurációk.</p>
+              <a class="service-card-cta" href="#urlap">Ezt szeretném</a>
+            </div>
+          </article>
+          <article class="service-card reveal">
+            <img src="../assets/esztetikai-keramia-potlasok-labor-ellenorzes.webp" alt="Esztétikai kerámia pótlások labor ellenőrzéssel">
+            <div>
+              <small>Esztétika</small>
+              <h3>Esztétikai kerámia pótlások</h3>
+              <p>Ivoclar e.max préskerámia és full cirkon természetes fogakra, ott ahol az esztétika az elsődleges szempont.</p>
+              <a class="service-card-cta" href="#urlap">Ezt szeretném</a>
+            </div>
+          </article>
+          <article class="service-card reveal">
+            <img src="../assets/digitalis-fogsorok-truedent-labor-munka.webp" alt="TrueDent digitális fogsor labor munka">
+            <div>
+              <small>Újdonság</small>
+              <h3>Digitális fogsorok — TrueDent</h3>
+              <p>Stratasys TrueDent biokompatibilis 3D nyomtatott fogsorok, az első valóban esztétikus digitális fogsor megoldás.</p>
+              <a class="service-card-cta" href="#urlap">Ezt szeretném</a>
+            </div>
+          </article>
+          <article class="service-card reveal">
+            <img src="../assets/bridge-dental-kuldetes-fogtechnikai-labor.webp" alt="Bridge Dental digitális tervezés">
+            <div>
+              <small>Digitális tervezés</small>
+              <h3>Digitális tervezés</h3>
+              <p>CAD alapú virtuális 3D tervezés, emergence profile és okklúziós arányok meghatározása a gyártás előtt.</p>
+              <a class="service-card-cta" href="#urlap">Ezt szeretném</a>
+            </div>
+          </article>
+          <article class="service-card reveal">
+            <img src="../assets/digitalis-fogtechnika-labor-munkafolyamat.webp" alt="Digitális fogtechnika labor munkafolyamat">
+            <div>
+              <small>Digitális workflow</small>
+              <h3>Digitális fogtechnika</h3>
+              <p>Teljes digitális munkafolyamat a szkenneléstől a CAM gyártásig, ellenőrzötten, dokumentáltan, visszakövethetően.</p>
+              <a class="service-card-cta" href="#urlap">Ezt szeretném</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-dark process" id="folyamat">
+      <div class="shell">
+        <div class="section-head reveal">
+          <div>
+            <div class="label">A velünk való együttműködés folyamata</div>
+            <h2>Kiszámítható együttműködés már az első esettől.</h2>
+          </div>
+          <p class="section-copy">Az első kapcsolatfelvételtől a piloton át a hosszú távú együttműködésig minden lépés azt szolgálja, hogy a rendelője átlátható, kiszámítható folyamatot kapjon.</p>
+        </div>
+        <div class="process-line">
+          <div class="process-step reveal">
+            <h3>Kapcsolatfelvétel és igényfelmérés</h3>
+            <p>Megismerjük a rendelő munkatípusait, digitális munkafolyamatát, szkennelési rendszerét és logisztikai igényeit.</p>
+          </div>
+          <div class="process-step reveal">
+            <h3>Pilot együttműködés 3-5 esettel</h3>
+            <p>Komplexebb implantátumos munkáknál kockázatcsökkentett pilot időszakot javaslunk, kiemelt szakmai támogatással.</p>
+          </div>
+          <div class="process-step reveal">
+            <h3>Német nyelvű esetegyeztetés</h3>
+            <p>Dedikált fogtechnikussal, Exocad alapú tervezési konzultációval és online esetmegbeszéléssel támogatjuk a döntéseket.</p>
+          </div>
+          <div class="process-step reveal">
+            <h3>Házon belüli digitális gyártás</h3>
+            <p>A munkák saját CNC fréz- és 3D nyomtatási kapacitással készülnek, alvállalkozók nélkül, dokumentált minőségbiztosítással.</p>
+          </div>
+          <div class="process-step reveal">
+            <h3>Ellenőrzés, szállítás és visszajelzés</h3>
+            <p>A kész munkát ellenőrzés után szervezett európai logisztikával küldjük vissza, és szükség esetén szakmai visszajelzést adunk.</p>
+          </div>
+        </div>
+        <div class="cta-row reveal">
+          <a class="btn btn-primary" href="#urlap">Indítsuk el az első egyeztetést</a>
+          <a class="btn btn-ghost" href="#gyik">Szeretnék még többet tudni</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-line">
+      <div class="shell">
+        <div class="section-head reveal">
+          <div>
+            <h2 style="max-width: 520px; font-size: clamp(24px, 2.1vw, 34px);">Kinek ideális a Bridge Dental?</h2>
+          </div>
+          <p class="section-copy">Olyan praxisoknak, ahol a laborpartnernek a rendelő működéséhez kell illeszkednie.</p>
+        </div>
+        <div class="fit-grid">
+          <div class="fit-card reveal">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20"/><path d="M5 7h14"/><path d="M7 21h10"/><path d="m3 7 4 8 4-8"/><path d="m13 7 4 8 4-8"/></svg>
+            <p>Svájci vagy német rendelőknek, akik stabil külföldi laborpartnert keresnek.</p>
+          </div>
+          <div class="fit-card reveal">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 2 8l10 5 10-5-10-5Z"/><path d="m2 16 10 5 10-5"/><path d="m2 12 10 5 10-5"/></svg>
+            <p>Implantológiai és teljes íves restaurációs eseteket végző praxisoknak.</p>
+          </div>
+          <div class="fit-card reveal">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="14" x="3" y="4" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg>
+            <p>Digitális lenyomattal és CAD/CAM munkafolyamattal dolgozó csapatoknak.</p>
+          </div>
+          <div class="fit-card reveal">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a4 4 0 0 1-4 4H7l-4 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/></svg>
+            <p>Olyan klinikáknak, ahol fontos a német nyelvű szakmai kommunikáció.</p>
+          </div>
+          <div class="fit-card reveal">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h11v10H3z"/><path d="M14 10h4l3 3v4h-7z"/><circle cx="7" cy="19" r="2"/><circle cx="17" cy="19" r="2"/></svg>
+            <p>Rendelőknek, ahol a szállítási folyamat és határidő kiszámíthatósága kritikus.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="gyik">
+      <div class="shell">
+        <div class="section-head reveal faq-center">
+          <div>
+            <div class="label">Gyakori kérdések</div>
+            <h2>Kérdések, amiket érdemes előre tisztázni.</h2>
+          </div>
+        </div>
+        <div class="faq-grid faq-grid-center">
+          <details class="reveal" open>
+            <summary>Hogyan tudjuk kockázat nélkül kipróbálni az együttműködést?</summary>
+            <p>Komplexebb implantátumos munkákra 3-5 esetből álló, 8 hetes pilot együttműködést ajánlunk.</p>
+            <p>Így nem egyetlen munka alapján kell dönteni, hanem valós közös folyamatban láthatóvá válik:</p>
+            <ul>
+              <li>a kommunikáció</li>
+              <li>a tervezés</li>
+              <li>a gyártási minőség</li>
+              <li>a problémakezelés</li>
+            </ul>
+          </details>
+          <details class="reveal">
+            <summary>Miben más a Bridge Dental, mint egy hagyományos fogtechnikai labor?</summary>
+            <p>Nem csak fogpótlásokat készítünk: klinikai partnerként gondolkodunk.</p>
+            <p>A rendelő munkáját ezekkel támogatjuk:</p>
+            <ul>
+              <li>digitális tervezési konzultáció</li>
+              <li>scan- és illeszkedési visszajelzés</li>
+              <li>dokumentált gyártási folyamat</li>
+            </ul>
+          </details>
+          <details class="reveal">
+            <summary>Milyen digitális rendszerekkel tudunk együtt dolgozni?</summary>
+            <p>Exocad alapú digitális tervezéssel dolgozunk.</p>
+            <p>Több intraorális szkennerből érkező fájlt tudunk fogadni, például:</p>
+            <ul>
+              <li>iTero</li>
+              <li>TRIOS</li>
+              <li>Medit</li>
+              <li>Shining</li>
+            </ul>
+          </details>
+          <details class="reveal">
+            <summary>Hol található a Bridge Dental labor központja?</summary>
+            <p>Laborunk Magyarországon, Budapesten működik. Központunk címe: 1106 Budapest, Fehér út 10. 26. épület, 2. emelet.</p>
+          </details>
+          <details class="reveal">
+            <summary>Milyen garanciát vállalnak implant munkákra?</summary>
+            <p>Implant munkákra 5 év anyag- és konstrukciós garanciát vállalunk megfelelő klinikai használat mellett.</p>
+            <p>A gyártási folyamat dokumentált, az anyagtételtől a felelős fogtechnikusig visszakövethető.</p>
+          </details>
+          <details class="reveal">
+            <summary>Mi történik, ha laborhibából vissza kell hívni a pácienst?</summary>
+            <p>Ha bizonyítottan laborhibából adódó illeszkedési hiba miatt a pácienst vissza kell hívnia az orvosnak a rendelőbe, nemcsak javítjuk a munkát, hanem a következő munka technikai díjából jóváírunk egy fix 150€ székidő-kompenzációt.</p>
+            <p>Nem tartozik a garanciába:</p>
+            <ul>
+              <li>rossz preparáció, ha előre jeleztük, de az orvos kérésére elkészült</li>
+              <li>kevés hely, ha előre jeleztük, de az orvos kérésére elkészült</li>
+              <li>rossz lenyomat vagy scan, ha előre jeleztük, de az orvos kérésére elkészült</li>
+              <li>hibás beragasztás</li>
+              <li>előre nem jelzett parafunkció, például bruxizmus</li>
+            </ul>
+          </details>
+          <details class="reveal">
+            <summary>Hogyan működik a svájci és német rendelők logisztikai kiszolgálása?</summary>
+            <p>A teljes oda-vissza szállítást mi szervezzük svájci és német partnereink számára.</p>
+            <p>Ha 14:00-ig jelzik, hogy van elhoznivaló munka, intézzük a felvételt. A rendelőnek csak be kell csomagolnia a munkát és kinyomtatnia az e-mailben küldött szállítólevelet.</p>
+            <p>FedEx Express szállítással dolgozunk: ha például hétfőn elküldik a lenyomatot vagy munkát, az a 24 órás expressz szállítással jellemzően kedd délig megérkezik hozzánk.</p>
+          </details>
+          <details class="reveal">
+            <summary>Kapunk német nyelvű szakmai támogatást?</summary>
+            <p>Igen. Dedikált, németül kommunikáló fogtechnikussal lehet egyeztetni, nem csak általánosan a laborral. Komplex eseteknél online digitális tervezési konzultációt is biztosítunk.</p>
+          </details>
+        </div>
+        <div class="cta-row reveal">
+          <a class="btn btn-primary" href="#urlap">Kérdésem van az együttműködésről</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section form-section" id="urlap">
+      <div class="shell form-grid">
+        <div class="form-side reveal">
+          <div class="label">Kapcsolatfelvétel</div>
+          <h2>Kezdjük el a közös munkát.</h2>
+          <div class="contact-mini">
+            <a href="mailto:info@bridgedental.hu">info@bridgedental.hu</a>
+            <a href="tel:+36703966656">+36 / (70) 396 6656</a>
+            <span>1106 Budapest, Fehér út 10. 26. épület, 2. emelet, Magyarország</span>
+          </div>
+        </div>
+
+        <form class="reveal" aria-label="Pilot egyeztetés űrlap">
+          <div class="form-row">
+            <div class="field">
+              <label for="name">Név *</label>
+              <input id="name" name="name" type="text" placeholder="Dr. Max Müller" required>
+            </div>
+            <div class="field">
+              <label for="clinic">Rendelő / klinika neve *</label>
+              <input id="clinic" name="clinic" type="text" placeholder="Praxis / Klinik neve" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="field">
+              <label for="country">Ország *</label>
+              <select id="country" name="country" required>
+                <option value="" selected disabled>Válasszon</option>
+                <option>Svájc</option>
+                <option>Németország</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="role">Pozíció *</label>
+              <select id="role" name="role" required>
+                <option value="" selected disabled>Válasszon</option>
+                <option>Fogorvos</option>
+                <option>Rendelőtulajdonos</option>
+                <option>Klinikavezető</option>
+                <option>Praxis manager</option>
+                <option>Labor / workflow koordinátor</option>
+              </select>
+            </div>
+          </div>
+          <div class="field">
+            <label for="interest">Melyik szolgáltatás érdekli? *</label>
+            <select id="interest" name="interest" required>
+              <option value="" selected disabled>Válasszon szolgáltatást</option>
+              <option>Full-Arch implantátumos rehabilitációk</option>
+              <option>Esztétikai kerámia pótlások</option>
+              <option>TrueDent digitális fogsorok</option>
+              <option>Digitális tervezés</option>
+              <option>Digitális fogtechnika</option>
+              <option>Általános partneri egyeztetés</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="email">E-mail cím *</label>
+            <input id="email" name="email" type="email" placeholder="name@clinic.ch" required>
+          </div>
+          <div class="field">
+            <label for="phone">Telefonszám</label>
+            <input id="phone" name="phone" type="tel" placeholder="+49 / +41 ...">
+          </div>
+          <div class="field">
+            <label for="message">Üzenet / eset rövid leírása</label>
+            <textarea id="message" name="message" placeholder="Írja le röviden, milyen munkatípusra, pilotra vagy partneri együttműködésre keres megoldást..."></textarea>
+          </div>
+          <label class="gdpr">
+            <input type="checkbox" required>
+            <span>Elolvastam és elfogadom az adatkezelési tájékoztatót, és hozzájárulok ahhoz, hogy a Bridge Dental az űrlapon megadott adataimat a megkeresésem megválaszolása céljából kezelje.</span>
+          </label>
+          <button class="btn btn-primary" type="submit" style="width: 100%;">Űrlap elküldése</button>
+        </form>
+      </div>
+    </section>
+
+    <section class="final-cta">
+      <div class="shell reveal">
+        <h2>Kezdjük el a közös munkát.</h2>
+        <p>Ha a rendelője komplex munkákhoz keres megbízható, jól szervezett laborpartnert, az első egyeztetés jó kiindulópont lehet.</p>
+        <a class="btn btn-primary" href="#urlap">Kezdjük el a közös munkát</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="shell footer-inner">
+      <img src="../assets/logo.png" alt="Bridge Dental">
+      <span>Adatkezelési tájékoztató · Copyright © Bridge Dental</span>
+    </div>
+  </footer>
+
+  <div class="mobile-cta">
+    <a class="btn btn-primary" href="#urlap">Partneri egyeztetést kérek</a>
+  </div>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+
+    const faqItems = document.querySelectorAll("#gyik details");
+    faqItems.forEach((item) => {
+      item.addEventListener("toggle", () => {
+        if (!item.open) return;
+        faqItems.forEach((other) => {
+          if (other !== item) other.open = false;
+        });
+      });
+    });
+
+    document.querySelector("form").addEventListener("submit", (event) => {
+      event.preventDefault();
+      alert("Az űrlap jelenleg prototípus. CRM integráció után ide érkeznek majd a strukturált leadek.");
+    });
+  </script>
+</body>
+</html>
