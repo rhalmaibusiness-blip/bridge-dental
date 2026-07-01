@@ -1031,13 +1031,16 @@
     .testimonial-card details {
       position: relative;
       margin-top: 2px;
+      padding: 0;
+      border: 0;
+      background: transparent;
     }
 
     .testimonial-card details summary {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      margin-top: 16px;
+      margin-top: 12px;
       padding: 0;
       border: 0;
       background: transparent;
@@ -1078,40 +1081,42 @@
       transform: scale(1.06);
     }
 
-    .testimonial-expand {
+    .testimonial-preview {
       position: relative;
       overflow: hidden;
-      max-height: 0;
+      max-height: 13.8em;
       transition: max-height 0.36s ease;
     }
 
-    .testimonial-expand::before {
+    .testimonial-card details:not([open]) .testimonial-preview::after {
       content: "";
       position: absolute;
       left: 0;
       right: 0;
-      bottom: 100%;
-      height: 68px;
-      background: linear-gradient(180deg, rgba(255, 248, 241, 0), rgba(255, 248, 241, 0.92) 58%, rgba(255, 248, 241, 1));
+      bottom: 0;
+      height: 92px;
+      background: linear-gradient(180deg, rgba(255, 248, 241, 0), rgba(255, 248, 241, 0.84) 56%, rgba(255, 248, 241, 1));
       pointer-events: none;
-      opacity: 1;
-      transition: opacity 0.2s ease;
     }
 
-    .testimonial-card details[open] .testimonial-expand {
-      max-height: 420px;
+    .testimonial-card details[open] .testimonial-preview {
+      max-height: 44em;
     }
 
-    .testimonial-card details[open] .testimonial-expand::before {
-      opacity: 0;
+    .testimonial-hidden {
+      display: none;
+    }
+
+    .testimonial-card details[open] .testimonial-hidden {
+      display: block;
     }
 
     .testimonial-more {
-      margin-top: 14px;
+      margin-top: 0;
     }
 
-    .testimonial-more p:first-child {
-      padding-top: 2px;
+    .testimonial-hidden p:first-child {
+      margin-top: 14px;
     }
 
     .testimonial-meta {
@@ -1785,18 +1790,16 @@
           </article>
 
           <article class="testimonial-card reveal">
-            <div class="testimonial-text">
-              <p>Wir arbeiten sehr erfolgreich mit dem zahntechnischen Labor Bridge Dental aus Budapest zusammen.</p>
-              <p>Besonders hervorzuheben sind die hervorragenden Zirkon- und Keramikarbeiten, die durch hohe Passgenauigkeit und Ästhetik überzeugen.</p>
-            </div>
             <details>
-              <summary>Még több</summary>
-              <div class="testimonial-expand">
-                <div class="testimonial-text testimonial-more">
+              <div class="testimonial-preview testimonial-text">
+                <p>Wir arbeiten sehr erfolgreich mit dem zahntechnischen Labor Bridge Dental aus Budapest zusammen.</p>
+                <p>Besonders hervorzuheben sind die hervorragenden Zirkon- und Keramikarbeiten, die durch hohe Passgenauigkeit und Ästhetik überzeugen.</p>
+                <div class="testimonial-hidden testimonial-more">
                   <p>Die Kommunikation ist stets schnell und unkompliziert, und auch die Liefer- sowie Anfertigungszeiten sind angenehm kurz.</p>
                   <p>Die Zusammenarbeit ist jederzeit zuverlässig und professionell. Wir können Bridge Dental uneingeschränkt weiterempfehlen und schätzen sie als langfristigen Partner sehr.</p>
                 </div>
               </div>
+              <summary>Még több</summary>
             </details>
             <div class="testimonial-meta">
               <strong>Dr. Maximilian Konz M.Sc.</strong>
@@ -1805,20 +1808,18 @@
           </article>
 
           <article class="testimonial-card reveal">
-            <div class="testimonial-text">
-              <p>Wir arbeiten sehr gerne mit dem zahntechnischen Labor Bridge Dental zusammen und schätzen die Zusammenarbeit sehr.</p>
-              <p>Besonders hervorheben möchten wir die zuverlässige und professionelle Arbeitsweise des Labors.</p>
-            </div>
             <details>
-              <summary>Még több</summary>
-              <div class="testimonial-expand">
-                <div class="testimonial-text testimonial-more">
+              <div class="testimonial-preview testimonial-text">
+                <p>Wir arbeiten sehr gerne mit dem zahntechnischen Labor Bridge Dental zusammen und schätzen die Zusammenarbeit sehr.</p>
+                <p>Besonders hervorheben möchten wir die zuverlässige und professionelle Arbeitsweise des Labors.</p>
+                <div class="testimonial-hidden testimonial-more">
                   <p>Die Kommunikation ist stets unkompliziert, schnell und lösungsorientiert. Ein weiterer wichtiger Grund für die Zusammenarbeit ist die stets hohe Qualität der zahntechnischen Arbeiten.</p>
                   <p>Auf individuelle Wünsche wird flexibel eingegangen, was die Zusammenarbeit für unser Team sehr angenehm macht.</p>
                   <p>Auch wirtschaftlich ist die Kooperation für uns sehr vorteilhaft. Durch das sehr gute Preis-Leistungs-Verhältnis und die verlässlichen Lieferzeiten können wir unseren Patienten hochwertige Versorgungen anbieten und gleichzeitig effizient planen.</p>
                   <p>Wir freuen uns auf die weitere Zusammenarbeit und können das Dentallabor uneingeschränkt weiterempfehlen.</p>
                 </div>
               </div>
+              <summary>Még több</summary>
             </details>
             <div class="testimonial-meta">
               <strong>Elena Janzer</strong>
