@@ -1008,31 +1008,6 @@
       pointer-events: none;
     }
 
-    .testimonial-kicker {
-      display: inline-flex;
-      align-items: center;
-      align-self: flex-start;
-      gap: 8px;
-      margin-bottom: 18px;
-      padding: 8px 12px;
-      border-radius: 999px;
-      background: rgba(224, 90, 43, 0.10);
-      color: var(--coral);
-      font-size: 11px;
-      font-weight: 900;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-    }
-
-    .testimonial-kicker::before {
-      content: "";
-      width: 7px;
-      height: 7px;
-      border-radius: 999px;
-      background: currentColor;
-      box-shadow: 0 0 0 5px rgba(224, 90, 43, 0.08);
-    }
-
     .testimonial-text {
       margin: 0;
       color: var(--charcoal-2);
@@ -1054,19 +1029,25 @@
     }
 
     .testimonial-card details {
-      margin-top: 0;
+      position: relative;
+      margin-top: 2px;
     }
 
     .testimonial-card details summary {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      margin-top: 18px;
+      margin-top: 16px;
+      padding: 0;
+      border: 0;
+      background: transparent;
       list-style: none;
       cursor: pointer;
       color: var(--coral);
-      font-size: 13px;
+      font-family: "Montserrat", sans-serif;
+      font-size: 14px;
       font-weight: 900;
+      line-height: 1.2;
       user-select: none;
     }
 
@@ -1079,11 +1060,11 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 18px;
-      height: 18px;
+      width: 16px;
+      height: 16px;
       border-radius: 999px;
-      border: 1px solid rgba(224, 90, 43, 0.34);
-      font-size: 13px;
+      border: 1px solid rgba(224, 90, 43, 0.28);
+      font-size: 12px;
       line-height: 1;
       transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
     }
@@ -1097,8 +1078,40 @@
       transform: scale(1.06);
     }
 
+    .testimonial-expand {
+      position: relative;
+      overflow: hidden;
+      max-height: 0;
+      transition: max-height 0.36s ease;
+    }
+
+    .testimonial-expand::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 100%;
+      height: 68px;
+      background: linear-gradient(180deg, rgba(255, 248, 241, 0), rgba(255, 248, 241, 0.92) 58%, rgba(255, 248, 241, 1));
+      pointer-events: none;
+      opacity: 1;
+      transition: opacity 0.2s ease;
+    }
+
+    .testimonial-card details[open] .testimonial-expand {
+      max-height: 420px;
+    }
+
+    .testimonial-card details[open] .testimonial-expand::before {
+      opacity: 0;
+    }
+
     .testimonial-more {
       margin-top: 14px;
+    }
+
+    .testimonial-more p:first-child {
+      padding-top: 2px;
     }
 
     .testimonial-meta {
@@ -1752,7 +1765,6 @@
         </div>
         <div class="testimonial-grid">
           <article class="testimonial-card reveal">
-            <div class="testimonial-kicker">Hosszú távú együttműködés</div>
             <div class="testimonial-text">
               <p>Wir sind seit über einem Jahrzehnt mit der Arbeit zufrieden. Qualität und Ästhetik stimmen <span>zu 100%</span>.</p>
               <p>Die Kommunikation mit dem Labor läuft reibungslos und es gibt selbst bei komplexeren Arbeiten immer ein Top Ergebnis!</p>
@@ -1763,7 +1775,6 @@
           </article>
 
           <article class="testimonial-card reveal">
-            <div class="testimonial-kicker">Megbízható minőség</div>
             <div class="testimonial-text">
               <p>Super zuverlässiges Labor mit konstant hoher Qualität. Die Arbeiten passen hervorragend, werden pünktlich geliefert und sind ästhetisch einfach spitze.</p>
               <p>Vielen Dank für die professionelle Zusammenarbeit!</p>
@@ -1774,16 +1785,17 @@
           </article>
 
           <article class="testimonial-card reveal">
-            <div class="testimonial-kicker">Komplex esetek</div>
             <div class="testimonial-text">
               <p>Wir arbeiten sehr erfolgreich mit dem zahntechnischen Labor Bridge Dental aus Budapest zusammen.</p>
               <p>Besonders hervorzuheben sind die hervorragenden Zirkon- und Keramikarbeiten, die durch hohe Passgenauigkeit und Ästhetik überzeugen.</p>
             </div>
             <details>
               <summary>Még több</summary>
-              <div class="testimonial-text testimonial-more">
-                <p>Die Kommunikation ist stets schnell und unkompliziert, und auch die Liefer- sowie Anfertigungszeiten sind angenehm kurz.</p>
-                <p>Die Zusammenarbeit ist jederzeit zuverlässig und professionell. Wir können Bridge Dental uneingeschränkt weiterempfehlen und schätzen sie als langfristigen Partner sehr.</p>
+              <div class="testimonial-expand">
+                <div class="testimonial-text testimonial-more">
+                  <p>Die Kommunikation ist stets schnell und unkompliziert, und auch die Liefer- sowie Anfertigungszeiten sind angenehm kurz.</p>
+                  <p>Die Zusammenarbeit ist jederzeit zuverlässig und professionell. Wir können Bridge Dental uneingeschränkt weiterempfehlen und schätzen sie als langfristigen Partner sehr.</p>
+                </div>
               </div>
             </details>
             <div class="testimonial-meta">
@@ -1793,18 +1805,19 @@
           </article>
 
           <article class="testimonial-card reveal">
-            <div class="testimonial-kicker">Rugalmas partneri működés</div>
             <div class="testimonial-text">
               <p>Wir arbeiten sehr gerne mit dem zahntechnischen Labor Bridge Dental zusammen und schätzen die Zusammenarbeit sehr.</p>
               <p>Besonders hervorheben möchten wir die zuverlässige und professionelle Arbeitsweise des Labors.</p>
             </div>
             <details>
               <summary>Még több</summary>
-              <div class="testimonial-text testimonial-more">
-                <p>Die Kommunikation ist stets unkompliziert, schnell und lösungsorientiert. Ein weiterer wichtiger Grund für die Zusammenarbeit ist die stets hohe Qualität der zahntechnischen Arbeiten.</p>
-                <p>Auf individuelle Wünsche wird flexibel eingegangen, was die Zusammenarbeit für unser Team sehr angenehm macht.</p>
-                <p>Auch wirtschaftlich ist die Kooperation für uns sehr vorteilhaft. Durch das sehr gute Preis-Leistungs-Verhältnis und die verlässlichen Lieferzeiten können wir unseren Patienten hochwertige Versorgungen anbieten und gleichzeitig effizient planen.</p>
-                <p>Wir freuen uns auf die weitere Zusammenarbeit und können das Dentallabor uneingeschränkt weiterempfehlen.</p>
+              <div class="testimonial-expand">
+                <div class="testimonial-text testimonial-more">
+                  <p>Die Kommunikation ist stets unkompliziert, schnell und lösungsorientiert. Ein weiterer wichtiger Grund für die Zusammenarbeit ist die stets hohe Qualität der zahntechnischen Arbeiten.</p>
+                  <p>Auf individuelle Wünsche wird flexibel eingegangen, was die Zusammenarbeit für unser Team sehr angenehm macht.</p>
+                  <p>Auch wirtschaftlich ist die Kooperation für uns sehr vorteilhaft. Durch das sehr gute Preis-Leistungs-Verhältnis und die verlässlichen Lieferzeiten können wir unseren Patienten hochwertige Versorgungen anbieten und gleichzeitig effizient planen.</p>
+                  <p>Wir freuen uns auf die weitere Zusammenarbeit und können das Dentallabor uneingeschränkt weiterempfehlen.</p>
+                </div>
               </div>
             </details>
             <div class="testimonial-meta">
