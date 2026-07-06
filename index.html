@@ -1739,6 +1739,161 @@
 
     .philosophy.inview .phi-dot-line .tail { height: 130px; }
 
+    /* ── WHY BRIDGE DENTAL ── */
+    .why-bridge {
+      background: #f6f1ea;
+    }
+
+    .why-bridge-head {
+      background: linear-gradient(105deg, #16100c 0%, #1d1510 55%, #241811 100%);
+      padding: clamp(60px, 9vh, 100px) clamp(28px, 7vw, 110px);
+    }
+
+    .why-bridge-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 4px;
+      color: var(--coral);
+      margin-bottom: 28px;
+      text-transform: uppercase;
+    }
+
+    .why-bridge-eyebrow::before {
+      content: '';
+      width: 0;
+      height: 2px;
+      background: var(--coral);
+      transition: width 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.2s;
+    }
+
+    .why-bridge.inview .why-bridge-eyebrow::before { width: 32px; }
+
+    .why-bridge-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(30px, 3.6vw, 50px);
+      font-weight: 800;
+      line-height: 1.25;
+      color: #f5efe9;
+      max-width: 22ch;
+      text-wrap: balance;
+    }
+
+    .why-bridge-title .why-bridge-accent { color: var(--coral); }
+
+    .why-bridge-reveal {
+      opacity: 0;
+      transform: translateY(34px);
+      transition: opacity 0.9s ease, transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .why-bridge.inview .why-bridge-reveal { opacity: 1; transform: translateY(0); }
+    .why-bridge.inview .why-bridge-title.why-bridge-reveal { transition-delay: 0.15s; }
+    .why-bridge.inview .why-bridge-intro.why-bridge-reveal { transition-delay: 0.3s; }
+
+    .why-bridge-body {
+      display: grid;
+      grid-template-columns: minmax(260px, 340px) 1fr;
+      gap: clamp(36px, 5vw, 80px);
+      padding: clamp(56px, 9vh, 100px) clamp(28px, 7vw, 110px);
+      align-items: start;
+    }
+
+    .why-bridge-intro {
+      position: relative;
+      padding: 28px 0 0 30px;
+      font-size: 15.5px;
+      line-height: 1.85;
+      color: #4a413b;
+    }
+
+    .why-bridge-intro::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 70px;
+      height: 230px;
+      border-top: 1px solid var(--coral);
+      border-left: 1px solid var(--coral);
+      clip-path: inset(0 100% 100% 0);
+      transition: clip-path 1.1s cubic-bezier(0.22, 1, 0.36, 1) 0.3s;
+    }
+
+    .why-bridge.inview .why-bridge-intro::before { clip-path: inset(0 0 0 0); }
+
+    .why-bridge-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .why-bridge-card {
+      background: #fdfbf8;
+      border: 1px solid #e5dcd0;
+      padding: 40px 28px 36px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      opacity: 0;
+      transform: translateY(38px);
+      transition:
+        opacity 0.8s ease,
+        transform 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+        box-shadow 0.35s ease,
+        border-color 0.35s ease;
+      transition-delay: var(--d, 0s), var(--d, 0s), 0s, 0s;
+    }
+
+    .why-bridge.inview .why-bridge-card { opacity: 1; transform: translateY(0); }
+
+    .why-bridge-card:hover {
+      box-shadow: 0 18px 40px -18px rgba(43, 30, 20, 0.28);
+      border-color: rgba(224, 90, 43, 0.45);
+      transform: translateY(-6px);
+      transition-delay: 0s;
+    }
+
+    .why-bridge-card img {
+      width: 72px;
+      height: 72px;
+      object-fit: contain;
+      margin-bottom: 22px;
+      transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+      mix-blend-mode: multiply;
+    }
+
+    .why-bridge-card:hover img { transform: scale(1.12) rotate(-3deg); }
+
+    .why-bridge-card h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 1.45;
+      color: #2b2320;
+    }
+
+    .why-bridge-card .card-divider {
+      width: 26px;
+      height: 2px;
+      background: var(--coral);
+      margin: 16px auto;
+      transform: scaleX(0);
+      transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+      transition-delay: calc(var(--d, 0s) + 0.3s);
+    }
+
+    .why-bridge.inview .why-bridge-card .card-divider { transform: scaleX(1); }
+
+    .why-bridge-card p {
+      font-size: 14px;
+      line-height: 1.75;
+      color: #5a5049;
+    }
+
     /* ── SCROLL ANIMATIONS ── */
     .reveal {
       opacity: 0;
@@ -1806,6 +1961,16 @@
 
       .phi-dot-line { display: none; }
       .phi-corner.bl { display: none; }
+
+      .why-bridge-grid { grid-template-columns: repeat(2, 1fr); }
+      .why-bridge-body {
+        grid-template-columns: 1fr;
+        padding: 56px 48px 64px;
+        gap: 40px;
+      }
+      .why-bridge-head { padding: 60px 48px; }
+      .why-bridge-intro { padding: 22px 0 0 22px; font-size: 15px; }
+      .why-bridge-intro::before { width: 54px; height: 160px; }
 
       footer { grid-template-columns: 1fr 1fr; gap: 32px; padding: 48px; }
 
@@ -2005,6 +2170,18 @@
       .philosophy.inview .phi-img-wrap { transform: translateY(0); }
       .phi-dot-line { display: none; }
 
+      .why-bridge-head { padding: 60px 26px; }
+      .why-bridge-body {
+        grid-template-columns: 1fr;
+        padding: 56px 26px 64px;
+        gap: 40px;
+      }
+      .why-bridge-grid { grid-template-columns: 1fr; gap: 18px; }
+      .why-bridge-card { padding: 34px 24px 30px; }
+      .why-bridge-card img { width: 62px; height: 62px; }
+      .why-bridge-intro { padding: 22px 0 0 22px; font-size: 15px; }
+      .why-bridge-intro::before { width: 54px; height: 160px; }
+
       .section-title { font-size: 28px; letter-spacing: -0.8px; }
 
       .services-grid { grid-template-columns: 1fr; gap: 16px; }
@@ -2195,6 +2372,69 @@
   </div>
 </section>
 
+<section class="why-bridge" id="miert">
+  <div class="why-bridge-head">
+    <div class="why-bridge-eyebrow why-bridge-reveal">Miért a Bridge Dental?</div>
+    <h2 class="why-bridge-title why-bridge-reveal">
+      Nem egyszerűen <span class="why-bridge-accent">fogpótlásokat</span> készítünk.
+    </h2>
+  </div>
+
+  <div class="why-bridge-body">
+    <div class="why-bridge-intro why-bridge-reveal">
+      Úgy gondoljuk, hogy egy prémium fogtechnikai labor feladata nem ér
+      véget egy restauráció elkészítésével. Valódi értéket akkor teremtünk,
+      ha munkánk hozzájárul a gördülékenyebb kezelésekhez,
+      a kiszámíthatóbb eredményekhez és a praxis hatékonyabb
+      működéséhez.
+    </div>
+
+    <div class="why-bridge-grid">
+      <div class="why-bridge-card" style="--d: 0.1s">
+        <img src="icon-globe.png" alt="">
+        <h3>Nemzetközi<br>szakmai háttér</h3>
+        <span class="card-divider"></span>
+        <p>Több országban szerzett tapasztalat, globális szemlélet.</p>
+      </div>
+
+      <div class="why-bridge-card" style="--d: 0.22s">
+        <img src="icon-implant.png" alt="">
+        <h3>Kiszámítható eredmények komplex implantációs esetekben</h3>
+        <span class="card-divider"></span>
+        <p>Precíz tervezés és kivitelezés a stabil, hosszú távú eredményekért.</p>
+      </div>
+
+      <div class="why-bridge-card" style="--d: 0.34s">
+        <img src="icon-factory.png" alt="">
+        <h3>Saját<br>gyártóközpont</h3>
+        <span class="card-divider"></span>
+        <p>Teljes kontroll a minőség, határidők és innováció felett.</p>
+      </div>
+
+      <div class="why-bridge-card" style="--d: 0.46s">
+        <img src="icon-chat.png" alt="">
+        <h3>Német nyelvű szakmai kommunikáció</h3>
+        <span class="card-divider"></span>
+        <p>Közvetlen, pontos és hatékony együttműködés német nyelven.</p>
+      </div>
+
+      <div class="why-bridge-card" style="--d: 0.58s">
+        <img src="icon-truck.png" alt="">
+        <h3>Expressz európai partnerlogisztika</h3>
+        <span class="card-divider"></span>
+        <p>Gyors és megbízható szállítás egész Európában.</p>
+      </div>
+
+      <div class="why-bridge-card" style="--d: 0.7s">
+        <img src="icon-shield.png" alt="">
+        <h3>Dokumentált prémium minőség</h3>
+        <span class="card-divider"></span>
+        <p>Szigorú minőségellenőrzés és teljes dokumentáció.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 
 <!-- SERVICES -->
 <section class="section" id="szolgaltatasok" style="position:relative; overflow:hidden;">
@@ -2374,73 +2614,6 @@
 </div>
 
 <!-- MIÉRT MINKET -->
-<section class="section" id="miert-minket">
-  <div class="section-label">Miért minket válasszon?</div>
-  <h2 class="section-title">Nemzetközi rendelői működésre tervezve</h2>
-  <p class="section-desc">Svájci és német partnereinknek nemcsak fogpótlásokat készítünk, hanem stabil, átlátható és hosszú távon kiszámítható együttműködést biztosítunk.</p>
-
-  <!-- Felső sor: 3 kártya -->
-  <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 8px;">
-    <div class="reveal" style="padding: 32px 28px; background: var(--white); border-radius: 16px; border: 1px solid var(--warm-gray-pale);">
-      <div style="width:44px; height:44px; border-radius:10px; background:var(--coral-pale); display:flex; align-items:center; justify-content:center; margin-bottom:16px;">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--coral)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6.5A3.5 3.5 0 0 1 7.5 3h9A3.5 3.5 0 0 1 20 6.5v5A3.5 3.5 0 0 1 16.5 15H12l-5 4v-4.1A3.5 3.5 0 0 1 4 11.5z"/><path d="M8 8h8"/><path d="M8 11h5"/></svg>
-      </div>
-      <h4 style="font-size:15px; font-weight:700; color:var(--charcoal); margin-bottom:8px;">Német nyelvű szakmai kommunikáció</h4>
-      <p style="font-size:13px; color:var(--warm-gray); line-height:1.65; margin:0;">Dedikált kapcsolattartás és esetegyeztetés németül, hogy a komplex munkák ne vesszenek el fordításban.</p>
-    </div>
-    <div class="reveal reveal-delay-1" style="padding: 32px 28px; background: var(--white); border-radius: 16px; border: 1px solid var(--warm-gray-pale);">
-      <div style="width:44px; height:44px; border-radius:10px; background:var(--coral-pale); display:flex; align-items:center; justify-content:center; margin-bottom:16px;">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--coral)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16"/><path d="M4 12h16"/><path d="M4 17h10"/><path d="M17 15l3 3-3 3"/></svg>
-      </div>
-      <h4 style="font-size:15px; font-weight:700; color:var(--charcoal); margin-bottom:8px;">Házon belüli digitális gyártás</h4>
-      <p style="font-size:13px; color:var(--warm-gray); line-height:1.65; margin:0;">Exocad tervezés, saját CNC fréz- és 3D nyomtatási kapacitás, alvállalkozók nélkül.</p>
-    </div>
-    <div class="reveal reveal-delay-2" style="padding: 32px 28px; background: var(--white); border-radius: 16px; border: 1px solid var(--warm-gray-pale);">
-      <div style="width:44px; height:44px; border-radius:10px; background:var(--coral-pale); display:flex; align-items:center; justify-content:center; margin-bottom:16px;">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--coral)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M8 7V3h8v4"/><path d="M6 21h12a2 2 0 0 0 2-2V7H4v12a2 2 0 0 0 2 2z"/><path d="M9 13h6"/><path d="M9 17h4"/></svg>
-      </div>
-      <h4 style="font-size:15px; font-weight:700; color:var(--charcoal); margin-bottom:8px;">Dokumentált prémium minőség</h4>
-      <p style="font-size:13px; color:var(--warm-gray); line-height:1.65; margin:0;">Minden munka nyomon követhető az anyagtételtől a felelős fogtechnikusig.</p>
-    </div>
-  </div>
-
-  <!-- Alsó sor: 3 kártya -->
-  <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 24px;">
-    <div class="reveal" style="padding: 32px 28px; background: var(--white); border-radius: 16px; border: 1px solid var(--warm-gray-pale);">
-      <div style="width:44px; height:44px; border-radius:10px; background:var(--coral-pale); display:flex; align-items:center; justify-content:center; margin-bottom:16px;">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--coral)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-5"/></svg>
-      </div>
-      <h4 style="font-size:15px; font-weight:700; color:var(--charcoal); margin-bottom:8px;">Implantológiai garancia</h4>
-      <p style="font-size:13px; color:var(--warm-gray); line-height:1.65; margin:0;">Implant munkákra 5 év anyag- és konstrukciós garancia, megfelelő klinikai használat mellett.</p>
-    </div>
-    <div class="reveal reveal-delay-1" style="padding: 32px 28px; background: var(--white); border-radius: 16px; border: 1px solid var(--warm-gray-pale);">
-      <div style="width:44px; height:44px; border-radius:10px; background:var(--coral-pale); display:flex; align-items:center; justify-content:center; margin-bottom:16px;">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--coral)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h10v9H3z"/><path d="M13 10h4l4 4v2h-8z"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/><path d="M6 4h8"/><path d="M10 2l-2 2 2 2"/></svg>
-      </div>
-      <h4 style="font-size:15px; font-weight:700; color:var(--charcoal); margin-bottom:8px;">Európai partnerlogisztika</h4>
-      <p style="font-size:13px; color:var(--warm-gray); line-height:1.65; margin:0;">Oda-vissza szállítás svájci és német rendelőknek, szervezett, kiszámítható folyamattal.</p>
-    </div>
-
-    <div class="reveal reveal-delay-2" style="padding: 32px 28px; background: var(--white); border-radius: 16px; border: 1px solid var(--warm-gray-pale);">
-      <div style="width:44px; height:44px; border-radius:10px; background:var(--coral-pale); display:flex; align-items:center; justify-content:center; margin-bottom:16px;">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--coral)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z"/><path d="M4 21h16"/></svg>
-      </div>
-      <h4 style="font-size:15px; font-weight:700; color:var(--charcoal); margin-bottom:8px;">Nemzetközi szakmai háttér</h4>
-      <p style="font-size:13px; color:var(--warm-gray); line-height:1.65; margin:0;">ICDE partneri szemlélet, HDA „Legjobb labor” elismerés és több évtizedes német-osztrák piaci tapasztalat.</p>
-    </div>
-  </div>
-
-  <!-- CTA sáv -->
-  <div class="reveal" style="margin-top: 48px; padding: 40px 48px; background: var(--coral-pale); border-radius: 16px; display:flex; align-items:center; justify-content:space-between; gap:40px; border: 1px solid rgba(224,90,43,0.12);">
-    <div>
-      <h3 style="font-family:'Montserrat',sans-serif; font-size:20px; font-weight:700; color:var(--charcoal); letter-spacing:-0.3px; margin-bottom:10px;">Kipróbálná szolgáltatásainkat kockázatmentesen?</h3>
-      <p style="font-size:14px; color:var(--warm-gray); line-height:1.7; margin:0; max-width:560px;">Lehetőséget biztosítunk egy 3–5 esetes pilot együttműködésre, ahol kockázat nélkül tapasztalhatja meg munkánk minőségét.</p>
-    </div>
-    <a href="kapcsolat.html" class="btn-primary" style="white-space:nowrap; flex-shrink:0;">Kezdjük el az együttműködést →</a>
-  </div>
-
-</section>
-
 <!-- PROCESS -->
 <section class="section-alt" id="rolunk">
   <div class="process-grid">
@@ -2973,6 +3146,16 @@
       }, { passive: true });
     }
   }
+
+  document.querySelectorAll('.why-bridge').forEach((section) => {
+    new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('inview');
+        }
+      });
+    }, { threshold: 0.15 }).observe(section);
+  });
 
   // Scroll reveal
   const reveals = document.querySelectorAll('.reveal');
