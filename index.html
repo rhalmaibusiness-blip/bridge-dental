@@ -1894,6 +1894,302 @@
       color: #5a5049;
     }
 
+    /* ── WORK CAROUSEL ── */
+    .work {
+      position: relative;
+      background: #f9f3ea;
+      padding: clamp(60px, 9vh, 100px) 0 clamp(56px, 8vh, 90px);
+      overflow: hidden;
+    }
+
+    .work-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 30px;
+      padding: 0 clamp(28px, 7vw, 110px);
+      margin-bottom: 48px;
+    }
+
+    .work-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 4px;
+      color: var(--coral);
+      margin-bottom: 22px;
+      text-transform: uppercase;
+    }
+
+    .work-eyebrow::after {
+      content: '';
+      width: 0;
+      height: 1px;
+      background: var(--coral);
+      transition: width 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.2s;
+    }
+
+    .work.inview .work-eyebrow::after { width: 90px; }
+
+    .work-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(30px, 3.6vw, 50px);
+      font-weight: 700;
+      line-height: 1.2;
+      color: #2b2320;
+      text-wrap: balance;
+    }
+
+    .work-title .work-accent { color: var(--coral); }
+
+    .work-sub {
+      margin-top: 16px;
+      font-size: 16px;
+      color: #6b5f55;
+    }
+
+    .work-logo img {
+      height: 42px;
+      width: auto;
+      display: block;
+    }
+
+    .work-reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.9s ease, transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .work.inview .work-reveal { opacity: 1; transform: translateY(0); }
+
+    .carousel-zone {
+      position: relative;
+      padding: 0 clamp(64px, 6vw, 100px);
+    }
+
+    .carousel-viewport { overflow: hidden; }
+
+    .carousel-track {
+      display: flex;
+      gap: 24px;
+      transition: transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+      touch-action: pan-y;
+    }
+
+    .work-card {
+      position: relative;
+      flex: 0 0 calc((100% - 48px) / 3);
+      aspect-ratio: 0.98;
+      border-radius: 14px;
+      overflow: hidden;
+      background: #1a1512;
+      box-shadow: 0 22px 45px -22px rgba(43, 30, 20, 0.45);
+      user-select: none;
+    }
+
+    .work-card img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+      -webkit-user-drag: none;
+    }
+
+    .work-card:hover img { transform: scale(1.06); }
+
+    .work-card::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 45%, rgba(10, 7, 5, 0.88) 100%);
+    }
+
+    .work-card-label {
+      position: absolute;
+      left: 26px;
+      right: 26px;
+      bottom: 24px;
+      z-index: 2;
+    }
+
+    .work-card-num {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-style: italic;
+      font-size: 19px;
+      color: var(--coral-light);
+      display: block;
+    }
+
+    .work-card-num::after {
+      content: '';
+      display: block;
+      width: 150px;
+      max-width: 60%;
+      height: 1px;
+      background: rgba(224, 90, 43, 0.7);
+      margin: 10px 0 12px;
+    }
+
+    .work-card-name {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(20px, 1.8vw, 27px);
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .car-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 5;
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      background: #fdfaf5;
+      border: 1px solid #e5dcd0;
+      box-shadow: 0 8px 22px -8px rgba(43, 30, 20, 0.35);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.3s, transform 0.25s;
+    }
+
+    .car-btn:hover { background: #fff; transform: translateY(-50%) scale(1.08); }
+    .car-btn:active { transform: translateY(-50%) scale(0.96); }
+    .car-btn.prev { left: clamp(6px, 1.2vw, 24px); }
+    .car-btn.next { right: clamp(6px, 1.2vw, 24px); }
+
+    .car-btn svg {
+      width: 20px;
+      height: 20px;
+      stroke: var(--coral);
+      stroke-width: 2.2;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .car-btn:disabled { opacity: 0.35; cursor: default; }
+    .car-btn:disabled:hover { transform: translateY(-50%); background: #fdfaf5; }
+
+    .car-dots {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    .car-dots button {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      border: none;
+      background: #d8cec2;
+      cursor: pointer;
+      padding: 0;
+      transition: background 0.3s, transform 0.3s;
+    }
+
+    .car-dots button.active {
+      background: var(--coral);
+      transform: scale(1.25);
+    }
+
+    .work-timeline {
+      margin-top: 52px;
+      padding: 0 clamp(28px, 7vw, 110px);
+    }
+
+    .tl-items {
+      display: grid;
+      grid-template-columns: repeat(13, 1fr);
+    }
+
+    .tl-item {
+      position: relative;
+      padding: 0 12px 20px 14px;
+      border-left: 1px solid #e0d6c9;
+      cursor: pointer;
+      transition: opacity 0.3s;
+    }
+
+    .tl-item .tl-num {
+      display: block;
+      font-size: 12.5px;
+      font-weight: 600;
+      color: #8a7d70;
+      margin-bottom: 6px;
+      transition: color 0.3s;
+    }
+
+    .tl-item .tl-name {
+      display: block;
+      font-size: 12px;
+      line-height: 1.4;
+      color: #8a7d70;
+      transition: color 0.3s;
+    }
+
+    .tl-item.active .tl-num,
+    .tl-item.active .tl-name { color: var(--coral); font-weight: 700; }
+    .tl-item:hover .tl-num,
+    .tl-item:hover .tl-name { color: var(--coral); }
+
+    .tl-bar {
+      position: relative;
+      height: 3px;
+      background: #e6dccf;
+      border-radius: 2px;
+      overflow: visible;
+    }
+
+    .tl-bar-fill {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 0;
+      background: linear-gradient(90deg, var(--coral-light), var(--coral));
+      border-radius: 2px;
+      transition: width 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .tl-bar-fill::after {
+      content: '';
+      position: absolute;
+      right: -5px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      background: var(--coral);
+      box-shadow: 0 0 0 4px rgba(224, 90, 43, 0.2);
+    }
+
+    .tl-mobile-label {
+      display: none;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 14px;
+    }
+
+    .tl-mobile-label .cur {
+      color: var(--coral);
+      font-weight: 700;
+      font-size: 15px;
+    }
+
+    .tl-mobile-label .total {
+      color: #8a7d70;
+      font-size: 13px;
+    }
+
     /* ── SCROLL ANIMATIONS ── */
     .reveal {
       opacity: 0;
@@ -1971,6 +2267,14 @@
       .why-bridge-head { padding: 60px 48px; }
       .why-bridge-intro { padding: 22px 0 0 22px; font-size: 15px; }
       .why-bridge-intro::before { width: 54px; height: 160px; }
+
+      .work-card { flex: 0 0 calc((100% - 24px) / 2); }
+      .work-head {
+        flex-direction: column-reverse;
+        gap: 24px;
+        margin-bottom: 36px;
+      }
+      .work-logo img { height: 34px; }
 
       footer { grid-template-columns: 1fr 1fr; gap: 32px; padding: 48px; }
 
@@ -2181,6 +2485,24 @@
       .why-bridge-card img { width: 62px; height: 62px; }
       .why-bridge-intro { padding: 22px 0 0 22px; font-size: 15px; }
       .why-bridge-intro::before { width: 54px; height: 160px; }
+
+      .carousel-zone { padding: 0 26px; }
+      .work-card { flex: 0 0 100%; aspect-ratio: 0.92; }
+      .car-btn {
+        width: 46px;
+        height: 46px;
+        top: auto;
+        bottom: -66px;
+        transform: none;
+      }
+      .car-btn:hover { transform: scale(1.08); }
+      .car-btn:active { transform: scale(0.96); }
+      .car-btn.prev { left: 26px; }
+      .car-btn.next { right: 26px; }
+      .car-dots { margin-top: 24px; }
+      .work-timeline { margin-top: 84px; padding: 0 26px; }
+      .tl-items { display: none; }
+      .tl-mobile-label { display: flex; }
 
       .section-title { font-size: 28px; letter-spacing: -0.8px; }
 
@@ -2435,6 +2757,48 @@
   </div>
 </section>
 
+<section class="work" id="technologia">
+  <div class="work-head">
+    <div>
+      <div class="work-eyebrow work-reveal">Így dolgozunk</div>
+      <h2 class="work-title work-reveal">
+        A minőség a <span class="work-accent">részletekben</span> rejlik.
+      </h2>
+      <p class="work-sub work-reveal">Pillanatok a napi munkánkból.</p>
+    </div>
+    <div class="work-logo work-reveal">
+      <img src="bridgedental_narancs_logo.png" alt="Bridge Dental">
+    </div>
+  </div>
+
+  <div class="carousel-zone">
+    <button class="car-btn prev" id="carPrev" aria-label="Előző">
+      <svg viewBox="0 0 24 24"><polyline points="15 5 8 12 15 19"/></svg>
+    </button>
+
+    <div class="carousel-viewport">
+      <div class="carousel-track" id="carTrack"></div>
+    </div>
+
+    <button class="car-btn next" id="carNext" aria-label="Következő">
+      <svg viewBox="0 0 24 24"><polyline points="9 5 16 12 9 19"/></svg>
+    </button>
+
+    <div class="car-dots" id="carDots"></div>
+  </div>
+
+  <div class="work-timeline">
+    <div class="tl-mobile-label">
+      <span class="cur" id="tlMobileCur">01 · Fotókészítés</span>
+      <span class="total">13 lépés</span>
+    </div>
+    <div class="tl-items" id="tlItems"></div>
+    <div class="tl-bar">
+      <div class="tl-bar-fill" id="tlFill"></div>
+    </div>
+  </div>
+</section>
+
 
 <!-- SERVICES -->
 <section class="section" id="szolgaltatasok" style="position:relative; overflow:hidden;">
@@ -2614,66 +2978,6 @@
 </div>
 
 <!-- MIÉRT MINKET -->
-<!-- PROCESS -->
-<section class="section-alt" id="rolunk">
-  <div class="process-grid">
-    <div>
-      <div class="section-label">A velünk való együttműködés folyamata</div>
-      <h2 class="section-title">Kiszámítható együttműködés,<br><span class="serif">már az első esettől</span></h2>
-      <p class="section-desc" style="margin-bottom:40px;">Az első kapcsolatfelvételtől a pilot munkákon át a hosszú távú partnerkapcsolatig.</p>
-
-      <div class="process-steps">
-        <div class="step reveal">
-          <div class="step-number">01</div>
-          <div class="step-content">
-            <h4>Kapcsolatfelvétel és igényfelmérés</h4>
-            <p>Megismerjük a rendelő munkatípusait, digitális munkafolyamatát, szkennelési rendszerét és logisztikai igényeit.</p>
-          </div>
-        </div>
-        <div class="step reveal reveal-delay-1">
-          <div class="step-number">02</div>
-          <div class="step-content">
-            <h4>Pilot együttműködés 3-5 esettel</h4>
-            <p>Komplexebb implantátumos munkáknál kockázatcsökkentett pilot időszakot javaslunk, kiemelt szakmai támogatással.</p>
-          </div>
-        </div>
-        <div class="step reveal reveal-delay-2">
-          <div class="step-number">03</div>
-          <div class="step-content">
-            <h4>Német nyelvű esetegyeztetés</h4>
-            <p>Dedikált fogtechnikussal, Exocad alapú tervezési konzultációval és online esetmegbeszéléssel támogatjuk a döntéseket.</p>
-          </div>
-        </div>
-        <div class="step reveal">
-          <div class="step-number">04</div>
-          <div class="step-content">
-            <h4>Házon belüli digitális gyártás</h4>
-            <p>A munkák saját CNC fréz- és 3D nyomtatási kapacitással készülnek, alvállalkozók nélkül, dokumentált minőségbiztosítással.</p>
-          </div>
-        </div>
-        <div class="step reveal reveal-delay-1">
-          <div class="step-number">05</div>
-          <div class="step-content">
-            <h4>Ellenőrzés, szállítás és visszajelzés</h4>
-            <p>A kész munkát ellenőrzés után szervezett európai logisztikával küldjük vissza, és szükség esetén szakmai visszajelzést adunk a scan, illeszkedés és munkafolyamat optimalizálására.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="process-visual reveal">
-      <div class="process-visual-bg"></div>
-      <div class="process-quote">
-        <span class="process-quote-mark">"</span>
-        <blockquote>
-          Nem egyszeri munkákban gondolkodunk, hanem stabil, hosszú távú együttműködésben, ahol a kommunikáció, a minőség és a szállítás is kiszámítható.
-        </blockquote>
-        <div class="process-quote-author">A küldetésünk</div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- CSAPAT -->
 <section id="csapat" style="position:relative; overflow:hidden; min-height: 560px; display:flex; align-items:center;">
 
@@ -3156,6 +3460,146 @@
       });
     }, { threshold: 0.15 }).observe(section);
   });
+
+  document.querySelectorAll('.work').forEach((section) => {
+    new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('inview');
+        }
+      });
+    }, { threshold: 0.15 }).observe(section);
+  });
+
+  (function () {
+    const STEPS = [
+      'Fotókészítés', 'Arcszkennelés', 'Mosolytervezés', 'Intraorál scan',
+      'Design', 'Marás', 'Nyomtatás', 'Prototípus', 'Kidolgozás',
+      'Festés', 'Minőség-ellenőrzés', 'Restauráció', 'Csomagolás'
+    ];
+    const N = STEPS.length;
+    const track = document.getElementById('carTrack');
+    const dotsBox = document.getElementById('carDots');
+    const tlItems = document.getElementById('tlItems');
+    const tlFill = document.getElementById('tlFill');
+    const tlMobileCur = document.getElementById('tlMobileCur');
+    const btnPrev = document.getElementById('carPrev');
+    const btnNext = document.getElementById('carNext');
+
+    if (!track || !dotsBox || !tlItems || !tlFill || !tlMobileCur || !btnPrev || !btnNext) return;
+
+    const pad = (n) => String(n + 1).padStart(2, '0');
+
+    track.innerHTML = STEPS.map((name, i) => `
+      <div class="work-card">
+        <img src="step-${pad(i)}.png" alt="${name}" loading="lazy" draggable="false">
+        <div class="work-card-label">
+          <span class="work-card-num">${pad(i)}</span>
+          <span class="work-card-name">${name}</span>
+        </div>
+      </div>`).join('');
+
+    tlItems.innerHTML = STEPS.map((name, i) => `
+      <div class="tl-item" data-i="${i}">
+        <span class="tl-num">${pad(i)}</span>
+        <span class="tl-name">${name}</span>
+      </div>`).join('');
+
+    let index = 0;
+
+    function visibleCount() {
+      const w = window.innerWidth;
+      if (w <= 640) return 1;
+      if (w <= 1050) return 2;
+      return 3;
+    }
+
+    function maxIndex() { return N - visibleCount(); }
+    function pageCount() { return Math.ceil(N / visibleCount()); }
+
+    function renderDots() {
+      const pages = pageCount();
+      const vis = visibleCount();
+      dotsBox.innerHTML = Array.from({ length: pages }, (_, p) =>
+        `<button data-p="${p}" aria-label="${p + 1}. oldal"></button>`).join('');
+      dotsBox.querySelectorAll('button').forEach((button) => {
+        button.addEventListener('click', () => go(Math.min(+button.dataset.p * vis, maxIndex())));
+      });
+    }
+
+    function update() {
+      const vis = visibleCount();
+      const card = track.children[0];
+      const gap = 24;
+      const step = card.offsetWidth + gap;
+      track.style.transform = `translateX(${-index * step}px)`;
+
+      btnPrev.disabled = index === 0;
+      btnNext.disabled = index >= maxIndex();
+
+      const page = Math.round(index / vis);
+      dotsBox.querySelectorAll('button').forEach((button, p) => {
+        button.classList.toggle('active', p === Math.min(page, pageCount() - 1));
+      });
+
+      const lastVisible = Math.min(index + vis, N);
+      tlFill.style.width = `${(lastVisible / N) * 100}%`;
+
+      tlItems.querySelectorAll('.tl-item').forEach((item, i) => {
+        item.classList.toggle('active', i >= index && i < lastVisible);
+      });
+
+      tlMobileCur.textContent = `${pad(index)} · ${STEPS[index]}`;
+    }
+
+    function go(i) {
+      index = Math.max(0, Math.min(i, maxIndex()));
+      update();
+    }
+
+    btnPrev.addEventListener('click', () => go(index - 1));
+    btnNext.addEventListener('click', () => go(index + 1));
+
+    tlItems.querySelectorAll('.tl-item').forEach((item) => {
+      item.addEventListener('click', () => go(+item.dataset.i));
+    });
+
+    let startX = null;
+    let startIndex = 0;
+    let dragging = false;
+
+    track.addEventListener('pointerdown', (event) => {
+      startX = event.clientX;
+      startIndex = index;
+      dragging = true;
+      track.style.transition = 'none';
+    });
+
+    window.addEventListener('pointermove', (event) => {
+      if (!dragging) return;
+      const card = track.children[0];
+      const step = card.offsetWidth + 24;
+      track.style.transform = `translateX(${-startIndex * step + (event.clientX - startX)}px)`;
+    });
+
+    window.addEventListener('pointerup', (event) => {
+      if (!dragging) return;
+      dragging = false;
+      track.style.transition = '';
+      const dx = event.clientX - startX;
+      if (dx < -50) go(startIndex + 1);
+      else if (dx > 50) go(startIndex - 1);
+      else go(startIndex);
+    });
+
+    window.addEventListener('resize', () => {
+      renderDots();
+      go(index);
+    });
+
+    renderDots();
+    update();
+  })();
 
   // Scroll reveal
   const reveals = document.querySelectorAll('.reveal');
