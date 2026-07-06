@@ -2388,6 +2388,199 @@
       color: #5a5049;
     }
 
+    /* ── CASES ── */
+    .cases {
+      background: #f6efe6;
+      padding: clamp(64px, 9vh, 110px) clamp(24px, 5vw, 70px) clamp(60px, 8vh, 90px);
+    }
+
+    .cases-head {
+      text-align: center;
+      margin-bottom: 44px;
+    }
+
+    .cases-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(30px, 3.6vw, 50px);
+      font-weight: 800;
+      color: #1d1712;
+      letter-spacing: -1.4px;
+      line-height: 1.08;
+    }
+
+    .cases-sub {
+      margin-top: 14px;
+      font-size: 17px;
+      color: #6b5f55;
+    }
+
+    .cases .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.9s ease, transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+      transition-delay: var(--d, 0s);
+    }
+
+    .cases.inview .reveal {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .case-main {
+      display: grid;
+      grid-template-columns: minmax(0, 38%) minmax(0, 62%);
+      background: #fdfaf5;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 26px 60px -30px rgba(43, 30, 20, 0.35);
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    .case-info {
+      padding: clamp(34px, 4vw, 60px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .case-info h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(23px, 2.2vw, 32px);
+      font-weight: 800;
+      line-height: 1.3;
+      color: #2b2320;
+      letter-spacing: -0.6px;
+    }
+
+    .case-info p {
+      margin-top: 22px;
+      font-size: 15px;
+      line-height: 1.85;
+      color: #5a5049;
+    }
+
+    .case-current {
+      margin-top: 30px;
+      padding-top: 24px;
+      border-top: 1px solid #ece2d4;
+    }
+
+    .case-current .cc-num {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      color: var(--coral);
+    }
+
+    .case-current .cc-name {
+      display: block;
+      margin-top: 6px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 19px;
+      font-weight: 700;
+      color: #2b2320;
+    }
+
+    .case-stage {
+      position: relative;
+      min-height: 420px;
+      background: #1a1512;
+      overflow: hidden;
+    }
+
+    .case-stage img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transform: scale(1.05);
+      transition: opacity 0.7s ease, transform 1.4s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .case-stage img.active {
+      opacity: 1;
+      transform: scale(1);
+      z-index: 1;
+    }
+
+    .case-thumbs {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 18px;
+      max-width: 1280px;
+      margin: 26px auto 0;
+    }
+
+    .case-thumb {
+      background: #fdfaf5;
+      border: 1.5px solid #ece2d4;
+      border-radius: 12px;
+      padding: 16px 14px 18px;
+      cursor: pointer;
+      text-align: center;
+      transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
+    }
+
+    .case-thumb:hover { transform: translateY(-4px); }
+
+    .case-thumb.active {
+      border-color: var(--coral);
+      box-shadow: 0 14px 32px -16px rgba(224, 90, 43, 0.35);
+    }
+
+    .ct-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 12px;
+      padding: 0 4px;
+      gap: 12px;
+    }
+
+    .ct-num {
+      font-size: 14px;
+      font-weight: 600;
+      color: #8a7d70;
+      transition: color 0.3s;
+    }
+
+    .ct-name {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 13.5px;
+      font-weight: 700;
+      color: #2b2320;
+      transition: color 0.3s;
+    }
+
+    .case-thumb.active .ct-num,
+    .case-thumb.active .ct-name { color: var(--coral); }
+
+    .ct-img {
+      border-radius: 8px;
+      overflow: hidden;
+      aspect-ratio: 1.55;
+    }
+
+    .ct-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+
+    .case-thumb:hover .ct-img img { transform: scale(1.07); }
+
+    .ct-desc {
+      margin-top: 12px;
+      font-size: 12.5px;
+      line-height: 1.6;
+      color: #6b5f55;
+    }
+
     /* ── SCROLL ANIMATIONS ── */
     .reveal {
       opacity: 0;
@@ -2482,6 +2675,30 @@
       .q-content { padding: 72px 48px 64px; }
       .q-deco { display: none; }
 
+      .case-main { grid-template-columns: 1fr; }
+      .case-stage {
+        min-height: 0;
+        height: 58vw;
+        max-height: 420px;
+        order: 1;
+      }
+      .case-info {
+        order: 2;
+        padding: 30px 24px 34px;
+      }
+      .case-thumbs {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        padding-bottom: 12px;
+        -webkit-overflow-scrolling: touch;
+      }
+      .case-thumb {
+        flex: 0 0 66%;
+        max-width: 280px;
+        scroll-snap-align: center;
+      }
+
       footer { grid-template-columns: 1fr 1fr; gap: 32px; padding: 48px; }
 
       /* Elismerések tablet */
@@ -2543,6 +2760,12 @@
       }
       .q-card h3 { font-size: 15px; }
       .q-card p { font-size: 13px; }
+
+      .cases {
+        padding-left: 18px;
+        padding-right: 18px;
+      }
+      .case-thumb { flex-basis: 78%; }
 
       .hero-brand img {
         height: 36px;
@@ -3194,6 +3417,31 @@
   </div>
 </section>
 
+<section class="cases" id="munkaink">
+  <div class="cases-head">
+    <h2 class="cases-title reveal">A munkáink beszélnek helyettünk.</h2>
+    <p class="cases-sub reveal" style="--d: 0.15s">Válogatás legutóbbi esztétika munkáinkból</p>
+  </div>
+
+  <div class="case-main reveal" style="--d: 0.25s">
+    <div class="case-info">
+      <h3>Teljes mosoly átalakítás kerámiával</h3>
+      <p>
+        Páciensünk régi, elszíneződött tömésekkel és kopott frontfogakkal érkezett.
+        Célunk egy természetes, harmonikus és időtálló mosoly megalkotása volt
+        kerámia héjak segítségével.
+      </p>
+      <div class="case-current">
+        <span class="cc-num" id="ccNum">01</span>
+        <span class="cc-name" id="ccName">Kezdő állapot</span>
+      </div>
+    </div>
+    <div class="case-stage" id="caseStage"></div>
+  </div>
+
+  <div class="case-thumbs reveal" id="caseThumbs" style="--d: 0.4s"></div>
+</section>
+
 <!-- REFERENCIÁK -->
 <section class="section" id="referenciak" style="background: var(--white);">
   <div class="section-label">Referenciák</div>
@@ -3775,6 +4023,16 @@
     }, { threshold: 0.15 }).observe(section);
   });
 
+  document.querySelectorAll('.cases').forEach((section) => {
+    new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('inview');
+        }
+      });
+    }, { threshold: 0.15 }).observe(section);
+  });
+
   (function () {
     const STEPS = [
       'Fotókészítés', 'Arcszkennelés', 'Mosolytervezés', 'Intraorál scan',
@@ -3903,6 +4161,56 @@
 
     renderDots();
     update();
+  })();
+
+  (function () {
+    const CASES = [
+      { name: 'Kezdő állapot', desc: 'Elszíneződött tömések, kopott élek és egyenetlen forma.' },
+      { name: 'Tervezés', desc: 'Digitális mosolytervezés az arc karakteréhez igazítva.' },
+      { name: 'Mock-up', desc: 'Esztétikai mock-up a forma, arányok és hossz ellenőrzésére.' },
+      { name: 'Próba fotó', desc: 'Próba a pácienssel természetes fényben, véglegesítés előtt.' },
+      { name: 'Szájfotó', desc: 'Végeredmény szájfotón - egészséges íny, tökéletes illeszkedés.' }
+    ];
+
+    const stage = document.getElementById('caseStage');
+    const thumbs = document.getElementById('caseThumbs');
+    const ccNum = document.getElementById('ccNum');
+    const ccName = document.getElementById('ccName');
+
+    if (!stage || !thumbs || !ccNum || !ccName) return;
+
+    const pad = (i) => String(i + 1).padStart(2, '0');
+
+    stage.innerHTML = CASES.map((c, i) =>
+      `<img src="case-${pad(i)}.png" alt="${c.name}" ${i === 0 ? 'class="active"' : 'loading="lazy"'}>`
+    ).join('');
+
+    thumbs.innerHTML = CASES.map((c, i) => `
+      <button class="case-thumb ${i === 0 ? 'active' : ''}" data-i="${i}" type="button" aria-label="${c.name}">
+        <div class="ct-head">
+          <span class="ct-num">${pad(i)}</span>
+          <span class="ct-name">${c.name}</span>
+        </div>
+        <div class="ct-img">
+          <img src="case-${pad(i)}.png" alt="${c.name}" loading="lazy">
+        </div>
+        <div class="ct-desc">${c.desc}</div>
+      </button>
+    `).join('');
+
+    const imgs = Array.from(stage.querySelectorAll('img'));
+    const btns = Array.from(thumbs.querySelectorAll('.case-thumb'));
+
+    function setCase(index) {
+      imgs.forEach((img, i) => img.classList.toggle('active', i === index));
+      btns.forEach((btn, i) => btn.classList.toggle('active', i === index));
+      ccNum.textContent = pad(index);
+      ccName.textContent = CASES[index].name;
+    }
+
+    btns.forEach((btn, index) => {
+      btn.addEventListener('click', () => setCase(index));
+    });
   })();
 
   // Scroll reveal
