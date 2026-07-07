@@ -703,59 +703,175 @@
       color: rgba(245,239,233,0.24);
     }
 
-    /* ── STAT BLOKK ── */
-    .stats-wrap {
-      padding: 0 80px 96px;
-      background: var(--cream);
-    }
-    .stats-bar {
-      max-width: 100%;
-      margin: 0 auto;
-      background: var(--charcoal);
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      overflow: hidden;
-      box-shadow: 0 22px 54px rgba(16, 12, 8, 0.12);
-    }
-    .stat-bar-item {
-      min-height: 180px;
-      padding: 34px 26px;
-      text-align: center;
+    /* ── AMIBEN MI HISZÜNK ── */
+    .beliefs {
       position: relative;
+      min-height: 100vh;
+      padding: clamp(64px, 10vh, 120px) clamp(24px, 8vw, 130px);
+      overflow: hidden;
+      background: #f6efe6;
+    }
+    .beliefs::before,
+    .beliefs::after {
+      content: '';
+      position: absolute;
+      width: 140px;
+      height: 120px;
+      background-image: radial-gradient(rgba(232, 80, 46, 0.45) 1.5px, transparent 1.5px);
+      background-size: 15px 15px;
+      pointer-events: none;
+    }
+    .beliefs::before { top: 70px; left: 34px; }
+    .beliefs::after { bottom: 60px; right: 40px; }
+    .b-deco {
+      position: absolute;
+      left: -40px;
+      bottom: -30px;
+      width: 300px;
+      height: 220px;
+      pointer-events: none;
+      opacity: 0.6;
+    }
+    .b-deco path {
+      fill: none;
+      stroke: var(--accent-2);
+      stroke-width: 1;
+      stroke-dasharray: 700;
+      stroke-dashoffset: 700;
+      animation: drawLine 2.4s ease 0.6s forwards;
+    }
+    @keyframes drawLine {
+      to { stroke-dashoffset: 0; }
+    }
+    .b-head {
+      text-align: center;
+      margin-bottom: 56px;
+      position: relative;
+      z-index: 1;
+    }
+    .b-title {
+      font-family: var(--font-head);
+      font-size: clamp(34px, 4.6vw, 58px);
+      font-weight: 800;
+      color: #1d1712;
+      opacity: 0;
+      transform: translateY(26px);
+      animation: fadeUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.15s forwards;
+    }
+    .b-dots-row {
+      display: flex;
+      justify-content: center;
+      gap: 7px;
+      margin: 20px 0;
+      opacity: 0;
+      animation: fadeUp 0.9s ease 0.35s forwards;
+    }
+    .b-dots-row span {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+    .b-sub {
+      font-family: var(--font-body);
+      font-size: 17px;
+      color: #5a5049;
+      opacity: 0;
+      animation: fadeUp 0.9s ease 0.45s forwards;
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(26px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .b-list {
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      gap: 22px;
+      max-width: 1000px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+    .b-row {
+      display: flex;
       align-items: center;
+      gap: clamp(18px, 3vw, 38px);
+      background: #fbf6ee;
+      border: 1px solid #ece2d4;
+      border-radius: 70px;
+      padding: 26px clamp(26px, 4vw, 54px);
+      opacity: 0;
+      transform: translateY(36px);
+      transition: box-shadow 0.35s ease, border-color 0.35s ease, transform 0.35s ease;
     }
-    .stat-bar-item:nth-child(odd)::after {
-      content: '';
-      position: absolute;
-      right: 0;
-      top: 0;
-      width: 1px;
-      height: 100%;
-      background: rgba(255,255,255,0.08);
+    .b-row.inview {
+      animation: fadeUp 0.85s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+      animation-delay: var(--d, 0s);
     }
-    .stat-bar-item:nth-child(-n+2)::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 100%;
-      height: 1px;
-      background: rgba(255,255,255,0.08);
+    .b-row:hover {
+      box-shadow: 0 20px 44px -22px rgba(43, 30, 20, 0.3);
+      border-color: rgba(232, 80, 46, 0.4);
     }
-    .stat-bar-num {
-      font-family: 'Montserrat', sans-serif;
-      font-size: clamp(44px, 4.5vw, 66px);
-      font-weight: 800;
-      color: white;
-      letter-spacing: -2px;
-      line-height: 0.95;
-      margin-bottom: 12px;
+    .b-num {
+      flex-shrink: 0;
+      width: 56px;
+      height: 56px;
+      border: 1.5px solid var(--accent);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-head);
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--accent);
+      transition: background 0.35s, color 0.35s, transform 0.35s;
     }
-    .stat-bar-num span { color: var(--coral); }
-    .stat-bar-label { font-size: 13px; color: rgba(255,255,255,0.38); font-weight: 500; letter-spacing: 0.4px; }
+    .b-row:hover .b-num {
+      background: var(--accent);
+      color: #fff;
+      transform: scale(1.08);
+    }
+    .b-sep {
+      flex-shrink: 0;
+      width: 2px;
+      height: 62px;
+      background-image: radial-gradient(rgba(232, 80, 46, 0.6) 1.5px, transparent 1.5px);
+      background-size: 2px 9px;
+      background-repeat: repeat-y;
+      background-position: center;
+    }
+    .b-icon {
+      flex-shrink: 0;
+      width: 82px;
+      height: 82px;
+      border-radius: 50%;
+      background: #f8ecdf;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    .b-row:hover .b-icon { transform: scale(1.1) rotate(-4deg); }
+    .b-icon img {
+      width: 62px;
+      height: 62px;
+      object-fit: contain;
+      mix-blend-mode: multiply;
+    }
+    .b-text h3 {
+      font-family: var(--font-head);
+      font-size: clamp(17px, 1.6vw, 21px);
+      font-weight: 700;
+      color: #2b2320;
+      margin-bottom: 8px;
+    }
+    .b-text p {
+      font-family: var(--font-body);
+      font-size: 14.5px;
+      line-height: 1.75;
+      color: #5a5049;
+    }
 
     /* ── MÁSHOGY MŰKÖDÜNK ── */
     .mashogy-grid {
@@ -953,7 +1069,15 @@
       .hitvallas-photo { height: 500px; }
       .team-grid { grid-template-columns: repeat(2, 1fr); }
       .contact-grid { grid-template-columns: repeat(2, 1fr); }
-      .stats-wrap { padding: 0 48px 72px; }
+      .beliefs { padding: 56px 48px 72px; min-height: auto; }
+      .beliefs::before { top: 28px; left: 16px; width: 90px; height: 80px; }
+      .beliefs::after { right: 20px; bottom: 24px; }
+      .b-head { margin-bottom: 44px; }
+      .b-list { gap: 18px; }
+      .b-row { border-radius: 34px; padding: 24px 26px; }
+      .b-icon { width: 68px; height: 68px; }
+      .b-icon img { width: 50px; height: 50px; }
+      .b-num { width: 50px; height: 50px; font-size: 16px; }
       .alapelv-bar { grid-template-columns: 1fr; }
       .alapelv-item:not(:last-child)::after { display: none; }
       .pilot-section { padding: 72px 48px; }
@@ -983,11 +1107,16 @@
       .team-grid { grid-template-columns: 1fr 1fr; gap: 14px; }
       .fejlodes-grid { grid-template-columns: 1fr; gap: 16px; }
       .contact-grid { grid-template-columns: 1fr 1fr; gap: 14px; }
-      .stats-wrap { padding: 0 20px 56px; }
-      .stats-bar { grid-template-columns: 1fr; }
-      .stat-bar-item { min-height: 152px; padding: 30px 18px; }
-      .stat-bar-item:nth-child(odd)::after,
-      .stat-bar-item:nth-child(-n+2)::before { display: none; }
+      .beliefs { padding: 52px 18px 64px; }
+      .beliefs::after { display: none; }
+      .b-head { margin-bottom: 40px; }
+      .b-list { gap: 16px; }
+      .b-row { flex-wrap: wrap; border-radius: 24px; padding: 24px 22px; gap: 16px; }
+      .b-sep { display: none; }
+      .b-num { width: 46px; height: 46px; font-size: 15px; }
+      .b-icon { width: 62px; height: 62px; }
+      .b-icon img { width: 46px; height: 46px; }
+      .b-text { flex-basis: 100%; }
       #elismeresek > div:last-child { grid-template-columns: 1fr !important; gap: 16px !important; }
       #elismeresek { padding: 56px 20px !important; }
       .pilot-section { padding: 48px 20px; }
@@ -1151,27 +1280,69 @@
   </div>
 </section>
 
-<!-- STATISZTIKA SÁV -->
-<div class="stats-wrap">
-  <div class="stats-bar">
-    <div class="stat-bar-item reveal">
-      <div class="stat-bar-num">25<span>+</span></div>
-      <div class="stat-bar-label">Munkatárs, saját csapat</div>
+<!-- AMIBEN MI HISZÜNK -->
+<section class="beliefs">
+  <svg class="b-deco" viewBox="0 0 300 220">
+    <path d="M0 220 C 90 200, 150 150, 160 60 S 240 10, 300 40"/>
+    <path d="M0 190 C 80 175, 135 130, 148 55 S 225 -5, 290 20"/>
+  </svg>
+
+  <div class="b-head">
+    <h1 class="b-title">Amiben mi hiszünk</h1>
+    <div class="b-dots-row">
+      <span></span><span></span><span></span><span></span><span></span><span></span>
     </div>
-    <div class="stat-bar-item reveal reveal-delay-1">
-      <div class="stat-bar-num">20<span>+</span></div>
-      <div class="stat-bar-label">Év a DE / AT piacon</div>
+    <p class="b-sub">Elvek, amelyekre a Bridge Dentalt építettük</p>
+  </div>
+
+  <div class="b-list">
+    <div class="b-row" style="--d: 0.1s">
+      <div class="b-num">01</div>
+      <div class="b-sep"></div>
+      <div class="b-icon"><img src="Rolunk aloldal/belief-01.png" alt=""></div>
+      <div class="b-text">
+        <h3>Közös tervezés, nem egyoldalú gyártás</h3>
+        <p>A kiváló fogpótlás alapja nem a labor, hanem a diagnózis, a gondos tervezés és a fogorvos–fogtechnikus közötti szoros együttműködés.</p>
+      </div>
     </div>
-    <div class="stat-bar-item reveal reveal-delay-2">
-      <div class="stat-bar-num"><span style="color:var(--coral)">0</span></div>
-      <div class="stat-bar-label">Alvállalkozó — minden házon belül</div>
+    <div class="b-row" style="--d: 0.2s">
+      <div class="b-num">02</div>
+      <div class="b-sep"></div>
+      <div class="b-icon"><img src="Rolunk aloldal/belief-02.png" alt=""></div>
+      <div class="b-text">
+        <h3>A digitális technológia eszköz, nem öncél</h3>
+        <p>A digitális workflow nálunk nem a szkennelést jelenti – hanem egy egységes rendszert, amely összekapcsolja a diagnózist, a tervezést, a kommunikációt, a gyártást és a minőségellenőrzést.</p>
+      </div>
     </div>
-    <div class="stat-bar-item reveal reveal-delay-3">
-      <div class="stat-bar-num">24<span>h</span></div>
-      <div class="stat-bar-label">Lenyomatkiszállítás Budapesten belül</div>
+    <div class="b-row" style="--d: 0.3s">
+      <div class="b-num">03</div>
+      <div class="b-sep"></div>
+      <div class="b-icon"><img src="Rolunk aloldal/belief-03.png" alt=""></div>
+      <div class="b-text">
+        <h3>Természetes esztétika</h3>
+        <p>Az igazán jó fogpótlás nem hívja fel magára a figyelmet. Természetesen illeszkedik a páciens mosolyához, arcához és személyiségéhez.</p>
+      </div>
+    </div>
+    <div class="b-row" style="--d: 0.4s">
+      <div class="b-num">04</div>
+      <div class="b-sep"></div>
+      <div class="b-icon"><img src="Rolunk aloldal/belief-04.png" alt=""></div>
+      <div class="b-text">
+        <h3>Következetes minőség</h3>
+        <p>A prémium minőség nem egy-egy kiemelkedő munka eredménye – hanem az, ha ugyanaz a színvonal minden esetben, következetesen megjelenik.</p>
+      </div>
+    </div>
+    <div class="b-row" style="--d: 0.5s">
+      <div class="b-num">05</div>
+      <div class="b-sep"></div>
+      <div class="b-icon"><img src="Rolunk aloldal/belief-05.png" alt=""></div>
+      <div class="b-text">
+        <h3>Hosszú távú partnerség</h3>
+        <p>Számunkra egy munka elkészítése nem egy megrendelés lezárása, hanem egy szakmai kapcsolat építésének része.</p>
+      </div>
     </div>
   </div>
-</div>
+</section>
 
 <!-- MÁSHOGY MŰKÖDÜNK -->
 <section class="section" id="mashogy">
@@ -1676,11 +1847,12 @@
   }
 
   // Scroll reveal
-  const reveals = document.querySelectorAll('.reveal');
+  const reveals = document.querySelectorAll('.reveal, .b-row');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('visible');
+        entry.target.classList.add('inview');
         observer.unobserve(entry.target);
       }
     });
