@@ -703,22 +703,56 @@
       color: rgba(245,239,233,0.24);
     }
 
-    /* ── STAT SÁV ── */
+    /* ── STAT BLOKK ── */
+    .stats-wrap {
+      padding: 0 80px 96px;
+      background: var(--cream);
+    }
     .stats-bar {
+      max-width: 100%;
+      margin: 0 auto;
       background: var(--charcoal);
-      display: grid; grid-template-columns: repeat(5, 1fr);
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      overflow: hidden;
+      box-shadow: 0 22px 54px rgba(16, 12, 8, 0.12);
     }
     .stat-bar-item {
-      padding: 60px 40px; text-align: center; position: relative;
+      min-height: 180px;
+      padding: 34px 26px;
+      text-align: center;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
     }
-    .stat-bar-item:not(:last-child)::after {
-      content: ''; position: absolute; right: 0; top: 15%; height: 70%;
-      width: 1px; background: rgba(255,255,255,0.07);
+    .stat-bar-item:nth-child(odd)::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 1px;
+      height: 100%;
+      background: rgba(255,255,255,0.08);
+    }
+    .stat-bar-item:nth-child(-n+2)::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 1px;
+      background: rgba(255,255,255,0.08);
     }
     .stat-bar-num {
       font-family: 'Montserrat', sans-serif;
-      font-size: clamp(42px, 4vw, 62px); font-weight: 800;
-      color: white; letter-spacing: -2px; line-height: 1; margin-bottom: 10px;
+      font-size: clamp(44px, 4.5vw, 66px);
+      font-weight: 800;
+      color: white;
+      letter-spacing: -2px;
+      line-height: 0.95;
+      margin-bottom: 12px;
     }
     .stat-bar-num span { color: var(--coral); }
     .stat-bar-label { font-size: 13px; color: rgba(255,255,255,0.38); font-weight: 500; letter-spacing: 0.4px; }
@@ -919,7 +953,7 @@
       .hitvallas-photo { height: 500px; }
       .team-grid { grid-template-columns: repeat(2, 1fr); }
       .contact-grid { grid-template-columns: repeat(2, 1fr); }
-      .stats-bar { grid-template-columns: repeat(2, 1fr); }
+      .stats-wrap { padding: 0 48px 72px; }
       .alapelv-bar { grid-template-columns: 1fr; }
       .alapelv-item:not(:last-child)::after { display: none; }
       .pilot-section { padding: 72px 48px; }
@@ -949,10 +983,13 @@
       .team-grid { grid-template-columns: 1fr 1fr; gap: 14px; }
       .fejlodes-grid { grid-template-columns: 1fr; gap: 16px; }
       .contact-grid { grid-template-columns: 1fr 1fr; gap: 14px; }
-      .stats-bar { grid-template-columns: 1fr 1fr; }
+      .stats-wrap { padding: 0 20px 56px; }
+      .stats-bar { grid-template-columns: 1fr; }
+      .stat-bar-item { min-height: 152px; padding: 30px 18px; }
+      .stat-bar-item:nth-child(odd)::after,
+      .stat-bar-item:nth-child(-n+2)::before { display: none; }
       #elismeresek > div:last-child { grid-template-columns: 1fr !important; gap: 16px !important; }
       #elismeresek { padding: 56px 20px !important; }
-      .stat-bar-item { padding: 40px 20px; }
       .pilot-section { padding: 48px 20px; }
       .pilot-inner { grid-template-columns: 1fr; padding: 40px 28px; gap: 32px; }
       .pilot-action { align-items: stretch; }
@@ -1115,22 +1152,24 @@
 </section>
 
 <!-- STATISZTIKA SÁV -->
-<div class="stats-bar">
-  <div class="stat-bar-item reveal">
-    <div class="stat-bar-num">25<span>+</span></div>
-    <div class="stat-bar-label">Munkatárs, saját csapat</div>
-  </div>
-  <div class="stat-bar-item reveal reveal-delay-1">
-    <div class="stat-bar-num">20<span>+</span></div>
-    <div class="stat-bar-label">Év a DE / AT piacon</div>
-  </div>
-  <div class="stat-bar-item reveal reveal-delay-2">
-    <div class="stat-bar-num"><span style="color:var(--coral)">0</span></div>
-    <div class="stat-bar-label">Alvállalkozó — minden házon belül</div>
-  </div>
-  <div class="stat-bar-item reveal reveal-delay-3">
-    <div class="stat-bar-num">24<span>h</span></div>
-    <div class="stat-bar-label">Lenyomatkiszállítás Budapesten belül</div>
+<div class="stats-wrap">
+  <div class="stats-bar">
+    <div class="stat-bar-item reveal">
+      <div class="stat-bar-num">25<span>+</span></div>
+      <div class="stat-bar-label">Munkatárs, saját csapat</div>
+    </div>
+    <div class="stat-bar-item reveal reveal-delay-1">
+      <div class="stat-bar-num">20<span>+</span></div>
+      <div class="stat-bar-label">Év a DE / AT piacon</div>
+    </div>
+    <div class="stat-bar-item reveal reveal-delay-2">
+      <div class="stat-bar-num"><span style="color:var(--coral)">0</span></div>
+      <div class="stat-bar-label">Alvállalkozó — minden házon belül</div>
+    </div>
+    <div class="stat-bar-item reveal reveal-delay-3">
+      <div class="stat-bar-num">24<span>h</span></div>
+      <div class="stat-bar-label">Lenyomatkiszállítás Budapesten belül</div>
+    </div>
   </div>
 </div>
 
