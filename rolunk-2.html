@@ -1006,6 +1006,203 @@
     }
     .t-member:hover .t-divider { transform: scaleX(1); }
 
+    /* ── GALÉRIA ── */
+    .gallery {
+      position: relative;
+      background: #f6efe6;
+      padding: clamp(64px, 10vh, 110px) clamp(24px, 6vw, 90px) clamp(70px, 10vh, 120px);
+      overflow: hidden;
+    }
+
+    .gallery::before {
+      content: '';
+      position: absolute;
+      bottom: 60px;
+      left: 40px;
+      width: 130px;
+      height: 110px;
+      background-image: radial-gradient(rgba(232, 80, 46, 0.4) 1.5px, transparent 1.5px);
+      background-size: 15px 15px;
+      pointer-events: none;
+    }
+
+    .g-head { text-align: center; margin-bottom: 54px; position: relative; z-index: 1; }
+
+    .g-title {
+      font-family: var(--font-head);
+      font-size: clamp(30px, 3.8vw, 48px);
+      font-weight: 800;
+      color: #1d1712;
+    }
+
+    .g-dots-row {
+      display: flex;
+      justify-content: center;
+      gap: 7px;
+      margin-top: 20px;
+    }
+
+    .g-dots-row span {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    .g-sub {
+      margin-top: 18px;
+      font-family: var(--font-body);
+      font-size: 17px;
+      color: #5a5049;
+    }
+
+    .gallery .reveal { opacity: 0; transform: translateY(30px); }
+    .gallery .reveal.inview {
+      animation: fadeUp 0.85s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+      animation-delay: var(--d, 0s);
+    }
+
+    .g-panels {
+      display: flex;
+      gap: 14px;
+      height: clamp(380px, 52vh, 520px);
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    .g-panel {
+      position: relative;
+      flex: 1;
+      border-radius: 18px;
+      overflow: hidden;
+      cursor: pointer;
+      border: 1px solid #ece2d4;
+      transition: flex 0.75s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s;
+    }
+
+    .g-panel.active {
+      flex: 3.2;
+      box-shadow: 0 26px 55px -26px rgba(43, 30, 20, 0.4);
+    }
+
+    .g-ph {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .g-panel:nth-child(1) .g-ph { background: linear-gradient(160deg, #f3e3ce, #e8cfae); }
+    .g-panel:nth-child(2) .g-ph { background: linear-gradient(160deg, #efd9c2, #dfc0a0); }
+    .g-panel:nth-child(3) .g-ph { background: linear-gradient(160deg, #f5e8d6, #e3c9a8); }
+    .g-panel:nth-child(4) .g-ph { background: linear-gradient(160deg, #eed6bd, #dcbd9b); }
+    .g-panel:nth-child(5) .g-ph { background: linear-gradient(160deg, #f2e0c9, #e6cba9); }
+
+    .g-ph svg {
+      width: 54px;
+      height: 54px;
+      stroke: rgba(232, 80, 46, 0.55);
+      stroke-width: 1.4;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      transition: transform 0.5s ease, opacity 0.4s;
+    }
+
+    .g-panel.active .g-ph svg { transform: scale(1.15); }
+
+    .g-panel::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 55%, rgba(43, 28, 16, 0.55) 100%);
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      pointer-events: none;
+    }
+
+    .g-panel.active::after { opacity: 1; }
+
+    .g-label {
+      position: absolute;
+      left: 22px;
+      right: 22px;
+      bottom: 18px;
+      z-index: 2;
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      opacity: 0;
+      transform: translateY(14px);
+      transition: opacity 0.45s ease 0.2s, transform 0.45s cubic-bezier(0.22, 1, 0.36, 1) 0.2s;
+      white-space: nowrap;
+    }
+
+    .g-panel.active .g-label { opacity: 1; transform: translateY(0); }
+
+    .g-label .gl-num {
+      font-family: var(--font-head);
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--accent-2);
+    }
+
+    .g-label .gl-name {
+      font-family: var(--font-head);
+      font-size: 17px;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .g-side {
+      position: absolute;
+      left: 50%;
+      bottom: 22px;
+      transform: translateX(-50%);
+      writing-mode: vertical-rl;
+      font-family: var(--font-body);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: rgba(90, 60, 35, 0.65);
+      transition: opacity 0.35s ease;
+      white-space: nowrap;
+    }
+
+    .g-panel.active .g-side { opacity: 0; }
+
+    @media (max-width: 760px) {
+      .gallery { padding-left: 18px; padding-right: 18px; }
+      .gallery::before { display: none; }
+      .g-head { margin-bottom: 38px; }
+
+      .g-panels {
+        flex-direction: column;
+        height: auto;
+        gap: 12px;
+      }
+
+      .g-panel {
+        flex: none;
+        height: 64px;
+        border-radius: 14px;
+        transition: height 0.65s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s;
+      }
+
+      .g-panel.active { flex: none; height: 58vw; max-height: 320px; }
+
+      .g-ph svg { width: 40px; height: 40px; }
+      .g-panel:not(.active) .g-ph svg { opacity: 0; }
+
+      .g-side {
+        writing-mode: horizontal-tb;
+        left: 20px;
+        bottom: 50%;
+        transform: translateY(50%);
+      }
+    }
+
     /* ── MÁSHOGY MŰKÖDÜNK ── */
     .mashogy-grid {
       display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
@@ -1619,6 +1816,62 @@
   </div>
 </section>
 
+<!-- ============ GALÉRIA — A KULISSZÁK MÖGÖTT ============ -->
+<section class="gallery">
+
+  <div class="g-head">
+    <h2 class="g-title reveal" style="--d: 0s">A kulisszák mögött</h2>
+    <div class="g-dots-row reveal" style="--d: 0.12s">
+      <span></span><span></span><span></span><span></span><span></span><span></span>
+    </div>
+    <p class="g-sub reveal" style="--d: 0.24s">Betekintés a mindennapjainkba</p>
+  </div>
+
+  <div class="g-panels reveal" id="gPanels" style="--d: 0.36s">
+
+    <div class="g-panel active">
+      <div class="g-ph">
+        <svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8.5 7l1.2-2.4h4.6L15.5 7"/><circle cx="12" cy="13.5" r="3.5"/></svg>
+      </div>
+      <span class="g-side">01 · KÉP HELYE</span>
+      <div class="g-label"><span class="gl-num">01</span><span class="gl-name">Kép helye</span></div>
+    </div>
+
+    <div class="g-panel">
+      <div class="g-ph">
+        <svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8.5 7l1.2-2.4h4.6L15.5 7"/><circle cx="12" cy="13.5" r="3.5"/></svg>
+      </div>
+      <span class="g-side">02 · KÉP HELYE</span>
+      <div class="g-label"><span class="gl-num">02</span><span class="gl-name">Kép helye</span></div>
+    </div>
+
+    <div class="g-panel">
+      <div class="g-ph">
+        <svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8.5 7l1.2-2.4h4.6L15.5 7"/><circle cx="12" cy="13.5" r="3.5"/></svg>
+      </div>
+      <span class="g-side">03 · KÉP HELYE</span>
+      <div class="g-label"><span class="gl-num">03</span><span class="gl-name">Kép helye</span></div>
+    </div>
+
+    <div class="g-panel">
+      <div class="g-ph">
+        <svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8.5 7l1.2-2.4h4.6L15.5 7"/><circle cx="12" cy="13.5" r="3.5"/></svg>
+      </div>
+      <span class="g-side">04 · KÉP HELYE</span>
+      <div class="g-label"><span class="gl-num">04</span><span class="gl-name">Kép helye</span></div>
+    </div>
+
+    <div class="g-panel">
+      <div class="g-ph">
+        <svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8.5 7l1.2-2.4h4.6L15.5 7"/><circle cx="12" cy="13.5" r="3.5"/></svg>
+      </div>
+      <span class="g-side">05 · KÉP HELYE</span>
+      <div class="g-label"><span class="gl-num">05</span><span class="gl-name">Kép helye</span></div>
+    </div>
+
+  </div>
+</section>
+
 <!-- SZAKMAI FEJLŐDÉS -->
 <section class="section" id="fejlodes">
   <div class="reveal">
@@ -2009,6 +2262,32 @@
     });
   }, { threshold: 0.12 });
   reveals.forEach(el => observer.observe(el));
+
+  // Galéria: kinyíló panelek (hover desktopon, koppintás mobilon) + automata léptetés
+  (function () {
+    const panels = document.querySelectorAll('.g-panel');
+    if (!panels.length) return;
+
+    let current = 0;
+    let autoTimer;
+
+    function activate(i) {
+      current = i;
+      panels.forEach((p, k) => p.classList.toggle('active', k === i));
+    }
+
+    function startAuto() {
+      clearInterval(autoTimer);
+      autoTimer = setInterval(() => activate((current + 1) % panels.length), 3500);
+    }
+
+    panels.forEach((p, i) => {
+      p.addEventListener('mouseenter', () => { activate(i); startAuto(); });
+      p.addEventListener('click', () => { activate(i); startAuto(); });
+    });
+
+    startAuto();
+  })();
 
 </script>
 
