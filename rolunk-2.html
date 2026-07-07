@@ -873,6 +873,139 @@
       color: #5a5049;
     }
 
+    /* ── CSAPATUNK ── */
+    .team {
+      position: relative;
+      background: #fbf6ee;
+      padding: clamp(64px, 10vh, 110px) clamp(24px, 8vw, 130px) clamp(70px, 10vh, 120px);
+      overflow: hidden;
+    }
+    .team::before {
+      content: '';
+      position: absolute;
+      top: 60px;
+      right: 40px;
+      width: 130px;
+      height: 110px;
+      background-image: radial-gradient(rgba(232, 80, 46, 0.4) 1.5px, transparent 1.5px);
+      background-size: 15px 15px;
+      pointer-events: none;
+    }
+    .t-head { text-align: center; margin-bottom: 60px; position: relative; z-index: 1; }
+    .t-eyebrow {
+      font-family: var(--font-body);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 4px;
+      color: var(--accent);
+      margin-bottom: 18px;
+    }
+    .t-title {
+      font-family: var(--font-head);
+      font-size: clamp(30px, 3.8vw, 48px);
+      font-weight: 800;
+      color: #1d1712;
+    }
+    .t-dots-row {
+      display: flex;
+      justify-content: center;
+      gap: 7px;
+      margin-top: 20px;
+    }
+    .t-dots-row span {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+    .team .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    .team .reveal.inview {
+      animation: fadeUp 0.85s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+      animation-delay: var(--d, 0s);
+    }
+    .t-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: clamp(24px, 3.5vw, 48px);
+      max-width: 1100px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+    .t-member { text-align: center; }
+    .t-avatar {
+      position: relative;
+      width: min(200px, 100%);
+      aspect-ratio: 1;
+      margin: 0 auto;
+      border-radius: 50%;
+      background: linear-gradient(145deg, #f8ecdf, #f1e0cd);
+      border: 1.5px solid #ece2d4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.4s, border-color 0.4s;
+    }
+    .t-avatar::before {
+      content: '';
+      position: absolute;
+      inset: 8px;
+      border-radius: 50%;
+      border: 1.5px dashed rgba(232, 80, 46, 0.45);
+      transition: transform 0.9s ease;
+    }
+    .t-member:hover .t-avatar {
+      transform: translateY(-8px);
+      box-shadow: 0 24px 45px -20px rgba(43, 30, 20, 0.35);
+      border-color: rgba(232, 80, 46, 0.5);
+    }
+    .t-member:hover .t-avatar::before { transform: rotate(60deg); }
+    .t-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+    .t-avatar svg {
+      width: 46%;
+      height: 46%;
+      stroke: var(--accent);
+      stroke-width: 1.6;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      opacity: 0.8;
+    }
+    .t-name {
+      margin-top: 24px;
+      font-family: var(--font-head);
+      font-size: 18px;
+      font-weight: 700;
+      color: #2b2320;
+    }
+    .t-role {
+      margin-top: 6px;
+      font-family: var(--font-body);
+      font-size: 13.5px;
+      color: var(--accent);
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+    .t-divider {
+      width: 26px;
+      height: 2px;
+      background: var(--accent);
+      margin: 14px auto 0;
+      transform: scaleX(0);
+      transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .t-member:hover .t-divider { transform: scaleX(1); }
+
     /* ── MÁSHOGY MŰKÖDÜNK ── */
     .mashogy-grid {
       display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
@@ -1078,6 +1211,10 @@
       .b-icon { width: 68px; height: 68px; }
       .b-icon img { width: 50px; height: 50px; }
       .b-num { width: 50px; height: 50px; font-size: 16px; }
+      .team { padding: 56px 48px 72px; }
+      .team::before { right: 20px; top: 28px; }
+      .t-head { margin-bottom: 44px; }
+      .t-grid { grid-template-columns: repeat(2, 1fr); gap: 40px 24px; }
       .alapelv-bar { grid-template-columns: 1fr; }
       .alapelv-item:not(:last-child)::after { display: none; }
       .pilot-section { padding: 72px 48px; }
@@ -1117,6 +1254,12 @@
       .b-icon { width: 62px; height: 62px; }
       .b-icon img { width: 46px; height: 46px; }
       .b-text { flex-basis: 100%; }
+      .team { padding-left: 20px; padding-right: 20px; }
+      .team::before { display: none; }
+      .t-head { margin-bottom: 44px; }
+      .t-grid { grid-template-columns: repeat(2, 1fr); gap: 24px 14px; }
+      .t-avatar { width: min(160px, 80%); }
+      .t-name { margin-top: 18px; font-size: 16.5px; }
       #elismeresek > div:last-child { grid-template-columns: 1fr !important; gap: 16px !important; }
       #elismeresek { padding: 56px 20px !important; }
       .pilot-section { padding: 48px 20px; }
@@ -1427,43 +1570,51 @@
   </div>
 </section>
 
-<!-- CSAPAT ÖSSZETÉTEL -->
-<section class="section-white" id="csapat-struktura">
-  <div class="reveal">
-    <div class="section-label">A csapatunk</div>
-    <h2 class="section-title">Minden, ami fogtechnika,<br><span class="accent">egy helyen.</span></h2>
-    <p class="section-desc">Csapatunk - Minden ami fogtechnika: Minden feladat a megfelelő szakember kezében, <strong>2 fogtechnikus mester és dedikált részlegvezetők vezetésével.</strong></p>
+<!-- CSAPATUNK -->
+<section class="team">
+  <div class="t-head">
+    <div class="t-eyebrow reveal" style="--d: 0s">CSAPATUNK</div>
+    <h2 class="t-title reveal" style="--d: 0.12s">Ismerje meg csapatunkat</h2>
+    <div class="t-dots-row reveal" style="--d: 0.24s">
+      <span></span><span></span><span></span><span></span><span></span><span></span>
+    </div>
   </div>
-  <div class="team-grid">
-    <div class="team-dept-card reveal">
-      <div class="dept-num">3</div>
-      <div class="dept-name">Modellkészítő</div>
-      <div class="dept-tag">fő</div>
-      <div class="dept-desc">A minőségi munka alapja — precíz lenyomatkezelés és modellkészítés minden esethez.</div>
+
+  <div class="t-grid">
+    <div class="t-member reveal" style="--d: 0.15s">
+      <div class="t-avatar">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-6.5 8-6.5s8 2.5 8 6.5"/></svg>
+      </div>
+      <div class="t-name">Kovács Péter</div>
+      <div class="t-role">Alapító, fogtechnikus mester</div>
+      <div class="t-divider"></div>
     </div>
-    <div class="team-dept-card reveal reveal-delay-1">
-      <div class="dept-num">16</div>
-      <div class="dept-name">Full cirkon részleg</div>
-      <div class="dept-tag">fő</div>
-      <div class="dept-desc">Full cirkon pótlások elejétől a végéig — fémkeret nélküli, teljes körű esztétikai megoldások.</div>
+
+    <div class="t-member reveal" style="--d: 0.27s">
+      <div class="t-avatar">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-6.5 8-6.5s8 2.5 8 6.5"/></svg>
+      </div>
+      <div class="t-name">Nagy Anna</div>
+      <div class="t-role">Kerámia specialista</div>
+      <div class="t-divider"></div>
     </div>
-    <div class="team-dept-card reveal reveal-delay-2">
-      <div class="dept-num">2</div>
-      <div class="dept-name">Protetikus</div>
-      <div class="dept-tag">fő</div>
-      <div class="dept-desc">Implantátumok, teleszkópos és kombinált munkák precíz illeszkedése — Nobel Procerával.</div>
+
+    <div class="t-member reveal" style="--d: 0.39s">
+      <div class="t-avatar">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-6.5 8-6.5s8 2.5 8 6.5"/></svg>
+      </div>
+      <div class="t-name">Szabó Dániel</div>
+      <div class="t-role">CAD/CAM tervező</div>
+      <div class="t-divider"></div>
     </div>
-    <div class="team-dept-card reveal reveal-delay-1">
-      <div class="dept-num">3</div>
-      <div class="dept-name">Koordináció</div>
-      <div class="dept-tag">fő</div>
-      <div class="dept-desc">Megrendelések, határidők és ügyfélkommunikáció gördülékeny összehangolása.</div>
-    </div>
-    <div class="team-dept-card reveal reveal-delay-2">
-      <div class="dept-num">2</div>
-      <div class="dept-name">Fogtechnikus mester</div>
-      <div class="dept-tag">fő</div>
-      <div class="dept-desc">Szakmai irányítás, belső minőségbiztosítás és mentorálás — a labor szakmai gerince.</div>
+
+    <div class="t-member reveal" style="--d: 0.51s">
+      <div class="t-avatar">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-6.5 8-6.5s8 2.5 8 6.5"/></svg>
+      </div>
+      <div class="t-name">Tóth Eszter</div>
+      <div class="t-role">Minőségbiztosítás</div>
+      <div class="t-divider"></div>
     </div>
   </div>
 </section>
