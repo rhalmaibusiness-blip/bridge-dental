@@ -449,6 +449,12 @@
       animation: cinematicFadeUp 1s ease 1.5s forwards;
     }
 
+    .cinematic-cta {
+      margin-top: 36px;
+      opacity: 0;
+      animation: cinematicFadeUp 1s ease 1.85s forwards;
+    }
+
     .cinematic-eyebrow {
       margin-bottom: 26px;
       display: inline-flex;
@@ -554,46 +560,147 @@
     .section-title .accent { color: var(--coral); }
     .section-desc { font-size: 16px; color: var(--warm-gray); line-height: 1.7; max-width: 520px; margin-bottom: 56px; }
 
-    /* ── HITVALLÁS ── */
+    /* ── TÖRTÉNET BLOKK ── */
     .hitvallas-grid {
       display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
     }
-    .quote-mark {
-      font-size: 86px; line-height: 0.55; color: var(--coral);
-      font-family: 'Montserrat', sans-serif; font-weight: 300;
-      display: block; margin-bottom: 14px;
-    }
     .hitvallas-quote-text {
-      font-family: 'Montserrat', sans-serif; font-size: clamp(18px, 1.9vw, 26px);
-      font-weight: 700; line-height: 1.5; letter-spacing: -0.6px;
-      color: var(--charcoal); margin-bottom: 32px;
+      font-family: 'Montserrat', sans-serif; font-size: clamp(18px, 1.9vw, 25px);
+      font-weight: 700; line-height: 1.42; letter-spacing: -0.6px;
+      color: var(--charcoal); margin-bottom: 28px; max-width: 24ch;
+      text-wrap: balance;
     }
     .hitvallas-body {
       font-size: 15px; color: var(--warm-gray); line-height: 1.75;
-      margin-bottom: 36px;
+      margin-bottom: 0;
     }
-    .hitvallas-source {
-      font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
-      color: var(--warm-gray-light);
+    .story-text {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .story-text p {
+      margin: 0;
+    }
+    .story-text p strong {
+      color: var(--charcoal);
+      font-weight: 700;
+    }
+    .story-facts {
+      margin-top: 34px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .story-fact {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 16px;
+      border-radius: 999px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(246,240,234,0.95));
+      border: 1px solid rgba(117, 99, 86, 0.14);
+      box-shadow: 0 8px 24px rgba(39, 29, 20, 0.05);
+      font-size: 12px;
+      color: var(--warm-gray);
+      letter-spacing: 0.2px;
+    }
+    .story-fact strong {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 13px;
+      color: var(--charcoal);
+      letter-spacing: -0.2px;
     }
     .hitvallas-photo {
-      border-radius: 20px; overflow: hidden; position: relative;
-      height: 540px;
+      border-radius: 28px;
+      overflow: hidden;
+      position: relative;
+      height: 560px;
+      background:
+        radial-gradient(circle at top right, rgba(242, 121, 63, 0.22), transparent 34%),
+        linear-gradient(160deg, #2f2722 0%, #181411 100%);
+      border: 1px solid rgba(255,255,255,0.08);
+      box-shadow: 0 30px 70px rgba(18, 12, 8, 0.22);
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-start;
+      padding: 34px;
     }
-    .hitvallas-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
-    .hitvallas-badge {
-      position: absolute; bottom: 28px; left: 28px;
-      background: rgba(28,25,22,0.88); backdrop-filter: blur(12px);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 14px; padding: 18px 22px;
+    .story-placeholder-ring {
+      position: absolute;
+      top: 28px;
+      right: 28px;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      border: 1px solid rgba(242, 121, 63, 0.14);
+      opacity: 0.8;
     }
-    .hitvallas-badge-top {
-      font-family: 'Montserrat', sans-serif; font-size: 22px; font-weight: 800;
-      color: var(--coral-light); letter-spacing: -0.5px; line-height: 1;
+    .story-placeholder-ring::after {
+      content: '';
+      position: absolute;
+      inset: 18px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.08);
     }
-    .hitvallas-badge-sub {
-      font-size: 11px; color: rgba(255,255,255,0.42); margin-top: 4px;
-      letter-spacing: 0.5px;
+    .story-portrait-placeholder {
+      position: relative;
+      width: 100%;
+      min-height: 100%;
+      border-radius: 22px;
+      overflow: hidden;
+      display: flex;
+      align-items: flex-end;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0)),
+        linear-gradient(140deg, rgba(242, 121, 63, 0.06), rgba(255,255,255,0.01));
+    }
+    .story-portrait-copy {
+      position: relative;
+      z-index: 2;
+      max-width: 320px;
+      padding: 26px 28px;
+      border-radius: 18px;
+      background: rgba(245, 239, 233, 0.08);
+      backdrop-filter: blur(14px);
+      border: 1px solid rgba(255,255,255,0.08);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.06);
+    }
+    .story-portrait-copy span {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(242, 121, 63, 0.88);
+    }
+    .story-portrait-copy h3 {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(22px, 2vw, 30px);
+      font-weight: 700;
+      line-height: 1.18;
+      letter-spacing: -0.8px;
+      color: #f5efe9;
+      text-wrap: balance;
+    }
+    .story-portrait-copy p {
+      margin: 14px 0 0;
+      font-size: 14px;
+      line-height: 1.7;
+      color: rgba(245,239,233,0.64);
+    }
+    .story-placeholder-note {
+      position: absolute;
+      right: 34px;
+      bottom: 34px;
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: rgba(245,239,233,0.24);
     }
 
     /* ── STAT SÁV ── */
@@ -809,6 +916,7 @@
       nav { padding: 0 32px; }
       .section, .section-white { padding: 72px 48px; }
       .hitvallas-grid, .mashogy-grid { gap: 48px; }
+      .hitvallas-photo { height: 500px; }
       .team-grid { grid-template-columns: repeat(2, 1fr); }
       .contact-grid { grid-template-columns: repeat(2, 1fr); }
       .stats-bar { grid-template-columns: repeat(2, 1fr); }
@@ -831,7 +939,13 @@
 
       .section, .section-white { padding: 56px 20px; }
       .hitvallas-grid, .mashogy-grid { grid-template-columns: 1fr; gap: 40px; }
-      .hitvallas-photo { height: 320px; }
+      .hitvallas-quote-text { max-width: 100%; }
+      .story-facts { margin-top: 28px; gap: 10px; }
+      .story-fact { width: 100%; justify-content: space-between; border-radius: 16px; }
+      .hitvallas-photo { height: 360px; padding: 20px; }
+      .story-placeholder-ring { width: 120px; height: 120px; top: 18px; right: 18px; }
+      .story-portrait-copy { max-width: 100%; padding: 20px; }
+      .story-placeholder-note { right: 18px; bottom: 18px; letter-spacing: 2px; }
       .team-grid { grid-template-columns: 1fr 1fr; gap: 14px; }
       .fejlodes-grid { grid-template-columns: 1fr; gap: 16px; }
       .contact-grid { grid-template-columns: 1fr 1fr; gap: 14px; }
@@ -918,6 +1032,7 @@
     <div class="cinematic-eyebrow">Rólunk</div>
     <h1 class="cinematic-title" id="heroHeadline">Több mint egy <em>fogtechnikai labor.</em></h1>
     <p class="cinematic-subtitle">A diagnózistól a végleges munkáig aktívan támogatjuk partnereinket - mert a legjobb eredmények nem megrendelésekből születnek, hanem együttműködésből.</p>
+    <a href="#hitvallas" class="btn-coral-big cinematic-cta">Ismerje meg a történetünket</a>
   </div>
 
   <a href="#hitvallas" class="cinematic-scroll" aria-label="Görgess lejjebb">
@@ -966,26 +1081,35 @@
   </div>
 </div>
 
-<!-- HITVALLÁS / KÜLDETÉS -->
+<!-- TÖRTÉNETÜNK -->
 <section class="section-white" id="hitvallas">
   <div class="hitvallas-grid reveal">
     <div>
-      <div class="section-label">Küldetésünk</div>
-      <span class="quote-mark">"</span>
+      <div class="section-label">A történetünk</div>
       <div class="hitvallas-quote-text">
-        Azért dolgozunk, hogy az esztétikai fogpótlások és a legösszetettebb implantátumos esetek kiszámítható, stabil és esztétikus eredménnyel záruljanak — mind a fogorvos, mind a beteg számára.
+        Két fogtechnikus mester közös szakmai meggyőződéséből épült fel a Bridge Dental.
       </div>
-      <p class="hitvallas-body">
-        Küldetésünk: Cégünk sikeres szakmai fúzió eredményeként jött létre. Több mint 20 éve vagyunk jelen a magyar, német és osztrák piacon és nyújtunk kimagasló fogtechnikai szolgáltatást.
-      </p>
-      <div class="hitvallas-source">— Bridge Dental, Budapest</div>
+      <div class="story-text hitvallas-body">
+        <p>A Bridge Dental <strong>Kínál Attila</strong> és <strong>Császár Dénes</strong> közös szakmai szemléletéből született. Már a 2000-es évek közepén együtt dolgoztunk német fogorvosoknak, és hamar egyértelművé vált számunkra, hogy a hazai piacon hiányzik az a fajta labor, amely nem csupán kivitelező, hanem valódi szakmai partner.</p>
+        <p>Olyan működésben hittünk, ahol a fogorvos és a fogtechnikus közösen gondolkodik, ahol a digitális technológia nem divat, hanem rendszer, és ahol a minőség nem egy-egy kiemelkedő munkában, hanem következetesen van jelen.</p>
+        <p>2011-ben létrehoztuk a Bridge Dentalt, és azóta is ez a szemlélet vezérel bennünket: <strong>közel 25 fős csapattal</strong>, <strong>saját digitális gyártóközponttal</strong> és <strong>mintegy 80 fogorvos bizalmával</strong>.</p>
+      </div>
+      <div class="story-facts">
+        <div class="story-fact"><strong>2011</strong><span>a Bridge Dental indulása</span></div>
+        <div class="story-fact"><strong>25 fős</strong><span>saját szakmai csapat</span></div>
+        <div class="story-fact"><strong>80 fogorvos</strong><span>aktív partneri bizalom</span></div>
+      </div>
     </div>
     <div class="hitvallas-photo">
-      <img src="bridge-dental-kuldetes-fogtechnikai-labor.webp" alt="Bridge Dental fogtechnikai labor küldetése — mikroszkópos minőségellenőrzés Budapesten">
-      <div class="hitvallas-badge">
-        <div class="hitvallas-badge-top">ICDE</div>
-        <div class="hitvallas-badge-sub">Certified Partner</div>
+      <div class="story-placeholder-ring" aria-hidden="true"></div>
+      <div class="story-portrait-placeholder" role="img" aria-label="Helykitöltő portré a Bridge Dental alapítóinak fotójához">
+        <div class="story-portrait-copy">
+          <span>Portré helye</span>
+          <h3>Kínál Attila vagy Császár Dénes portréja ide kerülhet.</h3>
+          <p>Ez a panel szándékosan helykitöltőként készül, hogy a végleges fotó is ugyanebbe a nyugodt, elegáns kompozícióba érkezzen meg.</p>
+        </div>
       </div>
+      <div class="story-placeholder-note">Bridge Dental Portrait Placeholder</div>
     </div>
   </div>
 </section>
