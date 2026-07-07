@@ -189,6 +189,107 @@
       width: 100%;
     }
 
+    .hero-dropdown {
+      position: relative;
+    }
+
+    .hero-dropdown > a {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .hero-dropdown > a svg {
+      width: 12px;
+      height: 12px;
+      transition: transform 0.25s ease;
+    }
+
+    .hero-dropdown:hover > a svg {
+      transform: rotate(180deg);
+    }
+
+    .hero-dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      min-width: 320px;
+      list-style: none;
+      margin: 0;
+      padding: 14px 0 0;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.2s ease, visibility 0.2s ease;
+      z-index: 100;
+    }
+
+    .hero-dropdown:hover .hero-dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .hero-dropdown-panel {
+      background: rgba(13, 10, 8, 0.96);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px;
+      padding: 10px;
+      box-shadow: 0 18px 46px rgba(0,0,0,0.35);
+      backdrop-filter: blur(10px);
+    }
+
+    .hero-dropdown-menu li + li {
+      margin-top: 2px;
+    }
+
+    .hero-dropdown-menu li a {
+      display: block;
+      padding: 11px 14px;
+      border-radius: 10px;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      color: #f5efe9;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: background 0.18s ease, color 0.18s ease;
+    }
+
+    .hero-dropdown-menu li a:hover {
+      background: rgba(242, 121, 63, 0.12);
+      color: #f2793f;
+    }
+
+    .hero-mobile-group {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .hero-mobile-submenu {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2px;
+      margin-top: 4px;
+    }
+
+    .hero-mobile-submenu a {
+      font-family: 'Open Sans', sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      color: rgba(245,239,233,0.78);
+      padding: 6px 0;
+    }
+
+    .hero-mobile-submenu a:hover,
+    .hero-mobile-submenu a:active {
+      color: #f2793f;
+    }
+
     .hero-burger {
       display: none;
       z-index: 40;
@@ -3297,10 +3398,28 @@
     </a>
 
     <ul class="hero-menu">
-      <li><a href="#rolunk">RÓLUNK</a></li>
-      <li><a href="#szolgaltatasok">SZOLGÁLTATÁSOK</a></li>
-      <li><a href="digitalis-fogtechnika.html">TECHNOLÓGIA</a></li>
-      <li><a href="#referenciak">PARTNEREK</a></li>
+      <li><a href="rolunk.html">RÓLUNK</a></li>
+      <li class="hero-dropdown">
+        <a href="#szolgaltatasok">
+          SZAKTERÜLETEINK
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <polyline points="6 9 12 15 18 9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+        <ul class="hero-dropdown-menu">
+          <li class="hero-dropdown-panel">
+            <ul style="list-style:none; margin:0; padding:0;">
+              <li><a href="full-arch-implantatumos-rehabilitaciok.html">Full-Arch Implantátumos Rehabilitációk (All-on-X)</a></li>
+              <li><a href="#szolgaltatasok">Implantátumos cirkónium restaurációk</a></li>
+              <li><a href="digitalis-fogsorok.html">Digitális fogsorok — TrueDent</a></li>
+              <li><a href="#szolgaltatasok">Digitális workflow</a></li>
+              <li><a href="esztetikai-keramia.html">Esztétikai kerámiapótlások</a></li>
+              <li><a href="#szolgaltatasok">CAD/CAM gyártás</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li><a href="index.html#blog">BLOG</a></li>
       <li><a href="kapcsolat.html">KAPCSOLAT</a></li>
     </ul>
 
@@ -3310,10 +3429,19 @@
   </header>
 
   <div class="hero-mobile-menu" id="heroMobileMenu">
-    <a href="#rolunk">RÓLUNK</a>
-    <a href="#szolgaltatasok">SZOLGÁLTATÁSOK</a>
-    <a href="digitalis-fogtechnika.html">TECHNOLÓGIA</a>
-    <a href="#referenciak">PARTNEREK</a>
+    <a href="rolunk.html">RÓLUNK</a>
+    <div class="hero-mobile-group">
+      <a href="#szolgaltatasok">SZAKTERÜLETEINK</a>
+      <div class="hero-mobile-submenu">
+        <a href="full-arch-implantatumos-rehabilitaciok.html">Full-Arch Implantátumos Rehabilitációk (All-on-X)</a>
+        <a href="#szolgaltatasok">Implantátumos cirkónium restaurációk</a>
+        <a href="digitalis-fogsorok.html">Digitális fogsorok — TrueDent</a>
+        <a href="#szolgaltatasok">Digitális workflow</a>
+        <a href="esztetikai-keramia.html">Esztétikai kerámiapótlások</a>
+        <a href="#szolgaltatasok">CAD/CAM gyártás</a>
+      </div>
+    </div>
+    <a href="index.html#blog">BLOG</a>
     <a href="kapcsolat.html">KAPCSOLAT</a>
   </div>
 
