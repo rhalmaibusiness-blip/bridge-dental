@@ -3382,6 +3382,210 @@
       }
     }
 
+    .reviews {
+      background: #f6efe6;
+      padding: clamp(64px, 9vh, 110px) clamp(24px, 6vw, 90px) clamp(70px, 10vh, 120px);
+    }
+
+    .rev-eyebrow {
+      font-family: var(--font-body);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 4px;
+      color: var(--accent);
+      margin-bottom: 22px;
+    }
+
+    .rev-title {
+      font-family: var(--font-head);
+      font-size: clamp(30px, 3.4vw, 46px);
+      font-weight: 800;
+      line-height: 1.25;
+      color: #1d1712;
+    }
+
+    .rev-title .rev-accent { color: var(--accent); }
+
+    .rev-sub {
+      margin-top: 14px;
+      font-family: var(--font-body);
+      font-size: 16px;
+      color: #6b5f55;
+    }
+
+    .reviews .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.9s ease, transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+      transition-delay: var(--d, 0s);
+    }
+
+    .reviews.inview .reveal {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .rev-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 36px;
+    }
+
+    .rev-tab {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: #fdfaf5;
+      border: 1.5px solid #e8ddcd;
+      border-radius: 50px;
+      padding: 12px 24px 12px 14px;
+      cursor: pointer;
+      text-align: left;
+      font-family: var(--font-body);
+      transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
+    }
+
+    .rev-tab:hover { transform: translateY(-2px); }
+
+    .rev-tab .rt-avatar {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: #f8ecdf;
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 13px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .rev-tab .rt-name {
+      font-size: 14px;
+      font-weight: 700;
+      color: #4a413b;
+      transition: color 0.3s;
+    }
+
+    .rev-tab .rt-role {
+      display: block;
+      font-size: 11.5px;
+      font-weight: 400;
+      color: #8a7d70;
+      margin-top: 2px;
+    }
+
+    .rev-tab.active {
+      border-color: var(--accent);
+      box-shadow: 0 12px 28px -14px rgba(232, 80, 46, 0.4);
+    }
+
+    .rev-tab.active .rt-avatar {
+      background: linear-gradient(135deg, var(--accent-2), var(--accent-red));
+      color: #fff;
+    }
+
+    .rev-tab.active .rt-name { color: var(--accent); }
+
+    .rev-card {
+      position: relative;
+      margin-top: 26px;
+      background: #fdfaf5;
+      border: 1px solid #ece2d4;
+      border-radius: 18px;
+      padding: clamp(34px, 4.5vw, 60px) clamp(26px, 5vw, 70px);
+      box-shadow: 0 24px 55px -30px rgba(43, 30, 20, 0.3);
+      overflow: hidden;
+    }
+
+    .rev-card .rq-open,
+    .rev-card .rq-close {
+      position: absolute;
+      font-family: Georgia, serif;
+      font-size: 130px;
+      line-height: 1;
+      pointer-events: none;
+    }
+
+    .rev-card .rq-open {
+      top: 14px;
+      left: 26px;
+      color: var(--accent);
+      opacity: 0.9;
+    }
+
+    .rev-card .rq-close {
+      bottom: -30px;
+      right: 30px;
+      color: #d8cec2;
+    }
+
+    .rev-quote {
+      position: relative;
+      z-index: 1;
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.9;
+      color: #3d352f;
+      max-width: 100ch;
+      padding-top: 34px;
+      opacity: 1;
+      transition: opacity 0.35s ease, transform 0.35s ease;
+    }
+
+    .rev-card.switching .rev-quote,
+    .rev-card.switching .rev-stars {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+
+    .rev-stars {
+      position: relative;
+      z-index: 1;
+      margin-top: 24px;
+      display: flex;
+      gap: 5px;
+      transition: opacity 0.35s ease, transform 0.35s ease;
+    }
+
+    .rev-stars svg {
+      width: 18px;
+      height: 18px;
+      fill: var(--accent);
+    }
+
+    @media (max-width: 700px) {
+      .reviews {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      .rev-tabs {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .rev-tab { width: 100%; }
+
+      .rev-card { padding: 60px 22px 40px; }
+
+      .rev-card .rq-open {
+        font-size: 90px;
+        top: 10px;
+        left: 16px;
+      }
+
+      .rev-card .rq-close { display: none; }
+
+      .rev-quote {
+        font-size: 15px;
+        padding-top: 8px;
+      }
+    }
+
   </style>
 </head>
 <body>
@@ -3809,6 +4013,25 @@
   <div class="case-thumbs reveal" id="caseThumbs" style="--d: 0.4s"></div>
 </section>
 
+<section class="reviews" id="velemenyek">
+  <div class="rev-eyebrow reveal">VÉLEMÉNYEK</div>
+
+  <h2 class="rev-title reveal" style="--d: 0.12s">
+    A bizalom, amit <span class="rev-accent">évek építenek.</span>
+  </h2>
+
+  <p class="rev-sub reveal" style="--d: 0.24s">Partnereink tapasztalatai a közös munkáról.</p>
+
+  <div class="rev-tabs reveal" id="revTabs" style="--d: 0.34s"></div>
+
+  <div class="rev-card reveal" id="revCard" style="--d: 0.46s">
+    <span class="rq-open">&ldquo;</span>
+    <p class="rev-quote" id="revQuote"></p>
+    <div class="rev-stars" id="revStars"></div>
+    <span class="rq-close">&rdquo;</span>
+  </div>
+</section>
+
 <section class="about" id="tortenetunk">
   <div class="about-card">
     <div class="about-text">
@@ -4128,6 +4351,16 @@
     }, { threshold: 0.15 }).observe(section);
   });
 
+  document.querySelectorAll('.reviews').forEach((section) => {
+    new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('inview');
+        }
+      });
+    }, { threshold: 0.15 }).observe(section);
+  });
+
   (function () {
     const STEPS = [
       'Fotókészítés', 'Arcszkennelés', 'Mosolytervezés', 'Intraorál scan',
@@ -4305,6 +4538,72 @@
 
     btns.forEach((btn, index) => {
       btn.addEventListener('click', () => setCase(index));
+    });
+  })();
+
+  (function () {
+    const REVIEWS = [
+      {
+        name: 'Dr. Maximilian Konz M.Sc.',
+        role: 'Spezialist für Ästhetik und rekonstruktive Zahnmedizin',
+        text: 'Wir arbeiten sehr erfolgreich mit dem zahntechnischen Labor Bridge Dental aus Budapest zusammen. Besonders hervorzuheben sind die hervorragenden Zirkon- und Keramikarbeiten, die durch hohe Passgenauigkeit und Ästhetik überzeugen. Die Kommunikation ist stets schnell und unkompliziert, und auch die Liefer- sowie Anfertigungszeiten sind angenehm kurz. Die Zusammenarbeit ist jederzeit zuverlässig und professionell. Wir können Bridge Dental uneingeschränkt weiterempfehlen und schätzen sie als langfristigen Partner sehr.'
+      },
+      {
+        name: 'Dr. Benedict Beirer',
+        role: '',
+        text: 'Wir sind seit über einem Jahrzehnt mit der Arbeit zufrieden. Qualität und Ästhetik stimmen zu 100%. Die Kommunikation mit dem Labor läuft reibungslos und es gibt selbst bei komplexeren Arbeiten immer ein Top Ergebnis!'
+      },
+      {
+        name: 'Dr. Rainer Valentina',
+        role: '',
+        text: 'Super zuverlässiges Labor mit konstant hoher Qualität. Die Arbeiten passen hervorragend, werden pünktlich geliefert und sind ästhetisch einfach spitze. Vielen Dank für die professionelle Zusammenarbeit!'
+      }
+    ];
+
+    const tabs = document.getElementById('revTabs');
+    const card = document.getElementById('revCard');
+    const quote = document.getElementById('revQuote');
+    const stars = document.getElementById('revStars');
+
+    if (!tabs || !card || !quote || !stars) return;
+
+    const initials = (name) => name
+      .replace(/^Dr\.\s*/, '')
+      .split(' ')
+      .filter((word) => /^[A-ZÁÉÍÓÖŐÚÜŰ]/.test(word))
+      .slice(0, 2)
+      .map((word) => word[0])
+      .join('');
+
+    tabs.innerHTML = REVIEWS.map((review, index) => `
+      <button class="rev-tab ${index === 0 ? 'active' : ''}" data-i="${index}" type="button">
+        <span class="rt-avatar">${initials(review.name)}</span>
+        <span>
+          <span class="rt-name">${review.name}</span>
+          ${review.role ? `<span class="rt-role">${review.role}</span>` : ''}
+        </span>
+      </button>
+    `).join('');
+
+    const STAR = '<svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg>';
+    stars.innerHTML = STAR.repeat(5);
+
+    const tabEls = tabs.querySelectorAll('.rev-tab');
+
+    function showReview(index) {
+      tabEls.forEach((tab, tabIndex) => tab.classList.toggle('active', tabIndex === index));
+      card.classList.add('switching');
+
+      setTimeout(() => {
+        quote.textContent = REVIEWS[index].text;
+        card.classList.remove('switching');
+      }, 320);
+    }
+
+    quote.textContent = REVIEWS[0].text;
+
+    tabEls.forEach((tab) => {
+      tab.addEventListener('click', () => showReview(Number(tab.dataset.i)));
     });
   })();
 
