@@ -1098,6 +1098,11 @@
       border-radius: 10px 10px 0 0;
     }
 
+    .i-year.done {
+      background: rgba(232, 80, 46, 0.12);
+      color: var(--accent);
+    }
+
     .i-year.active::after {
       content: '';
       position: absolute;
@@ -1274,6 +1279,13 @@
       background: var(--accent);
       border-color: var(--accent);
       box-shadow: 0 0 0 6px rgba(232, 80, 46, 0.14);
+    }
+    .i-stop.done::before {
+      background: rgba(232, 80, 46, 0.95);
+      border-color: rgba(232, 80, 46, 0.95);
+    }
+    .i-stop.done .is-year {
+      color: var(--accent);
     }
     .i-stop.future { color: #9b8f85; }
     .i-stop:hover { color: var(--accent); }
@@ -2121,44 +2133,6 @@
   </div>
 </section>
 
-<!-- ============ INNOVÁCIÓ — IDŐVONAL ============ -->
-<section class="innovation">
-
-  <div class="i-eyebrow reveal" style="--d: 0s">INNOVÁCIÓ</div>
-  <h2 class="i-title reveal" style="--d: 0.12s">Mindig egy lépéssel előrébb.</h2>
-  <p class="i-sub reveal" style="--d: 0.24s">A folyamatos fejlődés nem célkitűzés – hanem a működésünk része.</p>
-
-  <div class="i-stage reveal" style="--d: 0.36s">
-    <div class="i-years" id="iYears"></div>
-
-    <div class="i-card" id="iCard">
-      <div class="i-media" id="iMedia">
-        <span class="im-label" id="iMediaLabel">KÉP HELYE</span>
-      </div>
-      <div class="i-body">
-        <div class="ib-year" id="iBodyYear"></div>
-        <h3 id="iBodyTitle"></h3>
-        <p id="iBodyText"></p>
-      </div>
-    </div>
-
-    <button class="i-nav prev" id="iPrev" aria-label="Előző">
-      <svg viewBox="0 0 24 24"><polyline points="15 5 8 12 15 19"/></svg>
-    </button>
-    <button class="i-nav next" id="iNext" aria-label="Következő">
-      <svg viewBox="0 0 24 24"><polyline points="9 5 16 12 9 19"/></svg>
-    </button>
-  </div>
-
-  <div class="i-track reveal" id="iTrack" style="--d: 0.48s">
-    <div class="i-track-line"></div>
-    <div class="i-track-fill" id="iTrackFill"></div>
-  </div>
-
-  <div class="i-footer reveal" style="--d: 0.56s">És ez még csak a kezdet.</div>
-
-</section>
-
 <!-- ============ GALÉRIA — A KULISSZÁK MÖGÖTT ============ -->
 <section class="gallery">
 
@@ -2213,6 +2187,44 @@
     </div>
 
   </div>
+</section>
+
+<!-- ============ INNOVÁCIÓ — IDŐVONAL ============ -->
+<section class="innovation">
+
+  <div class="i-eyebrow reveal" style="--d: 0s">INNOVÁCIÓ</div>
+  <h2 class="i-title reveal" style="--d: 0.12s">Mindig egy lépéssel előrébb.</h2>
+  <p class="i-sub reveal" style="--d: 0.24s">A folyamatos fejlődés nem célkitűzés – hanem a működésünk része.</p>
+
+  <div class="i-stage reveal" style="--d: 0.36s">
+    <div class="i-years" id="iYears"></div>
+
+    <div class="i-card" id="iCard">
+      <div class="i-media" id="iMedia">
+        <span class="im-label" id="iMediaLabel">KÉP HELYE</span>
+      </div>
+      <div class="i-body">
+        <div class="ib-year" id="iBodyYear"></div>
+        <h3 id="iBodyTitle"></h3>
+        <p id="iBodyText"></p>
+      </div>
+    </div>
+
+    <button class="i-nav prev" id="iPrev" aria-label="Előző">
+      <svg viewBox="0 0 24 24"><polyline points="15 5 8 12 15 19"/></svg>
+    </button>
+    <button class="i-nav next" id="iNext" aria-label="Következő">
+      <svg viewBox="0 0 24 24"><polyline points="9 5 16 12 9 19"/></svg>
+    </button>
+  </div>
+
+  <div class="i-track reveal" id="iTrack" style="--d: 0.48s">
+    <div class="i-track-line"></div>
+    <div class="i-track-fill" id="iTrackFill"></div>
+  </div>
+
+  <div class="i-footer reveal" style="--d: 0.56s">És ez még csak a kezdet.</div>
+
 </section>
 
 <!-- SZAKMAI FEJLŐDÉS -->
@@ -2656,9 +2668,13 @@
     }
 
     function update() {
-      yearEls.forEach((el, i) => el.classList.toggle('active', i === index));
+      yearEls.forEach((el, i) => {
+        el.classList.toggle('active', i === index);
+        el.classList.toggle('done', i < index);
+      });
       stopEls.forEach((el, i) => {
         el.classList.toggle('active', i === index);
+        el.classList.toggle('done', i < index);
         el.classList.toggle('future', i > index);
       });
 
@@ -2684,6 +2700,7 @@
 
     render();
     yearEls[0].classList.add('active');
+    yearEls.forEach((el, i) => el.classList.toggle('done', i < 0));
     stopEls.forEach((el, i) => el.classList.toggle('future', i > 0));
     stopEls[0].classList.add('active');
     trackFill.style.width = '0px';
