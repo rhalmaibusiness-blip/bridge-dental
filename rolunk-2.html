@@ -1006,6 +1006,311 @@
     }
     .t-member:hover .t-divider { transform: scaleX(1); }
 
+    /* ── INNOVÁCIÓ — IDŐVONAL ── */
+    .innovation {
+      position: relative;
+      background: #fbf6ee;
+      padding: clamp(64px, 10vh, 110px) clamp(24px, 6vw, 90px) clamp(60px, 9vh, 100px);
+      overflow: hidden;
+    }
+
+    .i-eyebrow {
+      font-family: var(--font-body);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 4px;
+      color: var(--accent);
+      padding-bottom: 12px;
+      margin-bottom: 26px;
+      position: relative;
+      width: fit-content;
+    }
+
+    .i-eyebrow::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 56px;
+      height: 2px;
+      background: var(--accent);
+    }
+
+    .i-title {
+      font-family: var(--font-head);
+      font-size: clamp(32px, 4vw, 52px);
+      font-weight: 800;
+      color: #1d1712;
+    }
+
+    .i-sub {
+      margin-top: 14px;
+      font-family: var(--font-body);
+      font-size: 16.5px;
+      color: #5a5049;
+    }
+
+    .innovation .reveal { opacity: 0; transform: translateY(30px); }
+    .innovation .reveal.inview {
+      animation: fadeUp 0.85s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+      animation-delay: var(--d, 0s);
+    }
+
+    .i-stage {
+      position: relative;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    .i-years {
+      display: flex;
+      margin-top: 40px;
+      background: #fdfaf5;
+      border: 1px solid #ece2d4;
+      border-radius: 14px 14px 0 0;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .i-years::-webkit-scrollbar { display: none; }
+
+    .i-year {
+      position: relative;
+      flex: 1;
+      min-width: 86px;
+      padding: 18px 10px;
+      background: none;
+      border: none;
+      border-right: 1px solid #f0e7d9;
+      font-family: var(--font-head);
+      font-size: 15.5px;
+      font-weight: 700;
+      color: #6b5f55;
+      cursor: pointer;
+      transition: color 0.3s, background 0.3s;
+    }
+
+    .i-year:last-child { border-right: none; }
+    .i-year:hover { color: var(--accent); }
+
+    .i-year.active {
+      background: linear-gradient(135deg, var(--accent-2), var(--accent));
+      color: #fff;
+      border-radius: 10px 10px 0 0;
+    }
+
+    .i-year.active::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      bottom: -9px;
+      transform: translateX(-50%);
+      border: 9px solid transparent;
+      border-top-color: var(--accent);
+      border-bottom: none;
+      z-index: 2;
+    }
+
+    .i-card {
+      position: relative;
+      display: grid;
+      grid-template-columns: minmax(0, 44%) minmax(0, 56%);
+      gap: clamp(28px, 4vw, 60px);
+      background: #fdfaf5;
+      border: 1px solid #ece2d4;
+      border-top: none;
+      border-radius: 0 0 18px 18px;
+      padding: clamp(30px, 4vw, 56px);
+      box-shadow: 0 26px 55px -32px rgba(43, 30, 20, 0.35);
+    }
+
+    .i-media {
+      position: relative;
+      border-radius: 14px;
+      overflow: hidden;
+      background: linear-gradient(150deg, #f3e3ce, #e2c5a1);
+      min-height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.35s ease, transform 0.35s ease;
+    }
+
+    .i-media .im-label {
+      font-family: var(--font-body);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      color: rgba(90, 60, 35, 0.55);
+      border: 1.5px dashed rgba(232, 80, 46, 0.45);
+      border-radius: 10px;
+      padding: 14px 22px;
+      text-align: center;
+    }
+
+    .i-body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      transition: opacity 0.35s ease, transform 0.35s ease;
+    }
+
+    .i-card.switching .i-media,
+    .i-card.switching .i-body { opacity: 0; transform: translateY(14px); }
+
+    .i-body .ib-year {
+      font-family: var(--font-head);
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--accent);
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+      position: relative;
+      width: fit-content;
+    }
+
+    .i-body .ib-year::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 44px;
+      height: 2px;
+      background: var(--accent);
+    }
+
+    .i-body h3 {
+      font-family: var(--font-head);
+      font-size: clamp(21px, 2.2vw, 30px);
+      font-weight: 800;
+      color: #2b2320;
+      line-height: 1.3;
+    }
+
+    .i-body p {
+      margin-top: 18px;
+      font-family: var(--font-body);
+      font-size: 15.5px;
+      line-height: 1.85;
+      color: #4a413b;
+      max-width: 50ch;
+    }
+
+    .i-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 5;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: #fdfaf5;
+      border: 1px solid #e5dcd0;
+      box-shadow: 0 8px 22px -8px rgba(43, 30, 20, 0.35);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.25s, background 0.3s;
+    }
+
+    .i-nav:hover { transform: translateY(-50%) scale(1.06); background: #fff; }
+    .i-nav svg { width: 22px; height: 22px; stroke: var(--accent); stroke-width: 2.2; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+    .i-nav.prev { left: -24px; }
+    .i-nav.next { right: -24px; }
+
+    .i-track {
+      position: relative;
+      display: flex;
+      margin-top: 12px;
+      padding-top: 36px;
+      padding-bottom: 14px;
+      overflow-x: auto;
+      scrollbar-width: none;
+      background: linear-gradient(180deg, #fdfaf5 0%, #fcf7f0 100%);
+      border: 1px solid #ece2d4;
+      border-top: none;
+      border-radius: 0 0 16px 16px;
+    }
+    .i-track::-webkit-scrollbar { display: none; }
+
+    .i-track-line, .i-track-fill {
+      position: absolute;
+      left: 40px;
+      right: 40px;
+      top: 21px;
+      height: 3px;
+      border-radius: 999px;
+    }
+    .i-track-line { background: #e9ddcd; }
+    .i-track-fill { right: auto; width: 0; background: linear-gradient(90deg, var(--accent-2), var(--accent)); transition: width 0.55s cubic-bezier(0.22, 1, 0.36, 1); }
+
+    .i-stop {
+      position: relative;
+      flex: 1;
+      min-width: 86px;
+      padding: 0 10px 8px;
+      background: none;
+      border: none;
+      text-align: center;
+      cursor: pointer;
+      color: #6b5f55;
+      font-family: var(--font-body);
+    }
+    .i-stop::before {
+      content: '';
+      position: absolute;
+      top: -27px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 13px;
+      height: 13px;
+      border-radius: 50%;
+      background: #f7efe5;
+      border: 2px solid #d8c8b6;
+      transition: all 0.35s ease;
+      z-index: 1;
+    }
+    .i-stop.active::before {
+      background: var(--accent);
+      border-color: var(--accent);
+      box-shadow: 0 0 0 6px rgba(232, 80, 46, 0.14);
+    }
+    .i-stop.future { color: #9b8f85; }
+    .i-stop:hover { color: var(--accent); }
+
+    .is-dot, .is-year { display: block; }
+    .is-dot { display: none; }
+    .is-year { font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
+
+    .i-footer {
+      margin-top: 22px;
+      text-align: center;
+      font-family: var(--font-head);
+      font-size: 18px;
+      font-weight: 700;
+      color: #2b2320;
+    }
+
+    @media (max-width: 1020px) {
+      .i-card { grid-template-columns: 1fr; }
+      .i-media { min-height: 220px; }
+      .i-nav.prev { left: 12px; }
+      .i-nav.next { right: 12px; }
+    }
+
+    @media (max-width: 760px) {
+      .innovation { padding-left: 18px; padding-right: 18px; }
+      .i-title { font-size: clamp(28px, 7vw, 40px); }
+      .i-sub { font-size: 15px; }
+      .i-card { padding: 22px; gap: 22px; }
+      .i-track { padding-top: 30px; }
+      .i-track-line, .i-track-fill { left: 28px; right: 28px; top: 18px; }
+      .i-year, .i-stop { min-width: 72px; }
+      .i-nav { width: 42px; height: 42px; }
+      .i-nav.prev { left: 8px; }
+      .i-nav.next { right: 8px; }
+    }
+
     /* ── GALÉRIA ── */
     .gallery {
       position: relative;
@@ -1816,6 +2121,44 @@
   </div>
 </section>
 
+<!-- ============ INNOVÁCIÓ — IDŐVONAL ============ -->
+<section class="innovation">
+
+  <div class="i-eyebrow reveal" style="--d: 0s">INNOVÁCIÓ</div>
+  <h2 class="i-title reveal" style="--d: 0.12s">Mindig egy lépéssel előrébb.</h2>
+  <p class="i-sub reveal" style="--d: 0.24s">A folyamatos fejlődés nem célkitűzés – hanem a működésünk része.</p>
+
+  <div class="i-stage reveal" style="--d: 0.36s">
+    <div class="i-years" id="iYears"></div>
+
+    <div class="i-card" id="iCard">
+      <div class="i-media" id="iMedia">
+        <span class="im-label" id="iMediaLabel">KÉP HELYE</span>
+      </div>
+      <div class="i-body">
+        <div class="ib-year" id="iBodyYear"></div>
+        <h3 id="iBodyTitle"></h3>
+        <p id="iBodyText"></p>
+      </div>
+    </div>
+
+    <button class="i-nav prev" id="iPrev" aria-label="Előző">
+      <svg viewBox="0 0 24 24"><polyline points="15 5 8 12 15 19"/></svg>
+    </button>
+    <button class="i-nav next" id="iNext" aria-label="Következő">
+      <svg viewBox="0 0 24 24"><polyline points="9 5 16 12 9 19"/></svg>
+    </button>
+  </div>
+
+  <div class="i-track reveal" id="iTrack" style="--d: 0.48s">
+    <div class="i-track-line"></div>
+    <div class="i-track-fill" id="iTrackFill"></div>
+  </div>
+
+  <div class="i-footer reveal" style="--d: 0.56s">És ez még csak a kezdet.</div>
+
+</section>
+
 <!-- ============ GALÉRIA — A KULISSZÁK MÖGÖTT ============ -->
 <section class="gallery">
 
@@ -2262,6 +2605,89 @@
     });
   }, { threshold: 0.12 });
   reveals.forEach(el => observer.observe(el));
+
+  // Innováció idővonal
+  (function () {
+    const MILESTONES = [
+      { year: '2011', title: 'A kezdetek', text: 'Megalakult a Bridge Dental – azzal a céllal, hogy valódi szakmai partnere legyen a hazai és nemzetközi rendelőknek.' },
+      { year: '2012', title: 'Implantológiai fókusz', text: 'Az implantátumos rehabilitációk laborunk egyik fő szakterületévé váltak.' },
+      { year: '2013', title: 'Digitális elköteleződés', text: 'Fokozatosan átálltunk CAD/CAM alapú munkafolyamatokra – megteremtve a későbbi fejlesztések alapját.' },
+      { year: '2015', title: '„Legjobb Fogtechnikai Labor”', text: 'Hungarian Dental Awards díj.' },
+      { year: '2016', title: '3D nyomtatás és ICDE partnerség', text: 'Az additív gyártás a mindennapjaink része lett. Ugyanebben az évben az Ivoclar ICDE referencia laborként ismerte el munkánkat.' },
+      { year: '2017', title: 'Nemzetközi prémium modell', text: 'A német és svájci prémium rendelők igényeire optimalizált együttműködési modellt alakítottunk ki.' },
+      { year: '2019', title: 'KunstZahnWerk: 6. helyezés', text: 'Nemzetközi szakmai elismerés – 16 ország 49 fogtechnikusa között.' },
+      { year: '2021', title: 'Saját digitális gyártóközpont', text: 'Új CAD/CAM technológiák, modern marógépek, teljes digitális gyártási környezet.' },
+      { year: '2026', title: 'TrueDent®', text: 'A biokompatibilis, teljes színű digitális fogsorok új lehetőségeket nyitottak a digitális fogpótlások területén.' }
+    ];
+    const N = MILESTONES.length;
+
+    const yearsBox = document.getElementById('iYears');
+    const track = document.getElementById('iTrack');
+    const trackFill = document.getElementById('iTrackFill');
+    const card = document.getElementById('iCard');
+    const bYear = document.getElementById('iBodyYear');
+    const bTitle = document.getElementById('iBodyTitle');
+    const bText = document.getElementById('iBodyText');
+    const mediaLabel = document.getElementById('iMediaLabel');
+    const prev = document.getElementById('iPrev');
+    const next = document.getElementById('iNext');
+
+    if (!yearsBox || !track || !trackFill || !card || !bYear || !bTitle || !bText || !mediaLabel || !prev || !next) return;
+
+    yearsBox.innerHTML = MILESTONES.map((m, i) =>
+      `<button class="i-year" data-i="${i}">${m.year}</button>`).join('');
+
+    track.insertAdjacentHTML('beforeend', MILESTONES.map((m, i) => `
+      <button class="i-stop" data-i="${i}">
+        <span class="is-dot"></span>
+        <span class="is-year">${m.year}</span>
+      </button>`).join(''));
+
+    const yearEls = yearsBox.querySelectorAll('.i-year');
+    const stopEls = track.querySelectorAll('.i-stop');
+    let index = 0;
+
+    function render() {
+      const m = MILESTONES[index];
+      bYear.textContent = m.year;
+      bTitle.textContent = m.title;
+      bText.textContent = m.text;
+      mediaLabel.textContent = `KÉP HELYE — ${m.year}`;
+    }
+
+    function update() {
+      yearEls.forEach((el, i) => el.classList.toggle('active', i === index));
+      stopEls.forEach((el, i) => {
+        el.classList.toggle('active', i === index);
+        el.classList.toggle('future', i > index);
+      });
+
+      trackFill.style.width = `calc((100% - 80px) * ${N === 1 ? 0 : index / (N - 1)})`;
+      yearEls[index].scrollIntoView({ block: 'nearest', inline: 'center', behavior: 'smooth' });
+
+      card.classList.add('switching');
+      setTimeout(() => {
+        render();
+        card.classList.remove('switching');
+      }, 300);
+    }
+
+    function go(i) {
+      index = (i + N) % N;
+      update();
+    }
+
+    prev.addEventListener('click', () => go(index - 1));
+    next.addEventListener('click', () => go(index + 1));
+    yearEls.forEach(el => el.addEventListener('click', () => go(+el.dataset.i)));
+    stopEls.forEach(el => el.addEventListener('click', () => go(+el.dataset.i)));
+
+    render();
+    yearEls[0].classList.add('active');
+    stopEls.forEach((el, i) => el.classList.toggle('future', i > 0));
+    stopEls[0].classList.add('active');
+    trackFill.style.width = '0px';
+  })();
 
   // Galéria: kinyíló panelek (hover desktopon, koppintás mobilon) + automata léptetés
   (function () {
