@@ -1215,11 +1215,14 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      color: #8f3417;
+      font-size: 0;
       transition: transform 0.25s, background 0.3s;
     }
 
     .i-nav:hover { transform: translateY(-50%) scale(1.06); background: #fff; }
-    .i-nav svg { width: 22px; height: 22px; stroke: var(--accent); stroke-width: 2.2; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+    .i-nav svg { width: 22px; height: 22px; stroke: currentColor; stroke-width: 2.2; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+    .i-nav svg * { stroke: currentColor; }
     .i-nav.prev { left: -24px; }
     .i-nav.next { right: -24px; }
 
