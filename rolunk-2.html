@@ -1861,27 +1861,34 @@
       color: #1d1712;
     }
 
-    .n-cta-btn {
+    .n-cta-btn,
+    .n-cta-btn:visited {
       display: inline-flex;
       align-items: center;
+      justify-content: center;
       gap: 12px;
-      background: linear-gradient(135deg, var(--accent-2), var(--accent-red));
+      min-height: 58px;
+      padding: 17px 30px;
+      border: 0;
+      border-radius: 14px;
+      background: linear-gradient(135deg, #f0642b 0%, #ea5a28 48%, #d73b28 100%);
       color: #fff;
       text-decoration: none;
       font-family: var(--font-body);
       font-size: 15px;
       font-weight: 700;
-      padding: 17px 30px;
-      border-radius: 12px;
-      box-shadow: 0 14px 30px -12px rgba(211, 32, 47, 0.5);
-      transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.3s, box-shadow 0.3s;
+      letter-spacing: -0.01em;
       white-space: nowrap;
+      box-shadow: 0 16px 34px -14px rgba(215, 59, 40, 0.56);
+      transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.3s ease, box-shadow 0.3s ease;
     }
 
-    .n-cta-btn:hover {
+    .n-cta-btn:hover,
+    .n-cta-btn:focus-visible {
       transform: translateY(-3px);
-      filter: brightness(1.08);
-      box-shadow: 0 20px 38px -14px rgba(211, 32, 47, 0.55);
+      filter: brightness(1.04);
+      box-shadow: 0 22px 40px -16px rgba(215, 59, 40, 0.62);
+      outline: none;
     }
 
     .n-cta-btn svg {
