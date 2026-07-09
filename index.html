@@ -3586,6 +3586,7 @@
       height: 36px;
       border-radius: 50%;
       background: #f8ecdf;
+      border: 1.5px solid transparent;
       color: var(--accent);
       font-weight: 700;
       font-size: 13px;
@@ -3593,7 +3594,7 @@
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
-      transition: background 0.3s, color 0.3s;
+      transition: background 0.3s, color 0.3s, border-color 0.3s, box-shadow 0.3s;
     }
 
     .rev-tab .rt-name {
@@ -3617,8 +3618,10 @@
     }
 
     .rev-tab.active .rt-avatar {
-      background: linear-gradient(135deg, var(--accent-2), var(--accent-red));
-      color: #fff;
+      background: #fff7f1;
+      border-color: var(--accent);
+      color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(232, 80, 46, 0.12);
     }
 
     .rev-tab.active .rt-name { color: var(--accent); }
