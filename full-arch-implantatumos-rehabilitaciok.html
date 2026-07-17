@@ -219,6 +219,78 @@
       color: var(--charcoal);
       padding-top: 6px;
     }
+
+    /* ── FULL-ARCH SZÖVEGES KÉPBLOKK ── */
+    .full-arch-story {
+      position: relative;
+      overflow: hidden;
+      padding: 88px 80px;
+      background:
+        radial-gradient(circle at 18% 82%, rgba(224,90,43,0.12), transparent 32%),
+        linear-gradient(135deg, #fdfaf5 0%, #f8f0e8 100%);
+    }
+
+    .full-arch-story-inner {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(360px, 1.1fr);
+      gap: clamp(44px, 6vw, 92px);
+      align-items: center;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    .full-arch-story-copy {
+      max-width: 560px;
+    }
+
+    .full-arch-story-copy p {
+      font-size: clamp(15px, 1.12vw, 17px);
+      line-height: 1.78;
+      color: #5f574f;
+    }
+
+    .full-arch-story-media {
+      position: relative;
+      min-height: 430px;
+      border-radius: 220px 0 0 220px;
+      overflow: hidden;
+      isolation: isolate;
+      box-shadow: -28px 28px 72px rgba(92, 54, 31, 0.14);
+    }
+
+    .full-arch-story-media::before {
+      content: '';
+      position: absolute;
+      inset: 28px 0 28px 28px;
+      z-index: 2;
+      border: 1px solid rgba(224,90,43,0.48);
+      border-right: 0;
+      border-radius: 190px 0 0 190px;
+      pointer-events: none;
+    }
+
+    .full-arch-story-media::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background:
+        linear-gradient(90deg, rgba(253,250,245,0.96) 0%, rgba(253,250,245,0.58) 20%, rgba(253,250,245,0.08) 45%, transparent 70%),
+        linear-gradient(180deg, rgba(224,90,43,0.08), transparent 42%);
+      pointer-events: none;
+    }
+
+    .full-arch-story-media img {
+      width: 100%;
+      height: 100%;
+      min-height: 430px;
+      object-fit: cover;
+      object-position: 58% center;
+      display: block;
+      transform: scale(1.02);
+    }
     .process-step-text strong {
       display: block;
       font-weight: 600;
@@ -1277,6 +1349,13 @@
       .page-hero-right .img-placeholder { border-radius: 0; min-height: 320px; height: 320px; }
       .intro-grid, .system-grid, .form-inner { grid-template-columns: 1fr; gap: 48px; }
       .intro-visual { position: static; }
+      .full-arch-story { padding: 72px 40px; }
+      .full-arch-story-inner {
+        grid-template-columns: minmax(0, 0.86fr) minmax(320px, 1.14fr);
+        gap: 40px;
+      }
+      .full-arch-story-media { min-height: 360px; }
+      .full-arch-story-media img { min-height: 360px; }
       .benefits-grid { grid-template-columns: repeat(2, 1fr); }
       .ceramic-grid { grid-template-columns: 1fr; }
       .alapelv-section { padding: 60px 40px 68px; }
@@ -1312,6 +1391,31 @@
       .page-hero-right,
       .page-hero-right img,
       .page-hero-right .img-placeholder { min-height: 280px; height: 280px; }
+      .full-arch-story { padding: 48px 20px 52px; }
+      .full-arch-story-inner {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+      .full-arch-story-copy {
+        max-width: none;
+      }
+      .full-arch-story-copy p {
+        font-size: 15px;
+        line-height: 1.72;
+      }
+      .full-arch-story-media {
+        min-height: 260px;
+        border-radius: 120px 0 0 120px;
+        box-shadow: -18px 18px 44px rgba(92, 54, 31, 0.12);
+      }
+      .full-arch-story-media::before {
+        inset: 18px 0 18px 18px;
+        border-radius: 102px 0 0 102px;
+      }
+      .full-arch-story-media img {
+        min-height: 260px;
+        object-position: 56% center;
+      }
       .section, .pilot-section { padding: 48px 20px; }
       .alapelv-section { padding: 52px 20px 60px; }
       .alapelv-bar { grid-template-columns: 1fr; }
@@ -1406,41 +1510,14 @@
   </div>
 </section>
 
-<!-- INTRO -->
-<section class="section section-alt">
-  <div class="intro-grid reveal">
-    <div class="intro-text">
-      <p>Az All-on-X koncepció a teljes foghiány vagy a menthetetlen fogazat rehabilitációjának korszerű megoldása, amely során a teljes fogív rögzített pótlását 4–8 implantátumra támaszkodva készítjük el. A kezelési tervtől és a páciens igényeitől függően az implantátumok száma, elhelyezkedése és a végleges restauráció kialakítása egyedileg kerül meghatározásra.</p>
-      <p>Laboratóriumunk a teljes digitális workflow-ra épülő full-arch implantátumos rehabilitációk készítésére specializálódott. Munkafolyamatunk során a CBCT-adatok, intraorális szkennelések, fotódokumentációk és protetikai tervek integrálásával támogatjuk a kiszámítható kezelési eredményeket.</p>
-      <div class="intro-highlight">
-        <p>Tapasztalt csapatunk a tervezési fázistól a végleges átadásig szakmai partnerként támogatja a kezelőorvosokat a komplex implantátumos rehabilitációk megvalósításában.</p>
-      </div>
+<!-- BEVEZETŐ KÉPBLOKK -->
+<section class="full-arch-story">
+  <div class="full-arch-story-inner reveal">
+    <div class="full-arch-story-copy">
+      <p>A teljes fogív rehabilitációja az implantológián belül az egyik legösszetettebb feladat, ahol a digitális tervezés, a precíz kivitelezés és a labor–fogorvos együttműködése egyaránt meghatározza a végeredményt. A Bridge Dentalnál olyan teljesen digitális workflow-t alkalmazunk, amely támogatja a kiszámítható kezeléseket, a pontos illeszkedést és a magas esztétikai elvárásoknak megfelelő restaurációk elkészítését.</p>
     </div>
-    <div class="intro-visual">
-      <div class="process-card">
-        <div class="process-card-label">Digitális full-arch munkafolyamat</div>
-        <div class="process-step">
-          <div class="process-num">1</div>
-          <div class="process-step-text">
-            <strong>Adatok integrálása</strong>
-            CBCT-adatok, intraorális szkennelések, fotódokumentációk és protetikai tervek integrálásával támogatjuk a kiszámítható kezelési eredményeket.
-          </div>
-        </div>
-        <div class="process-step">
-          <div class="process-num">2</div>
-          <div class="process-step-text">
-            <strong>Próbahidak és validáció</strong>
-            A végleges restauráció elkészítését digitális tervezés, PMMA próbahidak és funkcionális validáció előzi meg.
-          </div>
-        </div>
-        <div class="process-step">
-          <div class="process-num">3</div>
-          <div class="process-step-text">
-            <strong>Kontrollált gyártás</strong>
-            Modern CAD/CAM technológiákkal, prémium minőségű anyagokkal és szigorúan kontrollált gyártási folyamatokkal dolgozunk.
-          </div>
-        </div>
-      </div>
+    <div class="full-arch-story-media" aria-hidden="true">
+      <img src="full-arch-implantatumos-rehabilitacio-all-on-x.webp" alt="">
     </div>
   </div>
 </section>
