@@ -1647,6 +1647,17 @@
         radial-gradient(circle at 92% 12%, rgba(238, 80, 39, 0.13), transparent 28%),
         linear-gradient(135deg, rgba(238, 80, 39, 0.055), rgba(255, 255, 255, 0));
     }
+    .materials-summary {
+      margin-bottom: 20px;
+    }
+    .materials-summary .offer-list {
+      margin-top: 0;
+      padding: 24px 26px;
+      background: rgba(255, 255, 255, 0.72);
+      border: 1px solid var(--warm-gray-pale);
+      border-radius: 18px;
+      box-shadow: 0 14px 42px rgba(54, 39, 29, 0.04);
+    }
 
     .compare-table {
       border-radius: 16px; overflow: hidden;
@@ -2383,78 +2394,40 @@
       <p style="font-size: 16px; color: var(--warm-gray); line-height: 1.85; margin-bottom: 0; max-width: 540px;">
         A Bridge Dentalnál a minőség az alapanyagok kiválasztásánál kezdődik. Restaurációinkhoz kizárólag prémium, nemzetközileg elismert fogászati anyagokat és digitális rendszereket használunk, hogy minden elkészült munka esztétikailag, funkcionálisan és hosszú távon is megbízható legyen.
       </p>
-      <div class="offer-list">
-        <div class="offer-item">
-          <div class="offer-check">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-          </div>
-          <span>Nemzetközileg elismert gyártók és anyagrendszerek</span>
-        </div>
-        <div class="offer-item">
-          <div class="offer-check">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-          </div>
-          <span>Dokumentált, visszakövethető alapanyaghasználat</span>
-        </div>
-        <div class="offer-item">
-          <div class="offer-check">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-          </div>
-          <span>Anyagválasztás esztétikai, funkcionális és klinikai szempontok alapján</span>
-        </div>
-      </div>
     </div>
 
     <div class="reveal reveal-delay-1">
+      <div class="materials-summary">
+        <div class="offer-list">
+          <div class="offer-item">
+            <div class="offer-check">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <span>Nemzetközileg elismert gyártók és anyagrendszerek</span>
+          </div>
+          <div class="offer-item">
+            <div class="offer-check">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <span>Dokumentált, visszakövethető alapanyaghasználat</span>
+          </div>
+          <div class="offer-item">
+            <div class="offer-check">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <span>Anyagválasztás esztétikai, funkcionális és klinikai szempontok alapján</span>
+          </div>
+        </div>
+      </div>
       <div class="materials-accordion" id="materialsAccordion">
-        <div class="material-item open">
+        <div class="material-item featured open">
           <button class="material-toggle" type="button" aria-expanded="true">
-            <span class="material-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M6 4h12v16H6z"/><path d="M9 8h6M9 12h6M9 16h4"/></svg></span>
-            <span><span class="material-kicker">01</span><span class="material-name">Ivoclar</span></span>
-            <span class="material-plus" aria-hidden="true">+</span>
-          </button>
-          <div class="material-panel">
-            <div class="material-panel-inner">Prémium kerámia- és fogászati anyagai természetes esztétikát, precíz illeszkedést és hosszú távon megbízható restaurációkat támogatnak.</div>
-          </div>
-        </div>
-        <div class="material-item">
-          <button class="material-toggle" type="button" aria-expanded="false">
-            <span class="material-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 3v18"/><path d="M5 9c4-4 10-4 14 0"/><path d="M5 15c4 4 10 4 14 0"/></svg></span>
-            <span><span class="material-kicker">02</span><span class="material-name">GC</span></span>
-            <span class="material-plus" aria-hidden="true">+</span>
-          </button>
-          <div class="material-panel">
-            <div class="material-panel-inner">A GC korszerű fogászati anyagai és karakterizáló rendszerei hozzájárulnak a természetes hatású, esztétikus és tartós végeredményhez.</div>
-          </div>
-        </div>
-        <div class="material-item">
-          <button class="material-toggle" type="button" aria-expanded="false">
-            <span class="material-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 3 4 8l8 5 8-5-8-5Z"/><path d="m4 13 8 5 8-5"/></svg></span>
-            <span><span class="material-kicker">03</span><span class="material-name">Pritidenta</span></span>
-            <span class="material-plus" aria-hidden="true">+</span>
-          </button>
-          <div class="material-panel">
-            <div class="material-panel-inner">A Pritidenta prémium cirkónium anyagai magas stabilitást, természetes színátmenetet és modern, esztétikus restaurációs lehetőségeket biztosítanak.</div>
-          </div>
-        </div>
-        <div class="material-item">
-          <button class="material-toggle" type="button" aria-expanded="false">
-            <span class="material-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M5 7h14v10H5z"/><path d="M8 7V4h8v3"/><path d="M8 17v3h8v-3"/><path d="M9 12h6"/></svg></span>
-            <span><span class="material-kicker">04</span><span class="material-name">Stratasys</span></span>
-            <span class="material-plus" aria-hidden="true">+</span>
-          </button>
-          <div class="material-panel">
-            <div class="material-panel-inner">A Stratasys digitális 3D nyomtatási technológiái pontos, reprodukálható és magas minőségű fogtechnikai munkák elkészítését teszik lehetővé.</div>
-          </div>
-        </div>
-        <div class="material-item featured">
-          <button class="material-toggle" type="button" aria-expanded="false">
             <span class="material-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="m12 3 7 4v5c0 4.5-2.8 7.6-7 9-4.2-1.4-7-4.5-7-9V7l7-4Z"/><path d="m8.5 12 2.2 2.2 4.8-5"/></svg></span>
-            <span><span class="material-kicker">05</span><span class="material-name">Kizárólag prémium anyagok</span></span>
+            <span><span class="material-kicker">01</span><span class="material-name">Kizárólag prémium anyagok</span></span>
             <span class="material-plus" aria-hidden="true">+</span>
           </button>
           <div class="material-panel">
-            <div class="material-panel-inner">A Bridge Dental kizárólag nemzetközileg elismert prémium anyagokkal és digitális rendszerekkel dolgozik, hogy minden restauráció esztétikus, pontos és hosszú távon megbízható legyen.</div>
+            <div class="material-panel-inner">Laborunkban kizárólag prémium anyagokkal és bevált digitális rendszerekkel dolgozunk. Az Ivoclar, a GC, a Pritidenta és a Stratasys technológiái biztos alapot adnak az esztétikus, pontos és hosszú távon is megbízható restaurációkhoz.</div>
           </div>
         </div>
       </div>
