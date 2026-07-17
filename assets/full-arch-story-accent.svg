@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 900" fill="none">
+  <defs>
+    <linearGradient id="accent" x1="130" y1="105" x2="902" y2="820" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F07A4A"/>
+      <stop offset="1" stop-color="#F45B2E"/>
+    </linearGradient>
+  </defs>
+  <path d="M170 154C170 99.876 213.876 56 268 56H711C835.264 56 936 156.736 936 281V722C936 789.379 881.379 844 814 844H272C215.667 844 170 798.333 170 742V154Z" fill="url(#accent)"/>
+</svg>
