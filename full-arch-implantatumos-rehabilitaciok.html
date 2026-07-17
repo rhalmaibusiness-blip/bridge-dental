@@ -758,110 +758,198 @@
       color: rgba(255,255,255,0.25);
     }
 
-    /* ── PARTNERI ELŐNYÖK ── */
-    .alapelv-section {
-      background: var(--charcoal);
-      padding: 72px 80px 80px;
+    /* ── DIGITÁLIS WORKFLOW ── */
+    .digital-workflow {
       position: relative;
       overflow: hidden;
+      padding: clamp(88px, 8vw, 132px) 48px;
+      background:
+        linear-gradient(180deg, #fbf8f3 0%, #f8f4ee 100%);
     }
-    .alapelv-section::before {
+
+    .digital-workflow::after {
       content: '';
       position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(circle at 12% 0%, rgba(224,90,43,0.18), transparent 34%),
-        linear-gradient(135deg, rgba(255,255,255,0.055), transparent 38%);
+      right: 0;
+      bottom: 0;
+      width: 44%;
+      height: 56%;
+      background: #171513;
       pointer-events: none;
     }
-    .alapelv-header {
-      max-width: 900px;
-      margin-bottom: 42px;
+
+    .digital-workflow-inner {
       position: relative;
       z-index: 1;
+      max-width: 1360px;
+      min-height: 850px;
+      margin: 0 auto;
     }
-    .alapelv-kicker {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      font-size: 12px;
-      font-weight: 800;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: var(--coral-light);
-      margin-bottom: 20px;
+
+    .digital-workflow-media {
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      right: 0;
+      width: 58%;
+      height: 100%;
+      padding: 54px 28px 112px 62px;
+      border-radius: 36px 36px 32px 32px;
+      background:
+        radial-gradient(circle at 18% 12%, rgba(255,255,255,0.08), transparent 28%),
+        linear-gradient(145deg, #282521 0%, #171513 74%);
+      box-shadow: 0 34px 90px rgba(42, 31, 24, 0.2);
     }
-    .alapelv-kicker::before {
-      content: '';
-      width: 40px;
+
+    .digital-workflow-photo {
+      position: relative;
+      height: 100%;
+      overflow: hidden;
+      border-radius: 30px;
+      box-shadow: 0 22px 52px rgba(0,0,0,0.3);
+    }
+
+    .digital-workflow-photo > img:first-child {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      object-position: 47% center;
+    }
+
+    .digital-workflow-logo {
+      position: absolute;
+      z-index: 2;
+      top: 32px;
+      left: 24%;
+      width: clamp(150px, 15vw, 230px);
+      height: auto;
+      filter: drop-shadow(0 4px 18px rgba(0,0,0,0.45));
+    }
+
+    .digital-workflow-card {
+      position: absolute;
+      z-index: 4;
+      top: 26px;
+      left: 0;
+      width: 55%;
+      min-height: 790px;
+      padding: clamp(52px, 5vw, 74px) clamp(48px, 5.4vw, 78px) 70px;
+      border: 1px solid #ddc7ad;
+      border-radius: 34px 38px 42px 34px;
+      background: rgba(255, 254, 252, 0.97);
+      box-shadow: 0 26px 74px rgba(75, 52, 34, 0.12);
+    }
+
+    .digital-workflow-icon {
+      width: 72px;
+      height: 72px;
+      display: block;
+      margin-bottom: 30px;
+    }
+
+    .digital-workflow-title-rule {
+      width: 64px;
       height: 2px;
+      margin-bottom: 34px;
+      border-radius: 999px;
       background: var(--coral-light);
-      border-radius: 2px;
     }
-    .alapelv-header h2 {
+
+    .digital-workflow-card h2 {
+      position: relative;
+      z-index: 2;
+      max-width: 560px;
       font-family: 'Montserrat', sans-serif;
-      font-size: clamp(30px, 4vw, 56px);
+      font-size: clamp(36px, 4vw, 58px);
       font-weight: 800;
-      line-height: 1.08;
-      letter-spacing: -1.4px;
-      color: white;
-      max-width: 760px;
-      margin-bottom: 20px;
+      line-height: 1.1;
+      letter-spacing: -2px;
+      color: #11100f;
+      text-wrap: balance;
     }
-    .alapelv-header p {
-      font-size: clamp(15px, 1.4vw, 19px);
-      line-height: 1.75;
-      color: rgba(255,255,255,0.68);
-      max-width: 850px;
+
+    .digital-workflow-card h2 span {
+      color: var(--coral);
     }
-    .alapelv-bar {
-      display: grid;
-      grid-template-columns: repeat(5, minmax(0, 1fr));
-      gap: 14px;
-      position: relative;
+
+    .digital-workflow-dots {
+      position: absolute;
       z-index: 1;
+      top: 44px;
+      right: 30px;
+      width: 150px;
+      height: 150px;
+      opacity: 0.66;
     }
-    .alapelv-item {
-      min-height: 100%;
-      padding: 24px 22px 26px;
-      display: flex;
-      flex-direction: column;
-      gap: 18px;
-      align-items: flex-start;
+
+    .digital-workflow-copy {
       position: relative;
-      background: rgba(255,255,255,0.055);
-      border: 1px solid rgba(255,255,255,0.09);
-      border-radius: 18px;
-      box-shadow: 0 18px 45px rgba(0,0,0,0.18);
+      z-index: 2;
+      max-width: 500px;
+      margin-top: 68px;
     }
-    .alapelv-icon {
+
+    .digital-workflow-copy p {
+      font-size: clamp(14px, 1.12vw, 16px);
+      line-height: 1.72;
+      color: #59534d;
+      margin-bottom: 24px;
+    }
+
+    .digital-workflow-copy p:last-child {
+      margin-bottom: 0;
+    }
+
+    .digital-workflow-path {
+      position: absolute;
+      z-index: 1;
+      left: clamp(46px, 5.2vw, 74px);
+      top: 435px;
+      width: calc(100% - clamp(58px, 5.2vw, 74px));
+      height: auto;
+      pointer-events: none;
+    }
+
+    .digital-workflow-badge {
+      position: absolute;
+      z-index: 6;
+      right: 10.5%;
+      bottom: 42px;
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      min-width: 370px;
+      padding: 20px 30px;
+      border: 1px solid rgba(255,255,255,0.19);
+      border-radius: 18px;
+      background: rgba(35, 32, 29, 0.95);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.35);
+      backdrop-filter: blur(10px);
+    }
+
+    .digital-workflow-badge img {
       width: 48px;
       height: 48px;
-      border-radius: 14px;
-      background: rgba(224,90,43,0.18);
-      display: flex;
-      align-items: center;
-      justify-content: center;
       flex-shrink: 0;
     }
-    .alapelv-icon svg {
-      width: 22px;
-      height: 22px;
-      color: var(--coral-light);
+
+    .digital-workflow-badge::before {
+      content: '';
+      width: 1px;
+      height: 42px;
+      background: rgba(240,122,74,0.72);
+      order: 1;
     }
-    .alapelv-text h4 {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 17px;
-      line-height: 1.25;
-      font-weight: 800;
-      letter-spacing: -0.2px;
-      color: white;
-      margin-bottom: 10px;
-    }
-    .alapelv-text p {
-      font-size: 13px;
-      color: rgba(255,255,255,0.64);
-      line-height: 1.65;
+
+    .digital-workflow-badge span {
+      order: 2;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 1.7px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.78);
+      white-space: nowrap;
     }
 
     /* ── CSAPAT NÉVJEGYEK ── */
@@ -1382,8 +1470,15 @@
       .full-arch-story-copy h2 { font-size: clamp(32px, 4vw, 44px); }
       .benefits-grid { grid-template-columns: repeat(2, 1fr); }
       .ceramic-grid { grid-template-columns: 1fr; }
-      .alapelv-section { padding: 60px 40px 68px; }
-      .alapelv-bar { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .digital-workflow { padding: 82px 32px; }
+      .digital-workflow-inner { min-height: 760px; }
+      .digital-workflow-media { width: 60%; padding: 44px 22px 100px 50px; }
+      .digital-workflow-card { width: 57%; min-height: 700px; padding: 46px 44px 56px; }
+      .digital-workflow-icon { width: 62px; height: 62px; margin-bottom: 24px; }
+      .digital-workflow-card h2 { font-size: clamp(34px, 4.2vw, 46px); letter-spacing: -1.4px; }
+      .digital-workflow-copy { margin-top: 56px; }
+      .digital-workflow-path { left: 42px; top: 380px; width: calc(100% - 52px); }
+      .digital-workflow-badge { right: 5.5%; min-width: 330px; padding: 17px 22px; }
       .contact-grid { grid-template-columns: repeat(2, 1fr); }
       footer { grid-template-columns: 1fr 1fr; gap: 32px; }
     }
@@ -1457,11 +1552,52 @@
         right: -3%;
       }
       .section, .pilot-section { padding: 48px 20px; }
-      .alapelv-section { padding: 52px 20px 60px; }
-      .alapelv-bar { grid-template-columns: 1fr; }
-      .alapelv-header { margin-bottom: 28px; }
-      .alapelv-header h2 { letter-spacing: -0.8px; }
-      .alapelv-item { padding: 22px 20px; }
+      .digital-workflow { padding: 58px 20px 72px; }
+      .digital-workflow::after { display: none; }
+      .digital-workflow-inner { min-height: 0; display: flex; flex-direction: column; gap: 24px; }
+      .digital-workflow-card {
+        position: relative;
+        order: 1;
+        top: auto;
+        left: auto;
+        width: 100%;
+        min-height: 0;
+        padding: 34px 26px 42px;
+        border-radius: 26px;
+      }
+      .digital-workflow-icon { width: 58px; height: 58px; margin-bottom: 22px; }
+      .digital-workflow-title-rule { width: 46px; margin-bottom: 26px; }
+      .digital-workflow-card h2 { font-size: clamp(29px, 8vw, 32px); line-height: 1.12; letter-spacing: -0.9px; }
+      .digital-workflow-dots { width: 96px; height: 96px; top: 28px; right: 16px; opacity: 0.5; }
+      .digital-workflow-copy { margin-top: 38px; }
+      .digital-workflow-copy p { font-size: 15px; line-height: 1.72; }
+      .digital-workflow-path { left: 22px; top: 296px; width: calc(100% - 28px); opacity: 0.72; }
+      .digital-workflow-media {
+        position: relative;
+        order: 2;
+        top: auto;
+        right: auto;
+        width: 100%;
+        height: auto;
+        padding: 18px 14px 92px;
+        border-radius: 28px;
+      }
+      .digital-workflow-photo { height: auto; aspect-ratio: 4 / 5; border-radius: 22px; }
+      .digital-workflow-photo > img:first-child { object-position: 50% center; }
+      .digital-workflow-logo { top: 24px; left: 24px; width: 148px; }
+      .digital-workflow-badge {
+        right: 50%;
+        bottom: 24px;
+        transform: translateX(50%);
+        width: calc(100% - 48px);
+        min-width: 0;
+        gap: 14px;
+        padding: 14px 16px;
+        border-radius: 14px;
+      }
+      .digital-workflow-badge img { width: 40px; height: 40px; }
+      .digital-workflow-badge::before { height: 34px; }
+      .digital-workflow-badge span { font-size: 9px; letter-spacing: 1.1px; white-space: normal; }
       .btn-primary { align-self: flex-start; }
       .benefits-grid { grid-template-columns: 1fr; }
       .ceramic-grid { grid-template-columns: 1fr; }
@@ -1567,58 +1703,31 @@
   </div>
 </section>
 
-<!-- PARTNERI ELŐNYÖK -->
-<section class="alapelv-section">
-  <div class="alapelv-header reveal">
-    <div class="alapelv-kicker">Miért válasszon minket?</div>
-    <h2>Klinikai partnerként dolgozunk, nem egyszerű beszállítóként.</h2>
-    <p>Prémium implantológiai és digitális fogtechnikai munkák svájci és német partnereiknek, dokumentált minőséggel és dedikált szakmai támogatással.</p>
-  </div>
-  <div class="alapelv-bar reveal">
-    <div class="alapelv-item">
-      <div class="alapelv-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-5"/></svg>
-      </div>
-      <div class="alapelv-text">
-        <h4>Kockázatcsökkentett kezdés</h4>
-        <p>Az első komplex implantációs esetnél díjmentes digitális tervezés, wax-up/mock-up és sebészi sablon. Nem kedvezményt adunk, hanem biztonságos belépést.</p>
+<!-- DIGITÁLIS WORKFLOW -->
+<section class="digital-workflow">
+  <div class="digital-workflow-inner reveal">
+    <div class="digital-workflow-media">
+      <div class="digital-workflow-photo">
+        <img src="assets/full-arch-digital-workflow.webp" alt="Fogtechnikus Full-Arch implantátumos restauráció digitális tervezése közben">
+        <img class="digital-workflow-logo" src="logo-hero.png" alt="" aria-hidden="true">
       </div>
     </div>
-    <div class="alapelv-item">
-      <div class="alapelv-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16"/><path d="M4 12h16"/><path d="M4 17h10"/><path d="M17 15l3 3-3 3"/></svg>
-      </div>
-      <div class="alapelv-text">
-        <h4>Saját digitális gyártás</h4>
-        <p>Exocad tervezés, intraorális scan fájlok fogadása, házon belüli CNC fréz- és 3D nyomtatási kapacitás, alvállalkozók nélkül.</p>
-      </div>
-    </div>
-    <div class="alapelv-item">
-      <div class="alapelv-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 7V3h8v4"/><path d="M6 21h12a2 2 0 0 0 2-2V7H4v12a2 2 0 0 0 2 2z"/><path d="M9 13h6"/><path d="M9 17h4"/></svg>
-      </div>
-      <div class="alapelv-text">
-        <h4>Dokumentált prémium minőség</h4>
-        <p>Implant munkákra 5 év anyag- és konstrukciós garancia, teljesen nyomon követhető gyártási folyamat.</p>
+
+    <div class="digital-workflow-card">
+      <img class="digital-workflow-icon" src="assets/workflow-tooth-icon.svg" alt="" aria-hidden="true">
+      <div class="digital-workflow-title-rule" aria-hidden="true"></div>
+      <img class="digital-workflow-dots" src="assets/workflow-dot-pattern.svg" alt="" aria-hidden="true">
+      <h2>Digitális <span>workflow</span><br>a kiszámítható eredményekért</h2>
+      <img class="digital-workflow-path" src="assets/workflow-path.svg" alt="" aria-hidden="true">
+      <div class="digital-workflow-copy">
+        <p>A modern Full-Arch rehabilitációk ma már nem csupán fogpótlások készítéséről szólnak. A siker alapja egy jól felépített digitális munkafolyamat, amelyben a diagnosztikától a végleges restaurációig minden lépés egymásra épül.</p>
+        <p>Laborunk nyitott digitális rendszerben dolgozik, kompatibilis a legelterjedtebb intraorális szkennerekkel, és támogatja a teljes digitális kommunikációt a rendelő és a labor között.</p>
       </div>
     </div>
-    <div class="alapelv-item">
-      <div class="alapelv-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/><path d="M8 9h8"/><path d="M8 13h5"/></svg>
-      </div>
-      <div class="alapelv-text">
-        <h4>Német nyelvű szakmai támogatás</h4>
-        <p>Dedikált németül kommunikáló fogtechnikus, online Exocad review, Zoom konzultáció és scan-minőségi visszajelzés.</p>
-      </div>
-    </div>
-    <div class="alapelv-item">
-      <div class="alapelv-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h11v10H3z"/><path d="M14 10h4l3 3v4h-7z"/><circle cx="7" cy="19" r="2"/><circle cx="18" cy="19" r="2"/></svg>
-      </div>
-      <div class="alapelv-text">
-        <h4>Európai partnerlogisztika</h4>
-        <p>Teljes oda-vissza szállítás, német nyelvű ügyintézés és régiónként limitált partnerkör a stabil együttműködésért.</p>
-      </div>
+
+    <div class="digital-workflow-badge">
+      <img src="assets/workflow-tool-icon.svg" alt="" aria-hidden="true">
+      <span>Nyitott digitális rendszer</span>
     </div>
   </div>
 </section>
