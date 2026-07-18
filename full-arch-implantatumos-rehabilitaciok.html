@@ -1119,6 +1119,210 @@
       margin: 28px 0 0;
     }
 
+    /* ── MIÉRT VÁLASZTJÁK PARTNEREINK? ── */
+    .partner-reasons {
+      display: grid;
+      grid-template-columns: minmax(0, 1.02fr) minmax(0, 0.98fr);
+      max-width: 1600px;
+      margin: 0 auto;
+      overflow: hidden;
+      background: #f9f5ef;
+    }
+
+    .partner-reasons-collage {
+      display: grid;
+      grid-template-columns: 1.06fr 0.94fr;
+      grid-template-rows: 420px 220px 220px 150px;
+      min-width: 0;
+      background: #211d19;
+    }
+
+    .partner-collage-photo {
+      position: relative;
+      min-width: 0;
+      overflow: hidden;
+      background: #211d19;
+    }
+
+    .partner-collage-photo img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    .partner-collage-photo--cad {
+      grid-column: 1 / -1;
+    }
+
+    .partner-collage-photo--cad::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(10, 9, 8, 0.56) 0%, transparent 48%),
+        linear-gradient(0deg, rgba(10, 9, 8, 0.72) 0%, transparent 54%);
+      pointer-events: none;
+    }
+
+    .partner-collage-photo--cad img {
+      object-position: 56% center;
+    }
+
+    .partner-collage-photo--milling img { object-position: 47% center; }
+    .partner-collage-photo--printing img { object-position: 50% 42%; }
+    .partner-collage-photo--ceramic img { object-position: 47% center; }
+    .partner-collage-photo--collaboration img { object-position: 50% center; }
+
+    .partner-collage-statement {
+      position: absolute;
+      z-index: 2;
+      left: clamp(34px, 5vw, 72px);
+      bottom: 34px;
+      max-width: 430px;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: clamp(31px, 2.85vw, 43px);
+      font-weight: 500;
+      line-height: 0.98;
+      letter-spacing: -0.8px;
+      color: #fffaf4;
+    }
+
+    .partner-collage-statement span {
+      display: block;
+      color: var(--coral-light);
+    }
+
+    .partner-collage-benefits {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      align-items: stretch;
+      padding: 20px 18px;
+      background:
+        radial-gradient(circle at 22% 0%, rgba(255,255,255,0.09), transparent 34%),
+        linear-gradient(120deg, #4a433b 0%, #342f2a 100%);
+    }
+
+    .partner-collage-benefit {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-width: 0;
+      padding: 0 12px;
+      text-align: center;
+    }
+
+    .partner-collage-benefit + .partner-collage-benefit::before {
+      content: '';
+      position: absolute;
+      top: 6px;
+      bottom: 6px;
+      left: 0;
+      width: 1px;
+      background: rgba(213, 173, 130, 0.38);
+    }
+
+    .partner-collage-benefit img {
+      width: 46px;
+      height: 46px;
+      display: block;
+    }
+
+    .partner-collage-benefit span {
+      max-width: 130px;
+      font-size: 10px;
+      font-weight: 600;
+      line-height: 1.45;
+      letter-spacing: 1.25px;
+      text-transform: uppercase;
+      color: #ddc6ab;
+    }
+
+    .partner-reasons-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-width: 0;
+      padding: clamp(64px, 5.4vw, 86px) clamp(42px, 5.2vw, 78px);
+      background:
+        radial-gradient(circle at 88% 14%, rgba(236, 120, 73, 0.08), transparent 31%),
+        linear-gradient(145deg, #fffaf4 0%, #f8f2ea 100%);
+    }
+
+    .partner-reasons-content h2 {
+      max-width: 560px;
+      margin-bottom: 32px;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: clamp(52px, 4.55vw, 69px);
+      font-weight: 600;
+      line-height: 0.94;
+      letter-spacing: -2px;
+      color: #171513;
+      text-wrap: balance;
+    }
+
+    .partner-reasons-list {
+      display: grid;
+      gap: 15px;
+    }
+
+    .partner-reason-card {
+      display: grid;
+      grid-template-columns: 82px 1px minmax(0, 1fr);
+      gap: 22px;
+      align-items: center;
+      min-height: 142px;
+      padding: 22px 28px 22px 22px;
+      border: 1px solid rgba(218, 200, 181, 0.46);
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.78);
+      box-shadow: 0 12px 34px rgba(82, 55, 36, 0.08);
+    }
+
+    .partner-reason-icon {
+      width: 74px;
+      height: 74px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid #ead9c6;
+      border-radius: 50%;
+      background: #fffaf4;
+      box-shadow: 0 8px 20px rgba(97, 67, 43, 0.09);
+    }
+
+    .partner-reason-icon img {
+      width: 48px;
+      height: 48px;
+      display: block;
+    }
+
+    .partner-reason-divider {
+      width: 1px;
+      height: 74px;
+      background: rgba(240, 90, 50, 0.45);
+    }
+
+    .partner-reason-copy h3 {
+      margin-bottom: 8px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(17px, 1.4vw, 21px);
+      font-weight: 700;
+      line-height: 1.25;
+      letter-spacing: -0.35px;
+      color: #25211e;
+    }
+
+    .partner-reason-copy p {
+      font-size: clamp(13px, 1.02vw, 15px);
+      line-height: 1.6;
+      color: #4e4842;
+    }
+
     /* ── CSAPAT NÉVJEGYEK ── */
     .contact-grid {
       display: grid;
@@ -1655,6 +1859,13 @@
       .rehab-partnership-cards { grid-template-columns: minmax(0, 1.25fr) minmax(300px, 0.75fr); }
       .rehab-options-card,
       .rehab-principle-card { min-height: 330px; }
+      .partner-reasons { grid-template-columns: 1fr; }
+      .partner-reasons-content { order: 1; padding: 72px 48px 78px; }
+      .partner-reasons-content h2 { max-width: 720px; }
+      .partner-reasons-collage {
+        order: 2;
+        grid-template-rows: 380px 210px 210px 150px;
+      }
       .contact-grid { grid-template-columns: repeat(2, 1fr); }
       footer { grid-template-columns: 1fr 1fr; gap: 32px; }
     }
@@ -1803,6 +2014,63 @@
       .rehab-options-card li { padding-left: 20px; }
       .rehab-principle-card { min-height: 250px; padding: 42px 28px; }
       .rehab-principle-card p { max-width: 330px; font-size: 18px; line-height: 1.5; }
+      .partner-reasons-content { padding: 58px 20px 64px; }
+      .partner-reasons-content h2 {
+        margin-bottom: 28px;
+        font-size: clamp(43px, 12.5vw, 57px);
+        line-height: 0.96;
+        letter-spacing: -1.4px;
+      }
+      .partner-reasons-list { gap: 12px; }
+      .partner-reason-card {
+        grid-template-columns: 58px 1px minmax(0, 1fr);
+        gap: 14px;
+        min-height: 0;
+        padding: 18px 16px;
+        border-radius: 10px;
+      }
+      .partner-reason-icon { width: 58px; height: 58px; }
+      .partner-reason-icon img { width: 38px; height: 38px; }
+      .partner-reason-divider { height: 58px; }
+      .partner-reason-copy h3 { margin-bottom: 6px; font-size: 16px; }
+      .partner-reason-copy p { font-size: 13px; line-height: 1.55; }
+      .partner-reasons-collage {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 270px 165px 165px auto;
+      }
+      .partner-collage-statement {
+        left: 22px;
+        bottom: 22px;
+        max-width: 300px;
+        font-size: clamp(28px, 8.5vw, 36px);
+      }
+      .partner-collage-benefits {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        padding: 0;
+      }
+      .partner-collage-benefit { min-height: 124px; padding: 16px 10px; }
+      .partner-collage-benefit + .partner-collage-benefit::before { display: none; }
+      .partner-collage-benefit:nth-child(even)::before {
+        content: '';
+        position: absolute;
+        top: 16px;
+        bottom: 16px;
+        left: 0;
+        width: 1px;
+        display: block;
+        background: rgba(213, 173, 130, 0.38);
+      }
+      .partner-collage-benefit:nth-child(n+3)::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 16px;
+        left: 16px;
+        height: 1px;
+        background: rgba(213, 173, 130, 0.3);
+      }
+      .partner-collage-benefit img { width: 42px; height: 42px; }
+      .partner-collage-benefit span { font-size: 9px; }
       .btn-primary { align-self: flex-start; }
       .benefits-grid { grid-template-columns: 1fr; }
       .ceramic-grid { grid-template-columns: 1fr; }
@@ -1967,6 +2235,101 @@
         <p>Minden esetet az adott klinikai helyzethez, az implantátumrendszerhez és az esztétikai elvárásokhoz igazítunk.</p>
         <div class="rehab-card-rule" aria-hidden="true"></div>
       </aside>
+    </div>
+  </div>
+</section>
+
+<!-- MIÉRT VÁLASZTJÁK PARTNEREINK? -->
+<section class="partner-reasons" id="miert-valasztanak-partnereink">
+  <div class="partner-reasons-collage reveal">
+    <figure class="partner-collage-photo partner-collage-photo--cad">
+      <img src="assets/full-arch-partner-cad-design.webp" alt="Full-Arch restauráció digitális tervezése CAD rendszerben">
+      <figcaption class="partner-collage-statement">Digitális precizitás.<br>Esztétikai kiválóság.<span>Közös siker.</span></figcaption>
+    </figure>
+
+    <figure class="partner-collage-photo partner-collage-photo--milling">
+      <img src="assets/full-arch-partner-milling.webp" alt="Cirkónium restauráció precíziós CAD/CAM marása">
+    </figure>
+
+    <figure class="partner-collage-photo partner-collage-photo--printing">
+      <img src="assets/full-arch-partner-printing.webp" alt="Full-Arch restaurációk additív gyártása">
+    </figure>
+
+    <figure class="partner-collage-photo partner-collage-photo--ceramic">
+      <img src="assets/full-arch-partner-ceramic.webp" alt="Cirkónium restauráció kézi karakterizálása">
+    </figure>
+
+    <figure class="partner-collage-photo partner-collage-photo--collaboration">
+      <img src="assets/full-arch-partner-collaboration.webp" alt="Fogtechnikusok közös digitális esetértékelése">
+    </figure>
+
+    <div class="partner-collage-benefits" aria-label="Partneri előnyeink">
+      <div class="partner-collage-benefit">
+        <img src="assets/collage-tooth.svg" alt="" aria-hidden="true">
+        <span>Digitális<br>workflow</span>
+      </div>
+      <div class="partner-collage-benefit">
+        <img src="assets/collage-factory.svg" alt="" aria-hidden="true">
+        <span>Saját<br>gyártóközpont</span>
+      </div>
+      <div class="partner-collage-benefit">
+        <img src="assets/collage-diamond.svg" alt="" aria-hidden="true">
+        <span>Prémium<br>esztétika</span>
+      </div>
+      <div class="partner-collage-benefit">
+        <img src="assets/collage-team.svg" alt="" aria-hidden="true">
+        <span>Együtt.<br>Hatékonyan.</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="partner-reasons-content reveal">
+    <h2>Miért választják<br>partnereink?</h2>
+
+    <div class="partner-reasons-list">
+      <article class="partner-reason-card">
+        <div class="partner-reason-icon">
+          <img src="assets/reason-precision.svg" alt="" aria-hidden="true">
+        </div>
+        <div class="partner-reason-divider" aria-hidden="true"></div>
+        <div class="partner-reason-copy">
+          <h3>Precíz digitális tervezés</h3>
+          <p>A digitális workflow lehetővé teszi a pontosabb tervezést és a reprodukálható gyártási folyamatot.</p>
+        </div>
+      </article>
+
+      <article class="partner-reason-card">
+        <div class="partner-reason-icon">
+          <img src="assets/reason-manufacturing.svg" alt="" aria-hidden="true">
+        </div>
+        <div class="partner-reason-divider" aria-hidden="true"></div>
+        <div class="partner-reason-copy">
+          <h3>Nagy pontosságú gyártás</h3>
+          <p>A restaurációk saját CAD/CAM és additív gyártóközpontunkban készülnek, korszerű marási és 3D nyomtatási technológiákkal.</p>
+        </div>
+      </article>
+
+      <article class="partner-reason-card">
+        <div class="partner-reason-icon">
+          <img src="assets/reason-aesthetics.svg" alt="" aria-hidden="true">
+        </div>
+        <div class="partner-reason-divider" aria-hidden="true"></div>
+        <div class="partner-reason-copy">
+          <h3>Magas esztétikai színvonal</h3>
+          <p>A multilayer cirkónium anyagok, a természetes morfológia és az egyedi karakterizálás segítségével olyan restaurációkat készítünk, amelyek funkcionálisan és esztétikailag is magas színvonalat képviselnek.</p>
+        </div>
+      </article>
+
+      <article class="partner-reason-card">
+        <div class="partner-reason-icon">
+          <img src="assets/reason-partnership.svg" alt="" aria-hidden="true">
+        </div>
+        <div class="partner-reason-divider" aria-hidden="true"></div>
+        <div class="partner-reason-copy">
+          <h3>Kiszámítható együttműködés</h3>
+          <p>A jól felépített digitális munkafolyamat, az átlátható kommunikáció és a következetes minőségbiztosítás támogatja a rendelő hatékony működését.</p>
+        </div>
+      </article>
     </div>
   </div>
 </section>
