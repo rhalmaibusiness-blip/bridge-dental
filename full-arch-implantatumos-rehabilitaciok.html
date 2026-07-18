@@ -767,6 +767,12 @@
         linear-gradient(180deg, #fbf8f3 0%, #f8f4ee 100%);
     }
 
+    /* Keep the dark tone contained inside the rounded media panel. */
+    .digital-workflow::after {
+      content: none !important;
+      display: none !important;
+    }
+
     .digital-workflow-inner {
       position: relative;
       z-index: 1;
