@@ -1323,6 +1323,249 @@
       color: #4e4842;
     }
 
+    /* ── MILYEN ESETEKBEN NYÚJTUNK MEGOLDÁST? ── */
+    .fullarch-cases {
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+      padding: clamp(92px, 8vw, 126px) 32px 64px;
+      border-top: 1px solid rgba(224, 90, 43, 0.08);
+      background:
+        radial-gradient(circle at 50% 48%, rgba(239, 143, 103, 0.13), transparent 34%),
+        radial-gradient(circle at 16% 18%, rgba(255,255,255,0.96), transparent 31%),
+        linear-gradient(180deg, #fffaf5 0%, #fbf4ec 100%);
+    }
+
+    .fullarch-cases::before,
+    .fullarch-cases::after {
+      content: '';
+      position: absolute;
+      z-index: -1;
+      bottom: -145px;
+      width: 58%;
+      height: 260px;
+      border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+      background: rgba(255, 252, 248, 0.86);
+    }
+
+    .fullarch-cases::before { left: -7%; transform: rotate(3deg); }
+    .fullarch-cases::after { right: -7%; transform: rotate(-3deg); }
+
+    .fullarch-cases-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 1420px;
+      margin: 0 auto;
+    }
+
+    .fullarch-cases-heading {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: clamp(54px, 5.25vw, 78px);
+      font-weight: 500;
+      line-height: 0.95;
+      letter-spacing: -2.2px;
+      color: #1d242b;
+      text-wrap: balance;
+    }
+
+    .fullarch-cases-heading span { color: #e77960; }
+
+    .fullarch-cases-ornament {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      margin: 27px auto 48px;
+      color: #e77960;
+    }
+
+    .fullarch-cases-ornament::before,
+    .fullarch-cases-ornament::after {
+      content: '';
+      width: 72px;
+      height: 1px;
+      background: currentColor;
+      opacity: 0.72;
+    }
+
+    .fullarch-cases-ornament span {
+      width: 9px;
+      height: 9px;
+      display: block;
+      transform: rotate(45deg);
+      background: currentColor;
+    }
+
+    .fullarch-cases-layout {
+      display: grid;
+      grid-template-columns: minmax(250px, 310px) minmax(420px, 560px) minmax(250px, 310px);
+      align-items: center;
+      justify-content: center;
+      gap: clamp(50px, 5vw, 78px);
+    }
+
+    .fullarch-cases-side {
+      display: grid;
+      gap: 26px;
+    }
+
+    .fullarch-case-card {
+      position: relative;
+      display: grid;
+      grid-template-columns: 82px minmax(0, 1fr);
+      align-items: center;
+      min-height: 142px;
+      padding: 20px 20px 20px 18px;
+      border: 1px solid rgba(231, 121, 96, 0.42);
+      border-radius: 15px;
+      background: rgba(255, 253, 250, 0.84);
+      box-shadow: 0 13px 34px rgba(108, 70, 42, 0.08);
+      transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+    }
+
+    .fullarch-case-card:hover {
+      z-index: 3;
+      transform: translateY(-4px);
+      border-color: rgba(224, 90, 43, 0.62);
+      box-shadow: 0 20px 40px rgba(108, 70, 42, 0.13);
+    }
+
+    .fullarch-case-icon {
+      width: 68px;
+      height: 68px;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      border: 1px solid rgba(231, 121, 96, 0.34);
+      border-radius: 50%;
+      background: #fbf6ef;
+    }
+
+    .fullarch-case-icon img {
+      width: 62px;
+      height: 62px;
+      display: block;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+    .fullarch-case-card h3 {
+      min-height: 64px;
+      display: flex;
+      align-items: center;
+      margin-left: 14px;
+      padding-left: 17px;
+      border-left: 1px dotted rgba(224, 90, 43, 0.42);
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: clamp(19px, 1.55vw, 23px);
+      font-weight: 600;
+      line-height: 1.08;
+      letter-spacing: -0.25px;
+      color: #25221f;
+    }
+
+    .fullarch-case-number {
+      position: absolute;
+      z-index: 3;
+      top: 50%;
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      transform: translateY(-50%);
+      border: 5px solid #fbf4ec;
+      border-radius: 50%;
+      background: linear-gradient(145deg, #ef8b72, #df6348);
+      box-shadow: 0 8px 18px rgba(179, 77, 48, 0.2);
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: white;
+    }
+
+    .fullarch-cases-side--left .fullarch-case-number { right: -27px; }
+    .fullarch-cases-side--right .fullarch-case-number { left: -27px; }
+
+    .fullarch-cases-side--left .fullarch-case-card::after,
+    .fullarch-cases-side--right .fullarch-case-card::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      width: clamp(50px, 5vw, 78px);
+      height: 38px;
+      border-top: 1px solid rgba(224, 90, 43, 0.7);
+      pointer-events: none;
+    }
+
+    .fullarch-cases-side--left .fullarch-case-card::after {
+      left: 100%;
+      border-right: 1px solid rgba(224, 90, 43, 0.7);
+      border-radius: 0 22px 0 0;
+    }
+
+    .fullarch-cases-side--right .fullarch-case-card::after {
+      right: 100%;
+      border-left: 1px solid rgba(224, 90, 43, 0.7);
+      border-radius: 22px 0 0 0;
+    }
+
+    .fullarch-cases-visual {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 1;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(231, 121, 96, 0.36);
+      border-radius: 50%;
+      background: rgba(255, 248, 241, 0.64);
+      box-shadow: 0 28px 70px rgba(122, 73, 42, 0.1);
+    }
+
+    .fullarch-cases-visual::before,
+    .fullarch-cases-visual::after {
+      content: '';
+      position: absolute;
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .fullarch-cases-visual::before {
+      inset: 12px;
+      border: 1px solid rgba(231, 121, 96, 0.18);
+    }
+
+    .fullarch-cases-visual::after {
+      inset: -14px;
+      border-top: 1px solid rgba(231, 121, 96, 0.25);
+      border-right: 1px solid transparent;
+      transform: rotate(-18deg);
+    }
+
+    .fullarch-cases-visual img {
+      width: calc(100% - 20px);
+      height: calc(100% - 20px);
+      display: block;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+    .fullarch-cases-logo {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      justify-content: center;
+      margin-top: 48px;
+    }
+
+    .fullarch-cases-logo img {
+      width: 176px;
+      height: auto;
+      display: block;
+    }
+
     /* ── CSAPAT NÉVJEGYEK ── */
     .contact-grid {
       display: grid;
@@ -2080,6 +2323,87 @@
       .contact-form { padding: 32px 24px; }
       footer, .footer-bottom { grid-template-columns: 1fr; padding: 40px 20px; gap: 32px; }
     }
+
+    @media (max-width: 1100px) {
+      .fullarch-cases { padding: 86px 28px 58px; }
+      .fullarch-cases-heading { max-width: 760px; }
+      .fullarch-cases-layout {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        gap: 24px;
+        max-width: 860px;
+        margin: 0 auto;
+      }
+      .fullarch-cases-visual {
+        grid-column: 1 / -1;
+        grid-row: 1;
+        width: min(100%, 520px);
+        margin: 0 auto 24px;
+      }
+      .fullarch-cases-side { align-self: start; }
+      .fullarch-cases-side--left { grid-column: 1; grid-row: 2; }
+      .fullarch-cases-side--right { grid-column: 2; grid-row: 2; }
+      .fullarch-cases-side .fullarch-case-card::after { display: none; }
+      .fullarch-cases-side .fullarch-case-number {
+        top: 14px;
+        right: 14px;
+        left: auto;
+        width: 42px;
+        height: 42px;
+        transform: none;
+        border-width: 4px;
+        font-size: 16px;
+      }
+      .fullarch-case-card { padding-right: 58px; }
+    }
+
+    @media (max-width: 700px) {
+      .fullarch-cases { padding: 68px 20px 50px; }
+      .fullarch-cases-heading {
+        max-width: 520px;
+        font-size: clamp(39px, 12.3vw, 53px);
+        line-height: 0.98;
+        letter-spacing: -1.3px;
+      }
+      .fullarch-cases-ornament { margin: 22px auto 36px; }
+      .fullarch-cases-ornament::before,
+      .fullarch-cases-ornament::after { width: 52px; }
+      .fullarch-cases-layout { grid-template-columns: 1fr; gap: 0; }
+      .fullarch-cases-visual {
+        grid-column: 1;
+        width: min(100%, 440px);
+        margin-bottom: 34px;
+      }
+      .fullarch-cases-side--left,
+      .fullarch-cases-side--right {
+        grid-column: 1;
+        grid-row: auto;
+      }
+      .fullarch-cases-side { gap: 14px; }
+      .fullarch-cases-side--right { margin-top: 14px; }
+      .fullarch-case-card {
+        grid-template-columns: 72px minmax(0, 1fr);
+        min-height: 116px;
+        padding: 16px 54px 16px 14px;
+        border-radius: 13px;
+      }
+      .fullarch-case-icon { width: 62px; height: 62px; }
+      .fullarch-case-icon img { width: 57px; height: 57px; }
+      .fullarch-case-card h3 {
+        min-height: 58px;
+        margin-left: 10px;
+        padding-left: 14px;
+        font-size: clamp(19px, 5.8vw, 23px);
+      }
+      .fullarch-cases-side .fullarch-case-number {
+        top: 12px;
+        right: 10px;
+        width: 38px;
+        height: 38px;
+        font-size: 15px;
+      }
+      .fullarch-cases-logo { margin-top: 38px; }
+      .fullarch-cases-logo img { width: 148px; }
+    }
   </style>
 </head>
 <body>
@@ -2330,6 +2654,76 @@
           <p>A jól felépített digitális munkafolyamat, az átlátható kommunikáció és a következetes minőségbiztosítás támogatja a rendelő hatékony működését.</p>
         </div>
       </article>
+    </div>
+  </div>
+</section>
+
+<!-- MILYEN ESETEKBEN NYÚJTUNK MEGOLDÁST? -->
+<section class="fullarch-cases" id="milyen-esetekben">
+  <div class="fullarch-cases-inner">
+    <h2 class="fullarch-cases-heading reveal">Milyen esetekben<br>nyújtunk <span>megoldást?</span></h2>
+    <div class="fullarch-cases-ornament reveal" aria-hidden="true"><span></span></div>
+
+    <div class="fullarch-cases-layout">
+      <div class="fullarch-cases-side fullarch-cases-side--left">
+        <article class="fullarch-case-card reveal">
+          <div class="fullarch-case-icon">
+            <img src="assets/full-arch-case-all-on-4.webp" alt="" aria-hidden="true" loading="lazy">
+          </div>
+          <h3>All-on-4<br>rehabilitációk</h3>
+          <span class="fullarch-case-number" aria-hidden="true">01</span>
+        </article>
+
+        <article class="fullarch-case-card reveal reveal-delay-1">
+          <div class="fullarch-case-icon">
+            <img src="assets/full-arch-case-all-on-6.webp" alt="" aria-hidden="true" loading="lazy">
+          </div>
+          <h3>All-on-6<br>rehabilitációk</h3>
+          <span class="fullarch-case-number" aria-hidden="true">02</span>
+        </article>
+
+        <article class="fullarch-case-card reveal reveal-delay-2">
+          <div class="fullarch-case-icon">
+            <img src="assets/full-arch-case-complete-arch.webp" alt="" aria-hidden="true" loading="lazy">
+          </div>
+          <h3>teljes felső vagy alsó fogív rehabilitációja</h3>
+          <span class="fullarch-case-number" aria-hidden="true">03</span>
+        </article>
+      </div>
+
+      <figure class="fullarch-cases-visual reveal">
+        <img src="assets/full-arch-cases-center.webp" alt="Hat implantátumon rögzülő teljes íves fogpótlás robbantott nézete" loading="lazy">
+      </figure>
+
+      <div class="fullarch-cases-side fullarch-cases-side--right">
+        <article class="fullarch-case-card reveal">
+          <div class="fullarch-case-icon">
+            <img src="assets/full-arch-case-immediate-load.webp" alt="" aria-hidden="true" loading="lazy">
+          </div>
+          <h3>azonnali terheléses esetek</h3>
+          <span class="fullarch-case-number" aria-hidden="true">04</span>
+        </article>
+
+        <article class="fullarch-case-card reveal reveal-delay-1">
+          <div class="fullarch-case-icon">
+            <img src="assets/full-arch-case-restorations.webp" alt="" aria-hidden="true" loading="lazy">
+          </div>
+          <h3>ideiglenes és végleges Full-Arch restaurációk</h3>
+          <span class="fullarch-case-number" aria-hidden="true">05</span>
+        </article>
+
+        <article class="fullarch-case-card reveal reveal-delay-2">
+          <div class="fullarch-case-icon">
+            <img src="assets/full-arch-case-complex.webp" alt="" aria-hidden="true" loading="lazy">
+          </div>
+          <h3>komplex implantátumos rehabilitációk</h3>
+          <span class="fullarch-case-number" aria-hidden="true">06</span>
+        </article>
+      </div>
+    </div>
+
+    <div class="fullarch-cases-logo reveal">
+      <img src="logo-hero.png" alt="Bridge Dental" loading="lazy">
     </div>
   </div>
 </section>
