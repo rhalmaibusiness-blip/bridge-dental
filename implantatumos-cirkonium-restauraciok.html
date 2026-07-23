@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>All-on-X Full-Arch rehabilitációk – Bridge Dental</title>
-  <meta name="description" content="Full-arch implantátumos rehabilitációk, All-on-X, CAD/CAM iBar, titán struktúrák, full-zirconia hidak és digitális full-arch munkafolyamatok.">
+  <title>Implantátumos cirkónium restaurációk – Bridge Dental</title>
+  <meta name="description" content="Implantátumos cirkónium restaurációk digitális workflow-val, multilayer monolitikus cirkóniumból, pontos illeszkedéssel és természetes esztétikával.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Montserrat:wght@300;400;500;600;700;800&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -1681,6 +1681,419 @@
 
     .restoration-concept-cta:hover::after { transform: translateX(4px); }
 
+    /* ── IMPLANTÁTUMOS CIRKÓNIUM TARTALOM ── */
+    .zircon-opening {
+      position: relative;
+      overflow: hidden;
+      padding: clamp(84px, 8vw, 124px) 48px;
+      background:
+        radial-gradient(circle at 88% 12%, rgba(224, 90, 43, 0.10), transparent 28%),
+        linear-gradient(145deg, #fffaf4 0%, #f7f1e9 100%);
+    }
+
+    .zircon-opening::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 1px;
+      height: 62px;
+      background: linear-gradient(180deg, var(--coral), transparent);
+    }
+
+    .zircon-opening-inner {
+      display: grid;
+      grid-template-columns: minmax(0, 1.08fr) minmax(360px, 0.92fr);
+      gap: clamp(48px, 7vw, 96px);
+      align-items: center;
+      max-width: 1240px;
+      margin: 0 auto;
+    }
+
+    .zircon-opening-lead {
+      position: relative;
+      padding-left: 34px;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: clamp(28px, 2.65vw, 40px);
+      font-weight: 500;
+      line-height: 1.22;
+      letter-spacing: -0.7px;
+      color: #211d19;
+    }
+
+    .zircon-opening-lead::before {
+      content: '';
+      position: absolute;
+      top: 8px;
+      bottom: 8px;
+      left: 0;
+      width: 3px;
+      border-radius: 2px;
+      background: linear-gradient(180deg, var(--coral), #f2aa82);
+    }
+
+    .zircon-opening-focus {
+      position: relative;
+      overflow: hidden;
+      padding: clamp(34px, 4vw, 52px);
+      border: 1px solid rgba(224, 90, 43, 0.22);
+      border-radius: 28px;
+      background:
+        radial-gradient(circle at 100% 0%, rgba(240, 122, 74, 0.24), transparent 42%),
+        #211c18;
+      box-shadow: 0 24px 58px rgba(77, 47, 28, 0.17);
+    }
+
+    .zircon-opening-focus::after {
+      content: '';
+      position: absolute;
+      right: -32px;
+      bottom: -32px;
+      width: 120px;
+      height: 120px;
+      border: 1px solid rgba(240, 122, 74, 0.24);
+      border-radius: 50%;
+    }
+
+    .zircon-opening-focus p {
+      position: relative;
+      z-index: 1;
+      font-size: clamp(16px, 1.42vw, 19px);
+      line-height: 1.7;
+      color: rgba(255, 250, 245, 0.84);
+    }
+
+    .zircon-evolution {
+      padding: clamp(90px, 8.5vw, 132px) 48px;
+      background: #fdfbf8;
+    }
+
+    .zircon-evolution-inner {
+      display: grid;
+      grid-template-columns: minmax(300px, 0.82fr) minmax(0, 1.18fr);
+      gap: clamp(60px, 8vw, 112px);
+      align-items: start;
+      max-width: 1240px;
+      margin: 0 auto;
+    }
+
+    .zircon-evolution-heading {
+      position: sticky;
+      top: 110px;
+    }
+
+    .zircon-evolution-heading::before {
+      content: '';
+      display: block;
+      width: 58px;
+      height: 2px;
+      margin-bottom: 28px;
+      background: var(--coral);
+    }
+
+    .zircon-evolution h2 {
+      max-width: 480px;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: clamp(48px, 5vw, 72px);
+      font-weight: 600;
+      line-height: 0.98;
+      letter-spacing: -2px;
+      color: #1c1916;
+      text-wrap: balance;
+    }
+
+    .zircon-evolution-copy {
+      display: grid;
+      gap: 0;
+      counter-reset: evolution;
+    }
+
+    .zircon-evolution-copy p {
+      position: relative;
+      padding: 25px 0 25px 54px;
+      border-bottom: 1px solid #e8ddd2;
+      font-size: clamp(16px, 1.35vw, 18px);
+      line-height: 1.75;
+      color: #5d554e;
+      counter-increment: evolution;
+    }
+
+    .zircon-evolution-copy p:first-child { padding-top: 0; }
+    .zircon-evolution-copy p:last-child { padding-bottom: 0; border-bottom: 0; }
+
+    .zircon-evolution-copy p::before {
+      content: '0' counter(evolution);
+      position: absolute;
+      top: 28px;
+      left: 0;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: var(--coral);
+    }
+
+    .zircon-evolution-copy p:first-child::before { top: 3px; }
+
+    .zircon-development {
+      position: relative;
+      overflow: hidden;
+      padding: clamp(90px, 8.5vw, 132px) 48px;
+      background:
+        radial-gradient(circle at 50% -15%, rgba(224, 90, 43, 0.18), transparent 38%),
+        linear-gradient(135deg, #15120f, #211b17 58%, #120f0d);
+    }
+
+    .zircon-development::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      opacity: 0.18;
+      background-image: radial-gradient(rgba(255, 232, 211, 0.35) 0.5px, transparent 0.7px);
+      background-size: 8px 8px;
+      pointer-events: none;
+    }
+
+    .zircon-development-inner {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+      max-width: 1240px;
+      margin: 0 auto;
+    }
+
+    .zircon-development-card {
+      min-height: 100%;
+      padding: clamp(36px, 4.5vw, 60px);
+      border: 1px solid rgba(240, 122, 74, 0.24);
+      border-radius: 28px;
+      background: rgba(255, 252, 248, 0.055);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.05);
+    }
+
+    .zircon-development-card h2 {
+      margin-bottom: 30px;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: clamp(42px, 4vw, 58px);
+      font-weight: 600;
+      line-height: 1;
+      letter-spacing: -1.5px;
+      color: #fff8f1;
+    }
+
+    .zircon-development-card h2::after {
+      content: '';
+      display: block;
+      width: 52px;
+      height: 2px;
+      margin-top: 24px;
+      background: var(--coral-light);
+    }
+
+    .zircon-development-card p {
+      font-size: clamp(15px, 1.22vw, 17px);
+      line-height: 1.72;
+      color: rgba(255, 248, 241, 0.72);
+    }
+
+    .zircon-development-card p + p { margin-top: 18px; }
+
+    .zircon-practice {
+      padding: clamp(92px, 9vw, 140px) 48px;
+      background:
+        radial-gradient(circle at 12% 20%, rgba(224,90,43,0.08), transparent 26%),
+        linear-gradient(160deg, #faf5ee, #fffdf9);
+    }
+
+    .zircon-practice-inner {
+      max-width: 1240px;
+      margin: 0 auto;
+    }
+
+    .zircon-practice-intro {
+      max-width: 860px;
+      margin: 0 auto 58px;
+      text-align: center;
+    }
+
+    .zircon-practice-intro h2 {
+      margin-bottom: 28px;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: clamp(48px, 5vw, 72px);
+      font-weight: 600;
+      line-height: 0.98;
+      letter-spacing: -2px;
+      color: #1c1916;
+      text-wrap: balance;
+    }
+
+    .zircon-practice-intro h2::after {
+      content: '';
+      display: block;
+      width: 62px;
+      height: 2px;
+      margin: 28px auto 0;
+      background: var(--coral);
+    }
+
+    .zircon-practice-intro p {
+      font-size: clamp(16px, 1.32vw, 18px);
+      line-height: 1.72;
+      color: #665d55;
+    }
+
+    .zircon-practice-intro p + p { margin-top: 8px; }
+
+    .zircon-benefits {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .zircon-benefit {
+      position: relative;
+      overflow: hidden;
+      min-height: 220px;
+      padding: 36px 38px;
+      border: 1px solid rgba(214, 193, 173, 0.65);
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.84);
+      box-shadow: 0 14px 34px rgba(88, 58, 37, 0.07);
+    }
+
+    .zircon-benefit-number {
+      position: absolute;
+      top: 24px;
+      right: 28px;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 54px;
+      font-weight: 600;
+      line-height: 1;
+      color: rgba(224, 90, 43, 0.11);
+    }
+
+    .zircon-benefit h3 {
+      position: relative;
+      max-width: 320px;
+      margin-bottom: 18px;
+      padding-top: 28px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(19px, 1.6vw, 23px);
+      font-weight: 750;
+      line-height: 1.2;
+      letter-spacing: -0.4px;
+      color: #25201c;
+    }
+
+    .zircon-benefit h3::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 36px;
+      height: 2px;
+      background: var(--coral);
+    }
+
+    .zircon-benefit p {
+      max-width: 480px;
+      font-size: 15px;
+      line-height: 1.7;
+      color: #6b625a;
+    }
+
+    .zircon-conclusion {
+      max-width: 980px;
+      margin: 48px auto 0;
+      padding: 34px 42px;
+      border-left: 3px solid var(--coral);
+      border-radius: 0 18px 18px 0;
+      background: #241e19;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: clamp(24px, 2.2vw, 32px);
+      font-weight: 500;
+      line-height: 1.35;
+      letter-spacing: -0.35px;
+      color: #fff8f1;
+    }
+
+    @media (max-width: 900px) {
+      .zircon-opening-inner,
+      .zircon-evolution-inner {
+        grid-template-columns: 1fr;
+      }
+      .zircon-opening-inner { gap: 42px; }
+      .zircon-evolution-inner { gap: 46px; }
+      .zircon-evolution-heading { position: static; }
+      .zircon-development-inner { grid-template-columns: 1fr; }
+      .zircon-benefits { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 700px) {
+      .zircon-opening,
+      .zircon-evolution,
+      .zircon-development,
+      .zircon-practice {
+        padding: 68px 20px 76px;
+      }
+      .zircon-opening::before { height: 38px; }
+      .zircon-opening-lead {
+        padding-left: 22px;
+        font-size: 27px;
+        line-height: 1.25;
+      }
+      .zircon-opening-focus {
+        padding: 30px 26px;
+        border-radius: 22px;
+      }
+      .zircon-opening-focus p { font-size: 15px; line-height: 1.68; }
+      .zircon-evolution-heading::before { margin-bottom: 22px; }
+      .zircon-evolution h2,
+      .zircon-practice-intro h2 {
+        font-size: clamp(41px, 12vw, 54px);
+        line-height: 1;
+        letter-spacing: -1.3px;
+      }
+      .zircon-evolution-copy p {
+        padding: 22px 0 22px 40px;
+        font-size: 15px;
+        line-height: 1.68;
+      }
+      .zircon-evolution-copy p::before { top: 24px; }
+      .zircon-evolution-copy p:first-child::before { top: 2px; }
+      .zircon-development-inner { gap: 14px; }
+      .zircon-development-card {
+        padding: 32px 26px 36px;
+        border-radius: 22px;
+      }
+      .zircon-development-card h2 {
+        margin-bottom: 24px;
+        font-size: 41px;
+      }
+      .zircon-development-card p { font-size: 15px; line-height: 1.67; }
+      .zircon-practice-intro {
+        margin-bottom: 38px;
+        text-align: left;
+      }
+      .zircon-practice-intro h2::after { margin-left: 0; }
+      .zircon-practice-intro p { font-size: 15px; line-height: 1.68; }
+      .zircon-benefits { grid-template-columns: 1fr; gap: 14px; }
+      .zircon-benefit {
+        min-height: 0;
+        padding: 30px 26px 32px;
+        border-radius: 18px;
+      }
+      .zircon-benefit-number { top: 20px; right: 22px; font-size: 46px; }
+      .zircon-benefit h3 { padding-top: 24px; font-size: 19px; }
+      .zircon-conclusion {
+        margin-top: 32px;
+        padding: 26px 24px;
+        font-size: 23px;
+        line-height: 1.4;
+      }
+    }
+
     /* ── CSAPAT NÉVJEGYEK ── */
     .contact-grid {
       display: grid;
@@ -2564,8 +2977,8 @@
         <ul class="hero-dropdown-menu">
           <li class="hero-dropdown-panel">
             <ul>
-              <li><a href="full-arch-implantatumos-rehabilitaciok.html" aria-current="page">Full-Arch Implantátumos Rehabilitációk (All-on-X)</a></li>
-              <li><a href="implantatumos-cirkonium-restauraciok.html">Implantátumos cirkónium restaurációk</a></li>
+              <li><a href="full-arch-implantatumos-rehabilitaciok.html">Full-Arch Implantátumos Rehabilitációk (All-on-X)</a></li>
+              <li><a href="implantatumos-cirkonium-restauraciok.html" aria-current="page">Implantátumos cirkónium restaurációk</a></li>
               <li><a href="digitalis-fogsorok.html">Digitális fogsorok — TrueDent</a></li>
               <li><a href="index.html#szolgaltatasok">Digitális workflow</a></li>
               <li><a href="esztetikai-keramia.html">Esztétikai kerámiapótlások</a></li>
@@ -2588,8 +3001,8 @@
     <div class="hero-mobile-group">
       <a href="index.html#szolgaltatasok">SZAKTERÜLETEINK</a>
       <div class="hero-mobile-submenu">
-        <a href="full-arch-implantatumos-rehabilitaciok.html" aria-current="page">Full-Arch Implantátumos Rehabilitációk (All-on-X)</a>
-        <a href="implantatumos-cirkonium-restauraciok.html">Implantátumos cirkónium restaurációk</a>
+        <a href="full-arch-implantatumos-rehabilitaciok.html">Full-Arch Implantátumos Rehabilitációk (All-on-X)</a>
+        <a href="implantatumos-cirkonium-restauraciok.html" aria-current="page">Implantátumos cirkónium restaurációk</a>
         <a href="digitalis-fogsorok.html">Digitális fogsorok — TrueDent</a>
         <a href="index.html#szolgaltatasok">Digitális workflow</a>
         <a href="esztetikai-keramia.html">Esztétikai kerámiapótlások</a>
@@ -2607,321 +3020,97 @@
         <span class="breadcrumb-sep">/</span>
         <a href="index.html#szolgaltatasok">Szakterületeink</a>
         <span class="breadcrumb-sep">/</span>
-        <span class="breadcrumb-current">All-on-X Full-Arch rehabilitációk</span>
+        <span class="breadcrumb-current">Implantátumos cirkónium restaurációk</span>
       </div>
-      <h1 class="service-hero-title">All-on-X Full-Arch rehabilitációk</h1>
-      <p class="service-hero-subtitle">Komplex digitális megoldások teljes íves implantációs rehabilitációkhoz</p>
+      <h1 class="service-hero-title">Implantátumos cirkónium restaurációk</h1>
+      <p class="service-hero-subtitle">Digitális precizitás. Természetes esztétika. Hosszú távú stabilitás.</p>
     </div>
 
     <div class="service-hero-media">
-      <img src="full-arch-implantatumos-rehabilitacio-all-on-x.webp" alt="Full-Arch implantátumos rehabilitáció All-on-X fogtechnikai modell ellenőrzése a Bridge Dental laborban">
+      <img src="szolgaltatasok_full_cirkon.webp" alt="Implantátumos cirkónium restauráció digitális tervezése és laboratóriumi ellenőrzése">
     </div>
   </div>
 </section>
 
-<!-- BEVEZETŐ KÉPBLOKK -->
-<section class="full-arch-story">
-  <div class="full-arch-story-inner reveal">
-    <div class="full-arch-story-copy">
-      <h2>A teljes fogív rehabilitációja</h2>
-      <p>A teljes fogív rehabilitációja az implantológián belül az egyik legösszetettebb feladat, ahol a digitális tervezés, a precíz kivitelezés és a labor–fogorvos együttműködése egyaránt meghatározza a végeredményt. A Bridge Dentalnál olyan teljesen digitális workflow-t alkalmazunk, amely támogatja a kiszámítható kezeléseket, a pontos illeszkedést és a magas esztétikai elvárásoknak megfelelő restaurációk elkészítését.</p>
-    </div>
-    <div class="full-arch-story-visual">
-      <img class="full-arch-story-graphic full-arch-story-graphic--accent" src="assets/full-arch-story-accent.svg" alt="" aria-hidden="true">
-      <img class="full-arch-story-graphic full-arch-story-graphic--outline" src="assets/full-arch-story-outline.svg" alt="" aria-hidden="true">
-      <div class="full-arch-story-photo">
-        <img src="assets/full-arch-story-labor.webp" alt="Full-Arch implantátumos restauráció digitális tervezése és laboratóriumi ellenőrzése">
-      </div>
+<!-- IMPLANTÁTUMOS CIRKÓNIUM TARTALOM -->
+
+<section class="zircon-opening">
+  <div class="zircon-opening-inner">
+    <p class="zircon-opening-lead reveal">Az implantátumos restaurációk az elmúlt években jelentős fejlődésen mentek keresztül. A korszerű digitális workflow, a nagy szilárdságú multilayer cirkónium anyagok és a CAD/CAM technológia ma már lehetővé teszik olyan implantátumos koronák és hidak készítését, amelyek egyszerre biztosítanak kiemelkedő esztétikát, nagyfokú pontosságot és hosszú távú megbízhatóságot.</p>
+
+    <div class="zircon-opening-focus reveal reveal-delay-1">
+      <p>A Bridge Dental elsődleges szakterülete a monolitikus full contour cirkónium implantátumos restaurációk készítése egyedi koronák, kisebb hidak és komplex implantológiai rehabilitációk számára.</p>
     </div>
   </div>
 </section>
 
-<!-- DIGITÁLIS WORKFLOW -->
-<section class="digital-workflow">
-  <div class="digital-workflow-inner reveal">
-    <div class="digital-workflow-media">
-      <div class="digital-workflow-photo">
-        <img src="assets/full-arch-digital-workflow.webp" alt="Fogtechnikus Full-Arch implantátumos restauráció digitális tervezése közben">
-        <img class="digital-workflow-logo" src="logo-hero.png" alt="" aria-hidden="true">
-      </div>
+<section class="zircon-evolution">
+  <div class="zircon-evolution-inner">
+    <div class="zircon-evolution-heading reveal">
+      <h2>A full contour cirkónium fejlődése</h2>
     </div>
 
-    <div class="digital-workflow-card">
-      <img class="digital-workflow-icon" src="assets/workflow-tooth-icon.svg" alt="" aria-hidden="true">
-      <div class="digital-workflow-title-rule" aria-hidden="true"></div>
-      <img class="digital-workflow-dots" src="assets/workflow-dot-pattern.svg" alt="" aria-hidden="true">
-      <h2>Digitális <span>workflow</span><br>a kiszámítható eredményekért</h2>
-      <img class="digital-workflow-path" src="assets/workflow-path.svg" alt="" aria-hidden="true">
-      <div class="digital-workflow-copy">
-        <p>A modern Full-Arch rehabilitációk ma már nem csupán fogpótlások készítéséről szólnak. A siker alapja egy jól felépített digitális munkafolyamat, amelyben a diagnosztikától a végleges restaurációig minden lépés egymásra épül.</p>
-        <p>Laborunk nyitott digitális rendszerben dolgozik, kompatibilis a legelterjedtebb intraorális szkennerekkel, és támogatja a teljes digitális kommunikációt a rendelő és a labor között.</p>
-      </div>
+    <div class="zircon-evolution-copy reveal reveal-delay-1">
+      <p>Az implantológiában hosszú éveken keresztül a fémvázas, majd a rétegzett cirkónium restaurációk jelentették a standard megoldást.</p>
+      <p>A modern multilayer monolitikus cirkóniumok azonban új korszakot nyitottak.</p>
+      <p>Az anyagok optikai tulajdonságai, transzlucenciája és színátmenete jelentősen fejlődött, miközben a mechanikai tulajdonságok is magas szinten maradtak.</p>
+      <p>Ennek köszönhetően ma már számos esetben olyan monolitikus restauráció készíthető, amely egyszerre természetes megjelenésű és rendkívül ellenálló.</p>
     </div>
-
   </div>
 </section>
 
-<!-- PARTNER A TELJES REHABILITÁCIÓBAN -->
-<section class="rehab-partnership" id="rehabilitacios-lehetosegek">
-  <div class="rehab-partnership-inner">
-    <div class="rehab-partnership-top reveal">
-      <div class="rehab-partnership-copy">
-        <h2>A teljes rehabilitáció<br>minden fázisában <span>partnerként</span></h2>
-        <div class="rehab-partnership-heading-rule" aria-hidden="true"></div>
-        <p>A Full-Arch esetek során nem csupán a végleges restauráció elkészítésében veszünk részt.</p>
-        <p>Szükség esetén támogatást nyújtunk a digitális tervezésben, az ideiglenes restaurációk elkészítésében, a sebészi sablonok gyártásában is.</p>
-        <p>Célunk, hogy a labor és a rendelő közötti együttműködés minél gördülékenyebb, átláthatóbb és kiszámíthatóbb legyen.</p>
-      </div>
-      <div class="rehab-partnership-visual">
-        <img src="assets/full-arch-partner-cycle.svg" alt="A Full-Arch rehabilitáció négy együttműködési fázisa">
-      </div>
+<section class="zircon-development">
+  <div class="zircon-development-inner">
+    <article class="zircon-development-card reveal">
+      <h2>Esztétikai fejlődés</h2>
+      <p>A korábbi generációs cirkónium restaurációk gyakran túl opaknak, homogénnek vagy &quot;élettelennek&quot; hatottak.</p>
+      <p>A mai multilayer anyagok természetes dentin- és zománchatást, finom színátmenetet és megfelelő fényáteresztést biztosítanak, így az implantátumos restaurációk harmonikusan illeszkednek a természetes fogazathoz.</p>
+      <p>Az egyedi karakterizálás tovább növeli a restaurációk természetességét.</p>
+    </article>
+
+    <article class="zircon-development-card reveal reveal-delay-1">
+      <h2>Mechanikai fejlődés</h2>
+      <p>A monolitikus kialakítás egyik legnagyobb előnye, hogy megszűnik a hagyományos leplezett restaurációk egyik leggyakoribb problémája: a kerámialeplezés lepattanása.</p>
+      <p>A full contour cirkónium restaurációk nagy hajlítószilárdságuknak és homogén szerkezetüknek köszönhetően kiváló választást jelentenek implantátumos koronákhoz és kisebb hidakhoz is.</p>
+    </article>
+  </div>
+</section>
+
+<section class="zircon-practice">
+  <div class="zircon-practice-inner">
+    <div class="zircon-practice-intro reveal">
+      <h2>Mit jelent ez a rendelő számára?</h2>
+      <p>A modern monolitikus cirkónium restaurációk előnyei nemcsak a páciens számára jelentkeznek.</p>
+      <p>A digitális tervezés és a precíz gyártás támogatja a rendelő mindennapi munkáját is.</p>
     </div>
 
-    <div class="rehab-partnership-cards reveal" id="restauracios-kartyak">
-      <article class="rehab-options-card">
-        <h3>Restaurációs lehetőségek</h3>
-        <div class="rehab-card-rule" aria-hidden="true"></div>
-        <p>A klinikai igényeknek megfelelően többféle Full-Arch megoldást készítünk:</p>
-        <ul>
-          <li>monolitikus teljes cirkónium restaurációk,</li>
-          <li>titánbázisú (Ti-Base) restaurációk,</li>
-          <li>titán iBar-ra épülő cirkónium pótlások,</li>
-          <li>PMMA és egyéb ideiglenes restaurációk,</li>
-          <li>egyedi implantátumos hidak és teljes íves pótlások.</li>
-        </ul>
+    <div class="zircon-benefits">
+      <article class="zircon-benefit reveal">
+        <span class="zircon-benefit-number" aria-hidden="true">01</span>
+        <h3>Nagy pontosság</h3>
+        <p>A digitális workflow reprodukálható és kiszámítható eredményt biztosít.</p>
       </article>
 
-      <aside class="rehab-principle-card">
-        <p>Minden esetet az adott klinikai helyzethez, az implantátumrendszerhez és az esztétikai elvárásokhoz igazítunk.</p>
-        <div class="rehab-card-rule" aria-hidden="true"></div>
-      </aside>
-    </div>
-  </div>
-</section>
-
-<!-- MIÉRT VÁLASZTJÁK PARTNEREINK? -->
-<section class="partner-reasons" id="miert-valasztanak-partnereink">
-  <div class="partner-reasons-collage reveal">
-    <figure class="partner-collage-photo partner-collage-photo--cad">
-      <img src="assets/full-arch-partner-cad-design.webp" alt="Full-Arch restauráció digitális tervezése CAD rendszerben">
-      <figcaption class="partner-collage-statement">Digitális precizitás.<br>Esztétikai kiválóság.<span>Közös siker.</span></figcaption>
-    </figure>
-
-    <figure class="partner-collage-photo partner-collage-photo--milling">
-      <img src="assets/full-arch-partner-milling.webp" alt="Cirkónium restauráció precíziós CAD/CAM marása">
-    </figure>
-
-    <figure class="partner-collage-photo partner-collage-photo--printing">
-      <img src="assets/full-arch-partner-printing.webp" alt="Full-Arch restaurációk additív gyártása">
-    </figure>
-
-    <figure class="partner-collage-photo partner-collage-photo--ceramic">
-      <img src="assets/full-arch-partner-ceramic.webp" alt="Cirkónium restauráció kézi karakterizálása">
-    </figure>
-
-    <figure class="partner-collage-photo partner-collage-photo--collaboration">
-      <img src="assets/full-arch-partner-collaboration.webp" alt="Fogtechnikusok közös digitális esetértékelése">
-    </figure>
-
-    <div class="partner-collage-benefits" aria-label="Partneri előnyeink">
-      <div class="partner-collage-benefit">
-        <img src="assets/collage-tooth.svg" alt="" aria-hidden="true">
-        <span>Digitális<br>workflow</span>
-      </div>
-      <div class="partner-collage-benefit">
-        <img src="assets/collage-factory.svg" alt="" aria-hidden="true">
-        <span>Saját<br>gyártóközpont</span>
-      </div>
-      <div class="partner-collage-benefit">
-        <img src="assets/collage-diamond.svg" alt="" aria-hidden="true">
-        <span>Prémium<br>esztétika</span>
-      </div>
-      <div class="partner-collage-benefit">
-        <img src="assets/collage-team.svg" alt="" aria-hidden="true">
-        <span>Együtt.<br>Hatékonyan.</span>
-      </div>
-    </div>
-  </div>
-
-  <div class="partner-reasons-content reveal">
-    <h2>Miért választják<br>partnereink?</h2>
-
-    <div class="partner-reasons-list">
-      <article class="partner-reason-card">
-        <div class="partner-reason-icon">
-          <img src="assets/reason-precision.svg" alt="" aria-hidden="true">
-        </div>
-        <div class="partner-reason-divider" aria-hidden="true"></div>
-        <div class="partner-reason-copy">
-          <h3>Precíz digitális tervezés</h3>
-          <p>A digitális workflow lehetővé teszi a pontosabb tervezést és a reprodukálható gyártási folyamatot.</p>
-        </div>
+      <article class="zircon-benefit reveal reveal-delay-1">
+        <span class="zircon-benefit-number" aria-hidden="true">02</span>
+        <h3>Kevesebb chairside korrekció</h3>
+        <p>A pontos illeszkedés csökkentheti a rendelői igazítások szükségességét.</p>
       </article>
 
-      <article class="partner-reason-card">
-        <div class="partner-reason-icon">
-          <img src="assets/reason-manufacturing.svg" alt="" aria-hidden="true">
-        </div>
-        <div class="partner-reason-divider" aria-hidden="true"></div>
-        <div class="partner-reason-copy">
-          <h3>Nagy pontosságú gyártás</h3>
-          <p>A restaurációk saját CAD/CAM és additív gyártóközpontunkban készülnek, korszerű marási és 3D nyomtatási technológiákkal.</p>
-        </div>
+      <article class="zircon-benefit reveal">
+        <span class="zircon-benefit-number" aria-hidden="true">03</span>
+        <h3>Nagyobb hosszú távú biztonság</h3>
+        <p>A monolitikus kialakítás csökkenti a leplező kerámia sérülésének kockázatát.</p>
       </article>
 
-      <article class="partner-reason-card">
-        <div class="partner-reason-icon">
-          <img src="assets/reason-aesthetics.svg" alt="" aria-hidden="true">
-        </div>
-        <div class="partner-reason-divider" aria-hidden="true"></div>
-        <div class="partner-reason-copy">
-          <h3>Magas esztétikai színvonal</h3>
-          <p>A multilayer cirkónium anyagok, a természetes morfológia és az egyedi karakterizálás segítségével olyan restaurációkat készítünk, amelyek funkcionálisan és esztétikailag is magas színvonalat képviselnek.</p>
-        </div>
-      </article>
-
-      <article class="partner-reason-card">
-        <div class="partner-reason-icon">
-          <img src="assets/reason-partnership.svg" alt="" aria-hidden="true">
-        </div>
-        <div class="partner-reason-divider" aria-hidden="true"></div>
-        <div class="partner-reason-copy">
-          <h3>Kiszámítható együttműködés</h3>
-          <p>A jól felépített digitális munkafolyamat, az átlátható kommunikáció és a következetes minőségbiztosítás támogatja a rendelő hatékony működését.</p>
-        </div>
+      <article class="zircon-benefit reveal reveal-delay-1">
+        <span class="zircon-benefit-number" aria-hidden="true">04</span>
+        <h3>Hatékony digitális workflow</h3>
+        <p>A digitális adatok gyors feldolgozása egyszerűbb kommunikációt és jól követhető munkafolyamatot tesz lehetővé.</p>
       </article>
     </div>
-  </div>
-</section>
 
-<!-- MILYEN ESETEKBEN NYÚJTUNK MEGOLDÁST? -->
-<section class="fullarch-cases" id="milyen-esetekben">
-  <div class="fullarch-cases-inner">
-    <h2 class="fullarch-cases-heading reveal">Milyen esetekben<br>nyújtunk <span>megoldást?</span></h2>
-    <div class="fullarch-cases-ornament reveal" aria-hidden="true"><span></span></div>
-
-    <div class="fullarch-cases-layout">
-      <div class="fullarch-cases-side fullarch-cases-side--left">
-        <article class="fullarch-case-card reveal">
-          <div class="fullarch-case-icon">
-            <img src="assets/full-arch-case-all-on-4.webp" alt="" aria-hidden="true" loading="lazy">
-          </div>
-          <h3>All-on-4<br>rehabilitációk</h3>
-          <span class="fullarch-case-number" aria-hidden="true">01</span>
-        </article>
-
-        <article class="fullarch-case-card reveal reveal-delay-1">
-          <div class="fullarch-case-icon">
-            <img src="assets/full-arch-case-all-on-6.webp" alt="" aria-hidden="true" loading="lazy">
-          </div>
-          <h3>All-on-6<br>rehabilitációk</h3>
-          <span class="fullarch-case-number" aria-hidden="true">02</span>
-        </article>
-
-        <article class="fullarch-case-card reveal reveal-delay-2">
-          <div class="fullarch-case-icon">
-            <img src="assets/full-arch-case-complete-arch.webp" alt="" aria-hidden="true" loading="lazy">
-          </div>
-          <h3>teljes felső vagy alsó fogív rehabilitációja</h3>
-          <span class="fullarch-case-number" aria-hidden="true">03</span>
-        </article>
-      </div>
-
-      <figure class="fullarch-cases-visual reveal">
-        <img src="assets/full-arch-cases-center.webp" alt="Hat implantátumon rögzülő teljes íves fogpótlás robbantott nézete" loading="lazy">
-      </figure>
-
-      <div class="fullarch-cases-side fullarch-cases-side--right">
-        <article class="fullarch-case-card reveal">
-          <div class="fullarch-case-icon">
-            <img src="assets/full-arch-case-immediate-load.webp" alt="" aria-hidden="true" loading="lazy">
-          </div>
-          <h3>azonnali terheléses esetek</h3>
-          <span class="fullarch-case-number" aria-hidden="true">04</span>
-        </article>
-
-        <article class="fullarch-case-card reveal reveal-delay-1">
-          <div class="fullarch-case-icon">
-            <img src="assets/full-arch-case-restorations.webp" alt="" aria-hidden="true" loading="lazy">
-          </div>
-          <h3>ideiglenes és végleges Full-Arch restaurációk</h3>
-          <span class="fullarch-case-number" aria-hidden="true">05</span>
-        </article>
-
-        <article class="fullarch-case-card reveal reveal-delay-2">
-          <div class="fullarch-case-icon">
-            <img src="assets/full-arch-case-complex.webp" alt="" aria-hidden="true" loading="lazy">
-          </div>
-          <h3>komplex implantátumos rehabilitációk</h3>
-          <span class="fullarch-case-number" aria-hidden="true">06</span>
-        </article>
-      </div>
-    </div>
-
-    <div class="fullarch-cases-logo reveal">
-      <img src="logo-hero.png" alt="Bridge Dental" loading="lazy">
-    </div>
-  </div>
-</section>
-
-<!-- RESTAURÁCIÓS KONCEPCIÓ CTA -->
-<section class="restoration-concept" id="restauracios-koncepcio">
-  <div class="restoration-concept-inner">
-    <div class="restoration-concept-rule reveal" aria-hidden="true"></div>
-    <h2 class="reveal">A megfelelő<br><span>restaurációs koncepció</span><br>kiválasztása</h2>
-    <div class="restoration-concept-heading-rule reveal" aria-hidden="true"></div>
-
-    <p class="restoration-concept-copy reveal">Nem minden Full-Arch rehabilitáció igényel azonos megoldást. A restauráció típusát mindig az implantátumok helyzete, a biomechanikai követelmények, a rendelkezésre álló hely, a páciens esztétikai elvárásai és a hosszú távú fenntarthatóság alapján érdemes meghatározni.</p>
-
-    <p class="restoration-concept-copy reveal reveal-delay-1">Laborunk tapasztalata kiterjed a különböző Full-Arch koncepciókra – a monolitikus cirkónium restaurációktól a titán iBar-ra épülő prémium megoldásokig –, így partnereink számára az adott klinikai helyzethez legjobban illeszkedő restauráció kiválasztásában tudunk együttműködni.</p>
-
-    <div class="restoration-concept-cta-wrap reveal reveal-delay-2">
-      <a class="restoration-concept-cta" href="#kapcsolat">Együttműködés indítása</a>
-    </div>
-  </div>
-</section>
-
-<!-- CSAPAT NÉVJEGYEK -->
-<section class="section section-alt">
-  <div class="reveal">
-    <div class="section-label">A csapat</div>
-    <h2 style="font-family:'Montserrat',sans-serif;font-size:clamp(26px,2.5vw,38px);font-weight:800;letter-spacing:-1px;line-height:1.2;margin-bottom:12px;">Közvetlen kapcsolattartóink.</h2>
-    <p style="font-size:16px;color:var(--warm-gray);line-height:1.75;">Közvetlen kapcsolat, gyors válaszok — mindig elérhető kollégákkal.</p>
-  </div>
-  <div class="contact-grid">
-    <div class="contact-card reveal">
-      <div class="contact-avatar"><img src="csapat_denes.jpg" alt="Császár Dénes"></div>
-      <div class="contact-name">Császár Dénes</div>
-      <div class="contact-role">Fogtechnikus mester, ügyvezető</div>
-      <a href="tel:+36703966655" class="contact-phone">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.07 12 19.79 19.79 0 0 1 1 3.18C1 2.09 1.9 1 3 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16z"/></svg>
-        +36 70 396 6655
-      </a>
-    </div>
-    <div class="contact-card reveal reveal-delay-1">
-      <div class="contact-avatar" style="display:flex;align-items:center;justify-content:center;background:#ede8e1;"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#b5a99c" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
-      <div class="contact-name">Kinál Attila</div>
-      <div class="contact-role">Fogtechnikus mester, szakmai vezető</div>
-    </div>
-    <div class="contact-card reveal reveal-delay-2">
-      <div class="contact-avatar"><img src="csapat_hedi.jpg" alt="Demeter Hédi"></div>
-      <div class="contact-name">Demeter Hédi</div>
-      <div class="contact-role">Irodavezető</div>
-      <a href="tel:+36703966654" class="contact-phone">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.07 12 19.79 19.79 0 0 1 1 3.18C1 2.09 1.9 1 3 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16z"/></svg>
-        +36 70 396 6654
-      </a>
-    </div>
-    <div class="contact-card reveal reveal-delay-3">
-      <div class="contact-avatar" style="display:flex;align-items:center;justify-content:center;background:#ede8e1;"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#b5a99c" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
-      <div class="contact-name">Péter Dóra</div>
-      <div class="contact-role">Projektmenedzser</div>
-    </div>
-    <div class="contact-card reveal reveal-delay-4">
-      <div class="contact-avatar" style="display:flex;align-items:center;justify-content:center;background:#ede8e1;"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#b5a99c" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
-      <div class="contact-name">Urbán Vanda</div>
-      <div class="contact-role">Projektmenedzser</div>
-    </div>
+    <p class="zircon-conclusion reveal">A korszerű multilayer monolitikus cirkónium restaurációk számos klinikai helyzetben új lehetőségeket kínálnak az esztétika, a mechanikai stabilitás és a hosszú távú megbízhatóság területén.</p>
   </div>
 </section>
 
@@ -2932,7 +3121,7 @@
     <div class="pilot-content">
       <div class="section-label">Pilot együttműködés</div>
       <h2>Próbáljon ki minket<br>3-5 komplex esettel</h2>
-      <p>A pilot egy 8 hetes, kockázatcsökkentett próbaidőszak bonyolultabb implantátumos munkákra. A közös próba-együttműködés során láthatja, hogyan kommunikálunk, hogyan tervezünk, milyen minőségben gyártunk, és hogyan kezeljük a felmerülő kérdéseket.</p>
+      <p>A pilot egy 8 hetes, kockázatcsökkentett próbaidőszak implantátumos cirkónium restaurációkra. A közös próba-együttműködés során láthatja, hogyan kommunikálunk, hogyan tervezünk, milyen minőségben gyártunk, és hogyan kezeljük a felmerülő kérdéseket.</p>
       <div class="pilot-features">
         <div class="pilot-feature"><span class="pilot-feature-dot"></span>Német nyelvű szakmai egyeztetés dedikált fogtechnikussal</div>
         <div class="pilot-feature"><span class="pilot-feature-dot"></span>Online digitális tervezési konzultáció</div>
@@ -2952,7 +3141,7 @@
     <div class="form-intro">
       <div class="section-label">Kapcsolatfelvétel</div>
       <h2>Vegye fel velünk a kapcsolatot.</h2>
-      <p>Írjon nekünk a Full-Arch Implantátumos Rehabilitációk (All-on-X) szolgáltatásról — munkatársunk hamarosan felveszi Önnel a kapcsolatot.</p>
+      <p>Írjon nekünk az Implantátumos cirkónium restaurációk szolgáltatásról — munkatársunk hamarosan felveszi Önnel a kapcsolatot.</p>
       <div class="form-contact-items">
         <div class="form-contact-item">
           <div class="form-contact-icon">
@@ -3000,8 +3189,8 @@
         <div class="form-group">
           <label for="targy">Miben segíthetünk?</label>
           <select id="targy" name="targy">
-            <option value="full-arch-erdeklodes" selected>Érdeklődés a Full-Arch Implantátumos Rehabilitációk szolgáltatásról</option>
-            <option value="full-arch-pilot">Full-Arch pilot együttműködés</option>
+            <option value="implantatumos-cirkonium-erdeklodes" selected>Érdeklődés az Implantátumos cirkónium restaurációk szolgáltatásról</option>
+            <option value="implantatumos-cirkonium-pilot">Implantátumos cirkónium pilot együttműködés</option>
             <option value="egyeb">Egyéb</option>
           </select>
         </div>
