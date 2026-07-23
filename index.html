@@ -1108,12 +1108,19 @@
       cursor: pointer;
       display: flex;
       flex-direction: column;
+      color: inherit;
+      text-decoration: none;
     }
 
     .service-card:hover {
       border-color: var(--coral);
       transform: translateY(-4px);
       box-shadow: 0 16px 48px rgba(224, 90, 43, 0.12);
+    }
+
+    .service-card:focus-visible {
+      outline: 3px solid rgba(224, 90, 43, 0.45);
+      outline-offset: 4px;
     }
 
     .service-card-img {
@@ -1200,7 +1207,7 @@
       transition: gap 0.2s;
     }
 
-    .service-link:hover { gap: 10px; }
+    .service-card:hover .service-link { gap: 10px; }
 
     .service-card.featured {
       background: var(--charcoal);
@@ -4009,7 +4016,7 @@
   <p class="section-desc">Szakterületeink a komplex implantológiától a digitális esztétikáig.</p>
 
   <div class="services-grid">
-    <div class="service-card featured reveal">
+    <a class="service-card featured reveal" href="full-arch-implantatumos-rehabilitaciok.html">
       <div class="service-card-img">
         <img src="full-arch-implantatumos-rehabilitacio-all-on-x.webp" alt="Full-Arch implantátumos rehabilitáció All-on-X fogtechnikai modell ellenőrzése">
       </div>
@@ -4018,11 +4025,11 @@
         <div class="service-number">01</div>
         <h3>Full-Arch Implantátumos Rehabilitációk (All-on-X)</h3>
         <p>A Bridge Dental Full-Arch megoldásai digitális tervezéssel és precíz laborháttérrel támogatják a teljes íves rehabilitációkat, a kiszámítható, esztétikus és stabil végeredmény érdekében.</p>
-        <a class="service-link" href="full-arch-implantatumos-rehabilitaciok.html" style="color:var(--coral-light);">Részletek →</a>
+        <span class="service-link" style="color:var(--coral-light);">Részletek →</span>
       </div>
-    </div>
+    </a>
 
-    <div class="service-card reveal reveal-delay-1">
+    <a class="service-card reveal reveal-delay-1" href="implantatumos-cirkonium-restauraciok.html">
       <div class="service-card-img">
         <img src="szolgaltatasok_fem_es_cirkonvaz.jpg" alt="Implantátumos cirkónium restaurációk precíziós kézi megmunkálása">
       </div>
@@ -4030,11 +4037,11 @@
         <div class="service-number">02</div>
         <h3>Implantátumos cirkónium restaurációk</h3>
         <p>A Bridge Dental implantátumos cirkónium restaurációi digitális precizitással és korszerű multilayer anyagokkal támogatják a rendelők munkáját. Monolitikus full contour cirkónium megoldásaink természetes esztétikát, pontos illeszkedést és hosszú távon stabil végeredményt biztosítanak.</p>
-        <a class="service-link" href="implantatumos-cirkonium-restauraciok.html">Részletek →</a>
+        <span class="service-link">Részletek →</span>
       </div>
-    </div>
+    </a>
 
-    <div class="service-card reveal reveal-delay-2">
+    <a class="service-card reveal reveal-delay-2" href="digitalis-fogsorok.html">
       <div class="service-card-img">
         <img src="digitalis-fogsorok-truedent-labor-munka.webp" alt="Digitális fogsorok TrueDent labor munka biokompatibilis fogsorral">
       </div>
@@ -4043,11 +4050,11 @@
         <div class="service-number">03</div>
         <h3>Digitális fogsorok — TrueDent</h3>
         <p>A digitális fogsorok a modern CAD/CAM tervezés és a precíz 3D nyomtatás előnyeit ötvözik a hagyományos fogtechnikai szakértelemmel. Ennek köszönhetően kiszámítható, esztétikus és hosszú távon is megbízható kivehető fogpótlásokat készítünk.</p>
-        <a class="service-link" href="digitalis-fogsorok.html">Részletek →</a>
+        <span class="service-link">Részletek →</span>
       </div>
-    </div>
+    </a>
 
-    <div class="service-card reveal">
+    <a class="service-card reveal" href="digitalis-tervezes.html">
       <div class="service-card-img">
         <img src="szolgaltatasok_virtualis_tervezes.jpg" alt="Digitális workflow monitoron futó tervezési folyamattal">
       </div>
@@ -4056,9 +4063,9 @@
         <h3>Digitális workflow</h3>
         <p>Laborunkban a digitális workflow értéke a pontos információcserében, az átgondolt tervezésben és a rendelő-labor összehangolt együttműködésében rejlik. Minden lépés azt szolgálja, hogy a restaurációk kiszámíthatóan, precízen és magas esztétikai színvonalon készüljenek el.</p>
       </div>
-    </div>
+    </a>
 
-    <div class="service-card reveal reveal-delay-1">
+    <a class="service-card reveal reveal-delay-1" href="esztetikai-keramia.html">
       <div class="service-card-img">
         <img src="esztetikai-keramia-potlasok-labor-ellenorzes.webp" alt="Esztétikai kerámiapótlások precíziós labor ellenőrzése nagyítóval">
       </div>
@@ -4066,11 +4073,11 @@
         <div class="service-number">05</div>
         <h3>Esztétikai kerámiapótlások</h3>
         <p>Az esztétikus kerámia pótlások a természetes megjelenést, a precíz illeszkedést és a hosszú távú megbízhatóságot ötvözik. A digitális workflow, a prémium kerámiaanyagok és az egyedi karakterizálás lehetővé teszik, hogy a restaurációk harmonikusan illeszkedjenek a természetes fogazathoz.</p>
-        <a class="service-link" href="esztetikai-keramia.html">Részletek →</a>
+        <span class="service-link">Részletek →</span>
       </div>
-    </div>
+    </a>
 
-    <div class="service-card reveal reveal-delay-2">
+    <a class="service-card reveal reveal-delay-2" href="digitalis-fogtechnika.html">
       <div class="service-card-img">
         <img src="szolgaltatasok_fem_es_cirkonvaz.jpg" alt="CAD/CAM gyártás digitális fogtechnikai munkával">
       </div>
@@ -4079,7 +4086,7 @@
         <h3>CAD/CAM gyártás</h3>
         <p>A nagy pontosságú CAD/CAM technológia lehetővé teszi a digitálisan tervezett restaurációk precíz és reprodukálható gyártását. A kontrollált munkafolyamat támogatja a stabil minőséget, a pontos illeszkedést és a kiszámítható eredményeket.</p>
       </div>
-    </div>
+    </a>
   </div>
   </div>
 </section>
