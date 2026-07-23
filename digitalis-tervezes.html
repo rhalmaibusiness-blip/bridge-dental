@@ -491,34 +491,142 @@
 
     .intro-section {
       background:
-        radial-gradient(circle at 92% 18%, rgba(224,90,43,0.1), transparent 28%),
+        radial-gradient(circle at 88% 15%, rgba(224,90,43,0.12), transparent 27%),
+        radial-gradient(circle at 8% 88%, rgba(224,90,43,0.06), transparent 24%),
         linear-gradient(140deg, #fbf6ef, var(--paper));
     }
 
     .intro-grid {
+      position: relative;
       display: grid;
-      grid-template-columns: minmax(0, 1.18fr) minmax(330px, 0.82fr);
-      gap: clamp(48px, 8vw, 112px);
-      align-items: center;
+      grid-template-columns: minmax(0, 1.3fr) minmax(330px, 0.7fr);
+      gap: 16px;
+      align-items: stretch;
+      padding: 16px;
+      border: 1px solid rgba(113,105,96,0.15);
+      border-radius: 38px;
+      background: rgba(255,253,249,0.78);
+      box-shadow: 0 30px 90px rgba(71,48,32,0.1);
+      isolation: isolate;
+    }
+
+    .intro-grid::before {
+      content: '';
+      position: absolute;
+      top: -52px;
+      right: -58px;
+      width: 174px;
+      height: 174px;
+      border: 1px solid rgba(224,90,43,0.18);
+      border-radius: 50%;
+      box-shadow:
+        0 0 0 22px rgba(224,90,43,0.035),
+        0 0 0 44px rgba(224,90,43,0.02);
+      z-index: -1;
+    }
+
+    .intro-statement {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-height: 430px;
+      padding: clamp(42px, 5vw, 72px);
+      border-radius: 27px;
+      background:
+        linear-gradient(135deg, rgba(255,255,255,0.96), rgba(250,245,238,0.88));
+      overflow: hidden;
+    }
+
+    .intro-statement::before {
+      content: '';
+      width: 52px;
+      height: 3px;
+      margin-bottom: 32px;
+      border-radius: 99px;
+      background: var(--coral);
+    }
+
+    .intro-statement::after {
+      content: '';
+      position: absolute;
+      right: -72px;
+      bottom: -96px;
+      width: 250px;
+      height: 250px;
+      border: 1px solid rgba(224,90,43,0.12);
+      border-radius: 50%;
     }
 
     .intro-lead {
-      padding-left: 30px;
-      border-left: 3px solid var(--coral);
       font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: clamp(31px, 3.5vw, 48px);
+      font-size: clamp(28px, 2.45vw, 38px);
       font-weight: 600;
-      line-height: 1.2;
-      letter-spacing: -0.7px;
+      line-height: 1.15;
+      letter-spacing: -0.45px;
       color: #241e1a;
+      text-wrap: balance;
+    }
+
+    .intro-emphasis {
+      max-width: 850px;
+      margin-top: 26px;
+      padding-top: 26px;
+      border-top: 1px solid rgba(224,90,43,0.2);
+      color: var(--warm-gray);
+      font-size: 17px;
+      line-height: 1.75;
     }
 
     .intro-note {
-      padding: 38px 36px;
-      border: 1px solid rgba(224,90,43,0.18);
-      border-radius: 28px;
-      background: rgba(255,255,255,0.84);
-      box-shadow: 0 24px 65px rgba(79, 49, 29, 0.09);
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      min-height: 430px;
+      padding: 48px 42px;
+      border: 1px solid rgba(242,121,63,0.25);
+      border-radius: 27px;
+      color: rgba(255,250,244,0.82);
+      background:
+        radial-gradient(circle at 85% 14%, rgba(224,90,43,0.26), transparent 32%),
+        linear-gradient(145deg, #28211d, #151210);
+      box-shadow: 0 24px 65px rgba(45,30,20,0.16);
+      overflow: hidden;
+    }
+
+    .intro-note::before {
+      content: '';
+      position: absolute;
+      top: 40px;
+      left: 42px;
+      width: 56px;
+      height: 56px;
+      border: 1px solid rgba(242,121,63,0.55);
+      border-radius: 50%;
+      background:
+        radial-gradient(circle, var(--coral-light) 0 3px, transparent 4px),
+        linear-gradient(90deg, transparent 48%, rgba(242,121,63,0.55) 49% 51%, transparent 52%),
+        linear-gradient(transparent 48%, rgba(242,121,63,0.55) 49% 51%, transparent 52%);
+    }
+
+    .intro-note::after {
+      content: '';
+      position: absolute;
+      top: 67px;
+      left: 98px;
+      right: 42px;
+      height: 1px;
+      background: linear-gradient(90deg, rgba(242,121,63,0.5), transparent);
+    }
+
+    .intro-note p {
+      position: relative;
+      z-index: 1;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: clamp(24px, 2.1vw, 31px);
+      font-weight: 600;
+      line-height: 1.28;
+      letter-spacing: -0.25px;
     }
 
     .diagnosis-section {
@@ -1227,18 +1335,54 @@
       }
 
       .intro-grid {
-        gap: 36px;
+        gap: 12px;
+        padding: 10px;
+        border-radius: 27px;
+      }
+
+      .intro-statement {
+        min-height: 0;
+        padding: 40px 28px 42px;
+        border-radius: 20px;
+      }
+
+      .intro-statement::before {
+        margin-bottom: 26px;
       }
 
       .intro-lead {
-        padding-left: 22px;
-        font-size: 29px;
-        line-height: 1.24;
+        font-size: 30px;
+        line-height: 1.16;
+      }
+
+      .intro-emphasis {
+        margin-top: 22px;
+        padding-top: 22px;
+        font-size: 15px;
+        line-height: 1.7;
       }
 
       .intro-note {
-        padding: 30px 26px;
-        border-radius: 22px;
+        min-height: 300px;
+        padding: 34px 28px;
+        border-radius: 20px;
+      }
+
+      .intro-note::before {
+        top: 30px;
+        left: 28px;
+        width: 48px;
+        height: 48px;
+      }
+
+      .intro-note::after {
+        top: 53px;
+        left: 76px;
+        right: 28px;
+      }
+
+      .intro-note p {
+        font-size: 25px;
       }
 
       .diagnosis-grid,
@@ -1483,7 +1627,10 @@
 <main>
   <section class="section intro-section">
     <div class="section-inner intro-grid">
-      <p class="intro-lead reveal">A modern digitális fogászat alapja nem csupán a legkorszerűbb technológia, hanem a fogorvos és a fogtechnikus közötti pontos információcsere. Hiszünk abban, hogy a legjobb restaurációk közös gondolkodásból születnek, ahol a diagnózis, a tervezés és a gyártás egyetlen, összehangolt folyamatot alkot.</p>
+      <div class="intro-statement reveal">
+        <p class="intro-lead">A modern digitális fogászat alapja nem csupán a legkorszerűbb technológia, hanem a fogorvos és a fogtechnikus közötti pontos információcsere.</p>
+        <p class="intro-emphasis">Hiszünk abban, hogy a legjobb restaurációk közös gondolkodásból születnek, ahol a diagnózis, a tervezés és a gyártás egyetlen, összehangolt folyamatot alkot.</p>
+      </div>
       <div class="intro-note body-copy reveal reveal-delay-1">
         <p>Ez a szemlélet teszi lehetővé a kiszámíthatóbb kezeléseket, a pontosabb restaurációkat és a hosszú távú szakmai partnerséget.</p>
       </div>
