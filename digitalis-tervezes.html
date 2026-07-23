@@ -581,47 +581,51 @@
     .intro-note {
       position: relative;
       display: flex;
-      align-items: flex-end;
+      align-items: center;
       min-height: 430px;
-      padding: 48px 42px;
+      padding: 72px 46px 54px;
       border: 1px solid rgba(242,121,63,0.25);
       border-radius: 27px;
       color: rgba(255,250,244,0.82);
       background:
-        radial-gradient(circle at 85% 14%, rgba(224,90,43,0.26), transparent 32%),
+        radial-gradient(circle at 88% 8%, rgba(224,90,43,0.22), transparent 34%),
+        radial-gradient(circle at 8% 96%, rgba(242,121,63,0.1), transparent 30%),
         linear-gradient(145deg, #28211d, #151210);
       box-shadow: 0 24px 65px rgba(45,30,20,0.16);
       overflow: hidden;
     }
 
     .intro-note::before {
-      content: '';
+      content: '“';
       position: absolute;
-      top: 40px;
-      left: 42px;
-      width: 56px;
-      height: 56px;
-      border: 1px solid rgba(242,121,63,0.55);
-      border-radius: 50%;
-      background:
-        radial-gradient(circle, var(--coral-light) 0 3px, transparent 4px),
-        linear-gradient(90deg, transparent 48%, rgba(242,121,63,0.55) 49% 51%, transparent 52%),
-        linear-gradient(transparent 48%, rgba(242,121,63,0.55) 49% 51%, transparent 52%);
+      top: 18px;
+      left: 38px;
+      color: rgba(242,121,63,0.72);
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 108px;
+      font-weight: 600;
+      line-height: 1;
     }
 
     .intro-note::after {
       content: '';
       position: absolute;
-      top: 67px;
-      left: 98px;
-      right: 42px;
-      height: 1px;
-      background: linear-gradient(90deg, rgba(242,121,63,0.5), transparent);
+      right: -72px;
+      bottom: -88px;
+      width: 220px;
+      height: 220px;
+      border: 1px solid rgba(242,121,63,0.18);
+      border-radius: 50%;
+      box-shadow:
+        0 0 0 28px rgba(242,121,63,0.035),
+        0 0 0 56px rgba(242,121,63,0.018);
     }
 
     .intro-note p {
       position: relative;
       z-index: 1;
+      padding-left: 25px;
+      border-left: 2px solid rgba(242,121,63,0.68);
       font-family: 'Cormorant Garamond', Georgia, serif;
       font-size: clamp(24px, 2.1vw, 31px);
       font-weight: 600;
@@ -1256,6 +1260,10 @@
         grid-template-columns: 1fr;
       }
 
+      .intro-note {
+        min-height: 320px;
+      }
+
       .diagnosis-graphic {
         min-height: 390px;
       }
@@ -1387,25 +1395,24 @@
       }
 
       .intro-note {
-        min-height: 300px;
-        padding: 34px 28px;
+        min-height: 0;
+        padding: 84px 28px 42px;
         border-radius: 20px;
       }
 
       .intro-note::before {
-        top: 30px;
-        left: 28px;
-        width: 48px;
-        height: 48px;
+        top: 14px;
+        left: 24px;
+        font-size: 92px;
       }
 
       .intro-note::after {
-        top: 53px;
-        left: 76px;
-        right: 28px;
+        right: -88px;
+        bottom: -112px;
       }
 
       .intro-note p {
+        padding-left: 20px;
         font-size: 25px;
       }
 
