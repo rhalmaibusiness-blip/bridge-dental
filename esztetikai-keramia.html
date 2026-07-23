@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Esztétikai kerámia pótlások – Bridge Dental | e.max és multilayer full cirkon</title>
+  <title>Esztétikus kerámia pótlások – Bridge Dental | e.max és multilayer full cirkon</title>
   <meta name="description" content="Esztétikai kerámia pótlások természetes fogakra: Ivoclar e.max préskerámia, multilayer full cirkon és digitális esztétikai tervezés.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&amp;family=Open+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -972,234 +972,1091 @@
       .contact-form { padding: 32px 24px; }
       footer, .footer-bottom { grid-template-columns: 1fr; padding: 40px 20px; gap: 32px; }
     }
+
+    /* ── ESZTÉTIKUS KERÁMIA – ÚJ SZOLGÁLTATÁSOLDAL ── */
+    .service-hero {
+      position: relative;
+      min-height: 720px;
+      overflow: hidden;
+      color: #f7f1eb;
+      background:
+        radial-gradient(circle at 18% 72%, rgba(224, 90, 43, 0.16), transparent 32%),
+        #0d0a08;
+    }
+
+    .service-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background-image: radial-gradient(rgba(242, 121, 63, 0.22) 1px, transparent 1px);
+      background-size: 18px 18px;
+      opacity: 0.12;
+      mask-image: linear-gradient(90deg, #000, transparent 48%);
+    }
+
+    .hero-nav-main {
+      position: relative;
+      z-index: 40;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 30px 60px;
+      animation: ceramicNavIn 0.8s ease both;
+    }
+
+    @keyframes ceramicNavIn {
+      from { opacity: 0; transform: translateY(-16px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero-brand {
+      position: relative;
+      z-index: 50;
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+    }
+
+    .hero-brand img {
+      display: block;
+      width: auto;
+      height: 44px;
+      filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.4));
+    }
+
+    .hero-brand-fallback {
+      display: none;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+
+    .hero-brand-fallback .b { color: #f2793f; }
+    .hero-brand-fallback .d { color: #d3202f; }
+
+    .hero-menu {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .hero-menu > li {
+      display: flex;
+      align-items: center;
+    }
+
+    .hero-menu a {
+      position: relative;
+      padding-bottom: 6px;
+      color: #f5efe9;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .hero-menu a::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background: #e8502e;
+      transition: width 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .hero-menu a:hover,
+    .hero-menu a[aria-current='page'] { color: #f2793f; }
+    .hero-menu a:hover::after { width: 100%; }
+
+    .hero-dropdown { position: relative; }
+    .hero-dropdown > a { display: flex; align-items: center; gap: 7px; }
+    .hero-dropdown > a svg {
+      position: relative;
+      top: 1px;
+      display: block;
+      width: 12px;
+      height: 12px;
+      transition: transform 0.25s ease;
+    }
+    .hero-dropdown:hover > a svg { transform: rotate(180deg); }
+
+    .hero-dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      z-index: 100;
+      min-width: 320px;
+      margin: 0;
+      padding: 14px 0 0;
+      list-style: none;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateX(-50%);
+      transition: opacity 0.2s ease, visibility 0.2s ease;
+    }
+
+    .hero-dropdown:hover .hero-dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .hero-dropdown-panel {
+      padding: 10px;
+      background: rgba(13, 10, 8, 0.96);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px;
+      box-shadow: 0 18px 46px rgba(0,0,0,0.35);
+      backdrop-filter: blur(10px);
+    }
+
+    .hero-dropdown-panel > ul { margin: 0; padding: 0; list-style: none; }
+    .hero-dropdown-menu li + li { margin-top: 2px; }
+    .hero-dropdown-menu li a {
+      display: block;
+      padding: 11px 14px;
+      color: #f5efe9;
+      border-radius: 10px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      white-space: nowrap;
+      transition: background 0.18s ease, color 0.18s ease;
+    }
+    .hero-dropdown-menu li a::after { display: none; }
+    .hero-dropdown-menu li a:hover,
+    .hero-dropdown-menu li a[aria-current='page'] {
+      color: #f2793f;
+      background: rgba(242, 121, 63, 0.12);
+    }
+
+    .hero-burger {
+      position: relative;
+      z-index: 50;
+      display: none;
+      width: 44px;
+      height: 44px;
+      padding: 0;
+      background: none;
+      border: 0;
+      cursor: pointer;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    .hero-burger span {
+      display: block;
+      width: 26px;
+      height: 2.5px;
+      border-radius: 2px;
+      background: #f5efe9;
+      transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.25s ease;
+    }
+
+    .hero-burger.open span:nth-child(1) { transform: translateY(8.5px) rotate(45deg); }
+    .hero-burger.open span:nth-child(2) { opacity: 0; }
+    .hero-burger.open span:nth-child(3) { transform: translateY(-8.5px) rotate(-45deg); }
+
+    .hero-mobile-menu {
+      position: fixed;
+      inset: 0;
+      z-index: 30;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 90px 24px 32px;
+      overflow-y: auto;
+      background: rgba(13, 10, 8, 0.98);
+      backdrop-filter: blur(8px);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.4s ease, visibility 0.4s ease;
+    }
+
+    .hero-mobile-menu.open { opacity: 1; visibility: visible; }
+    .hero-mobile-menu a {
+      color: #f5efe9;
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(18px, 5vw, 26px);
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-align: center;
+      text-decoration: none;
+    }
+    .hero-mobile-group { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+    .hero-mobile-submenu { display: flex; flex-direction: column; align-items: center; gap: 3px; }
+    .hero-mobile-submenu a {
+      padding: 5px 0;
+      color: rgba(245,239,233,0.72);
+      font-family: 'Open Sans', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+    .hero-mobile-submenu a[aria-current='page'] { color: #f2793f; }
+
+    .service-hero-body {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: minmax(0, 48%) minmax(0, 52%);
+      min-height: 616px;
+    }
+
+    .service-hero-copy {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 54px clamp(42px, 6vw, 96px) 92px 60px;
+      animation: ceramicCopyIn 0.9s 0.18s cubic-bezier(0.22, 1, 0.36, 1) both;
+    }
+
+    @keyframes ceramicCopyIn {
+      from { opacity: 0; transform: translateY(28px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .service-hero .breadcrumb {
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-bottom: 30px;
+    }
+
+    .service-hero .breadcrumb a,
+    .service-hero .breadcrumb-current,
+    .service-hero .breadcrumb-sep {
+      font-size: 12px;
+      letter-spacing: 0.45px;
+    }
+
+    .service-hero .breadcrumb a { color: rgba(245, 239, 233, 0.62); }
+    .service-hero .breadcrumb a:hover { color: #f2793f; }
+    .service-hero .breadcrumb-sep { color: rgba(245, 239, 233, 0.28); }
+    .service-hero .breadcrumb-current { color: #f2793f; font-weight: 600; }
+
+    .service-hero-title {
+      max-width: 720px;
+      margin: 0;
+      color: #f7f1eb;
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(38px, 4.25vw, 64px);
+      font-weight: 800;
+      line-height: 1.08;
+      letter-spacing: -2.2px;
+      text-wrap: balance;
+    }
+
+    .service-hero-title::after {
+      content: '';
+      display: block;
+      width: 64px;
+      height: 3px;
+      margin-top: 30px;
+      border-radius: 99px;
+      background: linear-gradient(90deg, #e8502e, #f2793f);
+    }
+
+    .service-hero-subtitle {
+      max-width: 640px;
+      margin-top: 28px;
+      color: rgba(245, 239, 233, 0.72);
+      font-size: clamp(16px, 1.35vw, 19px);
+      line-height: 1.72;
+    }
+
+    .service-hero-media {
+      position: relative;
+      min-height: 616px;
+      overflow: hidden;
+      background: #211813;
+    }
+
+    .service-hero-media::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      pointer-events: none;
+      background:
+        linear-gradient(90deg, #0d0a08 0%, rgba(13,10,8,0.8) 8%, rgba(13,10,8,0.18) 24%, transparent 42%),
+        linear-gradient(0deg, rgba(13,10,8,0.38) 0%, transparent 48%);
+    }
+
+    .service-hero-media img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      min-height: 616px;
+      object-fit: cover;
+      object-position: center;
+      animation: ceramicImageIn 1.3s ease both, ceramicImageDrift 18s 1.3s ease-in-out infinite alternate;
+    }
+
+    @keyframes ceramicImageIn {
+      from { opacity: 0; transform: scale(1.05); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    @keyframes ceramicImageDrift {
+      from { transform: scale(1); }
+      to { transform: scale(1.045); }
+    }
+
+    .cer-section {
+      position: relative;
+      padding: clamp(72px, 8vw, 122px) clamp(24px, 5vw, 72px);
+      overflow: hidden;
+    }
+
+    .cer-inner {
+      position: relative;
+      z-index: 2;
+      width: min(100%, 1240px);
+      margin: 0 auto;
+    }
+
+    .cer-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(420px, 1.1fr);
+      align-items: center;
+      gap: clamp(52px, 7vw, 104px);
+    }
+
+    .cer-grid--reverse {
+      grid-template-columns: minmax(420px, 1.06fr) minmax(0, 0.94fr);
+    }
+
+    .cer-copy h2,
+    .cer-heading {
+      margin: 0;
+      color: #211a16;
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(34px, 4vw, 58px);
+      font-weight: 800;
+      line-height: 1.06;
+      letter-spacing: -2px;
+      text-wrap: balance;
+    }
+
+    .cer-copy h2::after,
+    .cer-heading::after {
+      content: '';
+      display: block;
+      width: 58px;
+      height: 3px;
+      margin: 28px 0 30px;
+      border-radius: 99px;
+      background: var(--coral);
+    }
+
+    .cer-copy p,
+    .cer-lead {
+      color: #6f665e;
+      font-size: clamp(15px, 1.25vw, 17px);
+      line-height: 1.82;
+    }
+
+    .cer-copy p + p { margin-top: 22px; }
+
+    .cer-photo-shell {
+      position: relative;
+      min-height: 520px;
+      padding: 24px 0 0 24px;
+    }
+
+    .cer-photo-shell::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: calc(100% - 34px);
+      height: calc(100% - 34px);
+      border: 1px solid rgba(224, 90, 43, 0.62);
+      border-radius: 110px 24px 110px 24px;
+    }
+
+    .cer-photo-shell::after {
+      content: '';
+      position: absolute;
+      right: -24px;
+      bottom: -20px;
+      width: 46%;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(224,90,43,0.18), rgba(224,90,43,0) 68%);
+      pointer-events: none;
+    }
+
+    .cer-photo-shell img {
+      position: relative;
+      z-index: 1;
+      display: block;
+      width: 100%;
+      height: 520px;
+      object-fit: cover;
+      border-radius: 110px 24px 110px 24px;
+      box-shadow: 0 28px 70px rgba(58, 39, 28, 0.16);
+    }
+
+    .cer-intro {
+      background:
+        radial-gradient(circle at 8% 12%, rgba(224,90,43,0.08), transparent 24%),
+        #fbf8f3;
+    }
+
+    .cer-materials {
+      color: #f6eee7;
+      background:
+        radial-gradient(circle at 86% 24%, rgba(224,90,43,0.2), transparent 30%),
+        linear-gradient(145deg, #17110e, #251b16);
+    }
+
+    .cer-materials::before {
+      content: '';
+      position: absolute;
+      width: 520px;
+      height: 520px;
+      right: -210px;
+      bottom: -260px;
+      border: 1px solid rgba(237, 118, 70, 0.22);
+      border-radius: 50%;
+      box-shadow: 0 0 0 52px rgba(237, 118, 70, 0.035), 0 0 0 104px rgba(237, 118, 70, 0.025);
+    }
+
+    .cer-materials .cer-heading,
+    .cer-materials .cer-copy h2 { color: #f7f1eb; }
+    .cer-materials .cer-copy p,
+    .cer-materials .cer-lead { color: rgba(247,241,235,0.7); }
+
+    .cer-material-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 0.82fr) minmax(470px, 1.18fr);
+      gap: clamp(50px, 7vw, 104px);
+      align-items: start;
+    }
+
+    .cer-material-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin: 28px 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .cer-material-list li {
+      position: relative;
+      display: flex;
+      align-items: center;
+      min-height: 92px;
+      padding: 22px 22px 22px 54px;
+      color: #f7f1eb;
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 18px;
+      background: rgba(255,255,255,0.045);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 1.45;
+      backdrop-filter: blur(8px);
+    }
+
+    .cer-material-list li::before {
+      content: '';
+      position: absolute;
+      left: 22px;
+      width: 10px;
+      height: 10px;
+      border: 2px solid #f07842;
+      border-radius: 50%;
+      box-shadow: 0 0 0 5px rgba(240,120,66,0.1);
+    }
+
+    .cer-material-list li:last-child {
+      grid-column: span 2;
+    }
+
+    .cer-material-foot {
+      padding: 24px 26px;
+      border-left: 3px solid var(--coral);
+      border-radius: 0 16px 16px 0;
+      background: rgba(255,255,255,0.05);
+    }
+
+    .cer-digital {
+      background:
+        linear-gradient(120deg, rgba(224,90,43,0.04), transparent 44%),
+        #f4ede5;
+    }
+
+    .cer-digital .cer-photo-shell::before {
+      border-radius: 24px 110px 24px 110px;
+    }
+
+    .cer-digital .cer-photo-shell img {
+      border-radius: 24px 110px 24px 110px;
+    }
+
+    .cer-evolution {
+      background: #fffdf9;
+    }
+
+    .cer-evolution-panel {
+      position: relative;
+      display: grid;
+      grid-template-columns: minmax(320px, 0.8fr) minmax(0, 1.2fr);
+      gap: clamp(42px, 7vw, 96px);
+      padding: clamp(42px, 6vw, 80px);
+      border: 1px solid #e7d9cb;
+      border-radius: 34px;
+      background:
+        radial-gradient(circle at 92% 10%, rgba(224,90,43,0.13), transparent 28%),
+        #faf5ef;
+      box-shadow: 0 24px 60px rgba(64,42,27,0.08);
+    }
+
+    .cer-evolution-panel::before {
+      content: '';
+      position: absolute;
+      top: 28px;
+      right: 30px;
+      width: 112px;
+      height: 112px;
+      border: 1px solid rgba(224,90,43,0.2);
+      border-radius: 50%;
+      box-shadow: inset 0 0 0 20px rgba(224,90,43,0.035);
+    }
+
+    .cer-evolution-copy p {
+      color: #6f665e;
+      font-size: clamp(15px, 1.25vw, 17px);
+      line-height: 1.82;
+    }
+
+    .cer-evolution-copy p + p { margin-top: 22px; }
+
+    .cer-benefits {
+      color: #f7f1eb;
+      background:
+        radial-gradient(circle at 50% -20%, rgba(224,90,43,0.22), transparent 35%),
+        #15100d;
+    }
+
+    .cer-benefits .cer-heading {
+      max-width: 750px;
+      color: #f7f1eb;
+    }
+
+    .cer-benefits .cer-lead {
+      max-width: 770px;
+      color: rgba(247,241,235,0.68);
+    }
+
+    .cer-benefit-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 56px;
+    }
+
+    .cer-benefit-card {
+      position: relative;
+      min-height: 360px;
+      padding: 30px 26px 28px;
+      overflow: hidden;
+      border: 1px solid rgba(241,126,72,0.26);
+      border-radius: 24px;
+      background: linear-gradient(160deg, rgba(255,255,255,0.07), rgba(255,255,255,0.025));
+      transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+    }
+
+    .cer-benefit-card:hover {
+      transform: translateY(-7px);
+      border-color: rgba(241,126,72,0.62);
+      background: linear-gradient(160deg, rgba(255,255,255,0.095), rgba(224,90,43,0.055));
+    }
+
+    .cer-benefit-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 82px;
+      height: 82px;
+      margin-bottom: 30px;
+      border-radius: 22px;
+      background: rgba(255,255,255,0.94);
+      box-shadow: 0 12px 26px rgba(0,0,0,0.22);
+    }
+
+    .cer-benefit-icon img {
+      width: 66px;
+      height: 66px;
+      object-fit: contain;
+    }
+
+    .cer-benefit-card h3 {
+      margin: 0 0 16px;
+      color: #f8f2ec;
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(18px, 1.7vw, 23px);
+      font-weight: 700;
+      line-height: 1.25;
+    }
+
+    .cer-benefit-card p {
+      color: rgba(248,242,236,0.65);
+      font-size: 14px;
+      line-height: 1.75;
+    }
+
+    .cer-options {
+      background:
+        radial-gradient(circle at 5% 80%, rgba(224,90,43,0.09), transparent 25%),
+        #f8f3ed;
+    }
+
+    .cer-options-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 0.78fr) minmax(420px, 1.22fr);
+      gap: clamp(50px, 7vw, 104px);
+      align-items: start;
+    }
+
+    .cer-options-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .cer-options-list li {
+      position: relative;
+      min-height: 92px;
+      display: flex;
+      align-items: center;
+      padding: 22px 24px 22px 62px;
+      color: #302721;
+      border: 1px solid #e8dbcf;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.82);
+      box-shadow: 0 10px 28px rgba(62,40,24,0.045);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 1.4;
+    }
+
+    .cer-options-list li::before {
+      content: '';
+      position: absolute;
+      left: 24px;
+      width: 16px;
+      height: 8px;
+      border-left: 2px solid var(--coral);
+      border-bottom: 2px solid var(--coral);
+      transform: rotate(-45deg) translateY(-2px);
+    }
+
+    .cer-options-list li:last-child {
+      grid-column: span 2;
+    }
+
+    .cer-why {
+      color: #f7f1eb;
+      background:
+        linear-gradient(110deg, rgba(224,90,43,0.18), transparent 38%),
+        #211612;
+    }
+
+    .cer-why-card {
+      position: relative;
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: clamp(40px, 7vw, 86px);
+      overflow: hidden;
+      border: 1px solid rgba(240,120,66,0.34);
+      border-radius: 34px;
+      background: rgba(8,6,5,0.28);
+      box-shadow: 0 28px 70px rgba(0,0,0,0.2);
+    }
+
+    .cer-why-card::after {
+      content: '';
+      position: absolute;
+      right: -90px;
+      bottom: -90px;
+      width: 280px;
+      height: 280px;
+      border: 1px solid rgba(240,120,66,0.24);
+      border-radius: 50%;
+      box-shadow: 0 0 0 42px rgba(240,120,66,0.035);
+    }
+
+    .cer-why-card h2 {
+      position: relative;
+      z-index: 1;
+      max-width: 780px;
+      margin: 0;
+      color: #f7f1eb;
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(38px, 5vw, 68px);
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: -2.5px;
+    }
+
+    .cer-why-card h2::after {
+      content: '';
+      display: block;
+      width: 62px;
+      height: 3px;
+      margin: 30px 0;
+      background: #ef713b;
+    }
+
+    .cer-why-card p {
+      position: relative;
+      z-index: 1;
+      max-width: 850px;
+      color: rgba(247,241,235,0.72);
+      font-size: clamp(15px, 1.35vw, 18px);
+      line-height: 1.82;
+    }
+
+    .cer-why-card p + p { margin-top: 20px; }
+
+    @media (max-width: 1500px) {
+      .hero-nav-main { padding-left: 32px; padding-right: 32px; }
+      .hero-menu { gap: 26px; }
+      .hero-menu a { font-size: 11.5px; letter-spacing: 1.45px; }
+    }
+
+    @media (max-width: 1120px) {
+      .hero-nav-main { padding: 24px 32px; }
+      .hero-menu { gap: 22px; }
+      .hero-menu a { font-size: 11px; letter-spacing: 1.3px; }
+      .service-hero-copy { padding-left: 32px; padding-right: 44px; }
+      .cer-grid,
+      .cer-grid--reverse,
+      .cer-material-layout,
+      .cer-options-layout {
+        grid-template-columns: 1fr 1fr;
+        gap: 48px;
+      }
+      .cer-benefit-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .cer-benefit-card { min-height: 330px; }
+    }
+
+    @media (max-width: 768px) {
+      .service-hero { min-height: 0; }
+      .hero-nav-main { padding: 20px 24px; }
+      .hero-menu { display: none; }
+      .hero-burger { display: flex; }
+      .hero-brand img { height: 36px; }
+      .service-hero-body { grid-template-columns: 1fr; min-height: 0; }
+      .service-hero-copy { padding: 48px 24px 54px; }
+      .service-hero .breadcrumb { margin-bottom: 24px; }
+      .service-hero-title { font-size: clamp(34px, 10vw, 46px); letter-spacing: -1.4px; }
+      .service-hero-title::after { margin-top: 24px; }
+      .service-hero-subtitle { margin-top: 22px; font-size: 16px; }
+      .service-hero-media,
+      .service-hero-media img { min-height: 320px; height: 320px; }
+      .service-hero-media::before {
+        background: linear-gradient(180deg, #0d0a08 0%, rgba(13,10,8,0.25) 20%, transparent 48%, rgba(13,10,8,0.18) 100%);
+      }
+      .cer-section { padding: 64px 20px; }
+      .cer-grid,
+      .cer-grid--reverse,
+      .cer-material-layout,
+      .cer-evolution-panel,
+      .cer-options-layout {
+        grid-template-columns: 1fr;
+        gap: 38px;
+      }
+      .cer-copy h2,
+      .cer-heading {
+        font-size: clamp(31px, 9vw, 43px);
+        line-height: 1.08;
+        letter-spacing: -1.25px;
+      }
+      .cer-copy h2::after,
+      .cer-heading::after {
+        margin: 22px 0 24px;
+      }
+      .cer-photo-shell {
+        min-height: 350px;
+        padding: 14px 0 0 14px;
+      }
+      .cer-photo-shell::before,
+      .cer-photo-shell img {
+        border-radius: 68px 18px 68px 18px;
+      }
+      .cer-digital .cer-photo-shell::before,
+      .cer-digital .cer-photo-shell img {
+        border-radius: 18px 68px 18px 68px;
+      }
+      .cer-photo-shell img { height: 350px; }
+      .cer-material-layout .cer-copy { order: 1; }
+      .cer-material-list {
+        order: 2;
+        grid-template-columns: 1fr;
+        margin-top: 0;
+      }
+      .cer-material-list li:last-child { grid-column: auto; }
+      .cer-evolution-panel { padding: 34px 24px; border-radius: 24px; }
+      .cer-evolution-panel::before { width: 76px; height: 76px; top: 18px; right: 18px; }
+      .cer-benefit-grid { grid-template-columns: 1fr; gap: 14px; margin-top: 38px; }
+      .cer-benefit-card { min-height: 0; padding: 26px 24px 28px; }
+      .cer-benefit-icon { width: 74px; height: 74px; margin-bottom: 24px; }
+      .cer-benefit-icon img { width: 58px; height: 58px; }
+      .cer-options-list { grid-template-columns: 1fr; }
+      .cer-options-list li:last-child { grid-column: auto; }
+      .cer-why-card { padding: 40px 26px; border-radius: 24px; }
+      .cer-why-card h2 { font-size: clamp(36px, 11vw, 50px); letter-spacing: -1.6px; }
+      .pilot-section { padding: 48px 20px; }
+      .pilot-inner { grid-template-columns: 1fr; padding: 40px 28px; gap: 32px; }
+      .pilot-action { align-items: stretch; }
+      .form-inner { grid-template-columns: 1fr; gap: 48px; }
+      .form-row { grid-template-columns: 1fr; }
+      .contact-form { padding: 32px 24px; }
+      footer, .footer-bottom { grid-template-columns: 1fr; padding: 40px 20px; gap: 32px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .hero-nav-main,
+      .service-hero-copy,
+      .service-hero-media img,
+      .reveal {
+        animation: none !important;
+        transition: none !important;
+      }
+    }
   </style>
 </head>
 <body>
 
-<!-- NAV -->
-<nav>
-  <a href="index.html" class="nav-logo">
-    <img src="logo.png" alt="Bridge Dental" style="height: 32px; width: auto;">
-  </a>
-  <ul class="nav-links">
-    <li><a href="ismerje-meg-a-bridge-dentalt.html">Ismerje meg a Bridge Dentalt</a></li>
-    <li class="nav-dropdown">
-      <a href="index.html#szolgaltatasok" class="active">Szolgáltatások <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></a>
-      <ul class="dropdown-menu">
-        <div class="dropdown-menu-inner">
-          <li><a href="full-arch-implantatumos-rehabilitaciok.html">Full-Arch Implantátumos Rehabilitációk (All-on-X)</a></li>
-          <li><a href="implantatumos-cirkonium-restauraciok.html">Implantátumos cirkónium restaurációk</a></li>
-          <li><a href="esztetikai-keramia.html" class="active">Esztétikai kerámia pótlások</a></li>
-          <li><a href="digitalis-fogsorok.html">Digitális fogsorok — TrueDent</a></li>
-          <li><a href="digitalis-tervezes.html">Digitális tervezés</a></li>
-          <li><a href="digitalis-fogtechnika.html">Digitális fogtechnika</a></li>
-        </div>
+<!-- HERO ÉS NAVIGÁCIÓ -->
+<section class="service-hero" id="hero">
+  <header class="hero-nav-main">
+    <a href="index.html" class="hero-brand" aria-label="Bridge Dental főoldal">
+      <img src="logo-hero.png" alt="Bridge Dental" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+      <span class="hero-brand-fallback"><span class="b">bridge</span><span class="d">dental</span></span>
+    </a>
+
+    <ul class="hero-menu">
+      <li><a href="ismerje-meg-a-bridge-dentalt.html">ISMERJE MEG A BRIDGE DENTALT</a></li>
+      <li class="hero-dropdown">
+        <a href="index.html#szolgaltatasok">
+          SZAKTERÜLETEINK
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <polyline points="6 9 12 15 18 9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+        <ul class="hero-dropdown-menu">
+          <li class="hero-dropdown-panel">
+            <ul>
+              <li><a href="full-arch-implantatumos-rehabilitaciok.html">Full-Arch Implantátumos Rehabilitációk (All-on-X)</a></li>
+              <li><a href="implantatumos-cirkonium-restauraciok.html">Implantátumos cirkónium restaurációk</a></li>
+              <li><a href="digitalis-fogsorok.html">Digitális fogsorok — TrueDent</a></li>
+              <li><a href="digitalis-tervezes.html">Digitális workflow</a></li>
+              <li><a href="esztetikai-keramia.html" aria-current="page">Esztétikai kerámiapótlások</a></li>
+              <li><a href="digitalis-fogtechnika.html">CAD/CAM gyártás</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li><a href="index.html#blog">BLOG</a></li>
+      <li><a href="assets/bridge-dental-munkalap.pdf" download="Bridge-Dental-munkalap.pdf">MUNKALAP</a></li>
+      <li><a href="kapcsolat.html">KAPCSOLAT</a></li>
+    </ul>
+
+    <button class="hero-burger" id="heroBurger" aria-label="Menü" aria-expanded="false" aria-controls="heroMobileMenu">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <div class="hero-mobile-menu" id="heroMobileMenu">
+    <a href="ismerje-meg-a-bridge-dentalt.html">ISMERJE MEG A BRIDGE DENTALT</a>
+    <div class="hero-mobile-group">
+      <a href="index.html#szolgaltatasok">SZAKTERÜLETEINK</a>
+      <div class="hero-mobile-submenu">
+        <a href="full-arch-implantatumos-rehabilitaciok.html">Full-Arch Implantátumos Rehabilitációk (All-on-X)</a>
+        <a href="implantatumos-cirkonium-restauraciok.html">Implantátumos cirkónium restaurációk</a>
+        <a href="digitalis-fogsorok.html">Digitális fogsorok — TrueDent</a>
+        <a href="digitalis-tervezes.html">Digitális workflow</a>
+        <a href="esztetikai-keramia.html" aria-current="page">Esztétikai kerámiapótlások</a>
+        <a href="digitalis-fogtechnika.html">CAD/CAM gyártás</a>
+      </div>
+    </div>
+    <a href="index.html#blog">BLOG</a>
+    <a href="assets/bridge-dental-munkalap.pdf" download="Bridge-Dental-munkalap.pdf">MUNKALAP</a>
+    <a href="kapcsolat.html">KAPCSOLAT</a>
+  </div>
+
+  <div class="service-hero-body">
+    <div class="service-hero-copy">
+      <div class="breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Főoldal</a>
+        <span class="breadcrumb-sep">/</span>
+        <a href="index.html#szolgaltatasok">Szakterületeink</a>
+        <span class="breadcrumb-sep">/</span>
+        <span class="breadcrumb-current">Esztétikus kerámia pótlások</span>
+      </div>
+      <h1 class="service-hero-title">Esztétikus kerámia pótlások</h1>
+      <p class="service-hero-subtitle">Természetes esztétika. Digitális precizitás. Hosszú távú megbízhatóság.</p>
+    </div>
+
+    <div class="service-hero-media">
+      <img src="esztetikai-keramia-potlasok-labor-ellenorzes.webp" alt="Esztétikus kerámia pótlás laboratóriumi ellenőrzése">
+    </div>
+  </div>
+</section>
+
+<!-- AZ ESZTÉTIKAI FOGPÓTLÁSOK ÚJ GENERÁCIÓJA -->
+<section class="cer-section cer-intro">
+  <div class="cer-inner cer-grid reveal">
+    <div class="cer-copy">
+      <h2>Az esztétikai fogpótlások új generációja</h2>
+      <p>Az esztétikai fogpótlások az elmúlt években jelentős fejlődésen mentek keresztül. A modern digitális technológiák, a fejlett CAD/CAM gyártás és az új generációs kerámiaanyagok lehetővé teszik, hogy a restaurációk ne csupán funkcionálisan, hanem optikailag is a természetes fogazathoz közelítő eredményt nyújtsanak.</p>
+      <p>Laborunkban a digitális workflow és a prémium anyagok ötvözésével olyan restaurációkat készítünk, amelyek hosszú távon is megbízhatóak, pontosak és magas esztétikai elvárásoknak is megfelelnek.</p>
+    </div>
+    <div class="cer-photo-shell">
+      <img src="szolgaltatasok_esztetikai_keramia.webp" alt="Esztétikus kerámia restauráció készítése a Bridge Dental laborban">
+    </div>
+  </div>
+</section>
+
+<!-- MODERN ANYAGOK -->
+<section class="cer-section cer-materials">
+  <div class="cer-inner cer-material-layout reveal">
+    <div class="cer-copy">
+      <h2>Modern anyagok a természetes mosoly szolgálatában</h2>
+      <p>A megfelelő anyag kiválasztása mindig a klinikai helyzet, a funkcionális igénybevétel és az esztétikai elvárások alapján történik.</p>
+    </div>
+    <div>
+      <p class="cer-lead">Leggyakrabban alkalmazott megoldásaink:</p>
+      <ul class="cer-material-list">
+        <li>Ivoclar IPS e.max® préskerámia</li>
+        <li>Multilayer full contour cirkónium</li>
+        <li>Egyedileg karakterizált restaurációk</li>
+        <li>Inlay, onlay és overlay</li>
+        <li>Veneerek</li>
       </ul>
-    </li>
-    <li><a href="referenciak.html">Referenciák</a></li>
-    <li><a href="index.html#blog">Blog</a></li>
-    <li><a href="assets/bridge-dental-munkalap.pdf" download="Bridge-Dental-munkalap.pdf">Munkalap</a></li>
-    <li><a href="kapcsolat.html">Kapcsolat</a></li>
-  </ul>
-  <div class="nav-right">
-    <div class="lang-switcher">
-      <button class="lang-btn active">HU</button>
-      <button class="lang-btn">DE</button>
-      <button class="lang-btn">EN</button>
+      <p class="cer-lead cer-material-foot">Minden restauráció egyedileg készül, a páciens anatómiai adottságaihoz és a kezelési tervhez igazítva.</p>
     </div>
-    <a href="kapcsolat.html" class="nav-cta">Kapcsolatfelvétel</a>
-  </div>
-</nav>
-
-<!-- PAGE HERO -->
-<section class="page-hero">
-  <div class="page-hero-left">
-    <div class="breadcrumb">
-      <a href="index.html">Főoldal</a>
-      <span class="breadcrumb-sep">/</span>
-      <a href="index.html#szolgaltatasok">Szolgáltatások</a>
-      <span class="breadcrumb-sep">/</span>
-      <span class="breadcrumb-current">Esztétikai kerámia pótlások</span>
-    </div>
-    <div class="section-label">Szolgáltatás</div>
-    <h1 class="page-hero-title">Esztétikai kerámia pótlások</h1>
-    <p class="page-hero-subtitle">Természetes esztétika digitális precizitással</p>
-    <a href="#kapcsolat" class="btn-primary" style="margin-top: 32px; display: inline-flex;">Dolgozzunk együtt!</a>
-  </div>
-  <div class="page-hero-right">
-    <img src="esztetikai-keramia-potlasok-labor-ellenorzes.webp" alt="Esztétikai kerámia pótlások precíziós labor ellenőrzése nagyítóval a Bridge Dental laborban">
   </div>
 </section>
 
-<!-- INTRO -->
-<section class="section section-alt">
-  <div class="intro-grid reveal">
-    <div class="intro-text">
-      <p>A modern fogászati protetika célja ma már nem csupán a funkció helyreállítása, hanem a természetes fogak esztétikájának tökéletes reprodukálása. Digitális munkafolyamatainknak és prémium kerámia alapanyagainknak köszönhetően olyan restaurációkat készítünk, amelyek harmonikusan illeszkednek a páciens mosolyába és egyedi karakteréhez.</p>
-      <p>Laboratóriumunkban az esztétikai rehabilitációkhoz elsősorban Ivoclar e.max préskerámiát, valamint modern multilayer full cirkon rendszereket alkalmazunk természetes fogakra készülő koronák, héjak, inlay-ek és onlay-ek esetén.</p>
-      <div class="intro-highlight">
-        <p>Az esztétikai kerámia restaurációk esetében nem csupán fogpótlást készítünk, hanem olyan természetes hatású megoldásokat, amelyek funkcionálisan és esztétikailag egyaránt megfelelnek a legmagasabb szakmai elvárásoknak.</p>
-      </div>
+<!-- DIGITÁLIS TECHNOLÓGIA -->
+<section class="cer-section cer-digital">
+  <div class="cer-inner cer-grid cer-grid--reverse reveal">
+    <div class="cer-photo-shell">
+      <img src="esztetikai-keramia-potlasok-labor-ellenorzes.webp" alt="Kerámia restauráció digitális és kézi minőségellenőrzése">
     </div>
-    <div class="intro-visual">
-      <div class="process-card">
-        <div class="process-card-label">Munkafolyamat</div>
-        <div class="process-step">
-          <div class="process-num">1</div>
-          <div class="process-step-text">
-            <strong>Digitális tervezés</strong>
-            A digitális lenyomatok, fotódokumentációk és videók elemzését követően CAD/CAM környezetben tervezzük meg a restaurációt. A digitális tervezés lehetővé teszi az anatómia, a forma és az esztétikai részletek pontos kontrollját már a gyártás előtt.
-          </div>
+    <div class="cer-copy">
+      <h2>A digitális technológia új lehetőségeket teremt</h2>
+      <p>A digitális fogtechnika nem csupán gyorsabb munkafolyamatot jelent.</p>
+      <p>A pontos intraorális szkennelés, a digitális tervezés és a nagy pontosságú CAD/CAM gyártás együttesen támogatja a restaurációk pontos illeszkedését, reprodukálhatóságát és kiszámítható minőségét.</p>
+      <p>A digitális workflow különösen előnyös összetett esztétikai rehabilitációk esetén, ahol minden részlet meghatározó.</p>
+    </div>
+  </div>
+</section>
+
+<!-- AZ ANYAGOK FEJLŐDÉSE -->
+<section class="cer-section cer-evolution">
+  <div class="cer-inner cer-evolution-panel reveal">
+    <div>
+      <h2 class="cer-heading">Az anyagok fejlődése</h2>
+    </div>
+    <div class="cer-evolution-copy">
+      <p>Az elmúlt évtizedben a kerámiaanyagok fejlődése jelentősen kibővítette a fogorvosok és fogtechnikusok lehetőségeit.</p>
+      <p>A korszerű multilayer cirkóniumok természetes színátmenete és transzlucenciája, valamint a modern préskerámiák kiváló optikai tulajdonságai lehetővé teszik, hogy az elkészült restaurációk harmonikusan illeszkedjenek a természetes fogazathoz.</p>
+      <p>Ennek köszönhetően ma már sok esetben kompromisszumok nélkül ötvözhető a magas esztétikai színvonal és a hosszú távú mechanikai stabilitás.</p>
+    </div>
+  </div>
+</section>
+
+<!-- RENDELŐI ELŐNYÖK -->
+<section class="cer-section cer-benefits">
+  <div class="cer-inner">
+    <div class="reveal">
+      <h2 class="cer-heading">Mit jelent ez a rendelő számára?</h2>
+      <p class="cer-lead">A modern digitális és kerámia technológiák nemcsak a restaurációk minőségét javítják, hanem a rendelő munkáját is támogatják.</p>
+    </div>
+    <div class="cer-benefit-grid">
+      <article class="cer-benefit-card reveal">
+        <div class="cer-benefit-icon">
+          <img src="assets/ceramic-icon-aesthetics.png" alt="" aria-hidden="true">
         </div>
-        <div class="process-step">
-          <div class="process-num">2</div>
-          <div class="process-step-text">
-            <strong>Elkészítés és karakterizálás</strong>
-            A restaurációk elkészítése során modern marási technológiákat, prémium kerámiaanyagokat és egyedi karakterizálási technikákat alkalmazunk, hogy a végeredmény természetes megjelenésű, hosszú távon stabil és funkcionálisan megbízható legyen.
-          </div>
+        <h3>Természetesebb esztétika</h3>
+        <p>A korszerű anyagok és az egyedi karakterizálás lehetővé teszik a természetes fogakhoz harmonikusan illeszkedő restaurációk elkészítését.</p>
+      </article>
+      <article class="cer-benefit-card reveal reveal-delay-1">
+        <div class="cer-benefit-icon">
+          <img src="assets/ceramic-icon-fit.png" alt="" aria-hidden="true">
         </div>
-      </div>
+        <h3>Pontos illeszkedés</h3>
+        <p>A digitális workflow támogatja a restaurációk reprodukálható pontosságát és a kiszámítható klinikai eredményeket.</p>
+      </article>
+      <article class="cer-benefit-card reveal reveal-delay-2">
+        <div class="cer-benefit-icon">
+          <img src="assets/ceramic-icon-reliability.png" alt="" aria-hidden="true">
+        </div>
+        <h3>Hosszú távú megbízhatóság</h3>
+        <p>A korszerű kerámiaanyagok kiváló mechanikai tulajdonságokkal rendelkeznek, miközben magas esztétikai színvonalat biztosítanak.</p>
+      </article>
+      <article class="cer-benefit-card reveal reveal-delay-3">
+        <div class="cer-benefit-icon">
+          <img src="assets/ceramic-icon-collaboration.png" alt="" aria-hidden="true">
+        </div>
+        <h3>Hatékony együttműködés</h3>
+        <p>A digitális kommunikáció egyszerűbb adatcserét, gyorsabb tervezést és átláthatóbb munkafolyamatot tesz lehetővé a rendelő és a labor között.</p>
+      </article>
     </div>
   </div>
 </section>
 
-<!-- PARTNERI ELŐNYÖK -->
-<section class="alapelv-section">
-  <div class="alapelv-header reveal">
-    <div class="alapelv-kicker">Miért válasszon minket?</div>
-    <h2>Klinikai partnerként dolgozunk, nem egyszerű beszállítóként.</h2>
-    <p>Prémium implantológiai és digitális fogtechnikai munkák svájci és német partnereiknek, dokumentált minőséggel és dedikált szakmai támogatással.</p>
-  </div>
-  <div class="alapelv-bar reveal">
-    <div class="alapelv-item">
-      <div class="alapelv-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-5"/></svg>
-      </div>
-      <div class="alapelv-text">
-        <h4>Kockázatcsökkentett kezdés</h4>
-        <p>Az első komplex implantációs esetnél díjmentes digitális tervezés, wax-up/mock-up és sebészi sablon. Nem kedvezményt adunk, hanem biztonságos belépést.</p>
-      </div>
+<!-- RESTAURÁCIÓS LEHETŐSÉGEK -->
+<section class="cer-section cer-options">
+  <div class="cer-inner cer-options-layout reveal">
+    <div class="cer-copy">
+      <h2>Restaurációs lehetőségek</h2>
+      <p>Laborunk az esztétikai fogpótlások teljes spektrumát készíti digitális workflow segítségével:</p>
     </div>
-    <div class="alapelv-item">
-      <div class="alapelv-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16"/><path d="M4 12h16"/><path d="M4 17h10"/><path d="M17 15l3 3-3 3"/></svg>
-      </div>
-      <div class="alapelv-text">
-        <h4>Saját digitális gyártás</h4>
-        <p>Exocad tervezés, intraorális scan fájlok fogadása, házon belüli CNC fréz- és 3D nyomtatási kapacitás, alvállalkozók nélkül.</p>
-      </div>
-    </div>
-    <div class="alapelv-item">
-      <div class="alapelv-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 7V3h8v4"/><path d="M6 21h12a2 2 0 0 0 2-2V7H4v12a2 2 0 0 0 2 2z"/><path d="M9 13h6"/><path d="M9 17h4"/></svg>
-      </div>
-      <div class="alapelv-text">
-        <h4>Dokumentált prémium minőség</h4>
-        <p>Implant munkákra 5 év anyag- és konstrukciós garancia, teljesen nyomon követhető gyártási folyamat.</p>
-      </div>
-    </div>
-    <div class="alapelv-item">
-      <div class="alapelv-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/><path d="M8 9h8"/><path d="M8 13h5"/></svg>
-      </div>
-      <div class="alapelv-text">
-        <h4>Német nyelvű szakmai támogatás</h4>
-        <p>Dedikált németül kommunikáló fogtechnikus, online Exocad review, Zoom konzultáció és scan-minőségi visszajelzés.</p>
-      </div>
-    </div>
-    <div class="alapelv-item">
-      <div class="alapelv-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h11v10H3z"/><path d="M14 10h4l3 3v4h-7z"/><circle cx="7" cy="19" r="2"/><circle cx="18" cy="19" r="2"/></svg>
-      </div>
-      <div class="alapelv-text">
-        <h4>Európai partnerlogisztika</h4>
-        <p>Teljes oda-vissza szállítás, német nyelvű ügyintézés és régiónként limitált partnerkör a stabil együttműködésért.</p>
-      </div>
-    </div>
+    <ul class="cer-options-list">
+      <li>teljes kerámia koronák</li>
+      <li>préskerámia (e.max®) koronák</li>
+      <li>multilayer cirkónium koronák</li>
+      <li>héjak (veneerek)</li>
+      <li>inlay és onlay restaurációk</li>
+      <li>kisebb esztétikai hidak</li>
+      <li>komplex mosolyrehabilitációk</li>
+    </ul>
   </div>
 </section>
 
-<!-- KERÁMIA RENDSZEREK -->
-<section class="section section-alt">
-  <div class="benefits-header reveal">
-    <div class="section-label">Anyagok és indikációk</div>
-    <h2>e.max és multilayer full cirkon.</h2>
-  </div>
-  <div class="benefits-grid ceramic-grid reveal">
-
-    <div class="benefit-card">
-      <div class="benefit-card-num">01</div>
-      <h3>e.max – a természetes esztétika etalonja</h3>
-      <p style="font-size:15px;line-height:1.75;color:var(--warm-gray);margin-top:16px;">Az Ivoclar e.max préskerámia kiváló fényáteresztő képességének és természetes optikai tulajdonságainak köszönhetően ideális választás:</p>
-      <ul style="margin:18px 0 18px 20px;color:var(--warm-gray);font-size:15px;line-height:1.8;">
-        <li>héjak (veneerek)</li>
-        <li>esztétikai koronák</li>
-        <li>inlay-ek és onlay-ek</li>
-        <li>minimálisan invazív restaurációk</li>
-      </ul>
-      <p style="font-size:15px;line-height:1.75;color:var(--warm-gray);">Az e.max különösen az anterior régióban nyújt kiemelkedő eredményeket, ahol a természetes megjelenés és az egyedi karakterizálhatóság elsődleges szempont.</p>
-    </div>
-
-    <div class="benefit-card">
-      <div class="benefit-card-num">02</div>
-      <h3>Multilayer full cirkon – esztétika kompromisszumok nélkül</h3>
-      <p style="font-size:15px;line-height:1.75;color:var(--warm-gray);margin-top:16px;">A legújabb generációs multilayer cirkon anyagok megjelenése jelentős fejlődést hozott az esztétikai fogpótlások területén. Az anyag fokozatos szín- és transzlucencia-átmenete lehetővé teszi a természetes fogak optikai tulajdonságainak reprodukálását, miközben megőrzi a cirkonra jellemző magas szilárdságot.</p>
-      <p style="font-size:15px;line-height:1.75;color:var(--warm-gray);margin-top:16px;">A multilayer full cirkon restaurációk kiváló megoldást jelentenek:</p>
-      <ul style="margin:18px 0 0 20px;color:var(--warm-gray);font-size:15px;line-height:1.8;">
-        <li>egyedi koronákhoz</li>
-        <li>kisebb hidakhoz</li>
-        <li>teljes mosolyrehabilitációkhoz</li>
-        <li>fokozott terhelésnek kitett esetekhez</li>
-      </ul>
-    </div>
-
-  </div>
-  <div class="intro-highlight reveal" style="max-width:1200px;margin-top:32px;">
-    <p><strong>Digitális esztétikai tervezés</strong></p>
-    <p style="margin-top:12px;">A modern esztétikai fogászat egyre inkább a digitális tervezésre épül. A fotók, videók, intraorális szkenek és arcszkenek integrálásával lehetőség nyílik a restaurációk előzetes vizualizálására, a kezelési terv pontos kommunikációjára és a kiszámíthatóbb végeredmény elérésére.</p>
-  </div>
-</section>
-
-<!-- CSAPAT NÉVJEGYEK -->
-<section class="section section-alt">
-  <div class="reveal">
-    <div class="section-label">A csapat</div>
-    <h2 style="font-family:'Montserrat',sans-serif;font-size:clamp(26px,2.5vw,38px);font-weight:800;letter-spacing:-1px;line-height:1.2;margin-bottom:12px;">Közvetlen kapcsolattartóink.</h2>
-    <p style="font-size:16px;color:var(--warm-gray);line-height:1.75;">Közvetlen kapcsolat, gyors válaszok — mindig elérhető kollégákkal.</p>
-  </div>
-  <div class="contact-grid">
-    <div class="contact-card reveal">
-      <div class="contact-avatar"><img src="csapat_denes.jpg" alt="Császár Dénes"></div>
-      <div class="contact-name">Császár Dénes</div>
-      <div class="contact-role">Fogtechnikus mester, ügyvezető</div>
-      <a href="tel:+36703966655" class="contact-phone">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.07 12 19.79 19.79 0 0 1 1 3.18C1 2.09 1.9 1 3 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16z"/></svg>
-        +36 70 396 6655
-      </a>
-    </div>
-    <div class="contact-card reveal reveal-delay-1">
-      <div class="contact-avatar" style="display:flex;align-items:center;justify-content:center;background:#ede8e1;"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#b5a99c" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
-      <div class="contact-name">Kinál Attila</div>
-      <div class="contact-role">Fogtechnikus mester, szakmai vezető</div>
-    </div>
-    <div class="contact-card reveal reveal-delay-2">
-      <div class="contact-avatar"><img src="csapat_hedi.jpg" alt="Demeter Hédi"></div>
-      <div class="contact-name">Demeter Hédi</div>
-      <div class="contact-role">Irodavezető</div>
-      <a href="tel:+36703966654" class="contact-phone">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.07 12 19.79 19.79 0 0 1 1 3.18C1 2.09 1.9 1 3 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16z"/></svg>
-        +36 70 396 6654
-      </a>
-    </div>
-    <div class="contact-card reveal reveal-delay-3">
-      <div class="contact-avatar" style="display:flex;align-items:center;justify-content:center;background:#ede8e1;"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#b5a99c" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
-      <div class="contact-name">Péter Dóra</div>
-      <div class="contact-role">Projektmenedzser</div>
-    </div>
-    <div class="contact-card reveal reveal-delay-4">
-      <div class="contact-avatar" style="display:flex;align-items:center;justify-content:center;background:#ede8e1;"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#b5a99c" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
-      <div class="contact-name">Urbán Vanda</div>
-      <div class="contact-role">Projektmenedzser</div>
+<!-- MIÉRT A BRIDGE DENTAL -->
+<section class="cer-section cer-why">
+  <div class="cer-inner">
+    <div class="cer-why-card reveal">
+      <h2>Miért a Bridge Dental?</h2>
+      <p>Mert számunkra az esztétika nem csupán a restauráció megjelenését jelenti.</p>
+      <p>A természetes forma, a megfelelő funkció, a precíz illeszkedés és a hosszú távú megbízhatóság egyaránt része annak a szemléletnek, amely alapján minden munkánk készül.</p>
+      <p>Modern digitális technológiáink, prémium anyagaink és több mint két évtizedes szakmai tapasztalatunk lehetővé teszik, hogy olyan restaurációkat készítsünk, amelyek megfelelnek a mai fogászat legmagasabb szakmai és esztétikai elvárásainak.</p>
     </div>
   </div>
 </section>
@@ -1210,8 +2067,8 @@
     <div class="pilot-bg-circle"></div>
     <div class="pilot-content">
       <div class="section-label">Pilot együttműködés</div>
-      <h2>Próbáljon ki minket<br>3-5 komplex esettel</h2>
-      <p>A pilot egy 8 hetes, kockázatcsökkentett próbaidőszak bonyolultabb implantátumos munkákra. A közös próba-együttműködés során láthatja, hogyan kommunikálunk, hogyan tervezünk, milyen minőségben gyártunk, és hogyan kezeljük a felmerülő kérdéseket.</p>
+      <h2>Próbáljon ki minket<br>3-5 esztétikai esettel</h2>
+      <p>A pilot egy 8 hetes, kockázatcsökkentett próbaidőszak esztétikus kerámia munkákra. A közös próba-együttműködés során láthatja, hogyan kommunikálunk, hogyan tervezünk, milyen minőségben gyártunk, és hogyan kezeljük a felmerülő kérdéseket.</p>
       <div class="pilot-features">
         <div class="pilot-feature"><span class="pilot-feature-dot"></span>Német nyelvű szakmai egyeztetés dedikált fogtechnikussal</div>
         <div class="pilot-feature"><span class="pilot-feature-dot"></span>Online digitális tervezési konzultáció</div>
@@ -1345,6 +2202,27 @@
 </div>
 
 <script>
+  const heroBurger = document.getElementById('heroBurger');
+  const heroMobileMenu = document.getElementById('heroMobileMenu');
+
+  if (heroBurger && heroMobileMenu) {
+    heroBurger.addEventListener('click', () => {
+      const isOpen = heroBurger.classList.toggle('open');
+      heroMobileMenu.classList.toggle('open', isOpen);
+      heroBurger.setAttribute('aria-expanded', String(isOpen));
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    });
+
+    heroMobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        heroBurger.classList.remove('open');
+        heroMobileMenu.classList.remove('open');
+        heroBurger.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      });
+    });
+  }
+
   const reveals = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => {
