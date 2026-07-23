@@ -1872,8 +1872,22 @@
       box-shadow: inset 0 1px 0 rgba(255,255,255,0.05);
     }
 
-    .zircon-development-card h2 {
+    .zircon-development-title {
+      display: flex;
+      align-items: center;
+      gap: 22px;
       margin-bottom: 30px;
+    }
+
+    .zircon-development-icon {
+      width: 76px;
+      height: 76px;
+      flex: 0 0 76px;
+      object-fit: contain;
+    }
+
+    .zircon-development-card h2 {
+      margin: 0;
       font-family: 'Cormorant Garamond', Georgia, serif;
       font-size: clamp(42px, 4vw, 58px);
       font-weight: 600;
@@ -2067,8 +2081,18 @@
         padding: 32px 26px 36px;
         border-radius: 22px;
       }
-      .zircon-development-card h2 {
+      .zircon-development-title {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
         margin-bottom: 24px;
+      }
+      .zircon-development-icon {
+        width: 60px;
+        height: 60px;
+        flex-basis: 60px;
+      }
+      .zircon-development-card h2 {
         font-size: 41px;
       }
       .zircon-development-card p { font-size: 15px; line-height: 1.67; }
@@ -3062,14 +3086,20 @@
 <section class="zircon-development">
   <div class="zircon-development-inner">
     <article class="zircon-development-card reveal">
-      <h2>Esztétikai fejlődés</h2>
+      <div class="zircon-development-title">
+        <img class="zircon-development-icon" src="assets/implant-zircon-aesthetic-icon.png" alt="" aria-hidden="true">
+        <h2>Esztétikai fejlődés</h2>
+      </div>
       <p>A korábbi generációs cirkónium restaurációk gyakran túl opaknak, homogénnek vagy &quot;élettelennek&quot; hatottak.</p>
       <p>A mai multilayer anyagok természetes dentin- és zománchatást, finom színátmenetet és megfelelő fényáteresztést biztosítanak, így az implantátumos restaurációk harmonikusan illeszkednek a természetes fogazathoz.</p>
       <p>Az egyedi karakterizálás tovább növeli a restaurációk természetességét.</p>
     </article>
 
     <article class="zircon-development-card reveal reveal-delay-1">
-      <h2>Mechanikai fejlődés</h2>
+      <div class="zircon-development-title">
+        <img class="zircon-development-icon" src="assets/implant-zircon-mechanical-icon.png" alt="" aria-hidden="true">
+        <h2>Mechanikai fejlődés</h2>
+      </div>
       <p>A monolitikus kialakítás egyik legnagyobb előnye, hogy megszűnik a hagyományos leplezett restaurációk egyik leggyakoribb problémája: a kerámialeplezés lepattanása.</p>
       <p>A full contour cirkónium restaurációk nagy hajlítószilárdságuknak és homogén szerkezetüknek köszönhetően kiváló választást jelentenek implantátumos koronákhoz és kisebb hidakhoz is.</p>
     </article>
