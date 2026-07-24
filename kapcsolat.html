@@ -7,7 +7,7 @@
   <meta name="description" content="Vegye fel a kapcsolatot a Bridge Dental budapesti fogtechnikai laborral. Prémium protetikai megoldások svájci és német rendelőknek, pilot együttműködés és teljes európai logisztika.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&amp;family=Open+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
   <style>
     :root {
       --coral: #E05A2B;
@@ -410,40 +410,291 @@
       footer { grid-template-columns: 1fr; padding: 44px 20px; gap: 30px; }
       .footer-bottom { flex-direction: column; padding: 18px 20px; }
     }
+
+    /* ── EGYSÉGES BRIDGE DENTAL NAVIGÁCIÓ ── */
+    nav.contact-nav {
+      position: fixed;
+      inset: 0 0 auto;
+      z-index: 100;
+      height: 84px;
+      padding: 0 48px;
+      color: #f7f1eb;
+      background: rgba(13, 10, 8, 0.97);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      box-shadow: 0 10px 34px rgba(22, 14, 10, 0.14);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+    }
+
+    .contact-brand {
+      position: relative;
+      z-index: 120;
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+    }
+
+    .contact-brand img {
+      display: block;
+      width: auto;
+      height: 40px;
+      filter: drop-shadow(0 2px 8px rgba(0,0,0,0.35));
+    }
+
+    .contact-nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 34px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .contact-nav-menu > li { display: flex; align-items: center; }
+
+    .contact-nav-menu a {
+      position: relative;
+      padding-bottom: 6px;
+      color: #f5efe9;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1.6px;
+      text-decoration: none;
+      transition: color 0.25s ease;
+    }
+
+    .contact-nav-menu a::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background: var(--coral);
+      transition: width 0.3s ease;
+    }
+
+    .contact-nav-menu a:hover,
+    .contact-nav-menu a[aria-current='page'] { color: #f47b4f; }
+    .contact-nav-menu a:hover::after,
+    .contact-nav-menu a[aria-current='page']::after { width: 100%; }
+
+    .contact-dropdown { position: relative; }
+    .contact-dropdown > a { display: inline-flex; align-items: center; gap: 7px; }
+    .contact-dropdown > a svg {
+      width: 12px;
+      height: 12px;
+      transition: transform 0.25s ease;
+    }
+    .contact-dropdown:hover > a svg { transform: rotate(180deg); }
+
+    .contact-dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      z-index: 140;
+      min-width: 340px;
+      margin: 0;
+      padding: 16px 0 0;
+      list-style: none;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateX(-50%);
+      transition: opacity 0.2s ease, visibility 0.2s ease;
+    }
+
+    .contact-dropdown:hover .contact-dropdown-menu,
+    .contact-dropdown:focus-within .contact-dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .contact-dropdown-panel {
+      padding: 10px;
+      background: rgba(13,10,8,0.98);
+      border: 1px solid rgba(255,255,255,0.09);
+      border-radius: 16px;
+      box-shadow: 0 20px 52px rgba(0,0,0,0.34);
+    }
+
+    .contact-dropdown-panel ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .contact-dropdown-panel li + li { margin-top: 2px; }
+
+    .contact-dropdown-panel a {
+      display: block;
+      padding: 11px 14px;
+      border-radius: 9px;
+      font-size: 12px;
+      letter-spacing: 0.8px;
+      line-height: 1.35;
+      white-space: nowrap;
+    }
+
+    .contact-dropdown-panel a::after { display: none; }
+    .contact-dropdown-panel a:hover {
+      color: #f47b4f;
+      background: rgba(242,121,63,0.12);
+    }
+
+    .contact-burger {
+      position: relative;
+      z-index: 120;
+      display: none;
+      width: 44px;
+      height: 44px;
+      padding: 0;
+      border: 0;
+      background: transparent;
+      cursor: pointer;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    .contact-burger span {
+      display: block;
+      width: 26px;
+      height: 2.5px;
+      border-radius: 4px;
+      background: #f7f1eb;
+      transition: transform 0.35s ease, opacity 0.25s ease;
+    }
+
+    .contact-burger.open span:nth-child(1) { transform: translateY(8.5px) rotate(45deg); }
+    .contact-burger.open span:nth-child(2) { opacity: 0; }
+    .contact-burger.open span:nth-child(3) { transform: translateY(-8.5px) rotate(-45deg); }
+
+    .contact-mobile-menu {
+      position: fixed;
+      inset: 0;
+      z-index: 90;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      padding: 104px 24px 34px;
+      overflow-y: auto;
+      background: rgba(13,10,8,0.99);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.35s ease, visibility 0.35s ease;
+    }
+
+    .contact-mobile-menu.open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .contact-mobile-menu > a,
+    .contact-mobile-group > a {
+      color: #f7f1eb;
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(18px, 5.6vw, 25px);
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-align: center;
+      text-decoration: none;
+    }
+
+    .contact-mobile-menu > a[aria-current='page'] { color: #f47b4f; }
+    .contact-mobile-group { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+    .contact-mobile-submenu { display: flex; flex-direction: column; align-items: center; gap: 3px; }
+    .contact-mobile-submenu a {
+      padding: 4px 0;
+      color: rgba(247,241,235,0.68);
+      font-size: 13px;
+      font-weight: 600;
+      line-height: 1.35;
+      text-align: center;
+      text-decoration: none;
+    }
+
+    .page-hero { padding-top: 144px; }
+
+    @media (max-width: 1500px) {
+      nav.contact-nav { padding-left: 30px; padding-right: 30px; }
+      .contact-nav-menu { gap: 24px; }
+      .contact-nav-menu a { font-size: 11px; letter-spacing: 1.25px; }
+    }
+
+    @media (max-width: 1080px) {
+      nav.contact-nav { height: 76px; padding: 0 24px; }
+      .contact-nav-menu { display: none; }
+      .contact-burger { display: flex; }
+      .page-hero { padding-top: 120px; }
+    }
+
+    @media (max-width: 768px) {
+      nav.contact-nav { height: 72px; padding: 0 20px; }
+      .contact-brand img { height: 34px; }
+      .page-hero { padding-top: 108px; }
+      .contact-mobile-menu { justify-content: flex-start; }
+    }
   </style>
 </head>
 <body>
-<nav>
-  <a href="index.html" class="logo"><img src="logo.png" alt="Bridge Dental"></a>
-  <ul class="nav-links">
-    <li><a href="ismerje-meg-a-bridge-dentalt.html">Ismerje meg a Bridge Dentalt</a></li>
-    <li class="nav-dropdown">
-      <a href="index.html#szolgaltatasok">Szolgáltatások <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></a>
-      <ul class="dropdown-menu">
-        <div class="dropdown-menu-inner">
-          <li><a href="full-arch-implantatumos-rehabilitaciok.html">Full-Arch Implantátumos Rehabilitációk (All-on-X)</a></li>
-          <li><a href="implantatumos-cirkonium-restauraciok.html">Implantátumos cirkónium restaurációk</a></li>
-          <li><a href="esztetikai-keramia.html">Esztétikai kerámia pótlások</a></li>
-          <li><a href="digitalis-fogsorok.html">Digitális fogsorok — TrueDent</a></li>
-          <li><a href="digitalis-tervezes.html">Digitális tervezés</a></li>
-          <li><a href="digitalis-fogtechnika.html">Digitális fogtechnika</a></li>
-        </div>
+<nav class="contact-nav" aria-label="Fő navigáció">
+  <a href="index.html" class="contact-brand" aria-label="Bridge Dental főoldal">
+    <img src="logo-hero.png" alt="Bridge Dental">
+  </a>
+
+  <ul class="contact-nav-menu">
+    <li><a href="ismerje-meg-a-bridge-dentalt.html">ISMERJE MEG A BRIDGE DENTALT</a></li>
+    <li class="contact-dropdown">
+      <a href="index.html#szolgaltatasok">
+        SZAKTERÜLETEINK
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <polyline points="6 9 12 15 18 9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+      <ul class="contact-dropdown-menu">
+        <li class="contact-dropdown-panel">
+          <ul>
+            <li><a href="full-arch-implantatumos-rehabilitaciok.html">Full-Arch Implantátumos Rehabilitációk (All-on-X)</a></li>
+            <li><a href="implantatumos-cirkonium-restauraciok.html">Implantátumos cirkónium restaurációk</a></li>
+            <li><a href="digitalis-fogsorok.html">Digitális fogsorok — TrueDent</a></li>
+            <li><a href="digitalis-tervezes.html">Digitális workflow</a></li>
+            <li><a href="esztetikai-keramia.html">Esztétikai kerámiapótlások</a></li>
+            <li><a href="digitalis-fogtechnika.html">CAD/CAM gyártás</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
-    <li><a href="referenciak.html">Referenciák</a></li>
-    <li><a href="index.html#blog">Blog</a></li>
-    <li><a href="assets/bridge-dental-munkalap.pdf" download="Bridge-Dental-munkalap.pdf">Munkalap</a></li>
-    <li><a href="kapcsolat.html" class="active">Kapcsolat</a></li>
+    <li><a href="index.html#blog">BLOG</a></li>
+    <li><a href="assets/bridge-dental-munkalap.pdf" download="Bridge-Dental-munkalap.pdf">MUNKALAP</a></li>
+    <li><a href="kapcsolat.html" aria-current="page">KAPCSOLAT</a></li>
   </ul>
-  <div class="nav-right">
-    <div class="lang-switcher">
-      <button class="lang-btn active">HU</button>
-      <button class="lang-btn">DE</button>
-      <button class="lang-btn">EN</button>
-    </div>
-    <a href="kapcsolat.html" class="nav-cta">Kapcsolatfelvétel</a>
-  </div>
+
+  <button class="contact-burger" id="contactBurger" aria-label="Menü" aria-expanded="false" aria-controls="contactMobileMenu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+
+<div class="contact-mobile-menu" id="contactMobileMenu">
+  <a href="index.html">FŐOLDAL</a>
+  <a href="ismerje-meg-a-bridge-dentalt.html">ISMERJE MEG A BRIDGE DENTALT</a>
+  <div class="contact-mobile-group">
+    <a href="index.html#szolgaltatasok">SZAKTERÜLETEINK</a>
+    <div class="contact-mobile-submenu">
+      <a href="full-arch-implantatumos-rehabilitaciok.html">Full-Arch Implantátumos Rehabilitációk (All-on-X)</a>
+      <a href="implantatumos-cirkonium-restauraciok.html">Implantátumos cirkónium restaurációk</a>
+      <a href="digitalis-fogsorok.html">Digitális fogsorok — TrueDent</a>
+      <a href="digitalis-tervezes.html">Digitális workflow</a>
+      <a href="esztetikai-keramia.html">Esztétikai kerámiapótlások</a>
+      <a href="digitalis-fogtechnika.html">CAD/CAM gyártás</a>
+    </div>
+  </div>
+  <a href="index.html#blog">BLOG</a>
+  <a href="assets/bridge-dental-munkalap.pdf" download="Bridge-Dental-munkalap.pdf">MUNKALAP</a>
+  <a href="kapcsolat.html" aria-current="page">KAPCSOLAT</a>
+</div>
 
 <main>
   <section class="page-hero">
@@ -521,10 +772,10 @@
             <option value="" selected disabled>Válasszon témát</option>
             <option value="full-arch-implantatumos-rehabilitaciok">Full-Arch Implantátumos Rehabilitációk (All-on-X)</option>
             <option value="implantatumos-cirkonium-restauraciok">Implantátumos cirkónium restaurációk</option>
-            <option value="esztetikai-keramia-potlasok">Esztétikai kerámia pótlások</option>
+            <option value="esztetikai-keramia-potlasok">Esztétikai kerámiapótlások</option>
             <option value="digitalis-fogsorok-truedent">Digitális fogsorok — TrueDent</option>
-            <option value="digitalis-tervezes">Digitális tervezés</option>
-            <option value="digitalis-fogtechnika">Digitális fogtechnika</option>
+            <option value="digitalis-tervezes">Digitális workflow</option>
+            <option value="digitalis-fogtechnika">CAD/CAM gyártás</option>
             <option value="pilot-egyuttmukodes">Pilot együttműködés</option>
             <option value="egyeb">Egyéb</option>
           </select>
@@ -550,26 +801,28 @@
 <footer>
   <div class="footer-brand">
     <img src="logo.png" alt="Bridge Dental">
-    <p>Prémium protetikai fogtechnikai megoldások svájci és német fogászati rendelőknek.</p>
+    <p>Budapesti B2B fogtechnikai labor — implantológiára, digitális munkafolyamatokra és prémium restaurációkra specializálva.</p>
   </div>
   <div class="footer-col">
-    <h5>Szolgáltatások</h5>
+    <h5>Szakterületeink</h5>
     <ul>
-      <li><a href="full-arch-implantatumos-rehabilitaciok.html">Full-Arch Implantátumos Rehabilitációk</a></li>
+      <li><a href="full-arch-implantatumos-rehabilitaciok.html">Full-Arch Implantátumos Rehabilitációk (All-on-X)</a></li>
       <li><a href="implantatumos-cirkonium-restauraciok.html">Implantátumos cirkónium restaurációk</a></li>
-      <li><a href="esztetikai-keramia.html">Esztétikai kerámia pótlások</a></li>
       <li><a href="digitalis-fogsorok.html">Digitális fogsorok — TrueDent</a></li>
-      <li><a href="digitalis-tervezes.html">Digitális tervezés</a></li>
-      <li><a href="digitalis-fogtechnika.html">Digitális fogtechnika</a></li>
+      <li><a href="digitalis-tervezes.html">Digitális workflow</a></li>
+      <li><a href="esztetikai-keramia.html">Esztétikai kerámiapótlások</a></li>
+      <li><a href="digitalis-fogtechnika.html">CAD/CAM gyártás</a></li>
     </ul>
   </div>
   <div class="footer-col">
     <h5>Navigáció</h5>
     <ul>
+      <li><a href="index.html">Főoldal</a></li>
       <li><a href="ismerje-meg-a-bridge-dentalt.html">Ismerje meg a Bridge Dentalt</a></li>
-      <li><a href="index.html#szolgaltatasok">Szolgáltatások</a></li>
+      <li><a href="index.html#szolgaltatasok">Szakterületeink</a></li>
       <li><a href="referenciak.html">Referenciák</a></li>
       <li><a href="index.html#blog">Blog</a></li>
+      <li><a href="assets/bridge-dental-munkalap.pdf" download="Bridge-Dental-munkalap.pdf">Munkalap</a></li>
       <li><a href="kapcsolat.html">Kapcsolat</a></li>
     </ul>
   </div>
@@ -590,6 +843,33 @@
 </div>
 
 <script>
+  const contactBurger = document.getElementById('contactBurger');
+  const contactMobileMenu = document.getElementById('contactMobileMenu');
+
+  if (contactBurger && contactMobileMenu) {
+    const closeContactMenu = () => {
+      contactBurger.classList.remove('open');
+      contactMobileMenu.classList.remove('open');
+      contactBurger.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    };
+
+    contactBurger.addEventListener('click', () => {
+      const isOpen = contactMobileMenu.classList.toggle('open');
+      contactBurger.classList.toggle('open', isOpen);
+      contactBurger.setAttribute('aria-expanded', String(isOpen));
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    });
+
+    contactMobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', closeContactMenu);
+    });
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 1080) closeContactMenu();
+    });
+  }
+
   const reveals = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
