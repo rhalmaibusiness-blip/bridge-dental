@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Digitális fogtechnika – Bridge Dental | Fogtechnikai labor Budapest</title>
-  <meta name="description" content="A digitális munkafolyamat nem utólagos korrekciókra épül, hanem előre megtervezett, kontrollált folyamatra — kiszámíthatóbb végeredmény, kevesebb chairside korrekció.">
+  <title>CAD/CAM gyártás – Bridge Dental | Digitális fogtechnikai labor</title>
+  <meta name="description" content="A Bridge Dental saját digitális gyártóközpontja kontrollált CAD/CAM munkafolyamattal támogatja a pontos, reprodukálható és következetes minőségű restaurációk elkészítését.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&amp;family=Open+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -976,261 +976,1135 @@
       .contact-form { padding: 32px 24px; }
       footer, .footer-bottom { grid-template-columns: 1fr; padding: 40px 20px; gap: 32px; }
     }
+
+    /* ── CAD/CAM GYÁRTÁS – MODERN SZOLGÁLTATÁSOLDAL ── */
+    .service-hero {
+      position: relative;
+      min-height: 720px;
+      overflow: hidden;
+      color: #f7f1eb;
+      background:
+        radial-gradient(circle at 18% 72%, rgba(224, 90, 43, 0.17), transparent 34%),
+        #0d0a08;
+    }
+
+    .service-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background-image: radial-gradient(rgba(242, 121, 63, 0.22) 1px, transparent 1px);
+      background-size: 18px 18px;
+      opacity: 0.12;
+      mask-image: linear-gradient(90deg, #000, transparent 48%);
+    }
+
+    .hero-nav-main {
+      position: relative;
+      z-index: 40;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 30px 60px;
+      animation: camNavIn 0.8s ease both;
+    }
+
+    @keyframes camNavIn {
+      from { opacity: 0; transform: translateY(-16px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero-brand {
+      position: relative;
+      z-index: 50;
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+    }
+
+    .hero-brand img {
+      display: block;
+      width: auto;
+      height: 44px;
+      filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.4));
+    }
+
+    .hero-brand-fallback {
+      display: none;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+
+    .hero-brand-fallback .b { color: #f2793f; }
+    .hero-brand-fallback .d { color: #d3202f; }
+
+    .hero-menu {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .hero-menu > li {
+      display: flex;
+      align-items: center;
+    }
+
+    .hero-menu a {
+      position: relative;
+      padding-bottom: 6px;
+      color: #f5efe9;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .hero-menu a::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background: #e8502e;
+      transition: width 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .hero-menu a:hover,
+    .hero-menu a[aria-current='page'] { color: #f2793f; }
+    .hero-menu a:hover::after { width: 100%; }
+
+    .hero-dropdown { position: relative; }
+    .hero-dropdown > a { display: flex; align-items: center; gap: 7px; }
+    .hero-dropdown > a svg {
+      position: relative;
+      top: 1px;
+      display: block;
+      width: 12px;
+      height: 12px;
+      transition: transform 0.25s ease;
+    }
+    .hero-dropdown:hover > a svg { transform: rotate(180deg); }
+
+    .hero-dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      z-index: 100;
+      min-width: 320px;
+      margin: 0;
+      padding: 14px 0 0;
+      list-style: none;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateX(-50%);
+      transition: opacity 0.2s ease, visibility 0.2s ease;
+    }
+
+    .hero-dropdown:hover .hero-dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .hero-dropdown-panel {
+      padding: 10px;
+      background: rgba(13, 10, 8, 0.96);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px;
+      box-shadow: 0 18px 46px rgba(0,0,0,0.35);
+      backdrop-filter: blur(10px);
+    }
+
+    .hero-dropdown-panel > ul { margin: 0; padding: 0; list-style: none; }
+    .hero-dropdown-menu li + li { margin-top: 2px; }
+    .hero-dropdown-menu li a {
+      display: block;
+      padding: 11px 14px;
+      color: #f5efe9;
+      border-radius: 10px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      white-space: nowrap;
+      transition: background 0.18s ease, color 0.18s ease;
+    }
+    .hero-dropdown-menu li a::after { display: none; }
+    .hero-dropdown-menu li a:hover,
+    .hero-dropdown-menu li a[aria-current='page'] {
+      color: #f2793f;
+      background: rgba(242, 121, 63, 0.12);
+    }
+
+    .hero-burger {
+      position: relative;
+      z-index: 50;
+      display: none;
+      width: 44px;
+      height: 44px;
+      padding: 0;
+      background: none;
+      border: 0;
+      cursor: pointer;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    .hero-burger span {
+      display: block;
+      width: 26px;
+      height: 2.5px;
+      border-radius: 2px;
+      background: #f5efe9;
+      transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.25s ease;
+    }
+
+    .hero-burger.open span:nth-child(1) { transform: translateY(8.5px) rotate(45deg); }
+    .hero-burger.open span:nth-child(2) { opacity: 0; }
+    .hero-burger.open span:nth-child(3) { transform: translateY(-8.5px) rotate(-45deg); }
+
+    .hero-mobile-menu {
+      position: fixed;
+      inset: 0;
+      z-index: 30;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 90px 24px 32px;
+      overflow-y: auto;
+      background: rgba(13, 10, 8, 0.98);
+      backdrop-filter: blur(8px);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.4s ease, visibility 0.4s ease;
+    }
+
+    .hero-mobile-menu.open { opacity: 1; visibility: visible; }
+    .hero-mobile-menu a {
+      color: #f5efe9;
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(18px, 5vw, 26px);
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-align: center;
+      text-decoration: none;
+    }
+    .hero-mobile-group { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+    .hero-mobile-submenu { display: flex; flex-direction: column; align-items: center; gap: 3px; }
+    .hero-mobile-submenu a {
+      padding: 5px 0;
+      color: rgba(245,239,233,0.72);
+      font-family: 'Open Sans', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+    .hero-mobile-submenu a[aria-current='page'] { color: #f2793f; }
+
+    .service-hero-body {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: minmax(0, 48%) minmax(0, 52%);
+      min-height: 616px;
+    }
+
+    .service-hero-copy {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 54px clamp(42px, 6vw, 96px) 92px 60px;
+      animation: camCopyIn 0.9s 0.18s cubic-bezier(0.22, 1, 0.36, 1) both;
+    }
+
+    @keyframes camCopyIn {
+      from { opacity: 0; transform: translateY(28px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .service-hero .breadcrumb {
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-bottom: 30px;
+    }
+
+    .service-hero .breadcrumb a,
+    .service-hero .breadcrumb-current,
+    .service-hero .breadcrumb-sep {
+      font-size: 12px;
+      letter-spacing: 0.45px;
+    }
+
+    .service-hero .breadcrumb a { color: rgba(245, 239, 233, 0.62); }
+    .service-hero .breadcrumb a:hover { color: #f2793f; }
+    .service-hero .breadcrumb-sep { color: rgba(245, 239, 233, 0.28); }
+    .service-hero .breadcrumb-current { color: #f2793f; font-weight: 600; }
+
+    .service-hero-title {
+      max-width: 720px;
+      margin: 0;
+      color: #f7f1eb;
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(42px, 4.8vw, 72px);
+      font-weight: 800;
+      line-height: 1.04;
+      letter-spacing: -2.6px;
+      text-wrap: balance;
+    }
+
+    .service-hero-title::after {
+      content: '';
+      display: block;
+      width: 64px;
+      height: 3px;
+      margin-top: 30px;
+      border-radius: 99px;
+      background: linear-gradient(90deg, #e8502e, #f2793f);
+    }
+
+    .service-hero-subtitle {
+      max-width: 640px;
+      margin-top: 28px;
+      color: rgba(245, 239, 233, 0.76);
+      font-size: clamp(17px, 1.45vw, 21px);
+      line-height: 1.65;
+    }
+
+    .service-hero-media {
+      position: relative;
+      min-height: 616px;
+      overflow: hidden;
+      background: #211813;
+    }
+
+    .service-hero-media::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      pointer-events: none;
+      background:
+        linear-gradient(90deg, #0d0a08 0%, rgba(13,10,8,0.78) 8%, rgba(13,10,8,0.14) 25%, transparent 42%),
+        linear-gradient(0deg, rgba(13,10,8,0.4) 0%, transparent 48%);
+    }
+
+    .service-hero-media::after {
+      content: '';
+      position: absolute;
+      right: clamp(24px, 4vw, 68px);
+      bottom: clamp(24px, 4vw, 62px);
+      z-index: 3;
+      width: clamp(92px, 10vw, 148px);
+      aspect-ratio: 1;
+      border-right: 1px solid rgba(242,121,63,0.8);
+      border-bottom: 1px solid rgba(242,121,63,0.8);
+      border-radius: 0 0 46px 0;
+    }
+
+    .service-hero-media img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      min-height: 616px;
+      object-fit: cover;
+      object-position: center;
+      animation: camImageIn 1.3s ease both, camImageDrift 18s 1.3s ease-in-out infinite alternate;
+    }
+
+    @keyframes camImageIn {
+      from { opacity: 0; transform: scale(1.05); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    @keyframes camImageDrift {
+      from { transform: scale(1); }
+      to { transform: scale(1.045); }
+    }
+
+    .cam-section {
+      position: relative;
+      padding: clamp(76px, 8vw, 126px) clamp(24px, 5vw, 72px);
+      overflow: hidden;
+    }
+
+    .cam-inner {
+      position: relative;
+      z-index: 2;
+      width: min(100%, 1260px);
+      margin: 0 auto;
+    }
+
+    .cam-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(420px, 1.1fr);
+      align-items: center;
+      gap: clamp(54px, 7vw, 108px);
+    }
+
+    .cam-grid--reverse {
+      grid-template-columns: minmax(420px, 1.1fr) minmax(0, 0.9fr);
+    }
+
+    .cam-grid--reverse .cam-media { order: 1; }
+    .cam-grid--reverse .cam-copy { order: 2; }
+
+    .cam-copy h2,
+    .cam-heading {
+      margin: 0;
+      color: #1c1916;
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(36px, 4vw, 58px);
+      font-weight: 800;
+      line-height: 1.08;
+      letter-spacing: -2px;
+      text-wrap: balance;
+    }
+
+    .cam-copy h2::after,
+    .cam-heading::after {
+      content: '';
+      display: block;
+      width: 58px;
+      height: 3px;
+      margin: 28px 0 30px;
+      border-radius: 99px;
+      background: #e85b31;
+    }
+
+    .cam-copy p,
+    .cam-lead p {
+      color: #655e57;
+      font-size: clamp(15px, 1.25vw, 18px);
+      line-height: 1.82;
+    }
+
+    .cam-copy p + p,
+    .cam-lead p + p { margin-top: 18px; }
+
+    .cam-intro {
+      background:
+        radial-gradient(circle at 90% 12%, rgba(236,104,57,0.09), transparent 26%),
+        #f8f5f0;
+    }
+
+    .cam-intro::after {
+      content: '';
+      position: absolute;
+      top: 12%;
+      right: -94px;
+      width: 300px;
+      height: 300px;
+      border: 1px solid rgba(224,90,43,0.16);
+      border-radius: 50%;
+    }
+
+    .cam-media {
+      position: relative;
+      min-width: 0;
+    }
+
+    .cam-photo-shell {
+      position: relative;
+      min-height: 520px;
+      padding: 18px 0 0 18px;
+    }
+
+    .cam-photo-shell::before {
+      content: '';
+      position: absolute;
+      inset: 0 18px 18px 0;
+      border: 1px solid rgba(224,90,43,0.48);
+      border-radius: 108px 24px 108px 24px;
+    }
+
+    .cam-photo-shell img {
+      position: relative;
+      z-index: 1;
+      display: block;
+      width: 100%;
+      height: 520px;
+      object-fit: cover;
+      border-radius: 108px 24px 108px 24px;
+      box-shadow: 0 28px 68px rgba(47,30,20,0.18);
+    }
+
+    .cam-photo-shell--right::before,
+    .cam-photo-shell--right img {
+      border-radius: 24px 108px 24px 108px;
+    }
+
+    .cam-process {
+      color: #f7f1eb;
+      background:
+        radial-gradient(circle at 75% 28%, rgba(224,90,43,0.19), transparent 28%),
+        #15110e;
+    }
+
+    .cam-process .cam-heading,
+    .cam-process .cam-copy h2 { color: #f7f1eb; }
+    .cam-process .cam-lead p { color: rgba(247,241,235,0.7); }
+
+    .cam-process-grid {
+      display: grid;
+      grid-template-columns: minmax(320px, 0.78fr) minmax(0, 1.22fr);
+      align-items: start;
+      gap: clamp(52px, 8vw, 120px);
+    }
+
+    .cam-process-list {
+      position: relative;
+      display: grid;
+      gap: 14px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .cam-process-list::before {
+      content: '';
+      position: absolute;
+      top: 38px;
+      bottom: 38px;
+      left: 27px;
+      width: 1px;
+      background: linear-gradient(#e85b31, rgba(232,91,49,0.12));
+    }
+
+    .cam-process-list li {
+      position: relative;
+      display: grid;
+      grid-template-columns: 56px 1fr;
+      align-items: center;
+      min-height: 82px;
+      gap: 20px;
+      padding: 15px 22px 15px 0;
+      color: rgba(247,241,235,0.82);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 18px;
+      background: rgba(255,255,255,0.035);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 1.35;
+    }
+
+    .cam-process-list span {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      width: 56px;
+      height: 56px;
+      place-items: center;
+      color: #f2793f;
+      background: #1a1411;
+      border: 1px solid rgba(242,121,63,0.55);
+      border-radius: 50%;
+      font-size: 12px;
+      letter-spacing: 0.6px;
+    }
+
+    .cam-workflow {
+      background: #fdfbf8;
+    }
+
+    .cam-workflow--soft {
+      background:
+        linear-gradient(135deg, rgba(250,238,230,0.72), transparent 48%),
+        #f6f1eb;
+    }
+
+    .cam-workflow--dark {
+      color: #f7f1eb;
+      background:
+        radial-gradient(circle at 14% 18%, rgba(224,90,43,0.14), transparent 30%),
+        #17120f;
+    }
+
+    .cam-workflow--dark .cam-copy h2 { color: #f7f1eb; }
+    .cam-workflow--dark .cam-copy p { color: rgba(247,241,235,0.7); }
+
+    .cam-machine-frame {
+      position: relative;
+      min-height: 540px;
+      overflow: hidden;
+      border-radius: 28px;
+      background: #17120f;
+      box-shadow: 0 28px 76px rgba(36,23,16,0.2);
+    }
+
+    .cam-machine-frame::after {
+      content: '';
+      position: absolute;
+      inset: 18px;
+      pointer-events: none;
+      border: 1px solid rgba(242,121,63,0.35);
+      border-radius: 18px;
+    }
+
+    .cam-machine-frame img {
+      display: block;
+      width: 100%;
+      height: 540px;
+      object-fit: cover;
+    }
+
+    .cam-machine-frame--design img { object-position: center; }
+    .cam-machine-frame--mill img { object-position: 54% center; }
+
+    .cam-collage {
+      display: grid;
+      grid-template-columns: 1fr 0.72fr;
+      grid-template-rows: 1fr 0.8fr;
+      gap: 14px;
+      min-height: 570px;
+    }
+
+    .cam-collage figure {
+      position: relative;
+      overflow: hidden;
+      margin: 0;
+      border-radius: 24px;
+      box-shadow: 0 18px 50px rgba(36,23,16,0.15);
+    }
+
+    .cam-collage figure:first-child {
+      grid-row: 1 / 3;
+    }
+
+    .cam-collage img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .cam-collage figure:first-child img { object-position: center; }
+    .cam-collage figure:nth-child(2) img { object-position: center; }
+    .cam-collage figure:nth-child(3) img { object-position: center; }
+
+    .cam-materials {
+      background:
+        radial-gradient(circle at 82% 18%, rgba(224,90,43,0.1), transparent 30%),
+        #f8f4ef;
+    }
+
+    .cam-material-panel {
+      display: grid;
+      grid-template-columns: minmax(0, 0.84fr) minmax(460px, 1.16fr);
+      align-items: stretch;
+      overflow: hidden;
+      border: 1px solid rgba(141,110,91,0.18);
+      border-radius: 32px;
+      background: rgba(255,255,255,0.7);
+      box-shadow: 0 24px 70px rgba(57,39,29,0.1);
+    }
+
+    .cam-material-panel .cam-copy {
+      padding: clamp(40px, 6vw, 82px);
+    }
+
+    .cam-material-visual {
+      min-height: 560px;
+      overflow: hidden;
+      background: #1a1512;
+    }
+
+    .cam-material-visual img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      min-height: 560px;
+      object-fit: cover;
+    }
+
+    .cam-quality {
+      background:
+        linear-gradient(90deg, rgba(13,10,8,0.88), rgba(13,10,8,0.3)),
+        url('quality-photo.png') center / cover no-repeat;
+      color: #f7f1eb;
+    }
+
+    .cam-quality::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, #0f0b09 0%, rgba(15,11,9,0.86) 44%, rgba(15,11,9,0.24) 100%);
+    }
+
+    .cam-quality-card {
+      width: min(100%, 700px);
+      padding: clamp(38px, 5vw, 68px);
+      border: 1px solid rgba(242,121,63,0.35);
+      border-radius: 30px;
+      background: rgba(20,15,12,0.76);
+      box-shadow: 0 28px 80px rgba(0,0,0,0.28);
+      backdrop-filter: blur(12px);
+    }
+
+    .cam-quality-card h2 { color: #f7f1eb; }
+    .cam-quality-card p { color: rgba(247,241,235,0.72); }
+
+    .cam-center {
+      background: #f8f5f0;
+    }
+
+    .cam-center-card {
+      position: relative;
+      display: grid;
+      grid-template-columns: minmax(0, 0.82fr) minmax(460px, 1.18fr);
+      overflow: hidden;
+      border-radius: 34px;
+      background: #fff;
+      box-shadow: 0 26px 80px rgba(49,32,23,0.12);
+    }
+
+    .cam-center-card .cam-copy {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: clamp(42px, 6vw, 82px);
+    }
+
+    .cam-center-image {
+      min-height: 580px;
+      overflow: hidden;
+    }
+
+    .cam-center-image img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      min-height: 580px;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .cam-why {
+      color: #f7f1eb;
+      background:
+        radial-gradient(circle at 88% 22%, rgba(224,90,43,0.18), transparent 30%),
+        #110d0b;
+    }
+
+    .cam-why-card {
+      position: relative;
+      max-width: 1060px;
+      margin: 0 auto;
+      padding: clamp(48px, 7vw, 92px);
+      overflow: hidden;
+      border: 1px solid rgba(242,121,63,0.3);
+      border-radius: 34px;
+      background: linear-gradient(145deg, rgba(255,255,255,0.055), rgba(255,255,255,0.018));
+    }
+
+    .cam-why-card::before {
+      content: 'CAM';
+      position: absolute;
+      right: -18px;
+      bottom: -54px;
+      color: rgba(242,121,63,0.055);
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(130px, 19vw, 270px);
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: -18px;
+    }
+
+    .cam-why-card h2 {
+      position: relative;
+      z-index: 1;
+      margin: 0;
+      color: #f7f1eb;
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(40px, 5vw, 68px);
+      font-weight: 800;
+      line-height: 1.05;
+      letter-spacing: -2.5px;
+    }
+
+    .cam-why-card h2::after {
+      content: '';
+      display: block;
+      width: 62px;
+      height: 3px;
+      margin: 30px 0;
+      background: #ef713b;
+    }
+
+    .cam-why-card p {
+      position: relative;
+      z-index: 1;
+      max-width: 880px;
+      color: rgba(247,241,235,0.72);
+      font-size: clamp(15px, 1.35vw, 18px);
+      line-height: 1.82;
+    }
+
+    .cam-why-card p + p { margin-top: 20px; }
+
+    @media (max-width: 1500px) {
+      .hero-nav-main { padding-left: 32px; padding-right: 32px; }
+      .hero-menu { gap: 26px; }
+      .hero-menu a { font-size: 11.5px; letter-spacing: 1.45px; }
+    }
+
+    @media (max-width: 1120px) {
+      .hero-nav-main { padding: 24px 32px; }
+      .hero-menu { gap: 22px; }
+      .hero-menu a { font-size: 11px; letter-spacing: 1.3px; }
+      .service-hero-copy { padding-left: 32px; padding-right: 44px; }
+      .cam-grid,
+      .cam-grid--reverse,
+      .cam-material-panel,
+      .cam-center-card {
+        grid-template-columns: 1fr 1fr;
+        gap: 48px;
+      }
+      .cam-process-grid {
+        grid-template-columns: 0.88fr 1.12fr;
+        gap: 48px;
+      }
+      .cam-material-panel,
+      .cam-center-card { gap: 0; }
+    }
+
+    @media (max-width: 768px) {
+      .service-hero { min-height: 0; }
+      .hero-nav-main { padding: 20px 24px; }
+      .hero-menu { display: none; }
+      .hero-burger { display: flex; }
+      .hero-brand img { height: 36px; }
+      .service-hero-body { grid-template-columns: 1fr; min-height: 0; }
+      .service-hero-copy { padding: 48px 24px 54px; }
+      .service-hero .breadcrumb { margin-bottom: 24px; }
+      .service-hero-title { font-size: clamp(38px, 12vw, 52px); letter-spacing: -1.8px; }
+      .service-hero-title::after { margin-top: 24px; }
+      .service-hero-subtitle { margin-top: 22px; font-size: 17px; }
+      .service-hero-media,
+      .service-hero-media img { min-height: 320px; height: 320px; }
+      .service-hero-media::before {
+        background: linear-gradient(180deg, #0d0a08 0%, rgba(13,10,8,0.25) 20%, transparent 48%, rgba(13,10,8,0.2) 100%);
+      }
+      .service-hero-media::after { width: 86px; right: 22px; bottom: 22px; border-radius: 0 0 28px 0; }
+      .cam-section { padding: 64px 20px; }
+      .cam-grid,
+      .cam-grid--reverse,
+      .cam-process-grid,
+      .cam-material-panel,
+      .cam-center-card {
+        grid-template-columns: 1fr;
+        gap: 38px;
+      }
+      .cam-grid--reverse .cam-copy { order: 1; }
+      .cam-grid--reverse .cam-media { order: 2; }
+      .cam-copy h2,
+      .cam-heading {
+        font-size: clamp(32px, 9.5vw, 44px);
+        line-height: 1.08;
+        letter-spacing: -1.35px;
+      }
+      .cam-copy h2::after,
+      .cam-heading::after { margin: 22px 0 24px; }
+      .cam-photo-shell {
+        min-height: 350px;
+        padding: 14px 0 0 14px;
+      }
+      .cam-photo-shell::before,
+      .cam-photo-shell img,
+      .cam-photo-shell--right::before,
+      .cam-photo-shell--right img {
+        border-radius: 62px 18px 62px 18px;
+      }
+      .cam-photo-shell img { height: 350px; }
+      .cam-process-list li {
+        grid-template-columns: 48px 1fr;
+        min-height: 76px;
+        gap: 16px;
+        padding-right: 14px;
+        font-size: 14px;
+      }
+      .cam-process-list::before { left: 23px; }
+      .cam-process-list span { width: 48px; height: 48px; }
+      .cam-machine-frame,
+      .cam-machine-frame img { min-height: 350px; height: 350px; }
+      .cam-collage {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 310px 210px;
+        min-height: 0;
+      }
+      .cam-collage figure:first-child {
+        grid-column: 1 / 3;
+        grid-row: 1;
+      }
+      .cam-material-panel .cam-copy,
+      .cam-center-card .cam-copy { padding: 36px 26px 10px; }
+      .cam-material-visual,
+      .cam-material-visual img,
+      .cam-center-image,
+      .cam-center-image img { min-height: 350px; height: 350px; }
+      .cam-quality {
+        background-position: 62% center;
+      }
+      .cam-quality::before {
+        background: linear-gradient(180deg, rgba(15,11,9,0.86), rgba(15,11,9,0.7));
+      }
+      .cam-quality-card { padding: 34px 24px; border-radius: 24px; }
+      .cam-center-card { border-radius: 24px; }
+      .cam-why-card { padding: 40px 26px; border-radius: 24px; }
+      .cam-why-card h2 { font-size: clamp(36px, 11vw, 50px); letter-spacing: -1.6px; }
+      .cam-why-card::before { right: -14px; bottom: -28px; font-size: 120px; letter-spacing: -8px; }
+      .pilot-section { padding: 48px 20px; }
+      .pilot-inner { grid-template-columns: 1fr; padding: 40px 28px; gap: 32px; }
+      .pilot-action { align-items: stretch; }
+      .form-inner { grid-template-columns: 1fr; gap: 48px; }
+      .form-row { grid-template-columns: 1fr; }
+      .contact-form { padding: 32px 24px; }
+      footer, .footer-bottom { grid-template-columns: 1fr; padding: 40px 20px; gap: 32px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .hero-nav-main,
+      .service-hero-copy,
+      .service-hero-media img,
+      .reveal {
+        animation: none !important;
+        transition: none !important;
+      }
+    }
   </style>
 </head>
 <body>
 
-<!-- NAV -->
-<nav>
-  <a href="index.html" class="nav-logo">
-    <img src="logo.png" alt="Bridge Dental" style="height: 32px; width: auto;">
-  </a>
-  <ul class="nav-links">
-    <li><a href="ismerje-meg-a-bridge-dentalt.html">Ismerje meg a Bridge Dentalt</a></li>
-    <li class="nav-dropdown">
-      <a href="index.html#szolgaltatasok" class="active">Szolgáltatások <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></a>
-      <ul class="dropdown-menu">
-        <div class="dropdown-menu-inner">
-          <li><a href="full-arch-implantatumos-rehabilitaciok.html">Full-Arch Implantátumos Rehabilitációk (All-on-X)</a></li>
-          <li><a href="implantatumos-cirkonium-restauraciok.html">Implantátumos cirkónium restaurációk</a></li>
-          <li><a href="esztetikai-keramia.html">Esztétikai kerámia pótlások</a></li>
-          <li><a href="digitalis-fogsorok.html">Digitális fogsorok — TrueDent</a></li>
-          <li><a href="digitalis-tervezes.html">Digitális tervezés</a></li>
-          <li><a href="digitalis-fogtechnika.html" class="active">Digitális fogtechnika</a></li>
-        </div>
-      </ul>
-    </li>
-    <li><a href="referenciak.html">Referenciák</a></li>
-    <li><a href="index.html#blog">Blog</a></li>
-    <li><a href="assets/bridge-dental-munkalap.pdf" download="Bridge-Dental-munkalap.pdf">Munkalap</a></li>
-    <li><a href="kapcsolat.html">Kapcsolat</a></li>
-  </ul>
-  <div class="nav-right">
-    <div class="lang-switcher">
-      <button class="lang-btn active">HU</button>
-      <button class="lang-btn">DE</button>
-      <button class="lang-btn">EN</button>
-    </div>
-    <a href="kapcsolat.html" class="nav-cta">Kapcsolatfelvétel</a>
-  </div>
-</nav>
+<!-- HERO ÉS NAVIGÁCIÓ -->
+<section class="service-hero" id="hero">
+  <header class="hero-nav-main">
+    <a href="index.html" class="hero-brand" aria-label="Bridge Dental főoldal">
+      <img src="logo-hero.png" alt="Bridge Dental" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+      <span class="hero-brand-fallback"><span class="b">bridge</span><span class="d">dental</span></span>
+    </a>
 
-<!-- PAGE HERO -->
-<section class="page-hero">
-  <div class="page-hero-left">
-    <div class="breadcrumb">
-      <a href="index.html">Főoldal</a>
-      <span class="breadcrumb-sep">/</span>
-      <a href="index.html#szolgaltatasok">Szolgáltatások</a>
-      <span class="breadcrumb-sep">/</span>
-      <span class="breadcrumb-current">Digitális fogtechnika</span>
+    <ul class="hero-menu">
+      <li><a href="ismerje-meg-a-bridge-dentalt.html">ISMERJE MEG A BRIDGE DENTALT</a></li>
+      <li class="hero-dropdown">
+        <a href="index.html#szolgaltatasok">
+          SZAKTERÜLETEINK
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <polyline points="6 9 12 15 18 9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+        <ul class="hero-dropdown-menu">
+          <li class="hero-dropdown-panel">
+            <ul>
+              <li><a href="full-arch-implantatumos-rehabilitaciok.html">Full-Arch Implantátumos Rehabilitációk (All-on-X)</a></li>
+              <li><a href="implantatumos-cirkonium-restauraciok.html">Implantátumos cirkónium restaurációk</a></li>
+              <li><a href="digitalis-fogsorok.html">Digitális fogsorok — TrueDent</a></li>
+              <li><a href="digitalis-tervezes.html">Digitális workflow</a></li>
+              <li><a href="esztetikai-keramia.html">Esztétikai kerámiapótlások</a></li>
+              <li><a href="digitalis-fogtechnika.html" aria-current="page">CAD/CAM gyártás</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li><a href="index.html#blog">BLOG</a></li>
+      <li><a href="assets/bridge-dental-munkalap.pdf" download="Bridge-Dental-munkalap.pdf">MUNKALAP</a></li>
+      <li><a href="kapcsolat.html">KAPCSOLAT</a></li>
+    </ul>
+
+    <button class="hero-burger" id="heroBurger" aria-label="Menü" aria-expanded="false" aria-controls="heroMobileMenu">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <div class="hero-mobile-menu" id="heroMobileMenu">
+    <a href="ismerje-meg-a-bridge-dentalt.html">ISMERJE MEG A BRIDGE DENTALT</a>
+    <div class="hero-mobile-group">
+      <a href="index.html#szolgaltatasok">SZAKTERÜLETEINK</a>
+      <div class="hero-mobile-submenu">
+        <a href="full-arch-implantatumos-rehabilitaciok.html">Full-Arch Implantátumos Rehabilitációk (All-on-X)</a>
+        <a href="implantatumos-cirkonium-restauraciok.html">Implantátumos cirkónium restaurációk</a>
+        <a href="digitalis-fogsorok.html">Digitális fogsorok — TrueDent</a>
+        <a href="digitalis-tervezes.html">Digitális workflow</a>
+        <a href="esztetikai-keramia.html">Esztétikai kerámiapótlások</a>
+        <a href="digitalis-fogtechnika.html" aria-current="page">CAD/CAM gyártás</a>
+      </div>
     </div>
-    <div class="section-label">Szolgáltatás</div>
-    <h1 class="page-hero-title">Digitális fogtechnika</h1>
-    <p class="page-hero-subtitle">Nem csupán egy technológiai fejlesztés — hanem egy komplex rendszer, amely a teljes folyamatot lefedi.</p>
-    <a href="#kapcsolat" class="btn-primary" style="margin-top: 32px; display: inline-flex;">Dolgozzunk együtt!</a>
+    <a href="index.html#blog">BLOG</a>
+    <a href="assets/bridge-dental-munkalap.pdf" download="Bridge-Dental-munkalap.pdf">MUNKALAP</a>
+    <a href="kapcsolat.html">KAPCSOLAT</a>
   </div>
-  <div class="page-hero-right">
-    <img src="digitalis_fogtechnika_foto.jpg" alt="Digitális fogtechnika — Bridge Dental labor">
+
+  <div class="service-hero-body">
+    <div class="service-hero-copy">
+      <div class="breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Főoldal</a>
+        <span class="breadcrumb-sep">/</span>
+        <a href="index.html#szolgaltatasok">Szakterületeink</a>
+        <span class="breadcrumb-sep">/</span>
+        <span class="breadcrumb-current">CAD/CAM gyártás</span>
+      </div>
+      <h1 class="service-hero-title">CAD/CAM gyártás</h1>
+      <p class="service-hero-subtitle">A digitális precizitás alapja</p>
+    </div>
+
+    <div class="service-hero-media">
+      <img src="assets/full-arch-partner-milling.webp" alt="Precíz CAD/CAM marás a Bridge Dental digitális gyártóközpontjában">
+    </div>
   </div>
 </section>
 
-<!-- INTRO -->
-<section class="section section-alt">
-  <div class="intro-grid reveal">
-    <div class="intro-text">
-      <p>A hagyományos technológiákkal szemben a digitális munkafolyamat nem utólagos korrekciókra épül, hanem előre megtervezett, kontrollált folyamatra.</p>
-      <p>Ennek köszönhetően a kritikus döntések nem a rendelőben, a behelyezés során születnek meg, hanem már a tervezési szakaszban.</p>
-      <p>A digitális fogtechnika tehát nem csupán egy technológiai fejlesztés, hanem egy komplex rendszer, amely a teljes folyamatot lefedi.</p>
-      <p>Laborunk készen áll digitális lenyomatok fogadására. Alvállalkozóink műanyag szekcionált modelleket, ideiglenes hidakat és síneket készítenek.</p>
-      <div class="intro-highlight">
-        <p>Lehetővé teszi, hogy minden egyes pótlás egy előre definiált terv alapján készüljön el.</p>
-      </div>
+<!-- BEVEZETÉS -->
+<section class="cam-section cam-intro">
+  <div class="cam-inner cam-grid reveal">
+    <div class="cam-lead">
+      <p>A modern fogtechnikában a CAD/CAM technológia jóval több, mint digitális tervezés és automatizált gyártás.</p>
+      <p>Egy olyan kontrollált munkafolyamatot jelent, amely támogatja a restaurációk pontos illeszkedését, reprodukálhatóságát és következetes minőségét.</p>
+      <p>A Bridge Dental saját digitális gyártóközpontja lehetővé teszi, hogy a tervezéstől a végleges restaurációig minden munkafázis egyetlen, összehangolt rendszerben történjen.</p>
     </div>
-    <div class="intro-visual">
-      <img class="intro-image" src="digitalis-fogtechnika-labor-munkafolyamat.webp" alt="Digitális fogtechnikai munkafolyamat kézi ellenőrzése a Bridge Dental laborban">
-      <div class="process-card">
-        <div class="process-card-label">A digitális munkafolyamat fő lépései</div>
-        <div class="process-step">
-          <div class="process-num">1</div>
-          <div class="process-step-text">
-            <strong>Digitális adatgyűjtés</strong>
-            Intraorális szkenneléssel, vagy hagyományos lenyomatok digitalizálásával készített pontos, torzításmentes 3D alapadatok feldolgozása.
-          </div>
-        </div>
-        <div class="process-step">
-          <div class="process-num">2</div>
-          <div class="process-step-text">
-            <strong>Virtuális 3D tervezés (CAD)</strong>
-            A pótlás teljes formája digitálisan kerül kialakításra. Ebben a fázisban történik a legfontosabb döntések meghozatala.
-          </div>
-        </div>
-        <div class="process-step">
-          <div class="process-num">3</div>
-          <div class="process-step-text">
-            <strong>Tervezési kontroll és egyeztetés</strong>
-            Komplex eseteknél lehetőség van a terv előzetes ellenőrzésére és egyeztetésére, így a hibák még a gyártás előtt korrigálhatók (ZOOM, Exocad review).
-          </div>
-        </div>
-        <div class="process-step">
-          <div class="process-num">4</div>
-          <div class="process-step-text">
-            <strong>Számítógép-vezérelt gyártás (CAM)</strong>
-            Nagy pontosságú marógépekkel vagy 3D nyomtatással — stabil minőség és reprodukálhatóság.
-          </div>
-        </div>
-        <div class="process-step">
-          <div class="process-num">5</div>
-          <div class="process-step-text">
-            <strong>Minőségellenőrzés és dokumentáció</strong>
-            Minden munka ellenőrzött, dokumentált és visszakövethető, ami nagyobb biztonságot jelent a rendelő számára.
-          </div>
-        </div>
+    <div class="cam-media">
+      <div class="cam-photo-shell">
+        <img src="assets/digitalis-fogtechnika-labor-munkafolyamat.webp" alt="Digitális fogtechnikai munkafolyamat a Bridge Dental laborban">
       </div>
     </div>
   </div>
 </section>
 
-<!-- PARTNERI ELŐNYÖK -->
-<section class="alapelv-section">
-  <div class="alapelv-header reveal">
-    <div class="alapelv-kicker">Miért válasszon minket?</div>
-    <h2>Klinikai partnerként dolgozunk, nem egyszerű beszállítóként.</h2>
-    <p>Prémium implantológiai és digitális fogtechnikai munkák svájci és német partnereiknek, dokumentált minőséggel és dedikált szakmai támogatással.</p>
+<!-- A DIGITÁLIS GYÁRTÁS ELŐNYEI -->
+<section class="cam-section cam-process">
+  <div class="cam-inner cam-process-grid reveal">
+    <div class="cam-copy">
+      <h2>A digitális gyártás előnyei</h2>
+      <div class="cam-lead">
+        <p>A saját CAD/CAM gyártás nem csupán gyorsabb munkavégzést jelent.</p>
+        <p>A teljes folyamat laboron belüli kontrollja biztosítja, hogy minden restauráció ugyanazon szakmai elvek és minőségbiztosítási rendszer szerint készüljön.</p>
+        <p>Ez támogatja a kiszámítható klinikai eredményeket és a hosszú távú partneri együttműködést.</p>
+      </div>
+    </div>
+    <ol class="cam-process-list" aria-label="A digitális gyártás munkafázisai">
+      <li><span>01</span>Digitális tervezés</li>
+      <li><span>02</span>Precíz CAD/CAM marás</li>
+      <li><span>03</span>Additív gyártás</li>
+      <li><span>04</span>Prémium anyagok</li>
+      <li><span>05</span>Minőség minden munkafázisban</li>
+    </ol>
   </div>
-  <div class="alapelv-bar reveal">
-    <div class="alapelv-item">
-      <div class="alapelv-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-5"/></svg>
-      </div>
-      <div class="alapelv-text">
-        <h4>Kockázatcsökkentett kezdés</h4>
-        <p>Az első komplex implantációs esetnél díjmentes digitális tervezés, wax-up/mock-up és sebészi sablon. Nem kedvezményt adunk, hanem biztonságos belépést.</p>
-      </div>
-    </div>
-    <div class="alapelv-item">
-      <div class="alapelv-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16"/><path d="M4 12h16"/><path d="M4 17h10"/><path d="M17 15l3 3-3 3"/></svg>
-      </div>
-      <div class="alapelv-text">
-        <h4>Saját digitális gyártás</h4>
-        <p>Exocad tervezés, intraorális scan fájlok fogadása, házon belüli CNC fréz- és 3D nyomtatási kapacitás, alvállalkozók nélkül.</p>
+</section>
+
+<!-- DIGITÁLIS TERVEZÉS -->
+<section class="cam-section cam-workflow">
+  <div class="cam-inner cam-grid cam-grid--reverse reveal">
+    <div class="cam-media">
+      <div class="cam-machine-frame cam-machine-frame--design">
+        <img src="assets/full-arch-partner-cad-design.webp" alt="Exocad tervezés közben dolgozó fogtechnikus">
       </div>
     </div>
-    <div class="alapelv-item">
-      <div class="alapelv-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 7V3h8v4"/><path d="M6 21h12a2 2 0 0 0 2-2V7H4v12a2 2 0 0 0 2 2z"/><path d="M9 13h6"/><path d="M9 17h4"/></svg>
-      </div>
-      <div class="alapelv-text">
-        <h4>Dokumentált prémium minőség</h4>
-        <p>Implant munkákra 5 év anyag- és konstrukciós garancia, teljesen nyomon követhető gyártási folyamat.</p>
-      </div>
+    <div class="cam-copy">
+      <h2>Digitális tervezés</h2>
+      <p>Minden restauráció digitális tervezéssel indul.</p>
+      <p>A CAD szoftverek segítségével a restauráció anatómiai kialakítása, funkciója és technikai paraméterei már a gyártás előtt ellenőrizhetők.</p>
+      <p>Ez lehetővé teszi a pontosabb előkészítést és a reprodukálható munkafolyamatot.</p>
     </div>
-    <div class="alapelv-item">
-      <div class="alapelv-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/><path d="M8 9h8"/><path d="M8 13h5"/></svg>
-      </div>
-      <div class="alapelv-text">
-        <h4>Német nyelvű szakmai támogatás</h4>
-        <p>Dedikált németül kommunikáló fogtechnikus, online Exocad review, Zoom konzultáció és scan-minőségi visszajelzés.</p>
-      </div>
+  </div>
+</section>
+
+<!-- PRECÍZ CAD/CAM MARÁS -->
+<section class="cam-section cam-workflow cam-workflow--soft">
+  <div class="cam-inner cam-grid reveal">
+    <div class="cam-copy">
+      <h2>Precíz CAD/CAM marás</h2>
+      <p>A nagy pontosságú marógépek lehetővé teszik, hogy a digitálisan megtervezett restaurációk minimális eltéréssel készüljenek el.</p>
+      <p>A korszerű megmunkálási technológia támogatja a pontos illeszkedést, a stabil anyagminőséget és a következetes gyártási eredményeket.</p>
     </div>
-    <div class="alapelv-item">
-      <div class="alapelv-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h11v10H3z"/><path d="M14 10h4l3 3v4h-7z"/><circle cx="7" cy="19" r="2"/><circle cx="18" cy="19" r="2"/></svg>
-      </div>
-      <div class="alapelv-text">
-        <h4>Európai partnerlogisztika</h4>
-        <p>Teljes oda-vissza szállítás, német nyelvű ügyintézés és régiónként limitált partnerkör a stabil együttműködésért.</p>
+    <div class="cam-media">
+      <div class="cam-machine-frame cam-machine-frame--mill">
+        <img src="assets/full-arch-partner-milling.webp" alt="Cirkónium korong precíz CAD/CAM marása">
       </div>
     </div>
   </div>
 </section>
 
-<!-- ELŐNYÖK -->
-<section class="section section-alt">
-  <div class="benefits-header reveal">
-    <h2>A digitális fogtechnika előnyei.</h2>
-  </div>
-  <div class="benefits-grid reveal">
-
-    <div class="benefit-card">
-      <div class="benefit-card-num">01</div>
-      <h3>Kiszámíthatóbb végeredmény</h3>
+<!-- ADDITÍV GYÁRTÁS -->
+<section class="cam-section cam-workflow">
+  <div class="cam-inner cam-grid cam-grid--reverse reveal">
+    <div class="cam-media">
+      <div class="cam-collage">
+        <figure>
+          <img src="assets/full-arch-partner-printing.webp" alt="Fogtechnikai restaurációk additív gyártása">
+        </figure>
+        <figure>
+          <img src="assets/truedent-restoration-detail.jpg" alt="Elkészült TrueDent digitális fogsor">
+        </figure>
+        <figure>
+          <img src="truedent-digitalis-fogsortervezes-exocad.webp" alt="Digitális fogsor tervezése Exocad környezetben">
+        </figure>
+      </div>
     </div>
-
-    <div class="benefit-card featured">
-      <div class="benefit-card-num">02</div>
-      <h3>Kevesebb chairside korrekció</h3>
+    <div class="cam-copy">
+      <h2>Additív gyártás</h2>
+      <p>A 3D nyomtatás új lehetőségeket nyitott a digitális fogtechnikában.</p>
+      <p>A digitális modellek, sebészi sablonok, prototípusok, ideiglenes restaurációk és digitális fogsorok gyorsan, nagy pontossággal és reprodukálható módon készíthetők el.</p>
     </div>
-
-    <div class="benefit-card">
-      <div class="benefit-card-num">03</div>
-      <h3>Pontosabb illeszkedés</h3>
-    </div>
-
-    <div class="benefit-card">
-      <div class="benefit-card-num">04</div>
-      <h3>Stabilabb funkció</h3>
-    </div>
-
-    <div class="benefit-card">
-      <div class="benefit-card-num">05</div>
-      <h3>Magasabb esztétika</h3>
-    </div>
-
-    <div class="benefit-card">
-      <div class="benefit-card-num">06</div>
-      <h3>Reprodukálhatóság</h3>
-    </div>
-
-  </div>
-  <div style="margin-top: 48px; display: flex; flex-direction: column; align-items: center; gap: 20px;">
-    <p style="font-family: 'Montserrat', sans-serif; font-size: 22px; font-weight: 700; color: var(--charcoal); letter-spacing: -0.5px;">Dolgozzunk együtt!</p>
-    <a href="#kapcsolat" class="btn-primary" style="align-self: center;">Vegye fel velünk a kapcsolatot.</a>
   </div>
 </section>
 
-<!-- CSAPAT NÉVJEGYEK -->
-<section class="section section-alt">
-  <div class="reveal">
-    <div class="section-label">A csapat</div>
-    <h2 style="font-family:'Montserrat',sans-serif;font-size:clamp(26px,2.5vw,38px);font-weight:800;letter-spacing:-1px;line-height:1.2;margin-bottom:12px;">Közvetlen kapcsolattartóink.</h2>
-    <p style="font-size:16px;color:var(--warm-gray);line-height:1.75;">Közvetlen kapcsolat, gyors válaszok — mindig elérhető kollégákkal.</p>
+<!-- PRÉMIUM ANYAGOK -->
+<section class="cam-section cam-materials">
+  <div class="cam-inner cam-material-panel reveal">
+    <div class="cam-copy">
+      <h2>Prémium anyagok</h2>
+      <p>A technológia önmagában nem elegendő.</p>
+      <p>A restauráció hosszú távú megbízhatóságát a megfelelő alapanyagok is meghatározzák.</p>
+      <p>Ezért kizárólag olyan anyagokat használunk, amelyek megfelelnek a legmagasabb szakmai követelményeknek, és amelyek mögött megbízható, nemzetközi gyártók állnak.</p>
+    </div>
+    <div class="cam-material-visual">
+      <img src="assets/full-arch-partner-ceramic.webp" alt="Prémium fogászati kerámia restauráció egyedi karakterizálása">
+    </div>
   </div>
-  <div class="contact-grid">
-    <div class="contact-card reveal">
-      <div class="contact-avatar"><img src="csapat_denes.jpg" alt="Császár Dénes"></div>
-      <div class="contact-name">Császár Dénes</div>
-      <div class="contact-role">Fogtechnikus mester, ügyvezető</div>
-      <a href="tel:+36703966655" class="contact-phone">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.07 12 19.79 19.79 0 0 1 1 3.18C1 2.09 1.9 1 3 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16z"/></svg>
-        +36 70 396 6655
-      </a>
+</section>
+
+<!-- MINŐSÉG MINDEN MUNKAFÁZISBAN -->
+<section class="cam-section cam-quality">
+  <div class="cam-inner reveal">
+    <div class="cam-copy cam-quality-card">
+      <h2>Minőség minden munkafázisban</h2>
+      <p>A digitális gyártás számunkra nem ér véget a marással vagy a nyomtatással.</p>
+      <p>Minden restauráció többlépcsős ellenőrzésen halad át, amely magában foglalja a digitális terv felülvizsgálatát, a gyártási pontosság ellenőrzését, az illeszkedés vizsgálatát és az esztétikai értékelést.</p>
+      <p>Ez biztosítja, hogy partnereink minden esetben következetes minőséget kapjanak.</p>
     </div>
-    <div class="contact-card reveal reveal-delay-1">
-      <div class="contact-avatar" style="display:flex;align-items:center;justify-content:center;background:#ede8e1;"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#b5a99c" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
-      <div class="contact-name">Kinál Attila</div>
-      <div class="contact-role">Fogtechnikus mester, szakmai vezető</div>
+  </div>
+</section>
+
+<!-- SAJÁT DIGITÁLIS GYÁRTÓKÖZPONT -->
+<section class="cam-section cam-center">
+  <div class="cam-inner cam-center-card reveal">
+    <div class="cam-copy">
+      <h2>Saját digitális gyártóközpont</h2>
+      <p>A saját CAD/CAM és additív gyártókapacitás nem csupán technológiai előnyt jelent.</p>
+      <p>Lehetővé teszi, hogy a teljes munkafolyamat laborunkon belül maradjon, biztosítva a gyorsabb reakcióidőt, a folyamatos minőségellenőrzést és a rugalmas szakmai együttműködést.</p>
+      <p>Ez különösen fontos összetett implantológiai rehabilitációk és nagy esztétikai igényű restaurációk esetén.</p>
     </div>
-    <div class="contact-card reveal reveal-delay-2">
-      <div class="contact-avatar"><img src="csapat_hedi.jpg" alt="Demeter Hédi"></div>
-      <div class="contact-name">Demeter Hédi</div>
-      <div class="contact-role">Irodavezető</div>
-      <a href="tel:+36703966654" class="contact-phone">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.07 12 19.79 19.79 0 0 1 1 3.18C1 2.09 1.9 1 3 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16z"/></svg>
-        +36 70 396 6654
-      </a>
+    <div class="cam-center-image">
+      <img src="assets/bridge-dental-kuldetes-fogtechnikai-labor.webp" alt="A Bridge Dental saját digitális fogtechnikai gyártóközpontja">
     </div>
-    <div class="contact-card reveal reveal-delay-3">
-      <div class="contact-avatar" style="display:flex;align-items:center;justify-content:center;background:#ede8e1;"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#b5a99c" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
-      <div class="contact-name">Péter Dóra</div>
-      <div class="contact-role">Projektmenedzser</div>
-    </div>
-    <div class="contact-card reveal reveal-delay-4">
-      <div class="contact-avatar" style="display:flex;align-items:center;justify-content:center;background:#ede8e1;"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#b5a99c" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
-      <div class="contact-name">Urbán Vanda</div>
-      <div class="contact-role">Projektmenedzser</div>
+  </div>
+</section>
+
+<!-- MIÉRT A BRIDGE DENTAL -->
+<section class="cam-section cam-why">
+  <div class="cam-inner reveal">
+    <div class="cam-why-card">
+      <h2>Miért a Bridge Dental?</h2>
+      <p>A CAD/CAM technológia ma már sok laborban elérhető. Számunkra azonban a valódi értéket nem a gépek jelentik, hanem az a szakmai tudás, amellyel ezeket a technológiákat a fogorvosok és pácienseik szolgálatába állítjuk.</p>
+      <p>A digitális tervezés, a saját gyártóközpont, a prémium anyagok és a következetes minőségbiztosítás együtt teszik lehetővé, hogy restaurációink hosszú távon is megfeleljenek a legmagasabb szakmai elvárásoknak.</p>
     </div>
   </div>
 </section>
@@ -1241,8 +2115,8 @@
     <div class="pilot-bg-circle"></div>
     <div class="pilot-content">
       <div class="section-label">Pilot együttműködés</div>
-      <h2>Próbáljon ki minket<br>3-5 komplex esettel</h2>
-      <p>A pilot egy 8 hetes, kockázatcsökkentett próbaidőszak bonyolultabb implantátumos munkákra. A közös próba-együttműködés során láthatja, hogyan kommunikálunk, hogyan tervezünk, milyen minőségben gyártunk, és hogyan kezeljük a felmerülő kérdéseket.</p>
+      <h2>Próbáljon ki minket<br>3-5 CAD/CAM esettel</h2>
+      <p>A pilot egy 8 hetes, kockázatcsökkentett próbaidőszak CAD/CAM munkákra. A közös próba-együttműködés során láthatja, hogyan kommunikálunk, hogyan tervezünk, milyen minőségben gyártunk, és hogyan kezeljük a felmerülő kérdéseket.</p>
       <div class="pilot-features">
         <div class="pilot-feature"><span class="pilot-feature-dot"></span>Német nyelvű szakmai egyeztetés dedikált fogtechnikussal</div>
         <div class="pilot-feature"><span class="pilot-feature-dot"></span>Online digitális tervezési konzultáció</div>
@@ -1262,7 +2136,7 @@
     <div class="form-intro">
       <div class="section-label">Kapcsolatfelvétel</div>
       <h2>Vegye fel velünk a kapcsolatot.</h2>
-      <p>Írjon nekünk a digitális fogtechnika szolgáltatásról — munkatársunk hamarosan felveszi Önnel a kapcsolatot.</p>
+      <p>Írjon nekünk a CAD/CAM gyártás szolgáltatásról — munkatársunk hamarosan felveszi Önnel a kapcsolatot.</p>
       <div class="form-contact-items">
         <div class="form-contact-item">
           <div class="form-contact-icon">
@@ -1310,8 +2184,8 @@
         <div class="form-group">
           <label for="targy">Miben segíthetünk?</label>
           <select id="targy" name="targy">
-            <option value="digitalis-fogtechnika-erdeklodes" selected>Érdeklődés a digitális fogtechnika szolgáltatásról</option>
-            <option value="digitalis-fogtechnika-pilot">Digitális fogtechnika pilot együttműködés</option>
+            <option value="cad-cam-gyartas-erdeklodes" selected>Érdeklődés a CAD/CAM gyártás szolgáltatásról</option>
+            <option value="cad-cam-gyartas-pilot">CAD/CAM gyártás pilot együttműködés</option>
             <option value="egyeb">Egyéb</option>
           </select>
         </div>
@@ -1345,8 +2219,8 @@
       <li><a href="implantatumos-cirkonium-restauraciok.html">Implantátumos cirkónium restaurációk</a></li>
       <li><a href="esztetikai-keramia.html">Esztétikai kerámia pótlások</a></li>
       <li><a href="digitalis-fogsorok.html">Digitális fogsorok — TrueDent</a></li>
-      <li><a href="digitalis-tervezes.html">Digitális tervezés</a></li>
-      <li><a href="digitalis-fogtechnika.html">Digitális fogtechnika</a></li>
+      <li><a href="digitalis-tervezes.html">Digitális workflow</a></li>
+      <li><a href="digitalis-fogtechnika.html">CAD/CAM gyártás</a></li>
     </ul>
   </div>
   <div class="footer-col">
@@ -1376,6 +2250,27 @@
 </div>
 
 <script>
+  const heroBurger = document.getElementById('heroBurger');
+  const heroMobileMenu = document.getElementById('heroMobileMenu');
+
+  if (heroBurger && heroMobileMenu) {
+    heroBurger.addEventListener('click', () => {
+      const isOpen = heroMobileMenu.classList.toggle('open');
+      heroBurger.classList.toggle('open', isOpen);
+      heroBurger.setAttribute('aria-expanded', String(isOpen));
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    });
+
+    heroMobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        heroMobileMenu.classList.remove('open');
+        heroBurger.classList.remove('open');
+        heroBurger.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      });
+    });
+  }
+
   const reveals = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => {
