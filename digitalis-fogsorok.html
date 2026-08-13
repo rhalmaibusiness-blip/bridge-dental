@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Digitális fogsorok Truedent – Bridge Dental</title>
+  <title>TrueDent – Full color, monolitikus digitális fogsorok | Bridge Dental</title>
   <meta name="description" content="Digitális fogsorok Truedent technológiával: CAD/CAM tervezés, teljes színű 3D nyomtatás, digitális archiválás és BPS szemlélet a Bridge Dentaltól.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1392,11 +1392,9 @@
     }
 
     .td-intro,
-    .td-workflow,
     .td-system,
     .td-benefits,
     .td-bps,
-    .td-recommend,
     .td-bridge {
       position: relative;
       overflow: hidden;
@@ -1447,21 +1445,6 @@
       line-height: 1.78;
     }
 
-    .td-workflow {
-      padding: clamp(94px, 9vw, 142px) 48px;
-      color: #fff8f1;
-      background:
-        radial-gradient(circle at 75% 25%, rgba(224,90,43,0.18), transparent 30%),
-        linear-gradient(135deg, #14110f, #241c18 58%, #0f0d0b);
-    }
-    .td-workflow-inner {
-      display: grid;
-      grid-template-columns: minmax(0, 0.84fr) minmax(460px, 1.16fr);
-      gap: clamp(52px, 7vw, 96px);
-      align-items: center;
-      max-width: 1240px;
-      margin: 0 auto;
-    }
     .td-heading {
       font-family: 'Cormorant Garamond', Georgia, serif;
       font-size: clamp(48px, 5.1vw, 72px);
@@ -1478,36 +1461,6 @@
       margin-top: 26px;
       background: var(--coral-light);
     }
-    .td-workflow-copy p {
-      color: rgba(255,248,241,0.74);
-      font-size: 17px;
-      line-height: 1.78;
-    }
-    .td-workflow-copy p + p { margin-top: 22px; }
-    .td-workflow-graphic {
-      position: relative;
-      overflow: hidden;
-      aspect-ratio: 16 / 9;
-      border: 1px solid rgba(240,122,74,0.24);
-      border-radius: 36px;
-      background: #171210;
-      box-shadow: 0 30px 72px rgba(0,0,0,0.28);
-    }
-    .td-workflow-graphic::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-      border-radius: inherit;
-      box-shadow: inset 0 0 0 1px rgba(255,248,241,0.035);
-    }
-    .td-workflow-graphic img {
-      display: block;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
     .td-system {
       padding: clamp(94px, 9vw, 140px) 48px;
       background: #fbf6ef;
@@ -1667,44 +1620,6 @@
       box-shadow: 0 28px 60px rgba(0,0,0,0.28);
     }
 
-    .td-recommend {
-      padding: clamp(90px, 8.5vw, 132px) 48px;
-      background: #fbf6ef;
-    }
-    .td-recommend-inner { max-width: 1240px; margin: 0 auto; }
-    .td-recommend .td-heading { color: #211c18; }
-    .td-recommend-list {
-      display: grid;
-      grid-template-columns: repeat(5, minmax(0, 1fr));
-      gap: 14px;
-      margin-top: 52px;
-      padding: 0;
-      list-style: none;
-      counter-reset: truedent-use;
-    }
-    .td-recommend-list li {
-      counter-increment: truedent-use;
-      min-height: 190px;
-      padding: 30px 24px;
-      border: 1px solid rgba(213,191,171,0.7);
-      border-radius: 20px;
-      background: rgba(255,255,255,0.72);
-      color: #2c2622;
-      font-family: 'Montserrat', sans-serif;
-      font-size: 16px;
-      font-weight: 700;
-      line-height: 1.45;
-      box-shadow: 0 12px 28px rgba(83,52,33,0.06);
-    }
-    .td-recommend-list li::before {
-      content: '0' counter(truedent-use);
-      display: block;
-      margin-bottom: 34px;
-      color: var(--coral);
-      font-size: 12px;
-      letter-spacing: 1.6px;
-    }
-
     .td-bridge {
       padding: clamp(94px, 9vw, 140px) 48px;
       background: #fffdf9;
@@ -1762,12 +1677,10 @@
       .hero-menu { gap: 22px; }
       .service-hero-copy { padding-left: 32px; padding-right: 44px; }
       .td-intro-inner,
-      .td-workflow-inner,
       .td-system-inner,
       .td-bps-inner { grid-template-columns: 1fr; }
       .td-system-media { width: min(100%, 760px); }
       .td-bps-media { width: min(100%, 760px); }
-      .td-recommend-list { grid-template-columns: repeat(3, minmax(0, 1fr)); }
     }
 
     @media (max-width: 768px) {
@@ -1793,11 +1706,9 @@
         background: linear-gradient(180deg, #0d0a08 0%, rgba(13,10,8,0.22) 20%, transparent 48%, rgba(13,10,8,0.2) 100%);
       }
       .td-intro,
-      .td-workflow,
       .td-system,
       .td-benefits,
       .td-bps,
-      .td-recommend,
       .td-bridge { padding: 68px 20px 76px; }
       .td-intro::before { height: 38px; }
       .td-intro-inner { gap: 36px; }
@@ -1808,7 +1719,6 @@
       }
       .td-intro-note { padding: 30px 26px; border-radius: 22px; }
       .td-intro-note p,
-      .td-workflow-copy p,
       .td-system-copy p,
       .td-bps-copy p,
       .td-bridge-panel p { font-size: 15px; line-height: 1.7; }
@@ -1817,10 +1727,8 @@
         line-height: 1;
         letter-spacing: -1.35px;
       }
-      .td-workflow-inner,
       .td-system-inner,
       .td-bps-inner { gap: 38px; }
-      .td-workflow-graphic { border-radius: 24px; }
       .td-system-media { padding: 10px 10px 0 0; }
       .td-system-media img {
         aspect-ratio: 1.06 / 1;
@@ -1837,14 +1745,6 @@
       .td-benefit-number { top: 20px; right: 22px; font-size: 48px; }
       .td-bps-media { padding: 10px 0 10px 10px; }
       .td-bps-media img { aspect-ratio: 1.05 / 1; border-radius: 24px; }
-      .td-recommend-list { grid-template-columns: 1fr; gap: 12px; margin-top: 38px; }
-      .td-recommend-list li {
-        min-height: 0;
-        padding: 24px;
-        border-radius: 16px;
-        font-size: 15px;
-      }
-      .td-recommend-list li::before { display: inline-block; margin: 0 20px 0 0; }
       .td-bridge-inner { grid-template-columns: 1fr; gap: 14px; }
       .td-bridge-panel { padding: 34px 26px 38px; border-radius: 22px; }
       .td-bridge-panel h2 {
@@ -1921,9 +1821,9 @@
         <span class="breadcrumb-sep">/</span>
         <a href="index.html#szolgaltatasok">Szakterületeink</a>
         <span class="breadcrumb-sep">/</span>
-        <span class="breadcrumb-current">Digitális fogsorok Truedent</span>
+        <span class="breadcrumb-current">TrueDent – Full color, monolitikus digitális fogsorok</span>
       </div>
-      <h1 class="service-hero-title">Digitális fogsorok Truedent</h1>
+      <h1 class="service-hero-title">TrueDent – Full color, monolitikus digitális fogsorok</h1>
       <p class="service-hero-subtitle">A digitális fogsorkészítés új generációja</p>
     </div>
 
@@ -1936,25 +1836,11 @@
 <!-- TRUEDENT TARTALOM -->
 <section class="td-intro">
   <div class="td-intro-inner">
-    <p class="td-intro-lead reveal">A digitális technológia a kivehető fogpótlások területén is új lehetőségeket nyitott. A korszerű CAD/CAM tervezés és a nagy pontosságú 3D nyomtatás lehetővé teszi a fogsorok kiszámíthatóbb, dokumentálhatóbb és reprodukálhatóbb elkészítését.</p>
+    <p class="td-intro-lead reveal">A Stratasys a hagyományos vagy több részből álló digitális fogpótlásokkal ellentétben a TrueDent® a Stratasys PolyJet™ technológiát használja, így egyedülállóan teljesen egészében színes, monolitikus fogpótlásokat készít, az alaplemezt és a fogakat együtt nyomtatva, ragasztás vagy összeszerelés nélkül.</p>
 
     <div class="td-intro-note reveal reveal-delay-1">
       <p>A Bridge Dentalnál a digitális workflow előnyeit a hagyományos fogtechnikai tapasztalattal ötvözzük, hogy partnereink számára funkcionálisan és esztétikailag is magas színvonalú megoldásokat biztosítsunk.</p>
     </div>
-  </div>
-</section>
-
-<section class="td-workflow">
-  <div class="td-workflow-inner">
-    <div class="td-workflow-copy reveal">
-      <h2 class="td-heading">A digitális munkafolyamat előnyei</h2>
-      <p>A digitális fogsorkészítés nem csupán egy új gyártási technológia. Egy olyan munkafolyamat, amely pontosabb kommunikációt, hatékonyabb együttműködést és kiszámíthatóbb eredményeket tesz lehetővé.</p>
-      <p>A digitálisan archivált adatoknak köszönhetően a restaurációk később is visszakereshetők, reprodukálhatók vagy módosíthatók, ami hosszú távon a rendelő és a páciens számára is jelentős előnyt jelent.</p>
-    </div>
-
-    <figure class="td-workflow-graphic reveal reveal-delay-1">
-      <img src="assets/truedent-digital-workflow.jpg" alt="A digitális fogsorkészítés folyamata a szkenneléstől a CAD-tervezésen és archiváláson át a 3D nyomtatásig">
-    </figure>
   </div>
 </section>
 
@@ -1967,7 +1853,6 @@
     <div class="td-system-copy reveal reveal-delay-1">
       <h2 class="td-heading">Stratasys TrueDent®</h2>
       <p>Laborunk a világ vezető additív gyártási technológiái közé tartozó Stratasys TrueDent® rendszert alkalmazza, amely teljes színű, biokompatibilis digitális fogsorok előállítását teszi lehetővé.</p>
-      <p>A modern anyagtechnológia és a precíz digitális gyártás természetesebb esztétikát, pontos illeszkedést és magas reprodukálhatóságot biztosít.</p>
     </div>
   </div>
 </section>
@@ -1975,32 +1860,32 @@
 <section class="td-benefits">
   <div class="td-benefits-inner">
     <div class="td-benefits-header reveal">
-      <h2 class="td-heading">A digitális fogsorok előnyei a rendelő számára</h2>
+      <h2 class="td-heading">Esztétikára és pontosságra tervezve</h2>
     </div>
 
     <div class="td-benefit-grid">
       <article class="td-benefit-card reveal">
         <span class="td-benefit-number" aria-hidden="true">01</span>
-        <h3>Kiszámítható digitális workflow</h3>
-        <p>A digitális munkafolyamat csökkenti az analóg lépések számát, támogatva az egységes és dokumentálható kezelési folyamatot.</p>
+        <h3>Monolitikus fogpótlások készítése</h3>
+        <p>A fogsor alapját és a fogakat egyetlen, folyamatos, többszínű nyomtatásban készíti el. Kiküszöböli a kézi összeszerelést és ragasztást.</p>
       </article>
 
       <article class="td-benefit-card reveal reveal-delay-1">
         <span class="td-benefit-number" aria-hidden="true">02</span>
-        <h3>Digitális archiválás</h3>
-        <p>A tervek hosszú távon megőrizhetők, így egy későbbi pótlás vagy javítás során az adatok újra felhasználhatók.</p>
+        <h3>TrueVoxel™ fejlett esztétika</h3>
+        <p>Élethű fogsorokat hozhatunk létre incizális átlátszóság, nyaki gradiens és belső struktúrák létrehozásával.</p>
       </article>
 
       <article class="td-benefit-card reveal">
         <span class="td-benefit-number" aria-hidden="true">03</span>
-        <h3>Nagy pontosság</h3>
-        <p>A CAD/CAM tervezés és a precíz 3D nyomtatás támogatja az illeszkedés és a reprodukálhatóság pontosságát.</p>
+        <h3>Tervhű pontosság</h3>
+        <p>A digitális tervezéstől a végső nyomtatásig megőrizhető a kiváló minőség, az egységes illeszkedés, forma és funkció.</p>
       </article>
 
       <article class="td-benefit-card reveal reveal-delay-1">
         <span class="td-benefit-number" aria-hidden="true">04</span>
-        <h3>Természetes esztétika</h3>
-        <p>A modern anyagok és a digitális tervezés lehetővé teszik az egyénre szabott forma- és színkialakítást.</p>
+        <h3>Pontos reprodukálhatóság</h3>
+        <p>Tökéletesen azonos fogsorokat készítünk közvetlenül digitális fájlokból. Gyors újranyomtatást, cserét és konzisztens eredményeket biztosítunk minden esetben.</p>
       </article>
     </div>
   </div>
@@ -2018,19 +1903,6 @@
     <div class="td-bps-media reveal reveal-delay-1">
       <img src="assets/truedent-bps-digital-planning.jpg" alt="Digitális fogsortervezés a Bridge Dental laborban">
     </div>
-  </div>
-</section>
-
-<section class="td-recommend">
-  <div class="td-recommend-inner">
-    <h2 class="td-heading reveal">Mikor ajánljuk?</h2>
-    <ul class="td-recommend-list">
-      <li class="reveal">Teljes kivehető fogpótlások</li>
-      <li class="reveal reveal-delay-1">Azonnali digitális pótlások</li>
-      <li class="reveal reveal-delay-2">Újrapótlások digitális archiválással</li>
-      <li class="reveal reveal-delay-3">Komplex rehabilitációk</li>
-      <li class="reveal">Esztétikai igényű teljes fogsorok</li>
-    </ul>
   </div>
 </section>
 
