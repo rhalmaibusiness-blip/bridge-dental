@@ -1763,156 +1763,6 @@
       color: rgba(255, 250, 245, 0.84);
     }
 
-    .zircon-evolution {
-      padding: clamp(90px, 8.5vw, 132px) 48px;
-      background: #fdfbf8;
-    }
-
-    .zircon-evolution-inner {
-      display: grid;
-      grid-template-columns: minmax(300px, 0.82fr) minmax(0, 1.18fr);
-      gap: clamp(60px, 8vw, 112px);
-      align-items: start;
-      max-width: 1240px;
-      margin: 0 auto;
-    }
-
-    .zircon-evolution-heading {
-      position: sticky;
-      top: 110px;
-    }
-
-    .zircon-evolution-heading::before {
-      content: '';
-      display: block;
-      width: 58px;
-      height: 2px;
-      margin-bottom: 28px;
-      background: var(--coral);
-    }
-
-    .zircon-evolution h2 {
-      max-width: 480px;
-      font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: clamp(48px, 5vw, 72px);
-      font-weight: 600;
-      line-height: 0.98;
-      letter-spacing: -2px;
-      color: #1c1916;
-      text-wrap: balance;
-    }
-
-    .zircon-evolution-copy {
-      display: grid;
-      gap: 0;
-      counter-reset: evolution;
-    }
-
-    .zircon-evolution-copy p {
-      position: relative;
-      padding: 25px 0 25px 54px;
-      border-bottom: 1px solid #e8ddd2;
-      font-size: clamp(16px, 1.35vw, 18px);
-      line-height: 1.75;
-      color: #5d554e;
-      counter-increment: evolution;
-    }
-
-    .zircon-evolution-copy p:first-child { padding-top: 0; }
-    .zircon-evolution-copy p:last-child { padding-bottom: 0; border-bottom: 0; }
-
-    .zircon-evolution-copy p::before {
-      content: '0' counter(evolution);
-      position: absolute;
-      top: 28px;
-      left: 0;
-      font-family: 'Montserrat', sans-serif;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 1px;
-      color: var(--coral);
-    }
-
-    .zircon-evolution-copy p:first-child::before { top: 3px; }
-
-    .zircon-development {
-      position: relative;
-      overflow: hidden;
-      padding: clamp(90px, 8.5vw, 132px) 48px;
-      background:
-        radial-gradient(circle at 50% -15%, rgba(224, 90, 43, 0.18), transparent 38%),
-        linear-gradient(135deg, #15120f, #211b17 58%, #120f0d);
-    }
-
-    .zircon-development::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      opacity: 0.18;
-      background-image: radial-gradient(rgba(255, 232, 211, 0.35) 0.5px, transparent 0.7px);
-      background-size: 8px 8px;
-      pointer-events: none;
-    }
-
-    .zircon-development-inner {
-      position: relative;
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 24px;
-      max-width: 1240px;
-      margin: 0 auto;
-    }
-
-    .zircon-development-card {
-      min-height: 100%;
-      padding: clamp(36px, 4.5vw, 60px);
-      border: 1px solid rgba(240, 122, 74, 0.24);
-      border-radius: 28px;
-      background: rgba(255, 252, 248, 0.055);
-      box-shadow: inset 0 1px 0 rgba(255,255,255,0.05);
-    }
-
-    .zircon-development-title {
-      display: flex;
-      align-items: center;
-      gap: 22px;
-      margin-bottom: 30px;
-    }
-
-    .zircon-development-icon {
-      width: 76px;
-      height: 76px;
-      flex: 0 0 76px;
-      object-fit: contain;
-    }
-
-    .zircon-development-card h2 {
-      margin: 0;
-      font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: clamp(42px, 4vw, 58px);
-      font-weight: 600;
-      line-height: 1;
-      letter-spacing: -1.5px;
-      color: #fff8f1;
-    }
-
-    .zircon-development-card h2::after {
-      content: '';
-      display: block;
-      width: 52px;
-      height: 2px;
-      margin-top: 24px;
-      background: var(--coral-light);
-    }
-
-    .zircon-development-card p {
-      font-size: clamp(15px, 1.22vw, 17px);
-      line-height: 1.72;
-      color: rgba(255, 248, 241, 0.72);
-    }
-
-    .zircon-development-card p + p { margin-top: 18px; }
-
     .zircon-practice {
       padding: clamp(92px, 9vw, 140px) 48px;
       background:
@@ -2033,21 +1883,13 @@
     }
 
     @media (max-width: 900px) {
-      .zircon-opening-inner,
-      .zircon-evolution-inner {
-        grid-template-columns: 1fr;
-      }
+      .zircon-opening-inner { grid-template-columns: 1fr; }
       .zircon-opening-inner { gap: 42px; }
-      .zircon-evolution-inner { gap: 46px; }
-      .zircon-evolution-heading { position: static; }
-      .zircon-development-inner { grid-template-columns: 1fr; }
       .zircon-benefits { grid-template-columns: 1fr 1fr; }
     }
 
     @media (max-width: 700px) {
       .zircon-opening,
-      .zircon-evolution,
-      .zircon-development,
       .zircon-practice {
         padding: 68px 20px 76px;
       }
@@ -2062,40 +1904,11 @@
         border-radius: 22px;
       }
       .zircon-opening-focus p { font-size: 15px; line-height: 1.68; }
-      .zircon-evolution-heading::before { margin-bottom: 22px; }
-      .zircon-evolution h2,
       .zircon-practice-intro h2 {
         font-size: clamp(41px, 12vw, 54px);
         line-height: 1;
         letter-spacing: -1.3px;
       }
-      .zircon-evolution-copy p {
-        padding: 22px 0 22px 40px;
-        font-size: 15px;
-        line-height: 1.68;
-      }
-      .zircon-evolution-copy p::before { top: 24px; }
-      .zircon-evolution-copy p:first-child::before { top: 2px; }
-      .zircon-development-inner { gap: 14px; }
-      .zircon-development-card {
-        padding: 32px 26px 36px;
-        border-radius: 22px;
-      }
-      .zircon-development-title {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 14px;
-        margin-bottom: 24px;
-      }
-      .zircon-development-icon {
-        width: 60px;
-        height: 60px;
-        flex-basis: 60px;
-      }
-      .zircon-development-card h2 {
-        font-size: 41px;
-      }
-      .zircon-development-card p { font-size: 15px; line-height: 1.67; }
       .zircon-practice-intro {
         margin-bottom: 38px;
         text-align: left;
@@ -3070,69 +2883,31 @@
   </div>
 </section>
 
-<section class="zircon-evolution">
-  <div class="zircon-evolution-inner">
-    <div class="zircon-evolution-heading reveal">
-      <h2>A full contour cirkónium fejlődése</h2>
-    </div>
-
-    <div class="zircon-evolution-copy reveal reveal-delay-1">
-      <p>Az implantológiában hosszú éveken keresztül a fémvázas, majd a rétegzett cirkónium restaurációk jelentették a standard megoldást.</p>
-      <p>A modern multilayer monolitikus cirkóniumok azonban új korszakot nyitottak.</p>
-      <p>Az anyagok optikai tulajdonságai, transzlucenciája és színátmenete jelentősen fejlődött, miközben a mechanikai tulajdonságok is magas szinten maradtak.</p>
-      <p>Ennek köszönhetően ma már számos esetben olyan monolitikus restauráció készíthető, amely egyszerre természetes megjelenésű és rendkívül ellenálló.</p>
-    </div>
-  </div>
-</section>
-
-<section class="zircon-development">
-  <div class="zircon-development-inner">
-    <article class="zircon-development-card reveal">
-      <div class="zircon-development-title">
-        <img class="zircon-development-icon" src="assets/implant-zircon-aesthetic-icon.png" alt="" aria-hidden="true">
-        <h2>Esztétikai fejlődés</h2>
-      </div>
-      <p>A korábbi generációs cirkónium restaurációk gyakran túl opaknak, homogénnek vagy &quot;élettelennek&quot; hatottak.</p>
-      <p>A mai multilayer anyagok természetes dentin- és zománchatást, finom színátmenetet és megfelelő fényáteresztést biztosítanak, így az implantátumos restaurációk harmonikusan illeszkednek a természetes fogazathoz.</p>
-      <p>Az egyedi karakterizálás tovább növeli a restaurációk természetességét.</p>
-    </article>
-
-    <article class="zircon-development-card reveal reveal-delay-1">
-      <div class="zircon-development-title">
-        <img class="zircon-development-icon" src="assets/implant-zircon-mechanical-icon.png" alt="" aria-hidden="true">
-        <h2>Mechanikai fejlődés</h2>
-      </div>
-      <p>A monolitikus kialakítás egyik legnagyobb előnye, hogy megszűnik a hagyományos leplezett restaurációk egyik leggyakoribb problémája: a kerámialeplezés lepattanása.</p>
-      <p>A full contour cirkónium restaurációk nagy hajlítószilárdságuknak és homogén szerkezetüknek köszönhetően kiváló választást jelentenek implantátumos koronákhoz és kisebb hidakhoz is.</p>
-    </article>
-  </div>
-</section>
-
 <section class="zircon-practice">
   <div class="zircon-practice-inner">
     <div class="zircon-practice-intro reveal">
       <h2>Mit jelent ez a rendelő számára?</h2>
-      <p>A modern monolitikus cirkónium restaurációk előnyei nemcsak a páciens számára jelentkeznek.</p>
+      <p>A modern monolitikus cirkónium restaurációk nemcsak a páciens számára jelentenek előnyt.</p>
       <p>A digitális tervezés és a precíz gyártás támogatja a rendelő mindennapi munkáját is.</p>
     </div>
 
     <div class="zircon-benefits">
       <article class="zircon-benefit reveal">
         <span class="zircon-benefit-number" aria-hidden="true">01</span>
-        <h3>Nagy pontosság</h3>
-        <p>A digitális workflow reprodukálható és kiszámítható eredményt biztosít.</p>
+        <h3>Kiszámíthatóság</h3>
+        <p>A digitális workflow reprodukálható és előre megtervezhető eredményt biztosít.</p>
       </article>
 
       <article class="zircon-benefit reveal reveal-delay-1">
         <span class="zircon-benefit-number" aria-hidden="true">02</span>
         <h3>Kevesebb chairside korrekció</h3>
-        <p>A pontos illeszkedés csökkentheti a rendelői igazítások szükségességét.</p>
+        <p>A gondos tervezés, a prototípus és a pontos illeszkedés csökkentheti a rendelői igazítások szükségességét.</p>
       </article>
 
       <article class="zircon-benefit reveal">
         <span class="zircon-benefit-number" aria-hidden="true">03</span>
         <h3>Nagyobb hosszú távú biztonság</h3>
-        <p>A monolitikus kialakítás csökkenti a leplező kerámia sérülésének kockázatát.</p>
+        <p>A monolitikus kialakítás kizárja a „chipping” kockázatát.</p>
       </article>
 
       <article class="zircon-benefit reveal reveal-delay-1">
