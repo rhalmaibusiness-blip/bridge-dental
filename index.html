@@ -4329,52 +4329,6 @@
   </div>
 </section>
 
-<section class="about" id="tortenetunk">
-  <div class="about-card">
-    <div class="about-text">
-      <div class="about-eyebrow reveal">RÓLUNK</div>
-
-      <h2 class="about-title reveal" style="--d: 0.12s">
-        A történet ami<br>
-        <span class="about-accent">mögöttünk</span> áll
-      </h2>
-
-      <p class="reveal" style="--d: 0.24s">
-        A Bridge Dental azért jött létre, mert úgy láttuk, hogy a modern fogászatban
-        sokszor hiányzik az a partneri együttműködés, amely valóban segíti a rendelők
-        mindennapi munkáját. Hiszünk abban, hogy a legjobb eredmények a fogorvos és a
-        fogtechnikus közös gondolkodásából születnek - és ezt a szemléletet több mint
-        húsz éve, német és osztrák partnerekkel együttműködve építjük.
-      </p>
-
-      <div class="about-btns reveal" style="--d: 0.36s">
-        <a href="https://rhalmaibusiness-blip.github.io/bridge-dental/ismerje-meg-a-bridge-dentalt.html" class="about-cta">
-          Ismerje meg a teljes történetünket
-          <svg viewBox="0 0 24 24">
-            <line x1="4" y1="12" x2="20" y2="12"/>
-            <polyline points="13 5 20 12 13 19"/>
-          </svg>
-        </a>
-        <a href="https://rhalmaibusiness-blip.github.io/bridge-dental/kapcsolat.html" class="about-cta secondary">
-          Vegye fel velünk a kapcsolatot
-          <svg viewBox="0 0 24 24">
-            <line x1="4" y1="12" x2="20" y2="12"/>
-            <polyline points="13 5 20 12 13 19"/>
-          </svg>
-        </a>
-      </div>
-    </div>
-
-    <div class="about-media">
-      <div class="about-media-inner">
-        <img src="about-photo.png" alt="Fogtechnikus precíziós munka közben a Bridge Dental laborban">
-      </div>
-      <div class="about-dots"></div>
-    </div>
-  </div>
-</section>
-
-
 <!-- FOOTER -->
 <footer id="kapcsolat">
   <div class="footer-brand">
@@ -4747,16 +4701,6 @@
   });
 
   document.querySelectorAll('.cases').forEach((section) => {
-    new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('inview');
-        }
-      });
-    }, { threshold: 0.15 }).observe(section);
-  });
-
-  document.querySelectorAll('.about').forEach((section) => {
     new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
