@@ -1540,115 +1540,8 @@
     .cc-icon-bad  { font-size: 12px; color: var(--warm-gray-light); flex-shrink: 0; }
     .cc-icon-good { font-size: 13px; color: var(--coral); flex-shrink: 0; font-weight: 700; }
 
-    .materials-accordion {
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-    }
-    .material-item {
-      background: rgba(255, 255, 255, 0.74);
-      border: 1px solid var(--warm-gray-pale);
-      border-radius: 18px;
-      overflow: hidden;
-      box-shadow: 0 14px 42px rgba(54, 39, 29, 0.04);
-      transition: border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
-    }
-    .material-item.open {
-      background: rgba(255, 255, 255, 0.94);
-      border-color: rgba(238, 80, 39, 0.34);
-      box-shadow: 0 22px 58px rgba(238, 80, 39, 0.10);
-    }
-    .material-toggle {
-      width: 100%;
-      border: 0;
-      background: transparent;
-      padding: 20px 22px;
-      display: grid;
-      grid-template-columns: 50px 1fr 34px;
-      gap: 16px;
-      align-items: center;
-      text-align: left;
-      cursor: pointer;
-      color: var(--charcoal);
-      font-family: inherit;
-    }
-    .material-mark {
-      width: 50px;
-      height: 50px;
-      border-radius: 14px;
-      background: var(--white);
-      border: 1px solid rgba(238, 80, 39, 0.18);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--coral);
-      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.8);
-    }
-    .material-mark svg {
-      width: 22px;
-      height: 22px;
-      stroke-width: 1.8;
-    }
-    .material-kicker {
-      display: block;
-      font-size: 11px;
-      letter-spacing: 1.4px;
-      font-weight: 800;
-      text-transform: uppercase;
-      color: var(--coral);
-      margin-bottom: 5px;
-    }
-    .material-name {
-      display: block;
-      font-family: 'Montserrat', sans-serif;
-      font-size: 19px;
-      line-height: 1.25;
-      font-weight: 800;
-    }
-    .material-plus {
-      width: 34px;
-      height: 34px;
-      border-radius: 50%;
-      border: 1px solid var(--warm-gray-pale);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--coral);
-      font-size: 24px;
-      line-height: 1;
-      transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
-    }
-    .material-item.open .material-plus {
-      background: var(--coral);
-      color: var(--white);
-      transform: rotate(45deg);
-    }
-    .material-panel {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.38s ease;
-    }
-    .material-panel-inner {
-      padding: 0 28px 24px 88px;
-      color: var(--warm-gray);
-      font-size: 15px;
-      line-height: 1.72;
-    }
-    .material-panel-inner::before {
-      content: "";
-      display: block;
-      width: 34px;
-      height: 2px;
-      background: var(--coral);
-      margin-bottom: 16px;
-    }
-    .material-item.featured .material-toggle {
-      background:
-        radial-gradient(circle at 92% 12%, rgba(238, 80, 39, 0.13), transparent 28%),
-        linear-gradient(135deg, rgba(238, 80, 39, 0.055), rgba(255, 255, 255, 0));
-    }
     .materials-summary {
-      margin-bottom: 20px;
+      margin-bottom: 0;
     }
     .materials-summary .offer-list {
       margin-top: 0;
@@ -1657,6 +1550,59 @@
       border: 1px solid var(--warm-gray-pale);
       border-radius: 18px;
       box-shadow: 0 14px 42px rgba(54, 39, 29, 0.04);
+    }
+    .offer-item-premium {
+      padding-top: 4px;
+    }
+    .premium-materials {
+      flex: 1;
+      min-width: 0;
+    }
+    .premium-materials-title {
+      display: block;
+      margin-bottom: 16px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+    }
+    .material-logo-grid {
+      display: grid;
+      grid-template-columns: repeat(8, minmax(0, 1fr));
+      gap: 10px;
+    }
+    .material-logo-card {
+      grid-column: span 2;
+      min-width: 0;
+      min-height: 76px;
+      padding: 13px 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--white);
+      border: 1px solid rgba(104, 91, 82, 0.16);
+      border-radius: 12px;
+      box-shadow: 0 8px 22px rgba(54, 39, 29, 0.035);
+      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+    .material-logo-card:nth-child(5) { grid-column: 2 / span 2; }
+    .material-logo-card:nth-child(6) { grid-column: 4 / span 2; }
+    .material-logo-card:nth-child(7) { grid-column: 6 / span 2; }
+    .material-logo-card:hover,
+    .material-logo-card:focus-visible {
+      transform: translateY(-3px);
+      border-color: rgba(238, 80, 39, 0.42);
+      box-shadow: 0 12px 28px rgba(54, 39, 29, 0.09);
+      outline: none;
+    }
+    .material-logo-card img {
+      display: block;
+      width: 100%;
+      height: 44px;
+      object-fit: contain;
+    }
+    .material-logo-card.logo-tall img { height: 52px; }
+    .material-logo-card.logo-on-dark {
+      background: var(--charcoal);
+      border-color: var(--charcoal);
     }
 
     .compare-table {
@@ -2116,9 +2062,17 @@
 
       .section, .section-white { padding: 56px 20px; }
       .hitvallas-grid, .mashogy-grid { grid-template-columns: 1fr; gap: 40px; }
-      .material-panel-inner { padding-left: 28px; }
-      .material-toggle { grid-template-columns: 44px 1fr 32px; gap: 14px; padding: 18px; }
-      .material-mark { width: 44px; height: 44px; }
+      .materials-summary .offer-list { padding: 22px 20px; }
+      .material-logo-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .material-logo-card,
+      .material-logo-card:nth-child(5),
+      .material-logo-card:nth-child(6),
+      .material-logo-card:nth-child(7) { grid-column: auto; }
+      .material-logo-card:last-child {
+        grid-column: 1 / -1;
+        width: calc(50% - 5px);
+        justify-self: center;
+      }
       .hitvallas-quote-text { max-width: 100%; }
       .story-facts { margin-top: 28px; gap: 10px; }
       .story-fact { width: 100%; justify-content: space-between; border-radius: 16px; }
@@ -2419,17 +2373,36 @@
             </div>
             <span>Anyagválasztás esztétikai, funkcionális és klinikai szempontok alapján</span>
           </div>
-        </div>
-      </div>
-      <div class="materials-accordion" id="materialsAccordion">
-        <div class="material-item featured open">
-          <button class="material-toggle" type="button" aria-expanded="true">
-            <span class="material-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="m12 3 7 4v5c0 4.5-2.8 7.6-7 9-4.2-1.4-7-4.5-7-9V7l7-4Z"/><path d="m8.5 12 2.2 2.2 4.8-5"/></svg></span>
-            <span><span class="material-kicker">01</span><span class="material-name">Kizárólag prémium anyagok</span></span>
-            <span class="material-plus" aria-hidden="true">+</span>
-          </button>
-          <div class="material-panel">
-            <div class="material-panel-inner">Laborunkban kizárólag prémium anyagokkal és bevált digitális rendszerekkel dolgozunk. Az Ivoclar, a GC, a Pritidenta és a Stratasys technológiái biztos alapot adnak az esztétikus, pontos és hosszú távon is megbízható restaurációkhoz.</div>
+          <div class="offer-item offer-item-premium">
+            <div class="offer-check">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <div class="premium-materials">
+              <span class="premium-materials-title">Kizárólag prémium anyagok</span>
+              <div class="material-logo-grid" aria-label="Prémium anyagpartnereink">
+                <a class="material-logo-card logo-tall" href="https://www.ivoclar.com/" target="_blank" rel="noopener noreferrer" aria-label="Ivoclar hivatalos oldala">
+                  <img src="assets/material-logos/ivoclar.svg" alt="Ivoclar">
+                </a>
+                <a class="material-logo-card" href="https://www.gc.dental/europe/en" target="_blank" rel="noopener noreferrer" aria-label="GC hivatalos oldala">
+                  <img src="assets/material-logos/gc.svg" alt="GC">
+                </a>
+                <a class="material-logo-card logo-on-dark logo-tall" href="https://pritidenta.com/en/" target="_blank" rel="noopener noreferrer" aria-label="Pritidenta hivatalos oldala">
+                  <img src="assets/material-logos/pritidenta.png" alt="Pritidenta">
+                </a>
+                <a class="material-logo-card logo-on-dark" href="https://www.stratasys.com/en/" target="_blank" rel="noopener noreferrer" aria-label="Stratasys hivatalos oldala">
+                  <img src="assets/material-logos/stratasys.svg" alt="Stratasys">
+                </a>
+                <a class="material-logo-card" href="https://www.imes-icore.com/" target="_blank" rel="noopener noreferrer" aria-label="imes-icore hivatalos oldala">
+                  <img src="assets/material-logos/imes-icore.svg" alt="imes-icore">
+                </a>
+                <a class="material-logo-card" href="https://argen.com/en/us/" target="_blank" rel="noopener noreferrer" aria-label="Argen hivatalos oldala">
+                  <img src="assets/material-logos/argen.svg" alt="Argen">
+                </a>
+                <a class="material-logo-card logo-tall" href="https://micerium.com/" target="_blank" rel="noopener noreferrer" aria-label="Micerium hivatalos oldala">
+                  <img src="assets/material-logos/micerium.png" alt="Micerium">
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -2991,41 +2964,6 @@
     });
   }, { threshold: 0.12 });
   reveals.forEach(el => observer.observe(el));
-
-  // Prémium anyaghasználat accordion
-  (function () {
-    const accordion = document.getElementById('materialsAccordion');
-    if (!accordion) return;
-
-    const items = Array.from(accordion.querySelectorAll('.material-item'));
-
-    function syncPanels() {
-      items.forEach(item => {
-        const panel = item.querySelector('.material-panel');
-        const toggle = item.querySelector('.material-toggle');
-        if (!panel || !toggle) return;
-
-        const isOpen = item.classList.contains('open');
-        toggle.setAttribute('aria-expanded', String(isOpen));
-        panel.style.maxHeight = isOpen ? `${panel.scrollHeight}px` : '0px';
-      });
-    }
-
-    items.forEach(item => {
-      const toggle = item.querySelector('.material-toggle');
-      if (!toggle) return;
-
-      toggle.addEventListener('click', () => {
-        const wasOpen = item.classList.contains('open');
-        items.forEach(other => other.classList.remove('open'));
-        if (!wasOpen) item.classList.add('open');
-        syncPanels();
-      });
-    });
-
-    window.addEventListener('resize', syncPanels);
-    syncPanels();
-  })();
 
   // Innováció idővonal
   (function () {
