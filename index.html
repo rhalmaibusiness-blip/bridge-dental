@@ -3567,6 +3567,11 @@
       transform: translateY(0);
     }
 
+    .reviews:target .reveal {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
     .rev-tabs {
       display: flex;
       flex-wrap: wrap;
@@ -3668,6 +3673,95 @@
       color: #d8cec2;
     }
 
+    .rev-brand {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: minmax(230px, 0.9fr) minmax(210px, 1.1fr);
+      align-items: center;
+      gap: clamp(18px, 3vw, 36px);
+      margin-left: clamp(44px, 6vw, 78px);
+      padding: 16px 20px;
+      background: rgba(255, 255, 255, 0.78);
+      border: 1px solid rgba(224, 210, 194, 0.9);
+      border-radius: 16px;
+      box-shadow: 0 16px 38px -28px rgba(43, 30, 20, 0.6);
+      overflow: hidden;
+      opacity: 1;
+      transition: opacity 0.35s ease, transform 0.35s ease;
+    }
+
+    .rev-brand::before {
+      content: '';
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 4px;
+      background: linear-gradient(180deg, var(--accent), #ffb079);
+    }
+
+    .rev-logo-frame {
+      min-width: 0;
+      height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 10px 14px;
+      background: #fff;
+      border: 1px solid #eee4d8;
+      border-radius: 11px;
+    }
+
+    .rev-logo {
+      display: block;
+      max-width: 100%;
+      max-height: 58px;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+    }
+
+    .rev-logo-frame.logo-campus {
+      background: #dde1e2;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .rev-logo-frame.logo-campus .rev-logo {
+      width: 78px;
+      max-width: none;
+      max-height: none;
+      transform: rotate(90deg);
+      transform-origin: center;
+    }
+
+    .rev-identity {
+      min-width: 0;
+      padding-left: clamp(16px, 2vw, 28px);
+      border-left: 1px solid #e7dccf;
+    }
+
+    .rev-person {
+      display: block;
+      font-family: var(--font-display);
+      font-size: clamp(20px, 2vw, 27px);
+      font-weight: 700;
+      line-height: 1.15;
+      color: #302924;
+    }
+
+    .rev-location {
+      display: block;
+      margin-top: 8px;
+      font-family: var(--font-body);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .rev-location:empty { display: none; }
+
     .rev-quote {
       position: relative;
       z-index: 1;
@@ -3681,6 +3775,7 @@
       transition: opacity 0.35s ease, transform 0.35s ease;
     }
 
+    .rev-card.switching .rev-brand,
     .rev-card.switching .rev-quote,
     .rev-card.switching .rev-stars {
       opacity: 0;
@@ -3716,6 +3811,27 @@
       .rev-tab { width: 100%; }
 
       .rev-card { padding: 60px 22px 40px; }
+
+      .rev-brand {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        margin-left: 28px;
+        padding: 12px;
+      }
+
+      .rev-logo-frame {
+        height: 74px;
+        justify-content: center;
+      }
+
+      .rev-identity {
+        padding: 12px 4px 2px;
+        border-left: 0;
+        border-top: 1px solid #e7dccf;
+        text-align: center;
+      }
+
+      .rev-person { font-size: 20px; }
 
       .rev-card .rq-open {
         font-size: 90px;
@@ -4198,6 +4314,15 @@
 
   <div class="rev-card reveal" id="revCard" style="--d: 0.46s">
     <span class="rq-open">&ldquo;</span>
+    <div class="rev-brand" id="revBrand">
+      <div class="rev-logo-frame" id="revLogoFrame">
+        <img class="rev-logo" id="revLogo" alt="">
+      </div>
+      <div class="rev-identity">
+        <span class="rev-person" id="revPerson"></span>
+        <span class="rev-location" id="revLocation"></span>
+      </div>
+    </div>
     <p class="rev-quote" id="revQuote"></p>
     <div class="rev-stars" id="revStars"></div>
     <span class="rq-close">&rdquo;</span>
@@ -4843,31 +4968,51 @@
       {
         name: 'Dr. Benedict Beirer',
         role: '',
+        location: 'Leobersdorf',
+        logo: 'assets/reviews/dr-benedict-beirer.webp',
+        logoAlt: 'Dr. med. dent. Benedict Beirer logó',
+        logoClass: 'logo-beirer',
         text: 'Wir sind seit über einem Jahrzehnt mit der Arbeit zufrieden. Qualität und Ästhetik stimmen zu 100%. Die Kommunikation mit dem Labor läuft reibungslos und es gibt selbst bei komplexeren Arbeiten immer ein Top Ergebnis!'
       },
       {
         name: 'Dr. Christopher Hermanns',
         role: '',
+        location: 'Unterschleißheim',
+        logo: 'assets/reviews/implantologie-campus.png',
+        logoAlt: 'Implantologie Campus – Dr. Hermanns & Kollegen logó',
+        logoClass: 'logo-campus',
         text: 'Wir arbeiten sehr gerne mit dem zahntechnischen Labor Bridge Dental zusammen und schätzen die Zusammenarbeit sehr. Besonders hervorheben möchten wir die zuverlässige und professionelle Arbeitsweise des Labors. Die Kommunikation ist stets unkompliziert, schnell und lösungsorientiert. Ein weiterer wichtiger Grund für die Zusammenarbeit ist die stets hohe Qualität der zahntechnischen Arbeiten. Auf individuelle Wünsche wird flexibel eingegangen, was die Zusammenarbeit für unser Team sehr angenehm macht. Auch wirtschaftlich ist die Kooperation für uns sehr vorteilhaft. Durch das sehr gute Preis-Leistungs-Verhältnis und die verlässlichen Lieferzeiten können wir unseren Patienten hochwertige Versorgungen anbieten und gleichzeitig effizient planen. Wir freuen uns auf die weitere Zusammenarbeit und können das Dentallabor uneingeschränkt weiterempfehlen.'
       },
       {
         name: 'Dr. Maximilian Konz M.Sc.',
         role: 'Spezialist für Ästhetik und rekonstruktive Zahnmedizin',
+        location: 'Unterschleißheim',
+        logo: 'assets/reviews/zahnaerzte-implantatzentrum.svg',
+        logoAlt: 'Zahnärzte & Implantatzentrum logó',
+        logoClass: 'logo-zahnaerzte',
         text: 'Wir arbeiten sehr erfolgreich mit dem zahntechnischen Labor Bridge Dental aus Budapest zusammen. Besonders hervorzuheben sind die hervorragenden Zirkon- und Keramikarbeiten, die durch hohe Passgenauigkeit und Ästhetik überzeugen. Die Kommunikation ist stets schnell und unkompliziert, und auch die Liefer- sowie Anfertigungszeiten sind angenehm kurz. Die Zusammenarbeit ist jederzeit zuverlässig und professionell. Wir können Bridge Dental uneingeschränkt weiterempfehlen und schätzen sie als langfristigen Partner sehr.'
       },
       {
         name: 'Dr. Rainer Valentina',
         role: '',
+        location: '',
+        logo: 'assets/reviews/dr-benedict-beirer.webp',
+        logoAlt: 'Dr. med. dent. Benedict Beirer logó',
+        logoClass: 'logo-beirer',
         text: 'Super zuverlässiges Labor mit konstant hoher Qualität. Die Arbeiten passen hervorragend, werden pünktlich geliefert und sind ästhetisch einfach spitze. Vielen Dank für die professionelle Zusammenarbeit!'
       }
     ];
 
     const tabs = document.getElementById('revTabs');
     const card = document.getElementById('revCard');
+    const logoFrame = document.getElementById('revLogoFrame');
+    const logo = document.getElementById('revLogo');
+    const person = document.getElementById('revPerson');
+    const location = document.getElementById('revLocation');
     const quote = document.getElementById('revQuote');
     const stars = document.getElementById('revStars');
 
-    if (!tabs || !card || !quote || !stars) return;
+    if (!tabs || !card || !logoFrame || !logo || !person || !location || !quote || !stars) return;
 
     const initials = (name) => name
       .replace(/^Dr\.\s*/, '')
@@ -4878,7 +5023,7 @@
       .join('');
 
     tabs.innerHTML = REVIEWS.map((review, index) => `
-      <button class="rev-tab ${index === 0 ? 'active' : ''}" data-i="${index}" type="button">
+      <button class="rev-tab ${index === 0 ? 'active' : ''}" data-i="${index}" type="button" aria-pressed="${index === 0}">
         <span class="rt-avatar">${initials(review.name)}</span>
         <span>
           <span class="rt-name">${review.name}</span>
@@ -4892,17 +5037,30 @@
 
     const tabEls = tabs.querySelectorAll('.rev-tab');
 
+    function updateReview(review) {
+      logo.src = review.logo;
+      logo.alt = review.logoAlt;
+      logoFrame.className = `rev-logo-frame ${review.logoClass}`;
+      person.textContent = review.name;
+      location.textContent = review.location;
+      quote.textContent = review.text;
+    }
+
     function showReview(index) {
-      tabEls.forEach((tab, tabIndex) => tab.classList.toggle('active', tabIndex === index));
+      tabEls.forEach((tab, tabIndex) => {
+        const isActive = tabIndex === index;
+        tab.classList.toggle('active', isActive);
+        tab.setAttribute('aria-pressed', String(isActive));
+      });
       card.classList.add('switching');
 
       setTimeout(() => {
-        quote.textContent = REVIEWS[index].text;
+        updateReview(REVIEWS[index]);
         card.classList.remove('switching');
       }, 320);
     }
 
-    quote.textContent = REVIEWS[0].text;
+    updateReview(REVIEWS[0]);
 
     tabEls.forEach((tab) => {
       tab.addEventListener('click', () => showReview(Number(tab.dataset.i)));
