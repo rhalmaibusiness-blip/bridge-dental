@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Impressum | Bridge Dental</title>
+  <meta name="description" content="Impressum und Anbieterinformationen der Bridge Dental Kft., Budapest.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&amp;family=Open+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --coral: #e05a2b;
+      --coral-light: #f47b4f;
+      --coral-pale: #fff1ea;
+      --charcoal: #1c1916;
+      --charcoal-soft: #2a211d;
+      --warm-gray: #7a716b;
+      --warm-gray-light: #b8aea7;
+      --warm-gray-pale: #e8e1dc;
+      --cream: #f8f4f0;
+      --white: #fff;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      min-width: 320px;
+      overflow-x: hidden;
+      background: var(--cream);
+      color: var(--charcoal);
+      font-family: 'Open Sans', sans-serif;
+    }
+
+    .site-nav {
+      position: fixed;
+      inset: 0 0 auto;
+      z-index: 100;
+      height: 84px;
+      padding: 0 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: #f7f1eb;
+      background: rgba(13, 10, 8, 0.97);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      box-shadow: 0 10px 34px rgba(22,14,10,0.14);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+    }
+
+    .site-brand {
+      position: relative;
+      z-index: 120;
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+    }
+
+    .site-brand img {
+      display: block;
+      width: auto;
+      height: 40px;
+      filter: drop-shadow(0 2px 8px rgba(0,0,0,0.35));
+    }
+
+    .site-nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 34px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .site-nav-menu > li { display: flex; align-items: center; }
+    .site-nav-menu a {
+      position: relative;
+      padding-bottom: 6px;
+      color: #f5efe9;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1.6px;
+      text-decoration: none;
+      transition: color 0.25s ease;
+    }
+
+    .site-nav-menu a::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background: var(--coral);
+      transition: width 0.3s ease;
+    }
+
+    .site-nav-menu a:hover { color: var(--coral-light); }
+    .site-nav-menu a:hover::after { width: 100%; }
+    .site-dropdown { position: relative; }
+    .site-dropdown > a { display: inline-flex; align-items: center; gap: 7px; }
+    .site-dropdown > a svg { width: 12px; height: 12px; transition: transform 0.25s ease; }
+    .site-dropdown:hover > a svg { transform: rotate(180deg); }
+
+    .site-dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      z-index: 140;
+      min-width: 340px;
+      padding-top: 16px;
+      list-style: none;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateX(-50%);
+      transition: opacity 0.2s ease, visibility 0.2s ease;
+    }
+
+    .site-dropdown:hover .site-dropdown-menu,
+    .site-dropdown:focus-within .site-dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .site-dropdown-panel {
+      padding: 10px;
+      background: rgba(13,10,8,0.98);
+      border: 1px solid rgba(255,255,255,0.09);
+      border-radius: 16px;
+      box-shadow: 0 20px 52px rgba(0,0,0,0.34);
+    }
+
+    .site-dropdown-panel ul { margin: 0; padding: 0; list-style: none; }
+    .site-dropdown-panel li + li { margin-top: 2px; }
+    .site-dropdown-panel a {
+      display: block;
+      padding: 11px 14px;
+      border-radius: 9px;
+      font-size: 12px;
+      letter-spacing: 0.8px;
+      line-height: 1.35;
+      white-space: nowrap;
+    }
+    .site-dropdown-panel a::after { display: none; }
+    .site-dropdown-panel a:hover { background: rgba(242,121,63,0.12); }
+
+    .site-burger {
+      position: relative;
+      z-index: 120;
+      display: none;
+      width: 44px;
+      height: 44px;
+      padding: 0;
+      border: 0;
+      background: transparent;
+      cursor: pointer;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+    .site-burger span {
+      display: block;
+      width: 26px;
+      height: 2.5px;
+      border-radius: 4px;
+      background: #f7f1eb;
+      transition: transform 0.35s ease, opacity 0.25s ease;
+    }
+    .site-burger.open span:nth-child(1) { transform: translateY(8.5px) rotate(45deg); }
+    .site-burger.open span:nth-child(2) { opacity: 0; }
+    .site-burger.open span:nth-child(3) { transform: translateY(-8.5px) rotate(-45deg); }
+
+    .site-mobile-menu {
+      position: fixed;
+      inset: 0;
+      z-index: 90;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 12px;
+      padding: 104px 24px 34px;
+      overflow-y: auto;
+      background: rgba(13,10,8,0.99);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.35s ease, visibility 0.35s ease;
+    }
+    .site-mobile-menu.open { opacity: 1; visibility: visible; }
+    .site-mobile-menu > a,
+    .site-mobile-group > a {
+      color: #f7f1eb;
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(18px, 5.6vw, 25px);
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-align: center;
+      text-decoration: none;
+    }
+    .site-mobile-group { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+    .site-mobile-submenu { display: flex; flex-direction: column; align-items: center; gap: 3px; }
+    .site-mobile-submenu a {
+      padding: 4px 0;
+      color: rgba(247,241,235,0.68);
+      font-size: 13px;
+      font-weight: 600;
+      line-height: 1.35;
+      text-align: center;
+      text-decoration: none;
+    }
+
+    .legal-hero {
+      position: relative;
+      min-height: 440px;
+      padding: 168px 80px 86px;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 86% 22%, rgba(224,90,43,0.22), transparent 25%),
+        linear-gradient(135deg, #171310 0%, #201713 58%, #321b13 100%);
+      color: var(--white);
+    }
+    .legal-hero::before,
+    .legal-hero::after {
+      content: '';
+      position: absolute;
+      border: 1px solid rgba(244,123,79,0.22);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    .legal-hero::before { width: 420px; height: 420px; right: -135px; top: 44px; }
+    .legal-hero::after { width: 270px; height: 270px; right: -54px; top: 120px; }
+    .hero-inner { position: relative; z-index: 1; max-width: 1180px; margin: 0 auto; }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 24px;
+      color: var(--coral-light);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+    .eyebrow::before { content: ''; width: 36px; height: 2px; background: var(--coral-light); }
+    h1 {
+      max-width: 760px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(48px, 6vw, 86px);
+      font-weight: 800;
+      line-height: 0.98;
+      letter-spacing: -3px;
+    }
+    .hero-note {
+      max-width: 600px;
+      margin-top: 28px;
+      color: rgba(255,255,255,0.6);
+      font-size: 16px;
+      line-height: 1.75;
+    }
+
+    .legal-section { padding: 86px 80px 110px; }
+    .legal-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.13fr) minmax(360px, 0.87fr);
+      gap: 28px;
+      max-width: 1180px;
+      margin: 0 auto;
+      align-items: start;
+    }
+    .legal-card {
+      position: relative;
+      overflow: hidden;
+      padding: 42px;
+      background: rgba(255,255,255,0.82);
+      border: 1px solid var(--warm-gray-pale);
+      border-radius: 22px;
+      box-shadow: 0 24px 70px rgba(28,25,22,0.07);
+    }
+    .legal-card::before {
+      content: '';
+      position: absolute;
+      inset: 0 auto auto 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, var(--coral), var(--coral-light), transparent 82%);
+    }
+    .card-kicker {
+      display: block;
+      margin-bottom: 12px;
+      color: var(--coral);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+    .legal-card h2 {
+      margin-bottom: 30px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(25px, 2.6vw, 34px);
+      line-height: 1.15;
+      letter-spacing: -0.8px;
+    }
+    .legal-list { display: grid; gap: 0; }
+    .legal-row {
+      display: grid;
+      grid-template-columns: minmax(170px, 0.8fr) minmax(0, 1.2fr);
+      gap: 24px;
+      padding: 18px 0;
+      border-top: 1px solid var(--warm-gray-pale);
+    }
+    .legal-row:first-child { border-top: 0; padding-top: 0; }
+    .legal-label {
+      color: var(--warm-gray);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.7px;
+      line-height: 1.55;
+      text-transform: uppercase;
+    }
+    .legal-value {
+      color: var(--charcoal);
+      font-size: 15px;
+      font-weight: 600;
+      line-height: 1.75;
+    }
+    .legal-value strong {
+      display: block;
+      margin-bottom: 3px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 17px;
+      line-height: 1.35;
+    }
+    .legal-value a { color: var(--charcoal); text-decoration-color: rgba(224,90,43,0.45); text-underline-offset: 4px; }
+    .legal-value a:hover { color: var(--coral); }
+    address { font-style: normal; }
+
+    footer {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr 1fr 1fr;
+      gap: 48px;
+      padding: 60px 80px;
+      background: var(--charcoal);
+      color: white;
+    }
+    .footer-brand img { height: 36px; filter: brightness(0) invert(1); opacity: 0.86; margin-bottom: 18px; }
+    .footer-brand p { max-width: 360px; color: rgba(255,255,255,0.56); font-size: 15px; line-height: 1.8; }
+    .footer-col h5 {
+      margin-bottom: 16px;
+      color: rgba(255,255,255,0.48);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+    }
+    .footer-col ul { display: grid; gap: 10px; list-style: none; }
+    .footer-col a,
+    .footer-col li { color: rgba(255,255,255,0.68); font-size: 14px; line-height: 1.5; text-decoration: none; }
+    .footer-col a:hover,
+    .footer-col a[aria-current='page'] { color: white; }
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 18px 80px;
+      background: #141210;
+      color: rgba(255,255,255,0.38);
+      font-size: 12px;
+    }
+
+    @media (max-width: 1500px) {
+      .site-nav { padding-left: 30px; padding-right: 30px; }
+      .site-nav-menu { gap: 24px; }
+      .site-nav-menu a { font-size: 11px; letter-spacing: 1.25px; }
+    }
+    @media (max-width: 1080px) {
+      .site-nav { height: 76px; padding: 0 24px; }
+      .site-nav-menu { display: none; }
+      .site-burger { display: flex; }
+      .legal-hero { padding-top: 142px; }
+      .legal-grid { grid-template-columns: 1fr; }
+      footer { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 768px) {
+      .site-nav { height: 72px; padding: 0 20px; }
+      .site-brand img { height: 34px; }
+      .legal-hero { min-height: 350px; padding: 124px 20px 64px; }
+      .legal-hero::before { width: 280px; height: 280px; right: -140px; }
+      .legal-hero::after { display: none; }
+      h1 { font-size: clamp(43px, 15vw, 62px); letter-spacing: -2px; }
+      .hero-note { font-size: 14px; }
+      .legal-section { padding: 48px 20px 70px; }
+      .legal-card { padding: 30px 22px; border-radius: 18px; }
+      .legal-row { grid-template-columns: 1fr; gap: 7px; padding: 16px 0; }
+      footer { grid-template-columns: 1fr; padding: 44px 20px; gap: 30px; }
+      .footer-bottom { flex-direction: column; padding: 18px 20px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition-duration: 0.01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="site-nav" aria-label="Hauptnavigation">
+    <a href="index.html" class="site-brand" aria-label="Bridge Dental Startseite">
+      <img src="logo-hero.png" alt="Bridge Dental">
+    </a>
+
+    <ul class="site-nav-menu">
+      <li><a href="ismerje-meg-a-bridge-dentalt.html">ISMERJE MEG A BRIDGE DENTALT</a></li>
+      <li class="site-dropdown">
+        <a href="index.html#szolgaltatasok">
+          SZAKTERÜLETEINK
+          <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <ul class="site-dropdown-menu">
+          <li class="site-dropdown-panel">
+            <ul>
+              <li><a href="full-arch-implantatumos-rehabilitaciok.html">All-on-X rehabilitációk</a></li>
+              <li><a href="implantatumos-cirkonium-restauraciok.html">Implantátumos cirkónium restaurációk</a></li>
+              <li><a href="digitalis-fogsorok.html">TrueDent – Full color, monolitikus digitális fogsorok</a></li>
+              <li><a href="digitalis-tervezes.html">Digitális workflow</a></li>
+              <li><a href="esztetikai-keramia.html">Fémmentes kerámia pótlások</a></li>
+              <li><a href="digitalis-fogtechnika.html">CAD/CAM technológia</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li><a href="index.html#blog">BLOG</a></li>
+      <li><a href="output/pdf/bridge-dental-munkalap-kitoltheto.pdf" target="_blank" rel="noopener">MUNKALAP</a></li>
+      <li><a href="kapcsolat.html">KAPCSOLAT</a></li>
+    </ul>
+
+    <button class="site-burger" id="siteBurger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="siteMobileMenu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="site-mobile-menu" id="siteMobileMenu">
+    <a href="index.html">FŐOLDAL</a>
+    <a href="ismerje-meg-a-bridge-dentalt.html">ISMERJE MEG A BRIDGE DENTALT</a>
+    <div class="site-mobile-group">
+      <a href="index.html#szolgaltatasok">SZAKTERÜLETEINK</a>
+      <div class="site-mobile-submenu">
+        <a href="full-arch-implantatumos-rehabilitaciok.html">All-on-X rehabilitációk</a>
+        <a href="implantatumos-cirkonium-restauraciok.html">Implantátumos cirkónium restaurációk</a>
+        <a href="digitalis-fogsorok.html">TrueDent – Full color, monolitikus digitális fogsorok</a>
+        <a href="digitalis-tervezes.html">Digitális workflow</a>
+        <a href="esztetikai-keramia.html">Fémmentes kerámia pótlások</a>
+        <a href="digitalis-fogtechnika.html">CAD/CAM technológia</a>
+      </div>
+    </div>
+    <a href="index.html#blog">BLOG</a>
+    <a href="output/pdf/bridge-dental-munkalap-kitoltheto.pdf" target="_blank" rel="noopener">MUNKALAP</a>
+    <a href="kapcsolat.html">KAPCSOLAT</a>
+  </div>
+
+  <main>
+    <section class="legal-hero">
+      <div class="hero-inner">
+        <div class="eyebrow">Rechtliche Informationen</div>
+        <h1>Impressum</h1>
+        <p class="hero-note">Angaben zum Diensteanbieter und zum Hostinganbieter der Website.</p>
+      </div>
+    </section>
+
+    <section class="legal-section" aria-label="Impressumsangaben">
+      <div class="legal-grid">
+        <article class="legal-card">
+          <span class="card-kicker">01 · Unternehmen</span>
+          <h2>Diensteanbieter</h2>
+          <div class="legal-list">
+            <div class="legal-row">
+              <div class="legal-label">Firma und Rechtsform</div>
+              <div class="legal-value"><strong>Bridge Dental Kft.</strong>Gesellschaft mit beschränkter Haftung nach ungarischem Recht</div>
+            </div>
+            <div class="legal-row">
+              <div class="legal-label">Sitz und Geschäftsanschrift</div>
+              <address class="legal-value">H-1106 Budapest<br>Fehér út 10., Gebäude 26, 2. Stock<br>Ungarn</address>
+            </div>
+            <div class="legal-row">
+              <div class="legal-label">Vertreten durch den Geschäftsführer</div>
+              <div class="legal-value">Dénes Császár</div>
+            </div>
+            <div class="legal-row">
+              <div class="legal-label">Handelsregisternummer</div>
+              <div class="legal-value">01-09-972787</div>
+            </div>
+            <div class="legal-row">
+              <div class="legal-label">Registergericht</div>
+              <div class="legal-value">Handelsgericht Budapest</div>
+            </div>
+            <div class="legal-row">
+              <div class="legal-label">Steuernummer</div>
+              <div class="legal-value">23589320-2-42</div>
+            </div>
+            <div class="legal-row">
+              <div class="legal-label">EU-Umsatzsteuer-Identifikationsnummer</div>
+              <div class="legal-value">HU23589320</div>
+            </div>
+            <div class="legal-row">
+              <div class="legal-label">Telefon</div>
+              <div class="legal-value"><a href="tel:+36703966653">+36 70 396 6653</a></div>
+            </div>
+            <div class="legal-row">
+              <div class="legal-label">E-Mail</div>
+              <div class="legal-value"><a href="mailto:info@bridgedental.hu">info@bridgedental.hu</a></div>
+            </div>
+            <div class="legal-row">
+              <div class="legal-label">Website</div>
+              <div class="legal-value"><a href="https://www.bridgedental.de" target="_blank" rel="noopener noreferrer">www.bridgedental.de</a></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="legal-card">
+          <span class="card-kicker">02 · Infrastruktur</span>
+          <h2>Hostinganbieter</h2>
+          <div class="legal-list">
+            <div class="legal-row">
+              <div class="legal-label">Anbieter</div>
+              <div class="legal-value"><strong>Rackhost Zrt.</strong></div>
+            </div>
+            <div class="legal-row">
+              <div class="legal-label">Sitz</div>
+              <address class="legal-value">6722 Szeged<br>Tisza Lajos körút 41.<br>Ungarn</address>
+            </div>
+            <div class="legal-row">
+              <div class="legal-label">Standort Budapest</div>
+              <address class="legal-value">1132 Budapest<br>Victor Hugo utca 18–22.<br>Ungarn</address>
+            </div>
+            <div class="legal-row">
+              <div class="legal-label">E-Mail</div>
+              <div class="legal-value"><a href="mailto:info@rackhost.hu">info@rackhost.hu</a></div>
+            </div>
+            <div class="legal-row">
+              <div class="legal-label">Website</div>
+              <div class="legal-value"><a href="https://www.rackhost.hu" target="_blank" rel="noopener noreferrer">www.rackhost.hu</a></div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-brand">
+      <img src="logo.png" alt="Bridge Dental">
+      <p>Budapesti B2B fogtechnikai labor — implantológiára, digitális munkafolyamatokra és prémium restaurációkra specializálva.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Szakterületeink</h5>
+      <ul>
+        <li><a href="full-arch-implantatumos-rehabilitaciok.html">All-on-X rehabilitációk</a></li>
+        <li><a href="implantatumos-cirkonium-restauraciok.html">Implantátumos cirkónium restaurációk</a></li>
+        <li><a href="digitalis-fogsorok.html">TrueDent – Full color, monolitikus digitális fogsorok</a></li>
+        <li><a href="digitalis-tervezes.html">Digitális workflow</a></li>
+        <li><a href="esztetikai-keramia.html">Fémmentes kerámia pótlások</a></li>
+        <li><a href="digitalis-fogtechnika.html">CAD/CAM technológia</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Navigáció</h5>
+      <ul>
+        <li><a href="index.html">Főoldal</a></li>
+        <li><a href="ismerje-meg-a-bridge-dentalt.html">Ismerje meg a Bridge Dentalt</a></li>
+        <li><a href="referenciak.html">Referenciák</a></li>
+        <li><a href="index.html#blog">Blog</a></li>
+        <li><a href="kapcsolat.html">Kapcsolat</a></li>
+        <li><a href="impressum.html" aria-current="page">Impressum</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Kapcsolat</h5>
+      <ul>
+        <li><a href="tel:+36703966656">+36 / (70) 396 6656</a></li>
+        <li><a href="mailto:info@bridgedental.hu">info@bridgedental.hu</a></li>
+        <li>Magyarország, 1106 Budapest, Fehér út 10. 26. ép. 2. em.</li>
+      </ul>
+    </div>
+  </footer>
+  <div class="footer-bottom">
+    <p>© 2026 Bridge Dental — Minden jog fenntartva.</p>
+    <p>CAD/CAM fogtechnikai labor Budapest</p>
+  </div>
+
+  <script>
+    const siteBurger = document.getElementById('siteBurger');
+    const siteMobileMenu = document.getElementById('siteMobileMenu');
+
+    const closeSiteMenu = () => {
+      siteBurger.classList.remove('open');
+      siteMobileMenu.classList.remove('open');
+      siteBurger.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    };
+
+    siteBurger.addEventListener('click', () => {
+      const isOpen = siteMobileMenu.classList.toggle('open');
+      siteBurger.classList.toggle('open', isOpen);
+      siteBurger.setAttribute('aria-expanded', String(isOpen));
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    });
+
+    siteMobileMenu.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeSiteMenu));
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') closeSiteMenu();
+    });
+  </script>
+</body>
+</html>
