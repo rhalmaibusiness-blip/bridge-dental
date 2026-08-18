@@ -177,7 +177,104 @@
       color: var(--warm-gray);
       font-size: 18px;
       line-height: 1.8;
-      margin-bottom: 42px;
+      margin-bottom: 30px;
+    }
+    .contact-people {
+      max-width: 600px;
+      margin-bottom: 24px;
+    }
+    .contact-people-title {
+      margin-bottom: 14px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 17px;
+      font-weight: 800;
+      line-height: 1.3;
+      letter-spacing: -0.2px;
+    }
+    .contact-person-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+    .contact-person {
+      display: grid;
+      grid-template-columns: 82px minmax(0, 1fr);
+      min-height: 126px;
+      overflow: hidden;
+      background: var(--white);
+      border: 1px solid rgba(232,225,220,0.96);
+      border-radius: 14px;
+      box-shadow: 0 12px 32px rgba(28,25,22,0.07);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .contact-person:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 40px rgba(28,25,22,0.11);
+    }
+    .contact-person-photo {
+      position: relative;
+      min-width: 0;
+      overflow: hidden;
+      background: var(--warm-gray-pale);
+    }
+    .contact-person-photo::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, transparent 60%, rgba(28,25,22,0.08));
+      pointer-events: none;
+    }
+    .contact-person-photo img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .contact-person-photo--work img { object-position: 46% center; }
+    .contact-person-photo--hedi img { object-position: 50% 28%; }
+    .contact-person-copy {
+      min-width: 0;
+      padding: 16px 14px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .contact-person-name {
+      margin-bottom: 5px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 14px;
+      font-weight: 800;
+      line-height: 1.3;
+    }
+    .contact-person-role {
+      margin-bottom: 10px;
+      color: var(--warm-gray);
+      font-size: 11px;
+      font-weight: 700;
+      line-height: 1.35;
+    }
+    .contact-person-phone {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      width: fit-content;
+      color: var(--coral);
+      font-size: 12px;
+      font-weight: 800;
+      line-height: 1.3;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .contact-person-phone svg {
+      width: 14px;
+      height: 14px;
+      flex: 0 0 auto;
+    }
+    .contact-person-phone:hover { color: var(--charcoal); }
+    .contact-person-phone:focus-visible {
+      outline: 2px solid var(--coral);
+      outline-offset: 4px;
+      border-radius: 3px;
     }
     .contact-items {
       display: grid;
@@ -400,6 +497,9 @@
       .page-hero::before { display: none; }
       h1 { font-size: 28px; line-height: 1.16; letter-spacing: -0.2px; }
       .lead { font-size: 15px; line-height: 1.7; margin-bottom: 28px; }
+      .contact-person { grid-template-columns: 92px minmax(0, 1fr); min-height: 120px; }
+      .contact-person-name { font-size: 15px; }
+      .contact-person-phone { font-size: 13px; }
       .contact-item { grid-template-columns: 42px 1fr; padding: 14px; }
       .contact-icon { width: 42px; height: 42px; }
       .contact-item a, .contact-item span:last-child { font-size: 14px; }
@@ -703,6 +803,39 @@
       <h1>Kezdjük el <span class="accent">az együttműködést.</span></h1>
       <p class="lead">Írja meg, milyen fogtechnikai munkában kér támogatást. Segítünk kiválasztani a megfelelő szolgáltatást vagy pilot együttműködési formát.</p>
 
+      <section class="contact-people" aria-labelledby="contactPeopleTitle">
+        <h2 class="contact-people-title" id="contactPeopleTitle">Közvetlen kapcsolatfelvétel</h2>
+        <div class="contact-person-grid">
+          <article class="contact-person">
+            <div class="contact-person-photo contact-person-photo--work">
+              <img src="assets/dsc_6882.jpg" alt="Fogtechnikai munka a Bridge Dental laborban">
+            </div>
+            <div class="contact-person-copy">
+              <h3 class="contact-person-name">Attila Kinál</h3>
+              <p class="contact-person-role">Szakmai kommunikáció</p>
+              <a class="contact-person-phone" href="tel:+36703966653" aria-label="Attila Kinál hívása: +36 70 39 666 53">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.07 12 19.79 19.79 0 0 1 1 3.18C1 2.09 1.9 1 3 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16z"/></svg>
+                +36 70 39 666 53
+              </a>
+            </div>
+          </article>
+
+          <article class="contact-person">
+            <div class="contact-person-photo contact-person-photo--hedi">
+              <img src="csapat_hedi.jpg" alt="Hédi Császárné Demeter, irodavezető" loading="lazy">
+            </div>
+            <div class="contact-person-copy">
+              <h3 class="contact-person-name">Hédi Császárné Demeter</h3>
+              <p class="contact-person-role">Irodavezető</p>
+              <a class="contact-person-phone" href="tel:+36703966664" aria-label="Hédi Császárné Demeter hívása: +36 70 39 666 64">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.07 12 19.79 19.79 0 0 1 1 3.18C1 2.09 1.9 1 3 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16z"/></svg>
+                +36 70 39 666 64
+              </a>
+            </div>
+          </article>
+        </div>
+      </section>
+
       <div class="contact-items">
         <div class="contact-item">
           <div class="contact-icon">
@@ -773,7 +906,7 @@
             <option value="full-arch-implantatumos-rehabilitaciok">All-on-X rehabilitációk</option>
             <option value="implantatumos-cirkonium-restauraciok">Implantátumos cirkónium restaurációk</option>
             <option value="esztetikai-keramia-potlasok">Fémmentes kerámia pótlások</option>
-            <option value="digitalis-fogsorok-truedent">Digitális fogsorok — TrueDent</option>
+            <option value="digitalis-fogsorok-truedent">TrueDent – Full color, monolitikus digitális fogsorok</option>
             <option value="digitalis-tervezes">Digitális workflow</option>
             <option value="digitalis-fogtechnika">CAD/CAM technológia</option>
             <option value="pilot-egyuttmukodes">Pilot együttműködés</option>
