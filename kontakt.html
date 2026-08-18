@@ -1,0 +1,1040 @@
+<!DOCTYPE html>
+<html lang="de-DE">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kontakt | Bridge Dental</title>
+  <meta name="description" content="Kontaktieren Sie Bridge Dental in Budapest: persönliche fachliche Ansprechpartner, Pilot-Zusammenarbeit und organisierte europäische Logistik für Zahnarztpraxen.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&amp;family=Open+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --coral: #E05A2B;
+      --coral-light: #F47B4F;
+      --coral-pale: #FFF1EA;
+      --charcoal: #1C1916;
+      --warm-gray: #7A716B;
+      --warm-gray-light: #B8AEA7;
+      --warm-gray-pale: #E8E1DC;
+      --cream: #F8F4F0;
+      --white: #FFFFFF;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Open Sans', sans-serif;
+      background: var(--cream);
+      color: var(--charcoal);
+      overflow-x: hidden;
+    }
+
+    nav {
+      position: fixed;
+      inset: 0 0 auto;
+      height: 72px;
+      padding: 0 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 100;
+      background: rgba(248,244,240,0.94);
+      border-bottom: 1px solid rgba(28,25,22,0.06);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+    }
+    .logo img { height: 32px; width: auto; display: block; }
+    .nav-links {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 34px;
+    }
+    .nav-links a {
+      color: var(--charcoal);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover,
+    .nav-links a.active { color: var(--coral); }
+    .nav-dropdown { position: relative; }
+    .nav-dropdown > a { display: inline-flex; align-items: center; gap: 6px; }
+    .nav-dropdown > a svg { width: 12px; height: 12px; transition: transform 0.2s; }
+    .nav-dropdown:hover > a svg { transform: rotate(180deg); }
+    .dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      padding-top: 12px;
+      list-style: none;
+      min-width: 300px;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.2s, visibility 0.2s;
+      z-index: 200;
+    }
+    .nav-dropdown:hover .dropdown-menu { opacity: 1; visibility: visible; }
+    .dropdown-menu-inner {
+      background: var(--white);
+      border: 1px solid var(--warm-gray-pale);
+      border-radius: 16px;
+      padding: 10px;
+      box-shadow: 0 20px 50px rgba(28,25,22,0.12);
+    }
+    .dropdown-menu a {
+      display: block;
+      padding: 12px 14px;
+      border-radius: 10px;
+      line-height: 1.35;
+    }
+    .dropdown-menu a:hover { background: var(--coral-pale); }
+    .nav-right { display: flex; align-items: center; gap: 22px; }
+    .lang-switcher { display: flex; gap: 12px; }
+    .lang-btn {
+      border: none;
+      background: none;
+      color: var(--warm-gray);
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .lang-btn.active { color: var(--coral); }
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      padding: 10px 22px;
+      background: var(--coral);
+      color: var(--white);
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 700;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .nav-cta:hover { background: var(--coral-light); transform: translateY(-1px); }
+
+    .page-hero {
+      min-height: 100vh;
+      padding: 120px 80px 80px;
+      display: grid;
+      grid-template-columns: minmax(0, 0.86fr) minmax(420px, 1.14fr);
+      gap: 64px;
+      align-items: center;
+      position: relative;
+    }
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      top: 72px;
+      right: 0;
+      width: 52vw;
+      height: calc(100% - 72px);
+      background: linear-gradient(135deg, rgba(224,90,43,0.08), transparent 58%);
+      pointer-events: none;
+    }
+    .contact-copy,
+    .contact-panel {
+      position: relative;
+      z-index: 1;
+    }
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--coral);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+    .section-label::before {
+      content: '';
+      width: 36px;
+      height: 2px;
+      background: var(--coral);
+      border-radius: 999px;
+    }
+    h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(26px, 2.35vw, 30px);
+      font-weight: 800;
+      line-height: 1.18;
+      letter-spacing: -0.4px;
+      margin-bottom: 22px;
+      max-width: 520px;
+    }
+    h1 .accent {
+      display: block;
+      color: var(--coral);
+    }
+    .lead {
+      max-width: 600px;
+      color: var(--warm-gray);
+      font-size: 18px;
+      line-height: 1.8;
+      margin-bottom: 30px;
+    }
+    .contact-people {
+      max-width: 600px;
+      margin-bottom: 24px;
+    }
+    .contact-people-title {
+      margin-bottom: 14px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 17px;
+      font-weight: 800;
+      line-height: 1.3;
+      letter-spacing: -0.2px;
+    }
+    .contact-person-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+    .contact-person {
+      display: grid;
+      grid-template-columns: 82px minmax(0, 1fr);
+      min-height: 126px;
+      overflow: hidden;
+      background: var(--white);
+      border: 1px solid rgba(232,225,220,0.96);
+      border-radius: 14px;
+      box-shadow: 0 12px 32px rgba(28,25,22,0.07);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .contact-person:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 40px rgba(28,25,22,0.11);
+    }
+    .contact-person-photo {
+      position: relative;
+      min-width: 0;
+      overflow: hidden;
+      background: var(--warm-gray-pale);
+    }
+    .contact-person-photo::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, transparent 60%, rgba(28,25,22,0.08));
+      pointer-events: none;
+    }
+    .contact-person-photo img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .contact-person-photo--work img { object-position: 46% center; }
+    .contact-person-photo--hedi img { object-position: 50% 28%; }
+    .contact-person-copy {
+      min-width: 0;
+      padding: 16px 14px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .contact-person-name {
+      margin-bottom: 5px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 14px;
+      font-weight: 800;
+      line-height: 1.3;
+    }
+    .contact-person-role {
+      margin-bottom: 10px;
+      color: var(--warm-gray);
+      font-size: 11px;
+      font-weight: 700;
+      line-height: 1.35;
+    }
+    .contact-person-phone {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      width: fit-content;
+      color: var(--coral);
+      font-size: 12px;
+      font-weight: 800;
+      line-height: 1.3;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .contact-person-phone svg {
+      width: 14px;
+      height: 14px;
+      flex: 0 0 auto;
+    }
+    .contact-person-phone:hover { color: var(--charcoal); }
+    .contact-person-phone:focus-visible {
+      outline: 2px solid var(--coral);
+      outline-offset: 4px;
+      border-radius: 3px;
+    }
+    .contact-items {
+      display: grid;
+      gap: 16px;
+      max-width: 560px;
+    }
+    .contact-item {
+      display: grid;
+      grid-template-columns: 48px 1fr;
+      gap: 16px;
+      align-items: center;
+      padding: 18px;
+      background: rgba(255,255,255,0.58);
+      border: 1px solid rgba(232,225,220,0.92);
+      border-radius: 12px;
+    }
+    .contact-icon {
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      color: var(--coral);
+      background: var(--white);
+      border: 1px solid var(--warm-gray-pale);
+      border-radius: 12px;
+    }
+    .contact-icon svg { width: 22px; height: 22px; }
+    .contact-label {
+      display: block;
+      color: var(--warm-gray);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+    .contact-item a,
+    .contact-item span:last-child {
+      color: var(--charcoal);
+      text-decoration: none;
+      font-size: 16px;
+      line-height: 1.45;
+      font-weight: 600;
+    }
+    .contact-item a:hover { color: var(--coral); }
+
+    .contact-panel {
+      background: rgba(255,255,255,0.78);
+      border: 1px solid rgba(232,225,220,0.95);
+      border-radius: 24px;
+      padding: 40px;
+      box-shadow: 0 28px 80px rgba(28,25,22,0.10);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      min-width: 0;
+    }
+    .panel-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 30px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--warm-gray-pale);
+    }
+    .panel-top h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 28px;
+      line-height: 1.18;
+      letter-spacing: -0.6px;
+      margin-bottom: 8px;
+    }
+    .panel-top p {
+      color: var(--warm-gray);
+      font-size: 14px;
+      line-height: 1.65;
+      max-width: 460px;
+    }
+    .panel-badge {
+      align-self: flex-start;
+      padding: 9px 12px;
+      border-radius: 999px;
+      background: var(--coral-pale);
+      color: var(--coral);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+    .form-group { margin-bottom: 20px; min-width: 0; }
+    .form-group label {
+      display: block;
+      color: var(--charcoal);
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      min-width: 0;
+      border: 1.5px solid var(--warm-gray-pale);
+      background: rgba(248,244,240,0.68);
+      color: var(--charcoal);
+      border-radius: 10px;
+      padding: 15px 16px;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 15px;
+      outline: none;
+      transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--coral);
+      background: var(--white);
+      box-shadow: 0 0 0 4px rgba(224,90,43,0.08);
+    }
+    .form-group textarea {
+      min-height: 150px;
+      resize: vertical;
+    }
+    .form-gdpr {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      color: var(--warm-gray);
+      font-size: 12px;
+      line-height: 1.55;
+      margin: 4px 0 22px;
+    }
+    .form-gdpr input {
+      width: 18px;
+      height: 18px;
+      margin-top: 1px;
+      accent-color: var(--coral);
+      flex-shrink: 0;
+    }
+    .form-gdpr a { color: var(--charcoal); text-underline-offset: 2px; }
+    .btn-form-submit {
+      width: 100%;
+      border: none;
+      border-radius: 10px;
+      background: var(--coral);
+      color: var(--white);
+      padding: 18px 28px;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 16px;
+      font-weight: 800;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+    }
+    .btn-form-submit:hover {
+      background: var(--coral-light);
+      transform: translateY(-2px);
+      box-shadow: 0 14px 34px rgba(224,90,43,0.28);
+    }
+
+    footer {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr 1fr 1fr;
+      gap: 48px;
+      padding: 60px 80px;
+      background: var(--charcoal);
+      color: white;
+    }
+    .footer-brand img { height: 36px; filter: brightness(0) invert(1); opacity: 0.86; margin-bottom: 18px; }
+    .footer-brand p {
+      color: rgba(255,255,255,0.56);
+      font-size: 15px;
+      line-height: 1.8;
+      max-width: 360px;
+    }
+    .footer-col h5 {
+      color: rgba(255,255,255,0.48);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    .footer-col ul { list-style: none; display: grid; gap: 10px; }
+    .footer-col a,
+    .footer-col li {
+      color: rgba(255,255,255,0.68);
+      text-decoration: none;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+    .footer-col a:hover { color: white; }
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 18px 80px;
+      background: #141210;
+      color: rgba(255,255,255,0.38);
+      font-size: 12px;
+    }
+
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.65s ease, transform 0.65s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 1180px) {
+      .page-hero { grid-template-columns: 1fr; gap: 44px; }
+      .contact-copy { max-width: 760px; }
+      footer { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 768px) {
+      nav { height: 64px; padding: 0 20px; }
+      .nav-links, .lang-switcher { display: none; }
+      .nav-cta { padding: 10px 16px; font-size: 12px; }
+      .page-hero { padding: 104px 20px 48px; gap: 32px; }
+      .page-hero::before { display: none; }
+      h1 { font-size: 28px; line-height: 1.16; letter-spacing: -0.2px; }
+      .lead { font-size: 15px; line-height: 1.7; margin-bottom: 28px; }
+      .contact-person { grid-template-columns: 92px minmax(0, 1fr); min-height: 120px; }
+      .contact-person-name { font-size: 15px; }
+      .contact-person-phone { font-size: 13px; }
+      .contact-item { grid-template-columns: 42px 1fr; padding: 14px; }
+      .contact-icon { width: 42px; height: 42px; }
+      .contact-item a, .contact-item span:last-child { font-size: 14px; }
+      .contact-panel { padding: 26px 20px; border-radius: 18px; }
+      .panel-top { flex-direction: column; gap: 14px; }
+      .panel-top h2 { font-size: 23px; }
+      .form-row { grid-template-columns: 1fr; gap: 0; }
+      footer { grid-template-columns: 1fr; padding: 44px 20px; gap: 30px; }
+      .footer-bottom { flex-direction: column; padding: 18px 20px; }
+    }
+
+    /* ── EGYSÉGES BRIDGE DENTAL NAVIGÁCIÓ ── */
+    nav.contact-nav {
+      position: fixed;
+      inset: 0 0 auto;
+      z-index: 100;
+      height: 84px;
+      padding: 0 48px;
+      color: #f7f1eb;
+      background: rgba(13, 10, 8, 0.97);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      box-shadow: 0 10px 34px rgba(22, 14, 10, 0.14);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+    }
+
+    .contact-brand {
+      position: relative;
+      z-index: 120;
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+    }
+
+    .contact-brand img {
+      display: block;
+      width: auto;
+      height: 40px;
+      filter: drop-shadow(0 2px 8px rgba(0,0,0,0.35));
+    }
+
+    .contact-nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 34px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .contact-nav-menu > li { display: flex; align-items: center; }
+
+    .contact-nav-menu a {
+      position: relative;
+      padding-bottom: 6px;
+      color: #f5efe9;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1.6px;
+      text-decoration: none;
+      transition: color 0.25s ease;
+    }
+
+    .contact-nav-menu a::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background: var(--coral);
+      transition: width 0.3s ease;
+    }
+
+    .contact-nav-menu a:hover,
+    .contact-nav-menu a[aria-current='page'] { color: #f47b4f; }
+    .contact-nav-menu a:hover::after,
+    .contact-nav-menu a[aria-current='page']::after { width: 100%; }
+
+    .contact-dropdown { position: relative; }
+    .contact-dropdown > a { display: inline-flex; align-items: center; gap: 7px; }
+    .contact-dropdown > a svg {
+      width: 12px;
+      height: 12px;
+      transition: transform 0.25s ease;
+    }
+    .contact-dropdown:hover > a svg { transform: rotate(180deg); }
+
+    .contact-dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      z-index: 140;
+      min-width: 340px;
+      margin: 0;
+      padding: 16px 0 0;
+      list-style: none;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateX(-50%);
+      transition: opacity 0.2s ease, visibility 0.2s ease;
+    }
+
+    .contact-dropdown:hover .contact-dropdown-menu,
+    .contact-dropdown:focus-within .contact-dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .contact-dropdown-panel {
+      padding: 10px;
+      background: rgba(13,10,8,0.98);
+      border: 1px solid rgba(255,255,255,0.09);
+      border-radius: 16px;
+      box-shadow: 0 20px 52px rgba(0,0,0,0.34);
+    }
+
+    .contact-dropdown-panel ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .contact-dropdown-panel li + li { margin-top: 2px; }
+
+    .contact-dropdown-panel a {
+      display: block;
+      padding: 11px 14px;
+      border-radius: 9px;
+      font-size: 12px;
+      letter-spacing: 0.8px;
+      line-height: 1.35;
+      white-space: nowrap;
+    }
+
+    .contact-dropdown-panel a::after { display: none; }
+    .contact-dropdown-panel a:hover {
+      color: #f47b4f;
+      background: rgba(242,121,63,0.12);
+    }
+
+    .contact-burger {
+      position: relative;
+      z-index: 120;
+      display: none;
+      width: 44px;
+      height: 44px;
+      padding: 0;
+      border: 0;
+      background: transparent;
+      cursor: pointer;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    .contact-burger span {
+      display: block;
+      width: 26px;
+      height: 2.5px;
+      border-radius: 4px;
+      background: #f7f1eb;
+      transition: transform 0.35s ease, opacity 0.25s ease;
+    }
+
+    .contact-burger.open span:nth-child(1) { transform: translateY(8.5px) rotate(45deg); }
+    .contact-burger.open span:nth-child(2) { opacity: 0; }
+    .contact-burger.open span:nth-child(3) { transform: translateY(-8.5px) rotate(-45deg); }
+
+    .contact-mobile-menu {
+      position: fixed;
+      inset: 0;
+      z-index: 90;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      padding: 104px 24px 34px;
+      overflow-y: auto;
+      background: rgba(13,10,8,0.99);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.35s ease, visibility 0.35s ease;
+    }
+
+    .contact-mobile-menu.open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .contact-mobile-menu > a,
+    .contact-mobile-group > a {
+      color: #f7f1eb;
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(18px, 5.6vw, 25px);
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-align: center;
+      text-decoration: none;
+    }
+
+    .contact-mobile-menu > a[aria-current='page'] { color: #f47b4f; }
+    .contact-mobile-group { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+    .contact-mobile-submenu { display: flex; flex-direction: column; align-items: center; gap: 3px; }
+    .contact-mobile-submenu a {
+      padding: 4px 0;
+      color: rgba(247,241,235,0.68);
+      font-size: 13px;
+      font-weight: 600;
+      line-height: 1.35;
+      text-align: center;
+      text-decoration: none;
+    }
+
+    .page-hero { padding-top: 144px; }
+
+    @media (max-width: 1500px) {
+      nav.contact-nav { padding-left: 30px; padding-right: 30px; }
+      .contact-nav-menu { gap: 24px; }
+      .contact-nav-menu a { font-size: 11px; letter-spacing: 1.25px; }
+    }
+
+    @media (max-width: 1080px) {
+      nav.contact-nav { height: 76px; padding: 0 24px; }
+      .contact-nav-menu { display: none; }
+      .contact-burger { display: flex; }
+      .page-hero { padding-top: 120px; }
+    }
+
+    @media (max-width: 768px) {
+      nav.contact-nav { height: 72px; padding: 0 20px; }
+      .contact-brand img { height: 34px; }
+      .page-hero { padding-top: 108px; }
+      .contact-mobile-menu { justify-content: flex-start; }
+    }
+  </style>
+  <link rel="canonical" href="https://rhalmaibusiness-blip.github.io/bridge-dental/kontakt.html">
+  <link rel="alternate" hreflang="de" href="https://rhalmaibusiness-blip.github.io/bridge-dental/kontakt.html">
+  <link rel="alternate" hreflang="hu" href="https://rhalmaibusiness-blip.github.io/bridge-dental/hu/kapcsolat.html">
+  <link rel="alternate" hreflang="x-default" href="https://rhalmaibusiness-blip.github.io/bridge-dental/kontakt.html">
+  <link rel="stylesheet" href="assets/language-switcher.css?v=4">
+</head>
+<body>
+
+<nav class="bd-language-switcher" aria-label="Sprachauswahl">
+  <a href="kontakt.html" lang="de" hreflang="de" aria-current="page"><img src="assets/flags/de.svg" alt="">DE</a>
+  <a href="hu/kapcsolat.html" lang="hu" hreflang="hu"><img src="assets/flags/hu.svg" alt="">HU</a>
+</nav>
+<nav class="contact-nav" aria-label="Hauptnavigation">
+  <a href="index.html" class="contact-brand" aria-label="Bridge Dental Hauptseite">
+    <img src="logo-hero.png" alt="Bridge Dental">
+  </a>
+
+  <ul class="contact-nav-menu">
+    <li><a href="bridge-dental-kennenlernen.html">LERNEN SIE BRIDGE DENTAL KENNEN</a></li>
+    <li class="contact-dropdown">
+      <a href="index.html#szolgaltatasok">
+        LEISTUNGEN
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <polyline points="6 9 12 15 18 9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+      <ul class="contact-dropdown-menu">
+        <li class="contact-dropdown-panel">
+          <ul>
+            <li><a href="all-on-x-rehabilitationen.html">All-on-X-Rehabilitationen</a></li>
+            <li><a href="implantatgetragene-zirkonoxidrestaurationen.html">Implantatgetragene Zirkonoxidrestaurationen</a></li>
+            <li><a href="truedent-digitale-prothesen.html">TrueDent – vollfarbige, monolithische digitale Prothesen</a></li>
+            <li><a href="digitaler-workflow.html">Digitaler Workflow</a></li>
+            <li><a href="metallfreie-keramikrestaurationen.html">Metallfreie Keramikrestaurationen</a></li>
+            <li><a href="cad-cam-technologie.html">CAD/CAM-Technologie</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="index.html#blog">BLOG</a></li>
+    <li><a href="output/pdf/bridge-dental-munkalap-kitoltheto.pdf" target="_blank" rel="noopener">ARBEITSAUFTRAG</a></li>
+    <li><a href="kontakt.html" aria-current="page">KONTAKT</a></li>
+  </ul>
+
+  <button class="contact-burger" id="contactBurger" aria-label="Menü" aria-expanded="false" aria-controls="contactMobileMenu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="contact-mobile-menu" id="contactMobileMenu">
+  <a href="index.html">STARTSEITE</a>
+  <a href="bridge-dental-kennenlernen.html">LERNEN SIE BRIDGE DENTAL KENNEN</a>
+  <div class="contact-mobile-group">
+    <a href="index.html#szolgaltatasok">LEISTUNGEN</a>
+    <div class="contact-mobile-submenu">
+      <a href="all-on-x-rehabilitationen.html">All-on-X-Rehabilitationen</a>
+      <a href="implantatgetragene-zirkonoxidrestaurationen.html">Implantatgetragene Zirkonoxidrestaurationen</a>
+      <a href="truedent-digitale-prothesen.html">TrueDent – vollfarbige, monolithische digitale Prothesen</a>
+      <a href="digitaler-workflow.html">Digitaler Workflow</a>
+      <a href="metallfreie-keramikrestaurationen.html">Metallfreie Keramikrestaurationen</a>
+      <a href="cad-cam-technologie.html">CAD/CAM-Technologie</a>
+    </div>
+  </div>
+  <a href="index.html#blog">BLOG</a>
+  <a href="output/pdf/bridge-dental-munkalap-kitoltheto.pdf" target="_blank" rel="noopener">ARBEITSAUFTRAG</a>
+  <a href="kontakt.html" aria-current="page">KONTAKT</a>
+</div>
+
+<main>
+  <section class="page-hero">
+    <div class="contact-copy reveal">
+      <div class="section-label">Kontaktaufnahme</div>
+      <h1>Beginnen wir <span class="accent">die Zusammenarbeit.</span></h1>
+      <p class="lead">Beschreiben Sie kurz, bei welcher zahntechnischen Versorgung Sie Unterstützung benötigen. Wir helfen Ihnen, die passende Leistung oder Form der Pilot-Zusammenarbeit auszuwählen.</p>
+
+      <section class="contact-people" aria-labelledby="contactPeopleTitle">
+        <h2 class="contact-people-title" id="contactPeopleTitle">Direkter Kontakt</h2>
+        <div class="contact-person-grid">
+          <article class="contact-person">
+            <div class="contact-person-photo contact-person-photo--work">
+              <img src="assets/dsc_6882.jpg" alt="Zahntechnische Arbeit im Labor von Bridge Dental">
+            </div>
+            <div class="contact-person-copy">
+              <h3 class="contact-person-name">Attila Kínál</h3>
+              <p class="contact-person-role">Fachliche Kommunikation</p>
+              <a class="contact-person-phone" href="tel:+36703966653" aria-label="Attila Kínál anrufen: +36 70 39 666 53">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.07 12 19.79 19.79 0 0 1 1 3.18C1 2.09 1.9 1 3 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16z"/></svg>
+                +36 70 39 666 53
+              </a>
+            </div>
+          </article>
+
+          <article class="contact-person">
+            <div class="contact-person-photo contact-person-photo--hedi">
+              <img src="csapat_hedi.jpg" alt="Hédi Császárné Demeter, Office Managerin" loading="lazy">
+            </div>
+            <div class="contact-person-copy">
+              <h3 class="contact-person-name">Hédi Császárné Demeter</h3>
+              <p class="contact-person-role">Office Managerin</p>
+              <a class="contact-person-phone" href="tel:+36703966664" aria-label="Rufen Sie Frau Hédi Császárné Demeter an: +36 70 39 666 64">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.07 12 19.79 19.79 0 0 1 1 3.18C1 2.09 1.9 1 3 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16z"/></svg>
+                +36 70 39 666 64
+              </a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <div class="contact-items">
+        <div class="contact-item">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.07 12 19.79 19.79 0 0 1 1 3.18C1 2.09 1.9 1 3 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16z"/></svg>
+          </div>
+          <div>
+            <span class="contact-label">Telefon</span>
+            <a href="tel:+36703966653">+36 / (70) 396 6653</a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          </div>
+          <div>
+            <span class="contact-label">E-Mail</span>
+            <a href="mailto:info@bridgedental.hu">info@bridgedental.hu</a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div>
+            <span class="contact-label">Laborstandort</span>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Bridge+Dental%2C+1106+Budapest%2C+Feh%C3%A9r+%C3%BAt+10" target="_blank" rel="noopener noreferrer">Ungarn, H-1106 Budapest, Fehér út 10 Gebäude 26, 2. Stock</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-panel reveal">
+      <div class="panel-top">
+        <div>
+          <h2>Kontaktformular</h2>
+          <p>Wählen Sie im Formular eine Leistung oder die Pilot-Zusammenarbeit aus. Weitere Angaben können Sie im Nachrichtenfeld ergänzen.</p>
+        </div>
+        <div class="panel-badge">B2B-Laborpartner</div>
+      </div>
+
+      <form>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="nev">Name *</label>
+            <input id="nev" name="nev" type="text" placeholder="Dr. Max Mustermann" required>
+          </div>
+          <div class="form-group">
+            <label for="rendelo">Praxis / Klinik</label>
+            <input id="rendelo" name="rendelo" type="text" placeholder="Musterzahnarztpraxis">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="email">E-Mail-Adresse *</label>
+            <input id="email" name="email" type="email" placeholder="dr.kovacs@fogaszat.hu" required>
+          </div>
+          <div class="form-group">
+            <label for="telefon">Telefonnummer</label>
+            <input id="telefon" name="telefon" type="tel" placeholder="+49 000 000000">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="targy">Wobei können wir Ihnen helfen? *</label>
+          <select id="targy" name="targy" required>
+            <option value="" selected disabled>Thema auswählen</option>
+            <option value="full-arch-implantatumos-rehabilitaciok">All-on-X-Rehabilitationen</option>
+            <option value="implantatumos-cirkonium-restauraciok">Implantatgetragene Zirkonoxidrestaurationen</option>
+            <option value="esztetikai-keramia-potlasok">Metallfreie Keramikrestaurationen</option>
+            <option value="digitalis-fogsorok-truedent">TrueDent – vollfarbige, monolithische digitale Prothesen</option>
+            <option value="digitalis-tervezes">Digitaler Workflow</option>
+            <option value="digitalis-fogtechnika">CAD/CAM-Technologie</option>
+            <option value="pilot-egyuttmukodes">Pilot-Zusammenarbeit</option>
+            <option value="egyeb">Sonstiges</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="uzenet">Nachricht</label>
+          <textarea id="uzenet" name="uzenet" placeholder="Beschreiben Sie kurz den Fall, die gewünschte Leistung oder Ihre Frage zur Pilot-Zusammenarbeit …"></textarea>
+        </div>
+
+        <label class="form-gdpr">
+          <input type="checkbox" name="adatkezeles" required>
+          <span>Ich habe die <a href="#">Datenschutzhinweise</a> gelesen und stimme zu, dass Bridge Dental die im Formular angegebenen Daten zur Beantwortung meiner Anfrage verarbeitet.</span>
+        </label>
+
+        <button type="submit" class="btn-form-submit">Nachricht senden</button>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="footer-brand">
+    <img src="logo.png" alt="Bridge Dental">
+    <p>Budapester B2B-Dentallabor – spezialisiert auf Implantologie, digitale Workflows und Premium-Restaurationen.</p>
+  </div>
+  <div class="footer-col">
+    <h5>Leistungen</h5>
+    <ul>
+      <li><a href="all-on-x-rehabilitationen.html">All-on-X-Rehabilitationen</a></li>
+      <li><a href="implantatgetragene-zirkonoxidrestaurationen.html">Implantatgetragene Zirkonoxidrestaurationen</a></li>
+      <li><a href="truedent-digitale-prothesen.html">TrueDent – vollfarbige, monolithische digitale Prothesen</a></li>
+      <li><a href="digitaler-workflow.html">Digitaler Workflow</a></li>
+      <li><a href="metallfreie-keramikrestaurationen.html">Metallfreie Keramikrestaurationen</a></li>
+      <li><a href="cad-cam-technologie.html">CAD/CAM-Technologie</a></li>
+    </ul>
+  </div>
+  <div class="footer-col">
+    <h5>Navigation</h5>
+    <ul>
+      <li><a href="index.html">Startseite</a></li>
+      <li><a href="bridge-dental-kennenlernen.html">Bridge Dental kennenlernen</a></li>
+      <li><a href="index.html#szolgaltatasok">Leistungen</a></li>
+      <li><a href="referenzen.html">Referenzen</a></li>
+      <li><a href="output/pdf/bridge-dental-munkalap-kitoltheto.pdf" target="_blank" rel="noopener">Arbeitsauftrag</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+      <li><a href="impressum.html">Impressum</a></li>
+    </ul>
+  </div>
+  <div class="footer-col">
+    <h5>Kontakt</h5>
+    <ul>
+      <li><a href="tel:+36703966653">+36 / (70) 396 6653</a></li>
+      <li><a href="mailto:info@bridgedental.hu">info@bridgedental.hu</a></li>
+      <li><a href="https://www.google.com/maps/search/?api=1&amp;query=Bridge+Dental%2C+1106+Budapest%2C+Feh%C3%A9r+%C3%BAt+10" target="_blank" rel="noopener noreferrer">Ungarn, H-1106 Budapest, Fehér út 10, Gebäude 26, 2. Stock</a></li>
+      <li style="margin-top: 16px;"><a href="#">Datenschutzhinweise</a></li>
+      <li><a href="#">Cookie-Hinweise</a></li>
+    </ul>
+  </div>
+</footer>
+<div class="footer-bottom">
+  <p>© 2026 Bridge Dental – Alle Rechte vorbehalten.</p>
+  <p>CAD/CAM-Dentallabor Budapest</p>
+</div>
+
+<script>
+  const contactBurger = document.getElementById('contactBurger');
+  const contactMobileMenu = document.getElementById('contactMobileMenu');
+
+  if (contactBurger && contactMobileMenu) {
+    const closeContactMenu = () => {
+      contactBurger.classList.remove('open');
+      contactMobileMenu.classList.remove('open');
+      contactBurger.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    };
+
+    contactBurger.addEventListener('click', () => {
+      const isOpen = contactMobileMenu.classList.toggle('open');
+      contactBurger.classList.toggle('open', isOpen);
+      contactBurger.setAttribute('aria-expanded', String(isOpen));
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    });
+
+    contactMobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', closeContactMenu);
+    });
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 1080) closeContactMenu();
+    });
+  }
+
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  reveals.forEach(el => observer.observe(el));
+
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    });
+  });
+
+  const nav = document.querySelector('nav');
+  window.addEventListener('scroll', () => {
+    nav.style.boxShadow = window.scrollY > 20 ? '0 2px 20px rgba(0,0,0,0.08)' : 'none';
+  });
+</script>
+</body>
+</html>

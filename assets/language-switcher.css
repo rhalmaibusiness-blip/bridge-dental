@@ -1,0 +1,105 @@
+.bd-language-switcher {
+  position: fixed;
+  top: 18px;
+  right: 22px;
+  bottom: auto !important;
+  left: auto !important;
+  z-index: 10020;
+  display: inline-flex;
+  width: max-content !important;
+  height: auto !important;
+  min-height: 0 !important;
+  align-items: center;
+  justify-content: flex-start !important;
+  flex-direction: row !important;
+  gap: 3px;
+  padding: 3px;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 999px;
+  background: rgba(28, 25, 22, 0.78);
+  box-shadow: 0 8px 28px rgba(28, 25, 22, 0.16);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+}
+
+.bd-language-switcher a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-width: 50px;
+  height: 30px;
+  padding: 0 9px;
+  border-radius: 999px;
+  color: rgba(255, 255, 255, 0.72);
+  font-family: "Montserrat", sans-serif;
+  font-size: 10px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  transition: background-color 180ms ease, color 180ms ease, transform 180ms ease;
+}
+
+.bd-language-switcher a:hover,
+.bd-language-switcher a:focus-visible {
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+.bd-language-switcher a[aria-current="page"] {
+  color: #fff;
+  background: #e05a2b;
+}
+
+.bd-language-switcher img {
+  width: 18px;
+  height: 12px;
+  border-radius: 2px;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.22);
+  object-fit: cover;
+}
+
+@media (min-width: 901px) {
+  .bd-language-switcher {
+    top: 19px;
+    right: 18px;
+  }
+
+  body:has(.bd-language-switcher) .hero-menu,
+  body:has(.bd-language-switcher) .contact-links,
+  body:has(.bd-language-switcher) .nav-links,
+  body:has(.bd-language-switcher) .site-nav-menu {
+    margin-right: 118px;
+  }
+}
+
+@media (max-width: 900px) {
+  .bd-language-switcher {
+    top: 16px;
+    right: 84px;
+  }
+
+  .bd-language-switcher a {
+    min-width: 42px;
+    height: 28px;
+    padding: 0 7px;
+    font-size: 9px;
+  }
+}
+
+@media (max-width: 420px) {
+  .bd-language-switcher {
+    right: 84px;
+  }
+
+  .bd-language-switcher a {
+    min-width: 35px;
+    padding: 0 6px;
+  }
+
+  .bd-language-switcher img {
+    width: 16px;
+    height: 11px;
+  }
+}

@@ -1,0 +1,2207 @@
+<!doctype html>
+<html lang="de-DE">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bridge Dental | Laborpartnerschaft für Praxen in Deutschland und der Schweiz</title>
+  <meta name="description" content="Bridge Dental als Laborpartner für Zahnarztpraxen in Deutschland und der Schweiz: Pilot-Zusammenarbeit, fachliche Betreuung auf Deutsch und organisierte Logistik.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --coral: #E05A2B;
+      --coral-soft: #F07A4B;
+      --cream: #F8F5F0;
+      --cream-2: #EFE8DF;
+      --charcoal: #1C1916;
+      --charcoal-2: #2A2520;
+      --warm-gray: #716A63;
+      --line: rgba(28, 25, 22, 0.12);
+      --white: #fffaf4;
+      --radius: 8px;
+      --shadow: 0 28px 80px rgba(28, 25, 22, 0.16);
+      --container: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Open Sans", sans-serif;
+      background: var(--cream);
+      color: var(--charcoal);
+      letter-spacing: 0;
+      overflow-x: hidden;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .shell {
+      width: min(var(--container), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: fixed;
+      z-index: 30;
+      top: 18px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: min(1180px, calc(100% - 32px));
+      height: 66px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 12px 0 20px;
+      background: rgba(248, 245, 240, 0.88);
+      border: 1px solid rgba(255, 255, 255, 0.48);
+      box-shadow: 0 14px 45px rgba(28, 25, 22, 0.12);
+      backdrop-filter: blur(16px);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      min-width: 0;
+    }
+
+    .brand img {
+      height: 32px;
+      width: auto;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 0 22px;
+      border-radius: 6px;
+      border: 1px solid transparent;
+      font-size: 13px;
+      font-weight: 800;
+      line-height: 1;
+      cursor: pointer;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease, color 0.18s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      background: var(--coral);
+      color: #fff;
+      box-shadow: 0 14px 34px rgba(224, 90, 43, 0.28);
+    }
+
+    .btn-primary:hover {
+      background: var(--coral-soft);
+      box-shadow: 0 18px 44px rgba(224, 90, 43, 0.34);
+    }
+
+    .btn-ghost {
+      color: #fff;
+      border-color: rgba(255, 255, 255, 0.42);
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .btn-cream {
+      background: var(--cream);
+      color: var(--charcoal);
+      border-color: rgba(28, 25, 22, 0.12);
+    }
+
+    .hero {
+      min-height: 720px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      padding: 132px 0 72px;
+      color: #fff;
+      isolation: isolate;
+      overflow: hidden;
+      background: var(--charcoal);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      background-image:
+        linear-gradient(90deg, rgba(28, 25, 22, 0.88) 0%, rgba(28, 25, 22, 0.62) 48%, rgba(28, 25, 22, 0.28) 100%),
+        linear-gradient(0deg, rgba(28, 25, 22, 0.74) 0%, rgba(28, 25, 22, 0) 46%),
+        url("../assets/hero.jpg");
+      background-size: cover;
+      background-position: center 42%;
+      transform: scale(1.02);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      opacity: 0.12;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.12) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.12) 1px, transparent 1px);
+      background-size: 42px 42px;
+      mask-image: linear-gradient(90deg, #000, transparent 72%);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 0.95fr) 340px;
+      gap: 64px;
+      align-items: center;
+      min-width: 0;
+    }
+
+    .hero-grid > * {
+      min-width: 0;
+    }
+
+    .hero-copy {
+      width: 100%;
+      max-width: 760px;
+      box-sizing: border-box;
+      padding: 30px 34px 32px;
+      border-left: 3px solid var(--coral);
+      background: linear-gradient(90deg, rgba(28, 25, 22, 0.48), rgba(28, 25, 22, 0.18));
+      backdrop-filter: blur(8px);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
+      font-size: 11px;
+      font-weight: 900;
+      color: rgba(255, 255, 255, 0.76);
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 34px;
+      height: 2px;
+      background: var(--coral);
+    }
+
+    h1, h2, h3 {
+      font-family: "Montserrat", sans-serif;
+      margin: 0;
+      letter-spacing: 0;
+    }
+
+    h1 {
+      max-width: 860px;
+      font-size: clamp(32px, 3.1vw, 40px);
+      line-height: 1.12;
+      font-weight: 900;
+    }
+
+    h1 span {
+      color: #F4C4B3;
+    }
+
+    h1 .h1-line {
+      display: block;
+      color: inherit;
+    }
+
+    .mbr {
+      display: none;
+    }
+
+    .hero-lead {
+      max-width: 660px;
+      margin: 28px 0 0;
+      font-size: clamp(16px, 1.45vw, 19px);
+      line-height: 1.65;
+      color: rgba(255, 255, 255, 0.78);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 34px;
+    }
+
+    .trust-strip {
+      display: grid;
+      gap: 0;
+      padding: 20px 22px;
+      background:
+        linear-gradient(145deg, rgba(248, 245, 240, 0.18), rgba(28, 25, 22, 0.24)),
+        rgba(248, 245, 240, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: var(--radius);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 24px 70px rgba(28, 25, 22, 0.20);
+    }
+
+    .trust-item {
+      display: grid;
+      grid-template-columns: 34px 1fr;
+      gap: 13px;
+      align-items: start;
+      padding: 15px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .trust-item:first-child {
+      padding-top: 0;
+    }
+
+    .trust-item:last-child {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+
+    .trust-icon {
+      display: grid;
+      place-items: center;
+      width: 34px;
+      height: 34px;
+      border-radius: 999px;
+      background: rgba(224, 90, 43, 0.18);
+      color: #FFE5DC;
+      font-family: "Montserrat", sans-serif;
+      font-size: 13px;
+      font-weight: 900;
+      border: 1px solid rgba(244, 196, 179, 0.28);
+    }
+
+    .trust-icon svg {
+      width: 18px;
+      height: 18px;
+      stroke: currentColor;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      fill: none;
+    }
+
+    .trust-item strong {
+      font-family: "Montserrat", sans-serif;
+      display: block;
+      margin-bottom: 4px;
+      font-size: 17px;
+      line-height: 1.15;
+      font-weight: 900;
+      color: #fff;
+    }
+
+    .trust-item span {
+      font-size: 12px;
+      line-height: 1.55;
+      color: rgba(255, 255, 255, 0.62);
+      overflow-wrap: break-word;
+    }
+
+    .section {
+      padding: 104px 0;
+    }
+
+    .section-tight {
+      padding: 78px 0;
+    }
+
+    .section-dark {
+      background: var(--charcoal);
+      color: #fff;
+    }
+
+    .section-line {
+      border-top: 1px solid var(--line);
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: 0.72fr 1fr;
+      gap: 58px;
+      align-items: end;
+      margin-bottom: 52px;
+    }
+
+    .label {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 14px;
+      font-size: 11px;
+      font-weight: 900;
+      color: var(--coral);
+      text-transform: uppercase;
+    }
+
+    .label::before {
+      content: "";
+      width: 28px;
+      height: 2px;
+      background: currentColor;
+    }
+
+    h2 {
+      max-width: 760px;
+      font-size: clamp(28px, 2.7vw, 40px);
+      line-height: 1.14;
+      font-weight: 900;
+      color: inherit;
+    }
+
+    h2 .h2-line {
+      display: block;
+    }
+
+    .section-copy {
+      margin: 0;
+      font-size: 17px;
+      line-height: 1.78;
+      color: var(--warm-gray);
+    }
+
+    .section-dark .section-copy {
+      color: rgba(255, 255, 255, 0.96);
+    }
+
+    .solution-band .section-copy {
+      color: rgba(255, 255, 255, 0.96);
+    }
+
+    .problem-grid {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 42px;
+      align-items: stretch;
+    }
+
+    .photo-panel {
+      position: relative;
+      min-height: 480px;
+      overflow: hidden;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      background: var(--charcoal);
+    }
+
+    .photo-panel img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: saturate(0.92) contrast(1.05);
+    }
+
+    .photo-caption {
+      position: absolute;
+      left: 22px;
+      right: 22px;
+      bottom: 22px;
+      padding: 18px;
+      background: rgba(28, 25, 22, 0.74);
+      color: rgba(255, 255, 255, 0.78);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: var(--radius);
+      backdrop-filter: blur(10px);
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .tension-list {
+      display: grid;
+      gap: 14px;
+      align-content: center;
+    }
+
+    .tension-item {
+      display: grid;
+      grid-template-columns: 42px 1fr;
+      gap: 18px;
+      align-items: start;
+      padding: 22px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .tension-item span {
+      display: inline-flex;
+      width: 42px;
+      height: 42px;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: rgba(224, 90, 43, 0.10);
+      color: var(--coral);
+      font-weight: 900;
+      font-family: "Montserrat", sans-serif;
+    }
+
+    .tension-item h3,
+    .service-card h3,
+    .proof-card h3 {
+      font-size: 19px;
+      line-height: 1.25;
+      font-weight: 900;
+      margin-bottom: 8px;
+    }
+
+    .tension-item p,
+    .service-card p,
+    .proof-card p {
+      margin: 0;
+      color: var(--warm-gray);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .solution-band {
+      background: var(--charcoal);
+      color: #fff;
+      padding: 56px 0;
+    }
+
+    .solution-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .solution-item {
+      min-height: 250px;
+      padding: 28px;
+      background: rgba(255, 255, 255, 0.055);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: var(--radius);
+    }
+
+    .solution-item b {
+      display: block;
+      margin-bottom: 22px;
+      color: var(--coral-soft);
+      font-family: "Montserrat", sans-serif;
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .solution-item h3 {
+      margin-bottom: 12px;
+      color: #fff;
+      font-size: 21px;
+      line-height: 1.22;
+      font-weight: 900;
+    }
+
+    .solution-item p {
+      margin: 0;
+      color: rgba(255, 255, 255, 0.70);
+      line-height: 1.65;
+      font-size: 14px;
+    }
+
+    .pilot {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at top right, rgba(224, 90, 43, 0.14), transparent 34%),
+        linear-gradient(180deg, #f6f0e8 0%, #f1e9df 100%);
+    }
+
+    .pilot-panel {
+      position: relative;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(280px, 0.95fr);
+      gap: 32px;
+      align-items: stretch;
+      padding: 46px;
+      background:
+        linear-gradient(135deg, rgba(28, 25, 22, 0.97), rgba(28, 25, 22, 0.93)),
+        #1c1916;
+      color: #fff;
+      border-radius: 28px;
+      box-shadow: 0 32px 90px rgba(28, 25, 22, 0.22);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .pilot-panel::before {
+      content: "PILOT";
+      position: absolute;
+      right: -18px;
+      bottom: 18px;
+      font-family: "Montserrat", sans-serif;
+      font-size: clamp(74px, 10vw, 132px);
+      font-weight: 900;
+      letter-spacing: -0.08em;
+      color: rgba(255, 255, 255, 0.04);
+      pointer-events: none;
+      line-height: 0.9;
+    }
+
+    .pilot-panel::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
+      background-size: 44px 44px;
+      mask-image: linear-gradient(90deg, #000, transparent 78%);
+      pointer-events: none;
+    }
+
+    .pilot-copy,
+    .pilot-side {
+      position: relative;
+      z-index: 1;
+    }
+
+    .pilot-number {
+      display: inline-flex;
+      align-items: baseline;
+      gap: 10px;
+      margin: 0 0 22px;
+      font-family: "Montserrat", sans-serif;
+      color: var(--coral-soft);
+    }
+
+    .pilot-number strong {
+      font-size: clamp(34px, 3vw, 42px);
+      line-height: 0.9;
+      font-weight: 900;
+    }
+
+    .pilot-number span {
+      font-size: 16px;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+    }
+
+    .pilot h2 {
+      max-width: 620px;
+      color: #fff;
+    }
+
+    .pilot .section-copy {
+      max-width: 640px;
+      color: rgba(255, 255, 255, 0.96);
+    }
+
+    .pilot-bullets {
+      list-style: none;
+      margin: 26px 0 0;
+      padding: 0;
+      display: grid;
+      gap: 12px;
+      max-width: 680px;
+    }
+
+    .pilot-bullets li {
+      position: relative;
+      padding: 0 0 0 24px;
+      color: rgba(255, 255, 255, 0.84);
+      font-size: 14px;
+      line-height: 1.65;
+    }
+
+    .pilot-bullets li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.72em;
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--coral);
+      box-shadow: 0 0 0 4px rgba(224, 90, 43, 0.14);
+      transform: translateY(-50%);
+    }
+
+    .pilot-side {
+      display: grid;
+      grid-template-rows: 1fr auto;
+      justify-items: center;
+      gap: 14px;
+      min-height: 100%;
+      padding: 28px 26px 26px;
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(10px);
+    }
+
+    .pilot-cta {
+      width: min(100%, 320px);
+      min-height: 64px;
+      padding: 0 28px;
+      font-size: 15px;
+      letter-spacing: 0.01em;
+      box-shadow: 0 18px 44px rgba(224, 90, 43, 0.26);
+      align-self: end;
+    }
+
+    .pilot-meta {
+      width: min(100%, 320px);
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      align-content: start;
+      align-self: center;
+    }
+
+    .pilot-chip {
+      padding: 14px 14px 13px;
+      border-radius: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.05);
+      color: rgba(255, 255, 255, 0.86);
+      font-size: 12px;
+      line-height: 1.45;
+      text-align: center;
+    }
+
+    .pilot-chip strong {
+      display: block;
+      margin-bottom: 4px;
+      color: #fff;
+      font-family: "Montserrat", sans-serif;
+      font-size: 15px;
+      font-weight: 900;
+    }
+
+    .pilot-copy .cta-row {
+      margin-top: 26px;
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 14px;
+      margin-top: 30px;
+    }
+
+    .microcopy {
+      max-width: 420px;
+      margin: 0;
+      color: var(--warm-gray);
+      font-size: 12px;
+      line-height: 1.6;
+    }
+
+    .solution-note {
+      margin: 28px 0 0;
+      max-width: 620px;
+      padding-left: 18px;
+      border-left: 3px solid var(--coral);
+      color: var(--charcoal-2);
+      font-weight: 700;
+      line-height: 1.7;
+    }
+
+    .solution-cta {
+      margin-top: 30px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      text-align: center;
+    }
+
+    .solution-cta span {
+      max-width: 460px;
+      color: rgba(255, 255, 255, 0.58);
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .fit-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 14px;
+    }
+
+    .fit-card {
+      min-height: 184px;
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255, 250, 244, 0.72);
+    }
+
+    .fit-card svg {
+      width: 26px;
+      height: 26px;
+      color: var(--coral);
+      margin-bottom: 22px;
+    }
+
+    .fit-card p {
+      margin: 0;
+      color: var(--charcoal-2);
+      line-height: 1.58;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .service-card {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      overflow: hidden;
+      background: #fffaf5;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+    }
+
+    .service-card img {
+      width: 100%;
+      aspect-ratio: 1.22;
+      object-fit: cover;
+    }
+
+    .service-card div {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      padding: 22px;
+    }
+
+    .service-card small {
+      display: block;
+      margin-bottom: 12px;
+      color: var(--coral);
+      font-size: 11px;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .service-card-cta {
+      display: inline-flex;
+      align-self: flex-start;
+      margin-top: auto;
+      padding-top: 18px;
+      color: var(--coral);
+      font-size: 13px;
+      font-weight: 900;
+      text-decoration: none;
+    }
+
+    .service-card-cta::after {
+      content: "→";
+      margin-left: 8px;
+      transition: transform 0.2s ease;
+    }
+
+    .service-card-cta:hover::after {
+      transform: translateX(3px);
+    }
+
+    .process {
+      counter-reset: step;
+    }
+
+    .process-line {
+      display: grid;
+      gap: 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.16);
+    }
+
+    .process-step {
+      counter-increment: step;
+      display: grid;
+      grid-template-columns: 120px 0.6fr 1fr;
+      gap: 28px;
+      align-items: center;
+      padding: 26px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+    }
+
+    .process-step::before {
+      content: "0" counter(step);
+      font-family: "Montserrat", sans-serif;
+      font-size: 34px;
+      font-weight: 900;
+      color: var(--coral-soft);
+    }
+
+    .process-step h3 {
+      font-size: 20px;
+      font-weight: 900;
+    }
+
+    .process-step p {
+      margin: 0;
+      color: rgba(255, 255, 255, 0.64);
+      line-height: 1.7;
+      font-size: 14px;
+    }
+
+    .proof-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 32px;
+      align-items: stretch;
+    }
+
+    .proof-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .proof-card {
+      padding: 24px 22px 22px;
+      background: linear-gradient(180deg, rgba(255, 250, 244, 0.96), rgba(255, 247, 239, 0.98));
+      border: 1px solid rgba(28, 25, 22, 0.10);
+      border-radius: 18px;
+      box-shadow: 0 12px 34px rgba(28, 25, 22, 0.05);
+    }
+
+    .proof-card strong {
+      display: block;
+      margin-bottom: 10px;
+      color: var(--coral);
+      font-family: "Montserrat", sans-serif;
+      font-size: 30px;
+      font-weight: 900;
+    }
+
+    .proof-image {
+      position: relative;
+      min-height: 100%;
+      border-radius: 28px;
+      overflow: hidden;
+      background: var(--charcoal);
+      box-shadow: 0 28px 80px rgba(28, 25, 22, 0.18);
+    }
+
+    .proof-image img {
+      width: 100%;
+      height: 100%;
+      min-height: 100%;
+      object-fit: cover;
+    }
+
+    .proof-image-badge {
+      position: absolute;
+      left: 22px;
+      right: 22px;
+      bottom: 22px;
+      padding: 16px 18px 17px;
+      border-radius: 18px;
+      background: rgba(28, 25, 22, 0.72);
+      color: rgba(255, 255, 255, 0.82);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(10px);
+      line-height: 1.55;
+      font-size: 13px;
+    }
+
+    .proof-image-badge strong {
+      display: block;
+      margin-bottom: 4px;
+      font-family: "Montserrat", sans-serif;
+      font-size: 14px;
+      font-weight: 900;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .proof-footer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 26px;
+      padding: 0;
+      background: transparent;
+      border: 0;
+      box-shadow: none;
+    }
+
+    .proof-footer p {
+      display: none;
+    }
+
+    .testimonials {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at top left, rgba(224, 90, 43, 0.10), transparent 34%),
+        linear-gradient(180deg, rgba(255, 250, 244, 0.96), rgba(248, 245, 240, 1) 58%, rgba(243, 235, 226, 0.92));
+    }
+
+    .testimonials::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(28, 25, 22, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(28, 25, 22, 0.04) 1px, transparent 1px);
+      background-size: 42px 42px;
+      mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.42), transparent 78%);
+      pointer-events: none;
+    }
+
+    .testimonials .section-head {
+      align-items: end;
+      margin-bottom: 38px;
+    }
+
+    .testimonial-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      align-items: start;
+    }
+
+    .testimonial-card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-self: start;
+      height: auto;
+      padding: 26px 24px 24px;
+      border-radius: 22px;
+      border: 1px solid rgba(28, 25, 22, 0.10);
+      background:
+        linear-gradient(180deg, rgba(255, 252, 248, 0.98), rgba(255, 247, 240, 0.96));
+      box-shadow: 0 18px 48px rgba(28, 25, 22, 0.07);
+    }
+
+    .testimonial-card::before {
+      content: "“";
+      position: absolute;
+      top: 14px;
+      right: 18px;
+      font-family: "Montserrat", sans-serif;
+      font-size: 64px;
+      line-height: 1;
+      color: rgba(224, 90, 43, 0.14);
+      pointer-events: none;
+    }
+
+    .testimonial-text {
+      margin: 0;
+      color: var(--charcoal-2);
+      font-size: 17px;
+      line-height: 1.74;
+    }
+
+    .testimonial-text p {
+      margin: 0;
+    }
+
+    .testimonial-text p + p {
+      margin-top: 14px;
+    }
+
+    .testimonial-text span {
+      color: var(--coral);
+      font-weight: 800;
+    }
+
+    .testimonial-collapsible {
+      position: relative;
+      overflow: hidden;
+      margin-top: 4px;
+      max-height: 6.1em;
+      transition: max-height 0.36s ease;
+    }
+
+    .testimonial-collapsible::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 54px;
+      background: linear-gradient(180deg, rgba(255, 248, 241, 0), rgba(255, 248, 241, 0.78) 58%, rgba(255, 248, 241, 1));
+      pointer-events: none;
+      opacity: 1;
+      transition: opacity 0.2s ease;
+    }
+
+    .testimonial-card.is-open .testimonial-collapsible {
+      max-height: 44em;
+    }
+
+    .testimonial-card.is-open .testimonial-collapsible::after {
+      opacity: 0;
+    }
+
+    .testimonial-toggle {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      align-self: flex-start;
+      margin-top: 12px;
+      padding: 0;
+      border: 0;
+      background: transparent;
+      color: var(--coral);
+      cursor: pointer;
+      font-family: "Montserrat", sans-serif;
+      font-size: 14px;
+      font-weight: 900;
+      line-height: 1.2;
+    }
+
+    .testimonial-toggle::after {
+      content: "+";
+      font-size: 16px;
+      line-height: 1;
+      transition: transform 0.2s ease;
+    }
+
+    .testimonial-card.is-open .testimonial-toggle::after {
+      content: "-";
+    }
+
+    .testimonial-toggle:hover::after {
+      transform: scale(1.08);
+    }
+
+    .testimonial-more {
+      margin-top: 0;
+    }
+
+    .testimonial-more p:first-child {
+      margin-top: 4px;
+    }
+
+    .testimonial-meta {
+      display: grid;
+      gap: 4px;
+      margin-top: 18px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(28, 25, 22, 0.08);
+    }
+
+    .testimonial-meta strong {
+      font-family: "Montserrat", sans-serif;
+      font-size: 15px;
+      font-weight: 900;
+      color: var(--charcoal);
+    }
+
+    .testimonial-meta span {
+      color: var(--warm-gray);
+      font-size: 13px;
+      line-height: 1.55;
+    }
+
+    .form-section {
+      background: var(--cream-2);
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 0.72fr 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    .form-side {
+      position: sticky;
+      top: 106px;
+    }
+
+    .form-side h2 {
+      margin-bottom: 22px;
+    }
+
+    .form-side .section-copy {
+      margin-bottom: 28px;
+    }
+
+    .contact-mini {
+      display: grid;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .contact-mini a,
+    .contact-mini span {
+      color: var(--warm-gray);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    form {
+      padding: 34px;
+      background: #fffaf5;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .field {
+      margin-bottom: 18px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--charcoal);
+      font-size: 12px;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      border: 1px solid rgba(28, 25, 22, 0.14);
+      border-radius: 6px;
+      background: var(--cream);
+      min-height: 48px;
+      padding: 0 14px;
+      color: var(--charcoal);
+      font-family: "Open Sans", sans-serif;
+      font-size: 14px;
+      outline: none;
+      transition: border-color 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+    }
+
+    textarea {
+      min-height: 132px;
+      padding-top: 13px;
+      resize: vertical;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: var(--coral);
+      box-shadow: 0 0 0 3px rgba(224, 90, 43, 0.12);
+      background: #fff;
+    }
+
+    .gdpr {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      margin: 4px 0 20px;
+      color: var(--warm-gray);
+      font-size: 12px;
+      line-height: 1.55;
+      text-transform: none;
+      font-weight: 600;
+    }
+
+    .gdpr input {
+      width: 18px;
+      height: 18px;
+      min-height: 0;
+      margin-top: 1px;
+      accent-color: var(--coral);
+    }
+
+    .faq-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    details {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255, 250, 244, 0.72);
+      padding: 20px 22px;
+    }
+
+    summary {
+      cursor: pointer;
+      font-family: "Montserrat", sans-serif;
+      font-weight: 900;
+      list-style: none;
+      line-height: 1.35;
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    details p {
+      margin: 14px 0 0;
+      color: var(--warm-gray);
+      line-height: 1.72;
+      font-size: 14px;
+    }
+
+    details ul {
+      margin: 12px 0 0;
+      padding-left: 18px;
+      color: var(--warm-gray);
+      line-height: 1.72;
+      font-size: 14px;
+    }
+
+    details ul li + li {
+      margin-top: 6px;
+    }
+
+    .faq-center {
+      display: block;
+      text-align: center;
+      margin-bottom: 42px;
+    }
+
+    .faq-center .label {
+      justify-content: center;
+    }
+
+    .faq-center h2 {
+      max-width: 760px;
+      margin: 0 auto;
+      font-size: clamp(24px, 2.1vw, 34px);
+    }
+
+    .faq-center .section-copy {
+      max-width: 740px;
+      margin: 18px auto 0;
+    }
+
+    .faq-grid-center {
+      max-width: 1040px;
+      margin: 0 auto;
+    }
+
+    .final-cta {
+      padding: 74px 0;
+      background: var(--charcoal);
+      color: #fff;
+      text-align: center;
+    }
+
+    .final-cta h2 {
+      margin: 0 auto 18px;
+    }
+
+    .final-cta p {
+      max-width: 690px;
+      margin: 0 auto 28px;
+      color: rgba(255, 255, 255, 0.68);
+      line-height: 1.72;
+    }
+
+    footer {
+      padding: 34px 0;
+      background: #120f0d;
+      color: rgba(255, 255, 255, 0.54);
+      font-size: 12px;
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .footer-inner img {
+      height: 28px;
+      filter: brightness(0) invert(1);
+      opacity: 0.82;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .mobile-cta {
+      display: none;
+      position: fixed;
+      z-index: 40;
+      left: 14px;
+      right: 14px;
+      bottom: 14px;
+    }
+
+    .mobile-cta .btn {
+      width: 100%;
+      box-shadow: 0 18px 44px rgba(28, 25, 22, 0.32);
+    }
+
+    @media (max-width: 1040px) {
+      .hero-grid,
+      .problem-grid,
+      .pilot-panel,
+      .proof-grid,
+      .form-grid,
+      .section-head,
+      .guarantee {
+        grid-template-columns: 1fr;
+      }
+      .trust-strip { max-width: 620px; }
+      .solution-grid,
+      .fit-grid,
+      .services-grid,
+      .testimonial-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .pilot-panel {
+        gap: 24px;
+        padding: 34px;
+      }
+      .pilot-side {
+        justify-items: stretch;
+      }
+      .pilot-meta {
+        width: 100%;
+      }
+      .process-step {
+        grid-template-columns: 80px 1fr;
+      }
+      .process-step p {
+        grid-column: 2;
+      }
+      .form-side {
+        position: static;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .shell {
+        width: calc(100vw - 28px);
+        max-width: var(--container);
+      }
+      .topbar {
+        top: 10px;
+        left: 10px;
+        right: 10px;
+        transform: none;
+        height: 58px;
+        width: auto;
+        max-width: calc(100vw - 20px);
+        box-sizing: border-box;
+        justify-content: flex-start;
+        padding: 0 10px 0 14px;
+      }
+      .brand img {
+        height: 29px;
+      }
+      .topbar .btn {
+        display: none;
+      }
+      .hero {
+        min-height: auto;
+        padding: 104px 0 54px;
+        align-items: start;
+      }
+      .hero-copy {
+        max-width: 100%;
+        padding: 22px 18px 24px;
+        border-left-width: 2px;
+        background: rgba(28, 25, 22, 0.38);
+      }
+      h1 {
+        max-width: 100%;
+        font-size: 26px;
+        line-height: 1.12;
+        overflow-wrap: break-word;
+        word-break: normal;
+      }
+      h2 {
+        max-width: 100%;
+        font-size: 26px;
+        line-height: 1.12;
+        overflow-wrap: break-word;
+      }
+      .mbr {
+        display: block;
+      }
+      .hero-lead {
+        max-width: 330px;
+        font-size: 16px;
+        overflow-wrap: break-word;
+      }
+      .hero-actions {
+        flex-direction: column;
+      }
+      .hero-actions .btn {
+        width: 100%;
+      }
+      .trust-strip {
+        width: 100%;
+      }
+      .section {
+        padding: 72px 0;
+      }
+      .section-tight {
+        padding: 56px 0;
+      }
+      .photo-panel {
+        min-height: 360px;
+      }
+      .solution-grid,
+      .fit-grid,
+      .services-grid,
+      .testimonial-grid,
+      .pilot-list,
+      .proof-cards,
+      .proof-footer,
+      .faq-grid,
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+      .pilot-panel,
+      form {
+        padding: 26px;
+      }
+      .pilot-panel {
+        border-radius: 22px;
+      }
+      .pilot-side {
+        padding: 18px;
+      }
+      .pilot-meta {
+        grid-template-columns: 1fr 1fr;
+      }
+      .proof-grid {
+        grid-template-columns: 1fr;
+      }
+      .proof-image {
+        min-height: 360px;
+      }
+      .proof-image-badge {
+        left: 16px;
+        right: 16px;
+        bottom: 16px;
+      }
+      .proof-footer {
+        padding: 18px 18px 20px;
+      }
+      .proof-footer .btn {
+        width: 100%;
+      }
+      .process-step {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+      .process-step p {
+        grid-column: auto;
+      }
+      .proof-image img {
+        min-height: 360px;
+      }
+      .testimonial-card {
+        padding: 22px 20px 20px;
+        border-radius: 18px;
+      }
+      .testimonial-text {
+        font-size: 16px;
+      }
+      .footer-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+      .mobile-cta {
+        display: none;
+      }
+      body {
+        padding-bottom: 0;
+      }
+    }
+  </style>
+  <link rel="canonical" href="https://rhalmaibusiness-blip.github.io/bridge-dental/zusammenarbeit/index.html">
+  <link rel="alternate" hreflang="de" href="https://rhalmaibusiness-blip.github.io/bridge-dental/zusammenarbeit/index.html">
+  <link rel="alternate" hreflang="hu" href="https://rhalmaibusiness-blip.github.io/bridge-dental/hu/egyuttmukodes/index.html">
+  <link rel="alternate" hreflang="x-default" href="https://rhalmaibusiness-blip.github.io/bridge-dental/zusammenarbeit/index.html">
+  <link rel="stylesheet" href="../assets/language-switcher.css?v=4">
+</head>
+<body>
+
+<nav class="bd-language-switcher" aria-label="Sprachauswahl">
+  <a href="index.html" lang="de" hreflang="de" aria-current="page"><img src="../assets/flags/de.svg" alt="">DE</a>
+  <a href="../hu/egyuttmukodes/index.html" lang="hu" hreflang="hu"><img src="../assets/flags/hu.svg" alt="">HU</a>
+</nav>
+<header class="topbar">
+    <a class="brand" href="#top" aria-label="Bridge Dental">
+      <img src="../assets/logo.png" alt="Bridge Dental">
+    </a>
+    <a class="btn btn-primary" href="#urlap">Beratung anfragen</a>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="shell hero-grid">
+        <div class="hero-copy reveal">
+          <div class="eyebrow">Für Schweizer und deutsche Zahnarztpraxen</div>
+          <h1>
+            <span class="h1-line">Digitale Zahntechnik</span>
+            <span class="h1-line">für komplexe Fälle in</span>
+            <span class="h1-line">Deutschland und der Schweiz.</span>
+          </h1>
+          <p class="hero-lead">All-on-X, implantatgetragene Zirkonoxidarbeiten, e.max-Restaurationen und digitale Prothesen – mit eigener Fertigung, deutschsprachiger fachlicher Betreuung und organisierter europäischer Logistik.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#urlap">Partnerschaftsberatung anfragen</a>
+            <a class="btn btn-ghost" href="#szolgaltatasok">Leistungen ansehen</a>
+          </div>
+        </div>
+        <aside class="trust-strip reveal" aria-label="Grundlagen einer verlässlichen Zusammenarbeit">
+          <div class="trust-item">
+            <div class="trust-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/><path d="M8 9h8"/><path d="M8 13h5"/></svg>
+            </div>
+            <div>
+              <strong>Beratung auf Deutsch</strong>
+              <span>Fachliche Abstimmung bei komplexen Fällen</span>
+            </div>
+          </div>
+          <div class="trust-item">
+            <div class="trust-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M3 21h18"/><path d="M5 21V9l5 3V9l5 3V7h4v14"/><path d="M9 17h1"/><path d="M14 17h1"/></svg>
+            </div>
+            <div>
+              <strong>Eigene Produktion</strong>
+              <span>Dokumentierter digitaler Workflow ohne Subunternehmerkette</span>
+            </div>
+          </div>
+          <div class="trust-item">
+            <div class="trust-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M3 7h11v10H3z"/><path d="M14 10h4l3 3v4h-7z"/><circle cx="7" cy="19" r="2"/><circle cx="17" cy="19" r="2"/></svg>
+            </div>
+            <div>
+              <strong>EU-Logistik</strong>
+              <span>Organisierter Hin- und Rückversand für Praxen in CH und DE</span>
+            </div>
+          </div>
+          <div class="trust-item">
+            <div class="trust-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 3 20 7v5c0 5-3.4 8.2-8 9-4.6-.8-8-4-8-9V7z"/><path d="m8.5 12.5 2.2 2.2 4.8-5"/></svg>
+            </div>
+            <div>
+              <strong>5 Jahre Gewährleistung</strong>
+              <span>Material- und Konstruktionsgarantie für Implantatarbeiten</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section section-line">
+      <div class="shell">
+        <div class="section-head reveal">
+          <div>
+            <div class="label">Herausforderungen einer grenzüberschreitenden Laborpartnerschaft</div>
+            <h2>
+              <span class="h2-line">Bei komplexen Fällen</span>
+              <span class="h2-line">entscheidet mehr als</span>
+              <span class="h2-line">die Qualität des Zahnersatzes.</span>
+            </h2>
+          </div>
+          <p class="section-copy">Für eine Praxis in Deutschland oder der Schweiz ist die Wahl eines Laborpartners keine reine Einkaufsentscheidung. Bei komplexen Implantat- und Digitalfällen sind Kommunikation, Termintreue, Scanqualität, Logistik und klare Verantwortlichkeiten ebenso entscheidend wie die fertige Restauration.</p>
+        </div>
+
+        <div class="problem-grid">
+          <div class="photo-panel reveal">
+            <img src="../assets/digitalis-fogtechnika-labor-munkafolyamat.webp" alt="Bridge Dental digitaler Dentaltechnologie-Workflow">
+          </div>
+          <div class="tension-list">
+            <div class="tension-item reveal">
+              <span>01</span>
+              <div>
+                <h3>Missverständnisse in der fachlichen Kommunikation</h3>
+                <p>Bei komplexen Fällen können missverständliche Scandaten, unvollständige Informationen oder verspätete Rückmeldungen den gesamten Workflow ausbremsen.</p>
+              </div>
+            </div>
+            <div class="tension-item reveal">
+              <span>02</span>
+              <div>
+                <h3>Unsichere grenzüberschreitende Logistik</h3>
+                <p>Wenn unklar ist, wann die Arbeit im Labor eintrifft, wann sie zurückkommt und wer den Transport koordiniert, wird die Patientenplanung unnötig erschwert.</p>
+              </div>
+            </div>
+            <div class="tension-item reveal">
+              <span>03</span>
+              <div>
+                <h3>Fragmentierte Verantwortung</h3>
+                <p>Bei Implantat- und Full-Arch-Versorgungen entstehen Risiken, wenn Fertigung, Dokumentation, Reparatur und Gewährleistung auf mehrere Beteiligte verteilt sind.</p>
+              </div>
+            </div>
+            <div class="cta-row reveal">
+              <p class="solution-note">Die Antwort von Bridge Dental: eigene Fertigung, fachliche Beratung auf Deutsch und organisierte europäische Logistik in einem abgestimmten Prozess.</p>
+            </div>
+            <div class="cta-row reveal">
+              <a class="btn btn-primary" href="#folyamat">So funktioniert die Zusammenarbeit</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="solution-band">
+      <div class="shell">
+        <div class="section-head reveal" style="margin-bottom: 34px;">
+          <div>
+            <div class="label">Die Lösung von Bridge Dental</div>
+            <h2>So bleibt die Zusammenarbeit über Ländergrenzen hinweg kontrollierbar.</h2>
+          </div>
+          <p class="section-copy">Bridge Dental bietet nicht nur Fertigungskapazität, sondern einen abgestimmten Partnerprozess: fachliche Beratung, digitale Konstruktion, Fertigung, Dokumentation und Logistik aus einer Hand.</p>
+        </div>
+        <div class="solution-grid reveal">
+          <div class="solution-item">
+            <b>01</b>
+            <h3>Professionelle Kommunikation auf Deutsch</h3>
+            <p>Ein fester Zahntechniker begleitet komplexe Arbeiten mit Scan-Feedback und digitaler Fallberatung.</p>
+          </div>
+          <div class="solution-item">
+            <b>02</b>
+            <h3>Eigene, dokumentierte digitale Produktion</h3>
+            <p>Exocad-basiertes Design, CNC-Fräs- und 3D-Druckkapazität, nachvollziehbarer Produktionsprozess ohne Subunternehmerkette.</p>
+          </div>
+          <div class="solution-item">
+            <b>03</b>
+            <h3>Organisierte internationale Logistik</h3>
+            <p>Organisierter Hin- und Rückversand für Praxen in Deutschland und der Schweiz – mit planbarem Ablauf und klarer Kommunikation.</p>
+          </div>
+        </div>
+        <div class="solution-cta reveal">
+          <a class="btn btn-primary" href="#urlap">Partnerschaftsberatung anfragen</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-line" id="bizalom">
+      <div class="shell">
+        <div class="section-head reveal">
+          <div>
+            <div class="label">DOKUMENTIERTER BETRIEB</div>
+            <h2>Bridge Dental verfügt über einen belegbaren fachlichen Hintergrund.</h2>
+          </div>
+        </div>
+        <div class="proof-grid">
+          <div class="proof-cards">
+            <div class="proof-card reveal">
+              <strong>ICDE</strong>
+              <h3>Internationale Fachpartnerschaft</h3>
+              <p>Internationale Partnerschaft für digitale Prothetik und kontinuierlichen Wissenstransfer.</p>
+            </div>
+            <div class="proof-card reveal">
+              <strong>HDA</strong>
+              <h3>Ausgezeichnete Laborqualität</h3>
+              <p>Hungarian Dental Awards für herausragende zahntechnische Leistungen.</p>
+            </div>
+            <div class="proof-card reveal">
+              <strong>25+ Mitarbeitende</strong>
+              <h3>Eigenes Team</h3>
+              <p>Eigenes Laborteam mit internen Qualitätskontrollen.</p>
+            </div>
+            <div class="proof-card reveal">
+              <strong>5 Jahre</strong>
+              <h3>5 Jahre Gewährleistung</h3>
+              <p>Material- und Konstruktionsgarantie für Implantatarbeiten.</p>
+            </div>
+          </div>
+          <div class="proof-image reveal">
+            <img src="../assets/labor_foto.jpg" alt="Bridge Dentallaborumgebung">
+          </div>
+        </div>
+        <div class="proof-footer reveal">
+          <a class="btn btn-primary" href="#pilot">Pilot-Zusammenarbeit ansehen</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section testimonials">
+      <div class="shell">
+        <div class="section-head reveal">
+          <div>
+            <div class="label">Partner-Feedback</div>
+            <h2>Was sagen Partnerpraxen über uns?</h2>
+          </div>
+          <p class="section-copy">Stimmen aus Praxen, für die transparente Abläufe und verlässliche Zusammenarbeit entscheidend sind.</p>
+        </div>
+        <div class="testimonial-grid">
+          <article class="testimonial-card reveal">
+            <div class="testimonial-text">
+              <p>Wir sind seit über einem Jahrzehnt mit der Arbeit zufrieden. Qualität und Ästhetik stimmen <span>zu 100 %</span>.</p>
+              <p>Die Kommunikation mit dem Labor läuft reibungslos und es gibt selbst bei komplexeren Arbeiten immer ein Top-Ergebnis!</p>
+            </div>
+            <div class="testimonial-meta">
+              <strong>Dr. Benedict Beirer</strong>
+            </div>
+          </article>
+
+          <article class="testimonial-card reveal">
+            <div class="testimonial-text">
+              <p>Super zuverlässiges Labor mit konstant hoher Qualität. Die Arbeiten passen hervorragend, werden pünktlich geliefert und sind ästhetisch einfach spitze.</p>
+              <p>Vielen Dank für die professionelle Zusammenarbeit!</p>
+            </div>
+            <div class="testimonial-meta">
+              <strong>Dr. Rainer Valentina</strong>
+            </div>
+          </article>
+
+          <article class="testimonial-card reveal">
+            <div class="testimonial-text">
+              <p>Wir arbeiten sehr erfolgreich mit dem zahntechnischen Labor Bridge Dental aus Budapest zusammen.</p>
+              <p>Besonders hervorzuheben sind die hervorragenden Zirkonoxid- und Keramikarbeiten, die durch hohe Passgenauigkeit und Ästhetik überzeugen.</p>
+            </div>
+            <div class="testimonial-collapsible testimonial-text" data-collapsible>
+              <div class="testimonial-more">
+                <p>Die Kommunikation ist stets schnell und unkompliziert, und auch die Liefer- sowie Anfertigungszeiten sind angenehm kurz.</p>
+                <p>Die Zusammenarbeit ist jederzeit zuverlässig und professionell. Wir können Bridge Dental uneingeschränkt weiterempfehlen und schätzen das Labor als langfristigen Partner sehr.</p>
+              </div>
+            </div>
+            <button class="testimonial-toggle" type="button" aria-expanded="false">Mehr lesen</button>
+            <div class="testimonial-meta">
+              <strong>Dr. Maximilian Konz M.Sc.</strong>
+              <span>Spezialist für Ästhetik und rekonstruktive Zahnmedizin</span>
+            </div>
+          </article>
+
+          <article class="testimonial-card reveal">
+            <div class="testimonial-text">
+              <p>Wir arbeiten sehr gerne mit dem zahntechnischen Labor Bridge Dental zusammen und schätzen die Zusammenarbeit sehr.</p>
+              <p>Besonders hervorheben möchten wir die zuverlässige und professionelle Arbeitsweise des Labors.</p>
+            </div>
+            <div class="testimonial-collapsible testimonial-text" data-collapsible>
+              <div class="testimonial-more">
+                <p>Die Kommunikation ist stets unkompliziert, schnell und lösungsorientiert. Ein weiterer wichtiger Grund für die Zusammenarbeit ist die stets hohe Qualität der zahntechnischen Arbeiten.</p>
+                <p>Auf individuelle Wünsche wird flexibel eingegangen, was die Zusammenarbeit für unser Team sehr angenehm macht.</p>
+                <p>Auch wirtschaftlich ist die Kooperation für uns sehr vorteilhaft. Durch das sehr gute Preis-Leistungs-Verhältnis und die verlässlichen Lieferzeiten können wir unseren Patienten hochwertige Versorgungen anbieten und gleichzeitig effizient planen.</p>
+                <p>Wir freuen uns auf die weitere Zusammenarbeit und können das Dentallabor uneingeschränkt weiterempfehlen.</p>
+              </div>
+            </div>
+            <button class="testimonial-toggle" type="button" aria-expanded="false">Mehr lesen</button>
+            <div class="testimonial-meta">
+              <strong>Dr. Christopher Hermanns</strong>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section pilot" id="pilot">
+      <div class="shell">
+        <div class="pilot-panel reveal">
+          <div class="pilot-copy">
+            <div class="label">Pilot-Zusammenarbeit</div>
+            <h2>Testen Sie die Zusammenarbeit in einer Pilotphase.</h2>
+            <p class="section-copy" style="margin-top: 22px;">Der Pilot ist eine achtwöchige, risikoreduzierte Testphase. Auf diese Weise können Sie sehen, wie wir kommunizieren, wie wir Fälle planen, welche Qualität wir produzieren und wie wir mit den Problemen umgehen, die in einem realen Arbeitsprozess auftreten.</p>
+            <ul class="pilot-bullets">
+              <li>Fachliche Abstimmung auf Deutsch mit einem festen Zahntechniker</li>
+              <li>Digitale Fallberatung und Scanprüfung für komplexe Aufträge</li>
+              <li>Schnelle Korrektur oder Wiederholung bei Bedarf</li>
+              <li>Organisierte Rundlauflogistik für Schweizer und deutsche Kliniken</li>
+            </ul>
+          </div>
+          <div class="pilot-side">
+            <div class="pilot-meta" aria-label="Zusammenfassung des Piloten">
+              <div class="pilot-chip">
+                <strong>8 Wochen</strong>
+                Testphase
+              </div>
+              <div class="pilot-chip">
+                <strong>3-5</strong>
+                reale Fälle
+              </div>
+              <div class="pilot-chip">
+                <strong>DE</strong>
+                Betreuung auf Deutsch
+              </div>
+              <div class="pilot-chip">
+                <strong>CH / DE</strong>
+                Logistik
+              </div>
+            </div>
+            <a class="btn btn-primary pilot-cta" href="#urlap">Pilotberatung anfragen</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="szolgaltatasok">
+      <div class="shell">
+        <div class="section-head reveal">
+          <div>
+            <div class="label">Unsere Leistungen</div>
+            <h2>Unsere wichtigsten Leistungen im Überblick.</h2>
+          </div>
+          <p class="section-copy">Diese Leistungen betreffen Arbeiten, bei denen ein verlässlicher Prozess ebenso wichtig ist wie das Endergebnis.</p>
+        </div>
+        <div class="services-grid">
+          <article class="service-card reveal">
+            <img src="../assets/full-arch-implantatumos-rehabilitacio-all-on-x.webp" alt="Rehabilitation des gesamten Zahnbogens mit Implantaten">
+            <div>
+              <small>Unsere Hauptspezialität</small>
+              <h3>All-on-X-Rehabilitationen</h3>
+              <p>All-on-X-Rehabilitationen, implantatgetragene Zirkonoxidkronen und -brücken sowie Full-Arch-Restaurationen.</p>
+              <a class="service-card-cta" href="#urlap">Leistung anfragen</a>
+            </div>
+          </article>
+          <article class="service-card reveal">
+            <img src="../assets/esztetikai-keramia-potlasok-labor-ellenorzes.webp" alt="Metallfreie Keramikrestaurationen mit Laborkontrolle">
+            <div>
+              <small>Ästhetik</small>
+              <h3>Metallfreie Keramikrestaurationen</h3>
+              <p>Ivoclar e.max Presskeramik und monolithisches Zirkonoxid für natürlich wirkende, ästhetisch anspruchsvolle Versorgungen.</p>
+              <a class="service-card-cta" href="#urlap">Leistung anfragen</a>
+            </div>
+          </article>
+          <article class="service-card reveal">
+            <img src="../assets/dsc_6882.jpg" alt="Arbeit im digitalen Prothesenlabor">
+            <div>
+              <small>Neuheit</small>
+              <h3>TrueDent – vollfarbige, monolithische digitale Prothesen</h3>
+              <p>Biokompatible, vollfarbige und monolithische 3D-gedruckte Prothesen mit Stratasys TrueDent.</p>
+              <a class="service-card-cta" href="#urlap">Leistung anfragen</a>
+            </div>
+          </article>
+          <article class="service-card reveal">
+            <img src="../assets/bridge-dental-kuldetes-fogtechnikai-labor.webp" alt="Digitales Design von Bridge Dental">
+            <div>
+              <small>Digitaler Workflow</small>
+              <h3>Digitaler Workflow</h3>
+              <p>CAD-basiertes virtuelles 3D-Design, Bestimmung des Emergenzprofils und der Okklusionsverhältnisse vor der Produktion.</p>
+              <a class="service-card-cta" href="#urlap">Leistung anfragen</a>
+            </div>
+          </article>
+          <article class="service-card reveal">
+            <img src="../assets/digitalis-fogtechnika-labor-munkafolyamat.webp" alt="Arbeitsablauf im Labor für digitale Zahntechnik">
+            <div>
+              <small>Digitale Fertigung</small>
+              <h3>CAD/CAM-Technologie</h3>
+              <p>Kompletter digitaler Workflow vom Scan bis zur CAM-Produktion, kontrolliert, dokumentiert und nachvollziehbar.</p>
+              <a class="service-card-cta" href="#urlap">Leistung anfragen</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-dark process" id="folyamat">
+      <div class="shell">
+        <div class="section-head reveal">
+          <div>
+            <div class="label">So läuft die Zusammenarbeit ab</div>
+            <h2>Vorhersehbare Zusammenarbeit vom ersten Fall an.</h2>
+          </div>
+          <p class="section-copy">Jeder Schritt – vom ersten Kontakt über die Pilotphase bis zur langfristigen Zusammenarbeit – dient einem transparenten, planbaren Ablauf in Ihrer Praxis.</p>
+        </div>
+        <div class="process-line">
+          <div class="process-step reveal">
+            <h3>Kontaktaufnahme und Bedarfsermittlung</h3>
+            <p>Wir lernen die Arbeitsarten, den digitalen Workflow, das Scansystem und die Logistikanforderungen der Praxis kennen.</p>
+          </div>
+          <div class="process-step reveal">
+            <h3>Pilot-Zusammenarbeit mit 3–5 Fällen</h3>
+            <p>Bei komplexeren Implantatarbeiten empfehlen wir eine risikoreduzierte Pilotphase mit persönlicher fachlicher Begleitung.</p>
+          </div>
+          <div class="process-step reveal">
+            <h3>Fallkoordination auf Deutsch</h3>
+            <p>Wir unterstützen Entscheidungen mit einem engagierten Zahntechniker, Exocad-basierter Designberatung und Online-Fallbesprechung.</p>
+          </div>
+          <div class="process-step reveal">
+            <h3>Eigene digitale Produktion</h3>
+            <p>Die Fertigung erfolgt mit eigener CNC-Fräs- und 3D-Druckkapazität, ohne Subunternehmer und mit dokumentierter Qualitätssicherung.</p>
+          </div>
+          <div class="process-step reveal">
+            <h3>Qualitätskontrolle, Lieferung und Feedback</h3>
+            <p>Nach der Qualitätskontrolle senden wir die fertige Arbeit über die organisierte europäische Logistik zurück und geben bei Bedarf fachliches Feedback.</p>
+          </div>
+        </div>
+        <div class="cta-row reveal">
+          <a class="btn btn-primary" href="#urlap">Beginnen wir mit der ersten Beratung</a>
+          <a class="btn btn-ghost" href="#gyik">Mehr erfahren</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-line">
+      <div class="shell">
+        <div class="section-head reveal">
+          <div>
+            <h2 style="max-width: 520px; font-size: clamp(24px, 2.1vw, 34px);">Für wen ist Bridge Dental ideal?</h2>
+          </div>
+          <p class="section-copy">Praxen, bei denen der Laborpartner zum Praxisbetrieb passen muss.</p>
+        </div>
+        <div class="fit-grid">
+          <div class="fit-card reveal">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20"/><path d="M5 7h14"/><path d="M7 21h10"/><path d="m3 7 4 8 4-8"/><path d="m13 7 4 8 4-8"/></svg>
+            <p>Für Praxen in Deutschland oder der Schweiz, die einen verlässlichen internationalen Laborpartner suchen.</p>
+          </div>
+          <div class="fit-card reveal">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 2 8l10 5 10-5-10-5Z"/><path d="m2 16 10 5 10-5"/><path d="m2 12 10 5 10-5"/></svg>
+            <p>Für Praxen, die Implantologie und vollständige Zahnbogenrestaurationen durchführen.</p>
+          </div>
+          <div class="fit-card reveal">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="14" x="3" y="4" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg>
+            <p>Für Teams, die mit digitalen Abformungen und CAD/CAM-Workflows arbeiten.</p>
+          </div>
+          <div class="fit-card reveal">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a4 4 0 0 1-4 4H7l-4 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/></svg>
+            <p>Für Praxen, in denen fachliche Kommunikation auf Deutsch wichtig ist.</p>
+          </div>
+          <div class="fit-card reveal">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h11v10H3z"/><path d="M14 10h4l3 3v4h-7z"/><circle cx="7" cy="19" r="2"/><circle cx="17" cy="19" r="2"/></svg>
+            <p>Für Praxen, in denen ein planbarer Ablauf und verlässliche Liefertermine entscheidend sind.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="gyik">
+      <div class="shell">
+        <div class="section-head reveal faq-center">
+          <div>
+            <div class="label">Häufig gestellte Fragen</div>
+            <h2>Wichtige Fragen vor Beginn der Zusammenarbeit.</h2>
+          </div>
+        </div>
+        <div class="faq-grid faq-grid-center">
+          <details class="reveal">
+            <summary>Wie können wir die Zusammenarbeit mit geringem Risiko testen?</summary>
+            <p>Für komplexere Implantatarbeiten empfehlen wir eine achtwöchige Pilot-Zusammenarbeit mit 3–5 Fällen.</p>
+            <p>So bewerten Sie die Zusammenarbeit nicht anhand eines Versprechens, sondern in einem realen gemeinsamen Prozess:</p>
+            <ul>
+              <li>die Kommunikation</li>
+              <li>das Design</li>
+              <li>die Fertigungsqualität</li>
+              <li>Problemmanagement</li>
+            </ul>
+          </details>
+          <details class="reveal">
+            <summary>Wie unterscheidet sich Bridge Dental von einem herkömmlichen Dentallabor?</summary>
+            <p>Wir fertigen nicht nur Zahnersatz: Wir denken als klinischer Partner.</p>
+            <p>Wir unterstützen die Arbeit der Klinik mit:</p>
+            <ul>
+              <li>digitale Konstruktionsberatung</li>
+              <li>Feedback zu Scandaten und Passung</li>
+              <li>einem dokumentierten Fertigungsprozess</li>
+            </ul>
+          </details>
+          <details class="reveal">
+            <summary>Mit welchen digitalen Systemen können wir arbeiten?</summary>
+            <p>Wir arbeiten mit digitalem Design auf Basis von Exocad.</p>
+            <p>Wir können Dateien von mehreren Intraoralscannern erhalten, zum Beispiel:</p>
+            <ul>
+              <li>iTero</li>
+              <li>TRIOS</li>
+              <li>Medit</li>
+              <li>Shining 3D</li>
+            </ul>
+          </details>
+          <details class="reveal">
+            <summary>Wo ist der Hauptsitz des Bridge Dental-Labors?</summary>
+            <p>Unser Labor befindet sich in Budapest, Ungarn. Die Adresse unseres Zentrums lautet: 1106 Budapest, Fehér út 10. Gebäude 26, 2. Stock.</p>
+          </details>
+          <details class="reveal">
+            <summary>Welche Gewährleistung bieten Sie für Implantatarbeiten?</summary>
+            <p>Wir bieten eine 5-jährige Material- und Konstruktionsgarantie für Implantatarbeiten bei bestimmungsgemäßem klinischem Einsatz.</p>
+            <p>Der Produktionsprozess wird dokumentiert und ist von der Materialcharge bis zum verantwortlichen Zahntechniker rückverfolgbar.</p>
+          </details>
+          <details class="reveal">
+            <summary>Was geschieht, wenn ein Patient aufgrund eines nachgewiesenen Laborfehlers erneut einbestellt werden muss?</summary>
+            <p>Muss die Praxis einen Patienten aufgrund eines nachgewiesenen Laborfehlers erneut einbestellen, korrigieren wir nicht nur die Arbeit: Zusätzlich schreiben wir 150 € als pauschalen Ausgleich für die Behandlungszeit auf das zahntechnische Honorar der nächsten Arbeit gut.</p>
+            <p>Nicht von der Garantie abgedeckt:</p>
+            <ul>
+              <li>unzureichende Präparation, wenn wir zuvor darauf hingewiesen haben und die Fertigung dennoch auf Wunsch der Praxis erfolgte</li>
+              <li>unzureichende Platzverhältnisse, wenn wir zuvor darauf hingewiesen haben und die Fertigung dennoch auf Wunsch der Praxis erfolgte</li>
+              <li>fehlerhafte Abformung oder Scandaten, wenn wir zuvor darauf hingewiesen haben und die Fertigung dennoch auf Wunsch der Praxis erfolgte</li>
+              <li>fehlerhafte Befestigung</li>
+              <li>nicht vorhersehbare Parafunktionen wie Bruxismus</li>
+            </ul>
+          </details>
+          <details class="reveal">
+            <summary>Wie funktioniert der Logistikservice für Praxen in Deutschland und der Schweiz?</summary>
+            <p>Für unsere Schweizer und deutschen Partner organisieren wir den gesamten Hin- und Rücktransport.</p>
+            <p>Wenn Sie eine Abholung bis 14:00 Uhr anmelden, organisieren wir die Abholung noch am selben Werktag. Die Praxis muss die Arbeit lediglich verpacken und den per E-Mail zugesandten Versandschein ausdrucken.</p>
+            <p>Wir versenden mit FedEx Express. Wird eine Abformung oder Arbeit beispielsweise am Montag abgeholt, trifft sie per 24-Stunden-Express in der Regel bis Dienstagmittag bei uns ein.</p>
+          </details>
+          <details class="reveal">
+            <summary>Erhalten wir professionelle Unterstützung auf Deutsch?</summary>
+            <p>Ja. Ihnen steht ein fester deutschsprachiger Zahntechniker als direkter Ansprechpartner zur Verfügung. Für komplexe Fälle bieten wir zusätzlich eine digitale Konstruktionsberatung online an.</p>
+          </details>
+        </div>
+        <div class="cta-row reveal">
+          <a class="btn btn-primary" href="#urlap">Frage zur Zusammenarbeit stellen</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section form-section" id="urlap">
+      <div class="shell form-grid">
+        <div class="form-side reveal">
+          <div class="label">Kontaktaufnahme</div>
+          <h2>Starten wir die Zusammenarbeit.</h2>
+          <div class="contact-mini">
+            <a href="mailto:info@bridgedental.hu">info@bridgedental.hu</a>
+            <a href="tel:+36703966653">+36 / (70) 396 6653</a>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Bridge+Dental%2C+1106+Budapest%2C+Feh%C3%A9r+%C3%BAt+10" target="_blank" rel="noopener noreferrer">1106 Budapest, Fehér út 10. Gebäude 26, 2. Stock, Ungarn</a>
+          </div>
+        </div>
+
+        <form class="reveal" aria-label="Pilotenberatungsformular">
+          <div class="form-row">
+            <div class="field">
+              <label for="name">Name *</label>
+              <input id="name" name="name" type="text" placeholder="Dr. Max Müller" required>
+            </div>
+            <div class="field">
+              <label for="clinic">Name der Praxis/Klinik *</label>
+              <input id="clinic" name="clinic" type="text" placeholder="Name der Praxis/Klinik" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="field">
+              <label for="country">Land *</label>
+              <select id="country" name="country" required>
+                <option value="" selected disabled>Wählen Sie</option>
+                <option>Schweiz</option>
+                <option>Deutschland</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="role">Position *</label>
+              <select id="role" name="role" required>
+                <option value="" selected disabled>Wählen Sie</option>
+                <option>Zahnarzt</option>
+                <option>Praxisinhaber/in</option>
+                <option>Klinikleitung</option>
+                <option>Praxisleitung</option>
+                <option>Labor-/Workflow-Koordination</option>
+              </select>
+            </div>
+          </div>
+          <div class="field">
+            <label for="interest">Für welche Dienstleistung interessieren Sie sich? *</label>
+            <select id="interest" name="interest" required>
+              <option value="" selected disabled>Wählen Sie einen Dienst</option>
+              <option>All-on-X-Rehabilitationen</option>
+              <option>Metallfreie Keramikrestaurationen</option>
+              <option>TrueDent – vollfarbige, monolithische digitale Prothesen</option>
+              <option>Digitaler Workflow</option>
+              <option>CAD/CAM-Technologie</option>
+              <option>Allgemeine Partnerschaftsberatung</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="email">E-Mail-Adresse *</label>
+            <input id="email" name="email" type="email" placeholder="name@clinic.ch" required>
+          </div>
+          <div class="field">
+            <label for="phone">Telefonnummer</label>
+            <input id="phone" name="phone" type="tel" placeholder="+49 / +41 ...">
+          </div>
+          <div class="field">
+            <label for="message">Kurze Beschreibung der Nachricht/des Falles</label>
+            <textarea id="message" name="message" placeholder="Beschreiben Sie kurz, welche Art von Arbeit, Pilot oder Partnerschaft Sie suchen..."></textarea>
+          </div>
+          <label class="gdpr">
+            <input type="checkbox" required>
+            <span>Ich habe die Datenschutzhinweise gelesen und akzeptiere sie und bin damit einverstanden, dass Bridge Dental meine im Formular angegebenen Daten zum Zweck der Beantwortung meiner Anfrage verarbeitet.</span>
+          </label>
+          <button class="btn btn-primary" type="submit" style="width: 100%;">Formular absenden</button>
+        </form>
+      </div>
+    </section>
+
+    <section class="final-cta">
+      <div class="shell reveal">
+        <h2>Starten wir die Zusammenarbeit.</h2>
+        <p>Wenn Ihre Praxis auf der Suche nach einem zuverlässigen, gut organisierten Laborpartner für komplexe Arbeiten ist, kann das erste Beratungsgespräch ein guter Ausgangspunkt sein.</p>
+        <a class="btn btn-primary" href="#urlap">Erstgespräch anfragen</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="shell footer-inner">
+      <img src="../assets/logo.png" alt="Bridge Dental">
+      <span>Datenschutzhinweise · <a href="../impressum.html" style="color: inherit; text-underline-offset: 3px;">Impressum</a> · Copyright © Bridge Dental</span>
+    </div>
+  </footer>
+
+  <div class="mobile-cta">
+    <a class="btn btn-primary" href="#urlap">Partnerschaftsberatung anfragen</a>
+  </div>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+
+    const faqItems = document.querySelectorAll("#gyik details");
+    faqItems.forEach((item) => {
+      item.open = false;
+    });
+    faqItems.forEach((item) => {
+      item.addEventListener("toggle", () => {
+        if (!item.open) return;
+        faqItems.forEach((other) => {
+          if (other !== item) other.open = false;
+        });
+      });
+    });
+
+    const testimonialToggles = document.querySelectorAll(".testimonial-toggle");
+    testimonialToggles.forEach((button) => {
+      button.addEventListener("click", () => {
+        const card = button.closest(".testimonial-card");
+        const isOpen = card.classList.toggle("is-open");
+        button.setAttribute("aria-expanded", String(isOpen));
+        button.textContent = isOpen ? "Weniger anzeigen" : "Mehr lesen";
+      });
+    });
+
+    document.querySelector("form").addEventListener("submit", (event) => {
+      event.preventDefault();
+      alert("Az űrlap jelenleg prototípus. CRM integráció után ide érkeznek majd a strukturált leadek.");
+    });
+  </script>
+</body>
+</html>

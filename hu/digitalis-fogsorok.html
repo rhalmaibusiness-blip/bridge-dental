@@ -1,0 +1,2108 @@
+<!DOCTYPE html>
+<html lang="hu-HU">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TrueDent – Full color, monolitikus digitális fogsorok | Bridge Dental</title>
+  <meta name="description" content="TrueDent digitális fogsorok: teljes színű, monolitikus 3D nyomtatás, pontos reprodukálhatóság és digitális archiválás a Bridge Dentaltól.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@300;400;500;600;700;800&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --coral: #E05A2B;
+      --coral-light: #F07A4A;
+      --coral-pale: #FBF0EB;
+      --cream: #F8F5F0;
+      --charcoal: #1C1916;
+      --charcoal-soft: #2E2A26;
+      --warm-gray: #7A736B;
+      --warm-gray-light: #C4BDB4;
+      --warm-gray-pale: #EAE5DF;
+      --white: #FDFCFB;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      background: var(--cream);
+      color: var(--charcoal);
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 48px; height: 72px;
+      background: rgba(248,245,240,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--warm-gray-pale);
+      transition: box-shadow 0.3s;
+    }
+    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-logo-text { font-family: 'Montserrat', sans-serif; font-size: 18px; font-weight: 700; color: var(--charcoal); letter-spacing: -0.3px; }
+    .nav-logo-text span { color: var(--coral); }
+    .nav-links { display: flex; align-items: center; gap: 36px; list-style: none; }
+    .nav-links a { text-decoration: none; color: var(--charcoal); font-size: 14px; font-weight: 500; letter-spacing: 0.2px; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--coral); }
+    .nav-links a.active { color: var(--coral); }
+    .nav-dropdown { position: relative; }
+    .nav-dropdown > a { display: flex; align-items: center; gap: 5px; }
+    .nav-dropdown > a svg { width: 12px; height: 12px; transition: transform 0.2s; }
+    .nav-dropdown:hover > a svg { transform: rotate(180deg); }
+    .dropdown-menu { position: absolute; top: 100%; left: 50%; padding-top: 12px; transform: translateX(-50%); list-style: none; min-width: 240px; opacity: 0; visibility: hidden; transition: opacity 0.2s, visibility 0.2s; z-index: 200; }
+    .dropdown-menu-inner { background: white; border: 1px solid var(--warm-gray-pale); border-radius: 14px; padding: 8px; box-shadow: 0 12px 40px rgba(0,0,0,0.1); }
+    .nav-dropdown:hover .dropdown-menu { opacity: 1; visibility: visible; }
+    .dropdown-menu li a { display: block; padding: 10px 14px; border-radius: 8px; font-size: 13px; color: var(--charcoal); transition: background 0.15s, color 0.15s; white-space: nowrap; }
+    .dropdown-menu li a:hover { background: var(--coral-pale); color: var(--coral); }
+    .dropdown-menu li a.active { color: var(--coral); font-weight: 600; }
+    .nav-right { display: flex; align-items: center; gap: 24px; }
+    .lang-switcher { display: flex; gap: 4px; }
+    .lang-btn { padding: 4px 8px; font-size: 12px; font-weight: 600; color: var(--warm-gray); cursor: pointer; border: none; background: none; font-family: 'Open Sans', sans-serif; letter-spacing: 0.5px; transition: color 0.2s; }
+    .lang-btn.active { color: var(--coral); }
+    .nav-cta { padding: 10px 22px; background: var(--coral); color: white; border: none; border-radius: 6px; font-size: 13px; font-weight: 600; cursor: pointer; font-family: 'Open Sans', sans-serif; letter-spacing: 0.2px; transition: background 0.2s, transform 0.15s; text-decoration: none; display: inline-block; }
+    .nav-cta:hover { background: var(--coral-light); transform: translateY(-1px); }
+
+    /* ── PAGE HERO ── */
+    .page-hero {
+      background: var(--cream);
+      overflow: hidden;
+    }
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 28px;
+    }
+    .breadcrumb a {
+      text-decoration: none;
+      font-size: 13px;
+      color: var(--warm-gray);
+      transition: color 0.2s;
+    }
+    .breadcrumb a:hover { color: var(--coral); }
+    .breadcrumb-sep {
+      font-size: 13px;
+      color: var(--warm-gray-light);
+    }
+    .breadcrumb-current {
+      font-size: 13px;
+      color: var(--charcoal);
+      font-weight: 500;
+    }
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--coral);
+      margin-bottom: 20px;
+    }
+    .section-label::before {
+      content: '';
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--coral);
+      border-radius: 1px;
+    }
+    .page-hero-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(24px, 2.35vw, 30px);
+      font-weight: 800;
+      line-height: 1.16;
+      letter-spacing: -0.6px;
+      color: var(--charcoal);
+      margin-bottom: 24px;
+      max-width: 700px;
+    }
+    .page-hero-subtitle {
+      font-size: 17px;
+      line-height: 1.75;
+      color: var(--warm-gray);
+      max-width: 600px;
+    }
+
+    /* ── SECTIONS ── */
+    .section {
+      padding: 80px 80px;
+    }
+    .section-alt {
+      background: var(--white);
+    }
+    .section-dark {
+      background: var(--charcoal);
+      color: white;
+    }
+
+    /* ── INTRO BLOCK ── */
+    .intro-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+      max-width: 1200px;
+    }
+    .intro-text p {
+      font-size: 16px;
+      line-height: 1.8;
+      color: var(--warm-gray);
+      margin-bottom: 20px;
+    }
+    .intro-text p:last-child { margin-bottom: 0; }
+    .intro-highlight {
+      background: var(--coral-pale);
+      border-left: 3px solid var(--coral);
+      border-radius: 0 12px 12px 0;
+      padding: 24px 28px;
+      margin-top: 32px;
+    }
+    .intro-highlight p {
+      font-size: 15px;
+      line-height: 1.75;
+      color: var(--charcoal);
+      font-weight: 500;
+      margin: 0;
+    }
+    .intro-visual {
+      position: sticky;
+      top: 100px;
+    }
+    .intro-image {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 20px;
+      display: block;
+      box-shadow: 0 24px 70px rgba(28,25,22,0.10);
+    }
+    .workflow-section {
+      padding-top: 0;
+      background:
+        linear-gradient(180deg, var(--white) 0%, var(--white) 72%, var(--cream) 100%);
+      scroll-margin-top: 96px;
+    }
+    .process-card {
+      max-width: 1200px;
+      background: var(--white);
+      border: 1px solid var(--warm-gray-pale);
+      border-radius: 28px;
+      padding: clamp(28px, 4vw, 56px);
+      box-shadow: 0 24px 70px rgba(28,25,22,0.08);
+      position: relative;
+      overflow: hidden;
+    }
+    .process-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 12% 0%, rgba(224,90,43,0.09), transparent 32%),
+        linear-gradient(90deg, rgba(224,90,43,0.05), transparent 42%);
+      pointer-events: none;
+    }
+    .process-card-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--coral);
+      margin-bottom: 34px;
+      position: relative;
+      z-index: 1;
+    }
+    .process-card-label::before {
+      content: '';
+      width: 38px;
+      height: 2px;
+      background: var(--coral);
+      border-radius: 2px;
+    }
+    .process-timeline {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      position: relative;
+      z-index: 1;
+    }
+    .process-step {
+      display: grid;
+      grid-template-columns: 54px minmax(0, 1fr);
+      gap: 18px;
+      padding: 24px;
+      border: 1px solid rgba(196,189,180,0.72);
+      border-radius: 18px;
+      background: rgba(253,252,251,0.84);
+      box-shadow: 0 10px 28px rgba(28,25,22,0.045);
+      position: relative;
+      min-height: 100%;
+    }
+    .process-step::after {
+      content: '';
+      position: absolute;
+      left: 50px;
+      top: 78px;
+      bottom: 18px;
+      width: 1px;
+      background: linear-gradient(180deg, rgba(224,90,43,0.28), transparent);
+    }
+    .process-num {
+      width: 54px;
+      height: 54px;
+      border-radius: 16px;
+      background: var(--charcoal);
+      color: white;
+      font-size: 17px;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-family: 'Montserrat', sans-serif;
+      box-shadow: 0 12px 24px rgba(28,25,22,0.14);
+      position: relative;
+      z-index: 1;
+    }
+    .process-step:nth-child(odd) .process-num {
+      background: var(--coral);
+      box-shadow: 0 12px 24px rgba(224,90,43,0.22);
+    }
+    .process-step-text {
+      font-size: 15px;
+      line-height: 1.75;
+      color: #655E56;
+      padding-top: 1px;
+    }
+    .process-step-text strong {
+      display: block;
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(18px, 1.8vw, 24px);
+      line-height: 1.2;
+      letter-spacing: -0.4px;
+      color: var(--charcoal);
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+    .process-step-text ul {
+      margin: 12px 0 12px 0;
+      padding-left: 0;
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px 12px;
+    }
+    .process-step-text li {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 14px;
+      line-height: 1.45;
+      color: var(--charcoal-soft);
+      background: var(--coral-pale);
+      border-radius: 10px;
+      padding: 8px 10px;
+    }
+    .process-step-text li::before {
+      content: '';
+      width: 5px;
+      height: 5px;
+      margin-top: 8px;
+      border-radius: 50%;
+      background: var(--coral);
+      flex-shrink: 0;
+    }
+
+    /* ── RENDSZER SZEKCIÓ ── */
+    .system-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 80px;
+      align-items: center;
+      max-width: 1200px;
+    }
+    .system-text h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(26px, 2.5vw, 38px);
+      font-weight: 800;
+      letter-spacing: -1px;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+    .system-text p {
+      font-size: 16px;
+      line-height: 1.8;
+      color: var(--warm-gray);
+      margin-bottom: 16px;
+    }
+    .system-text p:last-of-type { margin-bottom: 32px; }
+    .system-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .system-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      background: var(--white);
+      border: 1px solid var(--warm-gray-pale);
+      border-radius: 12px;
+      padding: 18px 20px;
+    }
+    .system-item-icon {
+      width: 36px;
+      height: 36px;
+      background: var(--coral-pale);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .system-item-icon svg {
+      width: 18px;
+      height: 18px;
+      color: var(--coral);
+    }
+    .system-item-text {
+      font-size: 14px;
+      line-height: 1.65;
+      color: var(--charcoal);
+      padding-top: 2px;
+    }
+    .system-item-text strong {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
+    .implant-note {
+      background: var(--charcoal);
+      border-radius: 16px;
+      padding: 32px 36px;
+    }
+    .implant-note p {
+      font-size: 15px;
+      line-height: 1.75;
+      color: rgba(255,255,255,0.7);
+    }
+    .implant-note ul {
+      margin: 12px 0 0 0;
+      padding-left: 0;
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .implant-note ul li {
+      font-size: 14px;
+      line-height: 1.6;
+      color: rgba(255,255,255,0.6);
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+    .implant-note ul li::before {
+      content: '';
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--coral);
+      flex-shrink: 0;
+      margin-top: 7px;
+    }
+    .implant-note-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--coral);
+      margin-bottom: 12px;
+    }
+    .implant-note-closing {
+      font-size: 14px;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.55);
+      margin-top: 16px;
+      font-style: italic;
+    }
+
+    /* ── ELŐNYÖK ── */
+    .benefits-header {
+      max-width: 600px;
+      margin-bottom: 56px;
+    }
+    .benefits-header h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(26px, 2.5vw, 38px);
+      font-weight: 800;
+      letter-spacing: -1px;
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+    .benefits-header p {
+      font-size: 16px;
+      line-height: 1.75;
+      color: var(--warm-gray);
+    }
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      max-width: 1200px;
+    }
+    .benefit-card {
+      background: var(--white);
+      border: 1px solid var(--warm-gray-pale);
+      border-radius: 20px;
+      padding: 32px 28px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .benefit-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.07);
+    }
+    .benefit-card-num {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 42px;
+      font-weight: 800;
+      color: var(--warm-gray-pale);
+      line-height: 1;
+      margin-bottom: 16px;
+      letter-spacing: -2px;
+    }
+    .benefit-card h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+      color: var(--charcoal);
+    }
+    .benefit-card.featured {
+      background: var(--coral);
+      border-color: var(--coral);
+    }
+    .benefit-card.featured .benefit-card-num {
+      color: rgba(255,255,255,0.2);
+    }
+    .benefit-card.featured h3 {
+      color: white;
+    }
+
+    /* ── FORM ── */
+    .form-section {
+      background: var(--cream);
+    }
+    .form-inner {
+      max-width: 1200px;
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 80px;
+      align-items: start;
+      width: 100%;
+      min-width: 0;
+    }
+    .form-intro,
+    .contact-form {
+      min-width: 0;
+      max-width: 100%;
+    }
+    .form-intro h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(26px, 2.5vw, 38px);
+      font-weight: 800;
+      letter-spacing: -1px;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+    .form-intro p {
+      font-size: 15px;
+      line-height: 1.8;
+      color: var(--warm-gray);
+      margin-bottom: 36px;
+    }
+    .form-contact-items {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .form-contact-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 14px;
+      color: var(--charcoal);
+      min-width: 0;
+    }
+    .form-contact-item span,
+    .form-contact-item a {
+      min-width: 0;
+      overflow-wrap: anywhere;
+    }
+    .form-contact-item a {
+      color: var(--charcoal);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .form-contact-item a:hover { color: var(--coral); }
+    .form-contact-icon {
+      width: 36px;
+      height: 36px;
+      background: var(--white);
+      border: 1px solid var(--warm-gray-pale);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .form-contact-icon svg {
+      width: 16px;
+      height: 16px;
+      color: var(--coral);
+    }
+    .contact-form {
+      background: var(--white);
+      border: 1px solid var(--warm-gray-pale);
+      border-radius: 24px;
+      padding: 48px 44px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.05);
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+    .form-group:last-of-type { margin-bottom: 0; }
+    .form-group label {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--charcoal);
+      letter-spacing: 0.1px;
+    }
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      padding: 13px 16px;
+      background: var(--cream);
+      border: 1.5px solid var(--warm-gray-pale);
+      border-radius: 10px;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 14px;
+      color: var(--charcoal);
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      appearance: none;
+      -webkit-appearance: none;
+    }
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      border-color: var(--coral);
+      box-shadow: 0 0 0 3px rgba(224,90,43,0.1);
+    }
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: var(--warm-gray-light);
+    }
+    .form-group textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+    .form-submit {
+      margin-top: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .btn-form-submit {
+      padding: 16px 32px;
+      background: var(--coral);
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      letter-spacing: 0.2px;
+      transition: all 0.2s;
+      width: 100%;
+    }
+    .btn-form-submit:hover {
+      background: var(--coral-light);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(224,90,43,0.3);
+    }
+    .form-gdpr {
+      font-size: 12px;
+      line-height: 1.6;
+      color: var(--warm-gray);
+      text-align: left;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    .form-gdpr input {
+      width: 16px;
+      height: 16px;
+      margin-top: 2px;
+      accent-color: var(--coral);
+      flex-shrink: 0;
+    }
+    .form-gdpr a {
+      color: var(--warm-gray);
+      text-decoration: underline;
+    }
+
+    /* ── PILOT CTA ── */
+    .pilot-section {
+      padding: 80px 80px;
+      background: var(--cream);
+    }
+    .pilot-inner {
+      background: var(--charcoal);
+      border-radius: 28px;
+      padding: 64px 64px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 64px;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .pilot-bg-circle {
+      position: absolute;
+      top: -80px; right: -80px;
+      width: 400px; height: 400px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(224,90,43,0.18) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .pilot-content { position: relative; z-index: 2; }
+    .pilot-content .section-label { color: var(--coral-light); }
+    .pilot-content .section-label::before { background: var(--coral-light); }
+    .pilot-content h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(26px, 2.5vw, 38px);
+      font-weight: 800;
+      letter-spacing: -1px;
+      line-height: 1.2;
+      color: white;
+      margin-bottom: 16px;
+    }
+    .pilot-content p { font-size: 16px; color: rgba(255,255,255,0.55); line-height: 1.7; max-width: 480px; }
+    .pilot-features { display: flex; flex-direction: column; gap: 12px; margin-top: 32px; }
+    .pilot-feature { display: flex; align-items: center; gap: 10px; font-size: 14px; color: rgba(255,255,255,0.7); }
+    .pilot-feature-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--coral); flex-shrink: 0; }
+    .pilot-action { position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; gap: 16px; }
+    .btn-coral-big {
+      padding: 18px 36px;
+      background: var(--coral);
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      white-space: nowrap;
+      transition: all 0.2s;
+    }
+    .btn-coral-big:hover { background: var(--coral-light); transform: translateY(-2px); box-shadow: 0 12px 32px rgba(224,90,43,0.4); }
+    .pilot-note { font-size: 12px; color: rgba(255,255,255,0.3); text-align: center; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--charcoal);
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+      gap: 48px;
+      padding: 64px 80px;
+    }
+    .footer-brand p { font-size: 13px; color: rgba(255,255,255,0.4); line-height: 1.6; max-width: 240px; margin-top: 12px; }
+    .footer-col h5 { font-size: 12px; font-weight: 700; color: rgba(255,255,255,0.5); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 16px; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .footer-col ul a { text-decoration: none; font-size: 14px; color: rgba(255,255,255,0.5); transition: color 0.2s; }
+    .footer-col ul a:hover { color: rgba(255,255,255,0.9); }
+    .footer-bottom {
+      background: var(--charcoal);
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding: 20px 80px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .footer-bottom p {
+      font-size: 12px;
+      color: rgba(255,255,255,0.25);
+    }
+
+    /* ── PARTNERI ELŐNYÖK ── */
+    .alapelv-section {
+      background: var(--charcoal);
+      padding: 72px 80px 80px;
+      position: relative;
+      overflow: hidden;
+    }
+    .alapelv-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 12% 0%, rgba(224,90,43,0.18), transparent 34%),
+        linear-gradient(135deg, rgba(255,255,255,0.055), transparent 38%);
+      pointer-events: none;
+    }
+    .alapelv-header {
+      max-width: 900px;
+      margin-bottom: 42px;
+      position: relative;
+      z-index: 1;
+    }
+    .alapelv-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--coral-light);
+      margin-bottom: 20px;
+    }
+    .alapelv-kicker::before {
+      content: '';
+      width: 40px;
+      height: 2px;
+      background: var(--coral-light);
+      border-radius: 2px;
+    }
+    .alapelv-header h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(30px, 4vw, 56px);
+      font-weight: 800;
+      line-height: 1.08;
+      letter-spacing: -1.4px;
+      color: white;
+      max-width: 760px;
+      margin-bottom: 20px;
+    }
+    .alapelv-header p {
+      font-size: clamp(15px, 1.4vw, 19px);
+      line-height: 1.75;
+      color: rgba(255,255,255,0.68);
+      max-width: 850px;
+    }
+    .alapelv-bar {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 14px;
+      position: relative;
+      z-index: 1;
+    }
+    .alapelv-item {
+      min-height: 100%;
+      padding: 24px 22px 26px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      align-items: flex-start;
+      position: relative;
+      background: rgba(255,255,255,0.055);
+      border: 1px solid rgba(255,255,255,0.09);
+      border-radius: 18px;
+      box-shadow: 0 18px 45px rgba(0,0,0,0.18);
+    }
+    .alapelv-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      background: rgba(224,90,43,0.18);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .alapelv-icon svg {
+      width: 22px;
+      height: 22px;
+      color: var(--coral-light);
+    }
+    .alapelv-text h4 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 17px;
+      line-height: 1.25;
+      font-weight: 800;
+      letter-spacing: -0.2px;
+      color: white;
+      margin-bottom: 10px;
+    }
+    .alapelv-text p {
+      font-size: 13px;
+      color: rgba(255,255,255,0.64);
+      line-height: 1.65;
+    }
+
+    /* ── CSAPAT NÉVJEGYEK ── */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 20px;
+      margin-top: 48px;
+    }
+    .contact-card {
+      background: var(--white); border: 1px solid var(--warm-gray-pale);
+      border-radius: 16px; padding: 32px 24px; text-align: center;
+      transition: all 0.3s; position: relative; overflow: hidden;
+    }
+    .contact-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(to right, var(--coral), #f07a52);
+    }
+    .contact-card:hover { transform: translateY(-5px); box-shadow: 0 16px 40px rgba(0,0,0,0.07); }
+    .contact-avatar {
+      width: 96px; height: 96px; border-radius: 50%;
+      overflow: hidden; margin: 0 auto 20px;
+    }
+    .contact-avatar img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
+    .contact-name { font-size: 16px; font-weight: 700; color: var(--charcoal); margin-bottom: 6px; }
+    .contact-role {
+      font-size: 11px; font-weight: 700; color: var(--coral); letter-spacing: 0.5px;
+      margin-bottom: 20px; text-transform: uppercase;
+    }
+    .contact-phone {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      font-size: 13px; color: var(--warm-gray); text-decoration: none;
+      padding: 11px 0; border-top: 1px solid var(--warm-gray-pale);
+      transition: color 0.2s;
+    }
+    .contact-phone:hover { color: var(--coral); }
+    .contact-phone svg { width: 13px; height: 13px; flex-shrink: 0; }
+
+    /* ── REVEAL ── */
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.65s ease, transform 0.65s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+
+    /* ── GOMBOK ── */
+    .btn-primary {
+      padding: 16px 32px;
+      background: var(--coral);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      letter-spacing: 0.2px;
+      transition: all 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+    .btn-primary:hover {
+      background: var(--coral-light);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(224, 90, 43, 0.3);
+    }
+    .btn-primary { align-self: flex-start; width: fit-content; }
+
+    /* ── PLACEHOLDER KÉPEK ── */
+    .img-placeholder {
+      width: 100%;
+      background: var(--warm-gray-pale);
+      border-radius: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      color: var(--warm-gray);
+      position: relative;
+      overflow: hidden;
+    }
+    .img-placeholder::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 20px,
+        rgba(0,0,0,0.025) 20px,
+        rgba(0,0,0,0.025) 21px
+      );
+    }
+    .img-placeholder svg {
+      width: 40px;
+      height: 40px;
+      opacity: 0.35;
+      position: relative;
+    }
+    .img-placeholder span {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      opacity: 0.5;
+      text-align: center;
+      padding: 0 20px;
+      position: relative;
+    }
+    .img-placeholder.ratio-16-9  { aspect-ratio: 16 / 9; }
+    .img-placeholder.ratio-4-3   { aspect-ratio: 4 / 3; }
+    .img-placeholder.ratio-3-4   { aspect-ratio: 3 / 4; }
+    .img-placeholder.ratio-1-1   { aspect-ratio: 1 / 1; }
+
+    /* ── HERO SPLIT ── */
+    .page-hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 520px;
+      padding: 72px 0 0;
+      background: var(--cream);
+      overflow: hidden;
+    }
+    .page-hero-left {
+      padding: 72px 64px 80px 80px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+      z-index: 3;
+      background: var(--cream);
+      overflow: visible;
+    }
+    .page-hero-right {
+      position: relative;
+      overflow: hidden;
+    }
+    .page-hero-right::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      pointer-events: none;
+      background:
+        linear-gradient(to right, var(--cream) 0%, rgba(248,244,240,0.96) 8%, rgba(248,244,240,0.62) 18%, transparent 34%),
+        linear-gradient(to top, rgba(28,25,22,0.22) 0%, transparent 48%);
+    }
+    .page-hero-right img {
+      width: 100%;
+      height: 100%;
+      min-height: 520px;
+      object-fit: cover;
+      display: block;
+    }
+    .page-hero-right .img-placeholder {
+      height: 100%;
+      border-radius: 0;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1100px) {
+      .page-hero { grid-template-columns: 1fr; padding-top: 72px; }
+      .page-hero-right { min-height: 320px; order: -1; }
+      .page-hero-right::after {
+        background:
+          linear-gradient(to bottom, transparent 48%, rgba(248,244,240,0.86) 82%, var(--cream) 100%);
+      }
+      .page-hero-right img,
+      .page-hero-right .img-placeholder { border-radius: 0; min-height: 320px; height: 320px; }
+      .intro-grid, .system-grid, .form-inner { grid-template-columns: 1fr; gap: 48px; }
+      .intro-visual { position: static; }
+      .process-timeline { grid-template-columns: 1fr; }
+      .benefits-grid { grid-template-columns: repeat(2, 1fr); }
+      .alapelv-section { padding: 60px 40px 68px; }
+      .alapelv-bar { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .contact-grid { grid-template-columns: repeat(2, 1fr); }
+      footer { grid-template-columns: 1fr 1fr; gap: 32px; }
+    }
+    @media (max-width: 768px) {
+      nav { padding: 0 20px; }
+      .nav-links, .lang-switcher { display: none; }
+      .page-hero { padding-top: 64px; }
+      .page-hero-left { padding: 32px 20px 48px; }
+      .breadcrumb { flex-wrap: wrap; margin-bottom: 18px; }
+      .section-label { margin-bottom: 16px; }
+      .page-hero-title { margin-bottom: 18px; }
+      .page-hero-subtitle { font-size: 15px; line-height: 1.65; }
+      .page-hero-right,
+      .page-hero-right img,
+      .page-hero-right .img-placeholder { min-height: 280px; height: 280px; }
+      .section, .pilot-section { padding: 48px 20px; }
+      .alapelv-section { padding: 52px 20px 60px; }
+      .alapelv-bar { grid-template-columns: 1fr; }
+      .alapelv-header { margin-bottom: 28px; }
+      .alapelv-header h2 { letter-spacing: -0.8px; }
+      .alapelv-item { padding: 22px 20px; }
+      .workflow-section { padding-top: 0; }
+      .process-card { border-radius: 20px; padding: 24px 18px; }
+      .process-card-label { letter-spacing: 2.6px; margin-bottom: 24px; }
+      .process-step { grid-template-columns: 42px minmax(0, 1fr); gap: 14px; padding: 18px 14px; border-radius: 14px; }
+      .process-step::after { left: 34px; top: 64px; }
+      .process-num { width: 42px; height: 42px; border-radius: 12px; font-size: 14px; }
+      .process-step-text { font-size: 14px; line-height: 1.65; }
+      .process-step-text strong { font-size: 18px; letter-spacing: 0; }
+      .process-step-text ul { grid-template-columns: 1fr; }
+      .btn-primary { align-self: flex-start; }
+      .benefits-grid { grid-template-columns: 1fr; }
+      .pilot-inner { grid-template-columns: 1fr; padding: 40px 28px; gap: 32px; }
+      .pilot-action { align-items: stretch; }
+      .form-row { grid-template-columns: 1fr; }
+      .contact-form { padding: 32px 24px; }
+      footer, .footer-bottom { grid-template-columns: 1fr; padding: 40px 20px; gap: 32px; }
+    }
+
+    /* ── TRUEDENT ÚJ OLDAL ── */
+    .service-hero {
+      position: relative;
+      min-height: 720px;
+      overflow: hidden;
+      color: #f5efe9;
+      background:
+        radial-gradient(circle at 17% 73%, rgba(224, 90, 43, 0.15), transparent 30%),
+        #0d0a08;
+    }
+
+    .service-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background-image: radial-gradient(rgba(242, 121, 63, 0.2) 1px, transparent 1px);
+      background-size: 18px 18px;
+      opacity: 0.12;
+      mask-image: linear-gradient(90deg, #000, transparent 45%);
+    }
+
+    .hero-nav-main {
+      position: relative;
+      z-index: 40;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 30px 60px;
+      animation: truedentFadeDown 0.8s ease both;
+    }
+
+    @keyframes truedentFadeDown {
+      from { opacity: 0; transform: translateY(-16px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero-brand {
+      position: relative;
+      z-index: 50;
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+    }
+
+    .hero-brand img {
+      display: block;
+      width: auto;
+      height: 44px;
+      filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.4));
+    }
+
+    .hero-brand-fallback {
+      display: none;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 24px;
+      font-weight: 700;
+    }
+    .hero-brand-fallback .b { color: #f2793f; }
+    .hero-brand-fallback .d { color: #d3202f; }
+
+    .hero-menu {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .hero-menu > li { display: flex; align-items: center; }
+    .hero-menu a {
+      position: relative;
+      padding-bottom: 6px;
+      color: #f5efe9;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .hero-menu a::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background: #e8502e;
+      transition: width 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .hero-menu a:hover,
+    .hero-menu a[aria-current='page'] { color: #f2793f; }
+    .hero-menu a:hover::after { width: 100%; }
+
+    .hero-dropdown { position: relative; }
+    .hero-dropdown > a { display: flex; align-items: center; gap: 7px; }
+    .hero-dropdown > a svg {
+      position: relative;
+      top: 1px;
+      width: 12px;
+      height: 12px;
+      transition: transform 0.25s ease;
+    }
+    .hero-dropdown:hover > a svg { transform: rotate(180deg); }
+
+    .hero-dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      z-index: 100;
+      min-width: 320px;
+      margin: 0;
+      padding: 14px 0 0;
+      list-style: none;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateX(-50%);
+      transition: opacity 0.2s ease, visibility 0.2s ease;
+    }
+    .hero-dropdown:hover .hero-dropdown-menu { opacity: 1; visibility: visible; }
+    .hero-dropdown-panel {
+      padding: 10px;
+      background: rgba(13, 10, 8, 0.96);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px;
+      box-shadow: 0 18px 46px rgba(0,0,0,0.35);
+      backdrop-filter: blur(10px);
+    }
+    .hero-dropdown-panel > ul { margin: 0; padding: 0; list-style: none; }
+    .hero-dropdown-menu li + li { margin-top: 2px; }
+    .hero-dropdown-menu li a {
+      display: block;
+      padding: 11px 14px;
+      color: #f5efe9;
+      border-radius: 10px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      white-space: nowrap;
+      transition: background 0.18s ease, color 0.18s ease;
+    }
+    .hero-dropdown-menu li a::after { display: none; }
+    .hero-dropdown-menu li a:hover,
+    .hero-dropdown-menu li a[aria-current='page'] {
+      color: #f2793f;
+      background: rgba(242, 121, 63, 0.12);
+    }
+
+    .hero-burger {
+      position: relative;
+      z-index: 50;
+      display: none;
+      width: 44px;
+      height: 44px;
+      padding: 0;
+      background: none;
+      border: 0;
+      cursor: pointer;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+    .hero-burger span {
+      display: block;
+      width: 26px;
+      height: 2.5px;
+      border-radius: 2px;
+      background: #f5efe9;
+      transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.25s ease;
+    }
+    .hero-burger.open span:nth-child(1) { transform: translateY(8.5px) rotate(45deg); }
+    .hero-burger.open span:nth-child(2) { opacity: 0; }
+    .hero-burger.open span:nth-child(3) { transform: translateY(-8.5px) rotate(-45deg); }
+
+    .hero-mobile-menu {
+      position: fixed;
+      inset: 0;
+      z-index: 30;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 90px 24px 32px;
+      overflow-y: auto;
+      background: rgba(13, 10, 8, 0.98);
+      backdrop-filter: blur(8px);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.4s ease, visibility 0.4s ease;
+    }
+    .hero-mobile-menu.open { opacity: 1; visibility: visible; }
+    .hero-mobile-menu a {
+      color: #f5efe9;
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(18px, 5vw, 26px);
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-align: center;
+      text-decoration: none;
+    }
+    .hero-mobile-group { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+    .hero-mobile-submenu { display: flex; flex-direction: column; align-items: center; gap: 3px; }
+    .hero-mobile-submenu a {
+      padding: 5px 0;
+      color: rgba(245,239,233,0.72);
+      font-family: 'Open Sans', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    .service-hero-body {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: minmax(0, 48%) minmax(0, 52%);
+      min-height: 616px;
+    }
+
+    .service-hero-copy {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 54px clamp(42px, 6vw, 96px) 92px 60px;
+      animation: truedentCopyIn 0.9s 0.18s cubic-bezier(0.22, 1, 0.36, 1) both;
+    }
+    @keyframes truedentCopyIn {
+      from { opacity: 0; transform: translateY(28px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .service-hero .breadcrumb {
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-bottom: 30px;
+    }
+    .service-hero .breadcrumb a,
+    .service-hero .breadcrumb-current,
+    .service-hero .breadcrumb-sep {
+      font-size: 12px;
+      letter-spacing: 0.45px;
+    }
+    .service-hero .breadcrumb a { color: rgba(245, 239, 233, 0.62); }
+    .service-hero .breadcrumb a:hover { color: #f2793f; }
+    .service-hero .breadcrumb-sep { color: rgba(245, 239, 233, 0.28); }
+    .service-hero .breadcrumb-current { color: #f2793f; font-weight: 600; }
+
+    .service-hero-title {
+      max-width: 720px;
+      margin: 0;
+      color: #f7f1eb;
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(38px, 4.25vw, 64px);
+      font-weight: 800;
+      line-height: 1.08;
+      letter-spacing: -2.2px;
+      text-wrap: balance;
+    }
+    .service-hero-title::after {
+      content: '';
+      display: block;
+      width: 64px;
+      height: 3px;
+      margin-top: 30px;
+      border-radius: 99px;
+      background: linear-gradient(90deg, #e8502e, #f2793f);
+    }
+    .service-hero-subtitle {
+      max-width: 640px;
+      margin-top: 28px;
+      color: rgba(245, 239, 233, 0.7);
+      font-size: clamp(16px, 1.35vw, 19px);
+      line-height: 1.72;
+    }
+
+    .service-hero-media {
+      position: relative;
+      min-height: 616px;
+      overflow: hidden;
+      background: #221913;
+    }
+    .service-hero-media::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      pointer-events: none;
+      background:
+        linear-gradient(90deg, #0d0a08 0%, rgba(13,10,8,0.8) 8%, rgba(13,10,8,0.18) 24%, transparent 42%),
+        linear-gradient(0deg, rgba(13,10,8,0.34) 0%, transparent 48%);
+    }
+    .service-hero-media img {
+      width: 100%;
+      height: 100%;
+      min-height: 616px;
+      object-fit: cover;
+      object-position: 54% center;
+      display: block;
+      animation: truedentImageIn 1.3s ease both, truedentDrift 18s 1.3s ease-in-out infinite alternate;
+    }
+    @keyframes truedentImageIn {
+      from { opacity: 0; transform: scale(1.05); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    @keyframes truedentDrift {
+      from { transform: scale(1); }
+      to { transform: scale(1.045); }
+    }
+
+    .td-intro,
+    .td-system,
+    .td-benefits,
+    .td-bps,
+    .td-bridge {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .td-intro {
+      padding: clamp(90px, 9vw, 142px) 48px;
+      background:
+        radial-gradient(circle at 92% 12%, rgba(224,90,43,0.11), transparent 30%),
+        linear-gradient(145deg, #fbf6ef, #fffdf9);
+    }
+    .td-intro::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 1px;
+      height: 52px;
+      background: rgba(224,90,43,0.35);
+    }
+    .td-intro-inner {
+      display: grid;
+      grid-template-columns: minmax(0, 1.25fr) minmax(340px, 0.75fr);
+      gap: clamp(48px, 8vw, 110px);
+      align-items: center;
+      max-width: 1240px;
+      margin: 0 auto;
+    }
+    .td-intro-lead {
+      padding-left: 30px;
+      border-left: 3px solid var(--coral);
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: clamp(34px, 3.8vw, 52px);
+      font-weight: 600;
+      line-height: 1.18;
+      letter-spacing: -1.05px;
+      color: #211c18;
+    }
+    .td-intro-note {
+      padding: 38px 36px;
+      border-radius: 26px;
+      background: linear-gradient(145deg, #29221e, #171310);
+      box-shadow: 0 24px 60px rgba(72, 44, 27, 0.16);
+    }
+    .td-intro-note p {
+      color: rgba(255,248,241,0.8);
+      font-size: 16px;
+      line-height: 1.78;
+    }
+
+    .td-heading {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: clamp(48px, 5.1vw, 72px);
+      font-weight: 600;
+      line-height: 0.98;
+      letter-spacing: -2px;
+      text-wrap: balance;
+    }
+    .td-heading::after {
+      content: '';
+      display: block;
+      width: 62px;
+      height: 2px;
+      margin-top: 26px;
+      background: var(--coral-light);
+    }
+    .td-system {
+      padding: clamp(94px, 9vw, 140px) 48px;
+      background: #fbf6ef;
+    }
+    .td-system-inner {
+      display: grid;
+      grid-template-columns: minmax(440px, 1.12fr) minmax(0, 0.88fr);
+      gap: clamp(54px, 7vw, 96px);
+      align-items: center;
+      max-width: 1240px;
+      margin: 0 auto;
+    }
+    .td-system-media {
+      position: relative;
+      padding: 20px 20px 0 0;
+    }
+    .td-system-media::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 62%;
+      height: 62%;
+      border: 1px solid rgba(224,90,43,0.6);
+      border-radius: 34px;
+    }
+    .td-system-media::after {
+      content: '';
+      position: absolute;
+      right: -2%;
+      bottom: -5%;
+      width: 34%;
+      aspect-ratio: 1;
+      border-radius: 30px;
+      background: linear-gradient(145deg, #f06a3c, #db4d25);
+    }
+    .td-system-media img {
+      position: relative;
+      z-index: 2;
+      display: block;
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 42px 28px 52px 42px;
+      box-shadow: 0 26px 54px rgba(68, 42, 26, 0.16);
+    }
+    .td-system-copy h2 { color: #211c18; }
+    .td-system-copy p {
+      color: #635b54;
+      font-size: 17px;
+      line-height: 1.78;
+    }
+    .td-system-copy p:first-of-type { margin-top: 38px; }
+    .td-system-copy p + p { margin-top: 20px; }
+
+    .td-benefits {
+      padding: clamp(94px, 9vw, 140px) 48px;
+      background:
+        radial-gradient(circle at 10% 12%, rgba(224,90,43,0.08), transparent 25%),
+        #fffdf9;
+    }
+    .td-benefits-inner { max-width: 1240px; margin: 0 auto; }
+    .td-benefits-header {
+      max-width: 900px;
+      margin: 0 auto 58px;
+      text-align: center;
+    }
+    .td-benefits-header .td-heading { color: #211c18; }
+    .td-benefits-header .td-heading::after { margin-left: auto; margin-right: auto; }
+    .td-benefit-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+    }
+    .td-benefit-card {
+      position: relative;
+      min-height: 230px;
+      padding: 38px;
+      border: 1px solid rgba(213,191,171,0.68);
+      border-radius: 22px;
+      background: rgba(255,255,255,0.88);
+      box-shadow: 0 15px 36px rgba(87,57,36,0.07);
+    }
+    .td-benefit-number {
+      position: absolute;
+      top: 24px;
+      right: 28px;
+      color: rgba(224,90,43,0.12);
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 58px;
+      line-height: 1;
+    }
+    .td-benefit-card::before {
+      content: '';
+      display: block;
+      width: 36px;
+      height: 2px;
+      margin-bottom: 25px;
+      background: var(--coral);
+    }
+    .td-benefit-card h3 {
+      max-width: 80%;
+      color: #29231f;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 21px;
+      line-height: 1.25;
+    }
+    .td-benefit-card p {
+      margin-top: 18px;
+      color: #6b625a;
+      font-size: 15px;
+      line-height: 1.72;
+    }
+
+    .td-bps {
+      padding: clamp(94px, 9vw, 140px) 48px;
+      color: #fff8f1;
+      background:
+        radial-gradient(circle at 84% 68%, rgba(224,90,43,0.17), transparent 31%),
+        linear-gradient(145deg, #16120f, #281f1a);
+    }
+    .td-bps-inner {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(460px, 1.1fr);
+      gap: clamp(52px, 7vw, 94px);
+      align-items: center;
+      max-width: 1240px;
+      margin: 0 auto;
+    }
+    .td-bps-copy p {
+      color: rgba(255,248,241,0.75);
+      font-size: 17px;
+      line-height: 1.78;
+    }
+    .td-bps-copy p:first-of-type { margin-top: 38px; }
+    .td-bps-copy p + p { margin-top: 20px; }
+    .td-bps-media {
+      position: relative;
+      padding: 18px 0 18px 18px;
+    }
+    .td-bps-media::before {
+      content: '';
+      position: absolute;
+      inset: 0 16% 0 0;
+      border: 1px solid rgba(240,122,74,0.45);
+      border-radius: 38px;
+    }
+    .td-bps-media img {
+      position: relative;
+      z-index: 2;
+      display: block;
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      border-radius: 30px;
+      box-shadow: 0 28px 60px rgba(0,0,0,0.28);
+    }
+
+    .td-bridge {
+      padding: clamp(94px, 9vw, 140px) 48px;
+      background: #fffdf9;
+    }
+    .td-bridge-inner {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+      max-width: 1240px;
+      margin: 0 auto;
+    }
+    .td-bridge-panel {
+      padding: clamp(40px, 5vw, 64px);
+      border-radius: 28px;
+    }
+    .td-bridge-panel--light {
+      border: 1px solid rgba(213,191,171,0.72);
+      background:
+        radial-gradient(circle at 92% 10%, rgba(224,90,43,0.11), transparent 28%),
+        #fbf6ef;
+    }
+    .td-bridge-panel--dark {
+      color: #fff8f1;
+      background:
+        radial-gradient(circle at 84% 18%, rgba(224,90,43,0.2), transparent 30%),
+        linear-gradient(145deg, #211a16, #100d0b);
+      box-shadow: 0 24px 54px rgba(45,28,18,0.18);
+    }
+    .td-bridge-panel h2 {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: clamp(40px, 4vw, 57px);
+      font-weight: 600;
+      line-height: 1;
+      letter-spacing: -1.45px;
+      text-wrap: balance;
+    }
+    .td-bridge-panel h2::after {
+      content: '';
+      display: block;
+      width: 48px;
+      height: 2px;
+      margin: 24px 0 28px;
+      background: var(--coral);
+    }
+    .td-bridge-panel p {
+      color: #655d56;
+      font-size: 16px;
+      line-height: 1.78;
+    }
+    .td-bridge-panel--dark p { color: rgba(255,248,241,0.75); }
+    .td-bridge-panel p + p { margin-top: 20px; }
+
+    @media (max-width: 1100px) {
+      .hero-nav-main { padding: 24px 32px; }
+      .hero-menu { gap: 22px; }
+      .service-hero-copy { padding-left: 32px; padding-right: 44px; }
+      .td-intro-inner,
+      .td-system-inner,
+      .td-bps-inner { grid-template-columns: 1fr; }
+      .td-system-media { width: min(100%, 760px); }
+      .td-bps-media { width: min(100%, 760px); }
+    }
+
+    @media (max-width: 768px) {
+      .service-hero { min-height: 0; }
+      .hero-nav-main { padding: 20px 24px; }
+      .hero-menu { display: none; }
+      .hero-burger { display: flex; }
+      .hero-brand img { height: 36px; }
+      .service-hero-body { grid-template-columns: 1fr; min-height: 0; }
+      .service-hero-copy { padding: 48px 24px 54px; }
+      .service-hero .breadcrumb { margin-bottom: 24px; }
+      .service-hero-title {
+        font-size: clamp(34px, 10vw, 46px);
+        line-height: 1.08;
+        letter-spacing: -1.4px;
+      }
+      .service-hero-title::after { margin-top: 24px; }
+      .service-hero-subtitle { margin-top: 22px; font-size: 16px; }
+      .service-hero-media,
+      .service-hero-media img { min-height: 320px; height: 320px; }
+      .service-hero-media img { object-position: 57% 34%; }
+      .service-hero-media::before {
+        background: linear-gradient(180deg, #0d0a08 0%, rgba(13,10,8,0.22) 20%, transparent 48%, rgba(13,10,8,0.2) 100%);
+      }
+      .td-intro,
+      .td-system,
+      .td-benefits,
+      .td-bps,
+      .td-bridge { padding: 68px 20px 76px; }
+      .td-intro::before { height: 38px; }
+      .td-intro-inner { gap: 36px; }
+      .td-intro-lead {
+        padding-left: 22px;
+        font-size: 28px;
+        line-height: 1.25;
+      }
+      .td-intro-note { padding: 30px 26px; border-radius: 22px; }
+      .td-intro-note p,
+      .td-system-copy p,
+      .td-bps-copy p,
+      .td-bridge-panel p { font-size: 15px; line-height: 1.7; }
+      .td-heading {
+        font-size: clamp(41px, 12vw, 54px);
+        line-height: 1;
+        letter-spacing: -1.35px;
+      }
+      .td-system-inner,
+      .td-bps-inner { gap: 38px; }
+      .td-system-media { padding: 10px 10px 0 0; }
+      .td-system-media img {
+        aspect-ratio: 1.06 / 1;
+        border-radius: 34px 24px 42px 34px;
+      }
+      .td-system-media::after { right: -1%; bottom: -4%; border-radius: 20px; }
+      .td-system-copy p:first-of-type,
+      .td-bps-copy p:first-of-type { margin-top: 30px; }
+      .td-benefits-header { margin-bottom: 38px; text-align: left; }
+      .td-benefits-header .td-heading::after { margin-left: 0; }
+      .td-benefit-grid { grid-template-columns: 1fr; gap: 14px; }
+      .td-benefit-card { min-height: 0; padding: 30px 26px 32px; border-radius: 18px; }
+      .td-benefit-card h3 { font-size: 19px; }
+      .td-benefit-number { top: 20px; right: 22px; font-size: 48px; }
+      .td-bps-media { padding: 10px 0 10px 10px; }
+      .td-bps-media img { aspect-ratio: 1.05 / 1; border-radius: 24px; }
+      .td-bridge-inner { grid-template-columns: 1fr; gap: 14px; }
+      .td-bridge-panel { padding: 34px 26px 38px; border-radius: 22px; }
+      .td-bridge-panel h2 {
+        font-size: clamp(37px, 10.5vw, 46px);
+        line-height: 1.03;
+      }
+    }
+  </style>
+  <link rel="canonical" href="https://rhalmaibusiness-blip.github.io/bridge-dental/hu/digitalis-fogsorok.html">
+  <link rel="alternate" hreflang="de" href="https://rhalmaibusiness-blip.github.io/bridge-dental/truedent-digitale-prothesen.html">
+  <link rel="alternate" hreflang="hu" href="https://rhalmaibusiness-blip.github.io/bridge-dental/hu/digitalis-fogsorok.html">
+  <link rel="alternate" hreflang="x-default" href="https://rhalmaibusiness-blip.github.io/bridge-dental/truedent-digitale-prothesen.html">
+  <link rel="stylesheet" href="../assets/language-switcher.css?v=4">
+</head>
+<body>
+
+
+<nav class="bd-language-switcher" aria-label="Nyelvválasztó">
+  <a href="../truedent-digitale-prothesen.html" lang="de" hreflang="de"><img src="../assets/flags/de.svg" alt="">DE</a>
+  <a href="digitalis-fogsorok.html" lang="hu" hreflang="hu" aria-current="page"><img src="../assets/flags/hu.svg" alt="">HU</a>
+</nav>
+<!-- HERO ÉS NAVIGÁCIÓ -->
+<section class="service-hero" id="hero">
+  <header class="hero-nav-main">
+    <a href="index.html" class="hero-brand" aria-label="Bridge Dental főoldal">
+      <img src="../logo-hero.png" alt="Bridge Dental" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+      <span class="hero-brand-fallback"><span class="b">bridge</span><span class="d">dental</span></span>
+    </a>
+
+    <ul class="hero-menu">
+      <li><a href="ismerje-meg-a-bridge-dentalt.html">ISMERJE MEG A BRIDGE DENTALT</a></li>
+      <li class="hero-dropdown">
+        <a href="index.html#szolgaltatasok">
+          SZAKTERÜLETEINK
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <polyline points="6 9 12 15 18 9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+        <ul class="hero-dropdown-menu">
+          <li class="hero-dropdown-panel">
+            <ul>
+              <li><a href="full-arch-implantatumos-rehabilitaciok.html">All-on-X rehabilitációk</a></li>
+              <li><a href="implantatumos-cirkonium-restauraciok.html">Implantátumos cirkónium restaurációk</a></li>
+              <li><a href="digitalis-fogsorok.html" aria-current="page">TrueDent – Full color, monolitikus digitális fogsorok</a></li>
+              <li><a href="digitalis-tervezes.html">Digitális workflow</a></li>
+              <li><a href="esztetikai-keramia.html">Fémmentes kerámia pótlások</a></li>
+              <li><a href="index.html#szolgaltatasok">CAD/CAM technológia</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li><a href="../output/pdf/bridge-dental-munkalap-kitoltheto-hu.pdf" target="_blank" rel="noopener">MUNKALAP</a></li>
+      <li><a href="kapcsolat.html">KAPCSOLAT</a></li>
+    </ul>
+
+    <button class="hero-burger" id="heroBurger" aria-label="Menü" aria-expanded="false" aria-controls="heroMobileMenu">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <div class="hero-mobile-menu" id="heroMobileMenu">
+    <a href="ismerje-meg-a-bridge-dentalt.html">ISMERJE MEG A BRIDGE DENTALT</a>
+    <div class="hero-mobile-group">
+      <a href="index.html#szolgaltatasok">SZAKTERÜLETEINK</a>
+      <div class="hero-mobile-submenu">
+        <a href="full-arch-implantatumos-rehabilitaciok.html">All-on-X rehabilitációk</a>
+        <a href="implantatumos-cirkonium-restauraciok.html">Implantátumos cirkónium restaurációk</a>
+        <a href="digitalis-fogsorok.html" aria-current="page">TrueDent – Full color, monolitikus digitális fogsorok</a>
+        <a href="digitalis-tervezes.html">Digitális workflow</a>
+        <a href="esztetikai-keramia.html">Fémmentes kerámia pótlások</a>
+        <a href="index.html#szolgaltatasok">CAD/CAM technológia</a>
+      </div>
+    </div>
+    <a href="../output/pdf/bridge-dental-munkalap-kitoltheto-hu.pdf" target="_blank" rel="noopener">MUNKALAP</a>
+    <a href="kapcsolat.html">KAPCSOLAT</a>
+  </div>
+
+  <div class="service-hero-body">
+    <div class="service-hero-copy">
+      <div class="breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Főoldal</a>
+        <span class="breadcrumb-sep">/</span>
+        <a href="index.html#szolgaltatasok">Szakterületeink</a>
+        <span class="breadcrumb-sep">/</span>
+        <span class="breadcrumb-current">TrueDent – Full color, monolitikus digitális fogsorok</span>
+      </div>
+      <h1 class="service-hero-title">TrueDent – Full color, monolitikus digitális fogsorok</h1>
+      <p class="service-hero-subtitle">A digitális fogsorkészítés új generációja</p>
+    </div>
+
+    <div class="service-hero-media">
+      <img src="../assets/truedent-hero-labor.jpg" alt="Digitális fogsor ellenőrzése a Bridge Dental laborban">
+    </div>
+  </div>
+</section>
+
+<!-- TRUEDENT TARTALOM -->
+<section class="td-intro">
+  <div class="td-intro-inner">
+    <p class="td-intro-lead reveal">A Stratasys a hagyományos vagy több részből álló digitális fogpótlásokkal ellentétben a TrueDent® a Stratasys PolyJet™ technológiát használja, így egyedülállóan teljesen egészében színes, monolitikus fogpótlásokat készít, az alaplemezt és a fogakat együtt nyomtatva, ragasztás vagy összeszerelés nélkül.</p>
+
+    <div class="td-intro-note reveal reveal-delay-1">
+      <p>A Bridge Dentalnál a digitális workflow előnyeit a hagyományos fogtechnikai tapasztalattal ötvözzük, hogy partnereink számára funkcionálisan és esztétikailag is magas színvonalú megoldásokat biztosítsunk.</p>
+    </div>
+  </div>
+</section>
+
+<section class="td-system">
+  <div class="td-system-inner">
+    <div class="td-system-media reveal">
+      <img src="../assets/truedent-restoration-detail.jpg" alt="Teljes színű digitális fogsor precíz laboratóriumi ellenőrzése">
+    </div>
+
+    <div class="td-system-copy reveal reveal-delay-1">
+      <h2 class="td-heading">Stratasys TrueDent®</h2>
+      <p>Laborunk a világ vezető additív gyártási technológiái közé tartozó Stratasys TrueDent® rendszert alkalmazza, amely teljes színű, biokompatibilis digitális fogsorok előállítását teszi lehetővé.</p>
+    </div>
+  </div>
+</section>
+
+<section class="td-benefits">
+  <div class="td-benefits-inner">
+    <div class="td-benefits-header reveal">
+      <h2 class="td-heading">Esztétikára és pontosságra tervezve</h2>
+    </div>
+
+    <div class="td-benefit-grid">
+      <article class="td-benefit-card reveal">
+        <span class="td-benefit-number" aria-hidden="true">01</span>
+        <h3>Monolitikus fogpótlások készítése</h3>
+        <p>A fogsor alapját és a fogakat egyetlen, folyamatos, többszínű nyomtatásban készíti el. Kiküszöböli a kézi összeszerelést és ragasztást.</p>
+      </article>
+
+      <article class="td-benefit-card reveal reveal-delay-1">
+        <span class="td-benefit-number" aria-hidden="true">02</span>
+        <h3>TrueVoxel™ fejlett esztétika</h3>
+        <p>Élethű fogsorokat hozhatunk létre incizális átlátszóság, nyaki gradiens és belső struktúrák létrehozásával.</p>
+      </article>
+
+      <article class="td-benefit-card reveal">
+        <span class="td-benefit-number" aria-hidden="true">03</span>
+        <h3>Tervhű pontosság</h3>
+        <p>A digitális tervezéstől a végső nyomtatásig megőrizhető a kiváló minőség, az egységes illeszkedés, forma és funkció.</p>
+      </article>
+
+      <article class="td-benefit-card reveal reveal-delay-1">
+        <span class="td-benefit-number" aria-hidden="true">04</span>
+        <h3>Pontos reprodukálhatóság</h3>
+        <p>Tökéletesen azonos fogsorokat készítünk közvetlenül digitális fájlokból. Gyors újranyomtatást, cserét és konzisztens eredményeket biztosítunk minden esetben.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="td-bps">
+  <div class="td-bps-inner">
+    <div class="td-bps-copy reveal">
+      <h2 class="td-heading">BPS és digitális technológia</h2>
+      <p>A digitális munkafolyamat nem helyettesíti a magas szintű fogtechnikai szakértelmet.</p>
+      <p>A Bridge Dentalnál a digitális technológiát a BPS szemlélettel ötvözzük, amelynek középpontjában a funkció, az egyéni anatómiai adottságok és a hosszú távú komfort áll.</p>
+      <p>A modern digitális gyártás és a hagyományos fogtechnikai tudás együtt teszi lehetővé a magas színvonalú kivehető fogpótlások elkészítését.</p>
+    </div>
+
+    <div class="td-bps-media reveal reveal-delay-1">
+      <img src="../assets/truedent-bps-digital-planning.jpg" alt="Digitális fogsortervezés a Bridge Dental laborban">
+    </div>
+  </div>
+</section>
+
+<section class="td-bridge">
+  <div class="td-bridge-inner">
+    <article class="td-bridge-panel td-bridge-panel--light reveal">
+      <h2>Miért Bridge Dental?</h2>
+      <p>A digitális fogsorkészítés számunkra nem csupán egy új technológia, hanem egy átgondolt munkafolyamat része.</p>
+      <p>A Stratasys TrueDent® rendszer, a digitális tervezés és a több évtizedes fogtechnikai tapasztalat együttesen teszik lehetővé, hogy partnereink számára kiszámítható, esztétikus és hosszú távon is megbízható megoldásokat kínáljunk.</p>
+    </article>
+
+    <article class="td-bridge-panel td-bridge-panel--dark reveal reveal-delay-1">
+      <h2>A hagyományos fogtechnikai tudás és a digitális innováció találkozása</h2>
+      <p>Sokan úgy mutatják be a digitális fogsorokat, mintha a technológia önmagában garantálná a sikert. Mi másként gondolkodunk. Hisszük, hogy a kiváló eredményhez a digitális tervezés pontossága mellett ugyanilyen fontos a funkció, az anatómiai ismeretek és a fogtechnikus több évtizedes szakmai tapasztalata. Ez a szemlélet teszi lehetővé, hogy a digitális technológia valóban a páciensek javát szolgálja.</p>
+    </article>
+  </div>
+</section>
+
+<!-- PILOT CTA -->
+<section class="pilot-section" id="pilot">
+  <div class="pilot-inner reveal">
+    <div class="pilot-bg-circle"></div>
+    <div class="pilot-content">
+      <div class="section-label">Pilot együttműködés</div>
+      <h2>Próbáljon ki minket<br>3-5 komplex esettel</h2>
+      <p>A pilot egy 8 hetes, kockázatcsökkentett próbaidőszak digitális fogsorokra. A közös próba-együttműködés során láthatja, hogyan kommunikálunk, hogyan tervezünk, milyen minőségben gyártunk, és hogyan kezeljük a felmerülő kérdéseket.</p>
+      <div class="pilot-features">
+        <div class="pilot-feature"><span class="pilot-feature-dot"></span>Német nyelvű szakmai egyeztetés dedikált fogtechnikussal</div>
+        <div class="pilot-feature"><span class="pilot-feature-dot"></span>Online digitális tervezési konzultáció</div>
+        <div class="pilot-feature"><span class="pilot-feature-dot"></span>Visszajelzés a beküldött scanekről és az illeszkedésről</div>
+        <div class="pilot-feature"><span class="pilot-feature-dot"></span>Probléma esetén gyors korrekció vagy újrakészítés</div>
+      </div>
+    </div>
+    <div class="pilot-action">
+      <a href="#kapcsolat" class="btn-coral-big">Érdekel a pilot együttműködés</a>
+    </div>
+  </div>
+</section>
+
+<!-- KAPCSOLATFELVÉTELI FORM -->
+<section class="section form-section" id="kapcsolat">
+  <div class="form-inner reveal">
+    <div class="form-intro">
+      <div class="section-label">Kapcsolatfelvétel</div>
+      <h2>Vegye fel velünk a kapcsolatot.</h2>
+      <p>Írjon nekünk a Digitális fogsorok Truedent szolgáltatásról — munkatársunk hamarosan felveszi Önnel a kapcsolatot.</p>
+      <div class="form-contact-items">
+        <div class="form-contact-item">
+          <div class="form-contact-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.07 12 19.79 19.79 0 0 1 1 3.18C1 2.09 1.9 1 3 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16z"/></svg>
+          </div>
+          <a href="tel:+36703966653">+36 / (70) 396 6653</a>
+        </div>
+        <div class="form-contact-item">
+          <div class="form-contact-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          </div>
+          <a href="mailto:info@bridgedental.hu">info@bridgedental.hu</a>
+        </div>
+        <div class="form-contact-item">
+          <div class="form-contact-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <a href="https://www.google.com/maps/search/?api=1&amp;query=Bridge+Dental%2C+1106+Budapest%2C+Feh%C3%A9r+%C3%BAt+10" target="_blank" rel="noopener noreferrer">Magyarország, 1106 Budapest, Fehér út 10. 26. ép. 2. em.</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-form">
+      <form>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="nev">Neve *</label>
+            <input type="text" id="nev" name="nev" placeholder="Dr. Kovács Péter" required>
+          </div>
+          <div class="form-group">
+            <label for="rendelo">Rendelő / Munkahely</label>
+            <input type="text" id="rendelo" name="rendelo" placeholder="Kovács Fogászat Kft.">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="email">E-mail cím *</label>
+            <input type="email" id="email" name="email" placeholder="dr.kovacs@fogaszat.hu" required>
+          </div>
+          <div class="form-group">
+            <label for="telefon">Telefonszám</label>
+            <input type="tel" id="telefon" name="telefon" placeholder="+36 30 000 0000">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="targy">Miben segíthetünk?</label>
+          <select id="targy" name="targy">
+            <option value="truedent-erdeklodes" selected>Érdeklődés a Digitális fogsorok Truedent szolgáltatásról</option>
+            <option value="truedent-pilot">TrueDent pilot együttműködés</option>
+            <option value="egyeb">Egyéb</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="uzenet">Üzenet</label>
+          <textarea id="uzenet" name="uzenet" placeholder="Írja le röviden az eset jellegét vagy kérdését..."></textarea>
+        </div>
+        <div class="form-submit">
+          <label class="form-gdpr">
+            <input type="checkbox" name="gdpr-consent" required>
+            <span>Elolvastam és elfogadom az <a href="#">adatkezelési tájékoztatót</a>, és hozzájárulok ahhoz, hogy a Bridge Dental az űrlapon megadott adataimat a megkeresésem megválaszolása céljából kezelje.</span>
+          </label>
+          <button type="submit" class="btn-form-submit">Üzenet küldése</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">
+    <img src="../logo.png" alt="Bridge Dental" style="height: 32px; width: auto; filter: brightness(0) invert(1); opacity: 0.85; display: block;">
+    <p>Budapesti B2B fogtechnikai labor — implantológiára és cirkon munkákra specializálva, rendelők, klinikák és magánfogorvosok számára.</p>
+  </div>
+  <div class="footer-col">
+    <h5>Szolgáltatásaink</h5>
+    <ul>
+      <li><a href="full-arch-implantatumos-rehabilitaciok.html">All-on-X rehabilitációk</a></li>
+      <li><a href="implantatumos-cirkonium-restauraciok.html">Implantátumos cirkónium restaurációk</a></li>
+      <li><a href="esztetikai-keramia.html">Fémmentes kerámia pótlások</a></li>
+      <li><a href="digitalis-fogsorok.html">TrueDent – Full color, monolitikus digitális fogsorok</a></li>
+      <li><a href="digitalis-tervezes.html">Digitális workflow</a></li>
+      <li><a href="digitalis-fogtechnika.html">CAD/CAM technológia</a></li>
+    </ul>
+  </div>
+  <div class="footer-col">
+    <h5>Navigáció</h5>
+    <ul>
+      <li><a href="ismerje-meg-a-bridge-dentalt.html">Ismerje meg a Bridge Dentalt</a></li>
+      <li><a href="index.html#szolgaltatasok">Szolgáltatások</a></li>
+      <li><a href="referenciak.html">Referenciák</a></li>
+      <li><a href="kapcsolat.html">Kapcsolat</a></li>
+      <li><a href="impresszum.html">Impresszum</a></li>
+    </ul>
+  </div>
+  <div class="footer-col">
+    <h5>Kapcsolat</h5>
+    <ul>
+      <li><a href="tel:+36703966653">+36 / (70) 396 6653</a></li>
+      <li><a href="mailto:info@bridgedental.hu">info@bridgedental.hu</a></li>
+      <li><a href="https://www.google.com/maps/search/?api=1&amp;query=Bridge+Dental%2C+1106+Budapest%2C+Feh%C3%A9r+%C3%BAt+10" target="_blank" rel="noopener noreferrer">Magyarország, 1106 Budapest, Fehér út 10.</a></li>
+      <li style="margin-top: 16px;"><a href="#">Adatkezelési tájékoztató</a></li>
+      <li><a href="#">Cookie nyilatkozat</a></li>
+    </ul>
+  </div>
+</footer>
+<div class="footer-bottom">
+  <p>© 2026 Bridge Dental — Minden jog fenntartva.</p>
+  <p>CAD/CAM fogtechnikai labor Budapest</p>
+</div>
+
+<script>
+  const heroBurger = document.getElementById('heroBurger');
+  const heroMobileMenu = document.getElementById('heroMobileMenu');
+
+  function toggleHeroMenu(force) {
+    if (!heroBurger || !heroMobileMenu) return;
+    const open = force !== undefined ? force : !heroMobileMenu.classList.contains('open');
+    heroMobileMenu.classList.toggle('open', open);
+    heroBurger.classList.toggle('open', open);
+    heroBurger.setAttribute('aria-expanded', String(open));
+    document.body.style.overflow = open ? 'hidden' : '';
+  }
+
+  if (heroBurger && heroMobileMenu) {
+    heroBurger.addEventListener('click', () => toggleHeroMenu());
+    heroMobileMenu.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => toggleHeroMenu(false));
+    });
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') toggleHeroMenu(false);
+    });
+  }
+
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
