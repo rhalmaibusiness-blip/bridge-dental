@@ -91,7 +91,7 @@ def build_overlay() -> list[str]:
         ((49, 149, 139, 170), "Páciens neve, életkora", 50, 151, 9.2, True),
         ((368, 149, 464, 170), "Lenyomat dátuma", 369, 151, 9.2, True),
         ((74, 180, 139, 201), "Fémszegély", 75, 182, 9.6, True),
-        ((74, 226, 139, 249), "Kerámiaváll", 75, 230, 9.6, True),
+        ((74, 226, 139, 254), "Kerámiaváll", 75, 230, 9.6, True),
         ((177, 259, 227, 280), "Fogszín", 178, 261, 9.6, True),
         ((351, 259, 444, 280), "Fogpótlás anyaga", 352, 261, 9.3, True),
         ((49, 277, 139, 291), "IDŐPONTOK:", 50, 278, 9.6, True),
@@ -116,12 +116,15 @@ def build_overlay() -> list[str]:
     erase(49, 437, 139, 466)
     two_line("Készrevitel", "Átadás", 50, 439, size=9.0)
 
+    # The source sheet has a single, slim quantity box whose right-hand side
+    # contains the German unit label ("Stk").  Only mask the letters: masking
+    # the whole right side would also cut the original box border in PDF viewers.
     for x0, x1, top in [
         (364, 388, 289), (364, 388, 314), (364, 388, 339),
         (529, 548, 289), (529, 548, 314), (529, 548, 339),
     ]:
-        erase(x0, top + 2, x1, top + 18)
-        label("db", x0 + 1, top + 4, size=7.5, bold=False)
+        erase(x0 + 2, top + 4, x1 - 2, top + 15)
+        label("db", x0 + 3, top + 4, size=7.5, bold=False)
 
     form = pdf.acroForm
     field_names: list[str] = []
@@ -377,7 +380,21 @@ def merge_with_source(field_names: list[str]) -> None:
         )
         return writer._add_object(type0_font)
 
-    hungarian_font_ref = embed_unicode_form_font()
+    # Reuse the already embedded Arial Narrow font from the Hungarian label
+    # layer. Unlike a second, hand-built CID font this is stable in Chrome,
+    # Preview and Acrobat form renderers.
+    page_fonts = writer.pages[0]["/Resources"]["/Font"].get_object()
+    hungarian_font_ref = next(
+        (
+            reference
+            for reference in page_fonts.values()
+            if "ArialNarrow" in str(reference.get_object().get("/BaseFont", ""))
+            and "Bold" not in str(reference.get_object().get("/BaseFont", ""))
+        ),
+        None,
+    )
+    if hungarian_font_ref is None:
+        raise ValueError("A magyar űrlap betűkészlete nem található.")
 
     def transparent_appearance(source_stream, content: bytes):
         source_object = source_stream.get_object()

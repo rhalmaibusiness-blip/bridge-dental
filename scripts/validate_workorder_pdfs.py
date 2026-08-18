@@ -23,6 +23,26 @@ HUNGARIAN_PDF = PDF_DIR / "bridge-dental-munkalap-kitoltheto-hu.pdf"
 GERMAN_SAMPLE = Path("/private/tmp/bridge-dental-munkalap-de-filled-test.pdf")
 HUNGARIAN_SAMPLE = Path("/private/tmp/bridge-dental-munkalap-hu-filled-test.pdf")
 
+# ReportLab's embedded Arial Narrow subset maps the Hungarian accented glyphs
+# to these single-byte codes. ASCII characters keep their regular codepoints.
+HUNGARIAN_FORM_FONT_CODES = {
+    "Á": 0x01, "É": 0x02, "Í": 0x03, "Ó": 0x04, "Ö": 0x05, "Ő": 0x06,
+    "Ú": 0x07, "Ü": 0x08, "Ű": 0x09, "á": 0x0A, "é": 0x0B, "í": 0x0C,
+    "ó": 0x0D, "ö": 0x0E, "ő": 0x0F, "ú": 0x10, "ü": 0x11, "ű": 0x12,
+}
+
+
+def encode_hungarian_form_text(value: str) -> bytes:
+    encoded = bytearray()
+    for character in value:
+        if character in HUNGARIAN_FORM_FONT_CODES:
+            encoded.append(HUNGARIAN_FORM_FONT_CODES[character])
+        elif ord(character) <= 0x7F:
+            encoded.append(ord(character))
+        else:
+            raise ValueError(f"A mezőbetűkészlet nem támogatja ezt a karaktert: {character}")
+    return bytes(encoded)
+
 
 def field_widgets(reader: PdfReader):
     widgets = []
@@ -110,7 +130,7 @@ def unicode_appearance(writer: PdfWriter, widget, font_ref, value: str) -> None:
     for index, line in enumerate(lines):
         if index:
             commands.append(f"0 {-font_size * 1.25:.3f} Td")
-        commands.append(f"<{line.encode('utf-16-be').hex().upper()}> Tj")
+        commands.append(f"<{encode_hungarian_form_text(line).hex().upper()}> Tj")
     commands.extend(["ET", "Q", "EMC", "Q"])
 
     appearance = DecodedStreamObject()
