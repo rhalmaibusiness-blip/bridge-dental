@@ -2233,7 +2233,9 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+      object-position: var(--image-position, center);
+      filter: brightness(var(--image-brightness, 1));
+      transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1), filter 0.35s ease;
       -webkit-user-drag: none;
     }
 
@@ -3875,8 +3877,8 @@
   <div class="cinematic-bg" id="cinematicBg">
     <div class="cinematic-bg-gradient"></div>
     <picture>
-      <source media="(max-width: 820px)" srcset="hero-mobile.jpg">
-      <img src="hero-desktop.jpg" alt="Zahntechniker bei Präzisionsarbeiten" onload="this.classList.add('loaded')">
+      <source media="(max-width: 820px)" srcset="assets/home/hero-precision-mobile.webp">
+      <img src="assets/home/hero-precision-desktop.webp" alt="Zahntechnikerin bei der präzisen Kontrolle einer Restauration" onload="this.classList.add('loaded')">
     </picture>
     <div class="cinematic-vignette"></div>
   </div>
@@ -3982,7 +3984,7 @@
 
   <div class="phi-media">
     <div class="phi-img-wrap">
-      <img src="second-blokk.png" alt="Zahntechniker bei der digitalen Zahnplanung vor einem Monitor" id="phiImg">
+      <img src="assets/home/philosophy-founders.webp" alt="Kínál Attila und Dénes Császár bei der gemeinsamen Arbeit im Labor" id="phiImg">
     </div>
     <div class="phi-dot-line">
       <span class="dot"></span>
@@ -4096,7 +4098,7 @@
   <div class="work-timeline">
     <div class="tl-mobile-label">
       <span class="cur" id="tlMobileCur">01 · Fotografie</span>
-      <span class="total">13 Schritte</span>
+      <span class="total">12 Schritte</span>
     </div>
     <div class="tl-items" id="tlItems"></div>
     <div class="tl-bar">
@@ -4156,7 +4158,7 @@
 
     <a class="service-card reveal reveal-delay-2" href="truedent-digitale-prothesen.html">
       <div class="service-card-img">
-        <img src="digitalis-fogsorok-truedent-labor-munka.webp" alt="Digitaler Zahnersatz Das TrueDent-Labor arbeitet mit biokompatiblem Zahnersatz">
+        <img src="assets/home/service-truedent.webp" alt="Vollfarbige monolithische Zahnprothese im 3D-Drucker">
       </div>
       <div class="service-tag">Neuheit</div>
       <div class="service-card-body">
@@ -4169,7 +4171,7 @@
 
     <a class="service-card reveal" href="digitaler-workflow.html">
       <div class="service-card-img">
-        <img src="szolgaltatasok_virtualis_tervezes.jpg" alt="Mit einem Designprozess, der auf einem digitalen Workflow-Monitor läuft">
+        <img src="assets/home/service-digital-workflow.webp" alt="Digital geplante implantatgetragene Restauration auf einem Monitor">
       </div>
       <div class="service-card-body">
         <div class="service-number">04</div>
@@ -4193,7 +4195,7 @@
 
     <a class="service-card reveal reveal-delay-2" href="cad-cam-technologie.html">
       <div class="service-card-img">
-        <img src="szolgaltatasok_fem_es_cirkonvaz.jpg" alt="CAD/CAM-Technologie mit digitaler Zahnarbeit">
+        <img src="assets/home/service-cad-cam.webp" alt="CAD/CAM-Fräsanlage im Bridge Dental Labor">
       </div>
       <div class="service-card-body">
         <div class="service-number">06</div>
@@ -4209,7 +4211,7 @@
 <section class="quality" id="minoseg">
   <div class="q-media">
     <div class="q-media-inner">
-      <img class="photo" src="quality-photo.png" alt="Zahntechniker mit Lupe bei der Qualitätskontrolle">
+      <img class="photo" src="assets/home/quality-craftsmanship.webp" alt="Prüfung einer implantatgetragenen Restauration unter der Vergrößerungsleuchte">
     </div>
     <img class="q-logo" src="bridgedental_narancs_logo.png" alt="Bridge Dental">
   </div>
@@ -4718,15 +4720,23 @@
   (function () {
     const STEPS = [
       'Fotografie', 'Gesichtsscan', 'Intraoralscan',
-      'Smile Design', 'CAD-Konstruktion', 'Virtuelles Wax-up', 'Mock-up',
+      'Smile Design', 'CAD-Konstruktion', 'Virtuelles Wax-up',
       'Prototyp', 'Fräsen', '3D-Druck', 'Finalisierung',
       'Qualitätskontrolle', 'Restauration'
     ];
     const STEP_IMAGES = [
-      'step-01.png', 'step-02.png', 'step-04.png', 'step-03.png',
-      'step-05.png', 'workflow-virtualis-wax-up.png', 'step-09.png',
-      'step-08.png', 'step-06.png', 'step-07.png', 'step-10.png',
-      'step-11.png', 'step-12.png'
+      { src: 'step-01.png', alt: 'Fotografie im digitalen zahntechnischen Workflow' },
+      { src: 'step-02.png', alt: 'Gesichtsscan für die digitale Planung' },
+      { src: 'step-04.png', alt: 'Intraoralscan als Grundlage der Restauration' },
+      { src: 'assets/home/workflow-smile-design.webp', alt: 'Digitales Smile Design am Patientenfoto', position: '32% center', brightness: 0.82 },
+      { src: 'assets/home/workflow-cad-design.webp', alt: 'CAD-Konstruktion einer implantatgetragenen Restauration' },
+      { src: 'assets/home/workflow-virtual-waxup.webp', alt: 'Virtuelles Wax-up am digitalen Zahnbogen' },
+      { src: 'assets/home/workflow-prototype.webp', alt: 'Manuelle Ausarbeitung eines dentalen Prototyps' },
+      { src: 'assets/home/workflow-milling.webp', alt: 'Präzisionsfräsen einer Restauration' },
+      { src: 'assets/home/workflow-printing.webp', alt: 'Dentaler 3D-Druck im Labor', position: 'center 28%' },
+      { src: 'assets/home/workflow-finalising.webp', alt: 'Individuelle Finalisierung der Zahnfarbe' },
+      { src: 'assets/home/workflow-quality-control.webp', alt: 'Qualitätskontrolle einer Restauration unter Vergrößerung' },
+      { src: 'step-12.png', alt: 'Fertiggestellte dentale Restauration' }
     ];
     const N = STEPS.length;
     const track = document.getElementById('carTrack');
@@ -4743,7 +4753,7 @@
 
     track.innerHTML = STEPS.map((name, i) => `
       <div class="work-card">
-        <img src="${STEP_IMAGES[i]}" alt="${name}" loading="lazy" draggable="false">
+        <img src="${STEP_IMAGES[i].src}" alt="${STEP_IMAGES[i].alt}" loading="lazy" draggable="false" style="--image-position: ${STEP_IMAGES[i].position || 'center'}; --image-brightness: ${STEP_IMAGES[i].brightness || 1};">
         <div class="work-card-label">
           <span class="work-card-num">${pad(i)}</span>
           <span class="work-card-name">${name}</span>

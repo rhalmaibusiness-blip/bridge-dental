@@ -2233,7 +2233,9 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+      object-position: var(--image-position, center);
+      filter: brightness(var(--image-brightness, 1));
+      transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1), filter 0.35s ease;
       -webkit-user-drag: none;
     }
 
@@ -3875,8 +3877,8 @@
   <div class="cinematic-bg" id="cinematicBg">
     <div class="cinematic-bg-gradient"></div>
     <picture>
-      <source media="(max-width: 820px)" srcset="../hero-mobile.jpg">
-      <img src="../hero-desktop.jpg" alt="Fogtechnikus precíziós munka közben" onload="this.classList.add('loaded')">
+      <source media="(max-width: 820px)" srcset="../assets/home/hero-precision-mobile.webp">
+      <img src="../assets/home/hero-precision-desktop.webp" alt="Fogtechnikus egy restauráció precíz ellenőrzése közben" onload="this.classList.add('loaded')">
     </picture>
     <div class="cinematic-vignette"></div>
   </div>
@@ -3988,7 +3990,7 @@
 
   <div class="phi-media">
     <div class="phi-img-wrap">
-      <img src="../second-blokk.png" alt="Fogtechnikus digitális fogtechnikai tervezés közben monitor előtt" id="phiImg">
+      <img src="../assets/home/philosophy-founders.webp" alt="Kínál Attila és Császár Dénes közös munka közben a laborban" id="phiImg">
     </div>
     <div class="phi-dot-line">
       <span class="dot"></span>
@@ -4106,7 +4108,7 @@
   <div class="work-timeline">
     <div class="tl-mobile-label">
       <span class="cur" id="tlMobileCur">01 · Fotókészítés</span>
-      <span class="total">13 lépés</span>
+      <span class="total">12 lépés</span>
     </div>
     <div class="tl-items" id="tlItems"></div>
     <div class="tl-bar">
@@ -4166,7 +4168,7 @@
 
     <a class="service-card reveal reveal-delay-2" href="digitalis-fogsorok.html">
       <div class="service-card-img">
-        <img src="../digitalis-fogsorok-truedent-labor-munka.webp" alt="Digitális fogsorok TrueDent labor munka biokompatibilis fogsorral">
+        <img src="../assets/home/service-truedent.webp" alt="Full color, monolitikus fogpótlás a 3D nyomtatóban">
       </div>
       <div class="service-tag">Újdonság</div>
       <div class="service-card-body">
@@ -4179,7 +4181,7 @@
 
     <a class="service-card reveal" href="digitalis-tervezes.html">
       <div class="service-card-img">
-        <img src="../szolgaltatasok_virtualis_tervezes.jpg" alt="Digitális workflow monitoron futó tervezési folyamattal">
+        <img src="../assets/home/service-digital-workflow.webp" alt="Digitálisan megtervezett implantátumos restauráció a monitoron">
       </div>
       <div class="service-card-body">
         <div class="service-number">04</div>
@@ -4203,7 +4205,7 @@
 
     <a class="service-card reveal reveal-delay-2" href="digitalis-fogtechnika.html">
       <div class="service-card-img">
-        <img src="../szolgaltatasok_fem_es_cirkonvaz.jpg" alt="CAD/CAM technológia digitális fogtechnikai munkával">
+        <img src="../assets/home/service-cad-cam.webp" alt="CAD/CAM maróberendezés a Bridge Dental laborjában">
       </div>
       <div class="service-card-body">
         <div class="service-number">06</div>
@@ -4219,7 +4221,7 @@
 <section class="quality" id="minoseg">
   <div class="q-media">
     <div class="q-media-inner">
-      <img class="photo" src="../quality-photo.png" alt="Fogtechnikus minőségellenőrzés közben nagyítóval">
+      <img class="photo" src="../assets/home/quality-craftsmanship.webp" alt="Implantátumos restauráció ellenőrzése nagyítólámpa alatt">
     </div>
     <img class="q-logo" src="../bridgedental_narancs_logo.png" alt="Bridge Dental">
   </div>
@@ -4728,15 +4730,23 @@
   (function () {
     const STEPS = [
       'Fotókészítés', 'Arcszkennelés', 'Intraorális szkennelés',
-      'Mosolytervezés', 'Design', 'Virtuális wax-up', 'Mock-up',
+      'Mosolytervezés', 'Design', 'Virtuális wax-up',
       'Prototípus', 'Marás', 'Nyomtatás', 'Készrevitel',
       'Minőség ellenőrzés', 'Restauráció'
     ];
     const STEP_IMAGES = [
-      '../step-01.png', '../step-02.png', '../step-04.png', '../step-03.png',
-      '../step-05.png', '../workflow-virtualis-wax-up.png', '../step-09.png',
-      '../step-08.png', '../step-06.png', '../step-07.png', '../step-10.png',
-      '../step-11.png', '../step-12.png'
+      { src: '../step-01.png', alt: 'Fotókészítés a digitális fogtechnikai munkafolyamatban' },
+      { src: '../step-02.png', alt: 'Arcszkennelés a digitális tervezéshez' },
+      { src: '../step-04.png', alt: 'Intraorális szkennelés a restauráció elkészítéséhez' },
+      { src: '../assets/home/workflow-smile-design.webp', alt: 'Digitális mosolytervezés a páciens fotóján', position: '32% center', brightness: 0.82 },
+      { src: '../assets/home/workflow-cad-design.webp', alt: 'Implantátumos restauráció digitális tervezése' },
+      { src: '../assets/home/workflow-virtual-waxup.webp', alt: 'Virtuális wax-up a digitális fogíven' },
+      { src: '../assets/home/workflow-prototype.webp', alt: 'Fogászati prototípus kézi kidolgozása' },
+      { src: '../assets/home/workflow-milling.webp', alt: 'Restauráció precíziós marása' },
+      { src: '../assets/home/workflow-printing.webp', alt: 'Fogtechnikai 3D nyomtatás a laborban', position: 'center 28%' },
+      { src: '../assets/home/workflow-finalising.webp', alt: 'A fogszín egyedi készrevitele' },
+      { src: '../assets/home/workflow-quality-control.webp', alt: 'Restauráció minőség-ellenőrzése nagyítás alatt' },
+      { src: '../step-12.png', alt: 'Elkészült fogászati restauráció' }
     ];
     const N = STEPS.length;
     const track = document.getElementById('carTrack');
@@ -4753,7 +4763,7 @@
 
     track.innerHTML = STEPS.map((name, i) => `
       <div class="work-card">
-        <img src="${STEP_IMAGES[i]}" alt="${name}" loading="lazy" draggable="false">
+        <img src="${STEP_IMAGES[i].src}" alt="${STEP_IMAGES[i].alt}" loading="lazy" draggable="false" style="--image-position: ${STEP_IMAGES[i].position || 'center'}; --image-brightness: ${STEP_IMAGES[i].brightness || 1};">
         <div class="work-card-label">
           <span class="work-card-num">${pad(i)}</span>
           <span class="work-card-name">${name}</span>
