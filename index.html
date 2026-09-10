@@ -1152,7 +1152,7 @@
     }
 
     .service-card-img {
-      height: 200px;
+      height: clamp(270px, 24vw, 340px);
       overflow: hidden;
       flex-shrink: 0;
       position: relative;
@@ -1718,12 +1718,12 @@
       display: grid;
       grid-template-columns: minmax(0, 46%) minmax(0, 54%);
       align-items: stretch;
-      min-height: 100vh;
+      min-height: 780px;
     }
 
     .phi-text {
       position: relative;
-      padding: clamp(60px, 10vh, 120px) clamp(28px, 5vw, 80px) clamp(60px, 10vh, 120px) clamp(28px, 7vw, 110px);
+      padding: 60px clamp(28px, 5vw, 80px) 60px clamp(28px, 7vw, 110px);
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -1841,10 +1841,10 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: center;
+      object-position: right center;
       display: block;
       will-change: transform;
-      transform: scale(1.08);
+      transform: scale(1.02);
       transition: transform 0.2s linear;
     }
 
@@ -3475,7 +3475,7 @@
 
       .services-grid { grid-template-columns: 1fr; gap: 16px; }
 
-      .service-card-img { height: 220px; }
+      .service-card-img { height: 280px; }
 
       /* Watermark */
       [aria-hidden="true"] { font-size: 80px; top: 20px; right: -10px; }
@@ -4012,10 +4012,6 @@
   <div class="phi-media">
     <div class="phi-img-wrap">
       <img src="assets/home/philosophy-founders.webp" alt="Kínál Attila und Dénes Császár bei der gemeinsamen Arbeit im Labor" id="phiImg">
-    </div>
-    <div class="phi-dot-line">
-      <span class="dot"></span>
-      <span class="tail"></span>
     </div>
   </div>
 </section>
@@ -4570,7 +4566,7 @@
         const vh = window.innerHeight;
         if (rect.bottom < 0 || rect.top > vh) return;
         const progress = (rect.top + rect.height / 2 - vh / 2) / (vh / 2 + rect.height / 2);
-        phiImg.style.transform = `scale(1.08) translateY(${progress * 26}px)`;
+        phiImg.style.transform = `scale(1.02) translateY(${progress * 12}px)`;
       }, { passive: true });
     }
   }
@@ -4754,7 +4750,7 @@
       { src: 'step-01.png', alt: 'Fotografie im digitalen zahntechnischen Workflow' },
       { src: 'step-02.png', alt: 'Gesichtsscan für die digitale Planung' },
       { src: 'step-04.png', alt: 'Intraoralscan als Grundlage der Restauration' },
-      { src: 'assets/home/workflow-smile-design.webp', alt: 'Digitales Smile Design am Patientenfoto', position: '32% center', brightness: 0.82 },
+      { src: 'assets/home/workflow-smile-design.webp', alt: 'Digitales Smile Design am Patientenfoto', position: '42% center', brightness: 0.82 },
       { src: 'assets/home/workflow-cad-design.webp', alt: 'CAD-Konstruktion einer implantatgetragenen Restauration' },
       { src: 'assets/home/workflow-virtual-waxup.webp', alt: 'Virtuelles Wax-up am digitalen Zahnbogen' },
       { src: 'assets/home/workflow-prototype.webp', alt: 'Manuelle Ausarbeitung eines dentalen Prototyps' },
