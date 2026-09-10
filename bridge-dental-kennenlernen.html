@@ -626,6 +626,18 @@
       justify-content: flex-start;
       padding: 34px;
     }
+    .hitvallas-photo.hitvallas-photo-filled {
+      padding: 0;
+      align-items: stretch;
+      background: #181411;
+    }
+    .hitvallas-photo-filled img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      object-position: center 45%;
+    }
     .story-placeholder-ring {
       position: absolute;
       top: 28px;
@@ -1260,6 +1272,7 @@
     .g-panel {
       position: relative;
       flex: 1;
+      min-width: 46px;
       border-radius: 18px;
       overflow: hidden;
       cursor: pointer;
@@ -1268,7 +1281,7 @@
     }
 
     .g-panel.active {
-      flex: 3.2;
+      flex: 7.2;
       box-shadow: 0 26px 55px -26px rgba(43, 30, 20, 0.4);
     }
 
@@ -1279,6 +1292,17 @@
       align-items: center;
       justify-content: center;
     }
+
+    .g-ph img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      object-position: var(--gallery-position, center);
+      transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .g-panel.active .g-ph img { transform: scale(1.025); }
 
     .g-panel:nth-child(1) .g-ph { background: linear-gradient(160deg, #f3e3ce, #e8cfae); }
     .g-panel:nth-child(2) .g-ph { background: linear-gradient(160deg, #efd9c2, #dfc0a0); }
@@ -1304,7 +1328,7 @@
       position: absolute;
       inset: 0;
       background: linear-gradient(180deg, transparent 55%, rgba(43, 28, 16, 0.55) 100%);
-      opacity: 0;
+      opacity: 0.28;
       transition: opacity 0.5s ease;
       pointer-events: none;
     }
@@ -1352,7 +1376,8 @@
       font-size: 12px;
       font-weight: 700;
       letter-spacing: 2px;
-      color: rgba(90, 60, 35, 0.65);
+      color: rgba(255, 255, 255, 0.82);
+      text-shadow: 0 1px 8px rgba(0, 0, 0, 0.65);
       transition: opacity 0.35s ease;
       white-space: nowrap;
     }
@@ -2094,16 +2119,8 @@
         <div class="story-fact"><strong>80 Zahnärzte</strong><span>aktive Praxispartner</span></div>
       </div>
     </div>
-    <div class="hitvallas-photo">
-      <div class="story-placeholder-ring" aria-hidden="true"></div>
-      <div class="story-portrait-placeholder" role="img" aria-label="Platzhalterporträt für das Foto der Gründer von Bridge Dental">
-        <div class="story-portrait-copy">
-          <span>Ort des Porträts</span>
-          <h3>Hier kann ein Porträt von Attila Kínál oder Dénes Császár eingesetzt werden.</h3>
-          <p>Die Fläche ist bewusst als Platzhalter angelegt, damit sich das endgültige Foto harmonisch in die ruhige, elegante Komposition einfügt.</p>
-        </div>
-      </div>
-      <div class="story-placeholder-note">Platzhalter für Bridge Dental Portrait</div>
+    <div class="hitvallas-photo hitvallas-photo-filled">
+      <img src="assets/about/story-founders-1934.webp" alt="Attila Kínál und Dénes Császár, die Gründer von Bridge Dental">
     </div>
   </div>
 </section>
@@ -2368,8 +2385,9 @@
         Mehr als zwei Jahrzehnte im deutschsprachigen Raum
       </div>
       <div class="n-photo">
-        <img src="Rolunk aloldal/international-photo.png"
-             alt="Bridge Dental Zahntechniker bei der Arbeit"
+        <img src="assets/about/international-1565.webp"
+             alt="Bridge Dental Zahntechniker bei der Arbeit unter dem Mikroskop"
+             style="object-position: center 38%;"
              onerror="this.remove(); document.getElementById('npLabel').style.display='block'">
         <span class="np-label" id="npLabel" style="display:none">BILDMOTIV</span>
       </div>
@@ -2473,45 +2491,70 @@
   </div>
 
   <div class="g-panels reveal" id="gPanels" style="--d: 0.36s">
-
     <div class="g-panel active">
-      <div class="g-ph">
-        <svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8.5 7l1.2-2.4h4.6L15.5 7"/><circle cx="12" cy="13.5" r="3.5"/></svg>
-      </div>
-      <span class="g-side">01 · BILDMOTIV</span>
-      <div class="g-label"><span class="gl-num">01</span><span class="gl-name">Bildmotiv</span></div>
+      <div class="g-ph"><img src="assets/about/gallery-01-0224.webp" alt="Zahntechnikerinnen bei der gemeinsamen Arbeit im Bridge Dental Labor" loading="lazy" style="--gallery-position: center 68%;"></div>
+      <span class="g-side">01 · GEMEINSAME ARBEIT</span>
+      <div class="g-label"><span class="gl-num">01</span><span class="gl-name">Gemeinsame Arbeit</span></div>
     </div>
 
     <div class="g-panel">
-      <div class="g-ph">
-        <svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8.5 7l1.2-2.4h4.6L15.5 7"/><circle cx="12" cy="13.5" r="3.5"/></svg>
-      </div>
-      <span class="g-side">02 · BILDMOTIV</span>
-      <div class="g-label"><span class="gl-num">02</span><span class="gl-name">Bildmotiv</span></div>
+      <div class="g-ph"><img src="assets/about/gallery-02-9812-blurred.webp" alt="Präzise Teamarbeit zweier Zahntechnikerinnen vor weichgezeichnetem Laborhintergrund" loading="lazy"></div>
+      <span class="g-side">02 · PRÄZISE TEAMARBEIT</span>
+      <div class="g-label"><span class="gl-num">02</span><span class="gl-name">Präzise Teamarbeit</span></div>
     </div>
 
     <div class="g-panel">
-      <div class="g-ph">
-        <svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8.5 7l1.2-2.4h4.6L15.5 7"/><circle cx="12" cy="13.5" r="3.5"/></svg>
-      </div>
-      <span class="g-side">03 · BILDMOTIV</span>
-      <div class="g-label"><span class="gl-num">03</span><span class="gl-name">Bildmotiv</span></div>
+      <div class="g-ph"><img src="assets/about/gallery-03-0271.webp" alt="Manuelle Ausarbeitung einer dentalen Restauration" loading="lazy" style="--gallery-position: center 58%;"></div>
+      <span class="g-side">03 · HANDARBEIT</span>
+      <div class="g-label"><span class="gl-num">03</span><span class="gl-name">Manuelle Ausarbeitung</span></div>
     </div>
 
     <div class="g-panel">
-      <div class="g-ph">
-        <svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8.5 7l1.2-2.4h4.6L15.5 7"/><circle cx="12" cy="13.5" r="3.5"/></svg>
-      </div>
-      <span class="g-side">04 · BILDMOTIV</span>
-      <div class="g-label"><span class="gl-num">04</span><span class="gl-name">Bildmotiv</span></div>
+      <div class="g-ph"><img src="assets/about/gallery-04-0322.webp" alt="Sorgfältige Feinausarbeitung einer Zahnrestauration" loading="lazy" style="--gallery-position: center 62%;"></div>
+      <span class="g-side">04 · FEINAUSARBEITUNG</span>
+      <div class="g-label"><span class="gl-num">04</span><span class="gl-name">Feinausarbeitung</span></div>
     </div>
 
     <div class="g-panel">
-      <div class="g-ph">
-        <svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8.5 7l1.2-2.4h4.6L15.5 7"/><circle cx="12" cy="13.5" r="3.5"/></svg>
-      </div>
-      <span class="g-side">05 · BILDMOTIV</span>
-      <div class="g-label"><span class="gl-num">05</span><span class="gl-name">Bildmotiv</span></div>
+      <div class="g-ph"><img src="assets/about/gallery-05-0547.webp" alt="Sandstrahlen einer dentalen Restauration" loading="lazy" style="--gallery-position: center 48%;"></div>
+      <span class="g-side">05 · SANDSTRAHLEN</span>
+      <div class="g-label"><span class="gl-num">05</span><span class="gl-name">Sandstrahlen</span></div>
+    </div>
+
+    <div class="g-panel">
+      <div class="g-ph"><img src="assets/about/gallery-06-1593.webp" alt="Prüfung einer Restauration unter Vergrößerung" loading="lazy"></div>
+      <span class="g-side">06 · VERGRÖSSERUNG</span>
+      <div class="g-label"><span class="gl-num">06</span><span class="gl-name">Arbeit unter Vergrößerung</span></div>
+    </div>
+
+    <div class="g-panel">
+      <div class="g-ph"><img src="assets/about/gallery-07-1144.webp" alt="Präziser zahntechnischer Arbeitsschritt am Labortisch" loading="lazy" style="--gallery-position: center 48%;"></div>
+      <span class="g-side">07 · PRÄZISIONSARBEIT</span>
+      <div class="g-label"><span class="gl-num">07</span><span class="gl-name">Präzisionsarbeit</span></div>
+    </div>
+
+    <div class="g-panel">
+      <div class="g-ph"><img src="assets/about/gallery-08-1085.webp" alt="Zahnfarbbestimmung anhand eines digitalen Patientenfotos" loading="lazy"></div>
+      <span class="g-side">08 · ZAHNFARBE</span>
+      <div class="g-label"><span class="gl-num">08</span><span class="gl-name">Zahnfarbbestimmung</span></div>
+    </div>
+
+    <div class="g-panel">
+      <div class="g-ph"><img src="assets/about/gallery-09-0266.webp" alt="Zahntechnische Handinstrumente am Arbeitsplatz" loading="lazy" style="--gallery-position: center 42%;"></div>
+      <span class="g-side">09 · INSTRUMENTE</span>
+      <div class="g-label"><span class="gl-num">09</span><span class="gl-name">Unsere Instrumente</span></div>
+    </div>
+
+    <div class="g-panel">
+      <div class="g-ph"><img src="assets/about/gallery-10-0213.webp" alt="Individuelle Charakterisierung einer dentalen Restauration" loading="lazy" style="--gallery-position: center 58%;"></div>
+      <span class="g-side">10 · CHARAKTERISIERUNG</span>
+      <div class="g-label"><span class="gl-num">10</span><span class="gl-name">Individuelle Charakterisierung</span></div>
+    </div>
+
+    <div class="g-panel">
+      <div class="g-ph"><img src="assets/about/gallery-11-0115.webp" alt="Zahntechnische Detailarbeit für eine natürliche Zahnfarbe" loading="lazy"></div>
+      <span class="g-side">11 · DETAILARBEIT</span>
+      <div class="g-label"><span class="gl-num">11</span><span class="gl-name">Detailarbeit</span></div>
     </div>
 
   </div>
