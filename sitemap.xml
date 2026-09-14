@@ -98,6 +98,18 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://rhalmaibusiness-blip.github.io/bridge-dental/cad-cam-technologie.html"/>
   </url>
   <url>
+    <loc>https://rhalmaibusiness-blip.github.io/bridge-dental/galerie.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://rhalmaibusiness-blip.github.io/bridge-dental/galerie.html"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://rhalmaibusiness-blip.github.io/bridge-dental/hu/galeria.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rhalmaibusiness-blip.github.io/bridge-dental/galerie.html"/>
+  </url>
+  <url>
+    <loc>https://rhalmaibusiness-blip.github.io/bridge-dental/hu/galeria.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://rhalmaibusiness-blip.github.io/bridge-dental/galerie.html"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://rhalmaibusiness-blip.github.io/bridge-dental/hu/galeria.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rhalmaibusiness-blip.github.io/bridge-dental/galerie.html"/>
+  </url>
+  <url>
     <loc>https://rhalmaibusiness-blip.github.io/bridge-dental/referenzen.html</loc>
     <xhtml:link rel="alternate" hreflang="de" href="https://rhalmaibusiness-blip.github.io/bridge-dental/referenzen.html"/>
     <xhtml:link rel="alternate" hreflang="hu" href="https://rhalmaibusiness-blip.github.io/bridge-dental/hu/referenciak.html"/>

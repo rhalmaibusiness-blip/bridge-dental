@@ -22,6 +22,7 @@ PAIRS = {
     "digitaler-workflow.html": "hu/digitalis-tervezes.html",
     "metallfreie-keramikrestaurationen.html": "hu/esztetikai-keramia.html",
     "cad-cam-technologie.html": "hu/digitalis-fogtechnika.html",
+    "galerie.html": "hu/galeria.html",
     "referenzen.html": "hu/referenciak.html",
     "kontakt.html": "hu/kapcsolat.html",
     "impressum.html": "hu/impresszum.html",
@@ -247,6 +248,39 @@ def validate_workorder_links(errors: list[str]) -> None:
         print(f"Work-order preview links: {counts['de']} German, {counts['hu']} Hungarian")
 
 
+def validate_gallery(errors: list[str]) -> None:
+    expected_names = {f"photo-{index:03d}.webp" for index in range(1, 68)}
+    for variant in ("thumb-480", "thumb-960", "full"):
+        directory = ROOT / "assets" / "gallery" / variant
+        actual_names = {path.name for path in directory.glob("*.webp")} if directory.is_dir() else set()
+        if actual_names != expected_names:
+            errors.append(
+                f"assets/gallery/{variant}: expected 67 numbered WebP files, found {len(actual_names)}"
+            )
+
+    gallery_script = ROOT / "assets" / "gallery-page.js"
+    if not gallery_script.is_file():
+        errors.append("assets/gallery-page.js: missing")
+    else:
+        item_count = len(re.findall(r"^\s*\[\d+,\d+,'", gallery_script.read_text(encoding="utf-8"), re.MULTILINE))
+        if item_count != 67:
+            errors.append(f"assets/gallery-page.js: expected 67 photo records, found {item_count}")
+
+    for language, pages, gallery_path in (
+        ("de", PAIRS.keys(), "galerie.html"),
+        ("hu", PAIRS.values(), "hu/galeria.html"),
+    ):
+        for path in pages:
+            if path.endswith("egyuttmukodes/index.html") or path.endswith("zusammenarbeit/index.html"):
+                continue
+            html = (ROOT / path).read_text(encoding="utf-8")
+            parser = PageParser()
+            parser.feed(html)
+            gallery_target = (ROOT / gallery_path).resolve()
+            if not any(local_target(path, link.get("href", "")) == gallery_target for link in parser.links):
+                errors.append(f"{path}: missing {language} gallery navigation link")
+
+
 def main() -> None:
     errors: list[str] = []
     for de_path, hu_path in PAIRS.items():
@@ -255,6 +289,7 @@ def main() -> None:
     validate_redirects(errors)
     validate_sitemap(errors)
     validate_workorder_links(errors)
+    validate_gallery(errors)
     if errors:
         print("\n".join(f"ERROR: {error}" for error in errors))
         raise SystemExit(1)

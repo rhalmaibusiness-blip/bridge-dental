@@ -16,6 +16,7 @@ PAIRS = [
     ("digitaler-workflow.html", "hu/digitalis-tervezes.html"),
     ("metallfreie-keramikrestaurationen.html", "hu/esztetikai-keramia.html"),
     ("cad-cam-technologie.html", "hu/digitalis-fogtechnika.html"),
+    ("galerie.html", "hu/galeria.html"),
     ("referenzen.html", "hu/referenciak.html"),
     ("kontakt.html", "hu/kapcsolat.html"),
     ("impressum.html", "hu/impresszum.html"),
