@@ -1,5 +1,5 @@
 (() => {
-  const photos = [
+  const photoCatalog = [
     [1620,1080,'Feine Charakterisierung einer Frontzahnrestauration','Frontfog-restauráció finom karakterizálása'],
     [1080,1620,'Detailarbeit an einer mehrgliedrigen Keramikrestauration','Többtagú kerámiarestauráció részletgazdag kidolgozása'],
     [1620,1080,'Manuelle Oberflächenbearbeitung einer Zahnrestauration','Fogtechnikai restauráció kézi felszínkidolgozása'],
@@ -69,10 +69,19 @@
     [1620,1080,'Voll bestückte Druckplattform mit Dentalmodellen','Fogtechnikai modellekkel megtöltött nyomtatótálca']
   ];
 
+  // Egyetlen kép marad minden hasonló sorozatból; a portrék nem kerülnek a galériába.
+  const visiblePhotoIds = [
+    1, 3, 4, 5, 6, 7, 8, 10, 11, 16, 18, 19, 20, 21, 22, 23, 24,
+    27, 28, 29, 33, 34, 35, 36, 38, 42, 43, 45, 47, 53, 54, 55, 56,
+    58, 59, 60, 61, 62, 63, 66, 67
+  ];
+  const photos = visiblePhotoIds.map((id) => [id, ...photoCatalog[id - 1]]);
+
   const body = document.body;
   const lang = body.dataset.lang === 'hu' ? 'hu' : 'de';
   const assetRoot = body.dataset.galleryRoot || 'assets/gallery';
   const grid = document.getElementById('galleryGrid');
+  const galleryCount = document.querySelector('.gallery-count');
   const lightbox = document.getElementById('galleryLightbox');
   const lightboxImage = document.getElementById('lightboxImage');
   const lightboxCaption = document.getElementById('lightboxCaption');
@@ -85,11 +94,21 @@
   let pointerStartX = null;
 
   const strings = lang === 'hu'
-    ? { open: 'Kép nagyítása', counter: (current) => `${current} / ${photos.length}` }
-    : { open: 'Bild vergrößern', counter: (current) => `${current} / ${photos.length}` };
+    ? {
+        open: 'Kép nagyítása',
+        counter: (current) => `${current} / ${photos.length}`,
+        count: `${photos.length} pillanat a laborunkból`
+      }
+    : {
+        open: 'Bild vergrößern',
+        counter: (current) => `${current} / ${photos.length}`,
+        count: `${photos.length} Aufnahmen aus unserem Labor`
+      };
 
-  const fileFor = (index, size) => `${assetRoot}/${size}/photo-${String(index + 1).padStart(3, '0')}.webp`;
-  const captionFor = (index) => photos[index][lang === 'hu' ? 3 : 2];
+  const fileFor = (index, size) => `${assetRoot}/${size}/photo-${String(photos[index][0]).padStart(3, '0')}.webp`;
+  const captionFor = (index) => photos[index][lang === 'hu' ? 4 : 3];
+
+  if (galleryCount) galleryCount.textContent = strings.count;
 
   photos.forEach((photo, index) => {
     const button = document.createElement('button');
@@ -103,13 +122,37 @@
     image.srcset = `${fileFor(index, 'thumb-480')} 480w, ${fileFor(index, 'thumb-960')} 960w`;
     image.sizes = '(max-width: 420px) 100vw, (max-width: 760px) 50vw, (max-width: 1120px) 33vw, 25vw';
     image.alt = captionFor(index);
-    image.width = photo[0];
-    image.height = photo[1];
+    image.width = photo[1];
+    image.height = photo[2];
     image.decoding = 'async';
     image.loading = index < 6 ? 'eager' : 'lazy';
     button.append(image);
     grid.append(button);
   });
+
+  const layoutGrid = () => {
+    const gridStyles = window.getComputedStyle(grid);
+    const columns = gridStyles.gridTemplateColumns.split(' ').filter(Boolean).length || 1;
+    const rowHeight = Number.parseFloat(gridStyles.gridAutoRows) || 1;
+    const gap = Number.parseFloat(gridStyles.rowGap) || 0;
+    const columnWidth = (grid.clientWidth - gap * (columns - 1)) / columns;
+
+    grid.querySelectorAll('.gallery-item').forEach((item, index) => {
+      const photo = photos[index];
+      const imageHeight = columnWidth * (photo[2] / photo[1]);
+      const span = Math.ceil((imageHeight + gap) / (rowHeight + gap));
+      const nextValue = `span ${span}`;
+      if (item.style.gridRowEnd !== nextValue) item.style.gridRowEnd = nextValue;
+    });
+  };
+
+  let layoutFrame = 0;
+  const scheduleGridLayout = () => {
+    window.cancelAnimationFrame(layoutFrame);
+    layoutFrame = window.requestAnimationFrame(layoutGrid);
+  };
+  scheduleGridLayout();
+  window.addEventListener('resize', scheduleGridLayout, { passive: true });
 
   const setActivePhoto = (index) => {
     activeIndex = (index + photos.length) % photos.length;
