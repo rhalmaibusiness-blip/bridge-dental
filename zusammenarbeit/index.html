@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Bridge Dental | Laborpartnerschaft für Praxen in Deutschland und der Schweiz</title>
-  <meta name="description" content="Bridge Dental als Laborpartner für Zahnarztpraxen in Deutschland und der Schweiz: Pilot-Zusammenarbeit, fachliche Betreuung auf Deutsch und organisierte Logistik.">
+  <meta name="description" content="Laborpartnerschaft für Zahnarztpraxen in Deutschland und der Schweiz: digitale Fertigung im eigenen Labor, fachliche Abstimmung auf Deutsch, Pilotprojekt und organisierte internationale Logistik.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -621,6 +621,14 @@
       line-height: 1.65;
     }
 
+    .pilot-bullets strong {
+      display: block;
+      margin-bottom: 2px;
+      color: #fff;
+      font-family: "Montserrat", sans-serif;
+      font-weight: 900;
+    }
+
     .pilot-bullets li::before {
       content: "";
       position: absolute;
@@ -636,7 +644,7 @@
 
     .pilot-side {
       display: grid;
-      grid-template-rows: 1fr auto;
+      grid-template-rows: auto auto auto;
       justify-items: center;
       gap: 14px;
       min-height: 100%;
@@ -645,6 +653,36 @@
       background: rgba(255, 255, 255, 0.04);
       border: 1px solid rgba(255, 255, 255, 0.08);
       backdrop-filter: blur(10px);
+    }
+
+    .pilot-risk {
+      width: min(100%, 380px);
+      padding: 20px;
+      border-radius: 18px;
+      border: 1px solid rgba(240, 122, 75, 0.42);
+      background: rgba(224, 90, 43, 0.12);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    }
+
+    .pilot-risk h3 {
+      margin: 0 0 12px;
+      color: #fff;
+      font-size: 17px;
+      line-height: 1.35;
+      font-weight: 900;
+    }
+
+    .pilot-risk p {
+      margin: 0;
+      color: rgba(255, 255, 255, 0.78);
+      font-size: 13px;
+      line-height: 1.65;
+    }
+
+    .pilot-risk p + p {
+      margin-top: 10px;
+      color: rgba(255, 255, 255, 0.58);
+      font-size: 12px;
     }
 
     .pilot-cta {
@@ -737,7 +775,7 @@
 
     .fit-grid {
       display: grid;
-      grid-template-columns: repeat(5, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       gap: 14px;
     }
 
@@ -754,6 +792,13 @@
       height: 26px;
       color: var(--coral);
       margin-bottom: 22px;
+    }
+
+    .fit-card h3 {
+      margin: 0 0 10px;
+      font-size: 16px;
+      line-height: 1.4;
+      font-weight: 900;
     }
 
     .fit-card p {
@@ -889,8 +934,10 @@
       margin-bottom: 10px;
       color: var(--coral);
       font-family: "Montserrat", sans-serif;
-      font-size: 30px;
+      font-size: clamp(18px, 1.8vw, 25px);
+      line-height: 1.08;
       font-weight: 900;
+      overflow-wrap: anywhere;
     }
 
     .proof-image {
@@ -1008,6 +1055,37 @@
       line-height: 1;
       color: rgba(224, 90, 43, 0.14);
       pointer-events: none;
+    }
+
+    .testimonial-logo-frame {
+      position: relative;
+      z-index: 1;
+      width: min(230px, calc(100% - 54px));
+      height: 72px;
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .testimonial-logo-frame img {
+      display: block;
+      width: auto;
+      max-width: 100%;
+      max-height: 68px;
+      object-fit: contain;
+    }
+
+    .testimonial-logo-frame.logo-campus {
+      width: 170px;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .testimonial-logo-frame.logo-campus img {
+      width: 72px;
+      max-width: none;
+      max-height: none;
+      transform: rotate(90deg);
     }
 
     .testimonial-text {
@@ -1138,6 +1216,7 @@
 
     .form-side h2 {
       margin-bottom: 22px;
+      font-size: clamp(28px, 2.35vw, 35px);
     }
 
     .form-side .section-copy {
@@ -1155,6 +1234,76 @@
       color: var(--warm-gray);
       font-size: 14px;
       font-weight: 700;
+    }
+
+    .contact-people {
+      margin-top: 30px;
+    }
+
+    .contact-people-title {
+      margin: 0 0 14px;
+      font-size: 17px;
+      line-height: 1.35;
+      font-weight: 900;
+    }
+
+    .contact-person-grid {
+      display: grid;
+      gap: 12px;
+    }
+
+    .contact-person {
+      display: grid;
+      grid-template-columns: 82px minmax(0, 1fr);
+      min-height: 126px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: #fffaf5;
+      box-shadow: 0 12px 32px rgba(28, 25, 22, 0.07);
+    }
+
+    .contact-person-photo {
+      overflow: hidden;
+      background: #e7dfd6;
+    }
+
+    .contact-person-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 50% 24%;
+    }
+
+    .contact-person-copy {
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 16px 14px;
+    }
+
+    .contact-person-name {
+      margin: 0 0 5px;
+      font-size: 14px;
+      line-height: 1.3;
+      font-weight: 900;
+    }
+
+    .contact-person-role {
+      margin: 0 0 10px;
+      color: var(--warm-gray);
+      font-size: 11px;
+      line-height: 1.4;
+      font-weight: 700;
+    }
+
+    .contact-person-phone {
+      width: fit-content;
+      color: var(--coral);
+      font-size: 12px;
+      line-height: 1.35;
+      font-weight: 900;
     }
 
     form {
@@ -1276,6 +1425,42 @@
 
     details ul li + li {
       margin-top: 6px;
+    }
+
+    .faq-subdetails {
+      margin-top: 18px;
+      padding: 0;
+      border: 0;
+      background: transparent;
+    }
+
+    .faq-subdetails summary {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 14px 16px;
+      border: 1px solid rgba(224, 90, 43, 0.22);
+      border-radius: 8px;
+      background: rgba(224, 90, 43, 0.07);
+      color: var(--charcoal-2);
+      font-size: 13px;
+    }
+
+    .faq-subdetails summary::after {
+      content: "+";
+      flex: 0 0 auto;
+      color: var(--coral);
+      font-size: 20px;
+      line-height: 1;
+    }
+
+    .faq-subdetails[open] summary::after {
+      content: "−";
+    }
+
+    .faq-subdetails-body {
+      padding: 0 4px 2px;
     }
 
     .faq-center {
@@ -1402,6 +1587,9 @@
       }
       .form-side {
         position: static;
+      }
+      .contact-person-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
     }
 
@@ -1536,6 +1724,9 @@
       .testimonial-text {
         font-size: 16px;
       }
+      .contact-person-grid {
+        grid-template-columns: 1fr;
+      }
       .footer-inner {
         align-items: flex-start;
         flex-direction: column;
@@ -1577,7 +1768,7 @@
             <span class="h1-line">für komplexe Fälle in</span>
             <span class="h1-line">Deutschland und der Schweiz.</span>
           </h1>
-          <p class="hero-lead">All-on-X, implantatgetragene Zirkonoxidarbeiten, e.max-Restaurationen und digitale Prothesen – mit eigener Fertigung, deutschsprachiger fachlicher Betreuung und organisierter europäischer Logistik.</p>
+          <p class="hero-lead">Implantologische und ästhetische Restaurationen – digital im eigenen Labor gefertigt, mit fachlicher Abstimmung auf Deutsch und organisierter internationaler Logistik.</p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="#urlap">Partnerschaftsberatung anfragen</a>
             <a class="btn btn-ghost" href="#szolgaltatasok">Leistungen ansehen</a>
@@ -1589,8 +1780,8 @@
               <svg viewBox="0 0 24 24"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/><path d="M8 9h8"/><path d="M8 13h5"/></svg>
             </div>
             <div>
-              <strong>Beratung auf Deutsch</strong>
-              <span>Fachliche Abstimmung bei komplexen Fällen</span>
+              <strong>Fachliche Abstimmung auf Deutsch</strong>
+              <span>Direkte fachliche Kommunikation bei komplexen Fällen</span>
             </div>
           </div>
           <div class="trust-item">
@@ -1598,7 +1789,7 @@
               <svg viewBox="0 0 24 24"><path d="M3 21h18"/><path d="M5 21V9l5 3V9l5 3V7h4v14"/><path d="M9 17h1"/><path d="M14 17h1"/></svg>
             </div>
             <div>
-              <strong>Eigene Produktion</strong>
+              <strong>Digitale Fertigung im eigenen Labor</strong>
               <span>Dokumentierter digitaler Workflow ohne Subunternehmerkette</span>
             </div>
           </div>
@@ -1607,8 +1798,8 @@
               <svg viewBox="0 0 24 24"><path d="M3 7h11v10H3z"/><path d="M14 10h4l3 3v4h-7z"/><circle cx="7" cy="19" r="2"/><circle cx="17" cy="19" r="2"/></svg>
             </div>
             <div>
-              <strong>EU-Logistik</strong>
-              <span>Organisierter Hin- und Rückversand für Praxen in CH und DE</span>
+              <strong>Internationale Logistik</strong>
+              <span>Organisierter Hin- und Rückversand nach Deutschland und in die Schweiz</span>
             </div>
           </div>
           <div class="trust-item">
@@ -1616,7 +1807,7 @@
               <svg viewBox="0 0 24 24"><path d="M12 3 20 7v5c0 5-3.4 8.2-8 9-4.6-.8-8-4-8-9V7z"/><path d="m8.5 12.5 2.2 2.2 4.8-5"/></svg>
             </div>
             <div>
-              <strong>5 Jahre Gewährleistung</strong>
+              <strong>5 Jahre Garantie</strong>
               <span>Material- und Konstruktionsgarantie für Implantatarbeiten</span>
             </div>
           </div>
@@ -1629,13 +1820,9 @@
         <div class="section-head reveal">
           <div>
             <div class="label">Herausforderungen einer grenzüberschreitenden Laborpartnerschaft</div>
-            <h2>
-              <span class="h2-line">Bei komplexen Fällen</span>
-              <span class="h2-line">entscheidet mehr als</span>
-              <span class="h2-line">die Qualität des Zahnersatzes.</span>
-            </h2>
+            <h2>Bei komplexen Fällen reicht guter Zahnersatz allein nicht aus.</h2>
           </div>
-          <p class="section-copy">Für eine Praxis in Deutschland oder der Schweiz ist die Wahl eines Laborpartners keine reine Einkaufsentscheidung. Bei komplexen Implantat- und Digitalfällen sind Kommunikation, Termintreue, Scanqualität, Logistik und klare Verantwortlichkeiten ebenso entscheidend wie die fertige Restauration.</p>
+          <p class="section-copy">Ein Laborpartner im Ausland funktioniert für eine Praxis in Deutschland oder der Schweiz nur dann gut, wenn nicht allein die zahntechnische Qualität planbar ist. Auch die fachliche Kommunikation, Termine, der digitale Datenaustausch und die Logistik müssen zuverlässig funktionieren.</p>
         </div>
 
         <div class="problem-grid">
@@ -1646,26 +1833,26 @@
             <div class="tension-item reveal">
               <span>01</span>
               <div>
-                <h3>Missverständnisse in der fachlichen Kommunikation</h3>
-                <p>Bei komplexen Fällen können missverständliche Scandaten, unvollständige Informationen oder verspätete Rückmeldungen den gesamten Workflow ausbremsen.</p>
+                <h3>Fachliche Kommunikation</h3>
+                <p>Bei komplexen Fällen können eine fehlende Information, missverständlich interpretierte Scandaten oder eine verspätete Rückmeldung den gesamten Workflow zum Stillstand bringen.</p>
               </div>
             </div>
             <div class="tension-item reveal">
               <span>02</span>
               <div>
-                <h3>Unsichere grenzüberschreitende Logistik</h3>
-                <p>Wenn unklar ist, wann die Arbeit im Labor eintrifft, wann sie zurückkommt und wer den Transport koordiniert, wird die Patientenplanung unnötig erschwert.</p>
+                <h3>Grenzüberschreitende Logistik</h3>
+                <p>Die Praxis muss genau wissen, wie die Arbeit ins Labor gelangt, wann sie zurückkommt und wer die Organisation des Transports übernimmt.</p>
               </div>
             </div>
             <div class="tension-item reveal">
               <span>03</span>
               <div>
-                <h3>Fragmentierte Verantwortung</h3>
-                <p>Bei Implantat- und Full-Arch-Versorgungen entstehen Risiken, wenn Fertigung, Dokumentation, Reparatur und Gewährleistung auf mehrere Beteiligte verteilt sind.</p>
+                <h3>Klare Verantwortung</h3>
+                <p>Gerade bei implantatgetragenen und vollbogigen Versorgungen muss eindeutig geregelt sein, wer für Planung, Fertigung, Dokumentation, Korrekturen und Garantie verantwortlich ist.</p>
               </div>
             </div>
             <div class="cta-row reveal">
-              <p class="solution-note">Die Antwort von Bridge Dental: eigene Fertigung, fachliche Beratung auf Deutsch und organisierte europäische Logistik in einem abgestimmten Prozess.</p>
+              <p class="solution-note">Deshalb sind fachliche Abstimmung, eigene Fertigung und internationale Logistik bei Bridge Dental Bestandteile eines einzigen, klar organisierten Ablaufs.</p>
             </div>
             <div class="cta-row reveal">
               <a class="btn btn-primary" href="#folyamat">So funktioniert die Zusammenarbeit</a>
@@ -1680,25 +1867,25 @@
         <div class="section-head reveal" style="margin-bottom: 34px;">
           <div>
             <div class="label">Die Lösung von Bridge Dental</div>
-            <h2>So bleibt die Zusammenarbeit über Ländergrenzen hinweg kontrollierbar.</h2>
+            <h2>Ein Partner. Ein Prozess. Klare Verantwortung.</h2>
           </div>
-          <p class="section-copy">Bridge Dental bietet nicht nur Fertigungskapazität, sondern einen abgestimmten Partnerprozess: fachliche Beratung, digitale Konstruktion, Fertigung, Dokumentation und Logistik aus einer Hand.</p>
+          <p class="section-copy">Von der fachlichen Abstimmung über die digitale Planung und Fertigung bis zur Auslieferung koordinieren wir den gesamten Ablauf. So ist auch bei komplexen Fällen jederzeit klar, an wen Sie sich wenden können, wie weit die Arbeit fortgeschritten ist und wer den nächsten Schritt verantwortet.</p>
         </div>
         <div class="solution-grid reveal">
           <div class="solution-item">
             <b>01</b>
-            <h3>Professionelle Kommunikation auf Deutsch</h3>
-            <p>Ein fester Zahntechniker begleitet komplexe Arbeiten mit Scan-Feedback und digitaler Fallberatung.</p>
+            <h3>Direkte fachliche Kommunikation auf Deutsch</h3>
+            <p>Sie stimmen sich nicht mit einem allgemeinen Kundenservice ab. Ein fest zugeordneter, deutschsprachiger Zahntechniker begleitet Ihren Fall, prüft die eingehenden Daten und steht Ihnen bei Bedarf für eine digitale Fallberatung zur Verfügung.</p>
           </div>
           <div class="solution-item">
             <b>02</b>
-            <h3>Eigene, dokumentierte digitale Produktion</h3>
-            <p>Exocad-basiertes Design, CNC-Fräs- und 3D-Druckkapazität, nachvollziehbarer Produktionsprozess ohne Subunternehmerkette.</p>
+            <h3>Kontrollierte digitale Fertigung im eigenen Labor</h3>
+            <p>Digitale Planung, CNC-Fräsen und 3D-Druck erfolgen in unserem eigenen Labor. Der Fertigungsprozess ist dokumentiert und rückverfolgbar, sodass die Verantwortung nicht auf mehrere externe Beteiligte verteilt ist.</p>
           </div>
           <div class="solution-item">
             <b>03</b>
             <h3>Organisierte internationale Logistik</h3>
-            <p>Organisierter Hin- und Rückversand für Praxen in Deutschland und der Schweiz – mit planbarem Ablauf und klarer Kommunikation.</p>
+            <p>Den Hin- und Rückversand zwischen unserem Labor und Praxen in Deutschland und der Schweiz organisieren wir für Sie. Ihre Praxis benötigt keinen eigenen Logistikprozess, um mit uns zusammenzuarbeiten.</p>
           </div>
         </div>
         <div class="solution-cta reveal">
@@ -1711,31 +1898,32 @@
       <div class="shell">
         <div class="section-head reveal">
           <div>
-            <div class="label">DOKUMENTIERTER BETRIEB</div>
-            <h2>Bridge Dental verfügt über einen belegbaren fachlichen Hintergrund.</h2>
+            <div class="label">FACHLICHER HINTERGRUND</div>
+            <h2>Vertrauen braucht mehr als Versprechen.</h2>
           </div>
+          <p class="section-copy">Bei der Wahl eines langfristigen Laborpartners sind fachlicher Hintergrund, ein stabiles Team und klar übernommene Verantwortung mindestens so wichtig wie die eingesetzte Technologie.</p>
         </div>
         <div class="proof-grid">
           <div class="proof-cards">
             <div class="proof-card reveal">
-              <strong>ICDE</strong>
-              <h3>Internationale Fachpartnerschaft</h3>
-              <p>Internationale Partnerschaft für digitale Prothetik und kontinuierlichen Wissenstransfer.</p>
+              <strong>IVOCLAR ACADEMY PARTNER</strong>
+              <h3>Offizielle Fachpartnerschaft</h3>
+              <p>Bridge Dental ist Partner der Ivoclar Academy in Ungarn und profitiert von einem internationalen fachlichen und Fortbildungsnetzwerk.</p>
             </div>
             <div class="proof-card reveal">
-              <strong>HDA</strong>
-              <h3>Ausgezeichnete Laborqualität</h3>
-              <p>Hungarian Dental Awards für herausragende zahntechnische Leistungen.</p>
+              <strong>HUNGARIAN DENTAL AWARDS</strong>
+              <h3>Ausgezeichnete fachliche Leistung</h3>
+              <p>Fachliche Auszeichnung für die zahntechnische Arbeit von Bridge Dental.</p>
             </div>
             <div class="proof-card reveal">
               <strong>25+ Mitarbeitende</strong>
-              <h3>Eigenes Team</h3>
-              <p>Eigenes Laborteam mit internen Qualitätskontrollen.</p>
+              <h3>Eigenes Laborteam</h3>
+              <p>Planung, Fertigung und Qualitätskontrolle erfolgen durch unser eigenes Team und unter interner fachlicher Kontrolle.</p>
             </div>
             <div class="proof-card reveal">
               <strong>5 Jahre</strong>
-              <h3>5 Jahre Gewährleistung</h3>
-              <p>Material- und Konstruktionsgarantie für Implantatarbeiten.</p>
+              <h3>Garantie auf implantatgetragene Arbeiten</h3>
+              <p>Fünf Jahre Material- und Konstruktionsgarantie bei sachgerechter klinischer Anwendung.</p>
             </div>
           </div>
           <div class="proof-image reveal">
@@ -1752,23 +1940,30 @@
       <div class="shell">
         <div class="section-head reveal">
           <div>
-            <div class="label">Partner-Feedback</div>
-            <h2>Was sagen Partnerpraxen über uns?</h2>
+            <div class="label">LANGJÄHRIGE PARTNERSCHAFTEN</div>
+            <h2>Das beste Feedback: eine Zusammenarbeit, die über Jahre hinweg überzeugt.</h2>
           </div>
-          <p class="section-copy">Stimmen aus Praxen, für die transparente Abläufe und verlässliche Zusammenarbeit entscheidend sind.</p>
+          <p class="section-copy">Erfahrungen unserer Partnerpraxen in Deutschland und Österreich aus der täglichen Zusammenarbeit mit Bridge Dental.</p>
         </div>
         <div class="testimonial-grid">
           <article class="testimonial-card reveal">
+            <div class="testimonial-logo-frame">
+              <img src="../assets/reviews/dr-benedict-beirer.webp" alt="Logo der Praxis Dr. med. dent. Benedict Beirer">
+            </div>
             <div class="testimonial-text">
               <p>Wir sind seit über einem Jahrzehnt mit der Arbeit zufrieden. Qualität und Ästhetik stimmen <span>zu 100 %</span>.</p>
               <p>Die Kommunikation mit dem Labor läuft reibungslos und es gibt selbst bei komplexeren Arbeiten immer ein Top-Ergebnis!</p>
             </div>
             <div class="testimonial-meta">
               <strong>Dr. Benedict Beirer</strong>
+              <span>Leobersdorf</span>
             </div>
           </article>
 
           <article class="testimonial-card reveal">
+            <div class="testimonial-logo-frame">
+              <img src="../assets/reviews/dr-benedict-beirer.webp" alt="Logo der Praxis Dr. med. dent. Benedict Beirer">
+            </div>
             <div class="testimonial-text">
               <p>Super zuverlässiges Labor mit konstant hoher Qualität. Die Arbeiten passen hervorragend, werden pünktlich geliefert und sind ästhetisch einfach spitze.</p>
               <p>Vielen Dank für die professionelle Zusammenarbeit!</p>
@@ -1780,6 +1975,9 @@
           </article>
 
           <article class="testimonial-card reveal">
+            <div class="testimonial-logo-frame">
+              <img src="../assets/reviews/zahnaerzte-implantatzentrum.svg" alt="Logo Zahnärzte und Implantatzentrum">
+            </div>
             <div class="testimonial-text">
               <p>Wir arbeiten sehr erfolgreich mit dem zahntechnischen Labor Bridge Dental aus Budapest zusammen.</p>
               <p>Besonders hervorzuheben sind die hervorragenden Zirkonoxid- und Keramikarbeiten, die durch hohe Passgenauigkeit und Ästhetik überzeugen.</p>
@@ -1794,10 +1992,14 @@
             <div class="testimonial-meta">
               <strong>Dr. Maximilian Konz M.Sc.</strong>
               <span>Spezialist für Ästhetik und rekonstruktive Zahnmedizin</span>
+              <span>Unterschleißheim</span>
             </div>
           </article>
 
           <article class="testimonial-card reveal">
+            <div class="testimonial-logo-frame logo-campus">
+              <img src="../assets/reviews/implantologie-campus.png" alt="Logo Implantologie Campus, Dr. Hermanns und Kollegen">
+            </div>
             <div class="testimonial-text">
               <p>Wir arbeiten sehr gerne mit dem zahntechnischen Labor Bridge Dental zusammen und schätzen die Zusammenarbeit sehr.</p>
               <p>Besonders hervorheben möchten wir die zuverlässige und professionelle Arbeitsweise des Labors.</p>
@@ -1813,6 +2015,7 @@
             <button class="testimonial-toggle" type="button" aria-expanded="false">Mehr lesen</button>
             <div class="testimonial-meta">
               <strong>Dr. Christopher Hermanns</strong>
+              <span>Unterschleißheim</span>
             </div>
           </article>
         </div>
@@ -1824,32 +2027,38 @@
         <div class="pilot-panel reveal">
           <div class="pilot-copy">
             <div class="label">Pilot-Zusammenarbeit</div>
-            <h2>Testen Sie die Zusammenarbeit in einer Pilotphase.</h2>
-            <p class="section-copy" style="margin-top: 22px;">Der Pilot ist eine achtwöchige, risikoreduzierte Testphase. Auf diese Weise können Sie sehen, wie wir kommunizieren, wie wir Fälle planen, welche Qualität wir produzieren und wie wir mit den Problemen umgehen, die in einem realen Arbeitsprozess auftreten.</p>
+            <h2>Entscheiden Sie nicht nach Versprechen. Testen Sie die Zusammenarbeit anhand realer Fälle.</h2>
+            <p class="section-copy" style="margin-top: 22px;">Die Wahl eines neuen Laborpartners ist eine Vertrauensentscheidung. Deshalb erwarten wir nicht, dass Sie sich bereits nach dem ersten Gespräch langfristig festlegen.</p>
+            <p class="section-copy" style="margin-top: 12px;">Im achtwöchigen Pilotprojekt erleben Sie anhand von drei bis fünf realen Fällen, wie fachliche Kommunikation, digitale Planung, Fertigung, Problemlösung und internationale Logistik bei uns zusammenspielen.</p>
             <ul class="pilot-bullets">
-              <li>Fachliche Abstimmung auf Deutsch mit einem festen Zahntechniker</li>
-              <li>Digitale Fallberatung und Scanprüfung für komplexe Aufträge</li>
-              <li>Schnelle Korrektur oder Wiederholung bei Bedarf</li>
-              <li>Organisierte Rundlauflogistik für Schweizer und deutsche Kliniken</li>
+              <li><strong>Fachliche Abstimmung auf Deutsch</strong>Direkte Kommunikation mit einem fest zugeordneten Zahntechniker.</li>
+              <li><strong>Digitale Fallberatung</strong>Bei komplexen Arbeiten prüfen wir die eingehenden Daten und stimmen uns bei Bedarf vor Fertigungsbeginn mit Ihnen ab.</li>
+              <li><strong>Korrekturen und Problemlösung</strong>Wenn eine Änderung erforderlich ist, reagieren wir zügig und korrigieren oder fertigen die Arbeit bei Bedarf neu.</li>
+              <li><strong>Organisierte Logistik für CH und DE</strong>Wir übernehmen die Organisation des Hin- und Rückversands.</li>
             </ul>
           </div>
           <div class="pilot-side">
+            <div class="pilot-risk">
+              <h3>Im Pilotzeitraum übernehmen wir einen Teil des Risikos</h3>
+              <p>Tritt während des Pilotprojekts aufgrund eines nachweisbaren Laborfehlers eine Situation ein, die einen erneuten Patiententermin erforderlich macht, korrigieren oder fertigen wir die Arbeit neu. Zusätzlich erhalten Sie eine Gutschrift in Höhe von 150 € als Ausgleich für den zusätzlichen Behandlungsaufwand, die mit der nächsten technischen Rechnung verrechnet wird.</p>
+              <p>Diese Zusage gilt ausschließlich für Arbeiten aus dem achtwöchigen Pilotprojekt und gemäß den Pilotbedingungen.</p>
+            </div>
             <div class="pilot-meta" aria-label="Zusammenfassung des Piloten">
               <div class="pilot-chip">
                 <strong>8 Wochen</strong>
-                Testphase
+                Pilotzeitraum
               </div>
               <div class="pilot-chip">
-                <strong>3-5</strong>
-                reale Fälle
+                <strong>3–5 Fälle</strong>
+                reale klinische Arbeiten
               </div>
               <div class="pilot-chip">
                 <strong>DE</strong>
-                Betreuung auf Deutsch
+                fachliche Kommunikation
               </div>
               <div class="pilot-chip">
                 <strong>CH / DE</strong>
-                Logistik
+                organisierte Logistik
               </div>
             </div>
             <a class="btn btn-primary pilot-cta" href="#urlap">Pilotberatung anfragen</a>
@@ -1862,57 +2071,66 @@
       <div class="shell">
         <div class="section-head reveal">
           <div>
-            <div class="label">Unsere Leistungen</div>
-            <h2>Unsere wichtigsten Leistungen im Überblick.</h2>
+            <div class="label">Unsere Fachgebiete</div>
+            <h2>Worin wir wirklich zu Hause sind.</h2>
           </div>
-          <p class="section-copy">Diese Leistungen betreffen Arbeiten, bei denen ein verlässlicher Prozess ebenso wichtig ist wie das Endergebnis.</p>
+          <p class="section-copy">Unsere Fachgebiete reichen von der komplexen Implantologie bis zur digitalen Ästhetik.</p>
         </div>
         <div class="services-grid">
-          <article class="service-card reveal">
+          <a class="service-card reveal" href="../all-on-x-rehabilitationen.html">
             <img src="../assets/full-arch-implantatumos-rehabilitacio-all-on-x.webp" alt="Rehabilitation des gesamten Zahnbogens mit Implantaten">
             <div>
-              <small>Unsere Hauptspezialität</small>
+              <small>01 · Hauptspezialität</small>
               <h3>All-on-X-Rehabilitationen</h3>
-              <p>All-on-X-Rehabilitationen, implantatgetragene Zirkonoxidkronen und -brücken sowie Full-Arch-Restaurationen.</p>
-              <a class="service-card-cta" href="#urlap">Leistung anfragen</a>
+              <p>Die All-on-X-Lösungen von Bridge Dental unterstützen die Rehabilitation des gesamten Zahnbogens mit digitaler Planung und präziser Laborarbeit für ein planbares, ästhetisches und stabiles Endergebnis.</p>
+              <span class="service-card-cta">Mehr erfahren</span>
             </div>
-          </article>
-          <article class="service-card reveal">
-            <img src="../assets/esztetikai-keramia-potlasok-labor-ellenorzes.webp" alt="Metallfreie Keramikrestaurationen mit Laborkontrolle">
+          </a>
+          <a class="service-card reveal" href="../implantatgetragene-zirkonoxidrestaurationen.html">
+            <img src="../szolgaltatasok_fem_es_cirkonvaz.jpg" alt="Präzise manuelle Bearbeitung von Implantat-Zirkonoxidrestaurationen">
             <div>
-              <small>Ästhetik</small>
-              <h3>Metallfreie Keramikrestaurationen</h3>
-              <p>Ivoclar e.max Presskeramik und monolithisches Zirkonoxid für natürlich wirkende, ästhetisch anspruchsvolle Versorgungen.</p>
-              <a class="service-card-cta" href="#urlap">Leistung anfragen</a>
+              <small>02</small>
+              <h3>Implantatgetragene Zirkonoxidrestaurationen</h3>
+              <p>Implantatgetragene Zirkonoxidrestaurationen von Bridge Dental unterstützen Praxen mit digitaler Präzision und modernen Multilayer-Materialien. Unsere monolithischen Full-Contour-Lösungen verbinden natürliche Ästhetik, präzise Passung und langfristige Stabilität.</p>
+              <span class="service-card-cta">Mehr erfahren</span>
             </div>
-          </article>
-          <article class="service-card reveal">
-            <img src="../assets/dsc_6882.jpg" alt="Arbeit im digitalen Prothesenlabor">
+          </a>
+          <a class="service-card reveal" href="../truedent-digitale-prothesen.html">
+            <img src="../assets/home/service-truedent.webp" alt="Vollfarbige monolithische Zahnprothese im 3D-Drucker">
             <div>
-              <small>Neuheit</small>
+              <small>03 · Neuheit</small>
               <h3>TrueDent – vollfarbige, monolithische digitale Prothesen</h3>
-              <p>Biokompatible, vollfarbige und monolithische 3D-gedruckte Prothesen mit Stratasys TrueDent.</p>
-              <a class="service-card-cta" href="#urlap">Leistung anfragen</a>
+              <p>Digitaler Zahnersatz vereint die Vorteile moderner CAD/CAM-Konstruktion und präzisen 3D-Drucks mit traditioneller zahntechnischer Kompetenz. So entsteht planbarer, ästhetischer und langfristig zuverlässiger herausnehmbarer Zahnersatz.</p>
+              <span class="service-card-cta">Mehr erfahren</span>
             </div>
-          </article>
-          <article class="service-card reveal">
-            <img src="../assets/bridge-dental-kuldetes-fogtechnikai-labor.webp" alt="Digitales Design von Bridge Dental">
+          </a>
+          <a class="service-card reveal" href="../digitaler-workflow.html">
+            <img src="../assets/home/service-digital-workflow.webp" alt="Digital geplante implantatgetragene Restauration auf einem Monitor">
             <div>
-              <small>Digitaler Workflow</small>
+              <small>04</small>
               <h3>Digitaler Workflow</h3>
-              <p>CAD-basiertes virtuelles 3D-Design, Bestimmung des Emergenzprofils und der Okklusionsverhältnisse vor der Produktion.</p>
-              <a class="service-card-cta" href="#urlap">Leistung anfragen</a>
+              <p>Der Wert des digitalen Workflows in unserem Labor liegt im präzisen Informationsaustausch, der durchdachten Planung und der koordinierten Zusammenarbeit zwischen Praxis und Labor. Jeder Schritt trägt dazu bei, Restaurationen planbar, präzise und auf hohem ästhetischem Niveau zu fertigen.</p>
+              <span class="service-card-cta">Mehr erfahren</span>
             </div>
-          </article>
-          <article class="service-card reveal">
-            <img src="../assets/digitalis-fogtechnika-labor-munkafolyamat.webp" alt="Arbeitsablauf im Labor für digitale Zahntechnik">
+          </a>
+          <a class="service-card reveal" href="../metallfreie-keramikrestaurationen.html">
+            <img src="../esztetikai-keramia-potlasok-labor-ellenorzes.webp" alt="Präzise Laborinspektion metallfreier Keramikrestaurationen mit der Lupe">
             <div>
-              <small>Digitale Fertigung</small>
-              <h3>CAD/CAM-Technologie</h3>
-              <p>Kompletter digitaler Workflow vom Scan bis zur CAM-Produktion, kontrolliert, dokumentiert und nachvollziehbar.</p>
-              <a class="service-card-cta" href="#urlap">Leistung anfragen</a>
+              <small>05</small>
+              <h3>Metallfreie Keramikrestaurationen</h3>
+              <p>Metallfreie Keramikrestaurationen vereinen natürliche Ästhetik, präzise Passung und langfristige Zuverlässigkeit. Der digitale Workflow, hochwertige Keramikmaterialien und die individuelle Charakterisierung ermöglichen eine harmonische Integration in das natürliche Gebiss.</p>
+              <span class="service-card-cta">Mehr erfahren</span>
             </div>
-          </article>
+          </a>
+          <a class="service-card reveal" href="../cad-cam-technologie.html">
+            <img src="../assets/home/service-cad-cam.webp" alt="CAD/CAM-Fräsanlage im Bridge Dental Labor">
+            <div>
+              <small>06</small>
+              <h3>CAD/CAM-Technologie</h3>
+              <p>Hochpräzise CAD/CAM-Technologie ermöglicht die präzise und reproduzierbare Fertigung digital konstruierter Restaurationen. Der kontrollierte Workflow unterstützt gleichbleibende Qualität, präzise Passung und planbare Ergebnisse.</p>
+              <span class="service-card-cta">Mehr erfahren</span>
+            </div>
+          </a>
         </div>
       </div>
     </section>
@@ -1922,30 +2140,30 @@
         <div class="section-head reveal">
           <div>
             <div class="label">So läuft die Zusammenarbeit ab</div>
-            <h2>Vorhersehbare Zusammenarbeit vom ersten Fall an.</h2>
+            <h2>Planbare Zusammenarbeit vom ersten Fall an.</h2>
           </div>
-          <p class="section-copy">Jeder Schritt – vom ersten Kontakt über die Pilotphase bis zur langfristigen Zusammenarbeit – dient einem transparenten, planbaren Ablauf in Ihrer Praxis.</p>
+          <p class="section-copy">Vom ersten Gespräch über die Pilotphase bis zur langfristigen Partnerschaft arbeiten wir nach einem klar definierten Ablauf.</p>
         </div>
         <div class="process-line">
           <div class="process-step reveal">
-            <h3>Kontaktaufnahme und Bedarfsermittlung</h3>
-            <p>Wir lernen die Arbeitsarten, den digitalen Workflow, das Scansystem und die Logistikanforderungen der Praxis kennen.</p>
+            <h3>Erstes fachliches Gespräch</h3>
+            <p>Wir lernen die Arbeitsschwerpunkte Ihrer Praxis, den digitalen Workflow, das Scansystem und die Anforderungen an die Logistik kennen. Gemeinsam wählen wir die ersten Pilotfälle aus.</p>
           </div>
           <div class="process-step reveal">
-            <h3>Pilot-Zusammenarbeit mit 3–5 Fällen</h3>
-            <p>Bei komplexeren Implantatarbeiten empfehlen wir eine risikoreduzierte Pilotphase mit persönlicher fachlicher Begleitung.</p>
+            <h3>Achtwöchiger Pilot · 3–5 reale Fälle</h3>
+            <p>Wir beginnen mit drei bis fünf ausgewählten Fällen. So erleben Sie Kommunikation, Planung, Fertigungsqualität und Logistik im realen Arbeitsablauf.</p>
           </div>
           <div class="process-step reveal">
-            <h3>Fallkoordination auf Deutsch</h3>
-            <p>Wir unterstützen Entscheidungen mit einem engagierten Zahntechniker, Exocad-basierter Designberatung und Online-Fallbesprechung.</p>
+            <h3>Fallübergabe und fachliche Abstimmung</h3>
+            <p>Wir prüfen die eingehenden digitalen Daten und alle erforderlichen Informationen. Bei komplexen Fällen sind vor Fertigungsbeginn eine direkte fachliche Abstimmung und eine digitale Fallberatung möglich.</p>
           </div>
           <div class="process-step reveal">
-            <h3>Eigene digitale Produktion</h3>
-            <p>Die Fertigung erfolgt mit eigener CNC-Fräs- und 3D-Druckkapazität, ohne Subunternehmer und mit dokumentierter Qualitätssicherung.</p>
+            <h3>Planung, Fertigung und Qualitätskontrolle</h3>
+            <p>Digitale Planung und Fertigung erfolgen in unserem eigenen Labor. Die Arbeit durchläuft an festgelegten Punkten des Fertigungsprozesses fachliche Kontrollen.</p>
           </div>
           <div class="process-step reveal">
-            <h3>Qualitätskontrolle, Lieferung und Feedback</h3>
-            <p>Nach der Qualitätskontrolle senden wir die fertige Arbeit über die organisierte europäische Logistik zurück und geben bei Bedarf fachliches Feedback.</p>
+            <h3>Versand und Feedback</h3>
+            <p>Nach der Qualitätskontrolle senden wir die fertige Arbeit über unsere organisierte internationale Logistik zurück. Die Erfahrungen aus den ersten Fällen werten wir gemeinsam aus und schaffen damit die Grundlage für die langfristige Zusammenarbeit.</p>
           </div>
         </div>
         <div class="cta-row reveal">
@@ -1959,30 +2177,30 @@
       <div class="shell">
         <div class="section-head reveal">
           <div>
-            <h2 style="max-width: 520px; font-size: clamp(24px, 2.1vw, 34px);">Für wen ist Bridge Dental ideal?</h2>
+            <h2 style="max-width: 520px; font-size: clamp(24px, 2.1vw, 34px);">Für wen ist Bridge Dental der richtige Partner?</h2>
           </div>
-          <p class="section-copy">Praxen, bei denen der Laborpartner zum Praxisbetrieb passen muss.</p>
+          <p class="section-copy">Am besten arbeiten wir mit Praxen zusammen, für die das Dentallabor nicht nur Lieferant, sondern aktiver fachlicher Partner im klinischen Workflow ist.</p>
         </div>
         <div class="fit-grid">
           <div class="fit-card reveal">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20"/><path d="M5 7h14"/><path d="M7 21h10"/><path d="m3 7 4 8 4-8"/><path d="m13 7 4 8 4-8"/></svg>
-            <p>Für Praxen in Deutschland oder der Schweiz, die einen verlässlichen internationalen Laborpartner suchen.</p>
-          </div>
-          <div class="fit-card reveal">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 2 8l10 5 10-5-10-5Z"/><path d="m2 16 10 5 10-5"/><path d="m2 12 10 5 10-5"/></svg>
-            <p>Für Praxen, die Implantologie und vollständige Zahnbogenrestaurationen durchführen.</p>
+            <h3>Praxen mit Implantologie und Full-Arch-Versorgungen</h3>
+            <p>Für Teams, die regelmäßig implantatgetragene Kronen, Brücken oder komplexe vollbogige Rehabilitationen versorgen.</p>
           </div>
           <div class="fit-card reveal">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="14" x="3" y="4" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg>
-            <p>Für Teams, die mit digitalen Abformungen und CAD/CAM-Workflows arbeiten.</p>
+            <h3>Digital arbeitende Praxen</h3>
+            <p>Für Praxen, in denen Intraoralscans, digitaler Datenaustausch und die Vorabstimmung von Fällen zum täglichen Workflow gehören.</p>
           </div>
           <div class="fit-card reveal">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a4 4 0 0 1-4 4H7l-4 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/></svg>
-            <p>Für Praxen, in denen fachliche Kommunikation auf Deutsch wichtig ist.</p>
+            <h3>Teams mit komplexen Fällen</h3>
+            <p>Wenn es wichtig ist, dass das Labor die eingehenden Daten vor der Fertigung prüft und sich bei Bedarf fachlich mit der Praxis abstimmt.</p>
           </div>
           <div class="fit-card reveal">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h11v10H3z"/><path d="M14 10h4l3 3v4h-7z"/><circle cx="7" cy="19" r="2"/><circle cx="17" cy="19" r="2"/></svg>
-            <p>Für Praxen, in denen ein planbarer Ablauf und verlässliche Liefertermine entscheidend sind.</p>
+            <h3>Praxen auf der Suche nach einem langfristigen Laborpartner</h3>
+            <p>Wenn neben zahntechnischer Qualität auch Kommunikation, planbare Abläufe und zuverlässige Logistik entscheidend sind.</p>
           </div>
         </div>
       </div>
@@ -1998,67 +2216,49 @@
         </div>
         <div class="faq-grid faq-grid-center">
           <details class="reveal">
-            <summary>Wie können wir die Zusammenarbeit mit geringem Risiko testen?</summary>
-            <p>Für komplexere Implantatarbeiten empfehlen wir eine achtwöchige Pilot-Zusammenarbeit mit 3–5 Fällen.</p>
-            <p>So bewerten Sie die Zusammenarbeit nicht anhand eines Versprechens, sondern in einem realen gemeinsamen Prozess:</p>
-            <ul>
-              <li>die Kommunikation</li>
-              <li>das Design</li>
-              <li>die Fertigungsqualität</li>
-              <li>Problemmanagement</li>
-            </ul>
+            <summary>Wie können wir die Zusammenarbeit ohne langfristige Bindung testen?</summary>
+            <p>Für komplexere Implantatarbeiten bieten wir ein achtwöchiges Pilotprojekt mit drei bis fünf realen Fällen an.</p>
+            <p>So entscheiden Sie nicht auf Grundlage einer einzigen Probearbeit: Sie erleben fachliche Kommunikation, Planungsablauf, Fertigungsqualität, Problemlösung und Logistik anhand realer Fälle.</p>
           </details>
           <details class="reveal">
-            <summary>Wie unterscheidet sich Bridge Dental von einem herkömmlichen Dentallabor?</summary>
-            <p>Wir fertigen nicht nur Zahnersatz: Wir denken als klinischer Partner.</p>
-            <p>Wir unterstützen die Arbeit der Klinik mit:</p>
-            <ul>
-              <li>digitale Konstruktionsberatung</li>
-              <li>Feedback zu Scandaten und Passung</li>
-              <li>einem dokumentierten Fertigungsprozess</li>
-            </ul>
-          </details>
-          <details class="reveal">
-            <summary>Mit welchen digitalen Systemen können wir arbeiten?</summary>
-            <p>Wir arbeiten mit digitalem Design auf Basis von Exocad.</p>
-            <p>Wir können Dateien von mehreren Intraoralscannern erhalten, zum Beispiel:</p>
-            <ul>
-              <li>iTero</li>
-              <li>TRIOS</li>
-              <li>Medit</li>
-              <li>Shining 3D</li>
-            </ul>
+            <summary>Mit welchen digitalen Systemen können wir zusammenarbeiten?</summary>
+            <p>Wir arbeiten mit Exocad-basierten Planungssystemen und verarbeiten Dateien aus den gängigen offenen digitalen Workflows, unter anderem von iTero, TRIOS, Medit und Shining.</p>
+            <p>Zu Beginn der Zusammenarbeit unterstützen wir Ihre Praxis außerdem bei der Einrichtung des digitalen Datentransfers.</p>
           </details>
           <details class="reveal">
             <summary>Wo ist der Hauptsitz des Bridge Dental-Labors?</summary>
             <p>Unser Labor befindet sich in Budapest, Ungarn. Die Adresse unseres Zentrums lautet: 1106 Budapest, Fehér út 10. Gebäude 26, 2. Stock.</p>
           </details>
           <details class="reveal">
-            <summary>Welche Gewährleistung bieten Sie für Implantatarbeiten?</summary>
-            <p>Wir bieten eine 5-jährige Material- und Konstruktionsgarantie für Implantatarbeiten bei bestimmungsgemäßem klinischem Einsatz.</p>
-            <p>Der Produktionsprozess wird dokumentiert und ist von der Materialcharge bis zum verantwortlichen Zahntechniker rückverfolgbar.</p>
+            <summary>Welche Garantie gilt für implantatgetragene Arbeiten?</summary>
+            <p>Für implantatgetragene Arbeiten gewähren wir bei sachgerechter klinischer Anwendung fünf Jahre Material- und Konstruktionsgarantie. Der Fertigungsprozess ist dokumentiert und rückverfolgbar.</p>
           </details>
           <details class="reveal">
-            <summary>Was geschieht, wenn ein Patient aufgrund eines nachgewiesenen Laborfehlers erneut einbestellt werden muss?</summary>
-            <p>Muss die Praxis einen Patienten aufgrund eines nachgewiesenen Laborfehlers erneut einbestellen, korrigieren wir nicht nur die Arbeit: Zusätzlich schreiben wir 150 € als pauschalen Ausgleich für die Behandlungszeit auf das zahntechnische Honorar der nächsten Arbeit gut.</p>
-            <p>Nicht von der Garantie abgedeckt:</p>
-            <ul>
-              <li>unzureichende Präparation, wenn wir zuvor darauf hingewiesen haben und die Fertigung dennoch auf Wunsch der Praxis erfolgte</li>
-              <li>unzureichende Platzverhältnisse, wenn wir zuvor darauf hingewiesen haben und die Fertigung dennoch auf Wunsch der Praxis erfolgte</li>
-              <li>fehlerhafte Abformung oder Scandaten, wenn wir zuvor darauf hingewiesen haben und die Fertigung dennoch auf Wunsch der Praxis erfolgte</li>
-              <li>fehlerhafte Befestigung</li>
-              <li>nicht vorhersehbare Parafunktionen wie Bruxismus</li>
-            </ul>
+            <summary>Was geschieht, wenn während des Pilotprojekts aufgrund eines Laborfehlers ein erneuter Patiententermin erforderlich wird?</summary>
+            <p>Führt während des Pilotzeitraums ein nachweisbarer Laborfehler zu einem Passungsproblem und muss der Patient deshalb erneut in die Praxis kommen, korrigieren oder fertigen wir die Arbeit neu. Zusätzlich erhalten Sie eine Gutschrift in Höhe von 150 € als Ausgleich für den zusätzlichen Behandlungsaufwand, die mit der technischen Gebühr der nächsten Arbeit verrechnet wird.</p>
+            <p>Diese Zusage gilt ausschließlich für Arbeiten aus dem Pilotzeitraum und gemäß den Pilotbedingungen.</p>
+            <details class="faq-subdetails">
+              <summary>Ausführliche Bedingungen der Gutschrift</summary>
+              <div class="faq-subdetails-body">
+                <p>Nicht von der Garantie umfasst sind:</p>
+                <ul>
+                  <li>unzureichende Präparation, wenn wir vorab darauf hingewiesen haben und die Arbeit auf Wunsch des Behandlers dennoch gefertigt wurde</li>
+                  <li>unzureichende Platzverhältnisse, wenn wir vorab darauf hingewiesen haben und die Arbeit auf Wunsch des Behandlers dennoch gefertigt wurde</li>
+                  <li>unzureichende Abformung oder Scandaten, wenn wir vorab darauf hingewiesen haben und die Arbeit auf Wunsch des Behandlers dennoch gefertigt wurde</li>
+                  <li>Fehler bei der Befestigung</li>
+                  <li>vorab nicht mitgeteilte Parafunktionen, zum Beispiel Bruxismus</li>
+                </ul>
+              </div>
+            </details>
           </details>
           <details class="reveal">
-            <summary>Wie funktioniert der Logistikservice für Praxen in Deutschland und der Schweiz?</summary>
-            <p>Für unsere Schweizer und deutschen Partner organisieren wir den gesamten Hin- und Rücktransport.</p>
-            <p>Wenn Sie eine Abholung bis 14:00 Uhr anmelden, organisieren wir die Abholung noch am selben Werktag. Die Praxis muss die Arbeit lediglich verpacken und den per E-Mail zugesandten Versandschein ausdrucken.</p>
-            <p>Wir versenden mit FedEx Express. Wird eine Abformung oder Arbeit beispielsweise am Montag abgeholt, trifft sie per 24-Stunden-Express in der Regel bis Dienstagmittag bei uns ein.</p>
+            <summary>Wie funktioniert die Logistik für Praxen in Deutschland und der Schweiz?</summary>
+            <p>Wir organisieren den kompletten Hin- und Rückversand. Wird die Abholung bis 14 Uhr angemeldet, veranlassen wir den Transport; die Praxis muss die Arbeit lediglich verpacken und den per E-Mail zugesandten Versandbeleg ausdrucken.</p>
+            <p>Wir versenden mit FedEx Express. Eine am Montag aufgegebene Arbeit trifft in der Regel bis Dienstagmittag in unserem Budapester Labor ein.</p>
           </details>
           <details class="reveal">
-            <summary>Erhalten wir professionelle Unterstützung auf Deutsch?</summary>
-            <p>Ja. Ihnen steht ein fester deutschsprachiger Zahntechniker als direkter Ansprechpartner zur Verfügung. Für komplexe Fälle bieten wir zusätzlich eine digitale Konstruktionsberatung online an.</p>
+            <summary>Ist eine fachliche Abstimmung auf Deutsch möglich?</summary>
+            <p>Ja. Ihre Praxis stimmt sich mit einem fest zugeordneten, deutschsprachigen Zahntechniker ab und nicht lediglich über die allgemeine Kontaktadresse des Labors. Bei komplexen Fällen bieten wir außerdem eine digitale Online-Fallberatung an.</p>
           </details>
         </div>
         <div class="cta-row reveal">
@@ -2071,7 +2271,32 @@
       <div class="shell form-grid">
         <div class="form-side reveal">
           <div class="label">Kontaktaufnahme</div>
-          <h2>Starten wir die Zusammenarbeit.</h2>
+          <h2>Lassen Sie uns über die Möglichkeiten einer Zusammenarbeit sprechen.</h2>
+          <section class="contact-people" aria-labelledby="contactPeopleTitle">
+            <h3 class="contact-people-title" id="contactPeopleTitle">Direkte Ansprechpartner</h3>
+            <div class="contact-person-grid">
+              <article class="contact-person">
+                <div class="contact-person-photo">
+                  <img src="../assets/contact/attila-kinal.webp" alt="Attila Kínál, fachliche Kommunikation" width="900" height="1350">
+                </div>
+                <div class="contact-person-copy">
+                  <h4 class="contact-person-name">Attila Kínál</h4>
+                  <p class="contact-person-role">Fachliche Kommunikation</p>
+                  <a class="contact-person-phone" href="tel:+36703966653" aria-label="Attila Kínál anrufen: +36 70 39 666 53">+36 70 39 666 53</a>
+                </div>
+              </article>
+              <article class="contact-person">
+                <div class="contact-person-photo">
+                  <img src="../assets/contact/hedi-csaszarne-demeter.webp" alt="Hédi Császárné Demeter, Büroleitung" width="900" height="1350" loading="lazy">
+                </div>
+                <div class="contact-person-copy">
+                  <h4 class="contact-person-name">Hédi Császárné Demeter</h4>
+                  <p class="contact-person-role">Büroleitung</p>
+                  <a class="contact-person-phone" href="tel:+36703966654" aria-label="Hédi Császárné Demeter anrufen: +36 70 39 666 54">+36 70 39 666 54</a>
+                </div>
+              </article>
+            </div>
+          </section>
           <div class="contact-mini">
             <a href="mailto:info@bridgedental.hu">info@bridgedental.hu</a>
             <a href="tel:+36703966653">+36 / (70) 396 6653</a>
@@ -2116,6 +2341,7 @@
             <select id="interest" name="interest" required>
               <option value="" selected disabled>Wählen Sie einen Dienst</option>
               <option>All-on-X-Rehabilitationen</option>
+              <option>Implantatgetragene Zirkonoxidrestaurationen</option>
               <option>Metallfreie Keramikrestaurationen</option>
               <option>TrueDent – vollfarbige, monolithische digitale Prothesen</option>
               <option>Digitaler Workflow</option>
@@ -2146,7 +2372,7 @@
 
     <section class="final-cta">
       <div class="shell reveal">
-        <h2>Starten wir die Zusammenarbeit.</h2>
+        <h2>Lassen Sie uns über die Möglichkeiten einer Zusammenarbeit sprechen.</h2>
         <p>Wenn Ihre Praxis auf der Suche nach einem zuverlässigen, gut organisierten Laborpartner für komplexe Arbeiten ist, kann das erste Beratungsgespräch ein guter Ausgangspunkt sein.</p>
         <a class="btn btn-primary" href="#urlap">Erstgespräch anfragen</a>
       </div>
@@ -2176,7 +2402,7 @@
 
     document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
 
-    const faqItems = document.querySelectorAll("#gyik details");
+    const faqItems = document.querySelectorAll("#gyik .faq-grid > details");
     faqItems.forEach((item) => {
       item.open = false;
     });

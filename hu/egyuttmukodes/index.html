@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Bridge Dental | Laborpartner német és svájci rendelőknek</title>
-  <meta name="description" content="Laborpartneri együttműködés német és svájci fogorvosi rendelőknek: pilot program, német nyelvű szakmai támogatás és szervezett európai logisztika.">
+  <meta name="description" content="Együttműködés német és svájci fogorvosi rendelőknek: saját digitális gyártás, német nyelvű szakmai egyeztetés, pilotprogram és szervezett nemzetközi logisztika.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -621,6 +621,14 @@
       line-height: 1.65;
     }
 
+    .pilot-bullets strong {
+      display: block;
+      margin-bottom: 2px;
+      color: #fff;
+      font-family: "Montserrat", sans-serif;
+      font-weight: 900;
+    }
+
     .pilot-bullets li::before {
       content: "";
       position: absolute;
@@ -636,7 +644,7 @@
 
     .pilot-side {
       display: grid;
-      grid-template-rows: 1fr auto;
+      grid-template-rows: auto auto auto;
       justify-items: center;
       gap: 14px;
       min-height: 100%;
@@ -645,6 +653,36 @@
       background: rgba(255, 255, 255, 0.04);
       border: 1px solid rgba(255, 255, 255, 0.08);
       backdrop-filter: blur(10px);
+    }
+
+    .pilot-risk {
+      width: min(100%, 380px);
+      padding: 20px;
+      border-radius: 18px;
+      border: 1px solid rgba(240, 122, 75, 0.42);
+      background: rgba(224, 90, 43, 0.12);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    }
+
+    .pilot-risk h3 {
+      margin: 0 0 12px;
+      color: #fff;
+      font-size: 17px;
+      line-height: 1.35;
+      font-weight: 900;
+    }
+
+    .pilot-risk p {
+      margin: 0;
+      color: rgba(255, 255, 255, 0.78);
+      font-size: 13px;
+      line-height: 1.65;
+    }
+
+    .pilot-risk p + p {
+      margin-top: 10px;
+      color: rgba(255, 255, 255, 0.58);
+      font-size: 12px;
     }
 
     .pilot-cta {
@@ -737,7 +775,7 @@
 
     .fit-grid {
       display: grid;
-      grid-template-columns: repeat(5, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       gap: 14px;
     }
 
@@ -754,6 +792,13 @@
       height: 26px;
       color: var(--coral);
       margin-bottom: 22px;
+    }
+
+    .fit-card h3 {
+      margin: 0 0 10px;
+      font-size: 16px;
+      line-height: 1.4;
+      font-weight: 900;
     }
 
     .fit-card p {
@@ -889,8 +934,10 @@
       margin-bottom: 10px;
       color: var(--coral);
       font-family: "Montserrat", sans-serif;
-      font-size: 30px;
+      font-size: clamp(18px, 1.8vw, 25px);
+      line-height: 1.08;
       font-weight: 900;
+      overflow-wrap: anywhere;
     }
 
     .proof-image {
@@ -1008,6 +1055,37 @@
       line-height: 1;
       color: rgba(224, 90, 43, 0.14);
       pointer-events: none;
+    }
+
+    .testimonial-logo-frame {
+      position: relative;
+      z-index: 1;
+      width: min(230px, calc(100% - 54px));
+      height: 72px;
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .testimonial-logo-frame img {
+      display: block;
+      width: auto;
+      max-width: 100%;
+      max-height: 68px;
+      object-fit: contain;
+    }
+
+    .testimonial-logo-frame.logo-campus {
+      width: 170px;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .testimonial-logo-frame.logo-campus img {
+      width: 72px;
+      max-width: none;
+      max-height: none;
+      transform: rotate(90deg);
     }
 
     .testimonial-text {
@@ -1157,6 +1235,76 @@
       font-weight: 700;
     }
 
+    .contact-people {
+      margin-top: 30px;
+    }
+
+    .contact-people-title {
+      margin: 0 0 14px;
+      font-size: 17px;
+      line-height: 1.35;
+      font-weight: 900;
+    }
+
+    .contact-person-grid {
+      display: grid;
+      gap: 12px;
+    }
+
+    .contact-person {
+      display: grid;
+      grid-template-columns: 82px minmax(0, 1fr);
+      min-height: 126px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: #fffaf5;
+      box-shadow: 0 12px 32px rgba(28, 25, 22, 0.07);
+    }
+
+    .contact-person-photo {
+      overflow: hidden;
+      background: #e7dfd6;
+    }
+
+    .contact-person-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 50% 24%;
+    }
+
+    .contact-person-copy {
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 16px 14px;
+    }
+
+    .contact-person-name {
+      margin: 0 0 5px;
+      font-size: 14px;
+      line-height: 1.3;
+      font-weight: 900;
+    }
+
+    .contact-person-role {
+      margin: 0 0 10px;
+      color: var(--warm-gray);
+      font-size: 11px;
+      line-height: 1.4;
+      font-weight: 700;
+    }
+
+    .contact-person-phone {
+      width: fit-content;
+      color: var(--coral);
+      font-size: 12px;
+      line-height: 1.35;
+      font-weight: 900;
+    }
+
     form {
       padding: 34px;
       background: #fffaf5;
@@ -1276,6 +1424,42 @@
 
     details ul li + li {
       margin-top: 6px;
+    }
+
+    .faq-subdetails {
+      margin-top: 18px;
+      padding: 0;
+      border: 0;
+      background: transparent;
+    }
+
+    .faq-subdetails summary {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 14px 16px;
+      border: 1px solid rgba(224, 90, 43, 0.22);
+      border-radius: 8px;
+      background: rgba(224, 90, 43, 0.07);
+      color: var(--charcoal-2);
+      font-size: 13px;
+    }
+
+    .faq-subdetails summary::after {
+      content: "+";
+      flex: 0 0 auto;
+      color: var(--coral);
+      font-size: 20px;
+      line-height: 1;
+    }
+
+    .faq-subdetails[open] summary::after {
+      content: "−";
+    }
+
+    .faq-subdetails-body {
+      padding: 0 4px 2px;
     }
 
     .faq-center {
@@ -1402,6 +1586,9 @@
       }
       .form-side {
         position: static;
+      }
+      .contact-person-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
     }
 
@@ -1536,6 +1723,9 @@
       .testimonial-text {
         font-size: 16px;
       }
+      .contact-person-grid {
+        grid-template-columns: 1fr;
+      }
       .footer-inner {
         align-items: flex-start;
         flex-direction: column;
@@ -1578,7 +1768,7 @@
             <span class="h1-line">rendelők komplex</span>
             <span class="h1-line">eseteihez</span>
           </h1>
-          <p class="hero-lead">All-on-X rehabilitációk, implantátumos cirkóniumrestaurációk, e.max pótlások és digitális fogsorok: házon belüli gyártással, német nyelvű szakmai támogatással és szervezett európai logisztikával.</p>
+          <p class="hero-lead">Implantológiai és esztétikai restaurációk saját digitális gyártással, német nyelvű szakmai egyeztetéssel és szervezett nemzetközi logisztikával.</p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="#urlap">Partneri egyeztetést kérek</a>
             <a class="btn btn-ghost" href="#szolgaltatasok">Megnézem a szolgáltatásokat</a>
@@ -1608,8 +1798,8 @@
               <svg viewBox="0 0 24 24"><path d="M3 7h11v10H3z"/><path d="M14 10h4l3 3v4h-7z"/><circle cx="7" cy="19" r="2"/><circle cx="17" cy="19" r="2"/></svg>
             </div>
             <div>
-              <strong>EU logisztika</strong>
-              <span>szervezett oda-vissza szállítás CH/DE rendelőknek</span>
+              <strong>Nemzetközi logisztika</strong>
+              <span>Szervezett oda-vissza szállítás Németországba és Svájcba</span>
             </div>
           </div>
           <div class="trust-item">
@@ -1630,13 +1820,9 @@
         <div class="section-head reveal">
           <div>
           <div class="label">A külföldi laborpartnerrel való együttműködés kihívásai</div>
-            <h2>
-              <span class="h2-line">Komplex eseteknél</span>
-              <span class="h2-line">nem csak a fogpótlás</span>
-              <span class="h2-line">minősége dönt.</span>
-            </h2>
+            <h2>Komplex eseteknél a jó fogpótlás önmagában nem elég.</h2>
           </div>
-          <p class="section-copy">Egy svájci vagy német rendelő számára a laborpartner kiválasztása több, mint beszerzési döntés. Komplex implantátumos és digitális esetekben a szakmai kommunikáció, a határidők, a szkennelési adatok minősége, a logisztika és a felelősségi körök éppúgy meghatározzák az együttműködés sikerét, mint az elkészült fogpótlás minősége.</p>
+          <p class="section-copy">Egy svájci vagy német rendelő számára egy külföldi laborpartner akkor működik jól, ha nemcsak a fogtechnikai minőség kiszámítható. A szakmai kommunikációnak, a határidőknek, a digitális adatátadásnak és a logisztikának is megbízhatóan kell működnie.</p>
         </div>
 
         <div class="problem-grid">
@@ -1647,26 +1833,26 @@
             <div class="tension-item reveal">
               <span>01</span>
               <div>
-                <h3>Elcsúszó szakmai kommunikáció</h3>
-                <p>Komplex esetekben egy hibásan értelmezett szkennelési adat, a hiányos információ vagy a késői visszajelzés az egész munkafolyamatot megakaszthatja.</p>
+                <h3>Szakmai kommunikáció</h3>
+                <p>Komplex eseteknél egy hiányzó információ, félreértett szkennelési adat vagy késői visszajelzés az egész munkafolyamatot megakaszthatja.</p>
               </div>
             </div>
             <div class="tension-item reveal">
               <span>02</span>
               <div>
-                <h3>Bizonytalan határon túli logisztika</h3>
-                <p>Ha nem egyértelmű, mikor kerül be a munka a laborba, mikor indul vissza, és ki kezeli a szállítást, a rendelő nehezen tud tervezni a pácienssel.</p>
+                <h3>Határon túli logisztika</h3>
+                <p>A rendelőnek pontosan tudnia kell, hogyan jut el a munka a laborba, mikor érkezik vissza, és ki felel a szállítás megszervezéséért.</p>
               </div>
             </div>
             <div class="tension-item reveal">
               <span>03</span>
               <div>
-                <h3>Széttöredezett felelősség</h3>
-                <p>Implantátumos és teljes íves eseteknél kockázatot jelent, ha a gyártás, a dokumentáció, a javítás és a garancia több szereplő között oszlik meg.</p>
+                <h3>Egyértelmű felelősség</h3>
+                <p>Implantátumos és teljes íves eseteknél különösen fontos, hogy a tervezés, a gyártás, a dokumentáció, a korrekció és a garancia felelőssége egyértelmű legyen.</p>
               </div>
             </div>
             <div class="cta-row reveal">
-              <p class="solution-note">A Bridge Dental válasza: saját gyártás, német nyelvű szakmai egyeztetés és szervezett európai logisztika egy folyamatban.</p>
+              <p class="solution-note">Ezért a Bridge Dentalnál a szakmai egyeztetés, a saját gyártás és a nemzetközi logisztika egyetlen szervezett folyamat része.</p>
             </div>
             <div class="cta-row reveal">
               <a class="btn btn-primary" href="#folyamat">Megnézem, hogyan működik</a>
@@ -1681,25 +1867,25 @@
         <div class="section-head reveal" style="margin-bottom: 34px;">
           <div>
             <div class="label">A Bridge Dental megoldása</div>
-          <h2>Így tesszük kiszámíthatóvá a határokon átívelő laborpartneri együttműködést.</h2>
+          <h2>Egy partner. Egy folyamat. Egyértelmű felelősség.</h2>
           </div>
-          <p class="section-copy">A Bridge Dental nem csupán gyártási kapacitást biztosít, hanem olyan partneri folyamatot, amelyben a szakmai egyeztetés, a digitális tervezés, a gyártás, a dokumentáció és a logisztika egy kézben marad.</p>
+          <p class="section-copy">A szakmai egyeztetéstől a digitális tervezésen és gyártáson át a kiszállításig a teljes folyamatot mi koordináljuk. Így komplex eseteknél is egyértelmű, kihez fordulhat, hol tart a munka, és ki felel a következő lépésért.</p>
         </div>
         <div class="solution-grid reveal">
           <div class="solution-item">
             <b>01</b>
-            <h3>Szakmai kommunikáció német nyelven</h3>
-            <p>Egy kijelölt fogtechnikussal egyeztethet, visszajelzést kap a szkennelési adatokról, és komplex esetekben digitális konzultációra is lehetősége van.</p>
+            <h3>Közvetlen szakmai kommunikáció német nyelven</h3>
+            <p>Nem egy általános ügyfélszolgálattal egyeztet. Kijelölt, németül kommunikáló fogtechnikus támogatja az esetet, ellenőrzi a beérkező adatokat, és digitális esetkonzultációra is lehetőséget biztosítunk.</p>
           </div>
           <div class="solution-item">
             <b>02</b>
-            <h3>Saját, dokumentált digitális gyártás</h3>
-            <p>Exocad-alapú tervezés, CNC-marás és 3D nyomtatás, teljesen visszakövethető gyártási folyamattal, alvállalkozói lánc nélkül.</p>
+            <h3>Saját, kontrollált digitális gyártás</h3>
+            <p>A digitális tervezés, a CNC-marás és a 3D nyomtatás saját laborunkban történik. A gyártási folyamat dokumentált és visszakövethető, így a felelősség nem oszlik meg több külső szereplő között.</p>
           </div>
           <div class="solution-item">
             <b>03</b>
             <h3>Szervezett nemzetközi logisztika</h3>
-            <p>Oda-vissza szállítás svájci és német rendelőknek, kiszámítható munkafolyamattal és egyértelmű kapcsolattartással.</p>
+            <p>A Németország és Svájc közötti oda-vissza szállítást mi szervezzük. A rendelőnek nem kell külön logisztikai folyamatot kialakítania ahhoz, hogy velünk dolgozzon.</p>
           </div>
         </div>
         <div class="solution-cta reveal">
@@ -1712,31 +1898,32 @@
       <div class="shell">
         <div class="section-head reveal">
           <div>
-            <div class="label">DOKUMENTÁLT MŰKÖDÉS</div>
-            <h2>A Bridge Dental mögött mérhető szakmai háttér áll.</h2>
+            <div class="label">SZAKMAI HÁTTÉR</div>
+            <h2>Bizalomhoz több kell, mint ígéret.</h2>
           </div>
+          <p class="section-copy">Egy hosszú távú laborpartner kiválasztásánál a szakmai háttér, a stabil csapat és a vállalt felelősség legalább olyan fontos, mint maga a technológia.</p>
         </div>
         <div class="proof-grid">
           <div class="proof-cards">
             <div class="proof-card reveal">
-              <strong>ICDE</strong>
-              <h3>Nemzetközi szakmai kapcsolat</h3>
-              <p>Nemzetközi digitális protetikai partnerkapcsolat, amely működésünk fontos alapja.</p>
+              <strong>IVOCLAR ACADEMY PARTNER</strong>
+              <h3>Hivatalos szakmai partnerkapcsolat</h3>
+              <p>A Bridge Dental az Ivoclar Academy magyarországi partnere, nemzetközi szakmai és képzési háttérrel.</p>
             </div>
             <div class="proof-card reveal">
-              <strong>HDA</strong>
+              <strong>HUNGARIAN DENTAL AWARDS</strong>
               <h3>Díjazott szakmai teljesítmény</h3>
-              <p>Hungarian Dental Awards elismerés a kiemelkedő minőségért.</p>
+              <p>Szakmai elismerés a Bridge Dental fogtechnikai munkájáért.</p>
             </div>
             <div class="proof-card reveal">
-              <strong>25+ fős</strong>
-              <h3>Saját csapat</h3>
-              <p>Saját, belső kontrollal dolgozó laborcsapat.</p>
+              <strong>25+ FŐ</strong>
+              <h3>Saját laborcsapat</h3>
+              <p>Tervezés, gyártás és minőségellenőrzés saját csapattal, belső szakmai kontroll mellett.</p>
             </div>
             <div class="proof-card reveal">
-              <strong>5 év</strong>
-              <h3>5 év garancia</h3>
-              <p>Implantátumos munkákra vállalt anyag- és konstrukciós garancia.</p>
+              <strong>5 ÉV</strong>
+              <h3>Garancia implantátumos munkákra</h3>
+              <p>5 év anyag- és konstrukciós garancia megfelelő klinikai használat mellett.</p>
             </div>
           </div>
           <div class="proof-image reveal">
@@ -1753,23 +1940,30 @@
       <div class="shell">
         <div class="section-head reveal">
           <div>
-            <div class="label">Partneri visszajelzések</div>
-            <h2>Mit mondanak rólunk partneri rendelőink?</h2>
+            <div class="label">HOSSZÚ TÁVÚ PARTNERKAPCSOLATOK</div>
+            <h2>A legjobb visszajelzés, amikor az együttműködés éveken át működik.</h2>
           </div>
-          <p class="section-copy">Néhány visszajelzés olyan partneri rendelőktől, amelyek számára fontos az átlátható folyamat és a megbízható együttműködés.</p>
+          <p class="section-copy">Német és osztrák partneri rendelőink tapasztalatai a Bridge Dentallal való mindennapi együttműködésről.</p>
         </div>
         <div class="testimonial-grid">
           <article class="testimonial-card reveal">
+            <div class="testimonial-logo-frame">
+              <img src="../../assets/reviews/dr-benedict-beirer.webp" alt="Dr. med. dent. Benedict Beirer rendelőjének logója">
+            </div>
             <div class="testimonial-text">
               <p>Több mint tíz éve dolgozunk együtt, és mindvégig elégedettek voltunk a Bridge Dental munkájával. A minőség és az esztétika <span>egyaránt kifogástalan</span>.</p>
               <p>A laborral gördülékeny a kommunikáció, és még a legösszetettebb esetekben is kiváló eredményre számíthatunk.</p>
             </div>
             <div class="testimonial-meta">
               <strong>Dr. Benedict Beirer</strong>
+              <span>Leobersdorf</span>
             </div>
           </article>
 
           <article class="testimonial-card reveal">
+            <div class="testimonial-logo-frame">
+              <img src="../../assets/reviews/dr-benedict-beirer.webp" alt="Dr. med. dent. Benedict Beirer rendelőjének logója">
+            </div>
             <div class="testimonial-text">
               <p>Rendkívül megbízható labor, amely folyamatosan magas színvonalon dolgozik. A munkák pontosan illeszkednek, mindig időben érkeznek, és esztétikailag is kiválóak.</p>
               <p>Köszönjük a professzionális együttműködést!</p>
@@ -1781,6 +1975,9 @@
           </article>
 
           <article class="testimonial-card reveal">
+            <div class="testimonial-logo-frame">
+              <img src="../../assets/reviews/zahnaerzte-implantatzentrum.svg" alt="Zahnärzte und Implantatzentrum logó">
+            </div>
             <div class="testimonial-text">
               <p>Nagyon sikeres az együttműködésünk a budapesti Bridge Dental fogtechnikai laborral.</p>
               <p>Cirkónium- és kerámiamunkáik kiemelkedőek: pontosan illeszkednek és esztétikailag is magas színvonalat képviselnek.</p>
@@ -1795,10 +1992,14 @@
             <div class="testimonial-meta">
               <strong>Dr. Maximilian Konz M.Sc.</strong>
               <span>Az esztétikai és rekonstruktív fogászat specialistája</span>
+              <span>Unterschleißheim</span>
             </div>
           </article>
 
           <article class="testimonial-card reveal">
+            <div class="testimonial-logo-frame logo-campus">
+              <img src="../../assets/reviews/implantologie-campus.png" alt="Implantologie Campus, Dr. Hermanns és kollégái logó">
+            </div>
             <div class="testimonial-text">
               <p>Nagyon szívesen dolgozunk együtt a Bridge Dental fogtechnikai laborral, és nagyra értékeljük a közös munkát.</p>
               <p>Különösen fontos számunkra a labor megbízható, professzionális hozzáállása.</p>
@@ -1814,6 +2015,7 @@
             <button class="testimonial-toggle" type="button" aria-expanded="false">Még több</button>
             <div class="testimonial-meta">
               <strong>Dr. Christopher Hermanns</strong>
+              <span>Unterschleißheim</span>
             </div>
           </article>
         </div>
@@ -1825,32 +2027,38 @@
         <div class="pilot-panel reveal">
           <div class="pilot-copy">
             <div class="label">Pilot együttműködés</div>
-            <h2>Próbálja ki velünk az együttműködést egy pilot időszakban.</h2>
-            <p class="section-copy" style="margin-top: 22px;">A pilot egy 8 hetes, kockázatcsökkentett próba. Így valós munkafolyamatban látja meg, hogyan kommunikálunk, hogyan tervezzük az eseteket, milyen minőségben gyártunk, és hogyan kezeljük a felmerülő kérdéseket.</p>
+            <h2>Ne ígéretek alapján döntsön. Tesztelje az együttműködést valós eseteken.</h2>
+            <p class="section-copy" style="margin-top: 22px;">Az új laborpartner kiválasztása bizalmi döntés. Ezért nem kérjük, hogy az első beszélgetés után hosszú távon köteleződjön el.</p>
+            <p class="section-copy" style="margin-top: 12px;">A 8 hetes pilot során 3–5 valós eseten keresztül megtapasztalhatja, hogyan működik velünk a szakmai kommunikáció, a digitális tervezés, a gyártás, a problémakezelés és a nemzetközi logisztika.</p>
             <ul class="pilot-bullets">
-              <li>Német nyelvű szakmai egyeztetés dedikált fogtechnikussal</li>
-              <li>Digitális esetkonzultáció és a szkennelési adatok ellenőrzése komplex munkáknál</li>
-              <li>Gyors korrekció vagy újrakészítés, ha szükséges</li>
-              <li>Szervezett oda-vissza logisztika svájci és német rendelőknek</li>
+              <li><strong>Német nyelvű szakmai egyeztetés</strong>Dedikált fogtechnikussal, közvetlen kommunikációval.</li>
+              <li><strong>Digitális esetkonzultáció</strong>Komplex munkáknál ellenőrizzük a beérkező adatokat, és szükség esetén a gyártás előtt egyeztetünk.</li>
+              <li><strong>Korrekció és problémakezelés</strong>Ha változtatás szükséges, gyorsan reagálunk, és szükség esetén korrigáljuk vagy újrakészítjük a munkát.</li>
+              <li><strong>Szervezett CH / DE logisztika</strong>Az oda-vissza szállítás megszervezését mi végezzük.</li>
             </ul>
           </div>
           <div class="pilot-side">
+            <div class="pilot-risk">
+              <h3>A pilot időszak alatt a kockázat egy részét mi vállaljuk</h3>
+              <p>Ha a pilot során bizonyítható laborhiba miatt a páciens visszahívása válik szükségessé, a munka javításán vagy újrakészítésén túl 150 € székidő-kompenzációt is jóváírunk a következő technikai díjból.</p>
+              <p>A vállalás kizárólag a 8 hetes pilot együttműködés során készült munkákra, a pilot feltételei szerint érvényes.</p>
+            </div>
             <div class="pilot-meta" aria-label="Pilot összefoglaló">
               <div class="pilot-chip">
                 <strong>8 hét</strong>
-                próbaidőszak
+                pilot időszak
               </div>
               <div class="pilot-chip">
-                <strong>3-5</strong>
-                valós eset
+                <strong>3–5 eset</strong>
+                valós klinikai munkák
               </div>
               <div class="pilot-chip">
                 <strong>DE</strong>
-                nyelvű egyeztetés
+                szakmai kommunikáció
               </div>
               <div class="pilot-chip">
                 <strong>CH / DE</strong>
-                logisztika
+                szervezett logisztika
               </div>
             </div>
             <a class="btn btn-primary pilot-cta" href="#urlap">Pilot egyeztetést kérek</a>
@@ -1863,57 +2071,66 @@
       <div class="shell">
         <div class="section-head reveal">
           <div>
-            <div class="label">Szolgáltatásaink</div>
-            <h2>A legfontosabb szolgáltatásokra koncentrálunk.</h2>
+            <div class="label">Szakterületeink</div>
+            <h2>Amikben igazán otthon vagyunk.</h2>
           </div>
-          <p class="section-copy">Ez a válogatás azokról a munkákról szól, ahol a folyamat legalább olyan fontos, mint a végeredmény.</p>
+          <p class="section-copy">Szakterületeink a komplex implantológiától a digitális esztétikáig.</p>
         </div>
         <div class="services-grid">
-          <article class="service-card reveal">
+          <a class="service-card reveal" href="../full-arch-implantatumos-rehabilitaciok.html">
             <img src="../../assets/full-arch-implantatumos-rehabilitacio-all-on-x.webp" alt="Full-Arch implantátumos rehabilitáció">
             <div>
-              <small>Fő specialitásunk</small>
+              <small>01 · Fő specialitás</small>
               <h3>All-on-X rehabilitációk</h3>
-              <p>All-on-X rehabilitációk, implantátumokra készülő cirkóniumkoronák és -hidak, valamint teljes íves restaurációk.</p>
-              <a class="service-card-cta" href="#urlap">Érdekel</a>
+              <p>Full-Arch megoldásainkkal digitális tervezést és precíz laborháttért biztosítunk a teljes íves rehabilitációkhoz, a kiszámítható, esztétikus és stabil végeredményért.</p>
+              <span class="service-card-cta">Részletek</span>
             </div>
-          </article>
-          <article class="service-card reveal">
-            <img src="../../assets/esztetikai-keramia-potlasok-labor-ellenorzes.webp" alt="Fémmentes kerámia pótlások laboratóriumi ellenőrzéssel">
+          </a>
+          <a class="service-card reveal" href="../implantatumos-cirkonium-restauraciok.html">
+            <img src="../../szolgaltatasok_fem_es_cirkonvaz.jpg" alt="Implantátumos cirkónium restaurációk precíziós kézi megmunkálása">
             <div>
-              <small>Esztétika</small>
-              <h3>Fémmentes kerámia pótlások</h3>
-              <p>Ivoclar e.max préskerámia és monolitikus cirkónium természetes fogakra, amikor az esztétika elsődleges szempont.</p>
-              <a class="service-card-cta" href="#urlap">Érdekel</a>
+              <small>02</small>
+              <h3>Implantátumos cirkónium restaurációk</h3>
+              <p>Implantátumos cirkóniumrestaurációink digitális precizitással és korszerű, többrétegű cirkóniumanyagokkal támogatják a rendelők munkáját. Monolitikus full contour cirkóniummegoldásaink természetes esztétikát, pontos illeszkedést és hosszú távon stabil végeredményt biztosítanak.</p>
+              <span class="service-card-cta">Részletek</span>
             </div>
-          </article>
-          <article class="service-card reveal">
-            <img src="../../assets/dsc_6882.jpg" alt="Digitális fogsor labor munka">
+          </a>
+          <a class="service-card reveal" href="../digitalis-fogsorok.html">
+            <img src="../../assets/home/service-truedent.webp" alt="Full color, monolitikus fogpótlás a 3D nyomtatóban">
             <div>
-              <small>Újdonság</small>
+              <small>03 · Újdonság</small>
               <h3>TrueDent – Full color, monolitikus digitális fogsorok</h3>
-              <p>Stratasys TrueDent biokompatibilis, 3D nyomtatott fogsorok: az esztétikus digitális fogsorok új generációja.</p>
-              <a class="service-card-cta" href="#urlap">Érdekel</a>
+              <p>A digitális fogsorok a modern CAD/CAM tervezés és a precíz 3D nyomtatás előnyeit ötvözik a hagyományos fogtechnikai szakértelemmel. Ennek köszönhetően kiszámítható, esztétikus és hosszú távon is megbízható kivehető fogpótlásokat készítünk.</p>
+              <span class="service-card-cta">Részletek</span>
             </div>
-          </article>
-          <article class="service-card reveal">
-            <img src="../../assets/bridge-dental-kuldetes-fogtechnikai-labor.webp" alt="Bridge Dental digitális tervezés">
+          </a>
+          <a class="service-card reveal" href="../digitalis-tervezes.html">
+            <img src="../../assets/home/service-digital-workflow.webp" alt="Digitálisan megtervezett implantátumos restauráció a monitoron">
             <div>
-              <small>Digitális workflow</small>
+              <small>04</small>
               <h3>Digitális workflow</h3>
-              <p>CAD-alapú virtuális 3D tervezés, emergence profile és okklúziós viszonyok meghatározása még a gyártás előtt.</p>
-              <a class="service-card-cta" href="#urlap">Érdekel</a>
+              <p>Laborunkban a digitális munkafolyamat értéke a pontos információcserében, az átgondolt tervezésben és a rendelő, valamint a labor összehangolt együttműködésében rejlik. Minden lépés azt szolgálja, hogy a restaurációk kiszámíthatóan, precízen és magas esztétikai színvonalon készüljenek el.</p>
+              <span class="service-card-cta">Részletek</span>
             </div>
-          </article>
-          <article class="service-card reveal">
-            <img src="../../assets/digitalis-fogtechnika-labor-munkafolyamat.webp" alt="Digitális fogtechnika labor munkafolyamat">
+          </a>
+          <a class="service-card reveal" href="../esztetikai-keramia.html">
+            <img src="../../esztetikai-keramia-potlasok-labor-ellenorzes.webp" alt="Fémmentes kerámia pótlások precíziós laboratóriumi ellenőrzése nagyítóval">
             <div>
-              <small>Digitális gyártás</small>
-              <h3>CAD/CAM technológia</h3>
-              <p>Teljes digitális munkafolyamat a szkenneléstől a CAM-gyártásig, ellenőrzötten, dokumentáltan és visszakövethetően.</p>
-              <a class="service-card-cta" href="#urlap">Érdekel</a>
+              <small>05</small>
+              <h3>Fémmentes kerámia pótlások</h3>
+              <p>A fémmentes kerámia pótlások a természetes megjelenést, a precíz illeszkedést és a hosszú távú megbízhatóságot ötvözik. A digitális munkafolyamat, a prémium kerámiaanyagok és az egyedi karakterizálás lehetővé teszik, hogy a restaurációk harmonikusan illeszkedjenek a természetes fogazathoz.</p>
+              <span class="service-card-cta">Részletek</span>
             </div>
-          </article>
+          </a>
+          <a class="service-card reveal" href="../digitalis-fogtechnika.html">
+            <img src="../../assets/home/service-cad-cam.webp" alt="CAD/CAM maróberendezés a Bridge Dental laborjában">
+            <div>
+              <small>06</small>
+              <h3>CAD/CAM technológia</h3>
+              <p>A nagy pontosságú CAD/CAM technológia lehetővé teszi a digitálisan tervezett restaurációk precíz és reprodukálható gyártását. A kontrollált munkafolyamat támogatja a stabil minőséget, a pontos illeszkedést és a kiszámítható eredményeket.</p>
+              <span class="service-card-cta">Részletek</span>
+            </div>
+          </a>
         </div>
       </div>
     </section>
@@ -1925,28 +2142,28 @@
             <div class="label">A velünk való együttműködés folyamata</div>
             <h2>Kiszámítható együttműködés már az első esettől.</h2>
           </div>
-          <p class="section-copy">Az első kapcsolatfelvételtől a piloton át a hosszú távú együttműködésig minden lépés azt szolgálja, hogy rendelője számára átlátható és kiszámítható folyamatot biztosítsunk.</p>
+          <p class="section-copy">Az első egyeztetéstől a piloton át a hosszú távú együttműködésig előre meghatározott folyamat mentén dolgozunk.</p>
         </div>
         <div class="process-line">
           <div class="process-step reveal">
-            <h3>Kapcsolatfelvétel és igényfelmérés</h3>
-            <p>Megismerjük a rendelő munkatípusait, digitális munkafolyamatát, szkennelési rendszerét és logisztikai igényeit.</p>
+            <h3>Első szakmai egyeztetés</h3>
+            <p>Megismerjük a rendelő munkatípusait, digitális workflow-ját, szkennelési rendszerét és logisztikai igényeit. Közösen kiválasztjuk az első pilot eseteket.</p>
           </div>
           <div class="process-step reveal">
-            <h3>Pilot együttműködés 3-5 esettel</h3>
-            <p>Komplexebb implantátumos munkáknál kockázatcsökkentett pilot időszakot javaslunk, kiemelt szakmai támogatással.</p>
+            <h3>8 hetes pilot · 3–5 valós eset</h3>
+            <p>A közös munkát 3–5 kiválasztott esettel kezdjük. Így valós munkafolyamatban tapasztalhatja meg a kommunikációt, a tervezést, a gyártási minőséget és a logisztikát.</p>
           </div>
           <div class="process-step reveal">
-            <h3>Német nyelvű esetegyeztetés</h3>
-            <p>Dedikált fogtechnikussal, Exocad alapú tervezési konzultációval és online esetmegbeszéléssel támogatjuk a döntéseket.</p>
+            <h3>Esetátadás és szakmai egyeztetés</h3>
+            <p>Ellenőrizzük a beérkező digitális adatokat és a szükséges információkat. Komplex eseteknél a gyártás előtt közvetlen szakmai egyeztetésre és digitális esetkonzultációra is lehetőség van.</p>
           </div>
           <div class="process-step reveal">
-            <h3>Házon belüli digitális gyártás</h3>
-            <p>A munkák saját CNC-marási és 3D nyomtatási kapacitással, alvállalkozók bevonása nélkül, dokumentált minőségbiztosítás mellett készülnek.</p>
+            <h3>Tervezés, gyártás és minőségellenőrzés</h3>
+            <p>A digitális tervezés és gyártás saját laborunkban történik. A munka a gyártási folyamat meghatározott pontjain szakmai ellenőrzésen megy keresztül.</p>
           </div>
           <div class="process-step reveal">
-            <h3>Ellenőrzés, szállítás és visszajelzés</h3>
-            <p>A kész munkát ellenőrzés után szervezett európai logisztikával küldjük vissza, és szükség esetén szakmai visszajelzést adunk.</p>
+            <h3>Szállítás és visszajelzés</h3>
+            <p>A kész munkát ellenőrzés után szervezett nemzetközi logisztikával küldjük vissza. Az első esetek tapasztalatait közösen értékeljük, és ezek alapján alakítjuk ki a hosszú távú együttműködést.</p>
           </div>
         </div>
         <div class="cta-row reveal">
@@ -1962,28 +2179,28 @@
           <div>
             <h2 style="max-width: 520px; font-size: clamp(24px, 2.1vw, 34px);">Kinek ideális a Bridge Dental?</h2>
           </div>
-          <p class="section-copy">Olyan praxisoknak, ahol a laborpartnernek a rendelő működéséhez kell illeszkednie.</p>
+          <p class="section-copy">Elsősorban olyan rendelőkkel tudunk jól együtt dolgozni, ahol a fogtechnikai labor nem egyszerűen beszállító, hanem a klinikai munkafolyamat aktív szakmai partnere.</p>
         </div>
         <div class="fit-grid">
           <div class="fit-card reveal">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20"/><path d="M5 7h14"/><path d="M7 21h10"/><path d="m3 7 4 8 4-8"/><path d="m13 7 4 8 4-8"/></svg>
-            <p>Svájci vagy német rendelőknek, akik stabil külföldi laborpartnert keresnek.</p>
-          </div>
-          <div class="fit-card reveal">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 2 8l10 5 10-5-10-5Z"/><path d="m2 16 10 5 10-5"/><path d="m2 12 10 5 10-5"/></svg>
-            <p>Implantológiai és teljes íves restaurációs eseteket végző praxisoknak.</p>
+            <h3>Implantológiai és Full-Arch eseteket végző praxisoknak</h3>
+            <p>Ahol rendszeresen készülnek implantátumos koronák, hidak vagy komplex teljes íves rehabilitációk.</p>
           </div>
           <div class="fit-card reveal">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="14" x="3" y="4" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg>
-            <p>Digitális lenyomattal és CAD/CAM munkafolyamattal dolgozó csapatoknak.</p>
+            <h3>Digitálisan dolgozó rendelőknek</h3>
+            <p>Ahol az intraorális szkennelés, a digitális adatátadás és az esetek előzetes egyeztetése a mindennapi workflow része.</p>
           </div>
           <div class="fit-card reveal">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a4 4 0 0 1-4 4H7l-4 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/></svg>
-            <p>Olyan klinikáknak, ahol fontos a német nyelvű szakmai kommunikáció.</p>
+            <h3>Komplexebb eseteket kezelő csapatoknak</h3>
+            <p>Ahol fontos, hogy a gyártás előtt a labor ellenőrizze a beérkező adatokat, és szükség esetén szakmai egyeztetés történjen.</p>
           </div>
           <div class="fit-card reveal">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h11v10H3z"/><path d="M14 10h4l3 3v4h-7z"/><circle cx="7" cy="19" r="2"/><circle cx="17" cy="19" r="2"/></svg>
-          <p>Rendelőknek, ahol a szállítás és a határidők kiszámíthatósága kulcsfontosságú.</p>
+            <h3>Olyan praxisoknak, amelyek hosszú távú laborpartnert keresnek</h3>
+            <p>És a fogtechnikai minőség mellett a kommunikáció, a kiszámítható folyamat és a megbízható logisztika is fontos számukra.</p>
           </div>
         </div>
       </div>
@@ -1999,36 +2216,14 @@
         </div>
         <div class="faq-grid faq-grid-center">
           <details class="reveal">
-            <summary>Hogyan tudjuk kockázat nélkül kipróbálni az együttműködést?</summary>
-            <p>Komplexebb implantátumos munkákra 3-5 esetből álló, 8 hetes pilot együttműködést ajánlunk.</p>
-            <p>Így nem egyetlen munka alapján kell dönteni, hanem valós közös folyamatban láthatóvá válik:</p>
-            <ul>
-              <li>a kommunikáció</li>
-              <li>a tervezés</li>
-              <li>a gyártási minőség</li>
-              <li>a problémakezelés</li>
-            </ul>
-          </details>
-          <details class="reveal">
-            <summary>Miben más a Bridge Dental, mint egy hagyományos fogtechnikai labor?</summary>
-            <p>Nem csak fogpótlásokat készítünk: klinikai partnerként gondolkodunk.</p>
-            <p>A rendelő munkáját a következőkkel támogatjuk:</p>
-            <ul>
-              <li>digitális tervezési konzultáció</li>
-              <li>visszajelzés a szkennelési adatokról és az illeszkedésről</li>
-              <li>dokumentált gyártási folyamat</li>
-            </ul>
+            <summary>Hogyan próbálhatjuk ki az együttműködést hosszú távú elköteleződés nélkül?</summary>
+            <p>Komplexebb implantátumos munkákra 8 hetes, 3–5 valós esetből álló pilot együttműködést ajánlunk.</p>
+            <p>Így nem egyetlen próbamunka alapján kell döntenie: valós eseteken tapasztalhatja meg a szakmai kommunikációt, a tervezési folyamatot, a gyártási minőséget, a problémakezelést és a logisztikát.</p>
           </details>
           <details class="reveal">
             <summary>Milyen digitális rendszerekkel tudunk együtt dolgozni?</summary>
-            <p>Exocad alapú digitális tervezéssel dolgozunk.</p>
-            <p>Több intraorális szkennerrendszerből érkező fájlokat is fogadunk, például:</p>
-            <ul>
-              <li>iTero</li>
-              <li>TRIOS</li>
-              <li>Medit</li>
-              <li>Shining</li>
-            </ul>
+            <p>Exocad-alapú digitális tervezéssel dolgozunk, és a legelterjedtebb nyitott digitális workflow-kból érkező fájlokat fogadjuk, többek között iTero, TRIOS, Medit és Shining rendszerekből.</p>
+            <p>Az együttműködés indulásakor segítünk a rendelő digitális adatátadási folyamatának kialakításában is.</p>
           </details>
           <details class="reveal">
             <summary>Hol található a Bridge Dental labor központja?</summary>
@@ -2036,30 +2231,34 @@
           </details>
           <details class="reveal">
             <summary>Milyen garanciát vállalnak implantátumos munkákra?</summary>
-            <p>Implantátumos munkákra megfelelő klinikai használat mellett 5 év anyag- és konstrukciós garanciát vállalunk.</p>
-            <p>A gyártási folyamat dokumentált, az anyagtételtől a felelős fogtechnikusig visszakövethető.</p>
+            <p>Implantátumos munkákra megfelelő klinikai használat mellett 5 év anyag- és konstrukciós garanciát vállalunk. A gyártási folyamat dokumentált és visszakövethető.</p>
           </details>
           <details class="reveal">
-            <summary>Mi történik, ha laborhibából vissza kell hívni a pácienst?</summary>
-            <p>Ha bizonyítható laborhiba miatti illeszkedési probléma következtében a páciensnek vissza kell térnie a rendelőbe, nemcsak javítjuk a munkát: a következő munka technikai díjából fix 150 € székidő-kompenzációt is jóváírunk.</p>
-            <p>Nem tartozik a garanciába:</p>
-            <ul>
-              <li>nem megfelelő preparáció, ha azt előre jeleztük, de a munka az orvos kérésére mégis elkészült</li>
-              <li>nem elegendő hely, ha azt előre jeleztük, de a munka az orvos kérésére mégis elkészült</li>
-              <li>nem megfelelő lenyomat vagy szkennelési adat, ha azt előre jeleztük, de a munka az orvos kérésére mégis elkészült</li>
-              <li>hibás beragasztás</li>
-              <li>előre nem jelzett parafunkció, például bruxizmus</li>
-            </ul>
+            <summary>Mi történik, ha a pilot során laborhibából vissza kell hívni a pácienst?</summary>
+            <p>Ha a pilot időszakban bizonyítható laborhiba miatti illeszkedési probléma következtében a páciensnek vissza kell térnie a rendelőbe, a munka javításán vagy újrakészítésén túl a következő munka technikai díjából 150 € székidő-kompenzációt is jóváírunk.</p>
+            <p>A vállalás kizárólag a pilot időszakban készült munkákra és a pilot feltételei szerint érvényes.</p>
+            <details class="faq-subdetails">
+              <summary>A kompenzáció részletes feltételei</summary>
+              <div class="faq-subdetails-body">
+                <p>Nem tartozik a garanciába:</p>
+                <ul>
+                  <li>nem megfelelő preparáció, ha azt előre jeleztük, de a munka az orvos kérésére mégis elkészült</li>
+                  <li>nem elegendő hely, ha azt előre jeleztük, de a munka az orvos kérésére mégis elkészült</li>
+                  <li>nem megfelelő lenyomat vagy szkennelési adat, ha azt előre jeleztük, de a munka az orvos kérésére mégis elkészült</li>
+                  <li>hibás beragasztás</li>
+                  <li>előre nem jelzett parafunkció, például bruxizmus</li>
+                </ul>
+              </div>
+            </details>
           </details>
           <details class="reveal">
-            <summary>Hogyan működik a svájci és német rendelők logisztikai kiszolgálása?</summary>
-            <p>A teljes oda-vissza szállítást mi szervezzük svájci és német partnereink számára.</p>
-            <p>Ha 14 óráig jelzik, hogy van felvételre váró munka, megszervezzük az elszállítást. A rendelőnek csak be kell csomagolnia a munkát és ki kell nyomtatnia az e-mailben küldött szállítólevelet.</p>
-            <p>FedEx Express szállítással dolgozunk: ha például hétfőn elküldik a lenyomatot vagy a munkát, az jellemzően kedd délig megérkezik hozzánk.</p>
+            <summary>Hogyan működik a német és svájci logisztika?</summary>
+            <p>A teljes oda-vissza szállítást mi szervezzük. Ha 14 óráig jelzik a felvételt, megszervezzük az elszállítást; a rendelőnek csak be kell csomagolnia a munkát és kinyomtatnia az e-mailben küldött szállítólevelet.</p>
+            <p>FedEx Express szállítással dolgozunk. Egy hétfőn feladott munka például jellemzően kedd délig megérkezik budapesti laborunkba.</p>
           </details>
           <details class="reveal">
-            <summary>Kapunk német nyelvű szakmai támogatást?</summary>
-            <p>Igen. Egy kijelölt, németül kommunikáló fogtechnikussal egyeztethet, nem csupán a labor általános elérhetőségén keresztül. Komplex esetekben online digitális tervezési konzultációt is biztosítunk.</p>
+            <summary>Van lehetőség német nyelvű szakmai egyeztetésre?</summary>
+            <p>Igen. A rendelő egy kijelölt, németül kommunikáló fogtechnikussal egyeztethet, nem csupán a labor általános elérhetőségén keresztül. Komplex eseteknél online digitális esetkonzultációra is lehetőséget biztosítunk.</p>
           </details>
         </div>
         <div class="cta-row reveal">
@@ -2069,10 +2268,35 @@
     </section>
 
     <section class="section form-section" id="urlap">
-      <div class="shell form-grid">
-        <div class="form-side reveal">
-          <div class="label">Kapcsolatfelvétel</div>
-          <h2>Kezdjük el a közös munkát.</h2>
+        <div class="shell form-grid">
+          <div class="form-side reveal">
+            <div class="label">Kapcsolatfelvétel</div>
+          <h2>Beszéljük át az együttműködés lehetőségét.</h2>
+          <section class="contact-people" aria-labelledby="contactPeopleTitle">
+            <h3 class="contact-people-title" id="contactPeopleTitle">Közvetlen kapcsolatfelvétel</h3>
+            <div class="contact-person-grid">
+              <article class="contact-person">
+                <div class="contact-person-photo">
+                  <img src="../../assets/contact/attila-kinal.webp" alt="Attila Kínál, szakmai kommunikáció" width="900" height="1350">
+                </div>
+                <div class="contact-person-copy">
+                  <h4 class="contact-person-name">Attila Kínál</h4>
+                  <p class="contact-person-role">Szakmai kommunikáció</p>
+                  <a class="contact-person-phone" href="tel:+36703966653" aria-label="Attila Kínál hívása: +36 70 39 666 53">+36 70 39 666 53</a>
+                </div>
+              </article>
+              <article class="contact-person">
+                <div class="contact-person-photo">
+                  <img src="../../assets/contact/hedi-csaszarne-demeter.webp" alt="Hédi Császárné Demeter, irodavezető" width="900" height="1350" loading="lazy">
+                </div>
+                <div class="contact-person-copy">
+                  <h4 class="contact-person-name">Hédi Császárné Demeter</h4>
+                  <p class="contact-person-role">Irodavezető</p>
+                  <a class="contact-person-phone" href="tel:+36703966654" aria-label="Hédi Császárné Demeter hívása: +36 70 39 666 54">+36 70 39 666 54</a>
+                </div>
+              </article>
+            </div>
+          </section>
           <div class="contact-mini">
             <a href="mailto:info@bridgedental.hu">info@bridgedental.hu</a>
             <a href="tel:+36703966653">+36 / (70) 396 6653</a>
@@ -2117,6 +2341,7 @@
             <select id="interest" name="interest" required>
               <option value="" selected disabled>Válasszon szolgáltatást</option>
               <option>All-on-X rehabilitációk</option>
+              <option>Implantátumos cirkónium restaurációk</option>
               <option>Fémmentes kerámia pótlások</option>
               <option>TrueDent – Full color, monolitikus digitális fogsorok</option>
               <option>Digitális workflow</option>
@@ -2147,7 +2372,7 @@
 
     <section class="final-cta">
       <div class="shell reveal">
-        <h2>Kezdjük el a közös munkát.</h2>
+        <h2>Beszéljük át az együttműködés lehetőségét.</h2>
         <p>Ha a rendelője komplex munkákhoz keres megbízható, jól szervezett laborpartnert, az első egyeztetés jó kiindulópont lehet.</p>
         <a class="btn btn-primary" href="#urlap">Kérek egy első egyeztetést</a>
       </div>
@@ -2177,7 +2402,7 @@
 
     document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
 
-    const faqItems = document.querySelectorAll("#gyik details");
+    const faqItems = document.querySelectorAll("#gyik .faq-grid > details");
     faqItems.forEach((item) => {
       item.open = false;
     });
