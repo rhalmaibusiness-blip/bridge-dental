@@ -130,7 +130,9 @@ def unicode_appearance(writer: PdfWriter, widget, font_ref, value: str) -> None:
     for index, line in enumerate(lines):
         if index:
             commands.append(f"0 {-font_size * 1.25:.3f} Td")
-        commands.append(f"<{encode_hungarian_form_text(line).hex().upper()}> Tj")
+        encoded = (line.encode("utf-16-be") if font_ref.get_object().get("/Subtype") == "/Type0"
+                   else encode_hungarian_form_text(line))
+        commands.append(f"<{encoded.hex().upper()}> Tj")
     commands.extend(["ET", "Q", "EMC", "Q"])
 
     appearance = DecodedStreamObject()

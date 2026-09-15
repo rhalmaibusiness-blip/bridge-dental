@@ -101,12 +101,6 @@ def build_overlay() -> list[str]:
         ((49, 364, 139, 385), "Nyerspróba", 50, 366, 9.4, True),
         ((49, 389, 139, 410), "Modellöntés", 50, 391, 9.4, True),
         ((49, 414, 139, 435), "Felállítási próba", 50, 416, 9.4, True),
-        ((254, 289, 340, 310), "Precíziós lenyomat", 255, 291, 8.6, True),
-        ((242, 314, 340, 335), "Antagonista lenyomat", 243, 316, 8.4, True),
-        ((314, 339, 340, 360), "Harapás", 315, 341, 9.0, True),
-        ((405, 289, 506, 310), "Implantátum-felépítmény", 406, 291, 8.0, True),
-        ((428, 314, 506, 335), "Lenyomati fej", 429, 316, 9.0, True),
-        ((436, 339, 506, 360), "Modellanalóg", 437, 341, 9.0, True),
         ((49, 487, 222, 516), "MUNKALEÍRÁS:", 50, 491, 9.8, True),
     ]
     for rect, text, x, top, size, bold in translated_labels:
@@ -116,15 +110,36 @@ def build_overlay() -> list[str]:
     erase(49, 437, 139, 466)
     two_line("Készrevitel", "Átadás", 50, 439, size=9.0)
 
-    # The source sheet has a single, slim quantity box whose right-hand side
-    # contains the German unit label ("Stk").  Only mask the letters: masking
-    # the whole right side would also cut the original box border in PDF viewers.
-    for x0, x1, top in [
-        (364, 388, 289), (364, 388, 314), (364, 388, 339),
-        (529, 548, 289), (529, 548, 314), (529, 548, 339),
+    def outline(x: float, top: float, width: float, height: float) -> None:
+        pdf.setStrokeGray(0.55)
+        pdf.setLineWidth(0.5)
+        pdf.rect(x, PAGE_HEIGHT - top - height, width, height, fill=0, stroke=1)
+
+    # Clear both complete blocks before drawing any labels or borders. Smaller
+    # text masks used to cut the right edges of the original quantity boxes.
+    erase(240, 287, 390, 361)
+    erase(400, 287, 548, 361)
+    for text, label_x, box_x, top in [
+        ("Precíziós lenyomat", 243, 341, 289),
+        ("Antagonista lenyomat", 243, 341, 314),
+        ("Harapás", 243, 341, 339),
+        ("Implantátum-felépítmény", 406, 506, 289),
+        ("Lenyomati fej", 406, 506, 314),
+        ("Modellanalóg", 406, 506, 339),
     ]:
-        erase(x0 + 2, top + 4, x1 - 2, top + 15)
-        label("db", x0 + 3, top + 4, size=7.5, bold=False)
+        if label_x + pdfmetrics.stringWidth(text, "ArialNarrowBold", 9.4) > box_x - 6:
+            raise ValueError(f"A megnevezés nem fér el a darabszámmező előtt: {text}")
+        label(text, label_x, top + 3, size=9.4)
+        outline(box_x, top, 40, 20)
+        pdf.line(box_x + 24, PAGE_HEIGHT - top, box_x + 24, PAGE_HEIGHT - top - 20)
+        pdf.setFillColor(black)
+        pdf.setFont("ArialNarrow", 8)
+        pdf.drawCentredString(box_x + 32, PAGE_HEIGHT - top - 12.4, "db")
+
+    # The source date area is only underlined; give it the same complete box
+    # as the other patient fields, without covering the date label or age box.
+    erase(463, 148, 547, 170)
+    outline(464, 149, 82, 20)
 
     form = pdf.acroForm
     field_names: list[str] = []
@@ -380,21 +395,10 @@ def merge_with_source(field_names: list[str]) -> None:
         )
         return writer._add_object(type0_font)
 
-    # Reuse the already embedded Arial Narrow font from the Hungarian label
-    # layer. Unlike a second, hand-built CID font this is stable in Chrome,
-    # Preview and Acrobat form renderers.
-    page_fonts = writer.pages[0]["/Resources"]["/Font"].get_object()
-    hungarian_font_ref = next(
-        (
-            reference
-            for reference in page_fonts.values()
-            if "ArialNarrow" in str(reference.get_object().get("/BaseFont", ""))
-            and "Bold" not in str(reference.get_object().get("/BaseFont", ""))
-        ),
-        None,
-    )
-    if hungarian_font_ref is None:
-        raise ValueError("A magyar űrlap betűkészlete nem található.")
+    # Form editors need a full Unicode font. The page-label subset stores
+    # accented letters at control-character codes, which can turn into missing
+    # glyphs when a viewer regenerates a filled field's appearance on save.
+    hungarian_font_ref = embed_unicode_form_font()
 
     def transparent_appearance(source_stream, content: bytes):
         source_object = source_stream.get_object()
@@ -412,6 +416,10 @@ def merge_with_source(field_names: list[str]) -> None:
         if widget.get("/FT") == "/Tx":
             old_da = str(widget.get("/DA", "/Helv 9 Tf 0 g"))
             widget[NameObject("/DA")] = TextStringObject(old_da.replace("/Helv", "/ArialNarrowHU"))
+            if str(widget.get("/T", "")).startswith("menge_"):
+                # get_fields() returns Field wrappers; write to the actual
+                # shared field/widget object so viewers persist the alignment.
+                widget[NameObject("/Q")] = NumberObject(1)
         mk = widget.get("/MK")
         if mk:
             mk.pop(NameObject("/BG"), None)
@@ -439,14 +447,9 @@ def merge_with_source(field_names: list[str]) -> None:
             appearance[NameObject("/N")] = transparent_appearance(normal, empty_text_appearance)
 
     acro_form[NameObject("/NeedAppearances")] = BooleanObject(False)
-    fields = writer.get_fields() or {}
-
     acro_fonts = acro_form["/DR"].get_object()["/Font"].get_object()
     acro_fonts[NameObject("/ArialNarrowHU")] = hungarian_font_ref
     acro_form[NameObject("/DA")] = TextStringObject("/ArialNarrowHU 0 Tf 0 g")
-    for name in field_names:
-        if name.startswith("menge_"):
-            fields[name][NameObject("/Q")] = NumberObject(1)
 
     writer.add_metadata(
         {
@@ -476,6 +479,8 @@ def validate_output(expected_field_names: list[str]) -> None:
         parent = widget.get("/Parent")
         name = widget.get("/T") or (parent.get_object().get("/T") if parent else None)
         widget_names.append(str(name))
+        if str(name).startswith("menge_") and widget.get("/Q") != 1:
+            raise ValueError(f"A(z) {name} darabszámmező nem középre igazított.")
         appearance = widget.get("/AP")
         if not appearance or not appearance.get("/N"):
             raise ValueError(f"A(z) {name} mezőnek nincs megjelenési rétege.")
