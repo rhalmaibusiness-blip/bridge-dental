@@ -300,30 +300,37 @@
     .hero-mobile-group {
       display: flex;
       flex-direction: column;
-      align-items: center;
-      gap: 6px;
+      align-items: stretch;
+      gap: 14px;
+      padding: 24px;
+      border: 1px solid rgba(255,255,255,0.11);
+      border-radius: 20px;
+      background: linear-gradient(145deg, rgba(255,255,255,0.07), rgba(255,255,255,0.025));
     }
 
     .hero-mobile-submenu {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 2px;
-      margin-top: 4px;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px;
     }
 
     .hero-mobile-submenu a {
       font-family: 'Open Sans', sans-serif;
-      font-size: 15px;
+      font-size: 14px;
       font-weight: 600;
-      letter-spacing: 1px;
+      line-height: 1.35;
+      letter-spacing: 0.45px;
       color: rgba(245,239,233,0.78);
-      padding: 6px 0;
+      padding: 11px 12px;
+      border-radius: 10px;
+      background: rgba(255,255,255,0.035);
     }
 
     .hero-mobile-submenu a:hover,
-    .hero-mobile-submenu a:active {
+    .hero-mobile-submenu a:active,
+    .hero-mobile-submenu a:focus-visible {
       color: #f2793f;
+      background: rgba(242,121,63,0.1);
     }
 
     .hero-burger {
@@ -358,14 +365,16 @@
     .hero-mobile-menu {
       position: fixed;
       inset: 0;
-      z-index: 30;
-      background: rgba(13, 10, 8, 0.97);
-      backdrop-filter: blur(8px);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      gap: 8px;
+      z-index: 10010;
+      min-height: 100vh;
+      min-height: 100dvh;
+      overflow-y: auto;
+      overscroll-behavior: contain;
+      background:
+        radial-gradient(circle at 78% 12%, rgba(224,90,43,0.16), transparent 34%),
+        rgba(13, 10, 8, 0.975);
+      -webkit-backdrop-filter: blur(14px);
+      backdrop-filter: blur(14px);
       opacity: 0;
       visibility: hidden;
       transition: opacity 0.4s ease, visibility 0.4s ease;
@@ -376,33 +385,130 @@
       visibility: visible;
     }
 
-    .hero-mobile-menu a {
-      color: #f5efe9;
-      text-decoration: none;
-      font-family: 'Montserrat', sans-serif;
-      font-size: 26px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      padding: 14px 0;
+    .hero-mobile-menu-inner {
+      width: min(100%, 820px);
+      min-height: 100%;
+      margin: 0 auto;
+      padding: 108px 36px 48px;
+      display: grid;
+      align-content: center;
+      gap: 20px;
       opacity: 0;
-      transform: translateY(24px);
-      transition: opacity 0.45s ease, transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), color 0.3s ease;
+      transform: translateY(18px);
+      transition: opacity 0.38s ease 0.08s, transform 0.48s cubic-bezier(0.22, 1, 0.36, 1) 0.08s;
     }
 
-    .hero-mobile-menu.open a {
+    .hero-mobile-menu.open .hero-mobile-menu-inner {
       opacity: 1;
       transform: translateY(0);
     }
 
-    .hero-mobile-menu.open a:nth-child(1) { transition-delay: 0.10s; }
-    .hero-mobile-menu.open a:nth-child(2) { transition-delay: 0.17s; }
-    .hero-mobile-menu.open a:nth-child(3) { transition-delay: 0.24s; }
-    .hero-mobile-menu.open a:nth-child(4) { transition-delay: 0.31s; }
-    .hero-mobile-menu.open a:nth-child(5) { transition-delay: 0.38s; }
+    .hero-mobile-menu a {
+      color: #f5efe9;
+      text-decoration: none;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      transition: color 0.25s ease, background 0.25s ease, border-color 0.25s ease;
+    }
+
+    .hero-mobile-main {
+      display: block;
+      width: fit-content;
+      max-width: 100%;
+      padding: 6px 0 13px;
+      border-bottom: 2px solid #e8502e;
+      font-size: clamp(20px, 3vw, 28px);
+      line-height: 1.2;
+      letter-spacing: 1.5px;
+    }
+
+    .hero-mobile-section-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      width: fit-content;
+      font-size: 13px;
+      letter-spacing: 2.2px;
+      color: #f2793f !important;
+    }
+
+    .hero-mobile-section-link::before {
+      content: '';
+      width: 28px;
+      height: 2px;
+      background: currentColor;
+    }
+
+    .hero-mobile-actions {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .hero-mobile-actions a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 54px;
+      padding: 13px 16px;
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 13px;
+      background: rgba(255,255,255,0.045);
+      font-size: 14px;
+      line-height: 1.2;
+      letter-spacing: 1.4px;
+      text-align: center;
+    }
+
+    .hero-mobile-actions a:hover,
+    .hero-mobile-actions a:focus-visible {
+      border-color: rgba(242,121,63,0.65);
+      background: rgba(242,121,63,0.1);
+    }
+
+    .hero-mobile-close {
+      position: fixed;
+      top: 16px;
+      right: 20px;
+      z-index: 10030;
+      display: grid;
+      place-items: center;
+      width: 44px;
+      height: 44px;
+      padding: 0;
+      border: 1px solid rgba(255,255,255,0.22);
+      border-radius: 50%;
+      background: rgba(28,25,22,0.86);
+      color: #fff;
+      cursor: pointer;
+      transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+    }
+
+    .hero-mobile-close:hover,
+    .hero-mobile-close:focus-visible {
+      border-color: #f2793f;
+      background: rgba(224,90,43,0.2);
+      transform: rotate(4deg);
+      outline: none;
+    }
+
+    .hero-mobile-close svg {
+      width: 20px;
+      height: 20px;
+      stroke: currentColor;
+    }
 
     .hero-mobile-menu a:hover,
     .hero-mobile-menu a:active {
       color: #f2793f;
+    }
+
+    body.hero-menu-open {
+      overflow: hidden;
+    }
+
+    body.hero-menu-open:has(.cinematic-shell) .bd-language-switcher {
+      right: 84px;
     }
 
     .cinematic-content {
@@ -3073,6 +3179,18 @@
     .reveal-delay-2 { transition-delay: 0.2s; }
     .reveal-delay-3 { transition-delay: 0.3s; }
 
+    /* A tömör navigáció még a hosszabb menüpontok törése előtt jelenik meg. */
+    @media (max-width: 1179px) {
+      .hero-nav-main { padding: 24px 32px; }
+      .hero-menu { display: none; }
+      .hero-burger { display: flex; }
+
+      body:has(.cinematic-shell) .bd-language-switcher {
+        top: 16px;
+        right: 84px;
+      }
+    }
+
     /* ── TABLET (≤1024px) ── */
     @media (max-width: 1024px) {
       .hero-nav-main { padding: 24px 32px; }
@@ -3230,6 +3348,37 @@
 
       .hero-burger {
         display: flex;
+      }
+
+      .hero-mobile-menu-inner {
+        padding: 96px 18px 32px;
+        align-content: start;
+        gap: 16px;
+      }
+
+      .hero-mobile-group {
+        padding: 18px;
+        border-radius: 16px;
+      }
+
+      .hero-mobile-submenu {
+        grid-template-columns: 1fr;
+        gap: 6px;
+      }
+
+      .hero-mobile-submenu a {
+        padding: 10px 11px;
+        font-size: 13px;
+      }
+
+      .hero-mobile-actions {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+
+      .hero-mobile-actions a {
+        min-height: 48px;
+        font-size: 13px;
       }
 
       .q-media {
@@ -3877,6 +4026,9 @@
     }
 
     @media (prefers-reduced-motion: reduce) {
+      .hero-mobile-menu,
+      .hero-mobile-menu-inner,
+      .hero-mobile-close,
       .why-bridge-card,
       .why-bridge-card img,
       .why-bridge-card .card-divider,
@@ -3945,27 +4097,36 @@
       <li><a href="kapcsolat.html">KAPCSOLAT</a></li>
     </ul>
 
-    <button class="hero-burger" id="heroBurger" aria-label="Menü" aria-expanded="false">
+    <button class="hero-burger" id="heroBurger" aria-label="Menü megnyitása" aria-controls="heroMobileMenu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
   </header>
 
-  <div class="hero-mobile-menu" id="heroMobileMenu">
-    <a href="ismerje-meg-a-bridge-dentalt.html">ISMERJE MEG A BRIDGE DENTALT</a>
-    <div class="hero-mobile-group">
-      <a href="#szolgaltatasok">SZAKTERÜLETEINK</a>
-      <div class="hero-mobile-submenu">
-        <a href="full-arch-implantatumos-rehabilitaciok.html">All-on-X rehabilitációk</a>
-        <a href="implantatumos-cirkonium-restauraciok.html">Implantátumos cirkónium restaurációk</a>
-        <a href="digitalis-fogsorok.html">TrueDent – Full color, monolitikus digitális fogsorok</a>
-        <a href="digitalis-tervezes.html">Digitális workflow</a>
-        <a href="esztetikai-keramia.html">Fémmentes kerámia pótlások</a>
-        <a href="digitalis-fogtechnika.html">CAD/CAM technológia</a>
-        <a href="galeria.html">Galéria</a>
+  <div class="hero-mobile-menu" id="heroMobileMenu" role="dialog" aria-modal="true" aria-label="Főmenü" aria-hidden="true" inert>
+    <button class="hero-mobile-close" id="heroMobileClose" type="button" aria-label="Menü bezárása">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M5 5l14 14M19 5L5 19" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </button>
+    <div class="hero-mobile-menu-inner">
+      <a class="hero-mobile-main" href="ismerje-meg-a-bridge-dentalt.html">ISMERJE MEG A BRIDGE DENTALT</a>
+      <div class="hero-mobile-group">
+        <a class="hero-mobile-section-link" href="#szolgaltatasok">SZAKTERÜLETEINK</a>
+        <div class="hero-mobile-submenu">
+          <a href="full-arch-implantatumos-rehabilitaciok.html">All-on-X rehabilitációk</a>
+          <a href="implantatumos-cirkonium-restauraciok.html">Implantátumos cirkónium restaurációk</a>
+          <a href="digitalis-fogsorok.html">TrueDent – Full color, monolitikus digitális fogsorok</a>
+          <a href="digitalis-tervezes.html">Digitális workflow</a>
+          <a href="esztetikai-keramia.html">Fémmentes kerámia pótlások</a>
+          <a href="digitalis-fogtechnika.html">CAD/CAM technológia</a>
+          <a href="galeria.html">Galéria</a>
+        </div>
+      </div>
+      <div class="hero-mobile-actions">
+        <a href="../output/pdf/bridge-dental-munkalap-kitoltheto-hu.pdf" target="_blank" rel="noopener">MUNKALAP</a>
+        <a href="kapcsolat.html">KAPCSOLAT</a>
       </div>
     </div>
-    <a href="../output/pdf/bridge-dental-munkalap-kitoltheto-hu.pdf" target="_blank" rel="noopener">MUNKALAP</a>
-    <a href="kapcsolat.html">KAPCSOLAT</a>
   </div>
 
   <div class="cinematic-content" id="cinematicContent">
@@ -4168,7 +4329,7 @@
   <div class="services-grid">
     <a class="service-card featured reveal" href="full-arch-implantatumos-rehabilitaciok.html">
       <div class="service-card-img">
-        <img src="../full-arch-implantatumos-rehabilitacio-all-on-x.webp" alt="Full-Arch implantátumos rehabilitáció All-on-X fogtechnikai modell ellenőrzése">
+        <img src="../assets/home/service-all-on-x.webp" alt="All-on-X restauráció digitális tervezése a monitoron">
       </div>
       <div class="service-tag">Fő specialitás</div>
       <div class="service-card-body">
@@ -4206,7 +4367,7 @@
 
     <a class="service-card reveal" href="digitalis-tervezes.html">
       <div class="service-card-img">
-        <img src="../assets/home/service-digital-workflow.webp" alt="Digitálisan megtervezett implantátumos restauráció a monitoron">
+        <img src="../assets/home/service-digital-workflow-focused.webp" alt="Digitálisan megtervezett teljes íves restauráció a CAD szoftverben">
       </div>
       <div class="service-card-body">
         <div class="service-number">04</div>
@@ -4439,20 +4600,75 @@
 
   const heroBurger = document.getElementById('heroBurger');
   const heroMobileMenu = document.getElementById('heroMobileMenu');
+  const heroMobileClose = document.getElementById('heroMobileClose');
+  const heroDesktopQuery = window.matchMedia('(min-width: 1180px)');
+  let heroMenuPreviousFocus = null;
 
-  function toggleHeroMenu(force) {
+  function toggleHeroMenu(force, restoreFocus = true) {
     if (!heroBurger || !heroMobileMenu) return;
     const open = force !== undefined ? force : !heroMobileMenu.classList.contains('open');
+
+    if (open) heroMenuPreviousFocus = document.activeElement;
     heroMobileMenu.classList.toggle('open', open);
     heroBurger.classList.toggle('open', open);
     heroBurger.setAttribute('aria-expanded', String(open));
-    document.body.style.overflow = open ? 'hidden' : '';
+    heroBurger.setAttribute('aria-label', open ? 'Menü bezárása' : 'Menü megnyitása');
+    heroMobileMenu.setAttribute('aria-hidden', String(!open));
+    heroMobileMenu.inert = !open;
+    document.body.classList.toggle('hero-menu-open', open);
+
+    if (open) {
+      window.requestAnimationFrame(() => heroMobileClose?.focus({ preventScroll: true }));
+    } else if (restoreFocus && heroMenuPreviousFocus instanceof HTMLElement) {
+      heroMenuPreviousFocus.focus({ preventScroll: true });
+    }
   }
 
   if (heroBurger && heroMobileMenu) {
     heroBurger.addEventListener('click', () => toggleHeroMenu());
+    heroMobileClose?.addEventListener('click', () => toggleHeroMenu(false));
+
+    heroMobileMenu.addEventListener('click', (event) => {
+      if (event.target === heroMobileMenu) toggleHeroMenu(false);
+    });
+
     heroMobileMenu.querySelectorAll('a').forEach((link) => {
-      link.addEventListener('click', () => toggleHeroMenu(false));
+      link.addEventListener('click', () => toggleHeroMenu(false, false));
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (!heroMobileMenu.classList.contains('open')) return;
+
+      if (event.key === 'Escape') {
+        event.preventDefault();
+        toggleHeroMenu(false);
+        return;
+      }
+
+      if (event.key === 'Tab') {
+        const focusable = [
+          ...heroMobileMenu.querySelectorAll('a[href], button:not([disabled])'),
+          ...document.querySelectorAll('.bd-language-switcher a[href]')
+        ].filter((element) => element instanceof HTMLElement && element.offsetParent !== null);
+
+        if (!focusable.length) return;
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+
+        if (event.shiftKey && document.activeElement === first) {
+          event.preventDefault();
+          last.focus();
+        } else if (!event.shiftKey && document.activeElement === last) {
+          event.preventDefault();
+          first.focus();
+        }
+      }
+    });
+
+    heroDesktopQuery.addEventListener('change', (event) => {
+      if (event.matches && heroMobileMenu.classList.contains('open')) {
+        toggleHeroMenu(false, false);
+      }
     });
   }
 
@@ -4768,10 +4984,10 @@
       { src: '../assets/home/workflow-virtual-waxup.webp', alt: 'Virtuális wax-up a digitális fogíven' },
       { src: '../assets/home/workflow-prototype.webp', alt: 'Fogászati prototípus kézi kidolgozása' },
       { src: '../assets/home/workflow-milling.webp', alt: 'Restauráció precíziós marása' },
-      { src: '../assets/home/workflow-printing.webp', alt: 'Fogtechnikai 3D nyomtatás a laborban', position: 'center 28%' },
+      { src: '../assets/home/workflow-printing.webp', alt: 'Fogtechnikai 3D nyomtatás a laborban', position: 'center 90%' },
       { src: '../assets/home/workflow-finalising.webp', alt: 'A fogszín egyedi készrevitele' },
       { src: '../assets/home/workflow-quality-control.webp', alt: 'Restauráció minőség-ellenőrzése nagyítás alatt' },
-      { src: '../step-12.png', alt: 'Elkészült fogászati restauráció' }
+      { src: '../assets/home/workflow-restoration.webp', alt: 'Elkészült teljes íves fogászati restauráció közeli nézetben' }
     ];
     const N = STEPS.length;
     const track = document.getElementById('carTrack');
