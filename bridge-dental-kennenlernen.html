@@ -997,7 +997,8 @@
     .i-card {
       position: relative;
       display: grid;
-      grid-template-columns: minmax(0, 44%) minmax(0, 56%);
+      grid-template-columns: minmax(0, 44fr) minmax(0, 56fr);
+      align-items: center;
       gap: clamp(28px, 4vw, 60px);
       background: #fdfaf5;
       border: 1px solid #ece2d4;
@@ -1009,26 +1010,28 @@
 
     .i-media {
       position: relative;
+      align-self: center;
+      aspect-ratio: 4 / 3;
       border-radius: 14px;
       overflow: hidden;
-      background: linear-gradient(150deg, #f3e3ce, #e2c5a1);
-      min-height: 300px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      background: var(--cream);
       transition: opacity 0.35s ease, transform 0.35s ease;
     }
 
-    .i-media .im-label {
-      font-family: var(--font-body);
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 3px;
-      color: rgba(90, 60, 35, 0.55);
-      border: 1.5px dashed rgba(232, 80, 46, 0.45);
-      border-radius: 10px;
-      padding: 14px 22px;
-      text-align: center;
+    .i-media img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .i-card.no-photo { grid-template-columns: 1fr; }
+    .i-card.no-photo .i-media { display: none; }
+    .i-card.no-photo .i-body { min-height: 260px; max-width: 760px; width: 100%; margin: auto; }
+    .i-card.no-photo .i-body p { max-width: 65ch; }
+    .i-year:focus-visible, .i-stop:focus-visible, .i-nav:focus-visible {
+      outline: 3px solid var(--accent);
+      outline-offset: -3px;
     }
 
     .i-body {
@@ -1187,7 +1190,7 @@
 
     @media (max-width: 1020px) {
       .i-card { grid-template-columns: 1fr; }
-      .i-media { min-height: 220px; }
+      .i-media { width: 100%; max-width: 640px; justify-self: center; }
       .i-nav.prev { left: 12px; }
       .i-nav.next { right: 12px; }
     }
@@ -1196,13 +1199,14 @@
       .innovation { padding-left: 18px; padding-right: 18px; }
       .i-title { font-size: clamp(28px, 7vw, 40px); }
       .i-sub { font-size: 15px; }
-      .i-card { padding: 22px; gap: 22px; }
+      .i-card { padding: 22px 22px 78px; gap: 22px; }
       .i-track { padding-top: 30px; }
       .i-track-line, .i-track-fill { left: 28px; right: 28px; top: 18px; }
       .i-year, .i-stop { min-width: 72px; }
-      .i-nav { width: 42px; height: 42px; }
-      .i-nav.prev { left: 8px; }
-      .i-nav.next { right: 8px; }
+      .i-nav { width: 42px; height: 42px; top: auto; bottom: 18px; transform: none; }
+      .i-nav:hover { transform: none; }
+      .i-nav.prev { left: auto; right: 74px; }
+      .i-nav.next { right: 22px; }
     }
 
     /* ── GALÉRIA ── */
@@ -1323,67 +1327,6 @@
 
     .g-panel.active .g-ph svg { transform: scale(1.15); }
 
-    .g-panel::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg, transparent 55%, rgba(43, 28, 16, 0.55) 100%);
-      opacity: 0.28;
-      transition: opacity 0.5s ease;
-      pointer-events: none;
-    }
-
-    .g-panel.active::after { opacity: 1; }
-
-    .g-label {
-      position: absolute;
-      left: 22px;
-      right: 22px;
-      bottom: 18px;
-      z-index: 2;
-      display: flex;
-      align-items: baseline;
-      gap: 12px;
-      opacity: 0;
-      transform: translateY(14px);
-      transition: opacity 0.45s ease 0.2s, transform 0.45s cubic-bezier(0.22, 1, 0.36, 1) 0.2s;
-      white-space: nowrap;
-    }
-
-    .g-panel.active .g-label { opacity: 1; transform: translateY(0); }
-
-    .g-label .gl-num {
-      font-family: var(--font-head);
-      font-size: 14px;
-      font-weight: 700;
-      color: var(--accent-2);
-    }
-
-    .g-label .gl-name {
-      font-family: var(--font-head);
-      font-size: 17px;
-      font-weight: 700;
-      color: #fff;
-    }
-
-    .g-side {
-      position: absolute;
-      left: 50%;
-      bottom: 22px;
-      transform: translateX(-50%);
-      writing-mode: vertical-rl;
-      font-family: var(--font-body);
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      color: rgba(255, 255, 255, 0.82);
-      text-shadow: 0 1px 8px rgba(0, 0, 0, 0.65);
-      transition: opacity 0.35s ease;
-      white-space: nowrap;
-    }
-
-    .g-panel.active .g-side { opacity: 0; }
-
     @media (max-width: 760px) {
       .gallery { padding-left: 18px; padding-right: 18px; }
       .gallery::before { display: none; }
@@ -1407,12 +1350,6 @@
       .g-ph svg { width: 40px; height: 40px; }
       .g-panel:not(.active) .g-ph svg { opacity: 0; }
 
-      .g-side {
-        writing-mode: horizontal-tb;
-        left: 20px;
-        bottom: 50%;
-        transform: translateY(50%);
-      }
     }
 
     /* ── MÁSHOGY MŰKÖDÜNK ── */
@@ -1524,13 +1461,56 @@
     .cc-icon-bad  { font-size: 12px; color: var(--warm-gray-light); flex-shrink: 0; }
     .cc-icon-good { font-size: 13px; color: var(--coral); flex-shrink: 0; font-weight: 700; }
 
+
+    /* Photographs share a consistent frame; fit is chosen for each composition. */
+    .award-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+    }
+    .award-card, .fejlodes-card {
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    .about-card-photo {
+      flex: none;
+      position: relative;
+      aspect-ratio: 4 / 3;
+      overflow: hidden;
+      background: var(--cream);
+      border-bottom: 1px solid var(--warm-gray-pale);
+    }
+    .about-card-photo img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: var(--photo-fit, cover);
+      object-position: var(--photo-position, center);
+    }
+    .about-card-photo--plaque {
+      padding: 16px;
+      background: var(--cream);
+    }
+    .award-card-body, .fejlodes-card-body {
+      flex: 1;
+      position: relative;
+      padding: 28px clamp(20px, 2.2vw, 32px) 34px;
+    }
+    @media (max-width: 1024px) and (min-width: 769px) {
+      #elismeresek { padding: 72px 48px !important; }
+      .award-grid, .fejlodes-grid { gap: 16px; }
+      .award-card-body, .fejlodes-card-body { padding: 24px 18px 30px; }
+    }
+
     /* ── SZAKMAI FEJLŐDÉS ── */
     .fejlodes-grid {
       display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 56px;
     }
     .fejlodes-card {
       background: var(--white); border: 1px solid var(--warm-gray-pale);
-      border-radius: 16px; padding: 36px 32px;
+      border-radius: 16px; padding: 0;
       transition: all 0.3s;
     }
     .fejlodes-card:hover {
@@ -2274,11 +2254,14 @@
     </div>
   </div>
 
-  <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;" class="reveal">
+  <div class="award-grid reveal">
 
     <!-- HDA 2015 -->
-    <div style="background: var(--white); border: 1px solid var(--warm-gray-pale); border-radius: 20px; padding: 40px 36px; position: relative; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.04); transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-6px)';this.style.boxShadow='0 16px 40px rgba(0,0,0,0.08)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 4px 20px rgba(0,0,0,0.04)'">
-      <div style="position: absolute; top: -30px; right: -30px; width: 130px; height: 130px; border-radius: 50%; background: rgba(224,90,43,0.05);"></div>
+    <div class="award-card" style="background: var(--white); border: 1px solid var(--warm-gray-pale); border-radius: 20px; padding: 0; position: relative; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.04); transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-6px)';this.style.boxShadow='0 16px 40px rgba(0,0,0,0.08)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 4px 20px rgba(0,0,0,0.04)'">
+<div class="about-card-photo" style="--photo-position: center 25%;">
+        <img src="assets/about/award-hungarian-dental-2015.webp" alt="Preisverleihung bei den Hungarian Dental Awards 2015" width="1050" height="1400" loading="lazy" decoding="async">
+      </div>
+      <div class="award-card-body">
       <div style="width: 52px; height: 52px; border-radius: 14px; background: var(--coral-pale); display: flex; align-items: center; justify-content: center; margin-bottom: 28px;">
         <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--coral)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
           <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/>
@@ -2293,11 +2276,15 @@
       <h3 style="font-family: 'Montserrat', sans-serif; font-size: 19px; font-weight: 800; color: var(--charcoal); letter-spacing: -0.4px; line-height: 1.25; margin: 0 0 14px;">Bestes Dentallabor</h3>
       <p style="font-size: 14px; color: var(--warm-gray); line-height: 1.65; margin: 0;">Die renommierteste Auszeichnung der ungarischen Zahntechnik – in den Kategorien „Bestes Labor“ und „Bester Zahntechniker“.</p>
       <div style="position: absolute; bottom: 0; left: 36px; right: 36px; height: 3px; background: linear-gradient(to right, var(--coral), #f07a52); border-radius: 2px 2px 0 0;"></div>
+      </div>
     </div>
 
     <!-- KunstZahnWerk 2019 -->
-    <div style="background: #1C1916; border-radius: 20px; padding: 40px 36px; position: relative; overflow: hidden; border: 1px solid rgba(255,255,255,0.06); box-shadow: 0 4px 24px rgba(0,0,0,0.12); transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-6px)';this.style.boxShadow='0 16px 40px rgba(0,0,0,0.2)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 4px 24px rgba(0,0,0,0.12)'">
-      <div style="position: absolute; top: -30px; right: -30px; width: 130px; height: 130px; border-radius: 50%; background: rgba(224,90,43,0.08);"></div>
+    <div class="award-card" style="background: #1C1916; border-radius: 20px; padding: 0; position: relative; overflow: hidden; border: 1px solid rgba(255,255,255,0.06); box-shadow: 0 4px 24px rgba(0,0,0,0.12); transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-6px)';this.style.boxShadow='0 16px 40px rgba(0,0,0,0.2)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 4px 24px rgba(0,0,0,0.12)'">
+<div class="about-card-photo">
+        <img src="assets/about/award-kunstzahnwerk-2019.webp" alt="Die Vertreter von Bridge Dental bei der Preisverleihung des Candulor KunstZahnWerk 2019" width="1400" height="1049" loading="lazy" decoding="async">
+      </div>
+      <div class="award-card-body">
       <div style="width: 52px; height: 52px; border-radius: 14px; background: linear-gradient(135deg, var(--coral), #f07a52); display: flex; align-items: center; justify-content: center; margin-bottom: 28px; box-shadow: 0 6px 16px rgba(224,90,43,0.4);">
         <img src="assets/icons/laurel-wreath.png" alt="" width="32" height="32" style="display: block; width: 32px; height: 32px; object-fit: contain;" aria-hidden="true">
       </div>
@@ -2305,11 +2292,15 @@
       <h3 style="font-family: 'Montserrat', sans-serif; font-size: 19px; font-weight: 800; color: var(--white); letter-spacing: -0.4px; line-height: 1.25; margin: 0 0 14px;">6. Platz</h3>
       <p style="font-size: 14px; color: rgba(255,255,255,0.62); line-height: 1.72; margin: 0;">Internationaler Berufswettbewerb der Schweizer CANDULOR AG, bei dem 49 Zahntechniker aus 16 Ländern ihr Können verglichen. Hervorragende Platzierung unter den besten Laboren Europas.</p>
       <div style="position: absolute; bottom: 0; left: 36px; right: 36px; height: 3px; background: linear-gradient(to right, var(--coral), #f07a52); border-radius: 2px 2px 0 0;"></div>
+      </div>
     </div>
 
     <!-- Győztesek versenye -->
-    <div style="background: var(--white); border: 1px solid var(--warm-gray-pale); border-radius: 20px; padding: 40px 36px; position: relative; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.04); transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-6px)';this.style.boxShadow='0 16px 40px rgba(0,0,0,0.08)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 4px 20px rgba(0,0,0,0.04)'">
-      <div style="position: absolute; top: -30px; right: -30px; width: 130px; height: 130px; border-radius: 50%; background: rgba(224,90,43,0.05);"></div>
+    <div class="award-card" style="background: var(--white); border: 1px solid var(--warm-gray-pale); border-radius: 20px; padding: 0; position: relative; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.04); transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-6px)';this.style.boxShadow='0 16px 40px rgba(0,0,0,0.08)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 4px 20px rgba(0,0,0,0.04)'">
+<div class="about-card-photo" style="--photo-fit: contain;">
+        <img src="assets/about/award-young-technicians.webp" alt="Teilnehmer und Preisträger des Nachwuchswettbewerbs „Wettbewerb der Sieger“" width="800" height="533" loading="lazy" decoding="async">
+      </div>
+      <div class="award-card-body">
       <div style="width: 52px; height: 52px; border-radius: 14px; background: var(--coral-pale); display: flex; align-items: center; justify-content: center; margin-bottom: 28px;">
         <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--coral)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
           <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
@@ -2319,6 +2310,7 @@
       <h3 style="font-family: 'Montserrat', sans-serif; font-size: 19px; font-weight: 800; color: var(--charcoal); letter-spacing: -0.4px; line-height: 1.25; margin: 0 0 14px;">1. Platz</h3>
       <p style="font-size: 14px; color: var(--warm-gray); line-height: 1.65; margin: 0;">Bei Bridge Dental spielt die Förderung junger Fachkräfte eine wichtige Rolle. Unsere Auszubildenden nehmen regelmäßig an internationalen Fachwettbewerben teil und erreichen dort immer wieder hervorragende Platzierungen.</p>
       <div style="position: absolute; bottom: 0; left: 36px; right: 36px; height: 3px; background: linear-gradient(to right, var(--coral), #f07a52); border-radius: 2px 2px 0 0;"></div>
+      </div>
     </div>
 
   </div>
@@ -2334,6 +2326,10 @@
   </div>
   <div class="fejlodes-grid">
     <div class="fejlodes-card reveal">
+      <div class="about-card-photo" style="--photo-fit: contain;">
+        <img src="assets/about/development-training.webp" alt="Interne Fortbildung im Dentallabor von Bridge Dental" width="1400" height="850" loading="lazy" decoding="async">
+      </div>
+      <div class="fejlodes-card-body">
       <div class="fejlodes-icon">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
           <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
@@ -2342,8 +2338,13 @@
       </div>
       <h3>Ausbildungslabor</h3>
       <p>Regelmäßige interne Schulungen fördern die kontinuierliche Entwicklung unseres Teams – damit Sie sich stets auf höchste Qualität verlassen können.</p>
+      </div>
     </div>
     <div class="fejlodes-card reveal reveal-delay-1">
+      <div class="about-card-photo">
+        <img src="assets/about/development-ids-2019.webp" alt="Das Team von Bridge Dental auf der IDS 2019 in Köln" width="1400" height="1050" loading="lazy" decoding="async">
+      </div>
+      <div class="fejlodes-card-body">
       <div class="fejlodes-icon">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
           <circle cx="12" cy="12" r="10"/>
@@ -2353,8 +2354,13 @@
       </div>
       <h3>Nationale und internationale Fachveranstaltungen</h3>
       <p>Wir nehmen regelmäßig an zahntechnischen Kongressen und Fachmessen teil, greifen neue Entwicklungen früh auf und übertragen sie in die tägliche Praxis.</p>
+      </div>
     </div>
     <div class="fejlodes-card reveal reveal-delay-2">
+      <div class="about-card-photo about-card-photo--plaque" style="--photo-fit: contain;">
+        <img src="assets/about/development-icde-partner.webp" alt="Plakette zur ICDE-Partnerschaft von Bridge Dental mit Ivoclar" width="500" height="666" loading="lazy" decoding="async">
+      </div>
+      <div class="fejlodes-card-body">
       <div class="fejlodes-icon">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
           <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
@@ -2362,6 +2368,7 @@
       </div>
       <h3>ICDE-Partner</h3>
       <p>Durch unsere ICDE-Partnerschaft integrieren wir aktuelle internationale zahntechnische Erkenntnisse laufend in unsere Arbeit.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -2444,7 +2451,7 @@
 </section>
 
 <!-- ============ INNOVÁCIÓ — IDŐVONAL ============ -->
-<section class="innovation">
+<section class="innovation" id="innovacio">
 
   <div class="i-eyebrow reveal" style="--d: 0s">INNOVATION</div>
   <h2 class="i-title reveal" style="--d: 0.12s">Immer einen Schritt voraus.</h2>
@@ -2455,9 +2462,9 @@
 
     <div class="i-card" id="iCard">
       <div class="i-media" id="iMedia">
-        <span class="im-label" id="iMediaLabel">BILDMOTIV</span>
+        <img id="iMediaImage" src="assets/about/milestone-2011.webp" alt="Aufbau und Einrichtung des Dentallabors von Bridge Dental" width="1400" height="1323" loading="lazy" decoding="async">
       </div>
-      <div class="i-body">
+      <div class="i-body" aria-live="polite" aria-atomic="true">
         <div class="ib-year" id="iBodyYear"></div>
         <h3 id="iBodyTitle"></h3>
         <p id="iBodyText"></p>
@@ -2495,68 +2502,46 @@
   <div class="g-panels reveal" id="gPanels" style="--d: 0.36s">
     <div class="g-panel active">
       <div class="g-ph"><img src="assets/about/gallery-01-0224.webp" alt="Zahntechnikerinnen bei der gemeinsamen Arbeit im Bridge Dental Labor" loading="lazy" style="--gallery-position: center 68%;"></div>
-      <span class="g-side">01 · GEMEINSAME ARBEIT</span>
-      <div class="g-label"><span class="gl-num">01</span><span class="gl-name">Gemeinsame Arbeit</span></div>
     </div>
 
     <div class="g-panel">
       <div class="g-ph"><img src="assets/about/gallery-02-9812-blurred.webp" alt="Präzise Teamarbeit zweier Zahntechnikerinnen vor weichgezeichnetem Laborhintergrund" loading="lazy"></div>
-      <span class="g-side">02 · PRÄZISE TEAMARBEIT</span>
-      <div class="g-label"><span class="gl-num">02</span><span class="gl-name">Präzise Teamarbeit</span></div>
     </div>
 
     <div class="g-panel">
       <div class="g-ph"><img src="assets/about/gallery-03-0271.webp" alt="Manuelle Ausarbeitung einer dentalen Restauration" loading="lazy" style="--gallery-position: center 58%;"></div>
-      <span class="g-side">03 · HANDARBEIT</span>
-      <div class="g-label"><span class="gl-num">03</span><span class="gl-name">Manuelle Ausarbeitung</span></div>
     </div>
 
     <div class="g-panel">
       <div class="g-ph"><img src="assets/about/gallery-04-0322.webp" alt="Sorgfältige Feinausarbeitung einer Zahnrestauration" loading="lazy" style="--gallery-position: center 62%;"></div>
-      <span class="g-side">04 · FEINAUSARBEITUNG</span>
-      <div class="g-label"><span class="gl-num">04</span><span class="gl-name">Feinausarbeitung</span></div>
     </div>
 
     <div class="g-panel">
       <div class="g-ph"><img src="assets/about/gallery-05-0547.webp" alt="Sandstrahlen einer dentalen Restauration" loading="lazy" style="--gallery-position: center 48%;"></div>
-      <span class="g-side">05 · SANDSTRAHLEN</span>
-      <div class="g-label"><span class="gl-num">05</span><span class="gl-name">Sandstrahlen</span></div>
     </div>
 
     <div class="g-panel">
       <div class="g-ph"><img src="assets/about/gallery-06-1593.webp" alt="Prüfung einer Restauration unter Vergrößerung" loading="lazy"></div>
-      <span class="g-side">06 · VERGRÖSSERUNG</span>
-      <div class="g-label"><span class="gl-num">06</span><span class="gl-name">Arbeit unter Vergrößerung</span></div>
     </div>
 
     <div class="g-panel">
       <div class="g-ph"><img src="assets/about/gallery-07-1144.webp" alt="Präziser zahntechnischer Arbeitsschritt am Labortisch" loading="lazy" style="--gallery-position: center 48%;"></div>
-      <span class="g-side">07 · PRÄZISIONSARBEIT</span>
-      <div class="g-label"><span class="gl-num">07</span><span class="gl-name">Präzisionsarbeit</span></div>
     </div>
 
     <div class="g-panel">
       <div class="g-ph"><img src="assets/about/gallery-08-1085.webp" alt="Zahnfarbbestimmung anhand eines digitalen Patientenfotos" loading="lazy"></div>
-      <span class="g-side">08 · ZAHNFARBE</span>
-      <div class="g-label"><span class="gl-num">08</span><span class="gl-name">Zahnfarbbestimmung</span></div>
     </div>
 
     <div class="g-panel">
       <div class="g-ph"><img src="assets/about/gallery-09-0266.webp" alt="Zahntechnische Handinstrumente am Arbeitsplatz" loading="lazy" style="--gallery-position: center 42%;"></div>
-      <span class="g-side">09 · INSTRUMENTE</span>
-      <div class="g-label"><span class="gl-num">09</span><span class="gl-name">Unsere Instrumente</span></div>
     </div>
 
     <div class="g-panel">
       <div class="g-ph"><img src="assets/about/gallery-10-0213.webp" alt="Individuelle Charakterisierung einer dentalen Restauration" loading="lazy" style="--gallery-position: center 58%;"></div>
-      <span class="g-side">10 · CHARAKTERISIERUNG</span>
-      <div class="g-label"><span class="gl-num">10</span><span class="gl-name">Individuelle Charakterisierung</span></div>
     </div>
 
     <div class="g-panel">
       <div class="g-ph"><img src="assets/about/gallery-11-0115.webp" alt="Zahntechnische Detailarbeit für eine natürliche Zahnfarbe" loading="lazy"></div>
-      <span class="g-side">11 · DETAILARBEIT</span>
-      <div class="g-label"><span class="gl-num">11</span><span class="gl-name">Detailarbeit</span></div>
     </div>
 
   </div>
@@ -2779,15 +2764,14 @@
   // Innováció idővonal
   (function () {
     const MILESTONES = [
-      { year: '2011', title: 'Die Anfänge', text: 'Bridge Dental wird mit dem Ziel gegründet, Praxen im In- und Ausland als echter fachlicher Partner zu begleiten.' },
-      { year: '2012', title: 'Fokus Implantologie', text: 'Implantatgetragene Rehabilitationen werden zu einem Schwerpunkt unseres Labors.' },
-      { year: '2013', title: 'Konsequente Digitalisierung', text: 'Schrittweise stellen wir auf CAD/CAM-basierte Workflows um und schaffen damit die Basis für weitere Entwicklungen.' },
-      { year: '2015', title: '„Bestes Dentallabor“', text: 'Auszeichnung bei den Hungarian Dental Awards.' },
-      { year: '2016', title: '3D-Druck und ICDE-Partnerschaft', text: 'Additive Fertigung wird Teil unseres Alltags. Im selben Jahr würdigt Ivoclar unsere Arbeit als ICDE-Referenzlabor.' },
-      { year: '2017', title: 'Internationales Premium-Modell', text: 'Wir entwickeln ein Kooperationsmodell, das auf die Anforderungen hochwertiger Praxen in Deutschland und der Schweiz zugeschnitten ist.' },
-      { year: '2019', title: 'KunstZahnWerk: 6. Platz', text: 'Internationale Fachauszeichnung unter 49 Zahntechnikern aus 16 Ländern.' },
-      { year: '2021', title: 'Eigenes digitales Fertigungszentrum', text: 'Neue CAD/CAM-Technologien, moderne Fräsmaschinen und eine vollständig digitale Fertigungsumgebung.' },
-      { year: '2026', title: 'TrueDent®', text: 'Biokompatible, vollfarbige digitale Prothesen eröffnen neue Möglichkeiten in der digitalen Prothetik.' }
+      {"year":"2011","title":"Die Anfänge","text":"Bridge Dental wird mit dem Ziel gegründet, Praxen im In- und Ausland als echter fachlicher Partner zu begleiten.","image":"assets/about/milestone-2011.webp","alt":"Aufbau und Einrichtung des Dentallabors von Bridge Dental"},
+      {"year":"2012","title":"Konsequente Digitalisierung","text":"Mit den Systemen von Nobel Procera und 3Shape stellen wir unsere Arbeitsabläufe schrittweise auf CAD/CAM um. Damit legen wir den Grundstein für die weiteren technischen Entwicklungen.","image":"assets/about/milestone-2012.webp","alt":"Digitale Konstruktion mit Nobel Procera im Labor"},
+      {"year":"2015","title":"„Bestes Dentallabor“","text":"Auszeichnung bei den Hungarian Dental Awards.","image":"assets/about/milestone-2015.webp","alt":"Die Preisträger der Hungarian Dental Awards 2015 mit ihren Auszeichnungen"},
+      {"year":"2016","title":"3D-Druck und ICDE-Partnerschaft","text":"Die additive Fertigung wird zum festen Bestandteil unserer täglichen Arbeit. Im selben Jahr verleiht uns Ivoclar, ein weltweit führendes Dentalunternehmen mit Sitz in Liechtenstein, den ICDE-Partnerstatus (International Centre for Dental Education) – eine bedeutende Anerkennung unserer fachlichen Kompetenz.","image":"assets/about/milestone-2016.webp","alt":"Fortbildung im digitalen Schulungszentrum von Ivoclar"},
+      {"year":"2019","title":"KunstZahnWerk: 6. Platz","text":"Internationale Anerkennung für unsere Arbeit: Wir erreichen den sechsten Platz im Wettbewerb mit 49 Zahntechnikern aus 16 Ländern.","image":"assets/about/milestone-2019.webp","alt":"Die mit dem sechsten Platz ausgezeichnete Wettbewerbsarbeit von Attila Kínál und Dénes Császár beim KunstZahnWerk"},
+      {"year":"2021","title":"Eigenes digitales Fertigungszentrum","text":"Mit neuen CAD/CAM-Technologien und einer modernen imes-icore CORiTEC 350i Loader PRO+ Fräsmaschine schaffen wir eine durchgängig digitale Fertigungsumgebung.","image":"assets/about/milestone-2021.webp","alt":"Die imes-icore CORiTEC 350i Loader PRO+ Fräsmaschine im Labor von Bridge Dental"},
+      {"year":"2024","title":"Ausbau unserer Fertigungskapazität","text":"Mit zwei weiteren imes-icore CORiTEC 250i Fräsmaschinen erweitern wir unsere eigene CAD/CAM-Fertigungskapazität."},
+      {"year":"2026","title":"TrueDent®","text":"Biokompatible, vollfarbige digitale Prothesen eröffnen neue Möglichkeiten in der digitalen Prothetik."}
     ];
     const N = MILESTONES.length;
 
@@ -2798,17 +2782,17 @@
     const bYear = document.getElementById('iBodyYear');
     const bTitle = document.getElementById('iBodyTitle');
     const bText = document.getElementById('iBodyText');
-    const mediaLabel = document.getElementById('iMediaLabel');
+    const mediaImage = document.getElementById('iMediaImage');
     const prev = document.getElementById('iPrev');
     const next = document.getElementById('iNext');
 
-    if (!yearsBox || !track || !trackFill || !card || !bYear || !bTitle || !bText || !mediaLabel || !prev || !next) return;
+    if (!yearsBox || !track || !trackFill || !card || !bYear || !bTitle || !bText || !mediaImage || !prev || !next) return;
 
     yearsBox.innerHTML = MILESTONES.map((m, i) =>
-      `<button class="i-year" data-i="${i}">${m.year}</button>`).join('');
+      `<button class="i-year" data-i="${i}" aria-controls="iCard" aria-pressed="${i === 0}">${m.year}</button>`).join('');
 
     track.insertAdjacentHTML('beforeend', MILESTONES.map((m, i) => `
-      <button class="i-stop" data-i="${i}">
+      <button class="i-stop" data-i="${i}" aria-controls="iCard" aria-pressed="${i === 0}">
         <span class="is-dot"></span>
         <span class="is-year">${m.year}</span>
       </button>`).join(''));
@@ -2816,34 +2800,47 @@
     const yearEls = yearsBox.querySelectorAll('.i-year');
     const stopEls = track.querySelectorAll('.i-stop');
     let index = 0;
+    let switchTimer;
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     function render() {
       const m = MILESTONES[index];
       bYear.textContent = m.year;
       bTitle.textContent = m.title;
       bText.textContent = m.text;
-      mediaLabel.textContent = `BILDMOTIV — ${m.year}`;
+      card.classList.toggle('no-photo', !m.image);
+      if (m.image) {
+        mediaImage.alt = m.alt;
+        mediaImage.src = m.image;
+      } else {
+        mediaImage.removeAttribute('src');
+        mediaImage.alt = '';
+      }
     }
 
     function update() {
       yearEls.forEach((el, i) => {
         el.classList.toggle('active', i === index);
+        el.setAttribute('aria-pressed', String(i === index));
         el.classList.toggle('done', i < index);
       });
       stopEls.forEach((el, i) => {
         el.classList.toggle('active', i === index);
+        el.setAttribute('aria-pressed', String(i === index));
         el.classList.toggle('done', i < index);
         el.classList.toggle('future', i > index);
       });
 
       trackFill.style.width = `calc((100% - 80px) * ${N === 1 ? 0 : index / (N - 1)})`;
-      yearEls[index].scrollIntoView({ block: 'nearest', inline: 'center', behavior: 'smooth' });
+      const activeYear = yearEls[index];
+      yearsBox.scrollTo({ left: activeYear.offsetLeft - yearsBox.offsetLeft - (yearsBox.clientWidth - activeYear.clientWidth) / 2, behavior: reducedMotion ? 'auto' : 'smooth' });
 
+      clearTimeout(switchTimer);
       card.classList.add('switching');
-      setTimeout(() => {
+      switchTimer = setTimeout(() => {
         render();
         card.classList.remove('switching');
-      }, 300);
+      }, reducedMotion ? 0 : 200);
     }
 
     function go(i) {

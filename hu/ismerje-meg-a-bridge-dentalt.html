@@ -997,7 +997,8 @@
     .i-card {
       position: relative;
       display: grid;
-      grid-template-columns: minmax(0, 44%) minmax(0, 56%);
+      grid-template-columns: minmax(0, 44fr) minmax(0, 56fr);
+      align-items: center;
       gap: clamp(28px, 4vw, 60px);
       background: #fdfaf5;
       border: 1px solid #ece2d4;
@@ -1009,26 +1010,28 @@
 
     .i-media {
       position: relative;
+      align-self: center;
+      aspect-ratio: 4 / 3;
       border-radius: 14px;
       overflow: hidden;
-      background: linear-gradient(150deg, #f3e3ce, #e2c5a1);
-      min-height: 300px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      background: var(--cream);
       transition: opacity 0.35s ease, transform 0.35s ease;
     }
 
-    .i-media .im-label {
-      font-family: var(--font-body);
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 3px;
-      color: rgba(90, 60, 35, 0.55);
-      border: 1.5px dashed rgba(232, 80, 46, 0.45);
-      border-radius: 10px;
-      padding: 14px 22px;
-      text-align: center;
+    .i-media img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .i-card.no-photo { grid-template-columns: 1fr; }
+    .i-card.no-photo .i-media { display: none; }
+    .i-card.no-photo .i-body { min-height: 260px; max-width: 760px; width: 100%; margin: auto; }
+    .i-card.no-photo .i-body p { max-width: 65ch; }
+    .i-year:focus-visible, .i-stop:focus-visible, .i-nav:focus-visible {
+      outline: 3px solid var(--accent);
+      outline-offset: -3px;
     }
 
     .i-body {
@@ -1187,7 +1190,7 @@
 
     @media (max-width: 1020px) {
       .i-card { grid-template-columns: 1fr; }
-      .i-media { min-height: 220px; }
+      .i-media { width: 100%; max-width: 640px; justify-self: center; }
       .i-nav.prev { left: 12px; }
       .i-nav.next { right: 12px; }
     }
@@ -1196,13 +1199,14 @@
       .innovation { padding-left: 18px; padding-right: 18px; }
       .i-title { font-size: clamp(28px, 7vw, 40px); }
       .i-sub { font-size: 15px; }
-      .i-card { padding: 22px; gap: 22px; }
+      .i-card { padding: 22px 22px 78px; gap: 22px; }
       .i-track { padding-top: 30px; }
       .i-track-line, .i-track-fill { left: 28px; right: 28px; top: 18px; }
       .i-year, .i-stop { min-width: 72px; }
-      .i-nav { width: 42px; height: 42px; }
-      .i-nav.prev { left: 8px; }
-      .i-nav.next { right: 8px; }
+      .i-nav { width: 42px; height: 42px; top: auto; bottom: 18px; transform: none; }
+      .i-nav:hover { transform: none; }
+      .i-nav.prev { left: auto; right: 74px; }
+      .i-nav.next { right: 22px; }
     }
 
     /* ── GALÉRIA ── */
@@ -1323,67 +1327,6 @@
 
     .g-panel.active .g-ph svg { transform: scale(1.15); }
 
-    .g-panel::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg, transparent 55%, rgba(43, 28, 16, 0.55) 100%);
-      opacity: 0.28;
-      transition: opacity 0.5s ease;
-      pointer-events: none;
-    }
-
-    .g-panel.active::after { opacity: 1; }
-
-    .g-label {
-      position: absolute;
-      left: 22px;
-      right: 22px;
-      bottom: 18px;
-      z-index: 2;
-      display: flex;
-      align-items: baseline;
-      gap: 12px;
-      opacity: 0;
-      transform: translateY(14px);
-      transition: opacity 0.45s ease 0.2s, transform 0.45s cubic-bezier(0.22, 1, 0.36, 1) 0.2s;
-      white-space: nowrap;
-    }
-
-    .g-panel.active .g-label { opacity: 1; transform: translateY(0); }
-
-    .g-label .gl-num {
-      font-family: var(--font-head);
-      font-size: 14px;
-      font-weight: 700;
-      color: var(--accent-2);
-    }
-
-    .g-label .gl-name {
-      font-family: var(--font-head);
-      font-size: 17px;
-      font-weight: 700;
-      color: #fff;
-    }
-
-    .g-side {
-      position: absolute;
-      left: 50%;
-      bottom: 22px;
-      transform: translateX(-50%);
-      writing-mode: vertical-rl;
-      font-family: var(--font-body);
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      color: rgba(255, 255, 255, 0.82);
-      text-shadow: 0 1px 8px rgba(0, 0, 0, 0.65);
-      transition: opacity 0.35s ease;
-      white-space: nowrap;
-    }
-
-    .g-panel.active .g-side { opacity: 0; }
-
     @media (max-width: 760px) {
       .gallery { padding-left: 18px; padding-right: 18px; }
       .gallery::before { display: none; }
@@ -1407,12 +1350,6 @@
       .g-ph svg { width: 40px; height: 40px; }
       .g-panel:not(.active) .g-ph svg { opacity: 0; }
 
-      .g-side {
-        writing-mode: horizontal-tb;
-        left: 20px;
-        bottom: 50%;
-        transform: translateY(50%);
-      }
     }
 
     /* ── MÁSHOGY MŰKÖDÜNK ── */
@@ -1524,13 +1461,56 @@
     .cc-icon-bad  { font-size: 12px; color: var(--warm-gray-light); flex-shrink: 0; }
     .cc-icon-good { font-size: 13px; color: var(--coral); flex-shrink: 0; font-weight: 700; }
 
+
+    /* Photographs share a consistent frame; fit is chosen for each composition. */
+    .award-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+    }
+    .award-card, .fejlodes-card {
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    .about-card-photo {
+      flex: none;
+      position: relative;
+      aspect-ratio: 4 / 3;
+      overflow: hidden;
+      background: var(--cream);
+      border-bottom: 1px solid var(--warm-gray-pale);
+    }
+    .about-card-photo img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: var(--photo-fit, cover);
+      object-position: var(--photo-position, center);
+    }
+    .about-card-photo--plaque {
+      padding: 16px;
+      background: var(--cream);
+    }
+    .award-card-body, .fejlodes-card-body {
+      flex: 1;
+      position: relative;
+      padding: 28px clamp(20px, 2.2vw, 32px) 34px;
+    }
+    @media (max-width: 1024px) and (min-width: 769px) {
+      #elismeresek { padding: 72px 48px !important; }
+      .award-grid, .fejlodes-grid { gap: 16px; }
+      .award-card-body, .fejlodes-card-body { padding: 24px 18px 30px; }
+    }
+
     /* ── SZAKMAI FEJLŐDÉS ── */
     .fejlodes-grid {
       display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 56px;
     }
     .fejlodes-card {
       background: var(--white); border: 1px solid var(--warm-gray-pale);
-      border-radius: 16px; padding: 36px 32px;
+      border-radius: 16px; padding: 0;
       transition: all 0.3s;
     }
     .fejlodes-card:hover {
@@ -2274,11 +2254,14 @@
     </div>
   </div>
 
-  <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;" class="reveal">
+  <div class="award-grid reveal">
 
     <!-- HDA 2015 -->
-    <div style="background: var(--white); border: 1px solid var(--warm-gray-pale); border-radius: 20px; padding: 40px 36px; position: relative; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.04); transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-6px)';this.style.boxShadow='0 16px 40px rgba(0,0,0,0.08)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 4px 20px rgba(0,0,0,0.04)'">
-      <div style="position: absolute; top: -30px; right: -30px; width: 130px; height: 130px; border-radius: 50%; background: rgba(224,90,43,0.05);"></div>
+    <div class="award-card" style="background: var(--white); border: 1px solid var(--warm-gray-pale); border-radius: 20px; padding: 0; position: relative; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.04); transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-6px)';this.style.boxShadow='0 16px 40px rgba(0,0,0,0.08)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 4px 20px rgba(0,0,0,0.04)'">
+<div class="about-card-photo" style="--photo-position: center 25%;">
+        <img src="../assets/about/award-hungarian-dental-2015.webp" alt="Díjátadás a 2015-ös Hungarian Dental Awards rendezvényen" width="1050" height="1400" loading="lazy" decoding="async">
+      </div>
+      <div class="award-card-body">
       <div style="width: 52px; height: 52px; border-radius: 14px; background: var(--coral-pale); display: flex; align-items: center; justify-content: center; margin-bottom: 28px;">
         <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--coral)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
           <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/>
@@ -2293,11 +2276,15 @@
       <h3 style="font-family: 'Montserrat', sans-serif; font-size: 19px; font-weight: 800; color: var(--charcoal); letter-spacing: -0.4px; line-height: 1.25; margin: 0 0 14px;">Legjobb fogtechnikai labor</h3>
       <p style="font-size: 14px; color: var(--warm-gray); line-height: 1.65; margin: 0;">A magyar fogtechnikai szakma legrangosabb elismerése — a legjobb labor és a legjobb fogtechnikus kategóriában.</p>
       <div style="position: absolute; bottom: 0; left: 36px; right: 36px; height: 3px; background: linear-gradient(to right, var(--coral), #f07a52); border-radius: 2px 2px 0 0;"></div>
+      </div>
     </div>
 
     <!-- KunstZahnWerk 2019 -->
-    <div style="background: #1C1916; border-radius: 20px; padding: 40px 36px; position: relative; overflow: hidden; border: 1px solid rgba(255,255,255,0.06); box-shadow: 0 4px 24px rgba(0,0,0,0.12); transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-6px)';this.style.boxShadow='0 16px 40px rgba(0,0,0,0.2)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 4px 24px rgba(0,0,0,0.12)'">
-      <div style="position: absolute; top: -30px; right: -30px; width: 130px; height: 130px; border-radius: 50%; background: rgba(224,90,43,0.08);"></div>
+    <div class="award-card" style="background: #1C1916; border-radius: 20px; padding: 0; position: relative; overflow: hidden; border: 1px solid rgba(255,255,255,0.06); box-shadow: 0 4px 24px rgba(0,0,0,0.12); transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-6px)';this.style.boxShadow='0 16px 40px rgba(0,0,0,0.2)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 4px 24px rgba(0,0,0,0.12)'">
+<div class="about-card-photo">
+        <img src="../assets/about/award-kunstzahnwerk-2019.webp" alt="A Bridge Dental képviselői a 2019-es Candulor KunstZahnWerk díjátadóján" width="1400" height="1049" loading="lazy" decoding="async">
+      </div>
+      <div class="award-card-body">
       <div style="width: 52px; height: 52px; border-radius: 14px; background: linear-gradient(135deg, var(--coral), #f07a52); display: flex; align-items: center; justify-content: center; margin-bottom: 28px; box-shadow: 0 6px 16px rgba(224,90,43,0.4);">
         <img src="../assets/icons/laurel-wreath.png" alt="" width="32" height="32" style="display: block; width: 32px; height: 32px; object-fit: contain;" aria-hidden="true">
       </div>
@@ -2305,11 +2292,15 @@
       <h3 style="font-family: 'Montserrat', sans-serif; font-size: 19px; font-weight: 800; color: var(--white); letter-spacing: -0.4px; line-height: 1.25; margin: 0 0 14px;">6. helyezés</h3>
       <p style="font-size: 14px; color: rgba(255,255,255,0.62); line-height: 1.72; margin: 0;">Nemzetközi szakmai verseny a svájci CANDULOR AG szervezésében, ahol 16 ország 49 fogtechnikusa mérte össze tudását. Kiemelkedő helyezés Európa legjobb laborai között.</p>
       <div style="position: absolute; bottom: 0; left: 36px; right: 36px; height: 3px; background: linear-gradient(to right, var(--coral), #f07a52); border-radius: 2px 2px 0 0;"></div>
+      </div>
     </div>
 
     <!-- Győztesek versenye -->
-    <div style="background: var(--white); border: 1px solid var(--warm-gray-pale); border-radius: 20px; padding: 40px 36px; position: relative; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.04); transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-6px)';this.style.boxShadow='0 16px 40px rgba(0,0,0,0.08)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 4px 20px rgba(0,0,0,0.04)'">
-      <div style="position: absolute; top: -30px; right: -30px; width: 130px; height: 130px; border-radius: 50%; background: rgba(224,90,43,0.05);"></div>
+    <div class="award-card" style="background: var(--white); border: 1px solid var(--warm-gray-pale); border-radius: 20px; padding: 0; position: relative; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.04); transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-6px)';this.style.boxShadow='0 16px 40px rgba(0,0,0,0.08)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 4px 20px rgba(0,0,0,0.04)'">
+<div class="about-card-photo" style="--photo-fit: contain;">
+        <img src="../assets/about/award-young-technicians.webp" alt="A Győztesek versenye résztvevői és díjazottjai" width="800" height="533" loading="lazy" decoding="async">
+      </div>
+      <div class="award-card-body">
       <div style="width: 52px; height: 52px; border-radius: 14px; background: var(--coral-pale); display: flex; align-items: center; justify-content: center; margin-bottom: 28px;">
         <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--coral)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
           <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
@@ -2319,6 +2310,7 @@
       <h3 style="font-family: 'Montserrat', sans-serif; font-size: 19px; font-weight: 800; color: var(--charcoal); letter-spacing: -0.4px; line-height: 1.25; margin: 0 0 14px;">1.helyezés</h3>
       <p style="font-size: 14px; color: var(--warm-gray); line-height: 1.65; margin: 0;">A Bridge Dentalnál fontos szerepet kap a fiatal szakemberek támogatása. Tanulóink rendszeresen részt vesznek nemzetközi szakmai versenyeken, ahol több alkalommal értek el előkelő helyezést.</p>
       <div style="position: absolute; bottom: 0; left: 36px; right: 36px; height: 3px; background: linear-gradient(to right, var(--coral), #f07a52); border-radius: 2px 2px 0 0;"></div>
+      </div>
     </div>
 
   </div>
@@ -2334,6 +2326,10 @@
   </div>
   <div class="fejlodes-grid">
     <div class="fejlodes-card reveal">
+      <div class="about-card-photo" style="--photo-fit: contain;">
+        <img src="../assets/about/development-training.webp" alt="Belső szakmai továbbképzés a Bridge Dental laborjában" width="1400" height="850" loading="lazy" decoding="async">
+      </div>
+      <div class="fejlodes-card-body">
       <div class="fejlodes-icon">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
           <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
@@ -2342,8 +2338,13 @@
       </div>
       <h3>Oktató labor</h3>
       <p>Rendszeres belső képzésekkel fejlesztjük kollégáink tudását, hogy partnereink mindig a lehető legmagasabb színvonalú munkát kapják tőlünk.</p>
+      </div>
     </div>
     <div class="fejlodes-card reveal reveal-delay-1">
+      <div class="about-card-photo">
+        <img src="../assets/about/development-ids-2019.webp" alt="A Bridge Dental csapata a 2019-es kölni IDS fogászati kiállításon" width="1400" height="1050" loading="lazy" decoding="async">
+      </div>
+      <div class="fejlodes-card-body">
       <div class="fejlodes-icon">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
           <circle cx="12" cy="12" r="10"/>
@@ -2353,8 +2354,13 @@
       </div>
       <h3>Hazai és nemzetközi kiállítások</h3>
       <p>Rendszeresen részt veszünk fogtechnikai kongresszusokon, hogy első kézből ismerjük meg az újdonságokat, és a bevált megoldásokat mielőbb beépítsük a mindennapi munkánkba.</p>
+      </div>
     </div>
     <div class="fejlodes-card reveal reveal-delay-2">
+      <div class="about-card-photo about-card-photo--plaque" style="--photo-fit: contain;">
+        <img src="../assets/about/development-icde-partner.webp" alt="A Bridge Dental Ivoclar ICDE-partnerségét jelölő tábla" width="500" height="666" loading="lazy" decoding="async">
+      </div>
+      <div class="fejlodes-card-body">
       <div class="fejlodes-icon">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
           <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
@@ -2362,6 +2368,7 @@
       </div>
       <h3>ICDE Partner</h3>
       <p>ICDE-partnerségünk révén aktívan alkalmazzuk a legújabb nemzetközi fogtechnikai irányelveket; ez a naprakész, megbízható minőség egyik alapja.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -2453,7 +2460,7 @@
 </section>
 
 <!-- ============ INNOVÁCIÓ — IDŐVONAL ============ -->
-<section class="innovation">
+<section class="innovation" id="innovacio">
 
   <div class="i-eyebrow reveal" style="--d: 0s">INNOVÁCIÓ</div>
   <h2 class="i-title reveal" style="--d: 0.12s">Mindig egy lépéssel előrébb.</h2>
@@ -2464,9 +2471,9 @@
 
     <div class="i-card" id="iCard">
       <div class="i-media" id="iMedia">
-        <span class="im-label" id="iMediaLabel">KÉP HELYE</span>
+        <img id="iMediaImage" src="../assets/about/milestone-2011.webp" alt="A Bridge Dental laborjának kialakítása és berendezése" width="1400" height="1323" loading="lazy" decoding="async">
       </div>
-      <div class="i-body">
+      <div class="i-body" aria-live="polite" aria-atomic="true">
         <div class="ib-year" id="iBodyYear"></div>
         <h3 id="iBodyTitle"></h3>
         <p id="iBodyText"></p>
@@ -2504,68 +2511,46 @@
   <div class="g-panels reveal" id="gPanels" style="--d: 0.36s">
     <div class="g-panel active">
       <div class="g-ph"><img src="../assets/about/gallery-01-0224.webp" alt="Fogtechnikusok közös munka közben a Bridge Dental laborjában" loading="lazy" style="--gallery-position: center 68%;"></div>
-      <span class="g-side">01 · KÖZÖS MUNKA</span>
-      <div class="g-label"><span class="gl-num">01</span><span class="gl-name">Közös munka</span></div>
     </div>
 
     <div class="g-panel">
       <div class="g-ph"><img src="../assets/about/gallery-02-9812-blurred.webp" alt="Két fogtechnikus precíz csapatmunkája elmosott laborháttér előtt" loading="lazy"></div>
-      <span class="g-side">02 · PRECÍZ CSAPATMUNKA</span>
-      <div class="g-label"><span class="gl-num">02</span><span class="gl-name">Precíz csapatmunka</span></div>
     </div>
 
     <div class="g-panel">
       <div class="g-ph"><img src="../assets/about/gallery-03-0271.webp" alt="Fogtechnikai restauráció kézi kidolgozása" loading="lazy" style="--gallery-position: center 58%;"></div>
-      <span class="g-side">03 · KÉZI KIDOLGOZÁS</span>
-      <div class="g-label"><span class="gl-num">03</span><span class="gl-name">Kézi kidolgozás</span></div>
     </div>
 
     <div class="g-panel">
       <div class="g-ph"><img src="../assets/about/gallery-04-0322.webp" alt="Fogpótlás gondos finomítása a laborban" loading="lazy" style="--gallery-position: center 62%;"></div>
-      <span class="g-side">04 · FINOMÍTÁS</span>
-      <div class="g-label"><span class="gl-num">04</span><span class="gl-name">Restauráció finomítása</span></div>
     </div>
 
     <div class="g-panel">
       <div class="g-ph"><img src="../assets/about/gallery-05-0547.webp" alt="Fogtechnikai restauráció homokfúvása" loading="lazy" style="--gallery-position: center 48%;"></div>
-      <span class="g-side">05 · HOMOKFÚVÁS</span>
-      <div class="g-label"><span class="gl-num">05</span><span class="gl-name">Homokfúvás</span></div>
     </div>
 
     <div class="g-panel">
       <div class="g-ph"><img src="../assets/about/gallery-06-1593.webp" alt="Fogtechnikai restauráció vizsgálata nagyítás alatt" loading="lazy"></div>
-      <span class="g-side">06 · NAGYÍTÁS ALATT</span>
-      <div class="g-label"><span class="gl-num">06</span><span class="gl-name">Munka nagyítás alatt</span></div>
     </div>
 
     <div class="g-panel">
       <div class="g-ph"><img src="../assets/about/gallery-07-1144.webp" alt="Precíziós fogtechnikai munkafázis a laborasztalnál" loading="lazy" style="--gallery-position: center 48%;"></div>
-      <span class="g-side">07 · PRECÍZIÓS MUNKA</span>
-      <div class="g-label"><span class="gl-num">07</span><span class="gl-name">Precíziós munka</span></div>
     </div>
 
     <div class="g-panel">
       <div class="g-ph"><img src="../assets/about/gallery-08-1085.webp" alt="Fogszín meghatározása digitális mosolyfotó alapján" loading="lazy"></div>
-      <span class="g-side">08 · FOGSZÍN</span>
-      <div class="g-label"><span class="gl-num">08</span><span class="gl-name">Fogszín meghatározása</span></div>
     </div>
 
     <div class="g-panel">
       <div class="g-ph"><img src="../assets/about/gallery-09-0266.webp" alt="Fogtechnikai kéziszerszámok a munkaasztalon" loading="lazy" style="--gallery-position: center 42%;"></div>
-      <span class="g-side">09 · ESZKÖZÖK</span>
-      <div class="g-label"><span class="gl-num">09</span><span class="gl-name">Eszközeink</span></div>
     </div>
 
     <div class="g-panel">
       <div class="g-ph"><img src="../assets/about/gallery-10-0213.webp" alt="Fogászati restauráció egyedi karakterizálása" loading="lazy" style="--gallery-position: center 58%;"></div>
-      <span class="g-side">10 · KARAKTERIZÁLÁS</span>
-      <div class="g-label"><span class="gl-num">10</span><span class="gl-name">Egyedi karakterizálás</span></div>
     </div>
 
     <div class="g-panel">
       <div class="g-ph"><img src="../assets/about/gallery-11-0115.webp" alt="Fogtechnikai részletmunka természetes fogszín kialakításakor" loading="lazy"></div>
-      <span class="g-side">11 · RÉSZLETMUNKA</span>
-      <div class="g-label"><span class="gl-num">11</span><span class="gl-name">Részletmunka</span></div>
     </div>
 
   </div>
@@ -2788,15 +2773,14 @@
   // Innováció idővonal
   (function () {
     const MILESTONES = [
-      { year: '2011', title: 'A kezdetek', text: 'Megalakult a Bridge Dental azzal a céllal, hogy a hazai és nemzetközi rendelők megbízható szakmai partnere legyen.' },
-      { year: '2012', title: 'Implantológiai fókusz', text: 'Az implantátumos rehabilitációk laborunk egyik fő szakterületévé váltak.' },
-      { year: '2013', title: 'Digitális elköteleződés', text: 'Fokozatosan áttértünk a CAD/CAM-alapú munkafolyamatokra, megteremtve ezzel a későbbi fejlesztések alapját.' },
-      { year: '2015', title: '„Legjobb Fogtechnikai Labor”', text: 'Hungarian Dental Awards díj.' },
-      { year: '2016', title: '3D nyomtatás és ICDE partnerség', text: 'Az additív gyártás a mindennapi munkánk részévé vált. Ugyanebben az évben az Ivoclar ICDE referencialaborként ismerte el munkánkat.' },
-      { year: '2017', title: 'Nemzetközi prémium modell', text: 'A német és svájci prémiumrendelők igényeire szabott együttműködési modellt alakítottunk ki.' },
-      { year: '2019', title: 'KunstZahnWerk: 6. helyezés', text: 'Nemzetközi szakmai elismerés a 16 országból érkező 49 fogtechnikus mezőnyében.' },
-      { year: '2021', title: 'Saját digitális gyártóközpont', text: 'Új CAD/CAM technológiákkal és modern marógépekkel kialakítottuk teljes digitális gyártási környezetünket.' },
-      { year: '2026', title: 'TrueDent®', text: 'A biokompatibilis, teljes színű digitális fogsorok új lehetőségeket nyitottak a digitális fogpótlások területén.' }
+      {"year":"2011","title":"A kezdetek","text":"Megalakult a Bridge Dental azzal a céllal, hogy a hazai és nemzetközi rendelők megbízható szakmai partnere legyen.","image":"../assets/about/milestone-2011.webp","alt":"A Bridge Dental laborjának kialakítása és berendezése"},
+      {"year":"2012","title":"Digitális elköteleződés","text":"A Nobel Procera és a 3Shape rendszerekkel fokozatosan áttértünk a CAD/CAM-alapú munkafolyamatokra, megteremtve ezzel a későbbi fejlesztések alapját.","image":"../assets/about/milestone-2012.webp","alt":"Digitális tervezés Nobel Procera rendszerekkel a laborban"},
+      {"year":"2015","title":"„Legjobb Fogtechnikai Labor”","text":"Hungarian Dental Awards díj.","image":"../assets/about/milestone-2015.webp","alt":"A 2015-ös Hungarian Dental Awards díjazottjai az elismerésekkel"},
+      {"year":"2016","title":"3D nyomtatás és ICDE partnerség","text":"Az additív gyártás a mindennapi munkánk részévé vált. Ugyanebben az évben a liechtensteini székhelyű, világvezető Ivoclar fogászati óriásvállalattól megkaptuk az ICDE (International Centre for Dental Education) rendkívül komoly szakmai elismerést és státuszt.","image":"../assets/about/milestone-2016.webp","alt":"Szakmai képzés az Ivoclar digitális oktatóközpontjában"},
+      {"year":"2019","title":"KunstZahnWerk: 6. helyezés","text":"Nemzetközi szakmai elismerés a 16 országból érkező 49 fogtechnikus mezőnyében.","image":"../assets/about/milestone-2019.webp","alt":"Kínál Attila és Császár Dénes hatodik helyezést elért munkája a KunstZahnWerk versenyen"},
+      {"year":"2021","title":"Saját digitális gyártóközpont","text":"Új CAD/CAM technológiákkal és modern imes-icore CORiTEC 350i Loader PRO+ marógéppel kialakítottuk teljes digitális gyártási környezetünket.","image":"../assets/about/milestone-2021.webp","alt":"Az imes-icore CORiTEC 350i Loader PRO+ marógép a Bridge Dental laborjában"},
+      {"year":"2024","title":"Kapacitásbővítés","text":"Két további imes-icore CORiTEC 250i marógéppel bővítettük saját CAD/CAM gyártási kapacitásunkat."},
+      {"year":"2026","title":"TrueDent®","text":"A biokompatibilis, teljes színű digitális fogsorok új lehetőségeket nyitottak a digitális fogpótlások területén."}
     ];
     const N = MILESTONES.length;
 
@@ -2807,17 +2791,17 @@
     const bYear = document.getElementById('iBodyYear');
     const bTitle = document.getElementById('iBodyTitle');
     const bText = document.getElementById('iBodyText');
-    const mediaLabel = document.getElementById('iMediaLabel');
+    const mediaImage = document.getElementById('iMediaImage');
     const prev = document.getElementById('iPrev');
     const next = document.getElementById('iNext');
 
-    if (!yearsBox || !track || !trackFill || !card || !bYear || !bTitle || !bText || !mediaLabel || !prev || !next) return;
+    if (!yearsBox || !track || !trackFill || !card || !bYear || !bTitle || !bText || !mediaImage || !prev || !next) return;
 
     yearsBox.innerHTML = MILESTONES.map((m, i) =>
-      `<button class="i-year" data-i="${i}">${m.year}</button>`).join('');
+      `<button class="i-year" data-i="${i}" aria-controls="iCard" aria-pressed="${i === 0}">${m.year}</button>`).join('');
 
     track.insertAdjacentHTML('beforeend', MILESTONES.map((m, i) => `
-      <button class="i-stop" data-i="${i}">
+      <button class="i-stop" data-i="${i}" aria-controls="iCard" aria-pressed="${i === 0}">
         <span class="is-dot"></span>
         <span class="is-year">${m.year}</span>
       </button>`).join(''));
@@ -2825,34 +2809,47 @@
     const yearEls = yearsBox.querySelectorAll('.i-year');
     const stopEls = track.querySelectorAll('.i-stop');
     let index = 0;
+    let switchTimer;
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     function render() {
       const m = MILESTONES[index];
       bYear.textContent = m.year;
       bTitle.textContent = m.title;
       bText.textContent = m.text;
-      mediaLabel.textContent = `KÉP HELYE — ${m.year}`;
+      card.classList.toggle('no-photo', !m.image);
+      if (m.image) {
+        mediaImage.alt = m.alt;
+        mediaImage.src = m.image;
+      } else {
+        mediaImage.removeAttribute('src');
+        mediaImage.alt = '';
+      }
     }
 
     function update() {
       yearEls.forEach((el, i) => {
         el.classList.toggle('active', i === index);
+        el.setAttribute('aria-pressed', String(i === index));
         el.classList.toggle('done', i < index);
       });
       stopEls.forEach((el, i) => {
         el.classList.toggle('active', i === index);
+        el.setAttribute('aria-pressed', String(i === index));
         el.classList.toggle('done', i < index);
         el.classList.toggle('future', i > index);
       });
 
       trackFill.style.width = `calc((100% - 80px) * ${N === 1 ? 0 : index / (N - 1)})`;
-      yearEls[index].scrollIntoView({ block: 'nearest', inline: 'center', behavior: 'smooth' });
+      const activeYear = yearEls[index];
+      yearsBox.scrollTo({ left: activeYear.offsetLeft - yearsBox.offsetLeft - (yearsBox.clientWidth - activeYear.clientWidth) / 2, behavior: reducedMotion ? 'auto' : 'smooth' });
 
+      clearTimeout(switchTimer);
       card.classList.add('switching');
-      setTimeout(() => {
+      switchTimer = setTimeout(() => {
         render();
         card.classList.remove('switching');
-      }, 300);
+      }, reducedMotion ? 0 : 200);
     }
 
     function go(i) {
