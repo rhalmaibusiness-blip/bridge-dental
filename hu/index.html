@@ -301,17 +301,13 @@
       display: flex;
       flex-direction: column;
       align-items: stretch;
-      gap: 14px;
-      padding: 24px;
-      border: 1px solid rgba(255,255,255,0.11);
-      border-radius: 20px;
-      background: linear-gradient(145deg, rgba(255,255,255,0.07), rgba(255,255,255,0.025));
+      gap: 10px;
     }
 
     .hero-mobile-submenu {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 8px;
+      grid-template-columns: 1fr;
+      gap: 0;
     }
 
     .hero-mobile-submenu a {
@@ -321,16 +317,14 @@
       line-height: 1.35;
       letter-spacing: 0.45px;
       color: rgba(245,239,233,0.78);
-      padding: 11px 12px;
-      border-radius: 10px;
-      background: rgba(255,255,255,0.035);
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
     }
 
     .hero-mobile-submenu a:hover,
     .hero-mobile-submenu a:active,
     .hero-mobile-submenu a:focus-visible {
       color: #f2793f;
-      background: rgba(242,121,63,0.1);
     }
 
     .hero-burger {
@@ -370,11 +364,9 @@
       min-height: 100dvh;
       overflow-y: auto;
       overscroll-behavior: contain;
-      background:
-        radial-gradient(circle at 78% 12%, rgba(224,90,43,0.16), transparent 34%),
-        rgba(13, 10, 8, 0.975);
-      -webkit-backdrop-filter: blur(14px);
-      backdrop-filter: blur(14px);
+      background: rgba(13, 10, 8, 0.985);
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
       opacity: 0;
       visibility: hidden;
       transition: opacity 0.4s ease, visibility 0.4s ease;
@@ -386,7 +378,7 @@
     }
 
     .hero-mobile-menu-inner {
-      width: min(100%, 820px);
+      width: min(100%, 680px);
       min-height: 100%;
       margin: 0 auto;
       padding: 108px 36px 48px;
@@ -415,8 +407,8 @@
       display: block;
       width: fit-content;
       max-width: 100%;
-      padding: 6px 0 13px;
-      border-bottom: 2px solid #e8502e;
+      padding: 0 0 16px;
+      border-bottom: 1px solid rgba(255,255,255,0.18);
       font-size: clamp(20px, 3vw, 28px);
       line-height: 1.2;
       letter-spacing: 1.5px;
@@ -441,29 +433,27 @@
 
     .hero-mobile-actions {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 10px;
+      grid-template-columns: 1fr;
+      gap: 0;
     }
 
     .hero-mobile-actions a {
       display: flex;
       align-items: center;
-      justify-content: center;
-      min-height: 54px;
-      padding: 13px 16px;
-      border: 1px solid rgba(255,255,255,0.14);
-      border-radius: 13px;
-      background: rgba(255,255,255,0.045);
+      justify-content: flex-start;
+      min-height: 0;
+      padding: 14px 0;
+      border: 0;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
       font-size: 14px;
       line-height: 1.2;
       letter-spacing: 1.4px;
-      text-align: center;
+      text-align: left;
     }
 
     .hero-mobile-actions a:hover,
     .hero-mobile-actions a:focus-visible {
-      border-color: rgba(242,121,63,0.65);
-      background: rgba(242,121,63,0.1);
+      color: #f2793f;
     }
 
     .hero-mobile-close {
@@ -476,9 +466,8 @@
       width: 44px;
       height: 44px;
       padding: 0;
-      border: 1px solid rgba(255,255,255,0.22);
-      border-radius: 50%;
-      background: rgba(28,25,22,0.86);
+      border: 0;
+      background: transparent;
       color: #fff;
       cursor: pointer;
       transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
@@ -486,9 +475,7 @@
 
     .hero-mobile-close:hover,
     .hero-mobile-close:focus-visible {
-      border-color: #f2793f;
-      background: rgba(224,90,43,0.2);
-      transform: rotate(4deg);
+      color: #f2793f;
       outline: none;
     }
 
@@ -3357,27 +3344,26 @@
       }
 
       .hero-mobile-group {
-        padding: 18px;
-        border-radius: 16px;
+        gap: 8px;
       }
 
       .hero-mobile-submenu {
         grid-template-columns: 1fr;
-        gap: 6px;
+        gap: 0;
       }
 
       .hero-mobile-submenu a {
-        padding: 10px 11px;
+        padding: 11px 0;
         font-size: 13px;
       }
 
       .hero-mobile-actions {
         grid-template-columns: 1fr;
-        gap: 8px;
+        gap: 0;
       }
 
       .hero-mobile-actions a {
-        min-height: 48px;
+        min-height: 0;
         font-size: 13px;
       }
 
