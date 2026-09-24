@@ -7,6 +7,7 @@ from pypdf import PdfReader, PdfWriter
 from pypdf.generic import BooleanObject, DecodedStreamObject, NameObject, NumberObject
 from reportlab.lib.colors import black
 from reportlab.pdfgen import canvas
+from workorder_phone import set_german_phone
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -242,6 +243,7 @@ def merge_with_source(field_names: list[str]) -> None:
             "/Subject": "Interaktiv fogtechnikai munkalap",
         }
     )
+    set_german_phone(writer.pages[0])
     with OUTPUT_PDF.open("wb") as output_stream:
         writer.write(output_stream)
 

@@ -146,6 +146,18 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://rhalmaibusiness-blip.github.io/bridge-dental/impressum.html"/>
   </url>
   <url>
+    <loc>https://rhalmaibusiness-blip.github.io/bridge-dental/foerderprojekte.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://rhalmaibusiness-blip.github.io/bridge-dental/foerderprojekte.html"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://rhalmaibusiness-blip.github.io/bridge-dental/hu/palyazatok.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rhalmaibusiness-blip.github.io/bridge-dental/foerderprojekte.html"/>
+  </url>
+  <url>
+    <loc>https://rhalmaibusiness-blip.github.io/bridge-dental/hu/palyazatok.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://rhalmaibusiness-blip.github.io/bridge-dental/foerderprojekte.html"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://rhalmaibusiness-blip.github.io/bridge-dental/hu/palyazatok.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rhalmaibusiness-blip.github.io/bridge-dental/foerderprojekte.html"/>
+  </url>
+  <url>
     <loc>https://rhalmaibusiness-blip.github.io/bridge-dental/zusammenarbeit/index.html</loc>
     <xhtml:link rel="alternate" hreflang="de" href="https://rhalmaibusiness-blip.github.io/bridge-dental/zusammenarbeit/index.html"/>
     <xhtml:link rel="alternate" hreflang="hu" href="https://rhalmaibusiness-blip.github.io/bridge-dental/hu/egyuttmukodes/index.html"/>

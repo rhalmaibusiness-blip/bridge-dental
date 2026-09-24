@@ -1954,6 +1954,8 @@
   <link rel="alternate" hreflang="hu" href="https://rhalmaibusiness-blip.github.io/bridge-dental/hu/ismerje-meg-a-bridge-dentalt.html">
   <link rel="alternate" hreflang="x-default" href="https://rhalmaibusiness-blip.github.io/bridge-dental/bridge-dental-kennenlernen.html">
   <link rel="stylesheet" href="../assets/language-switcher.css?v=4">
+  <link rel="stylesheet" href="../assets/hero-mobile-menu.css?v=20260924d">
+  <link rel="stylesheet" href="../assets/funding.css?v=20260924">
 </head>
 <body>
 
@@ -2010,24 +2012,6 @@
       <span></span><span></span><span></span>
     </button>
   </header>
-
-  <div class="hero-mobile-menu" id="heroMobileMenu">
-    <a href="ismerje-meg-a-bridge-dentalt.html">ISMERJE MEG A BRIDGE DENTALT</a>
-    <div class="hero-mobile-group">
-      <a href="index.html#szolgaltatasok">SZAKTERÜLETEINK</a>
-      <div class="hero-mobile-submenu">
-        <a href="full-arch-implantatumos-rehabilitaciok.html">All-on-X rehabilitációk</a>
-        <a href="implantatumos-cirkonium-restauraciok.html">Implantátumos cirkónium restaurációk</a>
-        <a href="digitalis-fogsorok.html">TrueDent – Full color, monolitikus digitális fogsorok</a>
-        <a href="digitalis-tervezes.html">Digitális workflow</a>
-        <a href="esztetikai-keramia.html">Fémmentes kerámia pótlások</a>
-        <a href="digitalis-fogtechnika.html">CAD/CAM technológia</a>
-        <a href="galeria.html">Galéria</a>
-      </div>
-    </div>
-    <a href="../output/pdf/bridge-dental-munkalap-kitoltheto-hu.pdf" target="_blank" rel="noopener">MUNKALAP</a>
-    <a href="kapcsolat.html">KAPCSOLAT</a>
-  </div>
 
   <div class="cinematic-content" id="cinematicContent">
     <div class="cinematic-eyebrow">Ismerje meg a Bridge Dentalt</div>
@@ -2088,7 +2072,7 @@
     <div>
       <div class="section-label">A történetünk</div>
       <div class="hitvallas-quote-text">
-        A Bridge Dental Kínál Attila és Császár Dénes két fogtechnikus mester közös szakmai szemléletéből született.
+        A Bridge Dental két fogtechnikus mester, Kínál Attila és Császár Dénes közös szakmai szemléletéből született.
       </div>
       <div class="story-text hitvallas-body">
         <p>Már a 2000-es évek közepén német fogorvosokkal dolgoztunk együtt, és hamar világossá vált számunkra, hogy a hazai piacon hiányzik az a labor, amely nem csupán kivitelező, hanem valódi szakmai partner is.</p>
@@ -2367,7 +2351,7 @@
         </svg>
       </div>
       <h3>ICDE Partner</h3>
-      <p>ICDE-partnerségünk révén aktívan alkalmazzuk a legújabb nemzetközi fogtechnikai irányelveket; ez a naprakész, megbízható minőség egyik alapja.</p>
+      <p>A liechtensteini Ivoclar fogászati óriásvállalattal kötött ICDE-partnerségünk révén aktívan alkalmazzuk a legújabb nemzetközi fogtechnikai irányelveket; ez a naprakész, megbízható minőség egyik alapja.</p>
       </div>
     </div>
   </div>
@@ -2583,6 +2567,7 @@
       <li><a href="index.html#szolgaltatasok">Szakterületeink</a></li>
       <li><a href="kapcsolat.html">Kapcsolat</a></li>
       <li><a href="impresszum.html">Impresszum</a></li>
+        <li><a href="../hu/palyazatok.html">Pályázatok</a></li>
     </ul>
   </div>
 
@@ -2631,25 +2616,6 @@
       `<span class="hero-word"><span class="${part.accent ? 'hero-accent' : ''}" style="animation-delay:${0.45 + index * 0.09}s">${part.text}</span></span>`
     ).join(' ');
   })();
-
-  const heroBurger = document.getElementById('heroBurger');
-  const heroMobileMenu = document.getElementById('heroMobileMenu');
-
-  function toggleHeroMenu(force) {
-    if (!heroBurger || !heroMobileMenu) return;
-    const open = force !== undefined ? force : !heroMobileMenu.classList.contains('open');
-    heroMobileMenu.classList.toggle('open', open);
-    heroBurger.classList.toggle('open', open);
-    heroBurger.setAttribute('aria-expanded', String(open));
-    document.body.style.overflow = open ? 'hidden' : '';
-  }
-
-  if (heroBurger && heroMobileMenu) {
-    heroBurger.addEventListener('click', () => toggleHeroMenu());
-    heroMobileMenu.querySelectorAll('a').forEach((link) => {
-      link.addEventListener('click', () => toggleHeroMenu(false));
-    });
-  }
 
   const cinematicParticles = document.getElementById('cinematicParticles');
   const cinematicParticlesContext = cinematicParticles ? cinematicParticles.getContext('2d') : null;
@@ -2898,5 +2864,33 @@
 
 </script>
 
+  <div class="hero-mobile-menu" id="heroMobileMenu" role="dialog" aria-modal="true" aria-label="Főmenü" aria-hidden="true" inert>
+    <div class="hero-mobile-menu-header">
+      <button class="hero-mobile-close" id="heroMobileClose" type="button" aria-label="Menü bezárása"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19" stroke-width="2" stroke-linecap="round"/></svg></button>
+    </div>
+    <div class="hero-mobile-menu-scroll">
+      <div class="hero-mobile-menu-inner">
+        <a class="hero-mobile-main" href="ismerje-meg-a-bridge-dentalt.html">ISMERJE MEG A BRIDGE DENTALT</a>
+        <div class="hero-mobile-group">
+          <a class="hero-mobile-section-link" href="index.html#szolgaltatasok">SZAKTERÜLETEINK</a>
+          <div class="hero-mobile-submenu">
+            <a href="full-arch-implantatumos-rehabilitaciok.html">All-on-X rehabilitációk</a>
+            <a href="implantatumos-cirkonium-restauraciok.html">Implantátumos cirkónium restaurációk</a>
+            <a href="digitalis-fogsorok.html">TrueDent – Full color, monolitikus digitális fogsorok</a>
+            <a href="digitalis-tervezes.html">Digitális workflow</a>
+            <a href="esztetikai-keramia.html">Fémmentes kerámia pótlások</a>
+            <a href="digitalis-fogtechnika.html">CAD/CAM technológia</a>
+            <a href="galeria.html">Galéria</a>
+          </div>
+        </div>
+        <div class="hero-mobile-actions"><a href="../output/pdf/bridge-dental-munkalap-kitoltheto-hu.pdf" target="_blank" rel="noopener">MUNKALAP</a><a href="kapcsolat.html">KAPCSOLAT</a></div>
+      </div>
+    </div>
+  </div>
+
+<script src="../assets/hero-mobile-menu.js?v=20260924c" defer></script>
+<a class="bd-funding-badge" href="../hu/palyazatok.html" aria-label="Széchenyi Terv Plusz – a Bridge Dental pályázatai">
+  <img src="../assets/funding/szechenyi-terv-plusz.jpg" width="2560" height="730" alt="Széchenyi Terv Plusz">
+</a>
 </body>
 </html>

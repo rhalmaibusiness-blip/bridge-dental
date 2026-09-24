@@ -74,7 +74,10 @@ def validate_structure(path: Path) -> None:
         raise ValueError(f"{path.name}: expected 56 fields/widgets, found {len(fields)}/{len(widgets)}")
     if any(not widget.get("/AP") or not widget["/AP"].get("/N") for widget in widgets):
         raise ValueError(f"{path.name}: at least one widget lacks a normal appearance")
-    if path == HUNGARIAN_PDF:
+    expected_phone = "(+36) 70 396-66-56" if path == HUNGARIAN_PDF else "(+36) 70 396-66-53"
+    if expected_phone not in (reader.pages[0].extract_text() or ""):
+        raise ValueError(f"{path.name}: incorrect printed phone number")
+    if path in (HUNGARIAN_PDF, GERMAN_PDF):
         acro_form = reader.trailer["/Root"]["/AcroForm"].get_object()
         field_ids = [reference.idnum for reference in acro_form["/Fields"]]
         widget_ids = [reference.idnum for reference in reader.pages[0]["/Annots"]]

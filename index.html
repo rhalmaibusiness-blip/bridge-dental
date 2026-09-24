@@ -4029,6 +4029,8 @@
   <link rel="alternate" hreflang="hu" href="https://rhalmaibusiness-blip.github.io/bridge-dental/hu/index.html">
   <link rel="alternate" hreflang="x-default" href="https://rhalmaibusiness-blip.github.io/bridge-dental/index.html">
   <link rel="stylesheet" href="assets/language-switcher.css?v=4">
+  <link rel="stylesheet" href="assets/hero-mobile-menu.css?v=20260924d">
+  <link rel="stylesheet" href="assets/funding.css?v=20260924">
 </head>
 <body>
 
@@ -4087,33 +4089,6 @@
       <span></span><span></span><span></span>
     </button>
   </header>
-
-  <div class="hero-mobile-menu" id="heroMobileMenu" role="dialog" aria-modal="true" aria-label="Hauptmenü" aria-hidden="true" inert>
-    <button class="hero-mobile-close" id="heroMobileClose" type="button" aria-label="Menü schließen">
-      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <path d="M5 5l14 14M19 5L5 19" stroke-width="2" stroke-linecap="round"/>
-      </svg>
-    </button>
-    <div class="hero-mobile-menu-inner">
-      <a class="hero-mobile-main" href="bridge-dental-kennenlernen.html">LERNEN SIE BRIDGE DENTAL KENNEN</a>
-      <div class="hero-mobile-group">
-        <a class="hero-mobile-section-link" href="#szolgaltatasok">LEISTUNGEN</a>
-        <div class="hero-mobile-submenu">
-          <a href="all-on-x-rehabilitationen.html">All-on-X-Rehabilitationen</a>
-          <a href="implantatgetragene-zirkonoxidrestaurationen.html">Implantatgetragene Zirkonoxidrestaurationen</a>
-          <a href="truedent-digitale-prothesen.html">TrueDent – vollfarbige, monolithische digitale Prothesen</a>
-          <a href="digitaler-workflow.html">Digitaler Workflow</a>
-          <a href="metallfreie-keramikrestaurationen.html">Metallfreie Keramikrestaurationen</a>
-          <a href="cad-cam-technologie.html">CAD/CAM-Technologie</a>
-          <a href="galerie.html">Galerie</a>
-        </div>
-      </div>
-      <div class="hero-mobile-actions">
-        <a href="output/pdf/bridge-dental-munkalap-kitoltheto.pdf" target="_blank" rel="noopener">ARBEITSAUFTRAG</a>
-        <a href="kontakt.html">KONTAKT</a>
-      </div>
-    </div>
-  </div>
 
   <div class="cinematic-content" id="cinematicContent">
     <h1 class="cinematic-title" id="heroHeadline">Wo aus digitaler Planung <em>fachliches Vertrauen</em> entsteht.</h1>
@@ -4525,6 +4500,7 @@
       <li><a href="referenzen.html">Referenzen</a></li>
       <li><a href="kontakt.html">Kontakt</a></li>
       <li><a href="impressum.html">Impressum</a></li>
+        <li><a href="foerderprojekte.html">Förderprojekte</a></li>
     </ul>
   </div>
 
@@ -4573,80 +4549,6 @@
       `<span class="hero-word"><span class="${part.accent ? 'hero-accent' : ''}" style="animation-delay:${0.45 + index * 0.09}s">${part.text}</span></span>`
     ).join(' ');
   })();
-
-  const heroBurger = document.getElementById('heroBurger');
-  const heroMobileMenu = document.getElementById('heroMobileMenu');
-  const heroMobileClose = document.getElementById('heroMobileClose');
-  const heroDesktopQuery = window.matchMedia('(min-width: 1180px)');
-  let heroMenuPreviousFocus = null;
-
-  function toggleHeroMenu(force, restoreFocus = true) {
-    if (!heroBurger || !heroMobileMenu) return;
-    const open = force !== undefined ? force : !heroMobileMenu.classList.contains('open');
-
-    if (open) heroMenuPreviousFocus = document.activeElement;
-    heroMobileMenu.classList.toggle('open', open);
-    heroBurger.classList.toggle('open', open);
-    heroBurger.setAttribute('aria-expanded', String(open));
-    heroBurger.setAttribute('aria-label', open ? 'Menü schließen' : 'Menü öffnen');
-    heroMobileMenu.setAttribute('aria-hidden', String(!open));
-    heroMobileMenu.inert = !open;
-    document.body.classList.toggle('hero-menu-open', open);
-
-    if (open) {
-      window.requestAnimationFrame(() => heroMobileClose?.focus({ preventScroll: true }));
-    } else if (restoreFocus && heroMenuPreviousFocus instanceof HTMLElement) {
-      heroMenuPreviousFocus.focus({ preventScroll: true });
-    }
-  }
-
-  if (heroBurger && heroMobileMenu) {
-    heroBurger.addEventListener('click', () => toggleHeroMenu());
-    heroMobileClose?.addEventListener('click', () => toggleHeroMenu(false));
-
-    heroMobileMenu.addEventListener('click', (event) => {
-      if (event.target === heroMobileMenu) toggleHeroMenu(false);
-    });
-
-    heroMobileMenu.querySelectorAll('a').forEach((link) => {
-      link.addEventListener('click', () => toggleHeroMenu(false, false));
-    });
-
-    document.addEventListener('keydown', (event) => {
-      if (!heroMobileMenu.classList.contains('open')) return;
-
-      if (event.key === 'Escape') {
-        event.preventDefault();
-        toggleHeroMenu(false);
-        return;
-      }
-
-      if (event.key === 'Tab') {
-        const focusable = [
-          ...heroMobileMenu.querySelectorAll('a[href], button:not([disabled])'),
-          ...document.querySelectorAll('.bd-language-switcher a[href]')
-        ].filter((element) => element instanceof HTMLElement && element.offsetParent !== null);
-
-        if (!focusable.length) return;
-        const first = focusable[0];
-        const last = focusable[focusable.length - 1];
-
-        if (event.shiftKey && document.activeElement === first) {
-          event.preventDefault();
-          last.focus();
-        } else if (!event.shiftKey && document.activeElement === last) {
-          event.preventDefault();
-          first.focus();
-        }
-      }
-    });
-
-    heroDesktopQuery.addEventListener('change', (event) => {
-      if (event.matches && heroMobileMenu.classList.contains('open')) {
-        toggleHeroMenu(false, false);
-      }
-    });
-  }
 
   const cinematicParticles = document.getElementById('cinematicParticles');
   const cinematicParticlesContext = cinematicParticles ? cinematicParticles.getContext('2d') : null;
@@ -5257,6 +5159,34 @@
 
 </script>
 
+  <div class="hero-mobile-menu" id="heroMobileMenu" role="dialog" aria-modal="true" aria-label="Hauptmenü" aria-hidden="true" inert>
+    <div class="hero-mobile-menu-header">
+      <button class="hero-mobile-close" id="heroMobileClose" type="button" aria-label="Menü schließen"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19" stroke-width="2" stroke-linecap="round"/></svg></button>
+    </div>
+    <div class="hero-mobile-menu-scroll">
+      <div class="hero-mobile-menu-inner">
+        <a class="hero-mobile-main" href="bridge-dental-kennenlernen.html">LERNEN SIE BRIDGE DENTAL KENNEN</a>
+        <div class="hero-mobile-group">
+          <a class="hero-mobile-section-link" href="#szolgaltatasok">LEISTUNGEN</a>
+          <div class="hero-mobile-submenu">
+            <a href="all-on-x-rehabilitationen.html">All-on-X-Rehabilitationen</a>
+            <a href="implantatgetragene-zirkonoxidrestaurationen.html">Implantatgetragene Zirkonoxidrestaurationen</a>
+            <a href="truedent-digitale-prothesen.html">TrueDent – vollfarbige, monolithische digitale Prothesen</a>
+            <a href="digitaler-workflow.html">Digitaler Workflow</a>
+            <a href="metallfreie-keramikrestaurationen.html">Metallfreie Keramikrestaurationen</a>
+            <a href="cad-cam-technologie.html">CAD/CAM-Technologie</a>
+            <a href="galerie.html">Galerie</a>
+          </div>
+        </div>
+        <div class="hero-mobile-actions"><a href="output/pdf/bridge-dental-munkalap-kitoltheto.pdf" target="_blank" rel="noopener">ARBEITSAUFTRAG</a><a href="kontakt.html">KONTAKT</a></div>
+      </div>
+    </div>
+  </div>
+
+<script src="assets/hero-mobile-menu.js?v=20260924c" defer></script>
+<a class="bd-funding-badge" href="foerderprojekte.html" aria-label="Széchenyi Terv Plusz – Förderprojekte von Bridge Dental">
+  <img src="assets/funding/szechenyi-terv-plusz.jpg" width="2560" height="730" alt="Széchenyi Terv Plusz">
+</a>
 </body>
 <!-- deploy sync: 2026-07-06 18:13 -->
 </html>

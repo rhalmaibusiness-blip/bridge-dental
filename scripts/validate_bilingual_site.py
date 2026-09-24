@@ -26,6 +26,7 @@ PAIRS = {
     "referenzen.html": "hu/referenciak.html",
     "kontakt.html": "hu/kapcsolat.html",
     "impressum.html": "hu/impresszum.html",
+    "foerderprojekte.html": "hu/palyazatok.html",
     "zusammenarbeit/index.html": "hu/egyuttmukodes/index.html",
 }
 
@@ -238,6 +239,8 @@ def validate_workorder_links(errors: list[str]) -> None:
                 href = link.get("href", "")
                 if href.lower().endswith(".pdf"):
                     target = local_target(path, href)
+                    if target == (ROOT / "assets/funding/bridge-dental-ginop-plusz.pdf").resolve():
+                        continue
                     expected = (ROOT / pdf_name).resolve()
                     if target != expected:
                         errors.append(f"{path}: wrong {language} PDF target {href}")

@@ -84,7 +84,7 @@ def build_overlay() -> list[str]:
     # Replace only printed German labels. The original lines, logo, tooth grid and
     # restoration drawing remain untouched below this white-and-text overlay.
     translated_labels = [
-        ((454, 31, 547, 48), "+36 70 396 6653", 458, 34, 9.0, False),
+        ((454, 31, 547, 48), "(+36) 70 396-66-56", 458, 34, 9.0, False),
         ((49, 89, 139, 110), "Rendelő neve", 50, 91, 9.6, True),
         ((302, 89, 350, 110), "Fogorvos", 303, 91, 9.6, True),
         ((49, 119, 139, 140), "Rendelő címe", 50, 121, 9.6, True),

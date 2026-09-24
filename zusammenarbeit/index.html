@@ -1738,12 +1738,19 @@
         padding-bottom: 0;
       }
     }
+    /* Allow long German words to wrap inside narrow mobile grid tracks. */
+    .pilot-copy, .pilot-side, .pilot-risk, .pilot-meta, .pilot-chip { min-width: 0; }
+    .pilot-section h2, .pilot-risk, .pilot-chip, .pilot-bullets { overflow-wrap: anywhere; hyphens: auto; }
+    .pilot-meta { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    @media (max-width: 1040px) { .pilot-panel { grid-template-columns: minmax(0, 1fr); } }
   </style>
   <link rel="canonical" href="https://rhalmaibusiness-blip.github.io/bridge-dental/zusammenarbeit/index.html">
   <link rel="alternate" hreflang="de" href="https://rhalmaibusiness-blip.github.io/bridge-dental/zusammenarbeit/index.html">
   <link rel="alternate" hreflang="hu" href="https://rhalmaibusiness-blip.github.io/bridge-dental/hu/egyuttmukodes/index.html">
   <link rel="alternate" hreflang="x-default" href="https://rhalmaibusiness-blip.github.io/bridge-dental/zusammenarbeit/index.html">
   <link rel="stylesheet" href="../assets/language-switcher.css?v=4">
+  <link rel="stylesheet" href="../assets/contact-portraits.css?v=20260924">
+  <link rel="stylesheet" href="../assets/funding.css?v=20260924">
 </head>
 <body>
 
@@ -2281,7 +2288,7 @@
                 </div>
                 <div class="contact-person-copy">
                   <h4 class="contact-person-name">Attila Kínál</h4>
-                  <p class="contact-person-role">Fachliche Kommunikation</p>
+                  <p class="contact-person-role">Zahntechnikermeister<span>Fachliche Kommunikation auf Deutsch</span></p>
                   <a class="contact-person-phone" href="tel:+36703966653" aria-label="Attila Kínál anrufen: +36 70 39 666 53">+36 70 39 666 53</a>
                 </div>
               </article>
@@ -2291,7 +2298,7 @@
                 </div>
                 <div class="contact-person-copy">
                   <h4 class="contact-person-name">Hédi Császárné Demeter</h4>
-                  <p class="contact-person-role">Büroleitung</p>
+                  <p class="contact-person-role">Büroleitung<span>Fachliche Kommunikation auf Deutsch</span></p>
                   <a class="contact-person-phone" href="tel:+36703966654" aria-label="Hédi Császárné Demeter anrufen: +36 70 39 666 54">+36 70 39 666 54</a>
                 </div>
               </article>
@@ -2382,7 +2389,7 @@
   <footer>
     <div class="shell footer-inner">
       <img src="../assets/logo.png" alt="Bridge Dental">
-      <span>Datenschutzhinweise · <a href="../impressum.html" style="color: inherit; text-underline-offset: 3px;">Impressum</a> · Copyright © Bridge Dental</span>
+      <span>Datenschutzhinweise · <a href="../impressum.html" style="color: inherit; text-underline-offset: 3px;">Impressum</a> · <a href="../foerderprojekte.html" style="color: inherit; text-underline-offset: 3px;">Förderprojekte</a> · Copyright © Bridge Dental</span>
     </div>
   </footer>
 
@@ -2430,5 +2437,8 @@
       alert("Az űrlap jelenleg prototípus. CRM integráció után ide érkeznek majd a strukturált leadek.");
     });
   </script>
+<a class="bd-funding-badge" href="../foerderprojekte.html" aria-label="Széchenyi Terv Plusz – Förderprojekte von Bridge Dental">
+  <img src="../assets/funding/szechenyi-terv-plusz.jpg" width="2560" height="730" alt="Széchenyi Terv Plusz">
+</a>
 </body>
 </html>

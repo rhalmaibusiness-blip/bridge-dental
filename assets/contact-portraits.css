@@ -1,0 +1,34 @@
+.contact-person-grid { grid-template-columns: 1fr; gap: 20px; }
+.contact-person {
+  grid-template-columns: 180px minmax(0, 1fr);
+  align-items: center;
+  min-height: 0;
+  padding: 18px;
+  gap: 22px;
+}
+.contact-person-photo {
+  width: 180px;
+  height: 180px;
+  border-radius: 12px;
+  align-self: start;
+}
+.contact-person-photo::after { display: none; }
+.contact-person-photo img,
+.contact-person-photo--work img,
+.contact-person-photo--hedi img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 0;
+}
+.contact-person-copy { padding: 0; }
+.contact-person-name { font-size: 18px; line-height: 1.4; }
+.contact-person-role { font-size: 13px; line-height: 1.6; }
+.contact-person-role span { display: block; font-weight: 500; }
+.contact-person-phone { font-size: 15px; }
+@media (max-width: 600px) {
+  .contact-person { grid-template-columns: minmax(0, 1fr); gap: 20px; padding: 24px 16px; text-align: center; }
+  .contact-person-photo { width: min(220px, 100%); height: auto; aspect-ratio: 1; justify-self: center; }
+  .contact-person-copy { align-items: center; }
+}

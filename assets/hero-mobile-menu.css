@@ -1,0 +1,125 @@
+/* Shared by the home and about pages; the overlay sits outside the animated hero. */
+.hero-mobile-menu {
+  --menu-ink: #f5efe9;
+  --menu-line: rgba(255,255,255,.14);
+  position: fixed;
+  inset: 0;
+  z-index: 10040;
+  display: none;
+  height: 100vh;
+  height: 100dvh;
+  min-height: 0;
+  overflow: hidden;
+  color: var(--menu-ink);
+  background: #100d0b;
+  opacity: 0;
+  visibility: hidden;
+  transition: none;
+}
+.hero-mobile-menu.open { display: block; opacity: 1; visibility: visible; }
+.hero-mobile-menu-header {
+  position: absolute;
+  inset: 0 0 auto;
+  z-index: 2;
+  height: calc(76px + env(safe-area-inset-top, 0px));
+  background: #100d0b;
+  border-bottom: 1px solid var(--menu-line);
+}
+.hero-mobile-menu-header .bd-language-switcher {
+  position: absolute;
+  top: calc(16px + env(safe-area-inset-top, 0px));
+  left: max(20px, env(safe-area-inset-left, 0px)) !important;
+  right: auto;
+  z-index: 1;
+}
+.hero-mobile-close {
+  position: absolute;
+  top: calc(12px + env(safe-area-inset-top, 0px));
+  right: max(16px, env(safe-area-inset-right, 0px));
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--menu-ink);
+  cursor: pointer;
+}
+.hero-mobile-close svg { width: 24px; height: 24px; stroke: currentColor; }
+.hero-mobile-menu-scroll {
+  position: absolute;
+  inset: calc(76px + env(safe-area-inset-top, 0px)) 0 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+}
+.hero-mobile-menu-inner {
+  display: grid;
+  align-content: start;
+  gap: 22px;
+  width: min(100%, 720px);
+  min-height: 100%;
+  margin: 0 auto;
+  padding: 32px max(24px, env(safe-area-inset-right, 0px)) calc(40px + env(safe-area-inset-bottom, 0px)) max(24px, env(safe-area-inset-left, 0px));
+  opacity: 1;
+  transform: none;
+  transition: none;
+}
+.hero-mobile-menu a {
+  color: var(--menu-ink);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  text-decoration: none;
+  text-align: left;
+  letter-spacing: 0;
+  opacity: 1;
+  transform: none;
+  transition: color .2s ease;
+  overflow-wrap: anywhere;
+}
+.hero-mobile-menu .hero-mobile-main {
+  display: block;
+  width: 100%;
+  padding: 0 0 20px;
+  border-bottom: 1px solid var(--menu-line);
+  font-size: 20px;
+  line-height: 1.4;
+}
+.hero-mobile-menu .hero-mobile-group { display: grid; width: 100%; gap: 10px; padding: 0; border: 0; background: none; }
+.hero-mobile-menu .hero-mobile-section-link { display: flex; align-items: center; min-height: 44px; padding: 0; color: #f2793f; font-size: 13px; line-height: 1.5; letter-spacing: 1.5px; }
+.hero-mobile-section-link::before { display: none; }
+.hero-mobile-menu .hero-mobile-submenu { display: grid; grid-template-columns: 1fr; align-items: stretch; width: 100%; gap: 0; }
+.hero-mobile-menu .hero-mobile-submenu a,
+.hero-mobile-menu .hero-mobile-actions a {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  min-width: 0;
+  min-height: 48px;
+  padding: 13px 0;
+  border: 0;
+  border-bottom: 1px solid var(--menu-line);
+  border-radius: 0;
+  background: transparent;
+  font-size: 14px;
+  line-height: 1.5;
+}
+.hero-mobile-menu .hero-mobile-actions { display: grid; grid-template-columns: 1fr; gap: 0; }
+.hero-mobile-menu a:hover, .hero-mobile-close:hover { color: #f2793f; }
+.hero-mobile-menu a:focus-visible, .hero-mobile-close:focus-visible { outline: 2px solid #f2793f; outline-offset: 3px; }
+body.hero-menu-open { overflow: hidden; }
+@media (max-width: 1179px) {
+  .hero-menu { display: none; }
+  .hero-burger { display: flex; }
+}
+@media (min-width: 1180px) {
+  .hero-menu { display: flex; }
+  .hero-menu > li > a { white-space: nowrap; }
+  .hero-burger { display: none; }
+}
+@media (min-width: 641px) {
+  .hero-mobile-menu .hero-mobile-submenu { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 28px; }
+}
+@media (prefers-reduced-motion: reduce) { .hero-mobile-menu { transition: none; } }

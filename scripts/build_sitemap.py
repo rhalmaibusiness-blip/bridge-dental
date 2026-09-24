@@ -20,6 +20,7 @@ PAIRS = [
     ("referenzen.html", "hu/referenciak.html"),
     ("kontakt.html", "hu/kapcsolat.html"),
     ("impressum.html", "hu/impresszum.html"),
+    ("foerderprojekte.html", "hu/palyazatok.html"),
     ("zusammenarbeit/index.html", "hu/egyuttmukodes/index.html"),
 ]
 
