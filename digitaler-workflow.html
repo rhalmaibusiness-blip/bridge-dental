@@ -7,7 +7,7 @@
   <meta name="description" content="Der digitale Workflow von Bridge Dental verbindet klinische Informationen, Intraoralscan, Fotoprotokoll, Planung, Prototyp und dokumentierte Fertigung.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@500;600;700;800&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@500;600;700;800;900&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <script>document.documentElement.classList.add('js');</script>
   <style>
     *, *::before, *::after {
@@ -1180,101 +1180,269 @@
       background: var(--coral);
     }
 
-    /* ── PILOT EGYÜTTMŰKÖDÉS ── */
-    .pilot-section {
-      padding: 80px;
+    /* ── SERVICE GALLERY ── */
+    .workflow-gallery {
+      padding: clamp(48px, 6vw, 88px) clamp(20px, 5.5vw, 80px);
       background: var(--cream);
     }
-
-    .pilot-inner {
-      position: relative;
+    .workflow-gallery-inner { max-width: 1280px; margin: 0 auto; }
+    .workflow-gallery h2 {
+      margin-bottom: 28px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(26px, 3vw, 40px);
+      font-weight: 800;
+      line-height: 1.2;
+      letter-spacing: -0.6px;
+    }
+    .workflow-gallery-grid {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) auto;
-      gap: 64px;
-      align-items: center;
-      max-width: 1400px;
-      margin: 0 auto;
-      padding: 64px;
-      overflow: hidden;
-      border-radius: 28px;
-      background: var(--ink);
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+      min-height: clamp(160px, 18vw, 230px);
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: var(--white);
+    }
+    @media (max-width: 768px) {
+      .workflow-gallery-grid { grid-template-columns: 1fr; gap: 16px; padding: 16px; }
     }
 
-    .pilot-bg-circle {
+    /* ── PILOT CTA ── */
+    .pilot-section {
+      padding: 80px 0;
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at top right, rgba(224, 90, 43, 0.14), transparent 34%),
+        linear-gradient(180deg, #f6f0e8 0%, #f1e9df 100%);
+    }
+
+    .pilot-panel {
+      position: relative;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(280px, 0.95fr);
+      gap: 32px;
+      align-items: stretch;
+      padding: 46px;
+      background:
+        linear-gradient(135deg, rgba(28, 25, 22, 0.97), rgba(28, 25, 22, 0.93)),
+        #1c1916;
+      color: #fff;
+      border-radius: 28px;
+      box-shadow: 0 32px 90px rgba(28, 25, 22, 0.22);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .pilot-panel::before {
+      content: "PILOT";
       position: absolute;
-      top: -80px;
-      right: -80px;
-      width: 400px;
-      height: 400px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(224,90,43,0.18) 0%, transparent 70%);
+      right: -18px;
+      bottom: 18px;
+      font-family: "Montserrat", sans-serif;
+      font-size: clamp(74px, 10vw, 132px);
+      font-weight: 900;
+      letter-spacing: -0.08em;
+      color: rgba(255, 255, 255, 0.04);
+      pointer-events: none;
+      line-height: 0.9;
+    }
+
+    .pilot-panel::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
+      background-size: 44px 44px;
+      mask-image: linear-gradient(90deg, #000, transparent 78%);
       pointer-events: none;
     }
 
-    .pilot-content,
-    .pilot-action { position: relative; z-index: 2; }
-    .pilot-content .section-label { color: var(--coral-light); }
-    .pilot-content .section-label::before { background: var(--coral-light); }
+    .pilot-copy,
+    .pilot-side {
+      position: relative;
+      z-index: 1;
+    }
 
-    .pilot-content h2 {
-      margin-bottom: 16px;
-      color: white;
+    .pilot-section h2 {
+      margin: 0;
       font-family: 'Montserrat', sans-serif;
-      font-size: clamp(26px, 2.5vw, 38px);
-      font-weight: 800;
-      line-height: 1.2;
-      letter-spacing: -1px;
+      font-size: clamp(28px, 2.7vw, 40px);
+      line-height: 1.14;
+      font-weight: 900;
+      max-width: 620px;
+      color: #fff;
     }
 
-    .pilot-content p {
-      max-width: 520px;
-      color: rgba(255,255,255,0.55);
-      font-size: 16px;
-      line-height: 1.7;
+    .pilot-section .section-copy {
+      margin: 0;
+      font-size: 17px;
+      line-height: 1.78;
+      max-width: 640px;
+      color: rgba(255, 255, 255, 0.96);
     }
 
-    .pilot-features {
-      display: flex;
-      flex-direction: column;
+    .pilot-bullets {
+      list-style: none;
+      margin: 26px 0 0;
+      padding: 0;
+      display: grid;
       gap: 12px;
-      margin-top: 32px;
+      max-width: 680px;
     }
 
-    .pilot-feature {
-      display: flex;
+    .pilot-bullets li {
+      position: relative;
+      padding: 0 0 0 24px;
+      color: rgba(255, 255, 255, 0.84);
+      font-size: 14px;
+      line-height: 1.65;
+    }
+
+    .pilot-bullets strong {
+      display: block;
+      margin-bottom: 2px;
+      color: #fff;
+      font-family: "Montserrat", sans-serif;
+      font-weight: 900;
+    }
+
+    .pilot-bullets li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.72em;
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--coral);
+      box-shadow: 0 0 0 4px rgba(224, 90, 43, 0.14);
+      transform: translateY(-50%);
+    }
+
+    .pilot-side {
+      display: grid;
+      grid-template-rows: auto auto auto;
+      justify-items: center;
+      gap: 14px;
+      min-height: 100%;
+      padding: 28px 26px 26px;
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(10px);
+    }
+
+    .pilot-risk {
+      width: min(100%, 380px);
+      padding: 20px;
+      border-radius: 18px;
+      border: 1px solid rgba(240, 122, 75, 0.42);
+      background: rgba(224, 90, 43, 0.12);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    }
+
+    .pilot-risk h3 {
+      font-family: 'Montserrat', sans-serif;
+      margin: 0 0 12px;
+      color: #fff;
+      font-size: 17px;
+      line-height: 1.35;
+      font-weight: 900;
+    }
+
+    .pilot-risk p {
+      margin: 0;
+      color: rgba(255, 255, 255, 0.78);
+      font-size: 13px;
+      line-height: 1.65;
+    }
+
+    .pilot-risk p + p {
+      margin-top: 10px;
+      color: rgba(255, 255, 255, 0.58);
+      font-size: 12px;
+    }
+
+    .pilot-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid transparent;
+      border-radius: 6px;
+      background: var(--coral);
+      color: #fff;
+      text-decoration: none;
+      text-align: center;
+      font-weight: 800;
+      line-height: 1.4;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+      width: min(100%, 320px);
+      min-height: 64px;
+      padding: 0 28px;
+      font-size: 15px;
+      letter-spacing: 0.01em;
+      box-shadow: 0 18px 44px rgba(224, 90, 43, 0.26);
+      align-self: end;
+    }
+
+    .pilot-meta {
+      width: min(100%, 320px);
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      align-content: start;
+      align-self: center;
+    }
+
+    .pilot-chip {
+      padding: 14px 14px 13px;
+      border-radius: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.05);
+      color: rgba(255, 255, 255, 0.86);
+      font-size: 12px;
+      line-height: 1.45;
+      text-align: center;
+    }
+
+    .pilot-chip strong {
+      display: block;
+      margin-bottom: 4px;
+      color: #fff;
+      font-family: "Montserrat", sans-serif;
+      font-size: 15px;
+      font-weight: 900;
+    }
+
+    .pilot-shell { width: min(1180px, calc(100% - 40px)); margin: 0 auto; }
+    .pilot-label {
+      display: inline-flex;
       align-items: center;
       gap: 10px;
-      color: rgba(255,255,255,0.7);
-      font-size: 14px;
+      margin-bottom: 14px;
+      font-size: 11px;
+      font-weight: 900;
+      color: var(--coral);
+      text-transform: uppercase;
     }
-
-    .pilot-feature-dot {
-      width: 6px;
-      height: 6px;
-      flex-shrink: 0;
-      border-radius: 50%;
-      background: var(--coral);
+    .pilot-label::before { content: ""; width: 28px; height: 2px; background: currentColor; }
+    .pilot-cta:hover { background: var(--coral-light); transform: translateY(-2px); }
+    .pilot-cta:focus-visible { outline: 3px solid #fff; outline-offset: 4px; }
+    @media (max-width: 1040px) {
+      .pilot-panel { grid-template-columns: 1fr; gap: 24px; padding: 34px; }
+      .pilot-side { justify-items: center; }
+      .pilot-risk { width: 100%; }
+      .pilot-meta { width: 100%; }
     }
-
-    .pilot-action { display: flex; flex-direction: column; align-items: center; }
-
-    .btn-coral-big {
-      display: inline-block;
-      padding: 18px 36px;
-      border-radius: 10px;
-      background: var(--coral);
-      color: white;
-      font-size: 16px;
-      font-weight: 600;
-      text-decoration: none;
-      white-space: nowrap;
-      transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
-    }
-
-    .btn-coral-big:hover {
-      background: var(--coral-light);
-      transform: translateY(-2px);
-      box-shadow: 0 12px 32px rgba(224,90,43,0.4);
+    @media (max-width: 768px) {
+      .pilot-section { padding: 56px 0; }
+      .pilot-panel { padding: 20px; border-radius: 22px; }
+      .pilot-side { padding: 18px; }
+      .pilot-chip { padding: 12px 8px; }
     }
 
     /* ── KAPCSOLATFELVÉTEL ── */
@@ -1816,31 +1984,6 @@
         padding-bottom: 96px;
       }
 
-      .pilot-section {
-        padding: 48px 20px;
-      }
-
-      .pilot-inner {
-        grid-template-columns: 1fr;
-        gap: 32px;
-        padding: 40px 28px;
-        border-radius: 24px;
-      }
-
-      .pilot-content p {
-        font-size: 15px;
-      }
-
-      .pilot-action {
-        align-items: stretch;
-      }
-
-      .btn-coral-big {
-        width: 100%;
-        padding: 17px 22px;
-        text-align: center;
-        white-space: normal;
-      }
 
       .form-row {
         grid-template-columns: 1fr;
@@ -2183,23 +2326,56 @@
   </section>
 </main>
 
+<!-- SERVICE GALLERY: reserved for the upcoming case photographs. -->
+<section class="workflow-gallery" id="workflow-galeria" aria-labelledby="workflow-gallery-title">
+  <div class="workflow-gallery-inner">
+    <h2 id="workflow-gallery-title">Digitaler Workflow – Galerie</h2>
+    <div class="workflow-gallery-grid"></div>
+  </div>
+</section>
+
 <!-- PILOT CTA -->
 <section class="pilot-section" id="pilot">
-  <div class="pilot-inner reveal">
-    <div class="pilot-bg-circle" aria-hidden="true"></div>
-    <div class="pilot-content">
-      <div class="section-label">Pilot-Zusammenarbeit</div>
-      <h2>Probieren Sie es aus<br>mit 3-5 komplexen Fällen</h2>
-      <p>Der Pilot ist eine achtwöchige, risikoreduzierte Testphase für komplexe digitale Fälle. Dabei erleben Sie in realen Fällen, wie wir kommunizieren, digital konstruieren, fertigen und mit auftretenden Fragen umgehen.</p>
-      <div class="pilot-features">
-        <div class="pilot-feature"><span class="pilot-feature-dot"></span>Fachliche Abstimmung auf Deutsch mit einem festen Zahntechniker</div>
-        <div class="pilot-feature"><span class="pilot-feature-dot"></span>Online-Beratung zur digitalen Konstruktion</div>
-        <div class="pilot-feature"><span class="pilot-feature-dot"></span>Feedback zu eingereichten Scans und klinischen Informationen</div>
-        <div class="pilot-feature"><span class="pilot-feature-dot"></span>Schnelle Korrektur oder Neuanfertigung, falls erforderlich</div>
+  <div class="pilot-shell">
+    <div class="pilot-panel reveal">
+      <div class="pilot-copy">
+        <div class="pilot-label">Pilot-Zusammenarbeit</div>
+        <h2>Entscheiden Sie nicht nach Versprechen. Testen Sie die Zusammenarbeit anhand realer Fälle.</h2>
+        <p class="section-copy" style="margin-top: 22px;">Die Wahl eines neuen Laborpartners ist eine Vertrauensentscheidung. Deshalb erwarten wir nicht, dass Sie sich bereits nach dem ersten Gespräch langfristig festlegen.</p>
+        <p class="section-copy" style="margin-top: 12px;">Im achtwöchigen Pilotprojekt erleben Sie anhand von drei bis fünf realen Fällen, wie fachliche Kommunikation, digitale Planung, Fertigung, Problemlösung und internationale Logistik bei uns zusammenspielen.</p>
+        <ul class="pilot-bullets">
+          <li><strong>Fachliche Abstimmung auf Deutsch</strong>Direkte Kommunikation mit einem fest zugeordneten Zahntechniker.</li>
+          <li><strong>Digitale Fallberatung</strong>Bei komplexen Arbeiten prüfen wir die eingehenden Daten und stimmen uns bei Bedarf vor Fertigungsbeginn mit Ihnen ab.</li>
+          <li><strong>Korrekturen und Problemlösung</strong>Wenn eine Änderung erforderlich ist, reagieren wir zügig und korrigieren oder fertigen die Arbeit bei Bedarf neu.</li>
+          <li><strong>Organisierte Logistik für CH und DE</strong>Wir übernehmen die Organisation des Hin- und Rückversands.</li>
+        </ul>
       </div>
-    </div>
-    <div class="pilot-action">
-      <a href="#kapcsolat" class="btn-coral-big">Pilotberatung anfragen</a>
+      <div class="pilot-side">
+        <div class="pilot-risk">
+          <h3>Im Pilotzeitraum übernehmen wir einen Teil des Risikos</h3>
+          <p>Tritt während des Pilotprojekts aufgrund eines nachweisbaren Laborfehlers eine Situation ein, die einen erneuten Patiententermin erforderlich macht, korrigieren oder fertigen wir die Arbeit neu. Zusätzlich erhalten Sie eine Gutschrift in Höhe von 150 € als Ausgleich für den zusätzlichen Behandlungsaufwand, die mit der nächsten technischen Rechnung verrechnet wird.</p>
+          <p>Diese Zusage gilt ausschließlich für Arbeiten aus dem achtwöchigen Pilotprojekt und gemäß den Pilotbedingungen.</p>
+        </div>
+        <div class="pilot-meta" aria-label="Zusammenfassung des Piloten">
+          <div class="pilot-chip">
+            <strong>8 Wochen</strong>
+            Pilotzeitraum
+          </div>
+          <div class="pilot-chip">
+            <strong>3–5 Fälle</strong>
+            reale klinische Arbeiten
+          </div>
+          <div class="pilot-chip">
+            <strong>DE</strong>
+            fachliche Kommunikation
+          </div>
+          <div class="pilot-chip">
+            <strong>CH / DE</strong>
+            organisierte Logistik
+          </div>
+        </div>
+        <a class="pilot-cta" href="#kapcsolat">Pilotberatung anfragen</a>
+      </div>
     </div>
   </div>
 </section>
