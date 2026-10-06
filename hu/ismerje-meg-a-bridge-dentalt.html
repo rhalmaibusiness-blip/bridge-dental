@@ -402,7 +402,7 @@
       font-weight: 800;
       line-height: 1.22;
       letter-spacing: 0.5px;
-      max-width: 12ch;
+      max-width: 22ch;
       text-wrap: balance;
     }
 
@@ -885,330 +885,6 @@
       font-size: 14.5px;
       line-height: 1.75;
       color: #5a5049;
-    }
-
-    /* ── INNOVÁCIÓ — IDŐVONAL ── */
-    .innovation {
-      position: relative;
-      background: #fbf6ee;
-      padding: clamp(64px, 10vh, 110px) clamp(24px, 6vw, 90px) clamp(60px, 9vh, 100px);
-      overflow: hidden;
-    }
-
-    .i-eyebrow {
-      font-family: var(--font-body);
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 4px;
-      color: var(--accent);
-      padding-bottom: 12px;
-      margin-bottom: 26px;
-      position: relative;
-      width: fit-content;
-    }
-
-    .i-eyebrow::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 56px;
-      height: 2px;
-      background: var(--accent);
-    }
-
-    .i-title {
-      font-family: var(--font-head);
-      font-size: clamp(32px, 4vw, 52px);
-      font-weight: 800;
-      color: #1d1712;
-    }
-
-    .i-sub {
-      margin-top: 14px;
-      font-family: var(--font-body);
-      font-size: 16.5px;
-      color: #5a5049;
-    }
-
-    .innovation .reveal { opacity: 0; transform: translateY(30px); }
-    .innovation .reveal.inview {
-      animation: fadeUp 0.85s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-      animation-delay: var(--d, 0s);
-    }
-
-    .i-stage {
-      position: relative;
-      max-width: 1280px;
-      margin: 0 auto;
-    }
-
-    .i-years {
-      display: flex;
-      margin-top: 40px;
-      background: #fdfaf5;
-      border: 1px solid #ece2d4;
-      border-radius: 14px 14px 0 0;
-      overflow-x: auto;
-      scrollbar-width: none;
-    }
-    .i-years::-webkit-scrollbar { display: none; }
-
-    .i-year {
-      position: relative;
-      flex: 1;
-      min-width: 86px;
-      padding: 18px 10px;
-      background: none;
-      border: none;
-      border-right: 1px solid #f0e7d9;
-      font-family: var(--font-head);
-      font-size: 15.5px;
-      font-weight: 700;
-      color: #6b5f55;
-      cursor: pointer;
-      transition: color 0.3s, background 0.3s;
-    }
-
-    .i-year:last-child { border-right: none; }
-    .i-year:hover { color: var(--accent); }
-
-    .i-year.active {
-      background: linear-gradient(135deg, #b9461f, #8f3417);
-      color: #fff;
-      border-radius: 10px 10px 0 0;
-    }
-
-    .i-year.done {
-      background: rgba(232, 80, 46, 0.12);
-      color: var(--accent);
-    }
-
-    .i-year.active::after {
-      content: '';
-      position: absolute;
-      left: 50%;
-      bottom: -9px;
-      transform: translateX(-50%);
-      border: 9px solid transparent;
-      border-top-color: #8f3417;
-      border-bottom: none;
-      z-index: 2;
-    }
-
-    .i-card {
-      position: relative;
-      display: grid;
-      grid-template-columns: minmax(0, 44fr) minmax(0, 56fr);
-      align-items: center;
-      gap: clamp(28px, 4vw, 60px);
-      background: #fdfaf5;
-      border: 1px solid #ece2d4;
-      border-top: none;
-      border-radius: 0 0 18px 18px;
-      padding: clamp(30px, 4vw, 56px);
-      box-shadow: 0 26px 55px -32px rgba(43, 30, 20, 0.35);
-    }
-
-    .i-media {
-      position: relative;
-      align-self: center;
-      aspect-ratio: 4 / 3;
-      border-radius: 14px;
-      overflow: hidden;
-      background: var(--cream);
-      transition: opacity 0.35s ease, transform 0.35s ease;
-    }
-
-    .i-media img {
-      display: block;
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-    }
-
-    .i-card.no-photo { grid-template-columns: 1fr; }
-    .i-card.no-photo .i-media { display: none; }
-    .i-card.no-photo .i-body { min-height: 260px; max-width: 760px; width: 100%; margin: auto; }
-    .i-card.no-photo .i-body p { max-width: 65ch; }
-    .i-year:focus-visible, .i-stop:focus-visible, .i-nav:focus-visible {
-      outline: 3px solid var(--accent);
-      outline-offset: -3px;
-    }
-
-    .i-body {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      transition: opacity 0.35s ease, transform 0.35s ease;
-    }
-
-    .i-card.switching .i-media,
-    .i-card.switching .i-body { opacity: 0; transform: translateY(14px); }
-
-    .i-body .ib-year {
-      font-family: var(--font-head);
-      font-size: 16px;
-      font-weight: 700;
-      color: var(--accent);
-      padding-bottom: 10px;
-      margin-bottom: 20px;
-      position: relative;
-      width: fit-content;
-    }
-
-    .i-body .ib-year::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 44px;
-      height: 2px;
-      background: var(--accent);
-    }
-
-    .i-body h3 {
-      font-family: var(--font-head);
-      font-size: clamp(21px, 2.2vw, 30px);
-      font-weight: 800;
-      color: #2b2320;
-      line-height: 1.3;
-    }
-
-    .i-body p {
-      margin-top: 18px;
-      font-family: var(--font-body);
-      font-size: 15.5px;
-      line-height: 1.85;
-      color: #4a413b;
-      max-width: 50ch;
-    }
-
-    .i-nav {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      z-index: 5;
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      background: #fdfaf5;
-      border: 1px solid #e5dcd0;
-      box-shadow: 0 8px 22px -8px rgba(43, 30, 20, 0.35);
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #8f3417;
-      font-size: 0;
-      transition: transform 0.25s, background 0.3s;
-    }
-
-    .i-nav:hover { transform: translateY(-50%) scale(1.06); background: #fff; }
-    .i-nav svg { width: 22px; height: 22px; stroke: currentColor; stroke-width: 2.2; fill: none; stroke-linecap: round; stroke-linejoin: round; }
-    .i-nav svg * { stroke: currentColor; }
-    .i-nav.prev { left: -24px; }
-    .i-nav.next { right: -24px; }
-
-    .i-track {
-      position: relative;
-      display: flex;
-      margin-top: 12px;
-      padding-top: 36px;
-      padding-bottom: 14px;
-      overflow-x: auto;
-      scrollbar-width: none;
-      background: linear-gradient(180deg, #fdfaf5 0%, #fcf7f0 100%);
-      border: 1px solid #ece2d4;
-      border-top: none;
-      border-radius: 0 0 16px 16px;
-    }
-    .i-track::-webkit-scrollbar { display: none; }
-
-    .i-track-line, .i-track-fill {
-      position: absolute;
-      left: 40px;
-      right: 40px;
-      top: 21px;
-      height: 3px;
-      border-radius: 999px;
-    }
-    .i-track-line { background: #e9ddcd; }
-    .i-track-fill { right: auto; width: 0; background: linear-gradient(90deg, #d85b30, #8f3417); transition: width 0.55s cubic-bezier(0.22, 1, 0.36, 1); }
-
-    .i-stop {
-      position: relative;
-      flex: 1;
-      min-width: 86px;
-      padding: 0 10px 8px;
-      background: none;
-      border: none;
-      text-align: center;
-      cursor: pointer;
-      color: #6b5f55;
-      font-family: var(--font-body);
-    }
-    .i-stop::before {
-      content: '';
-      position: absolute;
-      top: -27px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 13px;
-      height: 13px;
-      border-radius: 50%;
-      background: #f7efe5;
-      border: 2px solid #d8c8b6;
-      transition: all 0.35s ease;
-      z-index: 1;
-    }
-    .i-stop.active::before {
-      background: #8f3417;
-      border-color: #8f3417;
-      box-shadow: 0 0 0 6px rgba(143, 52, 23, 0.18);
-    }
-    .i-stop.done::before {
-      background: rgba(232, 80, 46, 0.95);
-      border-color: rgba(232, 80, 46, 0.95);
-    }
-    .i-stop.done .is-year {
-      color: var(--accent);
-    }
-    .i-stop.future { color: #9b8f85; }
-    .i-stop:hover { color: var(--accent); }
-
-    .is-dot, .is-year { display: block; }
-    .is-dot { display: none; }
-    .is-year { font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
-
-    .i-footer {
-      margin-top: 22px;
-      text-align: center;
-      font-family: var(--font-head);
-      font-size: 18px;
-      font-weight: 700;
-      color: #2b2320;
-    }
-
-    @media (max-width: 1020px) {
-      .i-card { grid-template-columns: 1fr; }
-      .i-media { width: 100%; max-width: 640px; justify-self: center; }
-      .i-nav.prev { left: 12px; }
-      .i-nav.next { right: 12px; }
-    }
-
-    @media (max-width: 760px) {
-      .innovation { padding-left: 18px; padding-right: 18px; }
-      .i-title { font-size: clamp(28px, 7vw, 40px); }
-      .i-sub { font-size: 15px; }
-      .i-card { padding: 22px 22px 78px; gap: 22px; }
-      .i-track { padding-top: 30px; }
-      .i-track-line, .i-track-fill { left: 28px; right: 28px; top: 18px; }
-      .i-year, .i-stop { min-width: 72px; }
-      .i-nav { width: 42px; height: 42px; top: auto; bottom: 18px; transform: none; }
-      .i-nav:hover { transform: none; }
-      .i-nav.prev { left: auto; right: 74px; }
-      .i-nav.next { right: 22px; }
     }
 
     /* ── GALÉRIA ── */
@@ -1892,7 +1568,7 @@
       .hero-menu { display: none; }
       .hero-burger { display: flex; }
       .cinematic-content { padding: 0 24px 48px; max-width: 100%; }
-      .cinematic-title { font-size: clamp(31px, 10vw, 52px); max-width: 11ch; }
+      .cinematic-title { font-size: clamp(30px, 7.8vw, 42px); max-width: 22ch; }
       .cinematic-eyebrow { margin-bottom: 20px; gap: 12px; font-size: 11px; letter-spacing: 2.5px; }
       .cinematic-subtitle { margin-top: 24px; font-size: 15px; max-width: 100%; }
       .cinematic-scroll { right: 24px; bottom: 30px; }
@@ -1950,6 +1626,16 @@
       }
       .n-cta-btn { width: 100%; justify-content: center; white-space: normal; }
     }
+    .b-text p + p { margin-top: 14px; }
+
+    .about-contact {
+      text-align: center;
+      background: var(--white);
+    }
+    .about-contact .section-label { justify-content: center; }
+    .about-contact .section-title { max-width: 840px; margin: 0 auto 24px; }
+    .about-contact .section-desc { max-width: 680px; margin: 0 auto 32px; }
+    .about-contact .btn-coral-big { max-width: 100%; white-space: normal; text-align: center; }
   </style>
   <link rel="canonical" href="https://rhalmaibusiness-blip.github.io/bridge-dental/hu/ismerje-meg-a-bridge-dentalt.html">
   <link rel="alternate" hreflang="de" href="https://rhalmaibusiness-blip.github.io/bridge-dental/bridge-dental-kennenlernen.html">
@@ -2018,8 +1704,8 @@
 
   <div class="cinematic-content" id="cinematicContent">
     <div class="cinematic-eyebrow">Ismerje meg a Bridge Dentalt</div>
-    <h1 class="cinematic-title" id="heroHeadline">Több mint egy <em>fogtechnikai labor.</em></h1>
-    <p class="cinematic-subtitle">A diagnózistól a végleges restauráció átadásáig aktívan támogatjuk partnereinket, mert a legjobb eredmények nem egyszerű megrendelésekből, hanem együttműködésből születnek.</p>
+    <h1 class="cinematic-title" id="heroHeadline">Fogtechnikai háttér, amelyre a rendelő <em>hosszú távon építhet.</em></h1>
+    <p class="cinematic-subtitle">A diagnózistól a végleges restauráció átadásáig aktívan támogatjuk partnereinket. Mert a kiszámítható eredményhez nemcsak precíz fogtechnika, hanem összehangolt szakmai együttműködés is kell.</p>
     <a href="#hitvallas" class="btn-coral-big cinematic-cta">Ismerje meg a történetünket</a>
   </div>
 
@@ -2052,7 +1738,7 @@
       </svg>
     </div>
     <div class="alapelv-text">
-      <h4>Magas minőség</h4>
+      <h4>Következetes minőség</h4>
       <p>Csak olyan munkát adunk át, amely az Ön és a saját szakmai elvárásainknak is megfelel.</p>
     </div>
   </div>
@@ -2063,8 +1749,8 @@
       </svg>
     </div>
     <div class="alapelv-text">
-      <h4>Megbízhatóság</h4>
-      <p>Pontosan azt készítjük el, amiben megállapodtunk — kiszámítható eredménnyel, kompromisszumok nélkül.</p>
+      <h4>Megbízható együttműködés</h4>
+      <p>A kérdéseket még a gyártás előtt tisztázzuk, hogy mindenki ugyanazon kezelési koncepció mentén dolgozzon.</p>
     </div>
   </div>
 </div>
@@ -2078,14 +1764,15 @@
         A Bridge Dental két fogtechnikus mester, Kínál Attila és Császár Dénes közös szakmai szemléletéből született.
       </div>
       <div class="story-text hitvallas-body">
-        <p>Már a 2000-es évek közepén német fogorvosokkal dolgoztunk együtt, és hamar világossá vált számunkra, hogy a hazai piacon hiányzik az a labor, amely nem csupán kivitelező, hanem valódi szakmai partner is.</p>
+        <p>Már a Bridge Dental megalapítása előtt dolgoztunk német és osztrák fogorvosokkal, így korán megtapasztaltuk, hogy a magas színvonalú fogtechnikai munka mellett a pontos kommunikáció, a közös tervezés és a kiszámítható együttműködés is meghatározza a végeredményt.</p>
         <p>Olyan működésben hittünk, ahol a fogorvos és a fogtechnikus közösen gondolkodik, a digitális technológia nem divat, hanem rendszer, a minőség pedig nem egy-egy kiemelkedő munkában, hanem minden esetben következetesen jelenik meg.</p>
-        <p>2011-ben létrehoztuk a Bridge Dentalt, és azóta is ez a szemlélet vezérel bennünket: <strong>közel 25 fős csapattal</strong>, <strong>saját digitális gyártóközponttal</strong> és <strong>mintegy 80 fogorvos bizalmával</strong>.</p>
+        <p>2011-ben erre a szemléletre építve hoztuk létre a Bridge Dentalt. Azóta lépésről lépésre fejlesztettük digitális munkafolyamatainkat és saját gyártási hátterünket.</p>
+        <p>Ma <strong>25+ fős saját szakmai csapattal</strong> és <strong>digitális gyártóközponttal</strong> dolgozunk – ugyanazzal az alapelvvel, amellyel elindultunk: a jó fogtechnika közös munka eredménye.</p>
       </div>
       <div class="story-facts">
-        <div class="story-fact"><strong>2011</strong><span>a Bridge Dental indulása</span></div>
-        <div class="story-fact"><strong>25 fős</strong><span>saját szakmai csapat</span></div>
-        <div class="story-fact"><strong>80 fogorvos</strong><span>aktív partneri kapcsolat</span></div>
+        <div class="story-fact"><strong>2011</strong><span>A Bridge Dental alapítása</span></div>
+        <div class="story-fact"><strong>25+ fő</strong><span>Saját szakmai csapat</span></div>
+        <div class="story-fact"><strong>80</strong><span>Aktív fogorvosi partnerkapcsolat</span></div>
       </div>
     </div>
     <div class="hitvallas-photo hitvallas-photo-filled">
@@ -2094,7 +1781,7 @@
   </div>
 </section>
 
-<!-- AMIBEN MI HISZÜNK -->
+<!-- SZAKMAI ALAPELVEINK -->
 <section class="beliefs">
   <svg class="b-deco" viewBox="0 0 300 220">
     <path d="M0 220 C 90 200, 150 150, 160 60 S 240 10, 300 40"/>
@@ -2102,7 +1789,7 @@
   </svg>
 
   <div class="b-head">
-    <h1 class="b-title">Amiben mi hiszünk</h1>
+    <h2 class="b-title">Szakmai alapelveink</h2>
     <div class="b-dots-row">
       <span></span><span></span><span></span><span></span><span></span><span></span>
     </div>
@@ -2115,8 +1802,8 @@
       <div class="b-sep"></div>
       <div class="b-icon"><img src="../Rolunk aloldal/belief-01.png" alt=""></div>
       <div class="b-text">
-        <h3>Közös tervezés, nem egyoldalú gyártás</h3>
-        <p>A kiváló fogpótlás alapja a diagnózis, a gondos tervezés és a fogorvos–fogtechnikus közötti szoros együttműködés.</p>
+        <h3>Közös tervezés</h3>
+        <p>A jó eredmény alapja a fogorvos és a fogtechnikus közös gondolkodása. A fontos szakmai kérdéseket már a tervezés során egyeztetjük, hogy a kezelés és a fogtechnikai megoldás ugyanazt a célt szolgálja.</p>
       </div>
     </div>
     <div class="b-row" style="--d: 0.2s">
@@ -2124,8 +1811,8 @@
       <div class="b-sep"></div>
       <div class="b-icon"><img src="../Rolunk aloldal/belief-02.png" alt=""></div>
       <div class="b-text">
-        <h3>A digitális technológia értékét az eredmény mutatja meg</h3>
-        <p>A digitális munkafolyamat nálunk nem a szkenneléssel kezdődik és nem is ott ér véget: egységes rendszerként kapcsolja össze a diagnózist, a tervezést, a kommunikációt, a gyártást és a minőségellenőrzést.</p>
+        <h3>Digitális rendszerben gondolkodunk</h3>
+        <p>A digitális munkafolyamat nálunk nem egyetlen technológiai lépés. Egységes rendszerként kapcsolja össze az információgyűjtést, a tervezést, a kommunikációt, a gyártást és a minőségellenőrzést.</p>
       </div>
     </div>
     <div class="b-row" style="--d: 0.3s">
@@ -2134,7 +1821,8 @@
       <div class="b-icon"><img src="../Rolunk aloldal/belief-03.png" alt=""></div>
       <div class="b-text">
         <h3>Természetes esztétika</h3>
-        <p>Az igazán jó fogpótlás nem hívja fel magára a figyelmet. Természetesen illeszkedik a páciens mosolyához, arcához és személyiségéhez.</p>
+        <p>Célunk nem egyszerűen szép fogpótlások készítése, hanem olyan restaurációk létrehozása, amelyek természetesen illeszkednek a páciens mosolyához, arcához és karakteréhez.</p>
+        <p>Az igazán jó restauráció nem hívja fel magára a figyelmet.</p>
       </div>
     </div>
     <div class="b-row" style="--d: 0.4s">
@@ -2143,7 +1831,7 @@
       <div class="b-icon"><img src="../Rolunk aloldal/belief-04.png" alt=""></div>
       <div class="b-text">
         <h3>Következetes minőség</h3>
-        <p>A prémium minőség nem egy-egy kiemelkedő munka eredménye – hanem az, ha ugyanaz a színvonal minden esetben, következetesen megjelenik.</p>
+        <p>A minőség számunkra nem egy-egy kiemelkedő munka, hanem egy következetesen reprodukálható szakmai színvonal.</p>
       </div>
     </div>
     <div class="b-row" style="--d: 0.5s">
@@ -2151,8 +1839,8 @@
       <div class="b-sep"></div>
       <div class="b-icon"><img src="../Rolunk aloldal/belief-05.png" alt=""></div>
       <div class="b-text">
-        <h3>Hosszú távú partnerség</h3>
-        <p>Számunkra egy munka elkészítése nem egy megrendelés lezárása, hanem egy szakmai kapcsolat építésének része.</p>
+        <h3>Hosszú távú együttműködés</h3>
+        <p>Nem egy-egy munkában gondolkodunk. Olyan szakmai kapcsolatot szeretnénk kialakítani partnereinkkel, amelyben idővel megismerjük egymás munkamódszerét és elvárásait.</p>
       </div>
     </div>
   </div>
@@ -2162,10 +1850,10 @@
 <section class="section" id="mashogy">
   <div class="mashogy-grid">
     <div class="reveal">
-      <div class="section-label">Miért más a Bridge Dental?</div>
-      <h2 class="section-title">Prémium anyaghasználat,<br><span class="accent">kompromisszumok nélkül.</span></h2>
+      <div class="section-label">Dokumentált, megbízható anyagrendszerek</div>
+      <h2 class="section-title">A megfelelő anyagot mindig az adott restauráció <span class="accent">követelményeihez választjuk.</span></h2>
       <p style="font-size: 16px; color: var(--warm-gray); line-height: 1.85; margin-bottom: 0; max-width: 540px;">
-        A Bridge Dentalnál a minőség az alapanyagok kiválasztásánál kezdődik. Restaurációinkhoz kizárólag prémium, nemzetközileg elismert fogászati anyagokat és digitális rendszereket használunk, hogy minden elkészült munka esztétikailag, funkcionálisan és hosszú távon is megbízható legyen.
+        Restaurációinkhoz nemzetközileg elismert fogászati anyagokat és anyagrendszereket használunk. Az anyagválasztást minden esetben az adott indikáció, az esztétikai és funkcionális követelmények, valamint a tervezett konstrukció határozza meg.
       </p>
     </div>
 
@@ -2176,27 +1864,23 @@
             <div class="offer-check">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
             </div>
-            <span>Nemzetközileg elismert gyártók és anyagrendszerek</span>
+            <span>Nemzetközileg elismert anyagrendszerek</span>
           </div>
           <div class="offer-item">
             <div class="offer-check">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
             </div>
-            <span>Dokumentált, visszakövethető alapanyaghasználat</span>
+            <span>Dokumentált és visszakövethető alapanyaghasználat</span>
           </div>
           <div class="offer-item">
             <div class="offer-check">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
             </div>
-            <span>Anyagválasztás esztétikai, funkcionális és klinikai szempontok alapján</span>
+            <span>Indikációhoz és konstrukcióhoz igazított anyagválasztás</span>
           </div>
-          <div class="offer-item offer-item-premium">
-            <div class="offer-check">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            </div>
+          <div class="material-partners">
             <div class="premium-materials">
-              <span class="premium-materials-title">Kizárólag prémium anyagok</span>
-              <div class="material-logo-grid" aria-label="Prémium anyagpartnereink">
+              <div class="material-logo-grid" aria-label="Anyagpartnereink">
                 <a class="material-logo-card logo-tall" href="https://www.ivoclar.com/" target="_blank" rel="noopener noreferrer" aria-label="Ivoclar hivatalos oldala">
                   <img src="../assets/material-logos/ivoclar.svg" alt="Ivoclar">
                 </a>
@@ -2230,13 +1914,13 @@
 <!-- ELISMERÉSEK -->
 <section id="elismeresek" style="padding: 96px 80px; background: var(--white);">
   <div class="reveal" style="margin-bottom: 56px;">
-    <div class="section-label">Díjaink</div>
+    <div class="section-label">Szakmai elismerések</div>
     <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; flex-wrap: wrap;">
       <h2 class="section-title" style="margin-bottom: 0;">
-        Elismert minőség,<br><span style="color: var(--coral);">igazolva.</span>
+        Eredmények, amelyek <span style="color: var(--coral);">szakmai utunk fontos állomásai.</span>
       </h2>
       <p style="font-size: 15px; color: var(--warm-gray); line-height: 1.6; max-width: 380px;">
-        Eredményeink nemcsak a munkáinkban, hanem a szakma által adományozott díjakban is megmutatkoznak.
+        Az évek során hazai és nemzetközi szakmai versenyeken is megmérettettük magunkat.
       </p>
     </div>
   </div>
@@ -2261,7 +1945,7 @@
       </div>
       <div style="font-size: 13px; font-weight: 700; color: var(--coral); margin-bottom: 10px;">Hungarian Dental Awards 2015</div>
       <h3 style="font-family: 'Montserrat', sans-serif; font-size: 19px; font-weight: 800; color: var(--charcoal); letter-spacing: -0.4px; line-height: 1.25; margin: 0 0 14px;">Legjobb fogtechnikai labor</h3>
-      <p style="font-size: 14px; color: var(--warm-gray); line-height: 1.65; margin: 0;">A magyar fogtechnikai szakma legrangosabb elismerése — a legjobb labor és a legjobb fogtechnikus kategóriában.</p>
+      <p style="font-size: 14px; color: var(--warm-gray); line-height: 1.65; margin: 0;">A Bridge Dental 2015-ben a Hungarian Dental Awards szakmai elismerésében részesült.</p>
       <div style="position: absolute; bottom: 0; left: 36px; right: 36px; height: 3px; background: linear-gradient(to right, var(--coral), #f07a52); border-radius: 2px 2px 0 0;"></div>
       </div>
     </div>
@@ -2277,7 +1961,7 @@
       </div>
       <div style="font-size: 13px; font-weight: 700; color: var(--coral); margin-bottom: 10px;">Candulor KunstZahnWerk 2019</div>
       <h3 style="font-family: 'Montserrat', sans-serif; font-size: 19px; font-weight: 800; color: var(--white); letter-spacing: -0.4px; line-height: 1.25; margin: 0 0 14px;">6. helyezés</h3>
-      <p style="font-size: 14px; color: rgba(255,255,255,0.62); line-height: 1.72; margin: 0;">Nemzetközi szakmai verseny a svájci CANDULOR AG szervezésében, ahol 16 ország 49 fogtechnikusa mérte össze tudását. Kiemelkedő helyezés Európa legjobb laborai között.</p>
+      <p style="font-size: 14px; color: rgba(255,255,255,0.62); line-height: 1.72; margin: 0;">A svájci CANDULOR AG nemzetközi fogtechnikai versenyén 16 ország 49 résztvevője között értünk el 6. helyezést.</p>
       <div style="position: absolute; bottom: 0; left: 36px; right: 36px; height: 3px; background: linear-gradient(to right, var(--coral), #f07a52); border-radius: 2px 2px 0 0;"></div>
       </div>
     </div>
@@ -2294,8 +1978,8 @@
         </svg>
       </div>
       <div style="font-size: 13px; font-weight: 700; color: var(--coral); margin-bottom: 10px;">Győztesek versenye</div>
-      <h3 style="font-family: 'Montserrat', sans-serif; font-size: 19px; font-weight: 800; color: var(--charcoal); letter-spacing: -0.4px; line-height: 1.25; margin: 0 0 14px;">1.helyezés</h3>
-      <p style="font-size: 14px; color: var(--warm-gray); line-height: 1.65; margin: 0;">A Bridge Dentalnál fontos szerepet kap a fiatal szakemberek támogatása. Tanulóink rendszeresen részt vesznek nemzetközi szakmai versenyeken, ahol több alkalommal értek el előkelő helyezést.</p>
+      <h3 style="font-family: 'Montserrat', sans-serif; font-size: 19px; font-weight: 800; color: var(--charcoal); letter-spacing: -0.4px; line-height: 1.25; margin: 0 0 14px;">1. helyezés</h3>
+      <p style="font-size: 14px; color: var(--warm-gray); line-height: 1.65; margin: 0;">A fiatal szakemberek képzése hosszú ideje része a Bridge Dental szakmai kultúrájának. Tanulóink szakmai versenyeken is rendszeresen részt vesznek.</p>
       <div style="position: absolute; bottom: 0; left: 36px; right: 36px; height: 3px; background: linear-gradient(to right, var(--coral), #f07a52); border-radius: 2px 2px 0 0;"></div>
       </div>
     </div>
@@ -2307,12 +1991,26 @@
 <!-- SZAKMAI FEJLŐDÉS -->
 <section class="section" id="fejlodes">
   <div class="reveal">
-    <div class="section-label">Szakmai haladás</div>
-    <h2 class="section-title">Teret adunk<br><span class="accent">a fejlődésnek.</span></h2>
-    <p class="section-desc">A fogtechnika gyorsan fejlődő szakma — mi lépést tartunk vele, és mi magunk is formáljuk az irányt.</p>
+    <div class="section-label">Szakmai fejlődés</div>
+    <h2 class="section-title">A tudás ugyanúgy része a fejlődésnek, <span class="accent">mint a technológia.</span></h2>
+    <p class="section-desc">A digitális fogtechnika folyamatosan változik. Ezért a képzés, a tudásmegosztás és a nemzetközi szakmai kapcsolatok a működésünk fontos részei.</p>
   </div>
   <div class="fejlodes-grid">
     <div class="fejlodes-card reveal">
+      <div class="about-card-photo about-card-photo--plaque" style="--photo-fit: contain;">
+        <img src="../assets/about/development-icde-partner.webp" alt="A Bridge Dental Ivoclar ICDE-partnerségét jelölő tábla" width="500" height="666" loading="lazy" decoding="async">
+      </div>
+      <div class="fejlodes-card-body">
+      <div class="fejlodes-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+        </svg>
+      </div>
+      <h3>ICDE partner labor</h3>
+      <p>A Bridge Dental az International Center for Dental Education (ICDE) hivatalos partner laborja. A kapcsolat révén közvetlenül kapcsolódunk az Ivoclar nemzetközi szakmai és oktatási hátteréhez, valamint a korszerű anyagok és digitális fogtechnikai megoldások fejlődéséhez.</p>
+      </div>
+    </div>
+    <div class="fejlodes-card reveal reveal-delay-1">
       <div class="about-card-photo" style="--photo-fit: contain;">
         <img src="../assets/about/development-training.webp" alt="Belső szakmai továbbképzés a Bridge Dental laborjában" width="1400" height="850" loading="lazy" decoding="async">
       </div>
@@ -2323,22 +2021,8 @@
           <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
         </svg>
       </div>
-      <h3>Oktató labor</h3>
-      <p>Rendszeres belső képzésekkel fejlesztjük kollégáink tudását, hogy partnereink mindig a lehető legmagasabb színvonalú munkát kapják tőlünk.</p>
-      </div>
-    </div>
-    <div class="fejlodes-card reveal reveal-delay-1">
-      <div class="about-card-photo about-card-photo--plaque" style="--photo-fit: contain;">
-        <img src="../assets/about/development-icde-partner.webp" alt="A Bridge Dental Ivoclar ICDE-partnerségét jelölő tábla" width="500" height="666" loading="lazy" decoding="async">
-      </div>
-      <div class="fejlodes-card-body">
-      <div class="fejlodes-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-          <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
-        </svg>
-      </div>
-      <h3>ICDE Partner</h3>
-      <p>A liechtensteini Ivoclar fogászati óriásvállalattal kötött ICDE-partnerségünk révén aktívan alkalmazzuk a legújabb nemzetközi fogtechnikai irányelveket; ez a naprakész, megbízható minőség egyik alapja.</p>
+      <h3>Belső szakmai képzés</h3>
+      <p>Belső képzésekkel és tudásmegosztással fejlesztjük csapatunk szakmai felkészültségét.</p>
       </div>
     </div>
     <div class="fejlodes-card reveal reveal-delay-2">
@@ -2353,8 +2037,8 @@
           <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
         </svg>
       </div>
-      <h3>Hazai és nemzetközi kiállítások</h3>
-      <p>Rendszeresen részt veszünk fogtechnikai kongresszusokon, hogy első kézből ismerjük meg az újdonságokat, és a bevált megoldásokat mielőbb beépítsük a mindennapi munkánkba.</p>
+      <h3>Nemzetközi szakmai jelenlét</h3>
+      <p>Nemzetközi fogászati és fogtechnikai rendezvényeken ismerjük meg az új technológiákat, anyagokat és munkafolyamatokat.</p>
       </div>
     </div>
   </div>
@@ -2366,12 +2050,10 @@
   <div class="n-head">
     <div class="n-eyebrow reveal" style="--d: 0s">NEMZETKÖZI TAPASZTALAT</div>
     <h2 class="n-title reveal" style="--d: 0.12s">
-      Több mint két évtizede<br>
-      a német nyelvterület szolgálatában.
+      Több mint két évtized nemzetközi együttműködés.
     </h2>
     <p class="n-sub reveal" style="--d: 0.24s">
-      Az a tapasztalat, amelyet húsz év nemzetközi együttműködés
-      során szereztünk, ma is meghatározza a működésünket.
+      A német és osztrák fogorvosokkal szerzett több mint 20 éves tapasztalat ma is meghatározza működésünket.
     </p>
   </div>
 
@@ -2379,7 +2061,7 @@
 
     <div class="n-left">
       <div class="n-left-intro">
-        Több mint két évtizede a német nyelvterületen
+        Több száz kilométerről is kiszámítható együttműködés
       </div>
       <div class="n-photo">
         <img src="../assets/about/international-1565.webp"
@@ -2393,21 +2075,10 @@
     <div class="n-right">
       <div class="n-quote-mark">&ldquo;</div>
       <p>
-        Ez idő alatt megismertük a magas szakmai elvárásaikat,
-        a digitális munkafolyamatokra épülő
-        együttműködési modelleket és a kiszámítható minőség
-        iránti igényt.
+        Ez idő alatt nemcsak partnereink szakmai elvárásait ismertük meg, hanem azt is, milyen együttműködésre van szükség akkor, amikor a rendelő és a labor több száz kilométerre dolgozik egymástól.
       </p>
       <p>
-        A hosszú távú nemzetközi együttműködések megtanítottak
-        bennünket arra, hogy a siker alapja nem csupán a precíz
-        munka, hanem a kiszámítható kommunikáció, a megbízható
-        határidők és a következetes minőség.
-      </p>
-      <p>
-        Az ICDE szakmai partnerségünk biztosítja, hogy partnereink
-        mindig a legkorszerűbb eljárásokból és munkafolyamatokból
-        profitálhassanak.
+        A pontos kommunikáció, a kiszámítható folyamatok és a következetes minőség ezért nálunk nem külön „nemzetközi szolgáltatás”, hanem a mindennapi működés része.
       </p>
 
       <div class="n-badges">
@@ -2421,66 +2092,14 @@
         <div class="n-badge">
           <svg viewBox="0 0 24 24"><path d="M4 12l3-3 4 1 3-3 2 1 4-3"/><path d="M8 13l-2.5 2.5a2 2 0 0 0 3 3L11 16m0 0l1.5 1.5a2 2 0 0 0 3-3L14 13m0 0l1 1a2 2 0 0 0 3-3l-2-2"/></svg>
           <div>
-            <span class="nb-title">ICDE</span>
-            <span class="nb-sub">szakmai partnerség</span>
+            <span class="nb-title">Német nyelvű</span>
+            <span class="nb-sub">szakmai kommunikáció</span>
           </div>
         </div>
       </div>
     </div>
 
   </div>
-
-  <div class="n-cta-bar reveal" style="--d: 0.46s">
-    <div class="n-cta-icon">
-      <svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 19c0-3 2.7-5 6-5s6 2 6 5"/><circle cx="17" cy="9" r="2.4"/><path d="M16 14.2c2.8.2 5 1.9 5 4.3"/></svg>
-    </div>
-    <div class="n-cta-q">Közös munkában gondolkodik?</div>
-    <a href="kapcsolat.html" class="n-cta-btn">
-      Vegye fel velünk a kapcsolatot
-      <svg viewBox="0 0 24 24">
-        <line x1="4" y1="12" x2="20" y2="12"/>
-        <polyline points="13 5 20 12 13 19"/>
-      </svg>
-    </a>
-  </div>
-
-</section>
-
-<!-- ============ INNOVÁCIÓ — IDŐVONAL ============ -->
-<section class="innovation" id="innovacio">
-
-  <div class="i-eyebrow reveal" style="--d: 0s">INNOVÁCIÓ</div>
-  <h2 class="i-title reveal" style="--d: 0.12s">Mindig egy lépéssel előrébb.</h2>
-  <p class="i-sub reveal" style="--d: 0.24s">A folyamatos fejlődés nem célkitűzés – hanem a működésünk része.</p>
-
-  <div class="i-stage reveal" style="--d: 0.36s">
-    <div class="i-years" id="iYears"></div>
-
-    <div class="i-card" id="iCard">
-      <div class="i-media" id="iMedia">
-        <img id="iMediaImage" src="../assets/about/milestone-2011.webp" alt="A Bridge Dental laborjának kialakítása és berendezése" width="1400" height="1323" loading="lazy" decoding="async">
-      </div>
-      <div class="i-body" aria-live="polite" aria-atomic="true">
-        <div class="ib-year" id="iBodyYear"></div>
-        <h3 id="iBodyTitle"></h3>
-        <p id="iBodyText"></p>
-      </div>
-    </div>
-
-    <button class="i-nav prev" id="iPrev" aria-label="Előző">
-      <svg viewBox="0 0 24 24"><polyline points="15 5 8 12 15 19"/></svg>
-    </button>
-    <button class="i-nav next" id="iNext" aria-label="Következő">
-      <svg viewBox="0 0 24 24"><polyline points="9 5 16 12 9 19"/></svg>
-    </button>
-  </div>
-
-  <div class="i-track reveal" id="iTrack" style="--d: 0.48s">
-    <div class="i-track-line"></div>
-    <div class="i-track-fill" id="iTrackFill"></div>
-  </div>
-
-  <div class="i-footer reveal" style="--d: 0.56s">És ez még csak a kezdet.</div>
 
 </section>
 
@@ -2540,6 +2159,16 @@
       <div class="g-ph"><img src="../assets/about/gallery-11-0115.webp" alt="Fogtechnikai részletmunka természetes fogszín kialakításakor" loading="lazy"></div>
     </div>
 
+  </div>
+</section>
+
+<!-- KÖVETKEZŐ LÉPÉS -->
+<section class="section about-contact" aria-labelledby="aboutContactTitle">
+  <div class="reveal">
+    <div class="section-label">Következő lépés</div>
+    <h2 class="section-title" id="aboutContactTitle">Ismerjük meg egymást <span class="accent">egy szakmai egyeztetésen.</span></h2>
+    <p class="section-desc">Van egy konkrét esete, vagy szeretné megismerni, hogyan dolgozunk? Beszéljük át.</p>
+    <a href="kapcsolat.html" class="btn-coral-big">KÉREK EGY SZAKMAI EGYEZTETÉST</a>
   </div>
 </section>
 
@@ -2739,106 +2368,6 @@
     });
   }, { threshold: 0.12 });
   reveals.forEach(el => observer.observe(el));
-
-  // Innováció idővonal
-  (function () {
-    const MILESTONES = [
-      {"year":"2011","title":"A kezdetek","text":"Megalakult a Bridge Dental azzal a céllal, hogy a hazai és nemzetközi rendelők megbízható szakmai partnere legyen.","image":"../assets/about/milestone-2011.webp","alt":"A Bridge Dental laborjának kialakítása és berendezése"},
-      {"year":"2012","title":"Digitális elköteleződés","text":"A Nobel Procera és a 3Shape rendszerekkel fokozatosan áttértünk a CAD/CAM-alapú munkafolyamatokra, megteremtve ezzel a későbbi fejlesztések alapját.","image":"../assets/about/milestone-2012.webp","alt":"Digitális tervezés Nobel Procera rendszerekkel a laborban"},
-      {"year":"2015","title":"„Legjobb Fogtechnikai Labor”","text":"Hungarian Dental Awards díj.","image":"../assets/about/milestone-2015.webp","alt":"A 2015-ös Hungarian Dental Awards díjazottjai az elismerésekkel"},
-      {"year":"2016","title":"3D nyomtatás és ICDE partnerség","text":"Az additív gyártás a mindennapi munkánk részévé vált. Ugyanebben az évben a liechtensteini székhelyű, világvezető Ivoclar fogászati óriásvállalattól megkaptuk az ICDE (International Centre for Dental Education) rendkívül komoly szakmai elismerést és státuszt.","image":"../assets/about/milestone-2016.webp","alt":"Szakmai képzés az Ivoclar digitális oktatóközpontjában"},
-      {"year":"2019","title":"KunstZahnWerk: 6. helyezés","text":"Nemzetközi szakmai elismerés a 16 országból érkező 49 fogtechnikus mezőnyében.","image":"../assets/about/milestone-2019.webp","alt":"Kínál Attila és Császár Dénes hatodik helyezést elért munkája a KunstZahnWerk versenyen"},
-      {"year":"2021","title":"Saját digitális gyártóközpont","text":"Új CAD/CAM technológiákkal és modern imes-icore CORiTEC 350i Loader PRO+ marógéppel kialakítottuk teljes digitális gyártási környezetünket.","image":"../assets/about/milestone-2021.webp","alt":"Az imes-icore CORiTEC 350i Loader PRO+ marógép a Bridge Dental laborjában"},
-      {"year":"2024","title":"Kapacitásbővítés","text":"Két további imes-icore CORiTEC 250i marógéppel bővítettük saját CAD/CAM gyártási kapacitásunkat.","image":"../assets/about/milestone-2024-cadcam.webp","alt":"A Bridge Dental két imes-icore CORiTEC 250i marógépe"},
-      {"year":"2026","title":"TrueDent®","text":"A biokompatibilis, teljes színű digitális fogsorok új lehetőségeket nyitottak a digitális fogpótlások területén.","image":"../assets/about/milestone-2026-truedent.webp","alt":"Stratasys fogászati 3D nyomtatók a Bridge Dental laborjában"}
-    ];
-    const N = MILESTONES.length;
-
-    const yearsBox = document.getElementById('iYears');
-    const track = document.getElementById('iTrack');
-    const trackFill = document.getElementById('iTrackFill');
-    const card = document.getElementById('iCard');
-    const bYear = document.getElementById('iBodyYear');
-    const bTitle = document.getElementById('iBodyTitle');
-    const bText = document.getElementById('iBodyText');
-    const mediaImage = document.getElementById('iMediaImage');
-    const prev = document.getElementById('iPrev');
-    const next = document.getElementById('iNext');
-
-    if (!yearsBox || !track || !trackFill || !card || !bYear || !bTitle || !bText || !mediaImage || !prev || !next) return;
-
-    yearsBox.innerHTML = MILESTONES.map((m, i) =>
-      `<button class="i-year" data-i="${i}" aria-controls="iCard" aria-pressed="${i === 0}">${m.year}</button>`).join('');
-
-    track.insertAdjacentHTML('beforeend', MILESTONES.map((m, i) => `
-      <button class="i-stop" data-i="${i}" aria-controls="iCard" aria-pressed="${i === 0}">
-        <span class="is-dot"></span>
-        <span class="is-year">${m.year}</span>
-      </button>`).join(''));
-
-    const yearEls = yearsBox.querySelectorAll('.i-year');
-    const stopEls = track.querySelectorAll('.i-stop');
-    let index = 0;
-    let switchTimer;
-    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-    function render() {
-      const m = MILESTONES[index];
-      bYear.textContent = m.year;
-      bTitle.textContent = m.title;
-      bText.textContent = m.text;
-      card.classList.toggle('no-photo', !m.image);
-      if (m.image) {
-        mediaImage.alt = m.alt;
-        mediaImage.src = m.image;
-      } else {
-        mediaImage.removeAttribute('src');
-        mediaImage.alt = '';
-      }
-    }
-
-    function update() {
-      yearEls.forEach((el, i) => {
-        el.classList.toggle('active', i === index);
-        el.setAttribute('aria-pressed', String(i === index));
-        el.classList.toggle('done', i < index);
-      });
-      stopEls.forEach((el, i) => {
-        el.classList.toggle('active', i === index);
-        el.setAttribute('aria-pressed', String(i === index));
-        el.classList.toggle('done', i < index);
-        el.classList.toggle('future', i > index);
-      });
-
-      trackFill.style.width = `calc((100% - 80px) * ${N === 1 ? 0 : index / (N - 1)})`;
-      const activeYear = yearEls[index];
-      yearsBox.scrollTo({ left: activeYear.offsetLeft - yearsBox.offsetLeft - (yearsBox.clientWidth - activeYear.clientWidth) / 2, behavior: reducedMotion ? 'auto' : 'smooth' });
-
-      clearTimeout(switchTimer);
-      card.classList.add('switching');
-      switchTimer = setTimeout(() => {
-        render();
-        card.classList.remove('switching');
-      }, reducedMotion ? 0 : 200);
-    }
-
-    function go(i) {
-      index = (i + N) % N;
-      update();
-    }
-
-    prev.addEventListener('click', () => go(index - 1));
-    next.addEventListener('click', () => go(index + 1));
-    yearEls.forEach(el => el.addEventListener('click', () => go(+el.dataset.i)));
-    stopEls.forEach(el => el.addEventListener('click', () => go(+el.dataset.i)));
-
-    render();
-    yearEls[0].classList.add('active');
-    yearEls.forEach((el, i) => el.classList.toggle('done', i < 0));
-    stopEls.forEach((el, i) => el.classList.toggle('future', i > 0));
-    stopEls[0].classList.add('active');
-    trackFill.style.width = '0px';
-  })();
 
   // Galéria: kinyíló panelek (hover desktopon, koppintás mobilon) + automata léptetés
   (function () {
