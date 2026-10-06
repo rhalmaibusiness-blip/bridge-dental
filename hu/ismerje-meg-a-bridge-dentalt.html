@@ -627,6 +627,8 @@
       padding: 34px;
     }
     .hitvallas-photo.hitvallas-photo-filled {
+      height: auto;
+      aspect-ratio: 1 / 1;
       padding: 0;
       align-items: stretch;
       background: #181411;
@@ -635,8 +637,8 @@
       width: 100%;
       height: 100%;
       display: block;
-      object-fit: cover;
-      object-position: center 45%;
+      object-fit: contain;
+      object-position: center;
     }
     .story-placeholder-ring {
       position: absolute;
@@ -2004,6 +2006,7 @@
           </li>
         </ul>
       </li>
+      <li><a href="https://bridgedental.hu/fooldal/hirek/">BLOG</a></li>
       <li><a href="../output/pdf/bridge-dental-munkalap-kitoltheto-hu.pdf" target="_blank" rel="noopener">MUNKALAP</a></li>
       <li><a href="kapcsolat.html">KAPCSOLAT</a></li>
     </ul>
@@ -2325,6 +2328,20 @@
       </div>
     </div>
     <div class="fejlodes-card reveal reveal-delay-1">
+      <div class="about-card-photo about-card-photo--plaque" style="--photo-fit: contain;">
+        <img src="../assets/about/development-icde-partner.webp" alt="A Bridge Dental Ivoclar ICDE-partnerségét jelölő tábla" width="500" height="666" loading="lazy" decoding="async">
+      </div>
+      <div class="fejlodes-card-body">
+      <div class="fejlodes-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+        </svg>
+      </div>
+      <h3>ICDE Partner</h3>
+      <p>A liechtensteini Ivoclar fogászati óriásvállalattal kötött ICDE-partnerségünk révén aktívan alkalmazzuk a legújabb nemzetközi fogtechnikai irányelveket; ez a naprakész, megbízható minőség egyik alapja.</p>
+      </div>
+    </div>
+    <div class="fejlodes-card reveal reveal-delay-2">
       <div class="about-card-photo">
         <img src="../assets/about/development-ids-2019.webp" alt="A Bridge Dental csapata a 2019-es kölni IDS fogászati kiállításon" width="1400" height="1050" loading="lazy" decoding="async">
       </div>
@@ -2338,20 +2355,6 @@
       </div>
       <h3>Hazai és nemzetközi kiállítások</h3>
       <p>Rendszeresen részt veszünk fogtechnikai kongresszusokon, hogy első kézből ismerjük meg az újdonságokat, és a bevált megoldásokat mielőbb beépítsük a mindennapi munkánkba.</p>
-      </div>
-    </div>
-    <div class="fejlodes-card reveal reveal-delay-2">
-      <div class="about-card-photo about-card-photo--plaque" style="--photo-fit: contain;">
-        <img src="../assets/about/development-icde-partner.webp" alt="A Bridge Dental Ivoclar ICDE-partnerségét jelölő tábla" width="500" height="666" loading="lazy" decoding="async">
-      </div>
-      <div class="fejlodes-card-body">
-      <div class="fejlodes-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-          <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
-        </svg>
-      </div>
-      <h3>ICDE Partner</h3>
-      <p>A liechtensteini Ivoclar fogászati óriásvállalattal kötött ICDE-partnerségünk révén aktívan alkalmazzuk a legújabb nemzetközi fogtechnikai irányelveket; ez a naprakész, megbízható minőség egyik alapja.</p>
       </div>
     </div>
   </div>
@@ -2565,6 +2568,7 @@
     <ul>
       <li><a href="ismerje-meg-a-bridge-dentalt.html">Ismerje meg a Bridge Dentalt</a></li>
       <li><a href="index.html#szolgaltatasok">Szakterületeink</a></li>
+      <li><a href="https://bridgedental.hu/fooldal/hirek/">Blog</a></li>
       <li><a href="kapcsolat.html">Kapcsolat</a></li>
       <li><a href="impresszum.html">Impresszum</a></li>
         <li><a href="../hu/palyazatok.html">Pályázatok</a></li>
@@ -2745,8 +2749,8 @@
       {"year":"2016","title":"3D nyomtatás és ICDE partnerség","text":"Az additív gyártás a mindennapi munkánk részévé vált. Ugyanebben az évben a liechtensteini székhelyű, világvezető Ivoclar fogászati óriásvállalattól megkaptuk az ICDE (International Centre for Dental Education) rendkívül komoly szakmai elismerést és státuszt.","image":"../assets/about/milestone-2016.webp","alt":"Szakmai képzés az Ivoclar digitális oktatóközpontjában"},
       {"year":"2019","title":"KunstZahnWerk: 6. helyezés","text":"Nemzetközi szakmai elismerés a 16 országból érkező 49 fogtechnikus mezőnyében.","image":"../assets/about/milestone-2019.webp","alt":"Kínál Attila és Császár Dénes hatodik helyezést elért munkája a KunstZahnWerk versenyen"},
       {"year":"2021","title":"Saját digitális gyártóközpont","text":"Új CAD/CAM technológiákkal és modern imes-icore CORiTEC 350i Loader PRO+ marógéppel kialakítottuk teljes digitális gyártási környezetünket.","image":"../assets/about/milestone-2021.webp","alt":"Az imes-icore CORiTEC 350i Loader PRO+ marógép a Bridge Dental laborjában"},
-      {"year":"2024","title":"Kapacitásbővítés","text":"Két további imes-icore CORiTEC 250i marógéppel bővítettük saját CAD/CAM gyártási kapacitásunkat."},
-      {"year":"2026","title":"TrueDent®","text":"A biokompatibilis, teljes színű digitális fogsorok új lehetőségeket nyitottak a digitális fogpótlások területén."}
+      {"year":"2024","title":"Kapacitásbővítés","text":"Két további imes-icore CORiTEC 250i marógéppel bővítettük saját CAD/CAM gyártási kapacitásunkat.","image":"../assets/about/milestone-2024-cadcam.webp","alt":"A Bridge Dental két imes-icore CORiTEC 250i marógépe"},
+      {"year":"2026","title":"TrueDent®","text":"A biokompatibilis, teljes színű digitális fogsorok új lehetőségeket nyitottak a digitális fogpótlások területén.","image":"../assets/about/milestone-2026-truedent.webp","alt":"Stratasys fogászati 3D nyomtatók a Bridge Dental laborjában"}
     ];
     const N = MILESTONES.length;
 
@@ -2883,6 +2887,7 @@
             <a href="galeria.html">Galéria</a>
           </div>
         </div>
+        <a class="hero-mobile-main" href="https://bridgedental.hu/fooldal/hirek/">BLOG</a>
         <div class="hero-mobile-actions"><a href="../output/pdf/bridge-dental-munkalap-kitoltheto-hu.pdf" target="_blank" rel="noopener">MUNKALAP</a><a href="kapcsolat.html">KAPCSOLAT</a></div>
       </div>
     </div>
