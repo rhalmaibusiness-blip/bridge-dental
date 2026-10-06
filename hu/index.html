@@ -1302,6 +1302,8 @@
     }
 
     .service-card h3 {
+      hyphens: auto;
+      overflow-wrap: break-word;
       font-size: 18px;
       font-weight: 700;
       color: var(--charcoal);
@@ -3771,6 +3773,8 @@
     }
 
     .partner-cta h2 {
+      hyphens: auto;
+      overflow-wrap: break-word;
       max-width: 18ch;
       font-family: var(--font-head);
       font-size: clamp(32px, 4.4vw, 62px);
@@ -4145,6 +4149,7 @@
   <link rel="stylesheet" href="../assets/language-switcher.css?v=4">
   <link rel="stylesheet" href="../assets/hero-mobile-menu.css?v=20260924d">
   <link rel="stylesheet" href="../assets/funding.css?v=20260924">
+  <link rel="stylesheet" href="../assets/home/hero-layout.css?v=20261006">
 </head>
 <body>
 
@@ -4154,7 +4159,7 @@
   <a href="index.html" lang="hu" hreflang="hu" aria-current="page"><img src="../assets/flags/hu.svg" alt="">HU</a>
 </nav>
 <!-- HERO NAV -->
-<section class="cinematic-shell" id="hero">
+<section class="cinematic-shell home-hero" id="hero">
   <div class="cinematic-bg" id="cinematicBg">
     <div class="cinematic-bg-gradient"></div>
     <picture>
@@ -4836,6 +4841,14 @@
 
   if (whyCarousel) {
     const cards = [...whyCarousel.querySelectorAll('.why-bridge-card')];
+    // Both languages can produce taller cards after text wrapping or font loading.
+    const stage = whyCarousel.querySelector('.why-carousel-stage');
+    const fitCards = () => {
+      stage.style.height = Math.max(440, ...cards.map(card => card.offsetHeight)) + 12 + 'px';
+    };
+    const cardResizeObserver = new ResizeObserver(fitCards);
+    cards.forEach(card => cardResizeObserver.observe(card));
+    fitCards();
     const previousButton = whyCarousel.querySelector('.why-carousel-btn.prev');
     const nextButton = whyCarousel.querySelector('.why-carousel-btn.next');
     const dotsContainer = whyCarousel.querySelector('.why-carousel-dots');

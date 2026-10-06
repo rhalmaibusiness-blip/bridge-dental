@@ -118,12 +118,13 @@
       }
 
       .cinematic-bg picture img {
-        object-position: center bottom;
+        object-position: 72% center;
       }
 
       .cinematic-vignette {
         background:
-          linear-gradient(180deg, rgba(10, 7, 5, 0.82) 0%, rgba(10, 7, 5, 0.45) 45%, rgba(10, 7, 5, 0.1) 75%),
+          linear-gradient(90deg, rgba(10, 7, 5, 0.86) 0%, rgba(10, 7, 5, 0.68) 72%, rgba(10, 7, 5, 0.28) 100%),
+          linear-gradient(180deg, rgba(10, 7, 5, 0.68) 0%, rgba(10, 7, 5, 0.25) 45%, rgba(10, 7, 5, 0.08) 75%),
           radial-gradient(ellipse at center, transparent 55%, rgba(5, 3, 2, 0.45) 100%);
       }
     }
@@ -1033,7 +1034,7 @@
     .hero-right-bg {
       position: absolute;
       inset: 0;
-      background-image: url('hero.jpg');
+      background-image: url('../hero.jpg');
       background-size: cover;
       background-position: center;
     }
@@ -1301,6 +1302,8 @@
     }
 
     .service-card h3 {
+      hyphens: auto;
+      overflow-wrap: break-word;
       font-size: 18px;
       font-weight: 700;
       color: var(--charcoal);
@@ -1316,6 +1319,17 @@
       margin-bottom: 24px;
       flex: 1;
     }
+
+    .service-kicker {
+      display: block;
+      margin: -2px 0 10px;
+      font-size: 12px;
+      font-weight: 700;
+      line-height: 1.45;
+      color: var(--coral);
+    }
+
+    .service-card.featured .service-kicker { color: var(--coral-light); }
 
     .service-link {
       font-size: 13px;
@@ -1433,7 +1447,7 @@
     .process-visual-bg {
       position: absolute;
       inset: 0;
-      background-image: url('hitvallas_foto.webp');
+      background-image: url('../hitvallas_foto.webp');
       background-size: cover;
       background-position: center top;
     }
@@ -3166,7 +3180,7 @@
     .reveal-delay-2 { transition-delay: 0.2s; }
     .reveal-delay-3 { transition-delay: 0.3s; }
 
-    /* Switch to the compact navigation before the German labels wrap. */
+    /* A tömör navigáció még a hosszabb menüpontok törése előtt jelenik meg. */
     @media (max-width: 1179px) {
       .hero-nav-main { padding: 24px 32px; }
       .hero-menu { display: none; }
@@ -3410,12 +3424,13 @@
       }
 
       .cinematic-bg picture img {
-        object-position: center bottom;
+        object-position: 72% center;
       }
 
       .cinematic-vignette {
         background:
-          linear-gradient(180deg, rgba(10, 7, 5, 0.82) 0%, rgba(10, 7, 5, 0.45) 45%, rgba(10, 7, 5, 0.1) 75%),
+          linear-gradient(90deg, rgba(10, 7, 5, 0.86) 0%, rgba(10, 7, 5, 0.68) 72%, rgba(10, 7, 5, 0.28) 100%),
+          linear-gradient(180deg, rgba(10, 7, 5, 0.68) 0%, rgba(10, 7, 5, 0.25) 45%, rgba(10, 7, 5, 0.08) 75%),
           radial-gradient(ellipse at center, transparent 55%, rgba(5, 3, 2, 0.45) 100%);
       }
 
@@ -3720,6 +3735,106 @@
       color: #6b5f55;
     }
 
+    .partner-cta {
+      position: relative;
+      overflow: hidden;
+      padding: clamp(64px, 9vw, 112px) clamp(24px, 8vw, 120px);
+      background: var(--charcoal);
+      color: #fff;
+    }
+
+    .partner-cta::before {
+      content: '';
+      position: absolute;
+      width: min(52vw, 720px);
+      aspect-ratio: 1;
+      right: -16%;
+      top: 50%;
+      transform: translateY(-50%);
+      border-radius: 50%;
+      border: 1px solid rgba(242, 121, 63, 0.18);
+      box-shadow: 0 0 0 48px rgba(242, 121, 63, 0.04), 0 0 0 96px rgba(242, 121, 63, 0.025);
+      pointer-events: none;
+    }
+
+    .partner-cta-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 920px;
+    }
+
+    .partner-cta-step {
+      margin-bottom: 18px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--coral-light);
+    }
+
+    .partner-cta h2 {
+      hyphens: auto;
+      overflow-wrap: break-word;
+      max-width: 18ch;
+      font-family: var(--font-head);
+      font-size: clamp(32px, 4.4vw, 62px);
+      font-weight: 800;
+      line-height: 1.08;
+      letter-spacing: -1.6px;
+      text-wrap: balance;
+    }
+
+    .partner-cta p {
+      max-width: 660px;
+      margin-top: 24px;
+      font-size: clamp(15px, 1.5vw, 17px);
+      line-height: 1.75;
+      color: rgba(255,255,255,0.66);
+    }
+
+    .partner-cta-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 34px;
+    }
+
+    .partner-cta-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 50px;
+      padding: 14px 24px;
+      border: 1px solid var(--coral);
+      border-radius: 9px;
+      background: var(--coral);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1.6px;
+      text-decoration: none;
+      transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease;
+    }
+
+    .partner-cta-button:hover,
+    .partner-cta-button:focus-visible {
+      transform: translateY(-2px);
+      background: var(--coral-light);
+      border-color: var(--coral-light);
+      outline: none;
+    }
+
+    .partner-cta-button.secondary {
+      background: transparent;
+      border-color: rgba(255,255,255,0.25);
+    }
+
+    .partner-cta-button.secondary:hover,
+    .partner-cta-button.secondary:focus-visible {
+      background: rgba(255,255,255,0.08);
+      border-color: rgba(255,255,255,0.5);
+    }
+
     .reviews .reveal {
       opacity: 0;
       transform: translateY(30px);
@@ -3967,6 +4082,9 @@
         padding-right: 20px;
       }
 
+      .partner-cta-actions { flex-direction: column; }
+      .partner-cta-button { width: 100%; }
+
       .rev-tabs {
         flex-direction: column;
         gap: 10px;
@@ -4031,6 +4149,7 @@
   <link rel="stylesheet" href="assets/language-switcher.css?v=4">
   <link rel="stylesheet" href="assets/hero-mobile-menu.css?v=20260924d">
   <link rel="stylesheet" href="assets/funding.css?v=20260924">
+  <link rel="stylesheet" href="assets/home/hero-layout.css?v=20261006">
 </head>
 <body>
 
@@ -4040,12 +4159,12 @@
   <a href="hu/index.html" lang="hu" hreflang="hu"><img src="assets/flags/hu.svg" alt="">HU</a>
 </nav>
 <!-- HERO NAV -->
-<section class="cinematic-shell" id="hero">
+<section class="cinematic-shell home-hero" id="hero">
   <div class="cinematic-bg" id="cinematicBg">
     <div class="cinematic-bg-gradient"></div>
     <picture>
-      <source media="(max-width: 820px)" srcset="assets/home/hero-precision-mobile.webp">
-      <img src="assets/home/hero-precision-desktop.webp" alt="Zahntechnikerin bei der präzisen Kontrolle einer Restauration" onload="this.classList.add('loaded')">
+      <source media="(max-width: 820px)" srcset="assets/home/hero-ska-4081.webp">
+      <img src="assets/home/hero-ska-4081.webp" alt="Zahntechnikerin bei der präzisen Kontrolle einer Restauration" onload="this.classList.add('loaded')">
     </picture>
     <div class="cinematic-vignette"></div>
   </div>
@@ -4081,6 +4200,7 @@
           </li>
         </ul>
       </li>
+      <li><a href="https://bridgedental.hu/fooldal/hirek/">BLOG</a></li>
       <li><a href="output/pdf/bridge-dental-munkalap-kitoltheto.pdf" target="_blank" rel="noopener">ARBEITSAUFTRAG</a></li>
       <li><a href="kontakt.html">KONTAKT</a></li>
     </ul>
@@ -4091,7 +4211,7 @@
   </header>
 
   <div class="cinematic-content" id="cinematicContent">
-    <h1 class="cinematic-title" id="heroHeadline">Wo aus digitaler Planung <em>fachliches Vertrauen</em> entsteht.</h1>
+    <h1 class="cinematic-title" id="heroHeadline">Wo digitale Technologie auf <em>fachliche Erfahrung</em> trifft.</h1>
     <p class="cinematic-subtitle">Für anspruchsvolle Praxen schaffen wir eine planbare zahntechnische Basis – mit partnerschaftlicher Planung, kontrollierten Prozessen und zuverlässiger Fertigung.</p>
     <a href="bridge-dental-kennenlernen.html" class="cinematic-cta">
       <span class="cinematic-cta-label">LERNEN SIE UNS KENNEN</span>
@@ -4142,7 +4262,7 @@
 
 <section class="why-bridge" id="miert">
   <div class="why-bridge-head">
-    <div class="why-bridge-eyebrow why-bridge-reveal">Warum Bridge Dental?</div>
+    <div class="why-bridge-eyebrow why-bridge-reveal">Warum unsere Partner mit uns arbeiten.</div>
     <h2 class="why-bridge-title why-bridge-reveal">
       Wir fertigen nicht einfach <span class="why-bridge-accent">Zahnersatz.</span>
     </h2>
@@ -4150,7 +4270,7 @@
 
   <div class="why-bridge-body">
     <div class="why-bridge-intro why-bridge-reveal">
-      Die Aufgabe eines erstklassigen Dentallabors endet für uns nicht mit der Fertigstellung einer Restauration. Echter Mehrwert entsteht, wenn unsere Arbeit reibungslosere Behandlungen, planbare Ergebnisse und effiziente Praxisabläufe unterstützt.
+      Wir sind überzeugt, dass die Aufgabe eines Dentallabors nicht mit der Fertigstellung einer Restauration endet. Echten Mehrwert schaffen wir, wenn unsere Arbeit zu reibungsloseren Behandlungen, planbareren Ergebnissen und effizienteren Praxisabläufen beiträgt.
     </div>
 
     <div class="why-carousel" id="whyCarousel" aria-label="Vorteile von Bridge Dental">
@@ -4158,44 +4278,44 @@
         <div class="why-carousel-stage" aria-live="polite">
       <div class="why-bridge-card">
         <img src="icon-globe.png" alt="">
-        <h3>Internationaler<br>fachlicher Hintergrund</h3>
+        <h3>Internationale<br>fachliche Erfahrung</h3>
         <span class="card-divider"></span>
-        <p>Erfahrung aus mehreren Ländern und eine internationale Perspektive.</p>
+        <p>Seit der Gründung von Bridge Dental arbeiten wir mit Partnerpraxen in Deutschland und Österreich zusammen.</p>
       </div>
 
       <div class="why-bridge-card">
         <img src="icon-implant.png" alt="">
         <h3>Planbare Ergebnisse bei komplexen Implantatfällen</h3>
         <span class="card-divider"></span>
-        <p>Präzise Planung und Ausführung für stabile, langfristige Ergebnisse.</p>
+        <p>Präzise Planung und Ausführung zur Unterstützung stabiler, langfristiger Ergebnisse.</p>
       </div>
 
       <div class="why-bridge-card">
         <img src="icon-factory.png" alt="">
         <h3>Eigenes<br>Fertigungszentrum</h3>
         <span class="card-divider"></span>
-        <p>Volle Kontrolle über Qualität, Termine und Innovation.</p>
+        <p>Die wesentlichen Schritte der digitalen Planung und Fertigung führen wir in unserem eigenen System unter direkter fachlicher Kontrolle durch. In der Praxis bedeutet das weniger unerwartete Situationen.</p>
       </div>
 
       <div class="why-bridge-card">
         <img src="icon-chat.png" alt="">
         <h3>Fachliche Kommunikation auf Deutsch</h3>
         <span class="card-divider"></span>
-        <p>Direkte, präzise und effiziente Zusammenarbeit auf Deutsch.</p>
+        <p>Direkte, präzise und effiziente Zusammenarbeit auf Deutsch, damit von der Planung bis zur Umsetzung jedes Detail klar ist.</p>
       </div>
 
       <div class="why-bridge-card">
         <img src="icon-truck.png" alt="">
-        <h3>Europaweite Express-Logistik</h3>
+        <h3>Organisierte europäische Logistik</h3>
         <span class="card-divider"></span>
-        <p>Schnelle und zuverlässige Lieferung in ganz Europa.</p>
+        <p>Den Versand nach Deutschland und in die Schweiz organisieren wir über ein abgestimmtes Logistiksystem, damit die fertigen Arbeiten pünktlich und sicher in der Praxis ankommen.</p>
       </div>
 
       <div class="why-bridge-card">
         <img src="icon-shield.png" alt="">
-        <h3>Dokumentierte Premiumqualität</h3>
+        <h3>Dokumentierte Qualität und Sicherheit</h3>
         <span class="card-divider"></span>
-        <p>Strenge Qualitätskontrolle und vollständige Dokumentation.</p>
+        <p>Mehrstufige Qualitätskontrolle und dokumentierte Arbeitsabläufe für rückverfolgbare, sichere Lösungen.</p>
       </div>
         </div>
 
@@ -4212,14 +4332,53 @@
   </div>
 </section>
 
+<section class="reviews" id="velemenyek">
+  <div class="rev-eyebrow reveal">UNSERE AUFTRAGGEBER</div>
+
+  <h2 class="rev-title reveal" style="--d: 0.12s">
+    Vertrauen, das <span class="rev-accent">über Jahre wächst.</span>
+  </h2>
+
+  <p class="rev-sub reveal" style="--d: 0.24s">So erleben unsere Partner die Zusammenarbeit mit uns.</p>
+
+  <div class="rev-tabs reveal" id="revTabs" style="--d: 0.34s"></div>
+
+  <div class="rev-card reveal" id="revCard" style="--d: 0.46s">
+    <span class="rq-open">"</span>
+    <div class="rev-brand" id="revBrand">
+      <div class="rev-logo-frame" id="revLogoFrame">
+        <img class="rev-logo" id="revLogo" alt="">
+      </div>
+      <div class="rev-identity">
+        <span class="rev-person" id="revPerson"></span>
+        <span class="rev-location" id="revLocation"></span>
+      </div>
+    </div>
+    <p class="rev-quote" id="revQuote"></p>
+    <div class="rev-stars" id="revStars"></div>
+    <span class="rq-close">"</span>
+  </div>
+</section>
+
+<section class="partner-cta" aria-labelledby="partnerCtaTitle">
+  <div class="partner-cta-inner reveal">
+    <div class="partner-cta-step">Der nächste Schritt</div>
+    <h2 id="partnerCtaTitle">Ihr Behandlungskonzept, unsere zahntechnische Kompetenz.</h2>
+    <p>Sie möchten unsere Arbeitsweise kennenlernen oder einen konkreten Fall mit uns besprechen? Nehmen Sie Kontakt zu unserem Team auf.</p>
+    <div class="partner-cta-actions">
+      <a class="partner-cta-button" href="kontakt.html">KONTAKT AUFNEHMEN</a>
+      <a class="partner-cta-button secondary" href="output/pdf/bridge-dental-munkalap-kitoltheto.pdf" target="_blank" rel="noopener">ARBEITSAUFTRAG HERUNTERLADEN</a>
+    </div>
+  </div>
+</section>
+
 <section class="work" id="technologia">
   <div class="work-head">
     <div>
       <div class="work-eyebrow work-reveal">So arbeiten wir</div>
       <h2 class="work-title work-reveal">
-        Qualität liegt <span class="work-accent">im Detail.</span>
+        Jedes <span class="work-accent">Detail</span> zählt.
       </h2>
-      <p class="work-sub work-reveal">Unser digitaler Workflow Schritt für Schritt</p>
     </div>
     <div class="work-logo work-reveal">
       <img src="bridgedental_narancs_logo.png" alt="Bridge Dental">
@@ -4274,8 +4433,8 @@
     line-height: 1;
   "><div>bridge</div><div style="margin-left: 80px;">dental</div></div>
   <div style="position:relative; z-index:1;">
+  <div class="section-label">Unsere Fachgebiete</div>
   <h2 class="section-title">Worin wir wirklich zu Hause sind.</h2>
-  <p class="section-desc">Unsere Fachgebiete reichen von der komplexen Implantologie bis zur digitalen Ästhetik.</p>
 
   <div class="services-grid">
     <a class="service-card featured reveal" href="all-on-x-rehabilitationen.html">
@@ -4285,8 +4444,9 @@
       <div class="service-tag">Hauptspezialität</div>
       <div class="service-card-body">
         <div class="service-number">01</div>
-        <h3>All-on-X-Rehabilitationen</h3>
-        <p>Die All-on-X-Lösungen von Bridge Dental unterstützen die Rehabilitation des gesamten Zahnbogens mit digitaler Planung und präziser Laborarbeit für ein planbares, ästhetisches und stabiles Endergebnis.</p>
+        <h3>All-on-X- / Full-Arch-Rehabilitationen</h3>
+        <strong class="service-kicker">Präzise Planung, stabile Konstruktion</strong>
+        <p>Digitale Planung und präzise zahntechnische Umsetzung für komplexe implantatgetragene Full-Arch-Rehabilitationen – zur Unterstützung eines planbaren, ästhetischen und stabilen Ergebnisses.</p>
         <span class="service-link" style="color:var(--coral-light);">Mehr erfahren →</span>
       </div>
     </a>
@@ -4298,7 +4458,8 @@
       <div class="service-card-body">
         <div class="service-number">02</div>
         <h3>Implantatgetragene Zirkonoxidrestaurationen</h3>
-        <p>Implantatgetragene Zirkonoxidrestaurationen von Bridge Dental unterstützen Praxen mit digitaler Präzision und modernen Multilayer-Materialien. Unsere monolithischen Full-Contour-Lösungen verbinden natürliche Ästhetik, präzise Passung und langfristige Stabilität.</p>
+        <strong class="service-kicker">Stabile Basis, natürliche Ästhetik.</strong>
+        <p>Monolithische Full-Contour-Zirkonoxidrestaurationen aus modernen Multilayer-Materialien, präzise zahntechnisch gefertigt für langfristige Zuverlässigkeit.</p>
         <span class="service-link">Mehr erfahren →</span>
       </div>
     </a>
@@ -4311,7 +4472,8 @@
       <div class="service-card-body">
         <div class="service-number">03</div>
         <h3>TrueDent – vollfarbige, monolithische digitale Prothesen</h3>
-        <p>Digitaler Zahnersatz vereint die Vorteile moderner CAD/CAM-Konstruktion und präzisen 3D-Drucks mit traditioneller zahntechnischer Kompetenz. So entsteht planbarer, ästhetischer und langfristig zuverlässiger herausnehmbarer Zahnersatz.</p>
+        <strong class="service-kicker">Präzise und reproduzierbare digitale Prothesen</strong>
+        <p>Mit der TrueDent-Technologie von Stratasys entstehen Prothesenbasis und Zähne in einem einzigen vollfarbigen, monolithischen Druckprozess. Der digitale Workflow ermöglicht eine präzise Passung und eine einfache Reproduktion.</p>
         <span class="service-link">Mehr erfahren →</span>
       </div>
     </a>
@@ -4323,6 +4485,7 @@
       <div class="service-card-body">
         <div class="service-number">04</div>
         <h3>Digitaler Workflow</h3>
+        <strong class="service-kicker">Präzise Informationen, abgestimmte Zusammenarbeit</strong>
         <p>Der Wert des digitalen Workflows in unserem Labor liegt im präzisen Informationsaustausch, der durchdachten Planung und der koordinierten Zusammenarbeit zwischen Praxis und Labor. Jeder Schritt trägt dazu bei, Restaurationen planbar, präzise und auf hohem ästhetischem Niveau zu fertigen.</p>
         <span class="service-link">Mehr erfahren →</span>
       </div>
@@ -4330,12 +4493,13 @@
 
     <a class="service-card reveal reveal-delay-1" href="metallfreie-keramikrestaurationen.html">
       <div class="service-card-img">
-        <img src="esztetikai-keramia-potlasok-labor-ellenorzes.webp" alt="Präzise Laborinspektion metallfreier Keramikrestaurationen mit der Lupe">
+        <img src="assets/home/service-metal-free-ceramics-0014.webp" alt="Individuelle Charakterisierung einer metallfreien Keramikrestauration im Labor">
       </div>
       <div class="service-card-body">
         <div class="service-number">05</div>
         <h3>Metallfreie Keramikrestaurationen</h3>
-        <p>Metallfreie Keramikrestaurationen vereinen natürliche Ästhetik, präzise Passung und langfristige Zuverlässigkeit. Der digitale Workflow, hochwertige Keramikmaterialien und die individuelle Charakterisierung ermöglichen eine harmonische Integration in das natürliche Gebiss.</p>
+        <strong class="service-kicker">Natürliche Ästhetik, individueller Charakter</strong>
+        <p>Metallfreie Keramikrestaurationen verbinden natürliche Ästhetik, präzise Passung und langfristige Zuverlässigkeit. Veneers, Kronen, Inlays und Onlays aus Lithiumdisilikat fügen sich dank digitaler Planung und individueller Charakterisierung harmonisch in das natürliche Gebiss ein.</p>
         <span class="service-link">Mehr erfahren →</span>
       </div>
     </a>
@@ -4347,7 +4511,8 @@
       <div class="service-card-body">
         <div class="service-number">06</div>
         <h3>CAD/CAM-Technologie</h3>
-        <p>Hochpräzise CAD/CAM-Technologie ermöglicht die präzise und reproduzierbare Fertigung digital konstruierter Restaurationen. Der kontrollierte Workflow unterstützt gleichbleibende Qualität, präzise Passung und planbare Ergebnisse.</p>
+        <strong class="service-kicker">Eigene digitale Fertigung</strong>
+        <p>Die wesentlichen Fertigungsschritte digital geplanter Restaurationen führen wir in unserem eigenen CAD/CAM-System durch. Der kontrollierte Workflow unterstützt eine präzise, reproduzierbare Fertigung und eine genaue Passung.</p>
         <span class="service-link">Mehr erfahren →</span>
       </div>
     </a>
@@ -4412,8 +4577,8 @@
         <div class="q-card-icon"><img src="icon-globe.png" alt=""></div>
         <div class="q-card-sep"></div>
         <div>
-          <h3>Vollständige Rückverfolgbarkeit</h3>
-          <p>Digitale Pläne, Produktionsdaten und verwendete Materialien können langfristig abgerufen werden – besonders wichtig bei komplexen implantologischen Fällen.</p>
+          <h3>Rückverfolgbarkeit</h3>
+          <p>Digitale Planungen, Fertigungsdaten und verwendete Materialien sind dokumentiert und rückverfolgbar.</p>
         </div>
       </div>
     </div>
@@ -4423,7 +4588,7 @@
 <section class="cases" id="munkaink">
   <div class="cases-head">
     <h2 class="cases-title reveal">Unsere Arbeiten sprechen für sich.</h2>
-    <p class="cases-sub reveal" style="--d: 0.15s">Eine Auswahl unserer aktuellen ästhetischen Arbeiten</p>
+    <p class="cases-sub reveal" style="--d: 0.15s">Eine Auswahl unserer Arbeiten</p>
   </div>
 
   <div class="case-main reveal" style="--d: 0.25s">
@@ -4445,33 +4610,7 @@
   <div class="case-thumbs reveal" id="caseThumbs" style="--d: 0.4s"></div>
 </section>
 
-<section class="reviews" id="velemenyek">
-  <div class="rev-eyebrow reveal">REFERENZEN</div>
 
-  <h2 class="rev-title reveal" style="--d: 0.12s">
-    Vertrauen, das <span class="rev-accent">über Jahre wächst.</span>
-  </h2>
-
-  <p class="rev-sub reveal" style="--d: 0.24s">So erleben unsere Partner die Zusammenarbeit mit uns.</p>
-
-  <div class="rev-tabs reveal" id="revTabs" style="--d: 0.34s"></div>
-
-  <div class="rev-card reveal" id="revCard" style="--d: 0.46s">
-    <span class="rq-open">"</span>
-    <div class="rev-brand" id="revBrand">
-      <div class="rev-logo-frame" id="revLogoFrame">
-        <img class="rev-logo" id="revLogo" alt="">
-      </div>
-      <div class="rev-identity">
-        <span class="rev-person" id="revPerson"></span>
-        <span class="rev-location" id="revLocation"></span>
-      </div>
-    </div>
-    <p class="rev-quote" id="revQuote"></p>
-    <div class="rev-stars" id="revStars"></div>
-    <span class="rq-close">"</span>
-  </div>
-</section>
 
 <!-- FOOTER -->
 <footer id="kapcsolat">
@@ -4484,9 +4623,10 @@
     <h5>Unsere Leistungen</h5>
     <ul>
       <li><a href="all-on-x-rehabilitationen.html">All-on-X-Rehabilitationen</a></li>
-      <li><a href="metallfreie-keramikrestaurationen.html">Metallfreie Keramikrestaurationen</a></li>
+      <li><a href="implantatgetragene-zirkonoxidrestaurationen.html">Implantatgetragene Zirkonoxidrestaurationen</a></li>
       <li><a href="truedent-digitale-prothesen.html">TrueDent – vollfarbige, monolithische digitale Prothesen</a></li>
       <li><a href="digitaler-workflow.html">Digitaler Workflow</a></li>
+      <li><a href="metallfreie-keramikrestaurationen.html">Metallfreie Keramikrestaurationen</a></li>
       <li><a href="cad-cam-technologie.html">CAD/CAM-Technologie</a></li>
       <li><a href="galerie.html">Galerie</a></li>
     </ul>
@@ -4692,6 +4832,14 @@
 
   if (whyCarousel) {
     const cards = [...whyCarousel.querySelectorAll('.why-bridge-card')];
+    // Both languages can produce taller cards after text wrapping or font loading.
+    const stage = whyCarousel.querySelector('.why-carousel-stage');
+    const fitCards = () => {
+      stage.style.height = Math.max(440, ...cards.map(card => card.offsetHeight)) + 12 + 'px';
+    };
+    const cardResizeObserver = new ResizeObserver(fitCards);
+    cards.forEach(card => cardResizeObserver.observe(card));
+    fitCards();
     const previousButton = whyCarousel.querySelector('.why-carousel-btn.prev');
     const nextButton = whyCarousel.querySelector('.why-carousel-btn.next');
     const dotsContainer = whyCarousel.querySelector('.why-carousel-dots');
@@ -5178,6 +5326,7 @@
             <a href="galerie.html">Galerie</a>
           </div>
         </div>
+        <a class="hero-mobile-main" href="https://bridgedental.hu/fooldal/hirek/">BLOG</a>
         <div class="hero-mobile-actions"><a href="output/pdf/bridge-dental-munkalap-kitoltheto.pdf" target="_blank" rel="noopener">ARBEITSAUFTRAG</a><a href="kontakt.html">KONTAKT</a></div>
       </div>
     </div>

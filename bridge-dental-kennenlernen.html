@@ -402,7 +402,7 @@
       font-weight: 800;
       line-height: 1.22;
       letter-spacing: 0.5px;
-      max-width: 12ch;
+      max-width: 22ch;
       text-wrap: balance;
     }
 
@@ -449,8 +449,11 @@
       animation: cinematicFadeUp 1s ease 1.5s forwards;
     }
 
-    .cinematic-cta {
+    .btn-coral-big.cinematic-cta {
       margin-top: 36px;
+      max-width: 100%;
+      white-space: normal;
+      text-align: center;
       opacity: 0;
       animation: cinematicFadeUp 1s ease 1.85s forwards;
     }
@@ -627,6 +630,8 @@
       padding: 34px;
     }
     .hitvallas-photo.hitvallas-photo-filled {
+      height: auto;
+      aspect-ratio: 1 / 1;
       padding: 0;
       align-items: stretch;
       background: #181411;
@@ -635,8 +640,8 @@
       width: 100%;
       height: 100%;
       display: block;
-      object-fit: cover;
-      object-position: center 45%;
+      object-fit: contain;
+      object-position: center;
     }
     .story-placeholder-ring {
       position: absolute;
@@ -883,330 +888,6 @@
       font-size: 14.5px;
       line-height: 1.75;
       color: #5a5049;
-    }
-
-    /* ── INNOVÁCIÓ — IDŐVONAL ── */
-    .innovation {
-      position: relative;
-      background: #fbf6ee;
-      padding: clamp(64px, 10vh, 110px) clamp(24px, 6vw, 90px) clamp(60px, 9vh, 100px);
-      overflow: hidden;
-    }
-
-    .i-eyebrow {
-      font-family: var(--font-body);
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 4px;
-      color: var(--accent);
-      padding-bottom: 12px;
-      margin-bottom: 26px;
-      position: relative;
-      width: fit-content;
-    }
-
-    .i-eyebrow::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 56px;
-      height: 2px;
-      background: var(--accent);
-    }
-
-    .i-title {
-      font-family: var(--font-head);
-      font-size: clamp(32px, 4vw, 52px);
-      font-weight: 800;
-      color: #1d1712;
-    }
-
-    .i-sub {
-      margin-top: 14px;
-      font-family: var(--font-body);
-      font-size: 16.5px;
-      color: #5a5049;
-    }
-
-    .innovation .reveal { opacity: 0; transform: translateY(30px); }
-    .innovation .reveal.inview {
-      animation: fadeUp 0.85s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-      animation-delay: var(--d, 0s);
-    }
-
-    .i-stage {
-      position: relative;
-      max-width: 1280px;
-      margin: 0 auto;
-    }
-
-    .i-years {
-      display: flex;
-      margin-top: 40px;
-      background: #fdfaf5;
-      border: 1px solid #ece2d4;
-      border-radius: 14px 14px 0 0;
-      overflow-x: auto;
-      scrollbar-width: none;
-    }
-    .i-years::-webkit-scrollbar { display: none; }
-
-    .i-year {
-      position: relative;
-      flex: 1;
-      min-width: 86px;
-      padding: 18px 10px;
-      background: none;
-      border: none;
-      border-right: 1px solid #f0e7d9;
-      font-family: var(--font-head);
-      font-size: 15.5px;
-      font-weight: 700;
-      color: #6b5f55;
-      cursor: pointer;
-      transition: color 0.3s, background 0.3s;
-    }
-
-    .i-year:last-child { border-right: none; }
-    .i-year:hover { color: var(--accent); }
-
-    .i-year.active {
-      background: linear-gradient(135deg, #b9461f, #8f3417);
-      color: #fff;
-      border-radius: 10px 10px 0 0;
-    }
-
-    .i-year.done {
-      background: rgba(232, 80, 46, 0.12);
-      color: var(--accent);
-    }
-
-    .i-year.active::after {
-      content: '';
-      position: absolute;
-      left: 50%;
-      bottom: -9px;
-      transform: translateX(-50%);
-      border: 9px solid transparent;
-      border-top-color: #8f3417;
-      border-bottom: none;
-      z-index: 2;
-    }
-
-    .i-card {
-      position: relative;
-      display: grid;
-      grid-template-columns: minmax(0, 44fr) minmax(0, 56fr);
-      align-items: center;
-      gap: clamp(28px, 4vw, 60px);
-      background: #fdfaf5;
-      border: 1px solid #ece2d4;
-      border-top: none;
-      border-radius: 0 0 18px 18px;
-      padding: clamp(30px, 4vw, 56px);
-      box-shadow: 0 26px 55px -32px rgba(43, 30, 20, 0.35);
-    }
-
-    .i-media {
-      position: relative;
-      align-self: center;
-      aspect-ratio: 4 / 3;
-      border-radius: 14px;
-      overflow: hidden;
-      background: var(--cream);
-      transition: opacity 0.35s ease, transform 0.35s ease;
-    }
-
-    .i-media img {
-      display: block;
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-    }
-
-    .i-card.no-photo { grid-template-columns: 1fr; }
-    .i-card.no-photo .i-media { display: none; }
-    .i-card.no-photo .i-body { min-height: 260px; max-width: 760px; width: 100%; margin: auto; }
-    .i-card.no-photo .i-body p { max-width: 65ch; }
-    .i-year:focus-visible, .i-stop:focus-visible, .i-nav:focus-visible {
-      outline: 3px solid var(--accent);
-      outline-offset: -3px;
-    }
-
-    .i-body {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      transition: opacity 0.35s ease, transform 0.35s ease;
-    }
-
-    .i-card.switching .i-media,
-    .i-card.switching .i-body { opacity: 0; transform: translateY(14px); }
-
-    .i-body .ib-year {
-      font-family: var(--font-head);
-      font-size: 16px;
-      font-weight: 700;
-      color: var(--accent);
-      padding-bottom: 10px;
-      margin-bottom: 20px;
-      position: relative;
-      width: fit-content;
-    }
-
-    .i-body .ib-year::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 44px;
-      height: 2px;
-      background: var(--accent);
-    }
-
-    .i-body h3 {
-      font-family: var(--font-head);
-      font-size: clamp(21px, 2.2vw, 30px);
-      font-weight: 800;
-      color: #2b2320;
-      line-height: 1.3;
-    }
-
-    .i-body p {
-      margin-top: 18px;
-      font-family: var(--font-body);
-      font-size: 15.5px;
-      line-height: 1.85;
-      color: #4a413b;
-      max-width: 50ch;
-    }
-
-    .i-nav {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      z-index: 5;
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      background: #fdfaf5;
-      border: 1px solid #e5dcd0;
-      box-shadow: 0 8px 22px -8px rgba(43, 30, 20, 0.35);
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #8f3417;
-      font-size: 0;
-      transition: transform 0.25s, background 0.3s;
-    }
-
-    .i-nav:hover { transform: translateY(-50%) scale(1.06); background: #fff; }
-    .i-nav svg { width: 22px; height: 22px; stroke: currentColor; stroke-width: 2.2; fill: none; stroke-linecap: round; stroke-linejoin: round; }
-    .i-nav svg * { stroke: currentColor; }
-    .i-nav.prev { left: -24px; }
-    .i-nav.next { right: -24px; }
-
-    .i-track {
-      position: relative;
-      display: flex;
-      margin-top: 12px;
-      padding-top: 36px;
-      padding-bottom: 14px;
-      overflow-x: auto;
-      scrollbar-width: none;
-      background: linear-gradient(180deg, #fdfaf5 0%, #fcf7f0 100%);
-      border: 1px solid #ece2d4;
-      border-top: none;
-      border-radius: 0 0 16px 16px;
-    }
-    .i-track::-webkit-scrollbar { display: none; }
-
-    .i-track-line, .i-track-fill {
-      position: absolute;
-      left: 40px;
-      right: 40px;
-      top: 21px;
-      height: 3px;
-      border-radius: 999px;
-    }
-    .i-track-line { background: #e9ddcd; }
-    .i-track-fill { right: auto; width: 0; background: linear-gradient(90deg, #d85b30, #8f3417); transition: width 0.55s cubic-bezier(0.22, 1, 0.36, 1); }
-
-    .i-stop {
-      position: relative;
-      flex: 1;
-      min-width: 86px;
-      padding: 0 10px 8px;
-      background: none;
-      border: none;
-      text-align: center;
-      cursor: pointer;
-      color: #6b5f55;
-      font-family: var(--font-body);
-    }
-    .i-stop::before {
-      content: '';
-      position: absolute;
-      top: -27px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 13px;
-      height: 13px;
-      border-radius: 50%;
-      background: #f7efe5;
-      border: 2px solid #d8c8b6;
-      transition: all 0.35s ease;
-      z-index: 1;
-    }
-    .i-stop.active::before {
-      background: #8f3417;
-      border-color: #8f3417;
-      box-shadow: 0 0 0 6px rgba(143, 52, 23, 0.18);
-    }
-    .i-stop.done::before {
-      background: rgba(232, 80, 46, 0.95);
-      border-color: rgba(232, 80, 46, 0.95);
-    }
-    .i-stop.done .is-year {
-      color: var(--accent);
-    }
-    .i-stop.future { color: #9b8f85; }
-    .i-stop:hover { color: var(--accent); }
-
-    .is-dot, .is-year { display: block; }
-    .is-dot { display: none; }
-    .is-year { font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
-
-    .i-footer {
-      margin-top: 22px;
-      text-align: center;
-      font-family: var(--font-head);
-      font-size: 18px;
-      font-weight: 700;
-      color: #2b2320;
-    }
-
-    @media (max-width: 1020px) {
-      .i-card { grid-template-columns: 1fr; }
-      .i-media { width: 100%; max-width: 640px; justify-self: center; }
-      .i-nav.prev { left: 12px; }
-      .i-nav.next { right: 12px; }
-    }
-
-    @media (max-width: 760px) {
-      .innovation { padding-left: 18px; padding-right: 18px; }
-      .i-title { font-size: clamp(28px, 7vw, 40px); }
-      .i-sub { font-size: 15px; }
-      .i-card { padding: 22px 22px 78px; gap: 22px; }
-      .i-track { padding-top: 30px; }
-      .i-track-line, .i-track-fill { left: 28px; right: 28px; top: 18px; }
-      .i-year, .i-stop { min-width: 72px; }
-      .i-nav { width: 42px; height: 42px; top: auto; bottom: 18px; transform: none; }
-      .i-nav:hover { transform: none; }
-      .i-nav.prev { left: auto; right: 74px; }
-      .i-nav.next { right: 22px; }
     }
 
     /* ── GALÉRIA ── */
@@ -1890,7 +1571,7 @@
       .hero-menu { display: none; }
       .hero-burger { display: flex; }
       .cinematic-content { padding: 0 24px 48px; max-width: 100%; }
-      .cinematic-title { font-size: clamp(31px, 10vw, 52px); max-width: 11ch; }
+      .cinematic-title { font-size: clamp(30px, 7.8vw, 42px); max-width: 22ch; }
       .cinematic-eyebrow { margin-bottom: 20px; gap: 12px; font-size: 11px; letter-spacing: 2.5px; }
       .cinematic-subtitle { margin-top: 24px; font-size: 15px; max-width: 100%; }
       .cinematic-scroll { right: 24px; bottom: 30px; }
@@ -1948,6 +1629,16 @@
       }
       .n-cta-btn { width: 100%; justify-content: center; white-space: normal; }
     }
+    .b-text p + p { margin-top: 14px; }
+
+    .about-contact {
+      text-align: center;
+      background: var(--white);
+    }
+    .about-contact .section-label { justify-content: center; }
+    .about-contact .section-title { max-width: 840px; margin: 0 auto 24px; }
+    .about-contact .section-desc { max-width: 680px; margin: 0 auto 32px; }
+    .about-contact .btn-coral-big { max-width: 100%; white-space: normal; text-align: center; }
   </style>
   <link rel="canonical" href="https://rhalmaibusiness-blip.github.io/bridge-dental/bridge-dental-kennenlernen.html">
   <link rel="alternate" hreflang="de" href="https://rhalmaibusiness-blip.github.io/bridge-dental/bridge-dental-kennenlernen.html">
@@ -2004,6 +1695,7 @@
           </li>
         </ul>
       </li>
+      <li><a href="https://bridgedental.hu/fooldal/hirek/">BLOG</a></li>
       <li><a href="output/pdf/bridge-dental-munkalap-kitoltheto.pdf" target="_blank" rel="noopener">ARBEITSAUFTRAG</a></li>
       <li><a href="kontakt.html">KONTAKT</a></li>
     </ul>
@@ -2015,8 +1707,8 @@
 
   <div class="cinematic-content" id="cinematicContent">
     <div class="cinematic-eyebrow">Bridge Dental kennenlernen</div>
-    <h1 class="cinematic-title" id="heroHeadline">Mehr als nur ein <em>Dentallabor.</em></h1>
-    <p class="cinematic-subtitle">Von der Diagnose bis zur finalen Arbeit unterstützen wir unsere Partner tatkräftig – denn die besten Ergebnisse entstehen nicht durch Aufträge, sondern durch Zusammenarbeit.</p>
+    <h1 class="cinematic-title" id="heroHeadline">Zahntechnischer Rückhalt, auf den Ihre Praxis <em>langfristig bauen kann.</em></h1>
+    <p class="cinematic-subtitle">Von der Diagnose bis zur Übergabe der definitiven Restauration unterstützen wir unsere Partner aktiv. Denn planbare Ergebnisse erfordern nicht nur präzise Zahntechnik, sondern auch eine abgestimmte fachliche Zusammenarbeit.</p>
     <a href="#hitvallas" class="btn-coral-big cinematic-cta">Lernen Sie unsere Geschichte kennen</a>
   </div>
 
@@ -2049,7 +1741,7 @@
       </svg>
     </div>
     <div class="alapelv-text">
-      <h4>Hohe Qualität</h4>
+      <h4>Konsequente Qualität</h4>
       <p>Wir geben jede Arbeit erst dann aus dem Haus, wenn sie Ihren und unseren eigenen fachlichen Ansprüchen entspricht.</p>
     </div>
   </div>
@@ -2060,8 +1752,8 @@
       </svg>
     </div>
     <div class="alapelv-text">
-      <h4>Zuverlässigkeit</h4>
-      <p>Wir fertigen genau das, was wir vereinbart haben – mit planbaren Ergebnissen und ohne Kompromisse.</p>
+      <h4>Verlässliche Zusammenarbeit</h4>
+      <p>Wir klären offene Fragen vor der Fertigung, damit alle Beteiligten nach demselben Behandlungskonzept arbeiten.</p>
     </div>
   </div>
 </div>
@@ -2075,14 +1767,15 @@
         Bridge Dental entstand aus der gemeinsamen fachlichen Überzeugung der beiden Zahntechnikermeister Attila Kínál und Dénes Császár.
       </div>
       <div class="story-text hitvallas-body">
-        <p>Bereits Mitte der 2000er-Jahre arbeiteten wir gemeinsam für deutsche Zahnarztpraxen. Dabei wurde uns schnell klar, dass am ungarischen Markt ein Labor fehlte, das nicht nur ausführt, sondern als echter fachlicher Partner mitdenkt.</p>
-        <p>Wir glaubten an ein Labor, in dem Zahnarzt und Zahntechniker gemeinsam planen, digitale Technologie nicht als Selbstzweck, sondern als System eingesetzt wird und Qualität nicht nur in einzelnen Spitzenleistungen, sondern konsequent in jedem Fall sichtbar wird.</p>
-        <p>2011 gründeten wir Bridge Dental. Seitdem prägt diese Haltung unsere Arbeit: <strong>mit einem fast 25-köpfigen Team</strong>, <strong>einem eigenen digitalen Fertigungszentrum</strong> und <strong>dem Vertrauen von rund 80 Zahnärztinnen und Zahnärzten</strong>.</p>
+        <p>Schon vor der Gründung von Bridge Dental arbeiteten wir mit deutschen und österreichischen Zahnärzten zusammen. So haben wir früh erfahren, dass neben hochwertiger Zahntechnik auch präzise Kommunikation, gemeinsame Planung und verlässliche Zusammenarbeit das Ergebnis bestimmen.</p>
+        <p>Wir glaubten an eine Arbeitsweise, bei der Zahnarzt und Zahntechniker gemeinsam denken, digitale Technologie kein Trend, sondern ein System ist und sich Qualität nicht nur in einzelnen herausragenden Arbeiten, sondern konsequent in jedem Fall zeigt.</p>
+        <p>Auf dieser Grundlage gründeten wir 2011 Bridge Dental. Seitdem haben wir unsere digitalen Arbeitsabläufe und unsere eigene Fertigung Schritt für Schritt weiterentwickelt.</p>
+        <p>Heute arbeiten wir mit <strong>einem eigenen Team von über 25 Fachkräften und einem digitalen Fertigungszentrum</strong> – nach demselben Grundsatz wie zu Beginn: Gute Zahntechnik ist das Ergebnis gemeinsamer Arbeit.</p>
       </div>
       <div class="story-facts">
         <div class="story-fact"><strong>2011</strong><span>Gründung von Bridge Dental</span></div>
-        <div class="story-fact"><strong>fast 25</strong><span>Mitarbeitende im eigenen Team</span></div>
-        <div class="story-fact"><strong>80 Zahnärzte</strong><span>aktive Praxispartner</span></div>
+        <div class="story-fact"><strong>25+</strong><span>Eigenes Fachteam</span></div>
+        <div class="story-fact"><strong>80</strong><span>Aktive zahnärztliche Partnerschaften</span></div>
       </div>
     </div>
     <div class="hitvallas-photo hitvallas-photo-filled">
@@ -2099,7 +1792,7 @@
   </svg>
 
   <div class="b-head">
-    <h1 class="b-title">Woran wir glauben</h1>
+    <h2 class="b-title">Unsere fachlichen Grundsätze</h2>
     <div class="b-dots-row">
       <span></span><span></span><span></span><span></span><span></span><span></span>
     </div>
@@ -2112,8 +1805,8 @@
       <div class="b-sep"></div>
       <div class="b-icon"><img src="Rolunk aloldal/belief-01.png" alt=""></div>
       <div class="b-text">
-        <h3>Gemeinsame Planung statt einseitiger Fertigung</h3>
-        <p>Die Grundlage einer hervorragenden prothetischen Versorgung sind eine fundierte Diagnose, sorgfältige Planung und die enge Zusammenarbeit zwischen Zahnarzt und Zahntechniker.</p>
+        <h3>Gemeinsame Planung</h3>
+        <p>Ein gutes Ergebnis beginnt mit dem gemeinsamen Denken von Zahnarzt und Zahntechniker. Wichtige fachliche Fragen stimmen wir bereits in der Planung ab, damit Behandlung und zahntechnische Lösung demselben Ziel dienen.</p>
       </div>
     </div>
     <div class="b-row" style="--d: 0.2s">
@@ -2121,8 +1814,8 @@
       <div class="b-sep"></div>
       <div class="b-icon"><img src="Rolunk aloldal/belief-02.png" alt=""></div>
       <div class="b-text">
-        <h3>Der Wert digitaler Technologie zeigt sich im Ergebnis</h3>
-        <p>Digitaler Workflow bedeutet für uns nicht Scannen – sondern ein einheitliches System, das Diagnose, Planung, Kommunikation, Produktion und Qualitätskontrolle verbindet.</p>
+        <h3>Wir denken in digitalen Systemen</h3>
+        <p>Der digitale Workflow ist für uns kein einzelner technologischer Schritt. Als einheitliches System verbindet er Informationsgewinnung, Planung, Kommunikation, Fertigung und Qualitätskontrolle.</p>
       </div>
     </div>
     <div class="b-row" style="--d: 0.3s">
@@ -2131,7 +1824,7 @@
       <div class="b-icon"><img src="Rolunk aloldal/belief-03.png" alt=""></div>
       <div class="b-text">
         <h3>Natürliche Ästhetik</h3>
-        <p>Wirklich guter Zahnersatz fällt nicht auf. Er fügt sich natürlich in das Lächeln, das Gesicht und die Persönlichkeit des Patienten ein.</p>
+        <p>Unser Ziel ist nicht einfach schöner Zahnersatz. Wir schaffen Restaurationen, die sich natürlich in das Lächeln, das Gesicht und den Charakter des Patienten einfügen.</p><p>Eine wirklich gute Restauration fällt nicht als solche auf.</p>
       </div>
     </div>
     <div class="b-row" style="--d: 0.4s">
@@ -2139,8 +1832,8 @@
       <div class="b-sep"></div>
       <div class="b-icon"><img src="Rolunk aloldal/belief-04.png" alt=""></div>
       <div class="b-text">
-        <h3>Gleichbleibende Qualität</h3>
-        <p>Premiumqualität zeigt sich nicht nur in einzelnen herausragenden Arbeiten, sondern in einem konsequent hohen Standard bei jedem Fall.</p>
+        <h3>Konsequente Qualität</h3>
+        <p>Qualität bedeutet für uns nicht einzelne herausragende Arbeiten, sondern ein konsequent reproduzierbares fachliches Niveau.</p>
       </div>
     </div>
     <div class="b-row" style="--d: 0.5s">
@@ -2148,8 +1841,8 @@
       <div class="b-sep"></div>
       <div class="b-icon"><img src="Rolunk aloldal/belief-05.png" alt=""></div>
       <div class="b-text">
-        <h3>Eine langfristige Partnerschaft</h3>
-        <p>Für uns ist die Fertigstellung einer Arbeit nicht das Ende eines Auftrags, sondern ein weiterer Schritt in einer langfristigen fachlichen Partnerschaft.</p>
+        <h3>Langfristige Zusammenarbeit</h3>
+        <p>Wir denken nicht in einzelnen Aufträgen. Wir möchten langfristige fachliche Beziehungen aufbauen, in denen wir die Arbeitsweisen und Erwartungen unserer Partner immer besser kennenlernen.</p>
       </div>
     </div>
   </div>
@@ -2159,11 +1852,9 @@
 <section class="section" id="mashogy">
   <div class="mashogy-grid">
     <div class="reveal">
-      <div class="section-label">Was macht Bridge Dental anders?</div>
-      <h2 class="section-title">Premium-Materialien,<br><span class="accent">ohne Kompromisse.</span></h2>
-      <p style="font-size: 16px; color: var(--warm-gray); line-height: 1.85; margin-bottom: 0; max-width: 540px;">
-        Bei Bridge Dental beginnt Qualität mit der Auswahl der Materialien. Wir verwenden ausschließlich hochwertige, international anerkannte Dentalmaterialien und bewährte digitale Systeme – für ästhetische, funktionelle und langfristig zuverlässige Restaurationen.
-      </p>
+      <div class="section-label">Dokumentierte, verlässliche Materialsysteme</div>
+      <h2 class="section-title">Wir wählen das passende Material immer nach den <span class="accent">Anforderungen der jeweiligen Restauration.</span></h2>
+      <p style="font-size: 16px; color: var(--warm-gray); line-height: 1.85; margin-bottom: 0; max-width: 540px;">Für unsere Restaurationen verwenden wir international anerkannte Dentalmaterialien und Materialsysteme. Die Auswahl richtet sich nach der jeweiligen Indikation, den ästhetischen und funktionellen Anforderungen sowie der geplanten Konstruktion.</p>
     </div>
 
     <div class="reveal reveal-delay-1">
@@ -2173,7 +1864,7 @@
             <div class="offer-check">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
             </div>
-            <span>International anerkannte Hersteller und Materialsysteme</span>
+            <span>International anerkannte Materialsysteme</span>
           </div>
           <div class="offer-item">
             <div class="offer-check">
@@ -2185,15 +1876,11 @@
             <div class="offer-check">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
             </div>
-            <span>Materialauswahl nach ästhetischen, funktionellen und klinischen Gesichtspunkten</span>
+            <span>Materialauswahl passend zu Indikation und Konstruktion</span>
           </div>
-          <div class="offer-item offer-item-premium">
-            <div class="offer-check">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            </div>
+          <div class="material-partners">
             <div class="premium-materials">
-              <span class="premium-materials-title">Ausschließlich Premium-Materialien</span>
-              <div class="material-logo-grid" aria-label="Unsere Premium-Materialpartner">
+              <div class="material-logo-grid" aria-label="Unsere Materialpartner">
                 <a class="material-logo-card logo-tall" href="https://www.ivoclar.com/" target="_blank" rel="noopener noreferrer" aria-label="Offizielle Website von Ivoclar">
                   <img src="assets/material-logos/ivoclar.svg" alt="Ivoclar">
                 </a>
@@ -2227,14 +1914,10 @@
 <!-- ELISMERÉSEK -->
 <section id="elismeresek" style="padding: 96px 80px; background: var(--white);">
   <div class="reveal" style="margin-bottom: 56px;">
-    <div class="section-label">Unsere Auszeichnungen</div>
+    <div class="section-label">Fachliche Anerkennung</div>
     <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; flex-wrap: wrap;">
-      <h2 class="section-title" style="margin-bottom: 0;">
-        Anerkannte Qualität,<br><span style="color: var(--coral);">verifiziert.</span>
-      </h2>
-      <p style="font-size: 15px; color: var(--warm-gray); line-height: 1.6; max-width: 380px;">
-        Unsere Ergebnisse spiegeln sich nicht nur in unserer Arbeit wider, sondern auch in den Auszeichnungen der Branche.
-      </p>
+      <h2 class="section-title" style="margin-bottom: 0;">Ergebnisse, die wichtige Meilensteine <span style="color: var(--coral);">unseres fachlichen Weges sind.</span></h2>
+      <p style="font-size: 15px; color: var(--warm-gray); line-height: 1.6; max-width: 380px;">Im Laufe der Jahre haben wir uns bei nationalen und internationalen Fachwettbewerben gemessen.</p>
     </div>
   </div>
 
@@ -2258,7 +1941,7 @@
       </div>
       <div style="font-size: 13px; font-weight: 700; color: var(--coral); margin-bottom: 10px;">Hungarian Dental Awards 2015</div>
       <h3 style="font-family: 'Montserrat', sans-serif; font-size: 19px; font-weight: 800; color: var(--charcoal); letter-spacing: -0.4px; line-height: 1.25; margin: 0 0 14px;">Bestes Dentallabor</h3>
-      <p style="font-size: 14px; color: var(--warm-gray); line-height: 1.65; margin: 0;">Die renommierteste Auszeichnung der ungarischen Zahntechnik – in den Kategorien „Bestes Labor“ und „Bester Zahntechniker“.</p>
+      <p style="font-size: 14px; color: var(--warm-gray); line-height: 1.65; margin: 0;">Bridge Dental wurde 2015 mit dem Hungarian Dental Award ausgezeichnet.</p>
       <div style="position: absolute; bottom: 0; left: 36px; right: 36px; height: 3px; background: linear-gradient(to right, var(--coral), #f07a52); border-radius: 2px 2px 0 0;"></div>
       </div>
     </div>
@@ -2274,7 +1957,7 @@
       </div>
       <div style="font-size: 13px; font-weight: 700; color: var(--coral); margin-bottom: 10px;">Candulor KunstZahnWerk 2019</div>
       <h3 style="font-family: 'Montserrat', sans-serif; font-size: 19px; font-weight: 800; color: var(--white); letter-spacing: -0.4px; line-height: 1.25; margin: 0 0 14px;">6. Platz</h3>
-      <p style="font-size: 14px; color: rgba(255,255,255,0.62); line-height: 1.72; margin: 0;">Internationaler Berufswettbewerb der Schweizer CANDULOR AG, bei dem 49 Zahntechniker aus 16 Ländern ihr Können verglichen. Hervorragende Platzierung unter den besten Laboren Europas.</p>
+      <p style="font-size: 14px; color: rgba(255,255,255,0.62); line-height: 1.72; margin: 0;">Beim internationalen zahntechnischen Wettbewerb der Schweizer CANDULOR AG erreichten wir unter 49 Teilnehmenden aus 16 Ländern den 6. Platz.</p>
       <div style="position: absolute; bottom: 0; left: 36px; right: 36px; height: 3px; background: linear-gradient(to right, var(--coral), #f07a52); border-radius: 2px 2px 0 0;"></div>
       </div>
     </div>
@@ -2292,7 +1975,7 @@
       </div>
       <div style="font-size: 13px; font-weight: 700; color: var(--coral); margin-bottom: 10px;">Wettbewerb der Sieger</div>
       <h3 style="font-family: 'Montserrat', sans-serif; font-size: 19px; font-weight: 800; color: var(--charcoal); letter-spacing: -0.4px; line-height: 1.25; margin: 0 0 14px;">1. Platz</h3>
-      <p style="font-size: 14px; color: var(--warm-gray); line-height: 1.65; margin: 0;">Bei Bridge Dental spielt die Förderung junger Fachkräfte eine wichtige Rolle. Unsere Auszubildenden nehmen regelmäßig an internationalen Fachwettbewerben teil und erreichen dort immer wieder hervorragende Platzierungen.</p>
+      <p style="font-size: 14px; color: var(--warm-gray); line-height: 1.65; margin: 0;">Die Ausbildung junger Fachkräfte gehört seit Langem zur fachlichen Kultur von Bridge Dental. Unsere Auszubildenden nehmen regelmäßig an Fachwettbewerben teil.</p>
       <div style="position: absolute; bottom: 0; left: 36px; right: 36px; height: 3px; background: linear-gradient(to right, var(--coral), #f07a52); border-radius: 2px 2px 0 0;"></div>
       </div>
     </div>
@@ -2305,11 +1988,25 @@
 <section class="section" id="fejlodes">
   <div class="reveal">
     <div class="section-label">Fachliche Entwicklung</div>
-    <h2 class="section-title">Wir geben Raum<br><span class="accent">zur Entwicklung.</span></h2>
-    <p class="section-desc">Die Zahntechnik entwickelt sich rasant. Wir halten Schritt und gestalten die Entwicklung aktiv mit.</p>
+    <h2 class="section-title">Wissen gehört genauso zur Entwicklung <span class="accent">wie Technologie.</span></h2>
+    <p class="section-desc">Die digitale Zahntechnik entwickelt sich ständig weiter. Deshalb sind Weiterbildung, Wissensaustausch und internationale Fachkontakte wichtige Bestandteile unserer Arbeit.</p>
   </div>
   <div class="fejlodes-grid">
     <div class="fejlodes-card reveal">
+      <div class="about-card-photo about-card-photo--plaque" style="--photo-fit: contain;">
+        <img src="assets/about/development-icde-partner.webp" alt="Plakette zur ICDE-Partnerschaft von Bridge Dental mit Ivoclar" width="500" height="666" loading="lazy" decoding="async">
+      </div>
+      <div class="fejlodes-card-body">
+      <div class="fejlodes-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+        </svg>
+      </div>
+      <h3>ICDE-Partnerlabor</h3>
+      <p>Bridge Dental ist offizielles Partnerlabor des International Center for Dental Education (ICDE). Diese Verbindung ermöglicht uns den direkten Zugang zum internationalen Fach- und Bildungsnetzwerk von Ivoclar sowie zu den Entwicklungen moderner Materialien und digitaler zahntechnischer Lösungen.</p>
+      </div>
+    </div>
+    <div class="fejlodes-card reveal reveal-delay-1">
       <div class="about-card-photo" style="--photo-fit: contain;">
         <img src="assets/about/development-training.webp" alt="Interne Fortbildung im Dentallabor von Bridge Dental" width="1400" height="850" loading="lazy" decoding="async">
       </div>
@@ -2320,11 +2017,11 @@
           <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
         </svg>
       </div>
-      <h3>Ausbildungslabor</h3>
-      <p>Regelmäßige interne Schulungen fördern die kontinuierliche Entwicklung unseres Teams – damit Sie sich stets auf höchste Qualität verlassen können.</p>
+      <h3>Interne fachliche Weiterbildung</h3>
+      <p>Mit internen Schulungen und Wissensaustausch entwickeln wir die fachliche Kompetenz unseres Teams weiter.</p>
       </div>
     </div>
-    <div class="fejlodes-card reveal reveal-delay-1">
+    <div class="fejlodes-card reveal reveal-delay-2">
       <div class="about-card-photo">
         <img src="assets/about/development-ids-2019.webp" alt="Das Team von Bridge Dental auf der IDS 2019 in Köln" width="1400" height="1050" loading="lazy" decoding="async">
       </div>
@@ -2336,24 +2033,11 @@
           <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
         </svg>
       </div>
-      <h3>Nationale und internationale Fachveranstaltungen</h3>
-      <p>Wir nehmen regelmäßig an zahntechnischen Kongressen und Fachmessen teil, greifen neue Entwicklungen früh auf und übertragen sie in die tägliche Praxis.</p>
+      <h3>Internationale fachliche Präsenz</h3>
+      <p>Auf internationalen zahnmedizinischen und zahntechnischen Veranstaltungen lernen wir neue Technologien, Materialien und Arbeitsabläufe kennen.</p>
       </div>
     </div>
-    <div class="fejlodes-card reveal reveal-delay-2">
-      <div class="about-card-photo about-card-photo--plaque" style="--photo-fit: contain;">
-        <img src="assets/about/development-icde-partner.webp" alt="Plakette zur ICDE-Partnerschaft von Bridge Dental mit Ivoclar" width="500" height="666" loading="lazy" decoding="async">
-      </div>
-      <div class="fejlodes-card-body">
-      <div class="fejlodes-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-          <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
-        </svg>
-      </div>
-      <h3>ICDE-Partner</h3>
-      <p>Durch unsere ICDE-Partnerschaft mit dem international führenden Dentalunternehmen Ivoclar mit Sitz in Liechtenstein integrieren wir aktuelle internationale zahntechnische Erkenntnisse laufend in unsere Arbeit.</p>
-      </div>
-    </div>
+
   </div>
 </section>
 
@@ -2362,20 +2046,15 @@
 
   <div class="n-head">
     <div class="n-eyebrow reveal" style="--d: 0s">INTERNATIONALE ERFAHRUNG</div>
-    <h2 class="n-title reveal" style="--d: 0.12s">
-      Mehr als zwei Jahrzehnte<br>
-      im deutschsprachigen Raum.
-    </h2>
-    <p class="n-sub reveal" style="--d: 0.24s">
-      Die Erfahrungen aus mehr als zwanzig Jahren internationaler Zusammenarbeit prägen unser Handeln bis heute.
-    </p>
+    <h2 class="n-title reveal" style="--d: 0.12s">Mehr als zwei Jahrzehnte internationale Zusammenarbeit.</h2>
+    <p class="n-sub reveal" style="--d: 0.24s">Mehr als 20 Jahre Erfahrung in der Zusammenarbeit mit deutschen und österreichischen Zahnärzten prägen unsere Arbeit bis heute.</p>
   </div>
 
   <div class="n-card reveal" style="--d: 0.34s">
 
     <div class="n-left">
       <div class="n-left-intro">
-        Mehr als zwei Jahrzehnte im deutschsprachigen Raum
+        Verlässliche Zusammenarbeit – auch über mehrere Hundert Kilometer
       </div>
       <div class="n-photo">
         <img src="assets/about/international-1565.webp"
@@ -2388,15 +2067,8 @@
 
     <div class="n-right">
       <div class="n-quote-mark">"</div>
-      <p>
-        In dieser Zeit haben wir die hohen fachlichen Erwartungen, digital geprägte Kooperationsmodelle und den Anspruch an planbare Qualität im deutschsprachigen Raum kennengelernt.
-      </p>
-      <p>
-        Langjährige internationale Kooperationen haben uns gezeigt: Erfolg basiert nicht nur auf präziser Arbeit, sondern ebenso auf klarer Kommunikation, zuverlässigen Terminen und gleichbleibender Qualität.
-      </p>
-      <p>
-        Unsere ICDE-Fachpartnerschaft trägt dazu bei, dass unsere Partner von aktuellen Verfahren und modernen Arbeitsabläufen profitieren.
-      </p>
+      <p>In dieser Zeit haben wir nicht nur die fachlichen Erwartungen unserer Partner kennengelernt, sondern auch, was eine Zusammenarbeit braucht, wenn Praxis und Labor mehrere Hundert Kilometer voneinander entfernt arbeiten.</p>
+      <p>Präzise Kommunikation, planbare Abläufe und konsequente Qualität sind bei uns deshalb keine gesonderte „internationale Dienstleistung“, sondern Teil unserer täglichen Arbeit.</p>
 
       <div class="n-badges">
         <div class="n-badge">
@@ -2409,8 +2081,8 @@
         <div class="n-badge">
           <svg viewBox="0 0 24 24"><path d="M4 12l3-3 4 1 3-3 2 1 4-3"/><path d="M8 13l-2.5 2.5a2 2 0 0 0 3 3L11 16m0 0l1.5 1.5a2 2 0 0 0 3-3L14 13m0 0l1 1a2 2 0 0 0 3-3l-2-2"/></svg>
           <div>
-            <span class="nb-title">ICDE</span>
-            <span class="nb-sub">Fachpartnerschaft</span>
+            <span class="nb-title">Deutschsprachige</span>
+            <span class="nb-sub">fachliche Kommunikation</span>
           </div>
         </div>
       </div>
@@ -2418,59 +2090,10 @@
 
   </div>
 
-  <div class="n-cta-bar reveal" style="--d: 0.46s">
-    <div class="n-cta-icon">
-      <svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 19c0-3 2.7-5 6-5s6 2 6 5"/><circle cx="17" cy="9" r="2.4"/><path d="M16 14.2c2.8.2 5 1.9 5 4.3"/></svg>
-    </div>
-    <div class="n-cta-q">Sie suchen einen verlässlichen Laborpartner?</div>
-    <a href="kontakt.html" class="n-cta-btn">
-      Kontaktieren Sie uns
-      <svg viewBox="0 0 24 24">
-        <line x1="4" y1="12" x2="20" y2="12"/>
-        <polyline points="13 5 20 12 13 19"/>
-      </svg>
-    </a>
-  </div>
-
 </section>
 
 <!-- ============ INNOVÁCIÓ — IDŐVONAL ============ -->
-<section class="innovation" id="innovacio">
 
-  <div class="i-eyebrow reveal" style="--d: 0s">INNOVATION</div>
-  <h2 class="i-title reveal" style="--d: 0.12s">Immer einen Schritt voraus.</h2>
-  <p class="i-sub reveal" style="--d: 0.24s">Kontinuierliche Weiterentwicklung ist kein Ziel – sie ist Teil unseres Handelns.</p>
-
-  <div class="i-stage reveal" style="--d: 0.36s">
-    <div class="i-years" id="iYears"></div>
-
-    <div class="i-card" id="iCard">
-      <div class="i-media" id="iMedia">
-        <img id="iMediaImage" src="assets/about/milestone-2011.webp" alt="Aufbau und Einrichtung des Dentallabors von Bridge Dental" width="1400" height="1323" loading="lazy" decoding="async">
-      </div>
-      <div class="i-body" aria-live="polite" aria-atomic="true">
-        <div class="ib-year" id="iBodyYear"></div>
-        <h3 id="iBodyTitle"></h3>
-        <p id="iBodyText"></p>
-      </div>
-    </div>
-
-    <button class="i-nav prev" id="iPrev" aria-label="Zurück">
-      <svg viewBox="0 0 24 24"><polyline points="15 5 8 12 15 19"/></svg>
-    </button>
-    <button class="i-nav next" id="iNext" aria-label="Weiter">
-      <svg viewBox="0 0 24 24"><polyline points="9 5 16 12 9 19"/></svg>
-    </button>
-  </div>
-
-  <div class="i-track reveal" id="iTrack" style="--d: 0.48s">
-    <div class="i-track-line"></div>
-    <div class="i-track-fill" id="iTrackFill"></div>
-  </div>
-
-  <div class="i-footer reveal" style="--d: 0.56s">Und das ist erst der Anfang.</div>
-
-</section>
 
 <!-- ============ GALÉRIA — A KULISSZÁK MÖGÖTT ============ -->
 <section class="gallery" id="kulisszak-mogott">
@@ -2531,6 +2154,15 @@
   </div>
 </section>
 
+<section class="section about-contact" aria-labelledby="aboutContactTitle">
+  <div class="reveal">
+    <div class="section-label">Der nächste Schritt</div>
+    <h2 class="section-title" id="aboutContactTitle">Lernen wir uns <span class="accent">bei einem Fachgespräch kennen.</span></h2>
+    <p class="section-desc">Sie haben einen konkreten Fall oder möchten unsere Arbeitsweise kennenlernen? Lassen Sie uns darüber sprechen.</p>
+    <a href="kontakt.html" class="btn-coral-big">FACHGESPRÄCH ANFRAGEN</a>
+  </div>
+</section>
+
 <!-- FOOTER -->
 <footer id="kapcsolat">
   <div class="footer-brand">
@@ -2547,7 +2179,7 @@
       <li><a href="digitaler-workflow.html">Digitaler Workflow</a></li>
       <li><a href="metallfreie-keramikrestaurationen.html">Metallfreie Keramikrestaurationen</a></li>
       <li><a href="cad-cam-technologie.html">CAD/CAM-Technologie</a></li>
-              <li><a href="galerie.html">Galerie</a></li>
+      <li><a href="galerie.html">Galerie</a></li>
     </ul>
   </div>
 
@@ -2727,105 +2359,7 @@
   }, { threshold: 0.12 });
   reveals.forEach(el => observer.observe(el));
 
-  // Innováció idővonal
-  (function () {
-    const MILESTONES = [
-      {"year":"2011","title":"Die Anfänge","text":"Bridge Dental wird mit dem Ziel gegründet, Praxen im In- und Ausland als echter fachlicher Partner zu begleiten.","image":"assets/about/milestone-2011.webp","alt":"Aufbau und Einrichtung des Dentallabors von Bridge Dental"},
-      {"year":"2012","title":"Konsequente Digitalisierung","text":"Mit den Systemen von Nobel Procera und 3Shape stellen wir unsere Arbeitsabläufe schrittweise auf CAD/CAM um. Damit legen wir den Grundstein für die weiteren technischen Entwicklungen.","image":"assets/about/milestone-2012.webp","alt":"Digitale Konstruktion mit Nobel Procera im Labor"},
-      {"year":"2015","title":"„Bestes Dentallabor“","text":"Auszeichnung bei den Hungarian Dental Awards.","image":"assets/about/milestone-2015.webp","alt":"Die Preisträger der Hungarian Dental Awards 2015 mit ihren Auszeichnungen"},
-      {"year":"2016","title":"3D-Druck und ICDE-Partnerschaft","text":"Die additive Fertigung wird zum festen Bestandteil unserer täglichen Arbeit. Im selben Jahr verleiht uns Ivoclar, ein weltweit führendes Dentalunternehmen mit Sitz in Liechtenstein, den ICDE-Partnerstatus (International Centre for Dental Education) – eine bedeutende Anerkennung unserer fachlichen Kompetenz.","image":"assets/about/milestone-2016.webp","alt":"Fortbildung im digitalen Schulungszentrum von Ivoclar"},
-      {"year":"2019","title":"KunstZahnWerk: 6. Platz","text":"Internationale Anerkennung für unsere Arbeit: Wir erreichen den sechsten Platz im Wettbewerb mit 49 Zahntechnikern aus 16 Ländern.","image":"assets/about/milestone-2019.webp","alt":"Die mit dem sechsten Platz ausgezeichnete Wettbewerbsarbeit von Attila Kínál und Dénes Császár beim KunstZahnWerk"},
-      {"year":"2021","title":"Eigenes digitales Fertigungszentrum","text":"Mit neuen CAD/CAM-Technologien und einer modernen imes-icore CORiTEC 350i Loader PRO+ Fräsmaschine schaffen wir eine durchgängig digitale Fertigungsumgebung.","image":"assets/about/milestone-2021.webp","alt":"Die imes-icore CORiTEC 350i Loader PRO+ Fräsmaschine im Labor von Bridge Dental"},
-      {"year":"2024","title":"Ausbau unserer Fertigungskapazität","text":"Mit zwei weiteren imes-icore CORiTEC 250i Fräsmaschinen erweitern wir unsere eigene CAD/CAM-Fertigungskapazität."},
-      {"year":"2026","title":"TrueDent®","text":"Biokompatible, vollfarbige digitale Prothesen eröffnen neue Möglichkeiten in der digitalen Prothetik."}
-    ];
-    const N = MILESTONES.length;
 
-    const yearsBox = document.getElementById('iYears');
-    const track = document.getElementById('iTrack');
-    const trackFill = document.getElementById('iTrackFill');
-    const card = document.getElementById('iCard');
-    const bYear = document.getElementById('iBodyYear');
-    const bTitle = document.getElementById('iBodyTitle');
-    const bText = document.getElementById('iBodyText');
-    const mediaImage = document.getElementById('iMediaImage');
-    const prev = document.getElementById('iPrev');
-    const next = document.getElementById('iNext');
-
-    if (!yearsBox || !track || !trackFill || !card || !bYear || !bTitle || !bText || !mediaImage || !prev || !next) return;
-
-    yearsBox.innerHTML = MILESTONES.map((m, i) =>
-      `<button class="i-year" data-i="${i}" aria-controls="iCard" aria-pressed="${i === 0}">${m.year}</button>`).join('');
-
-    track.insertAdjacentHTML('beforeend', MILESTONES.map((m, i) => `
-      <button class="i-stop" data-i="${i}" aria-controls="iCard" aria-pressed="${i === 0}">
-        <span class="is-dot"></span>
-        <span class="is-year">${m.year}</span>
-      </button>`).join(''));
-
-    const yearEls = yearsBox.querySelectorAll('.i-year');
-    const stopEls = track.querySelectorAll('.i-stop');
-    let index = 0;
-    let switchTimer;
-    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-    function render() {
-      const m = MILESTONES[index];
-      bYear.textContent = m.year;
-      bTitle.textContent = m.title;
-      bText.textContent = m.text;
-      card.classList.toggle('no-photo', !m.image);
-      if (m.image) {
-        mediaImage.alt = m.alt;
-        mediaImage.src = m.image;
-      } else {
-        mediaImage.removeAttribute('src');
-        mediaImage.alt = '';
-      }
-    }
-
-    function update() {
-      yearEls.forEach((el, i) => {
-        el.classList.toggle('active', i === index);
-        el.setAttribute('aria-pressed', String(i === index));
-        el.classList.toggle('done', i < index);
-      });
-      stopEls.forEach((el, i) => {
-        el.classList.toggle('active', i === index);
-        el.setAttribute('aria-pressed', String(i === index));
-        el.classList.toggle('done', i < index);
-        el.classList.toggle('future', i > index);
-      });
-
-      trackFill.style.width = `calc((100% - 80px) * ${N === 1 ? 0 : index / (N - 1)})`;
-      const activeYear = yearEls[index];
-      yearsBox.scrollTo({ left: activeYear.offsetLeft - yearsBox.offsetLeft - (yearsBox.clientWidth - activeYear.clientWidth) / 2, behavior: reducedMotion ? 'auto' : 'smooth' });
-
-      clearTimeout(switchTimer);
-      card.classList.add('switching');
-      switchTimer = setTimeout(() => {
-        render();
-        card.classList.remove('switching');
-      }, reducedMotion ? 0 : 200);
-    }
-
-    function go(i) {
-      index = (i + N) % N;
-      update();
-    }
-
-    prev.addEventListener('click', () => go(index - 1));
-    next.addEventListener('click', () => go(index + 1));
-    yearEls.forEach(el => el.addEventListener('click', () => go(+el.dataset.i)));
-    stopEls.forEach(el => el.addEventListener('click', () => go(+el.dataset.i)));
-
-    render();
-    yearEls[0].classList.add('active');
-    yearEls.forEach((el, i) => el.classList.toggle('done', i < 0));
-    stopEls.forEach((el, i) => el.classList.toggle('future', i > 0));
-    stopEls[0].classList.add('active');
-    trackFill.style.width = '0px';
-  })();
 
   // Galéria: kinyíló panelek (hover desktopon, koppintás mobilon) + automata léptetés
   (function () {
@@ -2874,6 +2408,7 @@
             <a href="galerie.html">Galerie</a>
           </div>
         </div>
+        <a class="hero-mobile-main" href="https://bridgedental.hu/fooldal/hirek/">BLOG</a>
         <div class="hero-mobile-actions"><a href="output/pdf/bridge-dental-munkalap-kitoltheto.pdf" target="_blank" rel="noopener">ARBEITSAUFTRAG</a><a href="kontakt.html">KONTAKT</a></div>
       </div>
     </div>
