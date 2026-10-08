@@ -2017,13 +2017,15 @@
         padding-bottom: 24px;
       }
     }
+      /* Long localized headings must fit their column at every viewport width. */
+    h1, h2, h3 { hyphens: auto; overflow-wrap: anywhere; }
   </style>
   <link rel="canonical" href="https://rhalmaibusiness-blip.github.io/bridge-dental/digitaler-workflow.html">
   <link rel="alternate" hreflang="de" href="https://rhalmaibusiness-blip.github.io/bridge-dental/digitaler-workflow.html">
   <link rel="alternate" hreflang="hu" href="https://rhalmaibusiness-blip.github.io/bridge-dental/hu/digitalis-tervezes.html">
   <link rel="alternate" hreflang="x-default" href="https://rhalmaibusiness-blip.github.io/bridge-dental/digitaler-workflow.html">
   <link rel="stylesheet" href="assets/language-switcher.css?v=4">
-  <link rel="stylesheet" href="assets/funding.css?v=20260924">
+  <link rel="stylesheet" href="assets/funding.css?v=20261008">
 </head>
 <body>
 
@@ -2034,7 +2036,7 @@
 </nav>
 <section class="service-hero" id="hero">
   <header class="hero-nav-main">
-    <a href="index.html" class="hero-brand" aria-label="Bridge Dental Hauptseite">
+    <a href="index.html" class="hero-brand" aria-label="Bridge Dental – Startseite">
       <img src="logo-hero.png" alt="Bridge Dental" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
       <span class="hero-brand-fallback"><span class="b">bridge</span><span class="d">dental</span></span>
     </a>
@@ -2057,7 +2059,6 @@
               <li><a href="digitaler-workflow.html" aria-current="page">Digitaler Workflow</a></li>
               <li><a href="metallfreie-keramikrestaurationen.html">Metallfreie Keramikrestaurationen</a></li>
               <li><a href="cad-cam-technologie.html">CAD/CAM-Technologie</a></li>
-              <li><a href="galerie.html">Galerie</a></li>
             </ul>
           </li>
         </ul>
@@ -2083,7 +2084,6 @@
         <a href="digitaler-workflow.html" aria-current="page">Digitaler Workflow</a>
         <a href="metallfreie-keramikrestaurationen.html">Metallfreie Keramikrestaurationen</a>
         <a href="cad-cam-technologie.html">CAD/CAM-Technologie</a>
-        <a href="galerie.html">Galerie</a>
       </div>
     </div>
     <a class="hero-mobile-main" href="https://bridgedental.hu/fooldal/hirek/">BLOG</a>
@@ -2129,8 +2129,8 @@
         <h2 class="section-heading">Die Versorgung beginnt mit der Diagnose</h2>
         <div class="body-copy">
           <p>Der erste Schritt im digitalen Workflow ist nicht das Scannen, sondern das Sammeln der entsprechenden klinischen Informationen.</p>
-          <p>Je genauer wir die anatomischen Gegebenheiten, funktionellen Gegebenheiten und ästhetischen Erwartungen des Patienten kennen, desto genauer können wir die Restauration planen.</p>
-          <p>Deshalb legen wir großen Wert auf eine kontinuierliche professionelle Kommunikation zwischen Zahnarzt und Labor.</p>
+          <p>Je genauer wir die anatomischen und funktionellen Gegebenheiten sowie die ästhetischen Erwartungen des Patienten kennen, desto genauer können wir die Restauration planen.</p>
+          <p>Deshalb legen wir großen Wert auf eine kontinuierliche fachliche Kommunikation zwischen Zahnarzt und Labor.</p>
         </div>
       </div>
 
@@ -2217,7 +2217,7 @@
           <h2 class="section-heading">Die Rolle des Fotoprotokolls</h2>
           <div class="body-copy">
             <p>In der ästhetischen Zahnheilkunde dienen Fotos nicht nur der Dokumentation, sondern bilden eine wesentliche Grundlage der Kommunikation.</p>
-            <p>Mit dem passenden Fotoprotokoll lässt sich genauer analysieren:</p>
+            <p>Mit dem passenden Fotoprotokoll lassen sich folgende Aspekte genauer analysieren:</p>
           </div>
           <ul class="detail-list">
             <li>die Lachlinie</li>
@@ -2288,8 +2288,8 @@
           <ul class="detail-list">
             <li>die Funktion,</li>
             <li>die Ästhetik,</li>
-            <li>Phonetik,</li>
-            <li>und Patientenfeedback.</li>
+            <li>die Phonetik</li>
+            <li>und die Rückmeldung des Patienten.</li>
           </ul>
           <p class="body-copy capture-conclusion">Dadurch wird das Ergebnis der definitiven Restauration deutlich planbarer.</p>
         </div>
@@ -2359,7 +2359,7 @@
           <p>Tritt während des Pilotprojekts aufgrund eines nachweisbaren Laborfehlers eine Situation ein, die einen erneuten Patiententermin erforderlich macht, korrigieren oder fertigen wir die Arbeit neu. Zusätzlich erhalten Sie eine Gutschrift in Höhe von 150 € als Ausgleich für den zusätzlichen Behandlungsaufwand, die mit der nächsten technischen Rechnung verrechnet wird.</p>
           <p>Diese Zusage gilt ausschließlich für Arbeiten aus dem achtwöchigen Pilotprojekt und gemäß den Pilotbedingungen.</p>
         </div>
-        <div class="pilot-meta" aria-label="Zusammenfassung des Piloten">
+        <div class="pilot-meta" aria-label="Überblick über das Pilotprojekt">
           <div class="pilot-chip">
             <strong>8 Wochen</strong>
             Pilotzeitraum
@@ -2427,11 +2427,11 @@
         <div class="form-row">
           <div class="form-group">
             <label for="email">E-Mail-Adresse *</label>
-            <input type="email" id="email" name="email" placeholder="dr.kovacs@fogaszat.hu" required>
+            <input type="email" id="email" name="email" placeholder="name@zahnarztpraxis.de" required>
           </div>
           <div class="form-group">
             <label for="telefon">Telefonnummer</label>
-            <input type="tel" id="telefon" name="telefon" placeholder="+36 30 000 0000">
+            <input type="tel" id="telefon" name="telefon" placeholder="+49 / +41 …">
           </div>
         </div>
         <div class="form-group">
@@ -2460,7 +2460,7 @@
 
 <footer>
   <div class="footer-brand">
-    <img src="logo.png" alt="Bridge Dental">
+    <a class="footer-home-link" href="index.html" aria-label="Bridge Dental – Startseite"><img src="logo.png" alt="Bridge Dental"></a>
     <p>Budapester B2B-Dentallabor – spezialisiert auf Implantologie und Zirkonoxidarbeiten, für Praxen, Kliniken und private Zahnärzte.</p>
   </div>
   <div class="footer-col">
@@ -2472,7 +2472,6 @@
       <li><a href="digitaler-workflow.html">Digitaler Workflow</a></li>
       <li><a href="metallfreie-keramikrestaurationen.html">Metallfreie Keramikrestaurationen</a></li>
       <li><a href="cad-cam-technologie.html">CAD/CAM-Technologie</a></li>
-      <li><a href="galerie.html">Galerie</a></li>
     </ul>
   </div>
   <div class="footer-col">

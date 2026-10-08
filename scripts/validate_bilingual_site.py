@@ -22,7 +22,6 @@ PAIRS = {
     "digitaler-workflow.html": "hu/digitalis-tervezes.html",
     "metallfreie-keramikrestaurationen.html": "hu/esztetikai-keramia.html",
     "cad-cam-technologie.html": "hu/digitalis-fogtechnika.html",
-    "galerie.html": "hu/galeria.html",
     "referenzen.html": "hu/referenciak.html",
     "kontakt.html": "hu/kapcsolat.html",
     "impressum.html": "hu/impresszum.html",
@@ -280,8 +279,10 @@ def validate_gallery(errors: list[str]) -> None:
             parser = PageParser()
             parser.feed(html)
             gallery_target = (ROOT / gallery_path).resolve()
-            if not any(local_target(path, link.get("href", "")) == gallery_target for link in parser.links):
-                errors.append(f"{path}: missing {language} gallery navigation link")
+            if any(local_target(path, link.get("href", "")) == gallery_target for link in parser.links):
+                errors.append(f"{path}: removed {language} gallery still linked")
+        if (ROOT / gallery_path).exists():
+            errors.append(f"{gallery_path}: dedicated gallery page must be removed")
 
 
 def main() -> None:

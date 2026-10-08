@@ -1743,6 +1743,8 @@
     .pilot-section h2, .pilot-risk, .pilot-chip, .pilot-bullets { overflow-wrap: anywhere; hyphens: auto; }
     .pilot-meta { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     @media (max-width: 1040px) { .pilot-panel { grid-template-columns: minmax(0, 1fr); } }
+      /* Long localized headings must fit their column at every viewport width. */
+    h1, h2, h3 { hyphens: auto; overflow-wrap: anywhere; }
   </style>
   <link rel="canonical" href="https://rhalmaibusiness-blip.github.io/bridge-dental/zusammenarbeit/index.html">
   <link rel="alternate" hreflang="de" href="https://rhalmaibusiness-blip.github.io/bridge-dental/zusammenarbeit/index.html">
@@ -1750,7 +1752,7 @@
   <link rel="alternate" hreflang="x-default" href="https://rhalmaibusiness-blip.github.io/bridge-dental/zusammenarbeit/index.html">
   <link rel="stylesheet" href="../assets/language-switcher.css?v=4">
   <link rel="stylesheet" href="../assets/contact-portraits.css?v=20260924">
-  <link rel="stylesheet" href="../assets/funding.css?v=20260924">
+  <link rel="stylesheet" href="../assets/funding.css?v=20261008">
 </head>
 <body>
 
@@ -2050,7 +2052,7 @@
               <p>Tritt während des Pilotprojekts aufgrund eines nachweisbaren Laborfehlers eine Situation ein, die einen erneuten Patiententermin erforderlich macht, korrigieren oder fertigen wir die Arbeit neu. Zusätzlich erhalten Sie eine Gutschrift in Höhe von 150 € als Ausgleich für den zusätzlichen Behandlungsaufwand, die mit der nächsten technischen Rechnung verrechnet wird.</p>
               <p>Diese Zusage gilt ausschließlich für Arbeiten aus dem achtwöchigen Pilotprojekt und gemäß den Pilotbedingungen.</p>
             </div>
-            <div class="pilot-meta" aria-label="Zusammenfassung des Piloten">
+            <div class="pilot-meta" aria-label="Überblick über das Pilotprojekt">
               <div class="pilot-chip">
                 <strong>8 Wochen</strong>
                 Pilotzeitraum
@@ -2311,7 +2313,7 @@
           </div>
         </div>
 
-        <form class="reveal" aria-label="Pilotenberatungsformular">
+        <form class="reveal" aria-label="Kontaktformular zur Pilot-Zusammenarbeit">
           <div class="form-row">
             <div class="field">
               <label for="name">Name *</label>
@@ -2346,7 +2348,7 @@
           <div class="field">
             <label for="interest">Für welche Dienstleistung interessieren Sie sich? *</label>
             <select id="interest" name="interest" required>
-              <option value="" selected disabled>Wählen Sie einen Dienst</option>
+              <option value="" selected disabled>Leistung auswählen</option>
               <option>All-on-X-Rehabilitationen</option>
               <option>Implantatgetragene Zirkonoxidrestaurationen</option>
               <option>Metallfreie Keramikrestaurationen</option>
@@ -2365,8 +2367,8 @@
             <input id="phone" name="phone" type="tel" placeholder="+49 / +41 ...">
           </div>
           <div class="field">
-            <label for="message">Kurze Beschreibung der Nachricht/des Falles</label>
-            <textarea id="message" name="message" placeholder="Beschreiben Sie kurz, welche Art von Arbeit, Pilot oder Partnerschaft Sie suchen..."></textarea>
+            <label for="message">Ihre Nachricht oder kurze Fallbeschreibung</label>
+            <textarea id="message" name="message" placeholder="Beschreiben Sie kurz, zu welchem Fall oder zu welcher Form der Zusammenarbeit Sie sich austauschen möchten …"></textarea>
           </div>
           <label class="gdpr">
             <input type="checkbox" required>
@@ -2388,7 +2390,7 @@
 
   <footer>
     <div class="shell footer-inner">
-      <img src="../assets/logo.png" alt="Bridge Dental">
+      <a class="footer-home-link" href="../index.html" aria-label="Bridge Dental – Startseite"><img src="../assets/logo.png" alt="Bridge Dental"></a>
       <span>Datenschutzhinweise · <a href="../impressum.html" style="color: inherit; text-underline-offset: 3px;">Impressum</a> · <a href="../foerderprojekte.html" style="color: inherit; text-underline-offset: 3px;">Förderprojekte</a> · Copyright © Bridge Dental</span>
     </div>
   </footer>
@@ -2434,7 +2436,7 @@
 
     document.querySelector("form").addEventListener("submit", (event) => {
       event.preventDefault();
-      alert("Az űrlap jelenleg prototípus. CRM integráció után ide érkeznek majd a strukturált leadek.");
+      alert("Dieses Formular ist derzeit eine Vorschau. Ihre Anfrage wurde nicht versendet. Bitte kontaktieren Sie uns per E-Mail oder Telefon.");
     });
   </script>
 <a class="bd-funding-badge" href="../foerderprojekte.html" aria-label="Széchenyi Terv Plusz – Förderprojekte von Bridge Dental">

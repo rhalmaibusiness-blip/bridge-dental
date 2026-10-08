@@ -400,13 +400,15 @@
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after { scroll-behavior: auto !important; transition-duration: 0.01ms !important; }
     }
+      /* Long localized headings must fit their column at every viewport width. */
+    h1, h2, h3 { hyphens: auto; overflow-wrap: anywhere; }
   </style>
   <link rel="canonical" href="https://rhalmaibusiness-blip.github.io/bridge-dental/impressum.html">
   <link rel="alternate" hreflang="de" href="https://rhalmaibusiness-blip.github.io/bridge-dental/impressum.html">
   <link rel="alternate" hreflang="hu" href="https://rhalmaibusiness-blip.github.io/bridge-dental/hu/impresszum.html">
   <link rel="alternate" hreflang="x-default" href="https://rhalmaibusiness-blip.github.io/bridge-dental/impressum.html">
   <link rel="stylesheet" href="assets/language-switcher.css?v=4">
-  <link rel="stylesheet" href="assets/funding.css?v=20260924">
+  <link rel="stylesheet" href="assets/funding.css?v=20261008">
 </head>
 <body>
 
@@ -435,7 +437,6 @@
               <li><a href="digitaler-workflow.html">Digitaler Workflow</a></li>
               <li><a href="metallfreie-keramikrestaurationen.html">Metallfreie Keramikrestaurationen</a></li>
               <li><a href="cad-cam-technologie.html">CAD/CAM-Technologie</a></li>
-              <li><a href="galerie.html">Galerie</a></li>
             </ul>
           </li>
         </ul>
@@ -462,7 +463,6 @@
         <a href="digitaler-workflow.html">Digitaler Workflow</a>
         <a href="metallfreie-keramikrestaurationen.html">Metallfreie Keramikrestaurationen</a>
         <a href="cad-cam-technologie.html">CAD/CAM-Technologie</a>
-        <a href="galerie.html">Galerie</a>
       </div>
     </div>
     <a href="https://bridgedental.hu/fooldal/hirek/">BLOG</a>
@@ -560,7 +560,7 @@
 
   <footer>
     <div class="footer-brand">
-      <img src="logo.png" alt="Bridge Dental">
+      <a class="footer-home-link" href="index.html" aria-label="Bridge Dental – Startseite"><img src="logo.png" alt="Bridge Dental"></a>
       <p>Budapester B2B-Dentallabor – spezialisiert auf Implantologie, digitale Workflows und Premium-Restaurationen.</p>
     </div>
     <div class="footer-col">
@@ -572,7 +572,6 @@
         <li><a href="digitaler-workflow.html">Digitaler Workflow</a></li>
         <li><a href="metallfreie-keramikrestaurationen.html">Metallfreie Keramikrestaurationen</a></li>
         <li><a href="cad-cam-technologie.html">CAD/CAM-Technologie</a></li>
-        <li><a href="galerie.html">Galerie</a></li>
       </ul>
     </div>
     <div class="footer-col">

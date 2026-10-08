@@ -4,6 +4,8 @@ from html import unescape
 from pathlib import Path
 import re
 import subprocess
+from html.parser import HTMLParser
+from validate_bilingual_site import PAIRS, local_target
 
 ROOT = Path(__file__).resolve().parents[1]
 checks = 0
@@ -85,7 +87,7 @@ required = {
         "Fachliche Abstimmung und Kommunikation auf Deutsch",
         "Rechnungsstellung, Monatsabrechnungen und Bescheinigungen",
         "Deutschsprachige Kundenbetreuung", "Bridge Dental Dentallabor",
-        "Schreiben Sie uns, wobei Sie auf uns zählen möchten.",
+        "Schreiben Sie uns, wie wir Sie unterstützen können.",
         "Ein Mitglied unseres Teams wird sich mit Ihnen in Verbindung setzen.",
         "Allgemeine Zusammenarbeit",
     ],
@@ -108,12 +110,17 @@ for name in ["index.html", "hu/index.html"]:
     check('assets/home/hero-layout.css?v=20261006' in html, f"{name}: shared hero layout")
     check('hero-ska-4081.webp' in html, f"{name}: hero photograph")
     check('service-metal-free-ceramics-0014.webp' in html, f"{name}: ceramics photograph")
-    check(html.index('id="miert"') < html.index('id="velemenyek"') < html.index('class="partner-cta"') < html.index('id="technologia"'), f"{name}: reviews and CTA placement")
+    check(html.index('id="miert"') < html.index('id="velemenyek"') < html.index('id="technologia"'), f"{name}: reviews directly after partner benefits")
+    cta = section(html, 'class="partner-cta"')
+    check(html.index('id="munkaink"') < html.index(cta) < html.index('<footer'), f"{name}: final CTA placement")
+    check('<section' not in html[html.index(cta) + len(cta):html.index('<footer')], f"{name}: no section below the final CTA")
     check(len(re.findall(r'class="service-kicker"', html)) == 6, f"{name}: six specialty subtitles")
 
 check('id="innovacio"' not in about and 'MILESTONES' not in about, "About: removed innovation timeline")
 development = section(about, 'id="fejlodes"')
-check(re.findall(r'<h3>(.*?)</h3>', development) == ['ICDE-Partnerlabor', 'Interne fachliche Weiterbildung', 'Internationale fachliche Präsenz'], "About: development order")
+check(re.findall(r'<h3>(.*?)</h3>', development) == ['Interne fachliche Weiterbildung', 'ICDE-Partnerlabor', 'Internationale fachliche Präsenz'], "About: ICDE centered in German")
+development_hu = section(source('hu/ismerje-meg-a-bridge-dentalt.html'), 'id="fejlodes"')
+check(re.findall(r'<h3>(.*?)</h3>', development_hu) == ['Belső szakmai képzés', 'ICDE partner labor', 'Nemzetközi szakmai jelenlét'], "About: ICDE centered in Hungarian")
 check('<a ' not in section(about, 'id="nemzetkozi-tapasztalat"'), "About: old international CTA")
 check(about.index('id="kulisszak-mogott"') < about.index('class="section about-contact"') < about.index('<footer'), "About: final CTA placement")
 check('object-fit: contain;' in about[about.index('.hitvallas-photo-filled img'):about.index('.story-placeholder-ring')], "About: founder image fit")
@@ -123,4 +130,40 @@ check(main.count('href="tel:+36703966653"') == 1, "Contact: no duplicate Attila 
 form = re.search(r'<form>(.*?)</form>', contact, re.S).group(1)
 check(re.findall(r'<(?:input|select|textarea)\b[^>]*\bid="([^"]+)"', form) == ['nev','rendelo','email','telefon','targy','uzenet'], "Contact: six fields")
 check('B2B-Laborpartner' not in main, "Contact: old badge removed")
+
+class FooterLogoParser(HTMLParser):
+    def __init__(self):
+        super().__init__()
+        self.in_footer = False
+        self.anchor = None
+        self.logos = []
+
+    def handle_starttag(self, tag, attrs):
+        attrs = dict(attrs)
+        if tag == 'footer':
+            self.in_footer = True
+        if tag == 'a':
+            self.anchor = attrs
+        if tag == 'img' and self.in_footer and 'logo' in attrs.get('src', ''):
+            self.logos.append(self.anchor)
+
+    def handle_endtag(self, tag):
+        if tag == 'footer':
+            self.in_footer = False
+        if tag == 'a':
+            self.anchor = None
+
+for de, hu in PAIRS.items():
+    for name, home_path in [(de, 'index.html'), (hu, 'hu/index.html')]:
+        html = source(name)
+        parser = FooterLogoParser()
+        parser.feed(html)
+        check(len(parser.logos) == 1 and parser.logos[0] is not None, f'{name}: footer logo is a link')
+        check(local_target(name, parser.logos[0]['href']) == ROOT / home_path, f'{name}: footer logo goes to localized home')
+        check('assets/funding.css?v=20261008' in html, f'{name}: updated footer stylesheet')
+        check(not re.search(r'href="[^"]*galer(?:ie|ia)\.html', html), f'{name}: no removed gallery links')
+    de_html = source(de)
+    for obsolete in ['Bisheriger Vorteil', 'Seiten mit einem Karussell', '${p + 1}. oldal', 'dr.kovacs@fogaszat.hu', '>Furniere<', 'Prothesenvorbereitung', 'Pilotenberatungsformular', 'Az űrlap jelenleg prototípus']:
+        check(obsolete not in de_html, f'{de}: untranslated or incorrect German: {obsolete}')
+check('body { padding-bottom: 0; }' in source('assets/funding.css'), 'No padding outside the footer')
 print(f"Validated {checks} October content, structure and JavaScript checks.")

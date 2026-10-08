@@ -4141,6 +4141,8 @@
       }
     }
 
+      /* Long localized headings must fit their column at every viewport width. */
+    h1, h2, h3 { hyphens: auto; overflow-wrap: anywhere; }
   </style>
   <link rel="canonical" href="https://rhalmaibusiness-blip.github.io/bridge-dental/index.html">
   <link rel="alternate" hreflang="de" href="https://rhalmaibusiness-blip.github.io/bridge-dental/index.html">
@@ -4148,7 +4150,7 @@
   <link rel="alternate" hreflang="x-default" href="https://rhalmaibusiness-blip.github.io/bridge-dental/index.html">
   <link rel="stylesheet" href="assets/language-switcher.css?v=4">
   <link rel="stylesheet" href="assets/hero-mobile-menu.css?v=20260924d">
-  <link rel="stylesheet" href="assets/funding.css?v=20260924">
+  <link rel="stylesheet" href="assets/funding.css?v=20261008">
   <link rel="stylesheet" href="assets/home/hero-layout.css?v=20261006">
 </head>
 <body>
@@ -4172,7 +4174,7 @@
   <canvas class="cinematic-particles" id="cinematicParticles"></canvas>
 
   <header class="hero-nav-main">
-    <a href="index.html" class="hero-brand" aria-label="Bridge Dental Hauptseite">
+    <a href="index.html" class="hero-brand" aria-label="Bridge Dental – Startseite">
       <img src="logo-hero.png" alt="Bridge Dental" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
       <span class="hero-brand-fallback"><span class="b">bridge</span><span class="d">dental</span></span>
     </a>
@@ -4195,7 +4197,6 @@
               <li><a href="digitaler-workflow.html">Digitaler Workflow</a></li>
               <li><a href="metallfreie-keramikrestaurationen.html">Metallfreie Keramikrestaurationen</a></li>
               <li><a href="cad-cam-technologie.html">CAD/CAM-Technologie</a></li>
-              <li><a href="galerie.html">Galerie</a></li>
             </ul>
           </li>
         </ul>
@@ -4319,7 +4320,7 @@
       </div>
         </div>
 
-        <button class="why-carousel-btn prev" type="button" aria-label="Bisheriger Vorteil">
+        <button class="why-carousel-btn prev" type="button" aria-label="Vorheriger Vorteil">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
         </button>
         <button class="why-carousel-btn next" type="button" aria-label="Nächster Vorteil">
@@ -4327,7 +4328,7 @@
         </button>
       </div>
 
-      <div class="why-carousel-dots" aria-label="Seiten mit einem Karussell"></div>
+      <div class="why-carousel-dots" aria-label="Vorteile auswählen"></div>
     </div>
   </div>
 </section>
@@ -4360,17 +4361,7 @@
   </div>
 </section>
 
-<section class="partner-cta" aria-labelledby="partnerCtaTitle">
-  <div class="partner-cta-inner reveal">
-    <div class="partner-cta-step">Der nächste Schritt</div>
-    <h2 id="partnerCtaTitle">Ihr Behandlungskonzept, unsere zahntechnische Kompetenz.</h2>
-    <p>Sie möchten unsere Arbeitsweise kennenlernen oder einen konkreten Fall mit uns besprechen? Nehmen Sie Kontakt zu unserem Team auf.</p>
-    <div class="partner-cta-actions">
-      <a class="partner-cta-button" href="kontakt.html">KONTAKT AUFNEHMEN</a>
-      <a class="partner-cta-button secondary" href="output/pdf/bridge-dental-munkalap-kitoltheto.pdf" target="_blank" rel="noopener">ARBEITSAUFTRAG HERUNTERLADEN</a>
-    </div>
-  </div>
-</section>
+
 
 <section class="work" id="technologia">
   <div class="work-head">
@@ -4612,10 +4603,22 @@
 
 
 
+<section class="partner-cta" aria-labelledby="partnerCtaTitle">
+  <div class="partner-cta-inner reveal">
+    <div class="partner-cta-step">Der nächste Schritt</div>
+    <h2 id="partnerCtaTitle">Ihr Behandlungskonzept, unsere zahntechnische Kompetenz.</h2>
+    <p>Sie möchten unsere Arbeitsweise kennenlernen oder einen konkreten Fall mit uns besprechen? Nehmen Sie Kontakt zu unserem Team auf.</p>
+    <div class="partner-cta-actions">
+      <a class="partner-cta-button" href="kontakt.html">KONTAKT AUFNEHMEN</a>
+      <a class="partner-cta-button secondary" href="output/pdf/bridge-dental-munkalap-kitoltheto.pdf" target="_blank" rel="noopener">ARBEITSAUFTRAG HERUNTERLADEN</a>
+    </div>
+  </div>
+</section>
+
 <!-- FOOTER -->
 <footer id="kapcsolat">
   <div class="footer-brand">
-    <img src="logo.png" alt="Bridge Dental" style="height: 32px; width: auto; filter: brightness(0) invert(1); opacity: 0.85; margin-bottom: 12px; display: block;">
+    <a class="footer-home-link" href="index.html" aria-label="Bridge Dental – Startseite"><img src="logo.png" alt="Bridge Dental" style="height: 32px; width: auto; filter: brightness(0) invert(1); opacity: 0.85; margin-bottom: 12px; display: block;"></a>
     <p>Ihr Partner für Prothetik und digitale Zahntechnik – mit dokumentierter Qualität, eigener Fertigung und organisierter Logistik.</p>
   </div>
 
@@ -4628,7 +4631,6 @@
       <li><a href="digitaler-workflow.html">Digitaler Workflow</a></li>
       <li><a href="metallfreie-keramikrestaurationen.html">Metallfreie Keramikrestaurationen</a></li>
       <li><a href="cad-cam-technologie.html">CAD/CAM-Technologie</a></li>
-      <li><a href="galerie.html">Galerie</a></li>
     </ul>
   </div>
 
@@ -5059,7 +5061,7 @@
       const pages = pageCount();
       const vis = visibleCount();
       dotsBox.innerHTML = Array.from({ length: pages }, (_, p) =>
-        `<button data-p="${p}" aria-label="${p + 1}. oldal"></button>`).join('');
+        `<button data-p="${p}" aria-label="Seite ${p + 1}"></button>`).join('');
       dotsBox.querySelectorAll('button').forEach((button) => {
         button.addEventListener('click', () => go(Math.min(+button.dataset.p * vis, maxIndex())));
       });
@@ -5323,7 +5325,6 @@
             <a href="digitaler-workflow.html">Digitaler Workflow</a>
             <a href="metallfreie-keramikrestaurationen.html">Metallfreie Keramikrestaurationen</a>
             <a href="cad-cam-technologie.html">CAD/CAM-Technologie</a>
-            <a href="galerie.html">Galerie</a>
           </div>
         </div>
         <a class="hero-mobile-main" href="https://bridgedental.hu/fooldal/hirek/">BLOG</a>

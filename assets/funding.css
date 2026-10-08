@@ -1,5 +1,12 @@
 :root { --funding-badge-width: 360px; }
-body { padding-bottom: 132px; }
+body { padding-bottom: 0; }
+/* Reserve space for the fixed badge inside the dark footer, never below it. */
+body:has(.bd-funding-badge) .footer-bottom,
+body:has(.bd-funding-badge):not(:has(.footer-bottom)) footer {
+  padding-bottom: 132px;
+}
+.footer-home-link { display: inline-block; max-width: 100%; }
+.footer-home-link:focus-visible { outline: 2px solid currentColor; outline-offset: 6px; }
 .bd-funding-badge {
   position: fixed;
   right: max(12px, env(safe-area-inset-right, 0px));
@@ -34,7 +41,10 @@ body { padding-bottom: 132px; }
 .funding-download:focus-visible { outline: 3px solid var(--charcoal); outline-offset: 4px; }
 @media (max-width: 600px) {
   :root { --funding-badge-width: 280px; }
-  body { padding-bottom: calc(110px + env(safe-area-inset-bottom, 0px)); }
+  body:has(.bd-funding-badge) .footer-bottom,
+  body:has(.bd-funding-badge):not(:has(.footer-bottom)) footer {
+    padding-bottom: calc(110px + env(safe-area-inset-bottom, 0px));
+  }
   .funding-content { padding: 48px 20px; }
   .funding-facts { grid-template-columns: 1fr; }
 }

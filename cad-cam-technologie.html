@@ -2086,13 +2086,15 @@
       .cam-center-card .cam-copy { padding: 28px 22px 16px; }
       .cam-center-card h2 { font-size: clamp(26px, 7.5vw, 32px); line-height: 1.18; letter-spacing: -0.7px; }
     }
+      /* Long localized headings must fit their column at every viewport width. */
+    h1, h2, h3 { hyphens: auto; overflow-wrap: anywhere; }
   </style>
   <link rel="canonical" href="https://rhalmaibusiness-blip.github.io/bridge-dental/cad-cam-technologie.html">
   <link rel="alternate" hreflang="de" href="https://rhalmaibusiness-blip.github.io/bridge-dental/cad-cam-technologie.html">
   <link rel="alternate" hreflang="hu" href="https://rhalmaibusiness-blip.github.io/bridge-dental/hu/digitalis-fogtechnika.html">
   <link rel="alternate" hreflang="x-default" href="https://rhalmaibusiness-blip.github.io/bridge-dental/cad-cam-technologie.html">
   <link rel="stylesheet" href="assets/language-switcher.css?v=4">
-  <link rel="stylesheet" href="assets/funding.css?v=20260924">
+  <link rel="stylesheet" href="assets/funding.css?v=20261008">
 </head>
 <body>
 
@@ -2104,7 +2106,7 @@
 <!-- HERO ÉS NAVIGÁCIÓ -->
 <section class="service-hero" id="hero">
   <header class="hero-nav-main">
-    <a href="index.html" class="hero-brand" aria-label="Bridge Dental Hauptseite">
+    <a href="index.html" class="hero-brand" aria-label="Bridge Dental – Startseite">
       <img src="logo-hero.png" alt="Bridge Dental" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
       <span class="hero-brand-fallback"><span class="b">bridge</span><span class="d">dental</span></span>
     </a>
@@ -2127,7 +2129,6 @@
               <li><a href="digitaler-workflow.html">Digitaler Workflow</a></li>
               <li><a href="metallfreie-keramikrestaurationen.html">Metallfreie Keramikrestaurationen</a></li>
               <li><a href="cad-cam-technologie.html" aria-current="page">CAD/CAM-Technologie</a></li>
-              <li><a href="galerie.html">Galerie</a></li>
             </ul>
           </li>
         </ul>
@@ -2153,7 +2154,6 @@
         <a href="digitaler-workflow.html">Digitaler Workflow</a>
         <a href="metallfreie-keramikrestaurationen.html">Metallfreie Keramikrestaurationen</a>
         <a href="cad-cam-technologie.html" aria-current="page">CAD/CAM-Technologie</a>
-        <a href="galerie.html">Galerie</a>
       </div>
     </div>
     <a class="hero-mobile-main" href="https://bridgedental.hu/fooldal/hirek/">BLOG</a>
@@ -2287,7 +2287,7 @@
     <div class="cam-copy">
       <h2>Eigenes digitales Produktionszentrum</h2>
       <p>Unsere eigenen CAD/CAM- und additiven Fertigungskapazitäten sind nicht nur ein technologischer Vorteil.</p>
-      <p>Dadurch bleibt der gesamte Arbeitsprozess in unserem Labor, was eine schnellere Reaktionszeit, eine kontinuierliche Qualitätskontrolle und eine flexible professionelle Zusammenarbeit gewährleistet.</p>
+      <p>Dadurch bleibt der gesamte Arbeitsprozess in unserem Labor, was eine schnellere Reaktionszeit, eine kontinuierliche Qualitätskontrolle und eine flexible fachliche Zusammenarbeit gewährleistet.</p>
       <p>Dies ist insbesondere bei komplexen implantologischen Sanierungen und Restaurationen mit hohen ästhetischen Ansprüchen wichtig.</p>
     </div>
     <div class="cam-center-image">
@@ -2336,7 +2336,7 @@
           <p>Tritt während des Pilotprojekts aufgrund eines nachweisbaren Laborfehlers eine Situation ein, die einen erneuten Patiententermin erforderlich macht, korrigieren oder fertigen wir die Arbeit neu. Zusätzlich erhalten Sie eine Gutschrift in Höhe von 150 € als Ausgleich für den zusätzlichen Behandlungsaufwand, die mit der nächsten technischen Rechnung verrechnet wird.</p>
           <p>Diese Zusage gilt ausschließlich für Arbeiten aus dem achtwöchigen Pilotprojekt und gemäß den Pilotbedingungen.</p>
         </div>
-        <div class="pilot-meta" aria-label="Zusammenfassung des Piloten">
+        <div class="pilot-meta" aria-label="Überblick über das Pilotprojekt">
           <div class="pilot-chip">
             <strong>8 Wochen</strong>
             Pilotzeitraum
@@ -2404,17 +2404,17 @@
         <div class="form-row">
           <div class="form-group">
             <label for="email">E-Mail-Adresse *</label>
-            <input type="email" id="email" name="email" placeholder="dr.kovacs@fogaszat.hu" required>
+            <input type="email" id="email" name="email" placeholder="name@zahnarztpraxis.de" required>
           </div>
           <div class="form-group">
             <label for="telefon">Telefonnummer</label>
-            <input type="tel" id="telefon" name="telefon" placeholder="+36 30 000 0000">
+            <input type="tel" id="telefon" name="telefon" placeholder="+49 / +41 …">
           </div>
         </div>
         <div class="form-group">
           <label for="targy">Wobei können wir Ihnen helfen?</label>
           <select id="targy" name="targy">
-            <option value="cad-cam-gyartas-erdeklodes" selected>Anfrage zum CAD/CAM-Technologie-Service</option>
+            <option value="cad-cam-gyartas-erdeklodes" selected>Anfrage zur CAD/CAM-Technologie</option>
             <option value="cad-cam-gyartas-pilot">Pilot-Zusammenarbeit für CAD/CAM-Technologie</option>
             <option value="egyeb">Sonstiges</option>
           </select>
@@ -2439,7 +2439,7 @@
 <!-- FOOTER -->
 <footer>
   <div class="footer-brand">
-    <img src="logo.png" alt="Bridge Dental" style="height: 32px; width: auto; filter: brightness(0) invert(1); opacity: 0.85; display: block;">
+    <a class="footer-home-link" href="index.html" aria-label="Bridge Dental – Startseite"><img src="logo.png" alt="Bridge Dental" style="height: 32px; width: auto; filter: brightness(0) invert(1); opacity: 0.85; display: block;"></a>
     <p>Budapester B2B-Dentallabor – spezialisiert auf Implantologie und Zirkonoxidarbeiten, für Praxen, Kliniken und private Zahnärzte.</p>
   </div>
   <div class="footer-col">
@@ -2451,7 +2451,6 @@
       <li><a href="digitaler-workflow.html">Digitaler Workflow</a></li>
       <li><a href="metallfreie-keramikrestaurationen.html">Metallfreie Keramikrestaurationen</a></li>
       <li><a href="cad-cam-technologie.html">CAD/CAM-Technologie</a></li>
-      <li><a href="galerie.html">Galerie</a></li>
     </ul>
   </div>
   <div class="footer-col">

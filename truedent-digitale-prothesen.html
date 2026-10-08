@@ -1956,13 +1956,15 @@
         line-height: 1.03;
       }
     }
+      /* Long localized headings must fit their column at every viewport width. */
+    h1, h2, h3 { hyphens: auto; overflow-wrap: anywhere; }
   </style>
   <link rel="canonical" href="https://rhalmaibusiness-blip.github.io/bridge-dental/truedent-digitale-prothesen.html">
   <link rel="alternate" hreflang="de" href="https://rhalmaibusiness-blip.github.io/bridge-dental/truedent-digitale-prothesen.html">
   <link rel="alternate" hreflang="hu" href="https://rhalmaibusiness-blip.github.io/bridge-dental/hu/digitalis-fogsorok.html">
   <link rel="alternate" hreflang="x-default" href="https://rhalmaibusiness-blip.github.io/bridge-dental/truedent-digitale-prothesen.html">
   <link rel="stylesheet" href="assets/language-switcher.css?v=4">
-  <link rel="stylesheet" href="assets/funding.css?v=20260924">
+  <link rel="stylesheet" href="assets/funding.css?v=20261008">
 </head>
 <body>
 
@@ -1974,7 +1976,7 @@
 <!-- HERO ÉS NAVIGÁCIÓ -->
 <section class="service-hero" id="hero">
   <header class="hero-nav-main">
-    <a href="index.html" class="hero-brand" aria-label="Bridge Dental Hauptseite">
+    <a href="index.html" class="hero-brand" aria-label="Bridge Dental – Startseite">
       <img src="logo-hero.png" alt="Bridge Dental" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
       <span class="hero-brand-fallback"><span class="b">bridge</span><span class="d">dental</span></span>
     </a>
@@ -1997,7 +1999,6 @@
               <li><a href="digitaler-workflow.html">Digitaler Workflow</a></li>
               <li><a href="metallfreie-keramikrestaurationen.html">Metallfreie Keramikrestaurationen</a></li>
               <li><a href="cad-cam-technologie.html">CAD/CAM-Technologie</a></li>
-              <li><a href="galerie.html">Galerie</a></li>
             </ul>
           </li>
         </ul>
@@ -2023,7 +2024,6 @@
         <a href="digitaler-workflow.html">Digitaler Workflow</a>
         <a href="metallfreie-keramikrestaurationen.html">Metallfreie Keramikrestaurationen</a>
         <a href="cad-cam-technologie.html">CAD/CAM-Technologie</a>
-        <a href="galerie.html">Galerie</a>
       </div>
     </div>
     <a class="hero-mobile-main" href="https://bridgedental.hu/fooldal/hirek/">BLOG</a>
@@ -2089,7 +2089,7 @@
 
       <article class="td-benefit-card reveal reveal-delay-1">
         <span class="td-benefit-number" aria-hidden="true">02</span>
-        <h3>Fortschrittliche Ästhetik von TrueVoxel™</h3>
+        <h3>Fortschrittliche Ästhetik mit TrueVoxel™</h3>
         <p>Inzisale Transluzenz, zervikale Farbverläufe und innere Strukturen ermöglichen eine besonders natürliche Ästhetik.</p>
       </article>
 
@@ -2127,7 +2127,7 @@
   <div class="td-bridge-inner">
     <article class="td-bridge-panel td-bridge-panel--light reveal">
       <h2>Warum Bridge Dental?</h2>
-      <p>Für uns ist die digitale Prothesenvorbereitung nicht nur eine neue Technologie, sondern Teil eines durchdachten Arbeitsprozesses.</p>
+      <p>Für uns ist die digitale Prothesenfertigung nicht nur eine neue Technologie, sondern Teil eines durchdachten Arbeitsprozesses.</p>
       <p>Das Stratasys TrueDent®-System, digitale Konstruktion und jahrzehntelange zahntechnische Erfahrung ermöglichen planbare, ästhetische und langfristig zuverlässige Lösungen.</p>
     </article>
 
@@ -2168,7 +2168,7 @@
           <p>Tritt während des Pilotprojekts aufgrund eines nachweisbaren Laborfehlers eine Situation ein, die einen erneuten Patiententermin erforderlich macht, korrigieren oder fertigen wir die Arbeit neu. Zusätzlich erhalten Sie eine Gutschrift in Höhe von 150 € als Ausgleich für den zusätzlichen Behandlungsaufwand, die mit der nächsten technischen Rechnung verrechnet wird.</p>
           <p>Diese Zusage gilt ausschließlich für Arbeiten aus dem achtwöchigen Pilotprojekt und gemäß den Pilotbedingungen.</p>
         </div>
-        <div class="pilot-meta" aria-label="Zusammenfassung des Piloten">
+        <div class="pilot-meta" aria-label="Überblick über das Pilotprojekt">
           <div class="pilot-chip">
             <strong>8 Wochen</strong>
             Pilotzeitraum
@@ -2236,11 +2236,11 @@
         <div class="form-row">
           <div class="form-group">
             <label for="email">E-Mail-Adresse *</label>
-            <input type="email" id="email" name="email" placeholder="dr.kovacs@fogaszat.hu" required>
+            <input type="email" id="email" name="email" placeholder="name@zahnarztpraxis.de" required>
           </div>
           <div class="form-group">
             <label for="telefon">Telefonnummer</label>
-            <input type="tel" id="telefon" name="telefon" placeholder="+36 30 000 0000">
+            <input type="tel" id="telefon" name="telefon" placeholder="+49 / +41 …">
           </div>
         </div>
         <div class="form-group">
@@ -2271,7 +2271,7 @@
 <!-- FOOTER -->
 <footer>
   <div class="footer-brand">
-    <img src="logo.png" alt="Bridge Dental" style="height: 32px; width: auto; filter: brightness(0) invert(1); opacity: 0.85; display: block;">
+    <a class="footer-home-link" href="index.html" aria-label="Bridge Dental – Startseite"><img src="logo.png" alt="Bridge Dental" style="height: 32px; width: auto; filter: brightness(0) invert(1); opacity: 0.85; display: block;"></a>
     <p>Budapester B2B-Dentallabor – spezialisiert auf Implantologie und Zirkonoxidarbeiten, für Praxen, Kliniken und private Zahnärzte.</p>
   </div>
   <div class="footer-col">
@@ -2283,7 +2283,6 @@
       <li><a href="digitaler-workflow.html">Digitaler Workflow</a></li>
       <li><a href="metallfreie-keramikrestaurationen.html">Metallfreie Keramikrestaurationen</a></li>
       <li><a href="cad-cam-technologie.html">CAD/CAM-Technologie</a></li>
-      <li><a href="galerie.html">Galerie</a></li>
     </ul>
   </div>
   <div class="footer-col">
