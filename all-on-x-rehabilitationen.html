@@ -605,243 +605,6 @@
       text-decoration: underline;
     }
 
-    /* ── PILOT CTA ── */
-    .pilot-section {
-      padding: 80px 0;
-      position: relative;
-      overflow: hidden;
-      background:
-        radial-gradient(circle at top right, rgba(224, 90, 43, 0.14), transparent 34%),
-        linear-gradient(180deg, #f6f0e8 0%, #f1e9df 100%);
-    }
-
-    .pilot-panel {
-      position: relative;
-      overflow: hidden;
-      display: grid;
-      grid-template-columns: minmax(0, 1.05fr) minmax(280px, 0.95fr);
-      gap: 32px;
-      align-items: stretch;
-      padding: 46px;
-      background:
-        linear-gradient(135deg, rgba(28, 25, 22, 0.97), rgba(28, 25, 22, 0.93)),
-        #1c1916;
-      color: #fff;
-      border-radius: 28px;
-      box-shadow: 0 32px 90px rgba(28, 25, 22, 0.22);
-      border: 1px solid rgba(255, 255, 255, 0.06);
-    }
-
-    .pilot-panel::before {
-      content: "PILOT";
-      position: absolute;
-      right: -18px;
-      bottom: 18px;
-      font-family: "Montserrat", sans-serif;
-      font-size: clamp(74px, 10vw, 132px);
-      font-weight: 900;
-      letter-spacing: -0.08em;
-      color: rgba(255, 255, 255, 0.04);
-      pointer-events: none;
-      line-height: 0.9;
-    }
-
-    .pilot-panel::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background-image:
-        linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
-      background-size: 44px 44px;
-      mask-image: linear-gradient(90deg, #000, transparent 78%);
-      pointer-events: none;
-    }
-
-    .pilot-copy,
-    .pilot-side {
-      position: relative;
-      z-index: 1;
-    }
-
-    .pilot-section h2 {
-      margin: 0;
-      font-family: 'Montserrat', sans-serif;
-      font-size: clamp(28px, 2.7vw, 40px);
-      line-height: 1.14;
-      font-weight: 900;
-      max-width: 620px;
-      color: #fff;
-    }
-
-    .pilot-section .section-copy {
-      margin: 0;
-      font-size: 17px;
-      line-height: 1.78;
-      max-width: 640px;
-      color: rgba(255, 255, 255, 0.96);
-    }
-
-    .pilot-bullets {
-      list-style: none;
-      margin: 26px 0 0;
-      padding: 0;
-      display: grid;
-      gap: 12px;
-      max-width: 680px;
-    }
-
-    .pilot-bullets li {
-      position: relative;
-      padding: 0 0 0 24px;
-      color: rgba(255, 255, 255, 0.84);
-      font-size: 14px;
-      line-height: 1.65;
-    }
-
-    .pilot-bullets strong {
-      display: block;
-      margin-bottom: 2px;
-      color: #fff;
-      font-family: "Montserrat", sans-serif;
-      font-weight: 900;
-    }
-
-    .pilot-bullets li::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 0.72em;
-      width: 8px;
-      height: 8px;
-      border-radius: 999px;
-      background: var(--coral);
-      box-shadow: 0 0 0 4px rgba(224, 90, 43, 0.14);
-      transform: translateY(-50%);
-    }
-
-    .pilot-side {
-      display: grid;
-      grid-template-rows: auto auto auto;
-      justify-items: center;
-      gap: 14px;
-      min-height: 100%;
-      padding: 28px 26px 26px;
-      border-radius: 22px;
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      backdrop-filter: blur(10px);
-    }
-
-    .pilot-risk {
-      width: min(100%, 380px);
-      padding: 20px;
-      border-radius: 18px;
-      border: 1px solid rgba(240, 122, 75, 0.42);
-      background: rgba(224, 90, 43, 0.12);
-      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
-    }
-
-    .pilot-risk h3 {
-      font-family: 'Montserrat', sans-serif;
-      margin: 0 0 12px;
-      color: #fff;
-      font-size: 17px;
-      line-height: 1.35;
-      font-weight: 900;
-    }
-
-    .pilot-risk p {
-      margin: 0;
-      color: rgba(255, 255, 255, 0.78);
-      font-size: 13px;
-      line-height: 1.65;
-    }
-
-    .pilot-risk p + p {
-      margin-top: 10px;
-      color: rgba(255, 255, 255, 0.58);
-      font-size: 12px;
-    }
-
-    .pilot-cta {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      border: 1px solid transparent;
-      border-radius: 6px;
-      background: var(--coral);
-      color: #fff;
-      text-decoration: none;
-      text-align: center;
-      font-weight: 800;
-      line-height: 1.4;
-      transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
-      width: min(100%, 320px);
-      min-height: 64px;
-      padding: 0 28px;
-      font-size: 15px;
-      letter-spacing: 0.01em;
-      box-shadow: 0 18px 44px rgba(224, 90, 43, 0.26);
-      align-self: end;
-    }
-
-    .pilot-meta {
-      width: min(100%, 320px);
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 10px;
-      align-content: start;
-      align-self: center;
-    }
-
-    .pilot-chip {
-      padding: 14px 14px 13px;
-      border-radius: 16px;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      background: rgba(255, 255, 255, 0.05);
-      color: rgba(255, 255, 255, 0.86);
-      font-size: 12px;
-      line-height: 1.45;
-      text-align: center;
-    }
-
-    .pilot-chip strong {
-      display: block;
-      margin-bottom: 4px;
-      color: #fff;
-      font-family: "Montserrat", sans-serif;
-      font-size: 15px;
-      font-weight: 900;
-    }
-
-    .pilot-shell { width: min(1180px, calc(100% - 40px)); margin: 0 auto; }
-    .pilot-label {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 14px;
-      font-size: 11px;
-      font-weight: 900;
-      color: var(--coral);
-      text-transform: uppercase;
-    }
-    .pilot-label::before { content: ""; width: 28px; height: 2px; background: currentColor; }
-    .pilot-cta:hover { background: var(--coral-light); transform: translateY(-2px); }
-    .pilot-cta:focus-visible { outline: 3px solid #fff; outline-offset: 4px; }
-    @media (max-width: 1040px) {
-      .pilot-panel { grid-template-columns: 1fr; gap: 24px; padding: 34px; }
-      .pilot-side { justify-items: center; }
-      .pilot-risk { width: 100%; }
-      .pilot-meta { width: 100%; }
-    }
-    @media (max-width: 768px) {
-      .pilot-section { padding: 56px 0; }
-      .pilot-panel { padding: 20px; border-radius: 22px; }
-      .pilot-side { padding: 18px; }
-      .pilot-chip { padding: 12px 8px; }
-    }
-
     /* ── FOOTER ── */
     footer {
       background: var(--charcoal);
@@ -888,6 +651,7 @@
       z-index: 1;
       max-width: 1360px;
       min-height: 850px;
+      padding-top: 26px;
       margin: 0 auto;
     }
 
@@ -933,9 +697,9 @@
     }
 
     .digital-workflow-card {
-      position: absolute;
+      position: relative;
       z-index: 4;
-      top: 26px;
+      top: 0;
       left: 0;
       width: 55%;
       min-height: 790px;
@@ -966,7 +730,7 @@
       z-index: 2;
       max-width: 560px;
       font-family: 'Montserrat', sans-serif;
-      font-size: clamp(36px, 4vw, 58px);
+      font-size: clamp(32px, 3.1vw, 46px);
       font-weight: 800;
       line-height: 1.1;
       letter-spacing: -2px;
@@ -1209,7 +973,7 @@
     .partner-reasons-collage {
       display: grid;
       grid-template-columns: 1.06fr 0.94fr;
-      grid-template-rows: 380px 205px 205px 205px 150px;
+      grid-template-rows: minmax(380px, 1.85fr) repeat(3, minmax(205px, 1fr)) minmax(150px, 0.73fr);
       min-width: 0;
       background: #211d19;
     }
@@ -2187,8 +1951,48 @@
         font-size: 13px;
       }
     }
-      /* Long localized headings must fit their column at every viewport width. */
+    /* Content-led sizing keeps the longer bilingual copy inside its panels. */
     h1, h2, h3 { hyphens: auto; overflow-wrap: anywhere; }
+    .service-hero-eyebrow {
+      margin-bottom: 18px;
+      color: var(--coral-light);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1.8px;
+    }
+    .digital-workflow-details {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 28px;
+      max-width: 1360px;
+      margin: 48px auto 0;
+    }
+    .digital-workflow-detail {
+      min-width: 0;
+      padding: 32px;
+      border-top: 2px solid var(--coral);
+      border-radius: 0 0 16px 16px;
+      background: rgba(255, 254, 252, 0.8);
+    }
+    .digital-workflow-detail h3 {
+      margin-bottom: 16px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(20px, 1.8vw, 25px);
+      line-height: 1.3;
+      color: var(--charcoal);
+    }
+    .digital-workflow-detail p,
+    .partner-reasons-intro { font-size: 16px; line-height: 1.75; color: #59534d; }
+    .partner-reasons-intro { margin-bottom: 28px; }
+    .partner-reason-number { color: var(--coral); white-space: nowrap; }
+    .restoration-concept-cta { max-width: 100%; text-align: center; }
+    .btn-form-submit { white-space: normal; overflow-wrap: anywhere; }
+    .form-intro > p + p { margin-top: -18px; }
+    @media (max-width: 768px) {
+      .digital-workflow-inner { padding-top: 0; }
+      .digital-workflow-details { grid-template-columns: 1fr; gap: 24px; margin-top: 32px; }
+      .digital-workflow-detail { padding: 26px; }
+    }
   </style>
   <link rel="canonical" href="https://rhalmaibusiness-blip.github.io/bridge-dental/all-on-x-rehabilitationen.html">
   <link rel="alternate" hreflang="de" href="https://rhalmaibusiness-blip.github.io/bridge-dental/all-on-x-rehabilitationen.html">
@@ -2271,8 +2075,9 @@
         <span class="breadcrumb-sep">/</span>
         <span class="breadcrumb-current">All-on-X-Rehabilitationen</span>
       </div>
-      <h1 class="service-hero-title">All-on-X-Rehabilitationen</h1>
-      <p class="service-hero-subtitle">Mit digitaler Planung und präziser Laborarbeit unterstützen wir implantatgetragene Full-Arch-Versorgungen.</p>
+      <p class="service-hero-eyebrow">FULL-ARCH / ALL-ON-X</p>
+      <h1 class="service-hero-title">Zahntechnischer Rückhalt für komplexe implantologische Rehabilitationen.</h1>
+      <p class="service-hero-subtitle">Von der Planung bis zur definitiven Restauration unterstützen wir implantatgetragene Full-Arch-Versorgungen mit einem abgestimmten digitalen Workflow und eigener Fertigung.</p>
     </div>
 
     <div class="service-hero-media">
@@ -2295,14 +2100,23 @@
       <img class="digital-workflow-icon" src="assets/workflow-tooth-icon.svg" alt="" aria-hidden="true">
       <div class="digital-workflow-title-rule" aria-hidden="true"></div>
       <img class="digital-workflow-dots" src="assets/workflow-dot-pattern.svg" alt="" aria-hidden="true">
-      <h2>Digitaler <span>Workflow</span><br>für planbare Ergebnisse</h2>
+      <h2>Ein abgestimmter digitaler <span>Workflow</span> von der Planung bis zur definitiven Restauration</h2>
       <div class="digital-workflow-path" aria-hidden="true"></div>
       <div class="digital-workflow-copy">
-        <p>Bei modernen Full-Arch-Rehabilitationen geht es um weit mehr als die reine Herstellung einer Restauration. Grundlage des Erfolgs ist ein klar strukturierter digitaler Workflow, in dem alle Schritte von der Diagnose bis zur definitiven Versorgung präzise aufeinander abgestimmt sind.</p>
-        <p>Unser Labor arbeitet in einem offenen digitalen System, ist mit den gängigsten Intraoralscannern kompatibel und unterstützt die volldigitale Kommunikation zwischen Praxis und Labor.</p>
+        <p>Bei einer Full-Arch-Rehabilitation sind schon vor der Planung die richtigen Informationen entscheidend für ein präzises Ergebnis. Deshalb prüfen wir die eingehenden Daten und stimmen das Behandlungskonzept ab. Anschließend entstehen Planung, Prototyp und definitive Restauration in einem aufeinander aufbauenden digitalen Workflow.</p>
       </div>
     </div>
 
+  </div>
+  <div class="digital-workflow-details">
+    <article class="digital-workflow-detail reveal">
+      <h3>Offene digitale Zusammenarbeit</h3>
+      <p>Wir können Daten aus den unterschiedlichen digitalen Systemen der Praxen verarbeiten. Vor der Planung prüfen wir die eingehenden Informationen und stimmen offene Fragen bei Bedarf mit dem behandelnden Zahnarzt ab.</p>
+    </article>
+    <article class="digital-workflow-detail reveal">
+      <h3>Die erforderlichen Planungsinformationen</h3>
+      <p>Bei Full-Arch-Versorgungen müssen verschiedene klinische und digitale Informationen aufeinander abgestimmt werden. Wir bewerten die Scandaten gemeinsam mit Bissinformationen, Fotos, Videos sowie ästhetischen und funktionellen Parametern.</p>
+    </article>
   </div>
 </section>
 
@@ -2313,19 +2127,18 @@
       <article class="rehab-options-card">
         <h3>Restaurationsmöglichkeiten</h3>
         <div class="rehab-card-rule" aria-hidden="true"></div>
-        <p>Je nach klinischer Anforderung fertigen wir unterschiedliche All-on-X-Lösungen:</p>
+        <p>Abgestimmt auf die klinische Situation und das gewählte Restaurationskonzept fertigen wir unterschiedliche Full-Arch-Lösungen:</p>
         <ul>
-          <li>monolithische Full-Arch-Restaurationen aus Zirkonoxid,</li>
-          <li>Restaurationen auf Titanbasen (Ti-Base),</li>
-          <li>Zirkonoxidrestaurationen auf Titan-iBars,</li>
-          <li>Toronto Bridges,</li>
-          <li>PMMA- und weitere provisorische Restaurationen,</li>
-          <li>individuelle implantatgetragene Brücken und Full-Arch-Versorgungen.</li>
+          <li>monolithische Vollzirkonoxidrestaurationen</li>
+          <li>Restaurationen auf Titanbasen (Ti-Base)</li>
+          <li>Zirkonoxidrestaurationen auf Titan-iBars</li>
+          <li>Toronto-Bridge-Lösungen</li>
+          <li>provisorische PMMA-Restaurationen</li>
         </ul>
       </article>
 
       <aside class="rehab-principle-card">
-        <p>Jeder Fall wird individuell auf die klinische Situation, das Implantatsystem und die ästhetischen Anforderungen abgestimmt.</p>
+        <p>Das passende Restaurationskonzept wählen wir in gemeinsamer Abstimmung mit dem behandelnden Zahnarzt aus.</p>
         <div class="rehab-card-rule" aria-hidden="true"></div>
       </aside>
     </div>
@@ -2389,7 +2202,9 @@
   </div>
 
   <div class="partner-reasons-content reveal">
-    <h2>Warum entscheiden sich<br>unsere Partner für uns?</h2>
+    <div class="section-label">WARUM BRIDGE DENTAL?</div>
+    <h2>Komplexe Full-Arch-Versorgungen mit abgestimmter fachlicher Unterstützung.</h2>
+    <p class="partner-reasons-intro">Bei implantatgetragenen Full-Arch-Rehabilitationen sind präzise Informationen, gemeinsame Planung und ein abgestimmter Fertigungsprozess besonders wichtig.</p>
 
     <div class="partner-reasons-list">
       <article class="partner-reason-card">
@@ -2398,8 +2213,8 @@
         </div>
         <div class="partner-reason-divider" aria-hidden="true"></div>
         <div class="partner-reason-copy">
-          <h3>Präzises digitales Design</h3>
-          <p>Der digitale Workflow ermöglicht eine präzisere Planung und einen reproduzierbaren Fertigungsablauf.</p>
+          <h3><span class="partner-reason-number">01 –</span> Gemeinsame Planung</h3>
+          <p>Bei komplexen Fällen prüfen wir vor der Fertigung die verfügbaren Informationen und stimmen uns bei Bedarf mit dem behandelnden Zahnarzt ab.</p>
         </div>
       </article>
 
@@ -2409,8 +2224,8 @@
         </div>
         <div class="partner-reason-divider" aria-hidden="true"></div>
         <div class="partner-reason-copy">
-          <h3>Hochpräzise Fertigung</h3>
-          <p>Die Restaurationen entstehen in unserem eigenen CAD/CAM- und additiven Fertigungszentrum mit modernen Fräs- und 3D-Drucktechnologien.</p>
+          <h3><span class="partner-reason-number">02 –</span> Eigene digitale Fertigung</h3>
+          <p>Planung und Fertigung der Restaurationen erfolgen in unserem eigenen digitalen System. So lassen sich die einzelnen Schritte des Workflows intern kontrollieren.</p>
         </div>
       </article>
 
@@ -2420,8 +2235,8 @@
         </div>
         <div class="partner-reason-divider" aria-hidden="true"></div>
         <div class="partner-reason-copy">
-          <h3>Hoher ästhetischer Anspruch</h3>
-          <p>Mit Hilfe mehrschichtiger Zirkonoxidmaterialien, natürlicher Morphologie und einzigartiger Charakterisierung schaffen wir Restaurationen, die sowohl funktionell als auch ästhetisch einen hohen Standard darstellen.</p>
+          <h3><span class="partner-reason-number">03 –</span> Funktion und Ästhetik im Einklang</h3>
+          <p>Bei der Gestaltung der Restauration berücksichtigen wir die biomechanischen Anforderungen, die verfügbaren Platzverhältnisse und die ästhetischen Gesichtspunkte gleichermaßen.</p>
         </div>
       </article>
 
@@ -2431,8 +2246,8 @@
         </div>
         <div class="partner-reason-divider" aria-hidden="true"></div>
         <div class="partner-reason-copy">
-          <h3>Planbare Zusammenarbeit</h3>
-          <p>Der gut strukturierte digitale Workflow, die transparente Kommunikation und die konsequente Qualitätssicherung unterstützen effiziente Praxisabläufe.</p>
+          <h3><span class="partner-reason-number">04 –</span> Planbare Zusammenarbeit</h3>
+          <p>Transparente Arbeitsabläufe, direkte fachliche Kommunikation und konsequente Qualitätskontrolle unterstützen die Umsetzung jedes Falls.</p>
         </div>
       </article>
     </div>
@@ -2446,58 +2261,14 @@
     <h2 class="reveal">Das passende<br><span>Restaurationskonzept</span><br>auswählen</h2>
     <div class="restoration-concept-heading-rule reveal" aria-hidden="true"></div>
 
-    <p class="restoration-concept-copy reveal">Nicht jede Full-Arch-Rehabilitation erfordert dieselbe Lösung. Die Art der Restauration sollte immer anhand der Position der Implantate, der biomechanischen Anforderungen, des verfügbaren Platzes, der ästhetischen Erwartungen des Patienten und der langfristigen Erhaltungsfähigkeit bestimmt werden.</p>
+    <p class="restoration-concept-copy reveal">Nicht jede Full-Arch-Rehabilitation erfordert dieselbe restaurative Lösung.</p>
 
-    <p class="restoration-concept-copy reveal reveal-delay-1">Die Erfahrung unseres Labors umfasst verschiedene Full-Arch-Konzepte – von monolithischen Zirkonoxidrestaurationen bis hin zu Premiumlösungen auf Basis von Titan-iBars – sodass wir gemeinsam mit unseren Partnern die Restauration auswählen können, die am besten zur jeweiligen klinischen Situation passt.</p>
+    <p class="restoration-concept-copy reveal">Bei der Auswahl der passenden Konstruktion berücksichtigen wir die Position der Implantate, den verfügbaren prothetischen Raum, die biomechanischen Anforderungen sowie funktionelle und ästhetische Gesichtspunkte.</p>
+
+    <p class="restoration-concept-copy reveal">Mögliche Restaurationskonzepte stimmen wir bereits in der Planungsphase mit dem behandelnden Zahnarzt ab. Wir unterstützen ihn fachlich dabei, die für die jeweilige klinische Situation geeignete Konstruktion auszuwählen.</p>
 
     <div class="restoration-concept-cta-wrap reveal reveal-delay-2">
-      <a class="restoration-concept-cta" href="#kapcsolat">Starten Sie eine Zusammenarbeit</a>
-    </div>
-  </div>
-</section>
-
-<!-- PILOT CTA -->
-<section class="pilot-section" id="pilot">
-  <div class="pilot-shell">
-    <div class="pilot-panel reveal">
-      <div class="pilot-copy">
-        <div class="pilot-label">Pilot-Zusammenarbeit</div>
-        <h2>Entscheiden Sie nicht nach Versprechen. Testen Sie die Zusammenarbeit anhand realer Fälle.</h2>
-        <p class="section-copy" style="margin-top: 22px;">Die Wahl eines neuen Laborpartners ist eine Vertrauensentscheidung. Deshalb erwarten wir nicht, dass Sie sich bereits nach dem ersten Gespräch langfristig festlegen.</p>
-        <p class="section-copy" style="margin-top: 12px;">Im achtwöchigen Pilotprojekt erleben Sie anhand von drei bis fünf realen Fällen, wie fachliche Kommunikation, digitale Planung, Fertigung, Problemlösung und internationale Logistik bei uns zusammenspielen.</p>
-        <ul class="pilot-bullets">
-          <li><strong>Fachliche Abstimmung auf Deutsch</strong>Direkte Kommunikation mit einem fest zugeordneten Zahntechniker.</li>
-          <li><strong>Digitale Fallberatung</strong>Bei komplexen Arbeiten prüfen wir die eingehenden Daten und stimmen uns bei Bedarf vor Fertigungsbeginn mit Ihnen ab.</li>
-          <li><strong>Korrekturen und Problemlösung</strong>Wenn eine Änderung erforderlich ist, reagieren wir zügig und korrigieren oder fertigen die Arbeit bei Bedarf neu.</li>
-          <li><strong>Organisierte Logistik für CH und DE</strong>Wir übernehmen die Organisation des Hin- und Rückversands.</li>
-        </ul>
-      </div>
-      <div class="pilot-side">
-        <div class="pilot-risk">
-          <h3>Im Pilotzeitraum übernehmen wir einen Teil des Risikos</h3>
-          <p>Tritt während des Pilotprojekts aufgrund eines nachweisbaren Laborfehlers eine Situation ein, die einen erneuten Patiententermin erforderlich macht, korrigieren oder fertigen wir die Arbeit neu. Zusätzlich erhalten Sie eine Gutschrift in Höhe von 150 € als Ausgleich für den zusätzlichen Behandlungsaufwand, die mit der nächsten technischen Rechnung verrechnet wird.</p>
-          <p>Diese Zusage gilt ausschließlich für Arbeiten aus dem achtwöchigen Pilotprojekt und gemäß den Pilotbedingungen.</p>
-        </div>
-        <div class="pilot-meta" aria-label="Überblick über das Pilotprojekt">
-          <div class="pilot-chip">
-            <strong>8 Wochen</strong>
-            Pilotzeitraum
-          </div>
-          <div class="pilot-chip">
-            <strong>3–5 Fälle</strong>
-            reale klinische Arbeiten
-          </div>
-          <div class="pilot-chip">
-            <strong>DE</strong>
-            fachliche Kommunikation
-          </div>
-          <div class="pilot-chip">
-            <strong>CH / DE</strong>
-            organisierte Logistik
-          </div>
-        </div>
-        <a class="pilot-cta" href="#kapcsolat">Pilotberatung anfragen</a>
-      </div>
+      <a class="restoration-concept-cta" href="#kapcsolat">FACHGESPRÄCH ANFRAGEN</a>
     </div>
   </div>
 </section>
@@ -2507,8 +2278,9 @@
   <div class="form-inner reveal">
     <div class="form-intro">
       <div class="section-label">Kontaktaufnahme</div>
-      <h2>Kontaktieren Sie uns.</h2>
-      <p>Schreiben Sie uns zu Ihrer All-on-X-Versorgung. Unser Team meldet sich zeitnah bei Ihnen.</p>
+      <h2>Sie haben einen komplexen Full-Arch-Fall?</h2>
+      <p>Lassen Sie uns den Fall und die Restaurationsmöglichkeiten in einem kurzen Fachgespräch besprechen.</p>
+      <p>Schreiben Sie uns. Ein Mitglied unseres Teams wird sich zeitnah bei Ihnen melden.</p>
       <div class="form-contact-items">
         <div class="form-contact-item">
           <div class="form-contact-icon">
@@ -2557,7 +2329,6 @@
           <label for="targy">Wobei können wir Ihnen helfen?</label>
           <select id="targy" name="targy">
             <option value="full-arch-erdeklodes" selected>Anfrage zu All-on-X-Rehabilitationen</option>
-            <option value="full-arch-pilot">Pilot-Zusammenarbeit für Full-Arch-Versorgungen</option>
             <option value="egyeb">Sonstiges</option>
           </select>
         </div>
@@ -2570,7 +2341,7 @@
             <input type="checkbox" name="gdpr-consent" required>
             <span>Ich habe die <a href="#">Datenschutzhinweise</a> gelesen und stimme zu, dass Bridge Dental die im Formular angegebenen Daten zur Beantwortung meiner Anfrage verarbeitet.</span>
           </label>
-          <button type="submit" class="btn-form-submit">Nachricht senden</button>
+          <button type="submit" class="btn-form-submit">FACHGESPRÄCH ANFRAGEN</button>
         </div>
       </form>
     </div>

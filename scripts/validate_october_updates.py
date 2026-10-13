@@ -91,6 +91,72 @@ required = {
         "Ein Mitglied unseres Teams wird sich mit Ihnen in Verbindung setzen.",
         "Allgemeine Zusammenarbeit",
     ],
+    "hu/full-arch-implantatumos-rehabilitaciok.html": [
+        "FULL-ARCH / ALL-ON-X",
+        "Fogtechnikai háttér komplex implantációs rehabilitációkhoz.",
+        "A tervezéstől a végleges restaurációig összehangolt digitális munkafolyamattal és saját gyártási háttérrel támogatjuk a teljes íves implantációs eseteket.",
+        "Összehangolt digitális workflow a tervezéstől a végleges restaurációig",
+        "Egy Full-Arch rehabilitációnál a pontos végeredményhez már a tervezés előtt megfelelő információkra van szükség. Ezért a beérkező adatokat ellenőrizzük, a kezelési koncepciót egyeztetjük, majd a tervezés, a prototípus és a végleges restauráció egymásra épülő digitális munkafolyamatban készül.",
+        "Nyitott digitális együttműködés",
+        "A rendelők különböző digitális rendszereiből érkező adatokkal is tudunk dolgozni. A beérkező információkat a tervezés előtt ellenőrizzük, és szükség esetén egyeztetjük a kezelőorvossal.",
+        "A tervezéshez szükséges információk",
+        "Full-Arch eseteknél a tervezés többféle klinikai és digitális információ összehangolására épül. A scanadatokat a harapási információkkal, fotókkal, videókkal, valamint az esztétikai és funkcionális paraméterekkel együtt értékeljük.",
+        "A klinikai helyzetnek és a választott restaurációs koncepciónak megfelelően többféle Full-Arch megoldást készítünk:",
+        "monolitikus teljes cirkónium restaurációk", "titánbázisú (Ti-Base) restaurációk",
+        "titán iBar-ra épülő cirkónium restaurációk", "Toronto Bridge megoldások", "PMMA ideiglenes restaurációk",
+        "A megfelelő restaurációs koncepció kiválasztását a kezelőorvossal közösen egyeztetjük.",
+        "MIÉRT BRIDGE DENTAL?", "Komplex Full-Arch esetek, összehangolt szakmai háttérrel.",
+        "A teljes íves implantációs rehabilitációknál a pontos információ, a közös tervezés és az összehangolt gyártási folyamat különösen fontos.",
+        "01 – Közös tervezés",
+        "Komplex eseteknél a gyártás előtt ellenőrizzük a rendelkezésre álló információkat, és szükség esetén egyeztetünk a kezelőorvossal.",
+        "02 – Saját digitális gyártás",
+        "A restaurációk tervezése és gyártása saját digitális rendszerünkben történik, így a munkafolyamat egyes lépései házon belül kontrollálhatók.",
+        "03 – Funkció és esztétika együtt",
+        "A restauráció kialakításánál a biomechanikai követelményeket, a rendelkezésre álló helyet és az esztétikai szempontokat egyaránt figyelembe vesszük.",
+        "04 – Kiszámítható együttműködés",
+        "Átlátható munkafolyamat, közvetlen szakmai kommunikáció és következetes minőségellenőrzés támogatja az esetek végigvitelét.",
+        "A megfelelő restaurációs koncepció kiválasztása",
+        "Nem minden Full-Arch rehabilitáció igényel azonos restaurációs megoldást.",
+        "A megfelelő konstrukció kiválasztásánál figyelembe vesszük az implantátumok helyzetét, a rendelkezésre álló protetikai teret, a biomechanikai követelményeket, valamint a funkcionális és esztétikai szempontokat.",
+        "A lehetséges restaurációs koncepciókat már a tervezési szakaszban egyeztetjük a kezelőorvossal, és szakmai támogatást nyújtunk az adott klinikai helyzethez megfelelő konstrukció kiválasztásához.",
+        "Komplex Full-Arch esete van?",
+        "Beszéljük át az esetet és a restaurációs lehetőségeket egy rövid szakmai egyeztetésen.",
+        "Írjon nekünk, munkatársunk hamarosan felveszi Önnel a kapcsolatot.",
+        "KÉREK EGY SZAKMAI EGYEZTETÉST",
+    ],
+    "all-on-x-rehabilitationen.html": [
+        "FULL-ARCH / ALL-ON-X",
+        "Zahntechnischer Rückhalt für komplexe implantologische Rehabilitationen.",
+        "Von der Planung bis zur definitiven Restauration unterstützen wir implantatgetragene Full-Arch-Versorgungen mit einem abgestimmten digitalen Workflow und eigener Fertigung.",
+        "Ein abgestimmter digitaler Workflow von der Planung bis zur definitiven Restauration",
+        "Bei einer Full-Arch-Rehabilitation sind schon vor der Planung die richtigen Informationen entscheidend für ein präzises Ergebnis. Deshalb prüfen wir die eingehenden Daten und stimmen das Behandlungskonzept ab. Anschließend entstehen Planung, Prototyp und definitive Restauration in einem aufeinander aufbauenden digitalen Workflow.",
+        "Offene digitale Zusammenarbeit",
+        "Wir können Daten aus den unterschiedlichen digitalen Systemen der Praxen verarbeiten. Vor der Planung prüfen wir die eingehenden Informationen und stimmen offene Fragen bei Bedarf mit dem behandelnden Zahnarzt ab.",
+        "Die erforderlichen Planungsinformationen",
+        "Bei Full-Arch-Versorgungen müssen verschiedene klinische und digitale Informationen aufeinander abgestimmt werden. Wir bewerten die Scandaten gemeinsam mit Bissinformationen, Fotos, Videos sowie ästhetischen und funktionellen Parametern.",
+        "Abgestimmt auf die klinische Situation und das gewählte Restaurationskonzept fertigen wir unterschiedliche Full-Arch-Lösungen:",
+        "monolithische Vollzirkonoxidrestaurationen", "Restaurationen auf Titanbasen (Ti-Base)",
+        "Zirkonoxidrestaurationen auf Titan-iBars", "Toronto-Bridge-Lösungen", "provisorische PMMA-Restaurationen",
+        "Das passende Restaurationskonzept wählen wir in gemeinsamer Abstimmung mit dem behandelnden Zahnarzt aus.",
+        "WARUM BRIDGE DENTAL?", "Komplexe Full-Arch-Versorgungen mit abgestimmter fachlicher Unterstützung.",
+        "Bei implantatgetragenen Full-Arch-Rehabilitationen sind präzise Informationen, gemeinsame Planung und ein abgestimmter Fertigungsprozess besonders wichtig.",
+        "01 – Gemeinsame Planung",
+        "Bei komplexen Fällen prüfen wir vor der Fertigung die verfügbaren Informationen und stimmen uns bei Bedarf mit dem behandelnden Zahnarzt ab.",
+        "02 – Eigene digitale Fertigung",
+        "Planung und Fertigung der Restaurationen erfolgen in unserem eigenen digitalen System. So lassen sich die einzelnen Schritte des Workflows intern kontrollieren.",
+        "03 – Funktion und Ästhetik im Einklang",
+        "Bei der Gestaltung der Restauration berücksichtigen wir die biomechanischen Anforderungen, die verfügbaren Platzverhältnisse und die ästhetischen Gesichtspunkte gleichermaßen.",
+        "04 – Planbare Zusammenarbeit",
+        "Transparente Arbeitsabläufe, direkte fachliche Kommunikation und konsequente Qualitätskontrolle unterstützen die Umsetzung jedes Falls.",
+        "Das passende Restaurationskonzept auswählen",
+        "Nicht jede Full-Arch-Rehabilitation erfordert dieselbe restaurative Lösung.",
+        "Bei der Auswahl der passenden Konstruktion berücksichtigen wir die Position der Implantate, den verfügbaren prothetischen Raum, die biomechanischen Anforderungen sowie funktionelle und ästhetische Gesichtspunkte.",
+        "Mögliche Restaurationskonzepte stimmen wir bereits in der Planungsphase mit dem behandelnden Zahnarzt ab. Wir unterstützen ihn fachlich dabei, die für die jeweilige klinische Situation geeignete Konstruktion auszuwählen.",
+        "Sie haben einen komplexen Full-Arch-Fall?",
+        "Lassen Sie uns den Fall und die Restaurationsmöglichkeiten in einem kurzen Fachgespräch besprechen.",
+        "Schreiben Sie uns. Ein Mitglied unseres Teams wird sich zeitnah bei Ihnen melden.",
+        "FACHGESPRÄCH ANFRAGEN",
+    ],
 }
 for path, phrases in required.items():
     html = source(path)
@@ -103,6 +169,24 @@ for path, phrases in required.items():
     for script in re.findall(r"<script(?![^>]*\bsrc=)[^>]*>(.*?)</script>", html, re.S):
         result = subprocess.run(["node", "-e", "new(require('vm').Script)(require('fs').readFileSync(0,'utf8'))"], input=script, text=True, capture_output=True)
         check(result.returncode == 0, f"{path}: JavaScript syntax: {result.stderr}")
+
+for name, cta in [
+    ('hu/full-arch-implantatumos-rehabilitaciok.html', 'KÉREK EGY SZAKMAI EGYEZTETÉST'),
+    ('all-on-x-rehabilitationen.html', 'FACHGESPRÄCH ANFRAGEN'),
+]:
+    html = source(name)
+    check('pilot' not in html.lower(), f'{name}: pilot offer, option and obsolete styles removed')
+    workflow = section(html, 'class="digital-workflow"')
+    check(len(re.findall(r'<article\b[^>]*class="digital-workflow-detail(?:\s|\")', workflow)) == 2, f'{name}: two workflow detail cards')
+    options = section(html, 'id="rehabilitacios-lehetosegek"')
+    check(len(re.findall(r'<li\b', options)) == 5, f'{name}: exactly five restoration options')
+    reasons = section(html, 'id="miert-valasztanak-partnereink"')
+    check(re.findall(r'class="partner-reason-number">(.*?)</span>', reasons) == ['01 –', '02 –', '03 –', '04 –'], f'{name}: four reasons in requested order')
+    concept = section(html, 'id="restauracios-koncepcio"')
+    check(concept.count('class="restoration-concept-copy') == 3, f'{name}: three concept paragraphs')
+    check(f'href="#kapcsolat">{cta}</a>' in concept, f'{name}: consultation CTA links to existing contact section')
+    check(re.search(r'<button\b[^>]*class="btn-form-submit"[^>]*>(.*?)</button>', html).group(1) == cta, f'{name}: updated submit label')
+    check(html.index('id="restauracios-koncepcio"') < html.index('id="kapcsolat"') < html.index('<footer'), f'{name}: consultation section at end')
 
 for name in ["index.html", "hu/index.html"]:
     html = source(name)
