@@ -182,6 +182,13 @@ for name, cta in [
     check(len(re.findall(r'<li\b', options)) == 5, f'{name}: exactly five restoration options')
     reasons = section(html, 'id="miert-valasztanak-partnereink"')
     check(re.findall(r'class="partner-reason-number">(.*?)</span>', reasons) == ['01 –', '02 –', '03 –', '04 –'], f'{name}: four reasons in requested order')
+    expected_photos = ['partner-01-0994.webp', 'partner-02-0907.webp', 'partner-03-0517.webp', 'partner-04-1786.webp', 'partner-05-0008.webp', 'partner-06-1294.webp']
+    check(re.findall(r'src="(?:\.\./)?assets/all-on-x/([^"]+)"', reasons) == expected_photos, f'{name}: all six original photographs, once each, in approved order')
+    check('assets/all-on-x/partner-reasons.css?v=20261013' in html, f'{name}: shared approved layout stylesheet')
+    check('aria-labelledby="partner-reasons-title"' in reasons and 'id="partner-reasons-title"' in reasons, f'{name}: named benefits section')
+    check(reasons.index('class="partner-reasons-visual"') < reasons.index('class="partner-reasons-content"') < reasons.index('class="partner-collage-benefits"'), f'{name}: visual column, content column, then full-width proof strip')
+    check(len(re.findall(r'class="partner-collage-benefit"', reasons)) == 4, f'{name}: four original proof labels')
+    check(reasons.count('class="partner-collage-statement"') == 1 and '<figcaption' not in reasons, f'{name}: original statement moved below the pictures')
     concept = section(html, 'id="restauracios-koncepcio"')
     check(concept.count('class="restoration-concept-copy') == 3, f'{name}: three concept paragraphs')
     check(f'href="#kapcsolat">{cta}</a>' in concept, f'{name}: consultation CTA links to existing contact section')
