@@ -1753,18 +1753,21 @@
   <link rel="stylesheet" href="../assets/language-switcher.css?v=4">
   <link rel="stylesheet" href="../assets/contact-portraits.css?v=20260924">
   <link rel="stylesheet" href="../assets/funding.css?v=20261008">
+  <link rel="stylesheet" href="../assets/partnership-hero.css?v=20261015">
 </head>
-<body>
+<body class="partnership-landing">
 
-<nav class="bd-language-switcher" aria-label="Sprachauswahl">
-  <a href="index.html" lang="de" hreflang="de" aria-current="page"><img src="../assets/flags/de.svg" alt="">DE</a>
-  <a href="../hu/egyuttmukodes/index.html" lang="hu" hreflang="hu"><img src="../assets/flags/hu.svg" alt="">HU</a>
-</nav>
 <header class="topbar">
     <a class="brand" href="#top" aria-label="Bridge Dental">
       <img src="../assets/logo.png" alt="Bridge Dental">
     </a>
-    <a class="btn btn-primary" href="#urlap">Beratung anfragen</a>
+    <div class="topbar-controls">
+      <nav class="bd-language-switcher" aria-label="Sprachauswahl">
+        <a href="index.html" lang="de" hreflang="de" aria-current="page"><img src="../assets/flags/de.svg" alt="">DE</a>
+        <a href="../hu/egyuttmukodes/index.html" lang="hu" hreflang="hu"><img src="../assets/flags/hu.svg" alt="">HU</a>
+      </nav>
+      <a class="btn btn-primary" href="#urlap">Beratung anfragen</a>
+    </div>
   </header>
 
   <main id="top">
@@ -1772,17 +1775,17 @@
       <div class="shell hero-grid">
         <div class="hero-copy reveal">
           <div class="eyebrow">Für Schweizer und deutsche Zahnarztpraxen</div>
-          <h1>
-            <span class="h1-line">Digitale Zahntechnik</span>
-            <span class="h1-line">für komplexe Fälle in</span>
-            <span class="h1-line">Deutschland und der Schweiz.</span>
-          </h1>
+          <h1>Digitale Zahntechnik für komplexe Fälle in Deutschland und der Schweiz.</h1>
           <p class="hero-lead">Implantologische und ästhetische Restaurationen – digital im eigenen Labor gefertigt, mit fachlicher Abstimmung auf Deutsch und organisierter internationaler Logistik.</p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="#urlap">Partnerschaftsberatung anfragen</a>
             <a class="btn btn-ghost" href="#szolgaltatasok">Leistungen ansehen</a>
           </div>
         </div>
+        <picture class="hero-photo">
+          <source media="(max-width: 800px)" srcset="../assets/partnership-hero-69881-small.webp">
+          <img src="../assets/partnership-hero-69881.webp" width="2560" height="1057" alt="Eine Zahntechnikerin bearbeitet Zahnersatz mit einem Handstück im Bridge Dental Labor." fetchpriority="high">
+        </picture>
         <aside class="trust-strip reveal" aria-label="Grundlagen einer verlässlichen Zusammenarbeit">
           <div class="trust-item">
             <div class="trust-icon" aria-hidden="true">
@@ -2087,7 +2090,7 @@
         </div>
         <div class="services-grid">
           <a class="service-card reveal" href="../all-on-x-rehabilitationen.html">
-            <img src="../assets/full-arch-implantatumos-rehabilitacio-all-on-x.webp" alt="Rehabilitation des gesamten Zahnbogens mit Implantaten">
+            <img src="../assets/home/service-all-on-x.webp" alt="Digitale Konstruktion einer All-on-X-Restauration am Monitor">
             <div>
               <small>01 · Hauptspezialität</small>
               <h3>All-on-X-Rehabilitationen</h3>
@@ -2096,7 +2099,7 @@
             </div>
           </a>
           <a class="service-card reveal" href="../implantatgetragene-zirkonoxidrestaurationen.html">
-            <img src="../szolgaltatasok_fem_es_cirkonvaz.jpg" alt="Präzise manuelle Bearbeitung von Implantat-Zirkonoxidrestaurationen">
+            <img src="../assets/home/service-implant-zirconia.webp" alt="Präzise Kontrolle einer implantatgetragenen Restauration unter dem Mikroskop">
             <div>
               <small>02</small>
               <h3>Implantatgetragene Zirkonoxidrestaurationen</h3>
@@ -2114,7 +2117,7 @@
             </div>
           </a>
           <a class="service-card reveal" href="../digitaler-workflow.html">
-            <img src="../assets/home/service-digital-workflow.webp" alt="Digital geplante implantatgetragene Restauration auf einem Monitor">
+            <img src="../assets/home/service-digital-workflow-focused.webp" alt="Digital konstruierte Full-Arch-Restauration in der CAD-Software">
             <div>
               <small>04</small>
               <h3>Digitaler Workflow</h3>
@@ -2123,7 +2126,7 @@
             </div>
           </a>
           <a class="service-card reveal" href="../metallfreie-keramikrestaurationen.html">
-            <img src="../esztetikai-keramia-potlasok-labor-ellenorzes.webp" alt="Präzise Laborinspektion metallfreier Keramikrestaurationen mit der Lupe">
+            <img src="../assets/home/service-metal-free-ceramics-0014.webp" alt="Individuelle Charakterisierung einer metallfreien Keramikrestauration im Labor">
             <div>
               <small>05</small>
               <h3>Metallfreie Keramikrestaurationen</h3>

@@ -1750,18 +1750,21 @@
   <link rel="stylesheet" href="../../assets/language-switcher.css?v=4">
   <link rel="stylesheet" href="../../assets/contact-portraits.css?v=20260924">
   <link rel="stylesheet" href="../../assets/funding.css?v=20261008">
+  <link rel="stylesheet" href="../../assets/partnership-hero.css?v=20261015">
 </head>
-<body>
+<body class="partnership-landing">
 
-<nav class="bd-language-switcher" aria-label="Nyelvválasztó">
-  <a href="../../zusammenarbeit/index.html" lang="de" hreflang="de"><img src="../../assets/flags/de.svg" alt="">DE</a>
-  <a href="index.html" lang="hu" hreflang="hu" aria-current="page"><img src="../../assets/flags/hu.svg" alt="">HU</a>
-</nav>
 <header class="topbar">
     <a class="brand" href="#top" aria-label="Bridge Dental kezdőoldal">
       <img src="../../assets/logo.png" alt="Bridge Dental">
     </a>
-    <a class="btn btn-primary" href="#urlap">Konzultációt kérek</a>
+    <div class="topbar-controls">
+      <nav class="bd-language-switcher" aria-label="Nyelvválasztó">
+        <a href="../../zusammenarbeit/index.html" lang="de" hreflang="de"><img src="../../assets/flags/de.svg" alt="">DE</a>
+        <a href="index.html" lang="hu" hreflang="hu" aria-current="page"><img src="../../assets/flags/hu.svg" alt="">HU</a>
+      </nav>
+      <a class="btn btn-primary" href="#urlap">Konzultációt kérek</a>
+    </div>
   </header>
 
   <main id="top">
@@ -1769,18 +1772,17 @@
       <div class="shell hero-grid">
         <div class="hero-copy reveal">
           <div class="eyebrow">Svájci és német fogorvosi rendelőknek</div>
-          <h1>
-            <span class="h1-line">Digitális fogtechnikai</span>
-            <span class="h1-line">partner svájci és német</span>
-            <span class="h1-line">rendelők komplex</span>
-            <span class="h1-line">eseteihez</span>
-          </h1>
+          <h1>Digitális fogtechnikai partner svájci és német rendelők komplex eseteihez</h1>
           <p class="hero-lead">Implantológiai és esztétikai restaurációk saját digitális gyártással, német nyelvű szakmai egyeztetéssel és szervezett nemzetközi logisztikával.</p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="#urlap">Partneri egyeztetést kérek</a>
             <a class="btn btn-ghost" href="#szolgaltatasok">Megnézem a szolgáltatásokat</a>
           </div>
         </div>
+        <picture class="hero-photo">
+          <source media="(max-width: 800px)" srcset="../../assets/partnership-hero-69881-small.webp">
+          <img src="../../assets/partnership-hero-69881.webp" width="2560" height="1057" alt="Fogtechnikus kézi eszközzel munkálja meg a fogpótlást a Bridge Dental laborjában." fetchpriority="high">
+        </picture>
         <aside class="trust-strip reveal" aria-label="Fő bizalmi elemek">
           <div class="trust-item">
             <div class="trust-icon" aria-hidden="true">
@@ -2085,7 +2087,7 @@
         </div>
         <div class="services-grid">
           <a class="service-card reveal" href="../full-arch-implantatumos-rehabilitaciok.html">
-            <img src="../../assets/full-arch-implantatumos-rehabilitacio-all-on-x.webp" alt="Full-Arch implantátumos rehabilitáció">
+            <img src="../../assets/home/service-all-on-x.webp" alt="All-on-X restauráció digitális tervezése a monitoron">
             <div>
               <small>01 · Fő specialitás</small>
               <h3>All-on-X rehabilitációk</h3>
@@ -2094,7 +2096,7 @@
             </div>
           </a>
           <a class="service-card reveal" href="../implantatumos-cirkonium-restauraciok.html">
-            <img src="../../szolgaltatasok_fem_es_cirkonvaz.jpg" alt="Implantátumos cirkónium restaurációk precíziós kézi megmunkálása">
+            <img src="../../assets/home/service-implant-zirconia.webp" alt="Implantátumos restauráció precíz ellenőrzése mikroszkóp alatt">
             <div>
               <small>02</small>
               <h3>Implantátumos cirkónium restaurációk</h3>
@@ -2112,7 +2114,7 @@
             </div>
           </a>
           <a class="service-card reveal" href="../digitalis-tervezes.html">
-            <img src="../../assets/home/service-digital-workflow.webp" alt="Digitálisan megtervezett implantátumos restauráció a monitoron">
+            <img src="../../assets/home/service-digital-workflow-focused.webp" alt="Digitálisan megtervezett teljes íves restauráció a CAD szoftverben">
             <div>
               <small>04</small>
               <h3>Digitális workflow</h3>
@@ -2121,7 +2123,7 @@
             </div>
           </a>
           <a class="service-card reveal" href="../esztetikai-keramia.html">
-            <img src="../../esztetikai-keramia-potlasok-labor-ellenorzes.webp" alt="Fémmentes kerámia pótlások precíziós laboratóriumi ellenőrzése nagyítóval">
+            <img src="../../assets/home/service-metal-free-ceramics-0014.webp" alt="Fémmentes kerámia pótlás egyedi karakterizálása a laborban">
             <div>
               <small>05</small>
               <h3>Fémmentes kerámia pótlások</h3>
