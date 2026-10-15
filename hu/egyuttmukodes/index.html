@@ -396,7 +396,12 @@
 
     .photo-panel {
       position: relative;
-      min-height: 480px;
+      width: 100%;
+      max-width: 480px;
+      min-height: 0;
+      aspect-ratio: 4 / 5;
+      align-self: center;
+      justify-self: center;
       overflow: hidden;
       border-radius: var(--radius);
       box-shadow: var(--shadow);
@@ -404,10 +409,12 @@
     }
 
     .photo-panel img {
+      position: absolute;
+      inset: 0;
       width: 100%;
       height: 100%;
       object-fit: cover;
-      filter: saturate(0.92) contrast(1.05);
+      object-position: 58% center;
     }
 
     .photo-caption {
@@ -917,6 +924,7 @@
 
     .proof-cards {
       display: grid;
+      align-self: center;
       grid-template-columns: 1fr 1fr;
       gap: 14px;
     }
@@ -942,7 +950,12 @@
 
     .proof-image {
       position: relative;
-      min-height: 100%;
+      width: 100%;
+      max-width: 400px;
+      min-height: 0;
+      aspect-ratio: 2 / 3;
+      align-self: center;
+      justify-self: center;
       border-radius: 28px;
       overflow: hidden;
       background: var(--charcoal);
@@ -950,10 +963,12 @@
     }
 
     .proof-image img {
+      position: absolute;
+      inset: 0;
       width: 100%;
       height: 100%;
-      min-height: 100%;
       object-fit: cover;
+      object-position: center;
     }
 
     .proof-image-badge {
@@ -1692,9 +1707,6 @@
       .proof-grid {
         grid-template-columns: 1fr;
       }
-      .proof-image {
-        min-height: 360px;
-      }
       .proof-image-badge {
         left: 16px;
         right: 16px;
@@ -1712,9 +1724,6 @@
       }
       .process-step p {
         grid-column: auto;
-      }
-      .proof-image img {
-        min-height: 360px;
       }
       .testimonial-card {
         padding: 22px 20px 20px;
@@ -1836,7 +1845,7 @@
 
         <div class="problem-grid">
           <div class="photo-panel reveal">
-            <img src="../../assets/digitalis-fogtechnika-labor-munkafolyamat.webp" alt="Bridge Dental digitális fogtechnikai munkafolyamat">
+            <img src="../../assets/partnership-challenges-1588.webp" width="1920" height="1280" loading="lazy" decoding="async" alt="Fogtechnikus nagyítószemüvegben, kézi eszközzel dolgozik a fogpótláson a Bridge Dental laborjában.">
           </div>
           <div class="tension-list">
             <div class="tension-item reveal">
@@ -1936,7 +1945,7 @@
             </div>
           </div>
           <div class="proof-image reveal">
-            <img src="../../assets/labor_foto.jpg" alt="Bridge Dental laborkörnyezet">
+            <img src="../../assets/partnership-expertise-1360.webp" width="960" height="1440" loading="lazy" decoding="async" alt="Fogtechnikus mikroszkóp alatt, kézi eszközzel munkálja meg a fogpótlást.">
           </div>
         </div>
         <div class="proof-footer reveal">
